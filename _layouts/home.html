@@ -6,8 +6,8 @@
 <div class="page-header">
     {{ page.author }}
 </div>
-{% for experience in site.data.experiences %}
- <p>{{ experience.begin }}</p>
+{% for project in site.data.projects %}
+ <p>{{ project.name }} ({{ project.language }})</p>
 {% endfor %}
 </body>
 </html>
