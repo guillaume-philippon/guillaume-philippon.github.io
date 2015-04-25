@@ -1,6 +1,10 @@
-{[
+[
   {
-    'begin': 'Octobre 2001',
-    'end': 'Janvier 2003'
-  }
-]}
+    "begin": "Octobre 2001",
+    "end": "Janvier 2003"
+  },
+{
+        "begin": "Mai 2003",
+  "end": "Février 2004"
+}
+]
