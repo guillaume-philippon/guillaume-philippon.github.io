@@ -3,8 +3,11 @@
     {% include head.html %}
 </head>
 <body>
-{{ page.title }}
-
-{{ content }}
+<div class="page-header">
+    {{ page.author }}
+</div>
+{% for experience in data.experiences %}
+ <p>{{ experience.begin }}</p>
+{% endfor %}
 </body>
 </html>
