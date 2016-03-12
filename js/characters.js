@@ -52,5 +52,5 @@ function load_character(name) {
 }
 
 $(document).ready(function (){
-    load_character({{ site.data.characters[0].name }})
+    load_character('eleonor')
 })
