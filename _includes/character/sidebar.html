@@ -1,6 +1,5 @@
 <ul class="nav nav-sidebar" id="characters_sidebar">
-    {% for character_hash in site.characters %}
-    {% assign character = character_hash[1] %}
-    <li><a href="#">{{ character.name }} [ {{ character.class }} ]</a></li>
+    {% for character in site.data.characters %}
+    <li><a href="#" onClick="load_character('{{character.location}}')">{{ character.name }} [ {{ character.class }} ]</a></li>
     {% endfor %}
 </ul>
