@@ -12,6 +12,12 @@ function defense_attribute_to_dice(defense_dices) {
   return html_display
 }
 
+function clean_skill_color(skill) {
+    $('#'+skill+'-dice-0').css('color', "#777777")
+    $('#'+skill+'-dice-1').css('color', "#777777")
+    $('#'+skill+'-dice-2').css('color', "#777777")
+}
+
 function load_character(name) {
     return $.getJSON('/characters/' + name + '.json', function(data){
         /* Generic value */
@@ -44,6 +50,7 @@ function load_character(name) {
 
         /* Skills */
         $.each(data.skills, function(skill, value){
+            clean_skill_color(skill)
             $.each(value, function(k, dice){
                 $('#'+skill+'-dice-'+k).css('color', dice)
             })
