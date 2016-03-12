@@ -12,9 +12,10 @@ function load_character(name) {
         /* Bonus */
         bonus_text = ''
         $.each(data.bonus, function(bonus_name, value){
-            $bonus_text += '<center><b>' + value.title + '</b></center>'
-            $bonus_text += '<p>' + value.text + '</p>'
+            bonus_text += '<center><b>' + value.title + '</b></center>'
+            bonus_text += '<p>' + value.text + '</p>'
         })
+        $('#bonus-box').html(bonus_text)
 
         /* Skills */
         $.each(data.skills, function(skill, value){
