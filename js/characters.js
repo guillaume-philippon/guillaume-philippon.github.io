@@ -6,7 +6,7 @@ var stress = '<span class="fa fa-heartbeat"></span>'
 */
 function defense_attribute_to_dice(defense_dices) {
   html_display = ''
-  console.log('titti')
+  console.log(defense_dices)
   $.each(defense_dices, function(idx, dice){
     console.log('toto')
     html_display += '<span class="glyphicon glyphicon-stop defense-dice" style="color:' + dice + '">x</span> '
