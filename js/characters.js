@@ -18,6 +18,18 @@ function clean_skill_color(skill) {
     $('#'+skill+'-dice-2').css('color', "#777777")
 }
 
+function equipment_level_populate(equipment, level){
+    for (i = 0; i < 4; i++) {
+        if (i < level) {
+            $('#' + equipment + '-bullet-' + i).removeClass('fa-circle-thin')
+            $('#' + equipment + '-bullet-' + i).addClass('fa-circle')
+        } else {
+            $('#' + equipment + '-bullet-' + i).addClass('fa-circle-thin')
+            $('#' + equipment + '-bullet-' + i).removeClass('fa-circle')
+        }
+    }
+}
+
 function load_character(name) {
     return $.getJSON('/characters/' + name + '.json', function(data){
         /* Generic value */
@@ -54,6 +66,11 @@ function load_character(name) {
             $.each(value, function(k, dice){
                 $('#'+skill+'-dice-'+k).css('color', dice)
             })
+        })
+
+        /* Equipment */
+        $.each(data.equipment_level, function(equipment, level){
+            equipment_level_populate(equipment, level)
         })
     })
 }

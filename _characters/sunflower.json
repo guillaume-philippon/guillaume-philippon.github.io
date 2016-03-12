@@ -32,5 +32,13 @@
       "stress": 0,
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
     }
-  ]
+  ],
+    "equipment_level": {
+    "gun": 2,
+    "snipe": 0,
+    "heavy-weapon": 0,
+    "matrice": 1,
+    "magic": 5
+  }
+
 }
