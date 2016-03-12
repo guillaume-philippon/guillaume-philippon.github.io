@@ -4,3 +4,6 @@
 - name: Sun Flower
   class: Fire Mage
   location: sunflower
+- name: Slashroot
+  class: Decker
+  location: slashroot
