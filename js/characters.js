@@ -19,7 +19,7 @@ function clean_skill_color(skill) {
 }
 
 function equipment_level_populate(equipment, level){
-    for (i = 0; i < 4; i++) {
+    for (i = 0; i < 5; i++) {
         if (i < level) {
             $('#' + equipment + '-bullet-' + i).removeClass('fa-circle-thin')
             $('#' + equipment + '-bullet-' + i).addClass('fa-circle')
