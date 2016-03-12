@@ -12,11 +12,11 @@
     }
   },
   "skills": {
-    "stealth": [],
+    "stealth": [ "blue", "blue" ],
     "social": [ "red" ],
-    "medicine": [],
+    "medicine": [ "blue" ],
     "strength": [ "yellow", "blue" ],
-    "intuition": [],
+    "intuition": [ "red" ],
     "tech": [ "blue", "green" ]
   },
   "bonus": [

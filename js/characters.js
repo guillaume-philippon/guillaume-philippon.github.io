@@ -1,6 +1,17 @@
 var action = '<span class="fa fa-share"></span>'
 var stress = '<span class="fa fa-heartbeat"></span>'
 
+/*
+  Transform a defense attribute to a dice span
+*/
+function defense_attribute_to_dice(defense_dices) {
+  html_display = ''
+  $.each(defense_dices, function(idx, dice){
+    html_display += '<span class="glyphicon glyphicon-stop defense-dice" style="color:' + dice + '"></span> '
+  })
+  return html_display
+}
+
 function load_character(name) {
     return $.getJSON('/characters/' + name + '.json', function(data){
         /* Generic value */
@@ -10,7 +21,11 @@ function load_character(name) {
 
         /* Attributes */
         $.each(data.attributes, function(attribute, value){
-            $('#'+attribute).html(value)
+            if (attribute == "defense" ) {
+                $('#defense').html(defense_attribute_to_dice(attribute.physical) + '/'+ defense_attribute_to_dice(attribute.magical))
+            } else {
+                $('#'+attribute).html(value)
+            }
         })
 
         /* Bonus */
