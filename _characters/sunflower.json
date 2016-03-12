@@ -1,0 +1,36 @@
+{
+  "name": "Sun Flower",
+  "class": "Fire Mage",
+  "image": "/images/sunflower.png",
+  "attributes": {
+    "health": 9,
+    "endurance": 7,
+    "speed": 4,
+    "defense": {
+      "physical": [ "white" ],
+      "magical": [ "white", "black" ]
+    }
+  },
+  "skills": {
+    "stealth": [ "blue" ],
+    "social": [ "yellow", "blue" ],
+    "medicine": [ "blue" ],
+    "strength": [ "yellow", "blue" ],
+    "intuition": [ "yellow", "blue" ],
+    "tech": [ "blue" ]
+  },
+  "bonus": [
+    {
+      "title": "Lorem ipsum",
+      "action": true,
+      "stress": 1,
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
+    },
+     {
+      "title": "Lorem ipsum",
+      "action": false,
+      "stress": 0,
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
+    }
+  ]
+}
