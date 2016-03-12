@@ -6,9 +6,7 @@ var stress = '<span class="fa fa-heartbeat"></span>'
 */
 function defense_attribute_to_dice(defense_dices) {
   html_display = ''
-  console.log(defense_dices)
   $.each(defense_dices, function(idx, dice){
-    console.log('toto')
     html_display += '<span class="glyphicon glyphicon-stop defense-dice" style="color:' + dice + '">x</span> '
   })
   return html_display
@@ -24,7 +22,7 @@ function load_character(name) {
         /* Attributes */
         $.each(data.attributes, function(attribute, value){
             if (attribute == "defense" ) {
-                $('#defense').html(defense_attribute_to_dice(attribute.physical) + '/'+ defense_attribute_to_dice(attribute.magical))
+                $('#defense').html(defense_attribute_to_dice(data.attributes[attribute].physical) + '/'+ defense_attribute_to_dice(data.attributes[attribute].magical))
             } else {
                 $('#'+attribute).html(value)
             }
