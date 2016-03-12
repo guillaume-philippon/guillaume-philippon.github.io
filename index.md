@@ -1,5 +1,5 @@
 ---
-layout: home
-title: Home
+layout: characters
+title: Shadowrun Boardgame
 author: Guillaume Philippon
 ---
