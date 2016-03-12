@@ -6,6 +6,7 @@ function load_character(name) {
         /* Generic value */
         $('#name').html(data.name)
         $('#class').html(data.class)
+        $('#image').attr("src", data.image)
 
         /* Attributes */
         $.each(data.attributes, function(attribute, value){
