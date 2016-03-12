@@ -1,3 +1,6 @@
+var action = '<span class="fa fa-share"></span>'
+var stress = '<span class="fa fa-heartbeat"></span>'
+
 function load_character(name) {
     return $.getJSON('/characters/' + name + '.json', function(data){
         /* Generic value */
@@ -13,6 +16,12 @@ function load_character(name) {
         bonus_text = ''
         $.each(data.bonus, function(bonus_name, value){
             bonus_text += '<center><b>' + value.title + '</b></center>'
+            if (value.action) {
+                bonus_text += action
+            }
+            if (value.stress > 0) {
+                bonus_text += value.stress + ' ' + stress
+            }
             bonus_text += '<p>' + value.text + '</p>'
         })
         $('#bonus-box').html(bonus_text)
