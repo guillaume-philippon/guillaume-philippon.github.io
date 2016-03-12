@@ -1,2 +1,5 @@
 highlighter: rouge
 github: [Repository metadata]
+collections:
+  characters:
+    output: true

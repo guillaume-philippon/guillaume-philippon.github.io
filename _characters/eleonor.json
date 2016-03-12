@@ -1,17 +1,13 @@
 {
-  "name": "Elonor O'Neil",
+  "name": "Eleonor O'Neil",
   "class": "Street Samourai",
   "attributes": {
     "health": 15,
-    "endurance": 4,
-    "speed": 3,
+    "endurance": 5,
+    "speed": 4,
     "defense": {
       "physical": [ "black", "black" ],
       "magical": [ "white" ]
     }
-  },
-  "skills": {
-    "stealh": [ "red" ],
-    "social": [ "red" ]
   }
 }
