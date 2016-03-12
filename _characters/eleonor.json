@@ -9,5 +9,13 @@
       "physical": [ "black", "black" ],
       "magical": [ "white" ]
     }
+  },
+  "skills": {
+    "stealth": [],
+    "social": [ "red" ],
+    "medicine": [],
+    "strength": [ "yellow", "blue" ],
+    "intuition": [],
+    "tech": [ "blue", "green" ]
   }
 }

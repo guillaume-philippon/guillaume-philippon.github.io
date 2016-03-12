@@ -5,96 +5,20 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-10">
-                    <div class="panel panel-default">
-    <div class="panel-body" id="bonus-box">
-        <center><b>Lorem ipsum</b></center>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-    </div>
-</div>
+                    {% include character/bonus %}
                 </div>
                 <div class="col-lg-2 col-md-2">
-                    <h3>
-    <span class="label label-default">
-        <i class="icon-socialnetwork" data-toggle="tooltip" data-placement="top" title="Social"></i>
-        <i class="icon-die-dice skill-dice" id="social-dice-0"></i>
-        <i class="icon-die-dice skill-dice" id="social-dice-1"></i>
-        <i class="icon-die-dice skill-dice" id="social-dice-2"></i>
-    </span>
-</h3>
-<h3>
-    <span class="label label-default">
-        <i class="glyphicon glyphicon-eye-close" data-toggle="tooltip" data-placement="top" title="Stealth"></i>
-        <i class="icon-die-dice skill-dice" id="stealth-dice-0"></i>
-        <i class="icon-die-dice skill-dice" id="stealth-dice-1"></i>
-        <i class="icon-die-dice skill-dice" id="stealth-dice-2"></i>
-    </span>
-</h3>
-<h3>
-    <span class="label label-default">
-        <i class="fa fa-medkit" data-toggle="tooltip" data-placement="top" title="Medicine"></i>
-        <i class="icon-die-dice skill-dice" id="medicine-dice-0"></i>
-        <i class="icon-die-dice skill-dice" id="medicine-dice-1"></i>
-        <i class="icon-die-dice skill-dice" id="medicine-dice-2"></i>
-    </span>
-</h3>
-<h3>
-    <span class="label label-default">
-        <i class="fa fa-hand-rock-o fa-rotate-90" data-toggle="tooltip" data-placement="top" title="Strength"></i>
-        <i class="icon-die-dice skill-dice" id="strength-dice-0"></i>
-        <i class="icon-die-dice skill-dice" id="strength-dice-1"></i>
-        <i class="icon-die-dice skill-dice" id="strength-dice-2"></i>
-    </span>
-</h3>
-<h3>
-    <span class="label label-default">
-        <i class="glyphicon glyphicon-eye-open" data-toggle="tooltip" data-placement="top" title="Intuition"></i>
-        <i class="icon-die-dice skill-dice" id="intuition-dice-0"></i>
-        <i class="icon-die-dice skill-dice" id="intuition-dice-1"></i>
-        <i class="icon-die-dice skill-dice" id="intuition-dice-2"></i>
-    </span>
-</h3>
-<h3>
-    <span class="label label-default">
-        <i class="glyphicon glyphicon-wrench" data-toggle="tooltip" data-placement="top" title="Tech"></i>
-        <i class="icon-die-dice skill-dice" id="tech-dice-0"></i>
-        <i class="icon-die-dice skill-dice" id="tech-dice-1"></i>
-        <i class="icon-die-dice skill-dice" id="tech-dice-2"></i>
-    </span>
-</h3>
+                    {% include character/skills %}
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-6 col-md-8">
                     <h3 class="name_box">
-    <span id="name" class="sr-text">{{ site.characters.eleonor.name }}</span> [ <span id="class" class="sr-text">Character class</span> ]
-</h3>
-
+                         <span id="name" class="sr-text">Charactere Name</span> [ <span id="class" class="sr-text">Character class</span> ]
+                    </h3>
                 </div>
                 <div class="col-lg-6 col-md-4">
-                    <table class="table">
-    <thread>
-        <tr>
-            <th></th>
-            <th><span class="glyphicon glyphicon-heart" data-toggle="tooltip" data-placement="top" title="Health"></span></th>
-            <th><span class="fa fa-heartbeat" data-toggle="tooltip" data-placement="top" title="Edurance"></span></th>
-            <th><span class="fa fa-tachometer" data-toggle="tooltip" data-placement="top" title="Speed"></span></th>
-            <th><span class="fa fa-shield" data-toggle="tooltip" data-placement="top" title="Defense"></span></th>
-        </tr>
-    </thread>
-    <tbody>
-        <tr>
-            <td><span class="fa fa-users"></span></td>
-            <td id="health" class="sr-text"></td>
-            <td id="endurance" class="sr-text"></td>
-            <td id="speed" class="sr-text"></td>
-            <td id="defense"></td>
-        </tr>
-    </tbody>
-</table>
+                    {% include character/attributes.html %}
                 </div>
             </div>
             </div>
