@@ -21,16 +21,16 @@
   },
   "bonus": [
     {
-      "title": "Lorem ipsum",
+      "title": "Ambidexter",
       "action": true,
       "stress": 1,
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
+      "text": "You can attack with your both gun at the same time. Roll all dice on one target"
     },
      {
-      "title": "Lorem ipsum",
+      "title": "Stuff finder",
       "action": false,
       "stress": 0,
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
+      "text": "When you interact with a crate, you draw 2 cards instead of 1"
     }
   ],
     "equipment_level": {
