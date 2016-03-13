@@ -28,7 +28,7 @@
     },
     {
       "title": "You talkin 'me",
-      "action": true,
+      "action": false,
       "stress": 1,
       "text": "After a <span class=\"fa fa-comment\" intimidation test, you can re-roll one of your dice."
     },
