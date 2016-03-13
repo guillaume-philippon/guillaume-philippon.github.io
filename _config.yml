@@ -6,3 +6,5 @@ collections:
     ouput: true
   ia_campagnes:
     output: true
+  mobs:
+    output: true
