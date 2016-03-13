@@ -21,16 +21,16 @@
   },
   "bonus": [
     {
-      "title": "Lorem ipsum",
+      "title": "Hacker",
       "action": true,
-      "stress": 1,
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
+      "stress": 0,
+      "text": "Once, anytime after you crack a terminal, you can draw one <span class=\"icon-network\"></span> from <span class=\"icon-network\"></span> deck."
     },
      {
-      "title": "Lorem ipsum",
+      "title": "Decker",
       "action": false,
       "stress": 0,
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
+      "text": "You gain one more <span class=\"icon-network\"></span> in your inventory."
     }
   ],
   "equipment_level": {

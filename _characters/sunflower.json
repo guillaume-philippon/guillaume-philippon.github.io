@@ -21,16 +21,16 @@
   },
   "bonus": [
     {
-      "title": "Lorem ipsum",
-      "action": true,
+      "title": "Spellcaster",
+      "action": false,
       "stress": 1,
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
+      "text": "You can re-roll one of your <span class=\"icon-die-dice\"></span> when you cast a spell"
     },
      {
-      "title": "Lorem ipsum",
+      "title": "Mage",
       "action": false,
       "stress": 0,
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
+      "text": "You gain one more <span class=\"icon-fire\"></span> slot in your inventory"
     }
   ],
     "equipment_level": {

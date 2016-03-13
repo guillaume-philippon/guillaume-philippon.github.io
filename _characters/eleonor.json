@@ -3,8 +3,8 @@
   "class": "Street Samourai",
   "image": "/shadowrun-boardgame/images/eleonor.png",
   "attributes": {
-    "health": 15,
-    "endurance": 5,
+    "health": 14,
+    "endurance": 4,
     "speed": 4,
     "defense": {
       "physical": [ "black", "black" ],
@@ -21,16 +21,16 @@
   },
   "bonus": [
     {
-      "title": "Lorem ipsum",
+      "title": "Sexy Limb",
       "action": true,
       "stress": 1,
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
+      "text": "After a successfull <span class=\"icon-gun\"></span> attack, you can move up to half your speed (round down) to make a <span class=\"icon-axe\"></span> attack with <span class=\"icon-die-dice\" style=\"color:green\"></span> or one of your cyberlimb."
     },
      {
-      "title": "Lorem ipsum",
+      "title": "Street Samourai",
       "action": false,
       "stress": 0,
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
+      "text": "You are not restricted to two weapon."
     }
   ],
   "equipment_level": {
