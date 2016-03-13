@@ -3,21 +3,21 @@
   "class": "Street Samourai",
   "image": "/shadowrun-boardgame/images/eleonor.png",
   "attributes": {
-    "health": 14,
-    "endurance": 4,
+    "health": 12,
+    "endurance": 5,
     "speed": 4,
     "defense": {
-      "physical": [ "black", "black" ],
-      "magical": [ "white" ]
+      "physical": [ "black" ],
+      "magical": [ "black" ]
     }
   },
   "skills": {
-    "stealth": [ "blue", "blue" ],
-    "social": [ "red" ],
-    "medicine": [ "blue" ],
-    "strength": [ "gold", "blue" ],
-    "intuition": [ "red" ],
-    "tech": [ "blue", "green" ]
+    "stealth": [ "gold", "blue" ],
+    "social": [ "blue", "blue" ],
+    "medicine": [ "red" ],
+    "strength": [ "gold", "green" ],
+    "intuition": [ "red", "red" ],
+    "tech": [ "green", "green" ]
   },
   "bonus": [
     {
@@ -25,6 +25,12 @@
       "action": true,
       "stress": 1,
       "text": "After a successfull <span class=\"icon-gun\"></span> attack, you can move up to half your speed (round down) to make a <span class=\"icon-axe\"></span> attack with <span class=\"icon-die-dice\" style=\"color:green\"></span> or one of your cyberlimb."
+    },
+    {
+      "title": "You talkin 'me",
+      "action": true,
+      "stress": 1,
+      "text": "After a <span class=\"fa fa-comment\" intimidation test, you can re-roll one of your dice."
     },
      {
       "title": "Street Samourai",
@@ -34,10 +40,10 @@
     }
   ],
   "equipment_level": {
-    "gun": 4,
-    "snipe": 4,
-    "heavy-weapon": 4,
-    "matrice": 1,
+    "gun": 3,
+    "snipe": 1,
+    "heavy-weapon": 1,
+    "matrice": 0,
     "magic": 0
   }
 }
