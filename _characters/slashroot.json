@@ -30,7 +30,7 @@
       "title": "Decker",
       "action": false,
       "stress": 0,
-      "text": "You gain one more <span class=\"icon-network\"></span> in your inventory."
+      "text": "You gain one more <span class=\"icon-network\"></span> slot in your inventory."
     }
   ],
   "equipment_level": {
