@@ -1,7 +1,7 @@
 {
   "name": "Eleonor O'Neil",
   "class": "Street Samourai",
-  "image": "/images/eleonor.png",
+  "image": "/shadowrun-boardgame/images/eleonor.png",
   "attributes": {
     "health": 15,
     "endurance": 5,

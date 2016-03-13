@@ -2,3 +2,7 @@ highlighter: rouge
 collections:
   characters:
     output: true
+  cards:
+    ouput: true
+  ia_campagnes:
+    output: true

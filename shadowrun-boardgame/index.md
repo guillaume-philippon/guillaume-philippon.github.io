@@ -1,5 +1,5 @@
 ---
 layout: shadowrun-boardgame/characters
-title: xxx
+title: Shadowrun Boardgame
 author: Guillaume Philippon
 ---

@@ -1,16 +1,16 @@
 <html>
-    {% include head.html %}
+    {% include shadowrun-boardgame/common/head.html %}
     <body>
         <div class="container-fluid">
-            {% include navigation-bar.html %}
+            {% include common/navigation-bar.html %}
             <div class="container-fluid">
                 <div class="container-fluid">
                     <div class="col-md-2 sidebar">
-                        {% include character/sidebar.html %}
+                        {% include shadowrun-boardgame/character/sidebar.html %}
                     </div>
                     <div class="col-md-10">
                         <div class="container-fluid" id="contents">
-                            {% include character/sheet.html %}
+                            {% include shadowrun-boardgame/character/sheet.html %}
                         </div>
                     </div>
                 </div>

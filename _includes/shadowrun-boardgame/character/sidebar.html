@@ -1,5 +1,5 @@
 <ul class="nav nav-sidebar" id="characters_sidebar">
-    {% for character in site.data.characters %}
+    {% for character in site.data.shadowrun-boardgame.characters %}
     <li><a href="#" onClick="load_character('{{character.location}}')">{{ character.name }} [ {{ character.class }} ]</a></li>
     {% endfor %}
 </ul>

@@ -1,16 +1,14 @@
 <div class="row">
     <div class="col-lg-7 col-md-12">
-        <div class="thumbnail">
-            <img src="/images/800x600.png" alt="Characters Picture" id="image">
-        </div>
+        {% include shadowrun-boardgame/character/image.html %}
     </div>
     <div class="col-lg-3 col-md-10">
-        {% include character/bonus.html %}
+        {% include shadowrun-boardgame/character/bonus.html %}
     </div>
     <div class="col-lg-2 col-md-2">
         <div class="row">
-        {% include character/skills.html %}
-        {% include character/equipment_level.html %}
+        {% include shadowrun-boardgame/character/skills.html %}
+        {% include shadowrun-boardgame/character/equipment_level.html %}
         </div>
     </div>
 </div>
@@ -21,6 +19,6 @@
         </h3>
     </div>
     <div class="col-lg-6 col-md-4">
-        {% include character/attributes.html %}
+        {% include shadowrun-boardgame/character/attributes.html %}
     </div>
 </div>

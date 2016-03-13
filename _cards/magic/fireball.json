@@ -1,0 +1,12 @@
+{
+  "category": "magic",
+  "name": "Fireball",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  "dices" : [ "blue", "green" ],
+  "effects" : [
+    {
+      "surge": 0,
+      "description": "Lorem ipsum"
+    }
+  ]
+}
