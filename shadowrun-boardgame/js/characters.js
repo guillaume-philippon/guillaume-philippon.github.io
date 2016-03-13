@@ -41,7 +41,8 @@ function load_character(name) {
         /* Attributes */
         $.each(data.attributes, function(attribute, value){
             if (attribute == "defense" ) {
-                $('#defense').html(defense_attribute_to_dice(data.attributes[attribute].physical) + '/'+ defense_attribute_to_dice(data.attributes[attribute].magical))
+                $('#physical-defense').html(defense_attribute_to_dice(data.attributes[attribute].physical))
+                $('#magical-defense').html(defense_attribute_to_dice(data.attributes[attribute].magical))
             } else {
                 $('#'+attribute).html(value)
             }
