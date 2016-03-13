@@ -71,7 +71,7 @@ function load_character(name) {
         })
 
         /* Equipment */
-        $.each(data.equipment_level, function(equipment, level){
+        $.each(data.expertise, function(equipment, level){
             equipment_level_populate(equipment, level)
         })
     })

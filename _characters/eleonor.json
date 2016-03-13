@@ -16,8 +16,8 @@
     "social": [ "blue", "blue" ],
     "medicine": [ "red" ],
     "strength": [ "gold", "green" ],
-    "intuition": [ "red", "red" ],
-    "tech": [ "green", "green" ]
+    "intuition": [ "red" ],
+    "tech": [ "green" ]
   },
   "bonus": [
     {
@@ -30,7 +30,7 @@
       "title": "You talkin 'me",
       "action": false,
       "stress": 1,
-      "text": "After a <span class=\"fa fa-comment\" intimidation test, you can re-roll one of your dice."
+      "text": "After a <span class=\"fa fa-comment\"></span> intimidation test, you can re-roll one of your dice."
     },
      {
       "title": "Street Samourai",
@@ -39,7 +39,7 @@
       "text": "You are not restricted to two weapon."
     }
   ],
-  "equipment_level": {
+  "expertise": {
     "gun": 3,
     "snipe": 1,
     "heavy-weapon": 1,

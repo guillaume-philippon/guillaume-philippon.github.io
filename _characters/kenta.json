@@ -33,7 +33,7 @@
       "text": "When you interact with a crate, you draw 2 cards instead of 1"
     }
   ],
-    "equipment_level": {
+    "expertise": {
     "gun": 5,
     "snipe": 0,
     "heavy-weapon": 0,

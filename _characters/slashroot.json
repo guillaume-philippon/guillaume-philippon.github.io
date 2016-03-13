@@ -33,7 +33,7 @@
       "text": "You gain one more <span class=\"icon-network\"></span> slot in your inventory."
     }
   ],
-  "equipment_level": {
+  "expertise": {
     "gun": 2,
     "snipe": 1,
     "heavy-weapon": 0,
