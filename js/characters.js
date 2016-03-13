@@ -1,6 +1,7 @@
 var action = '<span class="fa fa-share"></span>'
 var stress = '<span class="fa fa-heartbeat"></span>'
-
+var dice_disable = 'white'
+//var dice_disable = '#777777'
 /*
   Transform a defense attribute to a dice span
 */
@@ -13,9 +14,9 @@ function defense_attribute_to_dice(defense_dices) {
 }
 
 function clean_skill_color(skill) {
-    $('#'+skill+'-dice-0').css('color', "#777777")
-    $('#'+skill+'-dice-1').css('color', "#777777")
-    $('#'+skill+'-dice-2').css('color', "#777777")
+    for (i=0; i < 3; i++) {
+        $('#'+skill+'-dice-'+i).css('color', dice_disable)
+    }
 }
 
 function equipment_level_populate(equipment, level){

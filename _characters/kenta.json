@@ -1,23 +1,23 @@
 {
-  "name": "Eleonor O'Neil",
-  "class": "Street Samourai",
-  "image": "/images/eleonor.png",
+  "name": "Kenta Tananka",
+  "class": "Face",
+  "image": "/images/kenta.png",
   "attributes": {
-    "health": 15,
+    "health": 10,
     "endurance": 5,
-    "speed": 4,
+    "speed": 5,
     "defense": {
-      "physical": [ "black", "black" ],
+      "physical": [ "white" ],
       "magical": [ "white" ]
     }
   },
   "skills": {
-    "stealth": [ "blue", "blue" ],
-    "social": [ "red" ],
-    "medicine": [ "blue" ],
-    "strength": [ "gold", "blue" ],
-    "intuition": [ "red" ],
-    "tech": [ "blue", "green" ]
+    "stealth": [ "gold", "blue" ],
+    "social": [ "gold", "blue" ],
+    "medicine": [ "gold", "blue" ],
+    "strength": [ "red" ],
+    "intuition": [ "gold", "blue" ],
+    "tech": [ "blue" ]
   },
   "bonus": [
     {
@@ -33,11 +33,12 @@
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
     }
   ],
-  "equipment_level": {
-    "gun": 4,
-    "snipe": 4,
-    "heavy-weapon": 4,
-    "matrice": 1,
-    "magic": 0
+    "equipment_level": {
+    "gun": 5,
+    "snipe": 0,
+    "heavy-weapon": 0,
+    "matrice": 3,
+    "magic": 3
   }
+
 }

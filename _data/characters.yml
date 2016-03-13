@@ -7,3 +7,6 @@
 - name: Slashroot
   class: Decker
   location: slashroot
+- name: Kenta Tanaka
+  class: Face
+  location: kenta
