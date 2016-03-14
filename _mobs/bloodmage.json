@@ -25,7 +25,7 @@
     "tech": "-"
   },
   "attack": {
-    "type": "range",
+    "type": "magic",
     "dices": [ "gold", "white", "white" ]
   }
 }
