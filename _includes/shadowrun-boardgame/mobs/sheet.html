@@ -3,8 +3,8 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <div class="row">
-                    <div class="col-xs-2"><span class="fa fa-users"></span> <span id="unit">3</span></div>
-                    <div class="col-xs-6" id="name">Knight Errant</div>
+                    <div class="col-xs-2"><span class="fa fa-users"></span> <span id="unit">-</span></div>
+                    <div class="col-xs-6" id="name">-</div>
                     <div class="col-xs-2"></div>
                 </div>
             </div>
@@ -12,12 +12,11 @@
                 <img src="/shadowrun-boardgame/images/knighterrant.png" alt="Knight Errant">
             </div>
             <div class="panel-body">
-                <div class="col-xs-12 effects">
-                    <div class="col-xs-6 effect"><span class="glyphicon glyphicon-flash"></span>: +1 <i class="fa fa-sun-o"></i></div>
-                    <div class="col-xs-6 effect"><span class="glyphicon glyphicon-flash"></span>: +1 precision</div>
+                <div class="col-xs-12 effects" id="effects">
                 </div>
                 <div class="row">
-                    <div class="col-xs-12" name="description"><b>Squad Training:</b> While attacking, while adjancent to another friendly Knight Errant, you may reroll 1 attack dice.</div>
+                    <div class="col-xs-12" id="descriptions">
+                    </div>
                 </div>
                 <div class="col-xs-12">
                     <hr/>
@@ -25,17 +24,17 @@
                 <div class="col-xs-12 skills row">
                     <div class="col-xs-6 skill">
                         <i class="fa fa-comment" data-toggle="tooltip" data-placement="top" title="Social"></i>:
-                        <span id="social">5</span>
+                        <span id="social">-</span>
                         <span class="glyphicon glyphicon-flash"></span>
                     </div>
                     <div class="col-xs-6 skill">
                         <i class="glyphicon glyphicon-eye-close" data-toggle="tooltip" data-placement="top" title="Stealth"></i>:
-                        <span id="stealth">3</span>
+                        <span id="stealth">-</span>
                         <span class="glyphicon glyphicon-flash"></span>
                     </div>
                     <div class="col-xs-6 skill">
                         <i class="fa fa-medkit" data-toggle="tooltip" data-placement="top" title="Medicine"></i>:
-                        <span id="medicine">1</span>
+                        <span id="medicine"></span>
                         <span class="glyphicon glyphicon-flash"></span>
                     </div>
                     <div class="col-xs-6 skill">
@@ -45,7 +44,7 @@
                     </div>
                     <div class="col-xs-6 skill">
                         <i class="glyphicon glyphicon-eye-open" data-toggle="tooltip" data-placement="top" title="Intuition"></i>:
-                        <span id="intuition">1</span>
+                        <span id="intuition">-</span>
                         <span class="glyphicon glyphicon-flash"></span>
                     </div>
                     <div class="col-xs-6 skill">
@@ -61,9 +60,10 @@
                     <div class="col-xs-4"><span class="glyphicon glyphicon-heart"></span> <span id="health">3</span></div>
                     <div class="col-xs-4"></div>
                     <div class="col-xs-4">
-                        <span class="icon-gun"></span>
-                        <span class="icon-die-dice" style="color:green"></span>
-                        <span class="icon-die-dice" style="color:blue"></span>
+                        <span id="atk-type"></span>
+                        <span class="icon-die-dice" id="atk-dice-2"></span>
+                        <span class="icon-die-dice" id="atk-dice-1"></span>
+                        <span class="icon-die-dice" id="atk-dice-0"></span>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,20 @@
+<html>
+    {% include shadowrun-boardgame/cards/head.html %}
+    <body>
+        <div class="container-fluid">
+            {% include common/navigation-bar.html %}
+            <div class="container-fluid">
+                <div class="container-fluid">
+                    <div class="col-md-2 sidebar">
+                        {% include shadowrun-boardgame/cards/sidebar.html %}
+                    </div>
+                    <div class="col-md-10">
+                        <div class="container-fluid" id="contents">
+                            {% include shadowrun-boardgame/cards/sheet.html %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

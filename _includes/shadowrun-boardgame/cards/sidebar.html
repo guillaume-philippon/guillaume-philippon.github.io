@@ -1,5 +1,5 @@
 <ul class="nav nav-sidebar" id="characters_sidebar">
-    {% for category in site.data.cards %}
+    {% for category in site.data.shadowrun-boardgame.cards %}
     <li><a href="#" onClick="load_category('{{category.name}}')">{{ category.name }}</a></li>
     {% endfor %}
 </ul>

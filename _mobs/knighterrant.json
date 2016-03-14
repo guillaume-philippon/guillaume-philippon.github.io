@@ -1,4 +1,27 @@
 {
   "name": "Knight Errant",
-  "cost": "6/2"
+  "unit": "3",
+  "health": "3",
+  "effects" : [
+    "+1 <span class='fa fa-sun-o'></span>",
+    "+1 precision"
+  ],
+  "descriptions" : [
+    {
+      "name": "Squad Training",
+      "text": "While attacking, while adjancent to another friendly Knight Errant, you may reroll 1 attack dice."
+    }
+  ],
+  "skill": {
+    "social": 5,
+    "medicine": 1,
+    "stealth": 3,
+    "intuition": 1,
+    "strength": "-",
+    "tech": "-"
+  },
+  "attack": {
+    "type": "range",
+    "dices": [ "blue", "green", "white"]
+  }
 }
