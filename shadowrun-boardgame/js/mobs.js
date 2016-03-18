@@ -10,7 +10,9 @@ function load_mobs(name) {
         $('#unit').html(data.unit)
         $('#name').html(data.name)
         $('#health').html(data.health)
-        $('#image').attr("src",data.image)
+        if (image_display) {
+            $('#image').attr("src", data.image)
+        }
 
         effects = ''
         $.each(data.effects, function(idx, effect){
