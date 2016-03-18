@@ -1,6 +1,9 @@
 function swap_image_display() {
     image_display = !image_display
+    load_image_display()
+}
 
+function load_image_display() {
     if (image_display) {
         $('#toggle-image').css('color','blue')
         load_image()
@@ -33,9 +36,7 @@ function getUrlParameter(sParam) {
 
 $(document).ready(function () {
     image_display = getUrlParameter('image_display')
-
-
     /* By default tooltip is disabled */
     $('[data-toggle="tooltip"]').tooltip()
-    swap_image_display()
+    load_image_display()
 })
