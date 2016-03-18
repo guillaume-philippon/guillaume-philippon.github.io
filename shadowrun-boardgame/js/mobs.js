@@ -4,9 +4,15 @@ var type_to_span = {
     "close": '<span class="icon-axe"></span>',
     "magic": '<span class="icon-fire"></span>'
 }
+var current_sheet = {}
+
+function load_image(){
+    $('#image').attr('src', current_sheet.image)
+}
 
 function load_mobs(name) {
     $.getJSON('mobs/' + name + '.json', function(data){
+        current_sheet = data
         $('#unit').html(data.unit)
         $('#name').html(data.name)
         $('#health').html(data.health)

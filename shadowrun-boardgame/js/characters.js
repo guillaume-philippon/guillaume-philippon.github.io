@@ -1,6 +1,11 @@
 var action = '<span class="fa fa-share"></span>'
 var stress = '<span class="fa fa-heartbeat"></span>'
 var dice_disable = 'white'
+var current_sheet = {}
+
+function load_image(){
+    $('#image').attr('src', current_sheet.image)
+}
 //var dice_disable = '#777777'
 /*
   Transform a defense attribute to a dice span
@@ -33,6 +38,7 @@ function equipment_level_populate(equipment, level){
 
 function load_character(name) {
     return $.getJSON('/characters/' + name + '.json', function(data){
+        current_sheet = data
         /* Generic value */
         $('#name').html(data.name)
         $('#class').html(data.class)
