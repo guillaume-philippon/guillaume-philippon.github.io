@@ -4,7 +4,7 @@ function swap_image_display() {
 }
 
 function load_image_display() {
-    if (image_display == "true" ) {
+    if (image_display) {
         $('#toggle-image').css('color','blue')
         load_image()
     } else {
@@ -35,7 +35,7 @@ function getUrlParameter(sParam) {
 };
 
 $(document).ready(function () {
-    image_display = getUrlParameter('image_display')
+    image_display = ( getUrlParameter('image_display') === 'true' )
     /* By default tooltip is disabled */
     $('[data-toggle="tooltip"]').tooltip()
     load_image_display()
