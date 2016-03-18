@@ -4,7 +4,7 @@ function swap_image_display() {
 }
 
 function load_image_display() {
-    if (image_display) {
+    if (image_display == "true" ) {
         $('#toggle-image').css('color','blue')
         load_image()
     } else {
