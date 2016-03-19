@@ -3,8 +3,12 @@ var stress = '<span class="fa fa-heartbeat"></span>'
 var dice_disable = 'white'
 var current_sheet = {}
 
+/*
+    Used to reload image if asked by CSS
+*/
 function load_image(){
     $('#image').attr('src', current_sheet.image)
+    $('#image').css('opacity', 0.95)
 }
 
 /*
@@ -13,17 +17,18 @@ function load_image(){
 function defense_attribute_to_dice(defense_dices) {
   html_display = ''
   $.each(defense_dices, function(idx, dice){
-    html_display += '<span class="glyphicon glyphicon-stop defense-dice" style="color:' + dice + '"></span> '
+    html_display += '<i class="icon-die-dice" style="color:' + dice + '"></i> '
   })
   return html_display
 }
 
 /*
-
+    Hide all dices
 */
 function clean_skill_color(skill) {
     for (i=0; i < 3; i++) {
         $('#'+skill+'-dice-'+i).css('color', dice_disable)
+        $('#'+skill+'-dice-'+i).addClass('hidden-dice')
     }
 }
 
@@ -48,6 +53,9 @@ function load_character(name) {
         if (image_display) {
             $('#image').attr("src", data.image)
         }
+        console.log(data.background_color)
+        $('#contents').css('background-color', data.background_color)
+
 
         /* Attributes */
         $.each(data.attributes, function(attribute, value){
@@ -78,6 +86,7 @@ function load_character(name) {
             clean_skill_color(skill)
             $.each(value, function(k, dice){
                 $('#'+skill+'-dice-'+k).css('color', dice)
+                $('#'+skill+'-dice-'+k).removeClass('hidden-dice')
             })
         })
 

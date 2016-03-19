@@ -2,6 +2,7 @@
   "name": "Kenta Tananka",
   "class": "Face",
   "image": "/shadowrun-boardgame/images/kenta.png",
+  "background_color": "LightCoral",
   "attributes": {
     "health": 10,
     "endurance": 5,

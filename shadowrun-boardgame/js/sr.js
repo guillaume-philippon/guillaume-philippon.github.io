@@ -10,6 +10,7 @@ function load_image_display() {
     } else {
         $('#toggle-image').css('color','black')
         $('#image').attr('src','/shadowrun-boardgame/images/default.jpg')
+        $('#image').css('opacity', 0.2)
     }
 }
 

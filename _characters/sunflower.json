@@ -2,7 +2,7 @@
   "name": "Sun Flower",
   "class": "Fire Mage",
   "image": "/shadowrun-boardgame/images/sunflower.png",
-
+  "background_color": "LightSkyBlue",
   "attributes": {
     "health": 9,
     "endurance": 7,

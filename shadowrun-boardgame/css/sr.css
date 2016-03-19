@@ -1,22 +1,41 @@
-.defense-dice {
-  text-shadow: -1px 0 darkgrey, 0 1px darkgrey, 1px 0 darkgrey, 0 -1px darkgrey;
-}
-
-#contents {
-//    background-color: ForestGreen;
-}
-
-.skill-dice {
-  color: #777777;
+.top-buffer {
+    margin-top:20px;
 }
 
 .name_box {
     font-family: Herculanum;
 }
 
-.logged {
-    display: none;
+.panel {
+    background-color: rgba(256, 256, 256, 0.6);
 }
 
-.anonymous {
+.table {
+    background-color: rgba(256, 256, 256, 0.6);
+}
+
+
+.hidden-dice {
+    opacity: 0;
+}
+
+.thumbnail {
+    background-color: rgba(256, 256, 256, 0.0);
+    border-width: 0px;
+    height: 450px
+}
+
+.name_box {
+    color: white;
+}
+
+#image {
+    width: 100%;
+    height: 100%;
+}
+
+#contents {
+    background-color: black;
+//    opacity: 0.5;
+//    background-image: url('/shadowrun-boardgame/images/background.jpg')
 }
