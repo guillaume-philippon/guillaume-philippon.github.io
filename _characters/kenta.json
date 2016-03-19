@@ -14,12 +14,10 @@
   "skills": {
     "stealth": [ "gold", "blue" ],
     "social": [ "gold", "blue" ],
-    "medicine": [ "gold", "blue" ],
     "strength": [ "red" ],
-    "intuition": [ "gold", "blue" ],
     "tech": [ "blue" ]
   },
-  "bonus": [
+  "flavor": [
     {
       "title": "Ambidexter",
       "action": true,
@@ -33,12 +31,12 @@
       "text": "When you interact with a crate, you draw 2 cards instead of 1"
     }
   ],
-    "expertise": {
-    "gun": 5,
-    "snipe": 0,
-    "heavy-weapon": 0,
-    "matrice": 3,
-    "magic": 3
+    "proficiencies": {
+    "range": 1,
+    "melee": 0,
+    "medicine": 2,
+    "matrice": 1,
+    "magic": 0
   }
 
 }

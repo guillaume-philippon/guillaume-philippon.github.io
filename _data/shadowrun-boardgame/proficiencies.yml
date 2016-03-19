@@ -1,0 +1,17 @@
+maximum: 5
+list:
+  - name: Range Weapon
+    alias: range
+    icon: icon-gun
+  - name: Melee
+    alias: melee
+    icon: icon-axe
+  - name: Medicine
+    alias: medicine
+    icon: fa fa-medkit
+  - name: Matrice
+    alias: matrice
+    icon: fa fa-code
+  - name: Magic
+    alias: magic
+    icon: icon-fire

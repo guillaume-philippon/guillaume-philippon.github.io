@@ -24,5 +24,8 @@
   "attack": {
     "type": "range",
     "dices": [ "blue", "green", "white"]
-  }
+  },
+  "defense": [
+    "black"
+  ]
 }

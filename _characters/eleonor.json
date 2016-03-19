@@ -19,7 +19,7 @@
     "intuition": [ "red" ],
     "tech": [ "green" ]
   },
-  "bonus": [
+  "flavor": [
     {
       "title": "Sexy Limb",
       "action": true,
@@ -39,10 +39,10 @@
       "text": "You are not restricted to two weapon."
     }
   ],
-  "expertise": {
-    "gun": 3,
-    "snipe": 1,
-    "heavy-weapon": 1,
+  "proficiencies": {
+    "range": 3,
+    "melee": 1,
+    "medicine": 1,
     "matrice": 0,
     "magic": 0
   }

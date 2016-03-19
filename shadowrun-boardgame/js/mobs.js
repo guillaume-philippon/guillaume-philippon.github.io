@@ -46,6 +46,10 @@ function load_mobs(name) {
         $.each(data.attack.dices, function(idx, dice){
             $('#atk-dice-'+idx).css('color', dice)
         })
+
+        $.each(data.defense, function(idx, dice){
+            $('#def-dice-'+idx).css('color', dice)
+        })
     })
 }
 

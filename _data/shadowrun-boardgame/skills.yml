@@ -1,0 +1,14 @@
+maximum: 3
+list:
+  - name: Social
+    alias: social
+    icon: fa fa-comment
+  - name: Stealth
+    alias: stealth
+    icon: glyphicon glyphicon-eye-close
+  - name: Strength
+    alias: strength
+    icon: fa fa-hand-rock-o fa-rotate-90
+  - name: Tech
+    alias: tech
+    icon: glyphicon glyphicon-wrench

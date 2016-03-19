@@ -28,5 +28,9 @@
   "attack": {
     "type": "magic",
     "dices": [ "gold", "white", "white" ]
-  }
+  },
+  "defense": [
+    "ivory",
+    "black"
+  ]
 }

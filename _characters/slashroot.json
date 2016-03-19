@@ -14,12 +14,10 @@
   "skills": {
     "stealth": [ "red" ],
     "social": [ "green", "blue" ],
-    "medicine": [ "blue" ],
     "strength": [ "blue" ],
-    "intuition": [ "blue", "green" ],
     "tech": [ "gold", "green" ]
   },
-  "bonus": [
+  "flavor": [
     {
       "title": "Hacker",
       "action": true,
@@ -33,10 +31,10 @@
       "text": "You gain one more <span class=\"icon-network\"></span> slot in your inventory."
     }
   ],
-  "expertise": {
+  "proficiencies": {
     "gun": 2,
-    "snipe": 1,
-    "heavy-weapon": 0,
+    "medicine": 1,
+    "melee": 0,
     "matrice": 5,
     "magic": 0
   }

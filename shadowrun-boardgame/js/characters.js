@@ -6,7 +6,7 @@ var current_sheet = {}
 function load_image(){
     $('#image').attr('src', current_sheet.image)
 }
-//var dice_disable = '#777777'
+
 /*
   Transform a defense attribute to a dice span
 */
@@ -18,6 +18,9 @@ function defense_attribute_to_dice(defense_dices) {
   return html_display
 }
 
+/*
+
+*/
 function clean_skill_color(skill) {
     for (i=0; i < 3; i++) {
         $('#'+skill+'-dice-'+i).css('color', dice_disable)
@@ -58,7 +61,7 @@ function load_character(name) {
 
         /* Bonus */
         bonus_text = ''
-        $.each(data.bonus, function(bonus_name, value){
+        $.each(data.flavor, function(flavor, value){
             bonus_text += '<center><b>' + value.title + '</b></center>'
             if (value.action) {
                 bonus_text += action
@@ -68,7 +71,7 @@ function load_character(name) {
             }
             bonus_text += '<p>' + value.text + '</p>'
         })
-        $('#bonus-box').html(bonus_text)
+        $('#flavor-box').html(bonus_text)
 
         /* Skills */
         $.each(data.skills, function(skill, value){
@@ -79,8 +82,8 @@ function load_character(name) {
         })
 
         /* Equipment */
-        $.each(data.expertise, function(equipment, level){
-            equipment_level_populate(equipment, level)
+        $.each(data.proficiencies, function(proficiency, level){
+            equipment_level_populate(proficiency, level)
         })
     })
 }

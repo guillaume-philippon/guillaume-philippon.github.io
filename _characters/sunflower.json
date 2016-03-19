@@ -2,6 +2,7 @@
   "name": "Sun Flower",
   "class": "Fire Mage",
   "image": "/shadowrun-boardgame/images/sunflower.png",
+
   "attributes": {
     "health": 9,
     "endurance": 7,
@@ -14,12 +15,10 @@
   "skills": {
     "stealth": [ "blue" ],
     "social": [ "gold", "blue" ],
-    "medicine": [ "blue" ],
     "strength": [ "gold", "blue" ],
-    "intuition": [ "gold", "blue" ],
     "tech": [ "blue" ]
   },
-  "bonus": [
+  "flavor": [
     {
       "title": "Spellcaster",
       "action": false,
@@ -33,10 +32,10 @@
       "text": "You gain one more <span class=\"icon-fire\"></span> slot in your inventory"
     }
   ],
-    "expertise": {
-    "gun": 2,
-    "snipe": 0,
-    "heavy-weapon": 0,
+    "proficiencies": {
+    "range": 2,
+    "medicine": 0,
+    "melee": 0,
     "matrice": 1,
     "magic": 5
   }
