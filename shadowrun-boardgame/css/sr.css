@@ -19,23 +19,9 @@
     opacity: 0;
 }
 
-.thumbnail {
-    background-color: rgba(256, 256, 256, 0.0);
-    border-width: 0px;
-    height: 450px
-}
-
 .name_box {
     color: white;
 }
 
-#image {
-    width: 100%;
-    height: 100%;
-}
-
 #contents {
-    background-color: black;
-//    opacity: 0.5;
-//    background-image: url('/shadowrun-boardgame/images/background.jpg')
 }

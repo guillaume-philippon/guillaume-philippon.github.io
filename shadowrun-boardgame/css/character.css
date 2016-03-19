@@ -1,0 +1,12 @@
+
+#image {
+    width: 100%;
+    height: 100%;
+}
+
+
+.thumbnail {
+    background-color: rgba(256, 256, 256, 0.0);
+    border-width: 0px;
+    height: 450px
+}
