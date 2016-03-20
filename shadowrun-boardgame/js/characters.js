@@ -76,10 +76,10 @@ function load_character(name) {
                 $('#'+skill+'-dice-'+k).css('color', dice)
                 $('#'+skill+'-dice-'+k).removeClass('hidden-dice')
                 i++
-                for (i; i < 3; i++) {
-                    $('#'+skill+'-dice-'+i).addClass('hidden-dice')
-                }
             })
+            for (i; i < 3; i++) {
+                $('#'+skill+'-dice-'+i).addClass('hidden-dice')
+            }
         })
 
         /* Equipment */

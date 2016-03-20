@@ -6,7 +6,7 @@
             <div>
                 <i class="{{ skill.icon }}" data-toggle="tooltip" data-placement="top" title="{{ skill.name }}"></i>
                 {% for i in (1..site.data.shadowrun-boardgame.skills.maximum) %}
-                    <i class="icon-die-dice skill-dice" id="{{ skill.alias }}-dice-{{ i | minus: 1 }}"></i>{% endfor %}
+                    <i class="icon-die-dice skill-dice hidden-dice" id="{{ skill.alias }}-dice-{{ i | minus: 1 }}"></i>{% endfor %}
             </div>
             {% endfor %}
         </div>

@@ -15,8 +15,9 @@
   "skills": {
     "stealth": [ "red" ],
     "social": [ "green", "blue" ],
-    "strength": [ "blue" ],
-    "tech": [ "gold", "green" ]
+    "athletism": [ "blue" ],
+    "tech": [ "gold", "green" ],
+    "demolition": [ "red" ]
   },
   "flavor": [
     {
