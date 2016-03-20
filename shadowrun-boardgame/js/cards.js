@@ -8,11 +8,15 @@ function load_cards() {
 }
 
 function load_image(){
+    // $('#image').attr('src', current_sheet.image)
 }
 
 function load_card(location, idx){
     return $.getJSON(location, function(card){
         $('#card-'+idx+' .title').html(card.name)
+        if (image_display) {
+            $('#image-'+idx).attr('src', card.image)
+        }
         $('#card-'+idx).css('background-color', card.background_color)
         load_proficiency(idx, card.proficiency)
         load_effects(idx, card.effects)

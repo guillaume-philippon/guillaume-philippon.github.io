@@ -1,6 +1,7 @@
 {
-  "category": "magic",
+  "category": "range",
   "name": "Ares Predator",
+  "image": "/shadowrun-boardgame/images/cards/arespredator.jpg",
   "background_color": "DimGray",
   "proficiency": 0,
   "description": "The most popular heavy gun in shadows.",
