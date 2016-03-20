@@ -2,6 +2,7 @@
   "name": "Knight Errant",
   "unit": "3",
   "health": "3",
+  "background_color": "DimGray",
   "image": "/shadowrun-boardgame/images/knighterrant.png",
   "effects" : [
     "+1 <span class='fa fa-sun-o'></span>",

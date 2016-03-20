@@ -6,6 +6,7 @@ function load_image(){
 
 function load_mobs(name) {
     $.getJSON('mobs/' + name + '.json', function(data){
+        $('#sheet').css('background-color', data.background_color)
         current_sheet = data
         $('#unit').html(data.unit)
         $('#name').html(data.name)
@@ -16,7 +17,7 @@ function load_mobs(name) {
 
         effects = ''
         $.each(data.effects, function(idx, effect){
-            effects += '<div class="col-xs-6 effect">' + surge + effect + '</div>'
+            effects += '<div class="col-xs-6 effect">' + surge + ': ' + effect + '</div>'
         })
         $('#effects').html(effects)
 
