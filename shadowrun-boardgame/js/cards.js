@@ -1,21 +1,34 @@
 var cards = {}
+var cards_show = cards
 var idx_cards = 0 // Index of the first card you want display
 
 function load_cards() {
     return $.getJSON("/cards/all.json", function(data){
         cards = data
+        cards_show = cards
     })
 }
 
 function display_cards(idx_cards)  {
     i = 0
-    $(cards).slice(idx_cards).each(function(idx, card){
+    $(cards_show).slice(idx_cards).each(function(idx, card){
         i++
         load_card(card.location, idx)
     })
     for (i; i < 3; i++) {
         $('#card-' + i).hide()
     }
+}
+
+function filter_cards(category) {
+    if (category === 'all') {
+        cards_show = cards
+    } else {
+        cards_show = $.grep(cards, function(card){
+            return card.category === category;
+        })
+    }
+    display_cards(0)
 }
 
 function load_image(){
@@ -59,6 +72,9 @@ function load_dices(idx, dices) {
         $('#dice-' + idx + '-' + idx_dice).removeClass('hidden-dice')
         i++
     })
+    for (i; i < 3; i++) {
+        $('#dice-' + idx + '-' + i).addClass('hidden-dice')
+    }
 }
 
 function load_proficiency(idx_card, level){

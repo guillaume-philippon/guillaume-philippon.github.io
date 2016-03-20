@@ -6,7 +6,9 @@ var type_to_span = {
     "range": '<span class="icon-gun"></span>',
     "close": '<span class="icon-axe"></span>',
     "magic": '<span class="icon-fire"></span>',
-    "cyberware": '<i class="icon-science-atom"></i>'
+    "cyberware": '<i class="icon-science-atom"></i>',
+    "social": '<i class="fa fa-comments"></i>',
+    "medicine": "<i class='fa fa-medkit'></i>"
 }
 
 function swap_image_display() {

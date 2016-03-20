@@ -3,7 +3,7 @@ list:
   - name: Range Weapon
     alias: range
     icon: icon-gun
-  - name: Melee
+  - name: Melee Weapon
     alias: melee
     icon: icon-axe
   - name: Medicine

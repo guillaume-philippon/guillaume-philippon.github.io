@@ -4,11 +4,19 @@
         <div class="container-fluid">
             {% include common/navigation-bar.html %}
             <div class="container-fluid">
+                <!--<div class="col-md-12">-->
+                    <!--<nav>-->
+                          <!--<ul class="pager">-->
+                            <!--<li class="previous"><a href="#" onClick="previous()"><span aria-hidden="true">&larr;</span></a></li>-->
+                            <!--<li class="next"><a href="#"  onClick="next()"><span aria-hidden="true">&rarr;</span></a></li>-->
+                          <!--</ul>-->
+                    <!--</nav>-->
+                <!--</div>-->
                 <div class="container-fluid">
-                    <!--<div class="col-md-2 sidebar">-->
-                        <!--{% include shadowrun-boardgame/cards/sidebar.html %}-->
-                    <!--</div>-->
-                    <div class="col-md-12">
+                    <div class="col-md-2 sidebar">
+                        {% include shadowrun-boardgame/cards/sidebar.html %}
+                    </div>
+                    <div class="col-md-10">
                         <nav>
                               <ul class="pager">
                                 <li class="previous"><a href="#" onClick="previous()"><span aria-hidden="true">&larr;</span></a></li>

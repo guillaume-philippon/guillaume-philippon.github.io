@@ -1,0 +1,10 @@
+{
+  "category": "medicine",
+  "name": "Medkit",
+  "image": "/shadowrun-boardgame/images/cards/medkit.gif",
+  "background_color": "LightCoral",
+  "proficiency": 0,
+  "description": "<i class='fa fa-share'></i>: You or a adjacent hero can immediatly spent 1 <i class='fa fa-heartbeat'></i> to recover 2 <i class='fa fa-sun-o'></i>",
+  "dices" : [ ],
+  "effects" : [ ]
+}

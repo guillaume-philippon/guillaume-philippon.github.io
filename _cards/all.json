@@ -1,18 +1,33 @@
 [
   {
     "name": "Fireball",
-    "location": "/cards/magic/fireball.json"
+    "location": "/cards/magic/fireball.json",
+    "category": "magic"
   },
   {
     "name": "Smartgun",
-    "location": "/cards/cyberware/smartgun.json"
+    "location": "/cards/cyberware/smartgun.json",
+    "category": "cyberware"
   },
   {
     "name": "Ares Predator",
-    "location": "/cards/weapons/arespredator.json"
+    "location": "/cards/range/arespredator.json",
+    "category": "range"
   },
   {
     "name": "Defiance T-250",
-    "location": "/cards/weapons/defiance-t-250.json"
+    "location": "/cards/range/defiance-t-250.json",
+    "category": "range"
+  },
+  {
+    "name": "Katana",
+    "location": "/cards/melee/katana.json",
+    "category": "melee"
+  },
+  {
+    "name": "Medkit",
+    "location": "/cards/medicine/medkit.json",
+    "category": "medicine"
   }
+
 ]
