@@ -3,9 +3,9 @@
   "name": "Defiance T-250",
   "image": "/shadowrun-boardgame/images/cards/defiance-t-250.jpg",
   "background_color": "DimGray",
-  "proficiency": 0,
+  "proficiency": 2,
   "description": "",
-  "dices" : [ "blue", "green" ],
+  "dices" : [ "blue", "red" ],
   "effects" : [
     {
       "surge": 1,
