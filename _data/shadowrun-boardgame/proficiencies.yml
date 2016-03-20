@@ -15,3 +15,6 @@ list:
   - name: Magic
     alias: magic
     icon: icon-fire
+  - name: Cyberware
+    alias: cyberware
+    icon: icon-science-atom

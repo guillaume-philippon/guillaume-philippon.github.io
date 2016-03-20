@@ -3,12 +3,18 @@
     <body>
         <div class="container-fluid">
             {% include common/navigation-bar.html %}
-            <div class="container">
-                <div class="container">
-                    <div class="col-md-2 sidebar">
-                        {% include shadowrun-boardgame/cards/sidebar.html %}
-                    </div>
-                    <div class="col-md-10">
+            <div class="container-fluid">
+                <div class="container-fluid">
+                    <!--<div class="col-md-2 sidebar">-->
+                        <!--{% include shadowrun-boardgame/cards/sidebar.html %}-->
+                    <!--</div>-->
+                    <div class="col-md-12">
+                        <nav>
+                              <ul class="pager">
+                                <li class="previous"><a href="#"><span aria-hidden="true">&larr;</span></a></li>
+                                <li class="next"><a href="#"><span aria-hidden="true">&rarr;</span></a></li>
+                              </ul>
+                        </nav>
                         <div class="container" id="contents">
                             {% include shadowrun-boardgame/cards/sheets.html %}
                         </div>
