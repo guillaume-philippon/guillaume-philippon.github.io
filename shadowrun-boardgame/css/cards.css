@@ -32,3 +32,8 @@
     background-color: rgba(256, 256, 256, 0);
 }
 
+.thumbnail {
+    background-color: rgba(256, 256, 256, 0);
+    border-width: 0px
+}
+
