@@ -61,6 +61,7 @@ function load_card(location, idx){
         $('#description-' + idx).html(card.description)
         $('#type-' + idx).html(type_to_span[card.category])
         load_dices(idx, card.dices)
+        $('#cost-' + idx).html('<i class="fa fa-jpy"></i> ' + card.cost)
         $('#card-'+idx).show()
     })
 }

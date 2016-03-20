@@ -2,6 +2,7 @@
   "category": "melee",
   "name": "Katana",
   "image": "/shadowrun-boardgame/images/cards/katana.jpg",
+  "cost": 100,
   "background_color": "DimGray",
   "proficiency": 0,
   "description": "The most popular heavy gun in shadows.",

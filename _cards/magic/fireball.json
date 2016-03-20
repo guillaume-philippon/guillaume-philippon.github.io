@@ -2,6 +2,7 @@
   "category": "magic",
   "name": "Fireball",
   "proficiency": 0,
+  "cost": 0,
   "background_color": "LightSkyBlue",
   "image": "/shadowrun-boardgame/images/cards/fireball.jpg",
   "description": "Fire were the first step for humanity, Fireball is for mage.",

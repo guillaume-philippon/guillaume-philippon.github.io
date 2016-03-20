@@ -1,6 +1,7 @@
 {
   "category": "range",
   "name": "Defiance T-250",
+  "cost": 100,
   "image": "/shadowrun-boardgame/images/cards/defiance-t-250.jpg",
   "background_color": "DimGray",
   "proficiency": 2,
