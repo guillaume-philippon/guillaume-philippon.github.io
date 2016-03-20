@@ -28,6 +28,11 @@
     "name": "Medkit",
     "location": "/cards/medicine/medkit.json",
     "category": "medicine"
+  },
+  {
+    "name": "Grenade",
+    "location": "/cards/range/grenade.json",
+    "category": "range"
   }
 
 ]

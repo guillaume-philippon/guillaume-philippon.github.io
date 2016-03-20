@@ -1,0 +1,11 @@
+{
+  "category": "range",
+  "name": "Grenade",
+  "cost": 0,
+  "image": "/shadowrun-boardgame/images/cards/grenade.jpg",
+  "background_color": "DimGray",
+  "proficiency": 0,
+  "description": "<i class='fa fa-share'></i>: Exploit this card to choose a case within 3 spaces, then make a 2 <span class='icon-bomb'></span> test. Each figurine on or adjacent to that space take damages.",
+  "dices" : [ "red" ],
+  "effects" : []
+}
