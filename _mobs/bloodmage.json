@@ -2,7 +2,7 @@
   "name": "Blood Mage",
   "unit": "1",
   "health": "8",
-  "image": "/shadowrun-boardgame/images/300x200.png",
+  "image": "/shadowrun-boardgame/images/mobs/bloodmage.jpg",
   "background_color": "LightSkyBlue",
   "effects" : [
     "+3 <span class='fa fa-sun-o'></span>",

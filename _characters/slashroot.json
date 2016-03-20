@@ -1,7 +1,7 @@
 {
   "name": "Slashroot",
   "class": "Decker",
-  "image": "/shadowrun-boardgame/images/slashroot.png",
+  "image": "/shadowrun-boardgame/images/characters/slashroot.png",
   "background_color": "DarkSeaGreen",
   "attributes": {
     "health": 12,

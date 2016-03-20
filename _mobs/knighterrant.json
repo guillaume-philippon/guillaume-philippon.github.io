@@ -3,7 +3,7 @@
   "unit": "3",
   "health": "3",
   "background_color": "DimGray",
-  "image": "/shadowrun-boardgame/images/knighterrant.png",
+  "image": "/shadowrun-boardgame/images/mobs/knighterrant.png",
   "effects" : [
     "+1 <span class='fa fa-sun-o'></span>",
     "+1 precision"
