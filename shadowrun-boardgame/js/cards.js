@@ -92,12 +92,12 @@ function load_proficiency(idx_card, level){
 function load_effects(idx_card, effects) {
     handler = ''
     $.each(effects,function (idx, effect){
-        handler += '<li class="list-group-item effect">'
+        handler += '<div class="col-sm-6 effect">'
         if (effect.surge > 0 ) {
             handler += effect.surge + ' ' + surge + ': '
         }
         handler += effect.description
-        handler += '</li>'
+        handler += '</div>'
     })
     $('#effects-'+idx_card).html(handler)
 }

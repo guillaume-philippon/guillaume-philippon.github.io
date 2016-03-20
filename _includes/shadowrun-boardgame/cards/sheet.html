@@ -15,12 +15,12 @@
                     <img src="/shadowrun-boardgame/images/default.jpg" alt="Lorem Ipsum" id="image-{{ idx }}"  style="height:100%">
                 </div>
 
-                <ul class="effects col-xs-12 list-group" id="effects-{{ idx }}">
+                <div class="effects col-xs-12 panel highlight" id="effects-{{ idx }}">
                     <!--<div class="panel-body" id="effects-{{ idx }}"></div>-->
-                </ul>
+                </div>
 
 
-                <div class="panel panel-default description col-xs-12" id="description-{{ idx }}"  style="height:100px">
+                <div class="panel panel-default description col-xs-12  highlight" id="description-{{ idx }}"  style="height:100px">
                     <div class="panel-body">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                     labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -29,11 +29,11 @@
                 </div>
 
 
-                <div class="footer col-xs-12">
+                <div class="footer panel col-xs-12  highlight">
                     <!--<div class="panel-body">-->
                         <div class="col-xs-8">
                         </div>
-                        <div class="col-xs-4 dices panel">
+                        <div class="col-xs-4 dices">
 
                             {% for dice in (0..2) %}
                                 <i class="icon-die-dice hidden-dice" id="dice-{{ idx }}-{{ dice }}"></i>

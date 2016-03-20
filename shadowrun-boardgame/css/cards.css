@@ -2,10 +2,6 @@
     margin-top:20px;
 }
 
-.effect {
-    background-color: rgba(256, 256, 256, 0.6);
-}
-
 .title {
     font-weight: bold;
     color: white;
@@ -19,21 +15,8 @@
     font-weight: bold;
     color: white;
 }
-
-.description {
-    background-color: rgba(256, 256, 256, 0.6);
-}
-
 .dices {
-    background-color: rgba(256, 256, 256, 0.6);
     margin-bottom: 0px;
-}
-
-.effects {
-}
-
-.footer {
-    background-color: rgba(256, 256, 256, 0);
 }
 
 .thumbnail {

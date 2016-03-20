@@ -28,10 +28,10 @@
   },
   "attack": {
     "type": "magic",
-    "dices": [ "gold", "white", "white" ]
+    "dices": [ "gold" ]
   },
-  "defense": [
-    "ivory",
-    "black"
-  ]
+  "defense": {
+    "magical": [ "white" ],
+    "physical": [ "white" ]
+  }
 }

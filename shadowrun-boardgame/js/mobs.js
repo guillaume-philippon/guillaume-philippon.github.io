@@ -4,6 +4,19 @@ function load_image(){
     $('#image').attr('src', current_sheet.image)
 }
 
+function load_dices(dices, nb_of_dices, destination) {
+    i = 0;
+    $.each(dices, function(idx, dice){
+        $(destination + idx).css('color', dice)
+        $(destination + idx).removeClass('hidden-dice')
+        i++
+    })
+    for (i; i < nb_of_dices; i++) {
+        $(destination + i).addClass('hidden-dice')
+    }
+
+}
+
 function load_mobs(name) {
     $.getJSON('mobs/' + name + '.json', function(data){
         $('#sheet').css('background-color', data.background_color)
@@ -38,13 +51,16 @@ function load_mobs(name) {
         $('#tech').html(data.skill.tech)
 
         $('#atk-type').html(type_to_span[data.attack.type])
-        $.each(data.attack.dices, function(idx, dice){
-            $('#atk-dice-'+idx).css('color', dice)
-        })
-
-        $.each(data.defense, function(idx, dice){
-            $('#def-dice-'+idx).css('color', dice)
-        })
+        load_dices(data.attack.dices, 3, '#atk-dice-')
+        load_dices(data.defense.magical, 2, '#def-magic-dice-')
+        load_dices(data.defense.physical, 2, '#def-physic-dice-')
+//        $.each(data.attack.dices, function(idx, dice){
+//            $('#atk-dice-'+idx).css('color', dice)
+//        })
+//
+//        $.each(data.defense, function(idx, dice){
+//            $('#def-dice-'+idx).css('color', dice)
+//        })
     })
 }
 

@@ -24,9 +24,10 @@
   },
   "attack": {
     "type": "range",
-    "dices": [ "blue", "green", "white"]
+    "dices": [ "blue", "green"]
   },
-  "defense": [
-    "black"
-  ]
+  "defense": {
+    "magical": [ "black" ],
+    "physical": [ "black" ]
+  }
 }
