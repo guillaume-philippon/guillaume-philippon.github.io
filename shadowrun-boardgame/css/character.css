@@ -10,3 +10,19 @@
     border-width: 0px;
     height: 450px
 }
+
+.top-buffer {
+    margin-top:20px;
+}
+
+.name_box {
+    font-family: Herculanum;
+}
+
+.panel {
+    background-color: rgba(256, 256, 256, 0.6);
+}
+
+.table {
+    background-color: rgba(256, 256, 256, 0.6);
+}

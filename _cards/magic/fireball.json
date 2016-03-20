@@ -1,12 +1,18 @@
 {
   "category": "magic",
   "name": "Fireball",
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  "proficiency": 2,
+  "background_color": "LightSkyBlue",
+  "description": "Fire were the first step for humanity, Fireball is for mage.",
   "dices" : [ "blue", "green" ],
   "effects" : [
     {
-      "surge": 0,
-      "description": "Lorem ipsum"
+      "surge": 1,
+      "description": "+2 <span class='fa fa-sun-o'></span>"
+    },
+    {
+      "surge": 1,
+      "description": "1 <span class='fa fa-sun-o'></span> blast"
     }
   ]
 }

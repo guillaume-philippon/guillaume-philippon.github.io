@@ -1,4 +1,3 @@
-var surge='<span class="glyphicon glyphicon-flash"></span>: '
 var type_to_span = {
     "range": '<span class="icon-gun"></span>',
     "close": '<span class="icon-axe"></span>',

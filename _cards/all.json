@@ -1,0 +1,10 @@
+[
+  {
+    "name": "Fireball",
+    "location": "/cards/magic/fireball.json"
+  },
+  {
+    "name": "Ares Predator",
+    "location": "/cards/weapons/arespredator.json"
+  }
+]

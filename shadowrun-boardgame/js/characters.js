@@ -1,5 +1,3 @@
-var action = '<span class="fa fa-share"></span>'
-var stress = '<span class="fa fa-heartbeat"></span>'
 var dice_disable = 'white'
 var current_sheet = {}
 

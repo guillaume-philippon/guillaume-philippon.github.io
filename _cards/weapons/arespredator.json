@@ -1,0 +1,14 @@
+{
+  "category": "magic",
+  "name": "Ares Predator",
+  "background_color": "DimGray",
+  "proficiency": 0,
+  "description": "The most popular heavy gun in shadows.",
+  "dices" : [ "blue", "green" ],
+  "effects" : [
+    {
+      "surge": 1,
+      "description": "+1 precision"
+    }
+  ]
+}

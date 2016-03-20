@@ -1,3 +1,46 @@
-<div class="row" id="cards">
+{% for idx in (0..10) %}
+<div class="col-xs-3">
+    <div class="panel panel-default card-sheet" id="card-{{ idx }}" style="display:none">
+        <div class="panel-body">
 
+            <div id="title-{{ idx }}" class="title col-xs-6">Lorem Ipsum</div>
+            <div class="row col-xs-6">
+                {% for proficiency in (0..4) %}
+                    <i class="fa fa-circle-thin proficiency" id="proficiency-{{ idx }}-{{ proficiency }}"></i>
+                {% endfor %}
+            </div>
+
+            <div class="thumbnail col-xs-12">
+                <img src="/shadowrun-boardgame/images/default.jpg" alt="Lorem Ipsum">
+            </div>
+
+            <ul class="effects col-xs-12 list-group" id="effects-{{ idx }}">
+                <!--<div class="panel-body" id="effects-{{ idx }}"></div>-->
+            </ul>
+
+
+            <div class="panel panel-default description col-xs-12" id="description-{{ idx }}">
+                <div class="panel-body">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat.
+                </div>
+            </div>
+
+
+            <div class="footer col-xs-12">
+                <!--<div class="panel-body">-->
+                    <div class="col-xs-7">
+                    </div>
+                    <div class="col-xs-5" class="dices">
+                        {% for dice in (0..2) %}
+                            <i class="icon-die-dice hidden-dice" id="dice-{{ idx }}-{{ dice }}"></i>
+                        {% endfor %}
+                    </div>
+                <!--</div>-->
+            </div>
+
+        </div>
+    </div>
 </div>
+{% endfor %}

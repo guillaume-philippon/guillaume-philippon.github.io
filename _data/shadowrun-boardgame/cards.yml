@@ -1,4 +1,4 @@
-- name: Magic
-- name: Weapon
-- name: Backpack
-- name: Armor
+- name: Fireball
+  location: /shadowrun-boardgame/cards/magic/fireball.json
+- name: Ares Predator
+  location: /shadowrun-boardgame/cards/weapons/arespredator.json

@@ -1,0 +1,29 @@
+.top-buffer {
+    margin-top:20px;
+}
+
+.effect {
+    background-color: rgba(256, 256, 256, 0.6);
+}
+
+.title {
+    font-weight: bold;
+    color: white;
+}
+
+.proficiency {
+    font-weight: bold;
+    color: white;
+}
+
+.description {
+    background-color: rgba(256, 256, 256, 0.6);
+}
+
+.effects {
+}
+
+.footer {
+    background-color: rgba(256, 256, 256, 0);
+}
+

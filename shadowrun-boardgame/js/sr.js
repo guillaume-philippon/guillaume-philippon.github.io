@@ -1,3 +1,7 @@
+var action = '<span class="fa fa-share"></span>'
+var stress = '<span class="fa fa-heartbeat"></span>'
+var surge = '<span class="glyphicon glyphicon-flash"></span>: '
+
 function swap_image_display() {
     image_display = !image_display
     load_image_display()
