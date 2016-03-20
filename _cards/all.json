@@ -4,6 +4,10 @@
     "location": "/cards/magic/fireball.json"
   },
   {
+    "name": "Smartgun",
+    "location": "/cards/cyberware/smartgun.json"
+  },
+  {
     "name": "Ares Predator",
     "location": "/cards/weapons/arespredator.json"
   },

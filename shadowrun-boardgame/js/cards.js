@@ -7,9 +7,35 @@ function load_cards() {
     })
 }
 
-function load_image(){
-    // $('#image').attr('src', current_sheet.image)
+function display_cards(idx_cards)  {
+    i = 0
+    $(cards).slice(idx_cards).each(function(idx, card){
+        console.log('load_card ' + card.location)
+        i++
+        load_card(card.location, idx)
+    })
+    for (i; i < 3; i++) {
+        $('#card-' + i).hide()
+    }
 }
+
+function load_image(){
+}
+
+function next() {
+    if (idx_cards < cards.length - 3) {
+        idx_cards = idx_cards + 3
+        display_cards(idx_cards)
+    }
+}
+
+function previous() {
+    if (idx_cards > 2) {
+        idx_cards = idx_cards - 3
+        display_cards(idx_cards)
+    }
+}
+
 
 function load_card(location, idx){
     return $.getJSON(location, function(card){
@@ -62,11 +88,7 @@ function load_effects(idx_card, effects) {
 }
 
 $(document).ready(function (){
-    load_cards().then(
-        function(){
-            console.log(cards)
-            $(cards).slice(idx_cards).each(function(idx, card){
-                load_card(card.location, idx)
-            })
-        })
+    load_cards().then(function () {
+        display_cards(0)
+    })
 })

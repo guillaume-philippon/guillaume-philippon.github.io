@@ -1,0 +1,10 @@
+{
+  "category": "cyberware",
+  "name": "Smartgun",
+  "proficiency": 1,
+  "background_color": "DimGray",
+  "image": "/shadowrun-boardgame/images/cards/smartgun.jpg",
+  "description": "While attacking, you can reroll one dice.",
+  "dices" : [ ],
+  "effects" : [ ]
+}
