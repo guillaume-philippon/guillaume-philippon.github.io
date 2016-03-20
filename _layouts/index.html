@@ -1,10 +1,96 @@
 <html>
-    <head>
-        {% include common/head.html %}
-    </head>
+    {% include shadowrun-boardgame/character/head.html %}
     <body>
         <div class="container-fluid">
             {% include common/navigation-bar.html %}
+            <div class="container-fluid">
+                <div class="panel col-sm-2">
+                    <table class="table">
+                        <caption><center>Proficiencies</center></caption>
+                        <thead>
+                            <tr>
+                                <td>Icon</td>
+                                <td>Description</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for proficiency in site.data.shadowrun-boardgame.proficiencies.list %}
+                            <tr>
+                                <td><i class="{{ proficiency.icon }}"></i></td>
+                                <td>{{ proficiency.name }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="panel col-sm-2">
+                    <table class="table">
+                        <caption><center>Skills</center></caption>
+                        <thead>
+                            <tr>
+                                <td>Icon</td>
+                                <td>Description</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for skill in site.data.shadowrun-boardgame.skills.list %}
+                            <tr>
+                                <td><i class="{{ skill.icon }}"></i></td>
+                                <td>{{ skill.name }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="panel col-sm-2">
+                    <table class="table">
+                        <caption><center>Attributes</center></caption>
+                        <thead>
+                            <tr>
+                                <td>Icon</td>
+                                <td>Description</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for skill in site.data.shadowrun-boardgame.attributes.list %}
+                            <tr>
+                                <td><i class="{{ skill.icon }}"></i></td>
+                                <td>{{ skill.name }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="panel col-sm-2">
+                    <table class="table">
+                        <caption><center>Misc.</center></caption>
+                        <thead>
+                            <tr>
+                                <td>Icon</td>
+                                <td>Description</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><i class="glyphicon glyphicon-flash"></i></td>
+                                <td>Surge</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa fa-share"></i></td>
+                                <td>Action</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa fa-sun-o"></i></td>
+                                <td>Hit</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa fa-heartbeat"></i></td>
+                                <td>Stress</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </body>
 </html>

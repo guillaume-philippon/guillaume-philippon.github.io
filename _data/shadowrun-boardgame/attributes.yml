@@ -1,0 +1,13 @@
+list:
+  - name: Health
+    alias: health
+    icon: glyphicon glyphicon-heart
+  - name: Edurance
+    alias: endurance
+    icon: fa fa-heartbeat
+  - name: Speed
+    alias: speed
+    icon: fa fa-tachometer
+  - name: Defense
+    alias: defense
+    icon: fa fa-shield
