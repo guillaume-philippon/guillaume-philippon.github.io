@@ -2,6 +2,13 @@ var action = '<span class="fa fa-share"></span>'
 var stress = '<span class="fa fa-heartbeat"></span>'
 var surge = '<span class="glyphicon glyphicon-flash"></span>'
 
+var type_to_span = {
+    "range": '<span class="icon-gun"></span>',
+    "close": '<span class="icon-axe"></span>',
+    "magic": '<span class="icon-fire"></span>',
+    "cyberware": '<i class="icon-science-atom"></i>'
+}
+
 function swap_image_display() {
     image_display = !image_display
     load_image_display()

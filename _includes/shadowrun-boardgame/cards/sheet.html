@@ -5,6 +5,7 @@
 
                 <div id="title-{{ idx }}" class="title col-xs-6">Lorem Ipsum</div>
                 <div class="row col-xs-6">
+                    <i id="type-{{ idx }}" class="category"></i>
                     {% for proficiency in (0..4) %}
                         <i class="fa fa-circle-thin proficiency" id="proficiency-{{ idx }}-{{ proficiency }}"></i>
                     {% endfor %}
@@ -33,6 +34,7 @@
                         <div class="col-xs-8">
                         </div>
                         <div class="col-xs-4 dices panel">
+
                             {% for dice in (0..2) %}
                                 <i class="icon-die-dice hidden-dice" id="dice-{{ idx }}-{{ dice }}"></i>
                             {% endfor %}

@@ -10,7 +10,6 @@ function load_cards() {
 function display_cards(idx_cards)  {
     i = 0
     $(cards).slice(idx_cards).each(function(idx, card){
-        console.log('load_card ' + card.location)
         i++
         load_card(card.location, idx)
     })
@@ -47,6 +46,7 @@ function load_card(location, idx){
         load_proficiency(idx, card.proficiency)
         load_effects(idx, card.effects)
         $('#description-' + idx).html(card.description)
+        $('#type-' + idx).html(type_to_span[card.category])
         load_dices(idx, card.dices)
         $('#card-'+idx).show()
     })
@@ -64,7 +64,6 @@ function load_dices(idx, dices) {
 function load_proficiency(idx_card, level){
     for (i=0; i < 4; i++){
         if (i < level ) {
-            console.log('yeah')
             $('#proficiency-' + idx_card + '-' + i).removeClass('fa-circle-thin')
             $('#proficiency-' + idx_card + '-' + i).addClass('fa-circle')
         } else {

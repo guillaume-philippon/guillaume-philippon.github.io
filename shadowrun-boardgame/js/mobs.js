@@ -1,8 +1,3 @@
-var type_to_span = {
-    "range": '<span class="icon-gun"></span>',
-    "close": '<span class="icon-axe"></span>',
-    "magic": '<span class="icon-fire"></span>'
-}
 var current_sheet = {}
 
 function load_image(){
