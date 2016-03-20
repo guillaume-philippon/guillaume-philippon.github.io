@@ -15,12 +15,11 @@
     }
   ],
   "skill": {
-    "social": 5,
-    "medicine": 1,
+    "social": 3,
+    "medicine": "-",
     "stealth": 3,
-    "intuition": 1,
-    "strength": "-",
-    "tech": "-"
+    "tech": "-",
+    "demolition": "-"
   },
   "attack": {
     "type": "range",
