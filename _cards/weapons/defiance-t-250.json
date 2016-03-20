@@ -1,0 +1,15 @@
+{
+  "category": "range",
+  "name": "Defiance T-250",
+  "image": "/shadowrun-boardgame/images/cards/defiance-t-250.jpg",
+  "background_color": "DimGray",
+  "proficiency": 0,
+  "description": "",
+  "dices" : [ "blue", "green" ],
+  "effects" : [
+    {
+      "surge": 1,
+      "description": "1 <span class='fa fa-sun-o'></span> blast"
+    }
+  ]
+}

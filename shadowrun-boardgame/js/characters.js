@@ -1,4 +1,3 @@
-var dice_disable = 'white'
 var current_sheet = {}
 
 /*
@@ -9,35 +8,26 @@ function load_image(){
     $('#image').css('opacity', 0.95)
 }
 
-/*
-  Transform a defense attribute to a dice span
-*/
-function defense_attribute_to_dice(defense_dices) {
-  html_display = ''
-  $.each(defense_dices, function(idx, dice){
-    html_display += '<i class="icon-die-dice" style="color:' + dice + '"></i> '
-  })
-  return html_display
-}
-
-/*
-    Hide all dices
-*/
-function clean_skill_color(skill) {
-    for (i=0; i < 3; i++) {
-        $('#'+skill+'-dice-'+i).css('color', dice_disable)
-        $('#'+skill+'-dice-'+i).addClass('hidden-dice')
+function load_defense_dices(type, dices) {
+    i = 0
+    $.each(dices, function(idx, dice){
+        $('#' + type + '-defense-' + idx).css('color', dice)
+        $('#' + type + '-defense-' + idx).removeClass('hidden-dice')
+        i++
+    })
+    for (i; i < 2; i++) {
+        $('#' + type + '-defense-' + i).addClass('hidden-dice')
     }
 }
 
-function equipment_level_populate(equipment, level){
+function load_proficiency(proficiency, level){
     for (i = 0; i < 5; i++) {
         if (i < level) {
-            $('#' + equipment + '-bullet-' + i).removeClass('fa-circle-thin')
-            $('#' + equipment + '-bullet-' + i).addClass('fa-circle')
+            $('#' + proficiency + '-bullet-' + i).removeClass('fa-circle-thin')
+            $('#' + proficiency + '-bullet-' + i).addClass('fa-circle')
         } else {
-            $('#' + equipment + '-bullet-' + i).addClass('fa-circle-thin')
-            $('#' + equipment + '-bullet-' + i).removeClass('fa-circle')
+            $('#' + proficiency + '-bullet-' + i).addClass('fa-circle-thin')
+            $('#' + proficiency + '-bullet-' + i).removeClass('fa-circle')
         }
     }
 }
@@ -58,8 +48,8 @@ function load_character(name) {
         /* Attributes */
         $.each(data.attributes, function(attribute, value){
             if (attribute == "defense" ) {
-                $('#physical-defense').html(defense_attribute_to_dice(data.attributes[attribute].physical))
-                $('#magical-defense').html(defense_attribute_to_dice(data.attributes[attribute].magical))
+                load_defense_dices('physical', data.attributes[attribute].physical)
+                load_defense_dices('magical', data.attributes[attribute].magical)
             } else {
                 $('#'+attribute).html(value)
             }
@@ -81,16 +71,20 @@ function load_character(name) {
 
         /* Skills */
         $.each(data.skills, function(skill, value){
-            clean_skill_color(skill)
+            i = 0
             $.each(value, function(k, dice){
                 $('#'+skill+'-dice-'+k).css('color', dice)
                 $('#'+skill+'-dice-'+k).removeClass('hidden-dice')
+                i++
+                for (i; i < 3; i++) {
+                    $('#'+skill+'-dice-'+i).addClass('hidden-dice')
+                }
             })
         })
 
         /* Equipment */
         $.each(data.proficiencies, function(proficiency, level){
-            equipment_level_populate(proficiency, level)
+            load_proficiency(proficiency, level)
         })
     })
 }

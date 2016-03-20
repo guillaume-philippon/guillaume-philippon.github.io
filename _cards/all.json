@@ -6,5 +6,9 @@
   {
     "name": "Ares Predator",
     "location": "/cards/weapons/arespredator.json"
+  },
+  {
+    "name": "Defiance T-250",
+    "location": "/cards/weapons/defiance-t-250.json"
   }
 ]

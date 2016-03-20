@@ -53,7 +53,7 @@ function load_effects(idx_card, effects) {
     $.each(effects,function (idx, effect){
         handler += '<li class="list-group-item effect">'
         if (effect.surge > 0 ) {
-            handler += effect.surge + ' ' + surge
+            handler += effect.surge + ' ' + surge + ': '
         }
         handler += effect.description
         handler += '</li>'
@@ -65,7 +65,7 @@ $(document).ready(function (){
     load_cards().then(
         function(){
             console.log(cards)
-            $.each(cards,function(idx, card){
+            $(cards).slice(idx_cards).each(function(idx, card){
                 load_card(card.location, idx)
             })
         })
