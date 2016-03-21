@@ -55,6 +55,11 @@
     "category": "medicine"
   },
   {
+    "name": "Comlink",
+    "location": "/cards/matrice/comlink.json",
+    "category": "matrice"
+  },
+  {
     "name": "Grenade",
     "location": "/cards/range/grenade.json",
     "category": "range"

@@ -8,7 +8,9 @@ var type_to_span = {
     "magic": '<span class="icon-fire"></span>',
     "cyberware": '<i class="icon-science-atom"></i>',
     "social": '<i class="fa fa-comments"></i>',
-    "medicine": "<i class='fa fa-medkit'></i>"
+    "medicine": "<i class='fa fa-medkit'></i>",
+    "melee": "<i class='icon-axe'></i>",
+    "matrice": "<i class='fa fa-code'></i>"
 }
 
 function swap_image_display() {
