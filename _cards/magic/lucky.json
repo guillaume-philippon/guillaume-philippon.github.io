@@ -5,7 +5,12 @@
   "cost": 0,
   "background_color": "LightSkyBlue",
   "image": "/shadowrun-boardgame/images/default.jpg",
-  "description": "Deplete this card to reroll all dice.",
+  "description": "",
   "dices" : [ ],
-  "effects" : []
+  "effects" : [
+    {
+      "surge": 0,
+      "description": "Deplete this card to reroll all dice."
+    }
+  ]
 }

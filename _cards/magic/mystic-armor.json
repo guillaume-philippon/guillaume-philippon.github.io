@@ -5,7 +5,21 @@
   "cost": 0,
   "background_color": "LightSkyBlue",
   "image": "/shadowrun-boardgame/images/default.jpg",
-  "description": "<i class='fa fa-circle'></i>: Add +1 <i class='glyphicon glyphicon-heart'></i><br/><i class='fa fa-circle'></i> <i class='fa fa-circle'></i>: Add +1 <i class='glyphicon glyphicon-heart'></i>.<br/><i class='fa fa-circle'></i> <i class='fa fa-circle'></i> <i class='fa fa-circle'></i>: Add +1 <i class='glyphicon glyphicon-heart'></i>",
+  "description": "",
   "dices" : [ ],
-  "effects" : []
+  "effects" : [
+    {
+      "surge": 0,
+      "description": "1 <i class='icon-fire'></i>: +1 <i class='glyphicon glyphicon-heart'></i>"
+    },
+    {
+      "surge": 0,
+      "description": "2 <i class='icon-fire'></i>: +1 <i class='glyphicon glyphicon-heart'></i>"
+    },
+    {
+      "surge": 0,
+      "description": "3 <i class='icon-fire'></i>: +1 <i class='glyphicon glyphicon-heart'></i>"
+    }
+
+  ]
 }

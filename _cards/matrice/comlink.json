@@ -5,7 +5,12 @@
   "proficiency": 1,
   "background_color": "DarkSeaGreen",
   "image": "/shadowrun-boardgame/images/default.jpg",
-  "description": "<i class='fa fa-circle'></i>: While in VR, you gain +2 <i class='fa fa-share'></i> per activation<br/>",
+  "description": "",
   "dices" : [ ],
-  "effects" : [ ]
+  "effects" : [
+    {
+      "surge": 0,
+      "description": "1 <i class='fa fa-code'></i>: While in VR, you gain +2 <i class='fa fa-share'></i> per activation<br/>"
+    }
+  ]
 }

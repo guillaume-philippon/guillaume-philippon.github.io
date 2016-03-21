@@ -5,7 +5,12 @@
   "cost": 0,
   "background_color": "LightSkyBlue",
   "image": "/shadowrun-boardgame/images/default.jpg",
-  "description": "<i class='fa fa-circle'></i> You receive the killing hand weapon card.<br/><i class='fa fa-circle'></i><i class='fa fa-circle'></i>- (more effect available on the weapon card)",
+  "description": "",
   "dices" : [ ],
-  "effects" : []
+  "effects" : [
+    {
+      "surge": 0,
+      "description": "1 <i class='icon-fire'></i>: You receive the killing hand weapon card."
+    }
+  ]
 }
