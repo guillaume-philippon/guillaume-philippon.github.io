@@ -2,6 +2,7 @@ var current_sheet = {}
 
 function load_image(){
     $('#image').attr('src', current_sheet.image)
+    $('#image').css('opacity', 0.9)
 }
 
 function load_dices(dices, nb_of_dices, destination) {
