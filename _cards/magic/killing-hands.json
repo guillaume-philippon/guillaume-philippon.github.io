@@ -1,0 +1,11 @@
+{
+  "category": "magic",
+  "name": "Killing Hands",
+  "proficiency": 1,
+  "cost": 0,
+  "background_color": "LightSkyBlue",
+  "image": "/shadowrun-boardgame/images/default.jpg",
+  "description": "<i class='fa fa-circle'></i> You receive the killing hand weapon card.<br/><i class='fa fa-circle'></i><i class='fa fa-circle'></i>- (more effect available on the weapon card)",
+  "dices" : [ ],
+  "effects" : []
+}

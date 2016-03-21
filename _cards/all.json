@@ -5,6 +5,31 @@
     "category": "magic"
   },
   {
+    "name": "Lucky",
+    "location": "/cards/magic/lucky.json",
+    "category": "magic"
+  },
+  {
+    "name": "Killing Hands",
+    "location": "/cards/magic/killing-hands.json",
+    "category": "magic"
+  },
+  {
+    "name": "Berserk",
+    "location": "/cards/magic/berserk.json",
+    "category": "magic"
+  },
+  {
+    "name": "Smashing Blow",
+    "location": "/cards/magic/smashing-blow.json",
+    "category": "magic"
+  },
+  {
+    "name": "Mystic Armor",
+    "location": "/cards/magic/mystic-armor.json",
+    "category": "magic"
+  },
+  {
     "name": "Smartgun",
     "location": "/cards/cyberware/smartgun.json",
     "category": "cyberware"

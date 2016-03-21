@@ -1,0 +1,11 @@
+{
+  "category": "magic",
+  "name": "Lucky",
+  "proficiency": 0,
+  "cost": 0,
+  "background_color": "LightSkyBlue",
+  "image": "/shadowrun-boardgame/images/default.jpg",
+  "description": "Deplete this card to reroll all dice.",
+  "dices" : [ ],
+  "effects" : []
+}

@@ -1,0 +1,11 @@
+{
+  "category": "magic",
+  "name": "Smashing Blow",
+  "proficiency": 1,
+  "cost": 0,
+  "background_color": "LightSkyBlue",
+  "image": "/shadowrun-boardgame/images/default.jpg",
+  "description": "<i class='fa fa-circle'></i>: You can use your <i class='icon-axe'></i> instead of <i class='fa fa-hand-rock-o fa-rotate-90'></i><br/><i class='fa fa-circle'></i> <i class='fa fa-circle'></i> <i class='fa fa-circle'></i>: Add an <i class='glyphicon glyphicon-flash'></i> to all <i class='fa fa-hand-rock-o fa-rotate-90'></i>",
+  "dices" : [ ],
+  "effects" : []
+}

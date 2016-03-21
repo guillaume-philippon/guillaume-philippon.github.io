@@ -1,0 +1,11 @@
+{
+  "category": "magic",
+  "name": "Berserk",
+  "proficiency": 1,
+  "cost": 0,
+  "background_color": "LightSkyBlue",
+  "image": "/shadowrun-boardgame/images/default.jpg",
+  "description": "<i class='fa fa-circle'></i>: May use <u style='color:red !important'><i class='icon-die-dice'></i></u> instead of <u style='color:green !important'><i class='icon-die-dice'></i></u> when Focused.<br/><i class='fa fa-circle'></i> <i class='fa fa-circle'></i>: Becomes Focused when taking 3 <i class='fa fa-sun-o'></i><br/><i class='fa fa-circle'></i> <i class='fa fa-circle'></i> <i class='fa fa-circle'></i>: When wounded, all your attack gains +2 <i class='fa fa-sun-o'></i>",
+  "dices" : [ ],
+  "effects" : []
+}
