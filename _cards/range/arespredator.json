@@ -10,7 +10,7 @@
   "effects" : [
     {
       "surge": 1,
-      "description": "+1 precision"
+      "description": "+1 Accuracy"
     }
   ]
 }

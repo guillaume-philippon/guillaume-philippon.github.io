@@ -1,6 +1,7 @@
 var cards = {}
 var cards_show = cards
 var idx_cards = 0 // Index of the first card you want display
+var nb_of_sheet = 16
 
 function load_cards() {
     return $.getJSON("/cards/all.json", function(data){
@@ -15,7 +16,7 @@ function display_cards(idx_cards)  {
         i++
         load_card(card.location, idx)
     })
-    for (i; i < 3; i++) {
+    for (i; i < nb_of_sheet; i++) {
         $('#card-' + i).hide()
     }
 }
@@ -35,15 +36,15 @@ function load_image(){
 }
 
 function next() {
-    if (idx_cards < cards.length - 3) {
-        idx_cards = idx_cards + 3
+    if (idx_cards < cards.length - nb_of_sheet) {
+        idx_cards = idx_cards + nb_of_sheet
         display_cards(idx_cards)
     }
 }
 
 function previous() {
-    if (idx_cards > 2) {
-        idx_cards = idx_cards - 3
+    if (idx_cards >= nb_of_sheet) {
+        idx_cards = idx_cards - nb_of_sheet
         display_cards(idx_cards)
     }
 }
@@ -55,7 +56,8 @@ function load_card(location, idx){
         if (image_display) {
             $('#image-'+idx).attr('src', card.image)
         }
-        $('#card-'+idx).css('background-color', card.background_color)
+//        $('#card-'+idx).css('background-color', card.background_color)
+        $('#card-'+idx).attr('style','background-color: ' + card.background_color + ' !important;')
         load_proficiency(idx, card.proficiency)
         load_effects(idx, card.effects)
         $('#description-' + idx).html(card.description)
@@ -69,7 +71,8 @@ function load_card(location, idx){
 function load_dices(idx, dices) {
     i=0
     $.each(dices,function(idx_dice, dice){
-        $('#dice-' + idx + '-' + idx_dice).css('color', dice)
+//        $('#dice-' + idx + '-' + idx_dice).css('color', dice)
+        $('#dice-' + idx + '-' + idx_dice).attr('style', 'color: ' +  dice + ' !important;')
         $('#dice-' + idx + '-' + idx_dice).removeClass('hidden-dice')
         i++
     })
@@ -93,7 +96,7 @@ function load_proficiency(idx_card, level){
 function load_effects(idx_card, effects) {
     handler = ''
     $.each(effects,function (idx, effect){
-        handler += '<div class="col-sm-6 effect">'
+        handler += '<div class="effect">'
         if (effect.surge > 0 ) {
             handler += effect.surge + ' ' + surge + ': '
         }
