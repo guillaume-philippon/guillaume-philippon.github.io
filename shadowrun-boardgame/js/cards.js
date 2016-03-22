@@ -4,7 +4,7 @@ var idx_cards = 0 // Index of the first card you want display
 var nb_of_sheet = 16
 
 function load_cards() {
-    return $.getJSON("/cards/all.json", function(data){
+    return $.getJSON("/shadowrun-boardgame/cards/cards.json", function(data){
         cards = data
         cards_show = cards
     })

@@ -1,0 +1,10 @@
+[
+    {% for card in site.cards %}
+        {
+            "name": "{{ card.data.name }}",
+            "category": "{{ card.data.category }}",
+            "location": "{{ card.location }}"
+        }
+        {% unless forloop.last %},{% endunless %}
+    {% endfor %}
+]

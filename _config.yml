@@ -3,6 +3,6 @@ collections:
   characters:
     output: true
   cards:
-    ouput: true
+    output: true
   mobs:
     output: true
