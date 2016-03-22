@@ -32,8 +32,8 @@ function load_proficiency(proficiency, level){
     }
 }
 
-function load_character(name) {
-    return $.getJSON('/characters/' + name + '.json', function(data){
+function load_character(location) {
+    return $.getJSON(location, function(data){
         current_sheet = data
         /* Generic value */
         $('#name').html(data.name)
@@ -90,5 +90,5 @@ function load_character(name) {
 }
 
 $(document).ready(function (){
-    load_character('eleonor')
+    load_character('/characters/eleonor.json')
 })
