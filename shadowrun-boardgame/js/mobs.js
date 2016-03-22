@@ -18,8 +18,8 @@ function load_dices(dices, nb_of_dices, destination) {
 
 }
 
-function load_mobs(name) {
-    $.getJSON('mobs/' + name + '.json', function(data){
+function load_mobs(location) {
+    $.getJSON(location, function(data){
         $('#sheet').css('background-color', data.background_color)
         current_sheet = data
         $('#unit').html(data.unit)
@@ -66,5 +66,5 @@ function load_mobs(name) {
 }
 
 $(document).ready(function (){
-    load_mobs('knighterrant')
+    load_mobs('/mobs/knighterrant.json')
 })
