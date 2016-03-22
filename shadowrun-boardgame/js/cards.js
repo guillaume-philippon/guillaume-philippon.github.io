@@ -49,6 +49,16 @@ function previous() {
     }
 }
 
+function load_details(card_idx){
+    return $.getJSON(cards[card_idx].location, function(card){
+        $('#card-detail-title').html(card.name)
+        $('#card-detail').css('background-color',card.background_color)
+        $('#card-detail-description').html(card.description)
+        $('#card-detail-type').html(type_to_span[card.category])
+        $('#card-detail-cost').html('<i class="fa fa-jpy"></i> ' + card.cost)
+        $('#card-detail-modal').modal('show')
+    })
+}
 
 function load_card(location, idx){
     return $.getJSON(location, function(card){

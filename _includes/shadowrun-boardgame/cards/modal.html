@@ -1,0 +1,62 @@
+<div class="modal fade" id="card-detail-modal" tabindex="-1" role="dialog" aria-labelledby="card-detail-label">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="card-detail-label">Detail</h4>
+            </div>
+
+            <div class="modal-body" style="height:500px">
+                <div class="col-xs-offset-3 col-xs-6 dont-break">
+                    <div class="panel panel-default card-sheet" id="card-detail" style="display:solid">
+                        <div class="panel-body">
+                            <div class="col-xs-12">
+                                <span id="card-detail-title" class="title">Lorem Ipsum</span>
+                                <span class="proficiencies">
+                                <i id="card-detail-type" class="category"></i>
+                                {% for proficiency in (0..4) %}
+                                    <i class="fa fa-circle-thin proficiency" id="card-detail-proficiency-{{ proficiency }}"></i>
+                                {% endfor %}
+                                </span>
+                            </div>
+
+                            <div class="thumbnail col-xs-12">
+                            <img src="/shadowrun-boardgame/images/default.jpg" alt="Lorem Ipsum" id="card-detail-image"  style="height:100%">
+                            </div>
+
+                            <div class="effects col-xs-12 panel panel-default highlight" id="card-detail-effects">
+                            <!--<div class="panel-body" id="effects-{{ idx }}"></div>-->
+                            </div>
+
+
+                            <div class="panel panel-default description col-xs-12  highlight" id="card-detail-description">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat.
+                            </div>
+
+                            <div class="footer panel panel-default col-xs-12  highlight">
+                            <!--<div class="panel-body">-->
+                                <span class="cost" id="card-detail-cost">
+
+                                </span>
+                                <span class="dices">
+
+                                    {% for dice in (0..2) %}
+                                        <u  id="card-detail-dice-{{ dice }}" class="hidden-dice"><span class="icon-die-dice"></span></u>
+                                    {% endfor %}
+                                </span>
+                            <!--</div>-->
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
