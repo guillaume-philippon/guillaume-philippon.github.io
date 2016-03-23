@@ -3,13 +3,11 @@
         <div class="panel-body">
             <center><b>Proficiencies</b></center>
             {% for proficiency in site.data.shadowrun-boardgame.proficiencies.list %}
-                <h5>
                     <span class="proficiency">
                         <i class="{{ proficiency.icon }}" data-toggle="tooltip" data-placement="top" title="{{ proficiency.name }}"></i>
                         {% for i in (1..site.data.shadowrun-boardgame.proficiencies.maximum) %}
                             <i class="fa fa-circle-thin" id="{{ proficiency.alias }}-bullet-{{ i | minus: 1 }}"></i>{% endfor%}
-                    </span>
-                </h5>
+                    </span><br/>
             {% endfor %}
         </div>
     </div>

@@ -30,12 +30,21 @@ body {
     font-size: 5px;
 }
 
+.transparent {
+    background-color: rgba(256, 256, 256, 0.6) !important;
+    -webkit-print-color-adjust:exact;
+}
+
+.table {
+    -webkit-print-color-adjust:exact;
+}
+
 .thumbnail {
-    max-height:250px;
+    max-height:200px;
 }
 
 .proficiency {
-    font-size: 5px;
+    font-size: 4px;
 }
 
 }
