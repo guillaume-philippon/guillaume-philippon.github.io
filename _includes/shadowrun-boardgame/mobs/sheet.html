@@ -1,67 +1,68 @@
-<div class="row">
-    <div class="col-xs-4">
+    <div class="col-xs-4 sheet">
         <div class="panel panel-default" id="sheet">
-            <div class="panel-heading">
-                <div class="row">
-                    <div class="col-xs-2"><span class="fa fa-users"></span> <span id="unit">-</span></div>
-                    <div class="col-xs-6" id="name">-</div>
-                    <div class="col-xs-2"></div>
-                </div>
-            </div>
-            <div class="thumbnail">
-                <img src="/shadowrun-boardgame/images/default.jpg" alt="Knight Errant" id="image">
-            </div>
             <div class="panel-body">
-                <div class="col-xs-12 panel effects  highlight" id="effects">
-                </div>
-                <div class="col-xs-12 panel descriptions  highlight" id="descriptions"></div>
-                <div class="col-xs-12 panel skills  highlight">
-                    <div class="col-xs-6 skill">
-                        <i class="fa fa-comment" data-toggle="tooltip" data-placement="top" title="Social"></i>:
-                        <span id="social">-</span>
-                        <span class="glyphicon glyphicon-flash"></span>
-                    </div>
-                    <div class="col-xs-6 skill">
-                        <i class="glyphicon glyphicon-eye-close" data-toggle="tooltip" data-placement="top" title="Stealth"></i>:
-                        <span id="stealth">-</span>
-                        <span class="glyphicon glyphicon-flash"></span>
-                    </div>
-                    <div class="col-xs-6 skill">
-                        <i class="fa fa-hand-rock-o fa-rotate-90" data-toggle="tooltip" data-placement="top" title="Athletism"></i>:
-                        <span id="athletism">-</span>
-                        <span class="glyphicon glyphicon-flash"></span>
-                    </div>
-                    <div class="col-xs-6 skill">
-                        <i class="icon-bomb" data-toggle="tooltip" data-placement="top" title="Demolition"></i>:
-                        <span id="demolition">-</span>
-                        <span class="glyphicon glyphicon-flash"></span>
-                    </div>
-                    <div class="col-xs-6 skill">
-                        <i class="glyphicon glyphicon-wrench" data-toggle="tooltip" data-placement="top" title="Tech"></i>:
-                        <span id="tech">-</span>
-                        <span class="glyphicon glyphicon-flash"></span>
-                    </div>
-                </div>
-                <div class="col-xs-12 panel highlight">
-                    <div class="col-xs-3">
-                        <span class="glyphicon glyphicon-heart"></span> <span id="health">3</span>
-                    </div>
-                    <div class="col-xs-5">
-                        <span class="fa fa-shield"></span>
-                        <i class="icon-die-dice defense-dice hidden-dice" id="def-physic-dice-0"  data-toggle="tooltip" data-placement="top" title="Physical"></i>
-                        <i class="icon-die-dice defense-dice hidden-dice" id="def-physic-dice-1"   data-toggle="tooltip" data-placement="top" title="Physical"></i>
-                        /
-                        <i class="icon-die-dice defense-dice hidden-dice" id="def-magic-dice-0"  data-toggle="tooltip" data-placement="top" title="Magical"></i>
-                        <i class="icon-die-dice defense-dice hidden-dice" id="def-magic-dice-1"   data-toggle="tooltip" data-placement="top" title="Magical"></i>
-                    </div>
-                    <div class="col-xs-4">
-                        <span id="atk-type"></span>
-                        <span class="icon-die-dice hidden-dice" id="atk-dice-2"></span>
-                        <span class="icon-die-dice hidden-dice" id="atk-dice-1"></span>
-                        <span class="icon-die-dice hidden-dice" id="atk-dice-0"></span>
-                    </div>
-                </div>
+            <!--<div class="panel-heading">-->
+                <!--<div class="row">-->
+                    <!--<div class="col-xs-2"><span class="fa fa-users"></span> <span id="unit">-</span></div>-->
+                    <!--<div class="col-xs-6" id="name">-</div>-->
+                    <!--<div class="col-xs-2"></div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <span class="white"><span class="fa fa-users"></span> <span id="unit">-</span></span>
+            <span class="right white" id="name">-</span>
+
+            <div class="thumbnail">
+                <img src="/shadowrun-boardgame/images/default.jpg" alt="Default" id="image">
+            </div>
+            <!--<div class="panel-body">-->
+            <div class="col-xs-12 panel panel-default effects  highlight" id="effects"></div>
+
+            <div class="col-xs-12 panel panel-default descriptions  highlight" id="descriptions"></div>
+
+            <div class="col-xs-12 panel panel-default skills  highlight">
+                <span class="skill">
+                    <i class="fa fa-comment" data-toggle="tooltip" data-placement="top" title="Social"></i>:
+                    <span id="social">-</span>
+                    <span class="glyphicon glyphicon-flash"></span>
+                </span>
+                <span class="right skill">
+                    <i class="glyphicon glyphicon-eye-close" data-toggle="tooltip" data-placement="top" title="Stealth"></i>:
+                    <span id="stealth">-</span>
+                    <span class="glyphicon glyphicon-flash"></span>
+                </span><br/>
+                <span class="skill">
+                    <i class="fa fa-hand-rock-o fa-rotate-90" data-toggle="tooltip" data-placement="top" title="Athletism"></i>:
+                    <span id="athletism">-</span>
+                    <span class="glyphicon glyphicon-flash"></span>
+                </span>
+                <span class="right skill">
+                    <i class="icon-bomb" data-toggle="tooltip" data-placement="top" title="Demolition"></i>:
+                    <span id="demolition">-</span>
+                    <span class="glyphicon glyphicon-flash"></span>
+                </span><br/>
+                <span class="skill">
+                    <i class="glyphicon glyphicon-wrench" data-toggle="tooltip" data-placement="top" title="Tech"></i>:
+                    <span id="tech">-</span>
+                    <span class="glyphicon glyphicon-flash"></span>
+                </span>
+            </div>
+
+            <div class="col-xs-12 panel panel-default highlight">
+                <span class="left"><span class="glyphicon glyphicon-heart"></span> <span id="health">3</span></span>
+                <span class="right">
+                    <span class="fa fa-shield"></span>
+                    <i class="icon-die-dice defense-dice hidden-dice" id="def-physic-dice-0"  data-toggle="tooltip" data-placement="top" title="Physical"></i>
+                    <i class="icon-die-dice defense-dice hidden-dice" id="def-physic-dice-1"   data-toggle="tooltip" data-placement="top" title="Physical"></i>
+                    /
+                    <i class="icon-die-dice defense-dice hidden-dice" id="def-magic-dice-0"  data-toggle="tooltip" data-placement="top" title="Magical"></i>
+                    <i class="icon-die-dice defense-dice hidden-dice" id="def-magic-dice-1"   data-toggle="tooltip" data-placement="top" title="Magical"></i>
+                    <span id="atk-type"></span>
+                    <span class="icon-die-dice hidden-dice" id="atk-dice-2"></span>
+                    <span class="icon-die-dice hidden-dice" id="atk-dice-1"></span>
+                    <span class="icon-die-dice hidden-dice" id="atk-dice-0"></span>
+                </span>
+            </div>
+
             </div>
         </div>
     </div>
-</div>

@@ -5,12 +5,12 @@
             {% include common/navigation-bar.html %}
             <div class="container-fluid">
                 <div class="container-fluid">
-                    <div class="col-md-2 sidebar">
+                    <div class="col-md-2 sidebar hidden-print">
                         {% include shadowrun-boardgame/mobs/sidebar.html %}
                     </div>
                     <div class="col-md-10">
                         <div class="container" id="contents">
-                            {% include shadowrun-boardgame/mobs/sheet.html %}
+                            {% include shadowrun-boardgame/mobs/sheets.html %}
                         </div>
                     </div>
                 </div>

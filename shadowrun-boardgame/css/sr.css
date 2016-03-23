@@ -12,3 +12,15 @@
 .highlight {
     background-color: rgba(256, 256, 256, 0.6) !important;
 }
+
+.right {
+    float: right;
+}
+
+.center {
+    float: center;
+}
+
+.white {
+    color: white !important;
+}

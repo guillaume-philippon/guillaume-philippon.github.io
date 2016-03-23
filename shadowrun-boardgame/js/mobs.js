@@ -8,7 +8,7 @@ function load_image(){
 function load_dices(dices, nb_of_dices, destination) {
     i = 0;
     $.each(dices, function(idx, dice){
-        $(destination + idx).css('color', dice)
+        $(destination + idx).attr('style','color: '+ dice + ' !important;')
         $(destination + idx).removeClass('hidden-dice')
         i++
     })
@@ -20,7 +20,7 @@ function load_dices(dices, nb_of_dices, destination) {
 
 function load_mobs(location) {
     $.getJSON(location, function(data){
-        $('#sheet').css('background-color', data.background_color)
+        $('#sheet').attr('style','background-color: '+ data.background_color+ ' !important;')
         current_sheet = data
         $('#unit').html(data.unit)
         $('#name').html(data.name)
@@ -31,7 +31,8 @@ function load_mobs(location) {
 
         effects = ''
         $.each(data.effects, function(idx, effect){
-            effects += '<div class="col-xs-6 effect">' + surge + ': ' + effect + '</div>'
+//            effects += '<div class="col-xs-6 effect">' + surge + ': ' + effect + '</div>'
+            effects += '<span class="effect">' + surge + ': ' + effect + '</span><br/>'
         })
         $('#effects').html(effects)
 

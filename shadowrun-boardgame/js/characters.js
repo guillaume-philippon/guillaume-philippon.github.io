@@ -11,7 +11,7 @@ function load_image(){
 function load_defense_dices(type, dices) {
     i = 0
     $.each(dices, function(idx, dice){
-        $('#' + type + '-defense-' + idx).attr('style','color: ' + dice + ' !important')
+        $('#' + type + '-defense-' + idx).attr('style','color: ' + dice + ' !important;')
         $('#' + type + '-defense-' + idx).removeClass('hidden-dice')
         i++
     })
@@ -42,7 +42,7 @@ function load_character(location) {
             $('#image').attr("src", data.image)
         }
         console.log(data.background_color)
-        $('#contents').attr('style','background-color: ' +  data.background_color + ' !important')
+        $('#contents').attr('style','background-color: ' +  data.background_color + ' !important;')
 
 
         /* Attributes */
@@ -73,7 +73,7 @@ function load_character(location) {
         $.each(data.skills, function(skill, value){
             i = 0
             $.each(skill_dice[value], function(k, dice){
-                $('#'+skill+'-dice-'+k).attr('style', 'color: ' + dice + ' !important')
+                $('#'+skill+'-dice-'+k).attr('style', 'color: ' + dice + ' !important;')
                 $('#'+skill+'-dice-'+k).removeClass('hidden-dice')
                 i++
             })

@@ -2,3 +2,19 @@
     background-color: rgba(256, 256, 256, 0);
     border-width: 0px
 }
+
+.sheet {
+    height: 600px;
+}
+
+.title
+@media print {
+body {
+    -webkit-print-color-adjust:exact;
+    font-size: 5px;
+}
+
+.sheet {
+    height: 370px;
+}
+}
