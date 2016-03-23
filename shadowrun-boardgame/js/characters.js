@@ -72,7 +72,7 @@ function load_character(location) {
         /* Skills */
         $.each(data.skills, function(skill, value){
             i = 0
-            $.each(value, function(k, dice){
+            $.each(skill_dice[value], function(k, dice){
                 $('#'+skill+'-dice-'+k).attr('style', 'color: ' + dice + ' !important')
                 $('#'+skill+'-dice-'+k).removeClass('hidden-dice')
                 i++

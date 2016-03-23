@@ -17,16 +17,11 @@ data:
             magical:
                 - white
     skills:
-        stealth:
-            - gold
-            - blue
-        social:
-            - blue
-            - gold
-        athletism:
-            - red
-        tech:
-            - blue
+        social: 6
+        stealth: 7
+        athletism: 8
+        tech: 0
+        demolition: 0
     flavor:
         - title: Ambidexter
           action: true

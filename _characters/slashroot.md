@@ -17,18 +17,11 @@ data:
             magical:
                 - black
     skills:
-        stealth:
-            - red
-        social:
-            - blue
-            - green
-        athletism:
-            - blue
-        tech:
-            - gold
-            - green
-        demolition:
-            - red
+        social: 1
+        stealth: 2
+        athletism: 3
+        tech: 4
+        demolition: 5
     flavor:
         - title: Hacker
           action: true

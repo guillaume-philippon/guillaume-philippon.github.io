@@ -1,7 +1,7 @@
 ---
 layout: default
 permalink: /:collection/:name.json
-location: /characters/slashroot.json
+location: /characters/sunflower.json
 data:
     name: Sun Flower
     class: Mage
@@ -17,16 +17,11 @@ data:
             magical:
                 - white
     skills:
-        stealth:
-            - blue
-        social:
-            - gold
-            - blue
-        athletism:
-            - blue
-            - gold
-        tech:
-            - blue
+        social: 0
+        stealth: 0
+        athletism: 0
+        tech: 0
+        demolition: 0
     flavor:
         - title: Spellcaster
           action: false

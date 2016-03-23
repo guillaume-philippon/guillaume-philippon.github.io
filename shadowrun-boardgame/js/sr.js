@@ -13,6 +13,17 @@ var type_to_span = {
     "matrice": "<i class='fa fa-code'></i>"
 }
 
+var skill_dice = [
+    [],
+    [ "red" ],
+    [ "green" ],
+    [ "blue", "green" ],
+    [ "blue", "yellow" ],
+    [ "red", "green", "yellow" ],
+    [ "green", "green", "yellow" ],
+    [ "green", "yellow", "yellow" ],
+    [ "yellow", "yellow", "yellow" ]
+]
 function swap_image_display() {
     image_display = !image_display
     load_image_display()

@@ -17,18 +17,11 @@ data:
             magical:
                 - black
     skills:
-        stealth:
-            - gold
-            - blue
-        social:
-            - blue
-        athletism:
-            - gold
-            - green
-        tech:
-            - green
-        demolition:
-            - blue
+        social: 1
+        stealth: 1
+        athletism: 3
+        tech: 4
+        demolition: 5
     flavor:
         - title: Sexy Limb
           action: true
