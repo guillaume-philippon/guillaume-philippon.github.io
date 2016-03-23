@@ -6,7 +6,7 @@
 
 
 .thumbnail {
-    background-color: rgba(256, 256, 256, 0.0);
+    background-color: rgba(256, 256, 256, 0.0) !important;
     border-width: 0px;
     height: 450px
 }
@@ -19,10 +19,23 @@
     font-family: Herculanum;
 }
 
-.panel {
-    background-color: rgba(256, 256, 256, 0.6);
+.transparent {
+    background-color: rgba(256, 256, 256, 0.6) !important;
 }
 
-.table {
-    background-color: rgba(256, 256, 256, 0.6);
+
+@media print {
+body {
+    -webkit-print-color-adjust:exact;
+    font-size: 5px;
+}
+
+.thumbnail {
+    max-height:250px;
+}
+
+.proficiency {
+    font-size: 5px;
+}
+
 }
