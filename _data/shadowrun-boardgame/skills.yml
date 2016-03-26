@@ -8,10 +8,10 @@ list:
     icon: glyphicon glyphicon-eye-close
   - name: Athletism
     alias: athletism
-    icon: fa fa-hand-rock-o fa-rotate-90
+    icon: sprawlwars-strenght
   - name: Tech
     alias: tech
-    icon: glyphicon glyphicon-wrench
+    icon: sprawlwars-tech
   - name: Demolition
     alias: demolition
     icon: icon-bomb

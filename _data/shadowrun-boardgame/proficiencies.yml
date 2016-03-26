@@ -2,19 +2,19 @@ maximum: 5
 list:
   - name: Range Weapon
     alias: range
-    icon: icon-gun
+    icon: sprawlwars-range-weapon
   - name: Melee Weapon
     alias: melee
-    icon: icon-axe
+    icon: sprawlwars-melee-weapon
   - name: Medicine
     alias: medicine
-    icon: fa fa-medkit
+    icon: sprawlwars-medicine
   - name: Matrice
     alias: matrice
-    icon: fa fa-code
+    icon: sprawlwars-matrice
   - name: Magic
     alias: magic
-    icon: icon-fire
+    icon: sprawlwars-magic
   - name: Cyberware
     alias: cyberware
-    icon: icon-science-atom
+    icon: sprawlwars-cyberware
