@@ -3,14 +3,13 @@ var stress = '<span class="fa fa-heartbeat"></span>'
 var surge = '<span class="glyphicon glyphicon-flash"></span>'
 
 var type_to_span = {
-    "range": '<span class="icon-gun"></span>',
-    "close": '<span class="icon-axe"></span>',
-    "magic": '<span class="icon-fire"></span>',
-    "cyberware": '<i class="icon-science-atom"></i>',
+    "range": '<span class="sprawlwars-range-weapon"></span>',
+    "melee": '<span class="sprawlwars-melee-weapon"></span>',
+    "magic": '<span class="sprawlwars-magic"></span>',
+    "cyberware": '<i class="sprawlwars-cyberware"></i>',
     "social": '<i class="fa fa-comments"></i>',
-    "medicine": "<i class='fa fa-medkit'></i>",
-    "melee": "<i class='icon-axe'></i>",
-    "matrice": "<i class='fa fa-code'></i>"
+    "medicine": "<i class='sprawlwars-medicine'></i>",
+    "matrice": "<i class='sprawlwars-matrice'></i>"
 }
 
 var skill_dice = [
