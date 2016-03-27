@@ -38,7 +38,7 @@ function load_character(location) {
         /* Generic value */
         $('#name').html(data.name)
         $('#class').html(data.class)
-        if (image_display) {
+        if (view_images) {
             $('#image').attr("src", data.image)
         }
         console.log(data.background_color)
@@ -60,10 +60,10 @@ function load_character(location) {
         $.each(data.flavor, function(flavor, value){
             bonus_text += '<center><b>' + value.title + '</b></center>'
             if (value.action) {
-                bonus_text += action
+                bonus_text += icons['action']
             }
             if (value.stress > 0) {
-                bonus_text += value.stress + ' ' + stress
+                bonus_text += value.stress + ' ' + icons['stress']
             }
             bonus_text += '<p>' + value.text + '</p>'
         })

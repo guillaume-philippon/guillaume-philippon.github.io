@@ -25,14 +25,14 @@ function load_mobs(location) {
         $('#unit').html(data.unit)
         $('#name').html(data.name)
         $('#health').html(data.health)
-        if (image_display) {
+        if (view_images) {
             $('#image').attr("src", data.image)
         }
 
         effects = ''
         $.each(data.effects, function(idx, effect){
 //            effects += '<div class="col-xs-6 effect">' + surge + ': ' + effect + '</div>'
-            effects += '<span class="effect">' + surge + ': ' + effect + '</span><br/>'
+            effects += '<span class="effect">' + icons['surge'] + ': ' + effect + '</span><br/>'
         })
         $('#effects').html(effects)
 
@@ -52,7 +52,7 @@ function load_mobs(location) {
         $('#strength').html(data.skill.strength)
         $('#tech').html(data.skill.tech)
 
-        $('#atk-type').html(type_to_span[data.attack.type])
+        $('#atk-type').html(icons[data.attack.type])
         load_dices(data.attack.dices, 3, '#atk-dice-')
         load_dices(data.defense.magical, 2, '#def-magic-dice-')
         load_dices(data.defense.physical, 2, '#def-physic-dice-')

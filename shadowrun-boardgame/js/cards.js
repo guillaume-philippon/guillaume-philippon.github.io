@@ -53,7 +53,7 @@ function previous() {
 function load_card(location, idx){
     return $.getJSON(location, function(card){
         $('#card-'+idx+' .title').html(card.name)
-        if (image_display) {
+        if (view_images) {
             $('#image-'+idx).attr('src', card.image)
         }
 //        $('#card-'+idx).css('background-color', card.background_color)
@@ -61,7 +61,7 @@ function load_card(location, idx){
         load_proficiency(idx, card.proficiency)
         load_effects(idx, card.effects)
         $('#description-' + idx).html(card.description)
-        $('#type-' + idx).html(type_to_span[card.category])
+        $('#type-' + idx).html(icons[card.category])
         load_dices(idx, card.dices)
         $('#cost-' + idx).html('<i class="fa fa-jpy"></i> ' + card.cost)
         $('#card-'+idx).show()
@@ -98,7 +98,7 @@ function load_effects(idx_card, effects) {
     $.each(effects,function (idx, effect){
         handler += '<div class="effect">'
         if (effect.surge > 0 ) {
-            handler += effect.surge + ' ' + surge + ': '
+            handler += effect.surge + ' ' + icons['surge'] + ': '
         }
         handler += effect.description
         handler += '</div>'

@@ -1,11 +1,12 @@
+<div class="panel panel-default highlight">
 <table class="table">
     <thread>
         <tr>
             <!--<th></th>-->
-            <th><span class="glyphicon glyphicon-heart " data-toggle="tooltip" data-placement="top" title="Health"></span></th>
-            <th><span class="fa fa-heartbeat" data-toggle="tooltip" data-placement="top" title="Edurance"></span></th>
-            <th><span class="fa fa-tachometer" data-toggle="tooltip" data-placement="top" title="Speed"></span></th>
-            <th><span class="fa fa-shield" data-toggle="tooltip" data-placement="top" title="Defense"></span></th>
+            <th><i class="glyphicon glyphicon-heart " data-toggle="tooltip" data-placement="top" title="Health"></i></th>
+            <th><i class="fa fa-heartbeat" data-toggle="tooltip" data-placement="top" title="Edurance"></i></th>
+            <th><i class="fa fa-tachometer" data-toggle="tooltip" data-placement="top" title="Speed"></i></th>
+            <th><i class="fa fa-shield" data-toggle="tooltip" data-placement="top" title="Defense"></i></th>
         </tr>
     </thread>
     <tbody>
@@ -15,14 +16,15 @@
             <td id="endurance" class="sr-text"></td>
             <td id="speed" class="sr-text"></td>
             <td id="defense" class="">
-                <span class="icon-fire" data-toggle="tooltip" data-placement="top" title="Magical"></span>
+                <i class="icon-fire" data-toggle="tooltip" data-placement="top" title="Magical"></i>
                 {% for dice in (0..1) %}<u  id="magical-defense-{{ dice }}"><span class="icon-die-dice"></span></u>{% endfor %}
                 /
                 <!--<span id="magical-defense" class="defense-dice"></span><br/>-->
-                <span class="fa fa-male" data-toggle="tooltip" data-placement="top" title="Physical"></span>
+                <i class="fa fa-male" data-toggle="tooltip" data-placement="top" title="Physical"></i>
                 <!--<span id="physical-defense" class="defense-dice"></span>-->
                 {% for dice in (0..1) %}<u id="physical-defense-{{ dice }}"><span  class="icon-die-dice"></span></u>{% endfor %}
             </td>
         </tr>
     </tbody>
 </table>
+</div>
