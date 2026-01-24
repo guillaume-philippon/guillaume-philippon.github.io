@@ -90,13 +90,13 @@ skills:
   active:
     athelitics:
       - name: Climbing
-        value: 4
+        value: 3
       - name: Gymnatistic
-        value: 4
+        value: 3
       - name: Running
-        value: 4
+        value: 3
       - name: Swimming
-        value: 4
+        value: 3
     close_combat:
       - name: Blades
         value: 4
@@ -106,13 +106,20 @@ skills:
         value: 4
     stealth:
       - name: Disguise
-        value: 1
+        value: 0
       - name: Infiltration
-        value: 1
+        value: 4
       - name: Palming
-        value: 1
+        value: 0
       - name: Shadowing
-        value: 1
+        value: 0
+    outdoor:
+      - name: Survival
+        value: 4
+      - name: Navigation
+        value: 0
+      - name: Tracking
+        value: 0
     ungrouped:
       - name: Dodge
         value: 5
@@ -120,6 +127,8 @@ skills:
       - name: Thowing Weapons
         value: 5
         type: range
+      - name: Perception
+        value: 4
   knowledge:
     - name: Maya Culture
       value: 6

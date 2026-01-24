@@ -102,7 +102,7 @@
       <h3 class="mt-3">Qualités</h3>
       <ul class="list-group mb-3">
         {% for quality in page.qualities %}
-          <li class="list-group-item py-1"><strong>{{ quality.name }}</strong> (Rating: {{ quality.rating }})
+          <li class="list-group-item py-1"><span><strong>{{ quality.name }}</strong></span> (Rating: {{ quality.rating }})
           <p>{{ quality.description }}</p>
           </li>
         {% endfor %}
@@ -126,7 +126,9 @@
               <h5>{{ group[0] | replace: "_", " " | capitalize }}</h5>
               <ul class="list-group">
                 {% for skill in group[1] %}
+                  {% if skill.value > 0 %}
                   <li class="list-group-item py-1">{{ skill.name }}: {{ skill.value }}</li>
+                  {% endif %}
                 {% endfor %}
               </ul>
             </div>
