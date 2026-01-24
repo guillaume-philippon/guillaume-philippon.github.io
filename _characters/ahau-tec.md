@@ -3,6 +3,8 @@ name: Ahau-Tech
 race: Ork
 picture: /assets/images/Ahau-Tec.jpg
 lifestyle: Middle
+money: 0
+karma: 0
 role:
   operational: Street Samouraï / Sécurité Rapproché
   narrative: Stabilité, Résilience, Dette
@@ -55,16 +57,25 @@ essence:
 qualities:
   - name: Adept
     rating: 1
+    type: positive
     sourcebook: 20th Anniversary Core Rulebook
     page: 90
   - name: Exceptional Attribute (Body)
     rating: 1
+    type: positive
     sourcebook: 20th Anniversary Core Rulebook
     page: 90
   - name: Dependances
     rating: 3
+    type: negative
     sourcebook: Runners Companion
     page: 104
+    description: |
+      Descendant direct des Zotz-Yax , une tribu orque maya qui a survécu à l’effondrement de la Sixième Monde en préservant ses traditions chamaniques et ses techniques de combat ancestrales.
+  - name: Distinctive Style
+    rating: 1
+    sourcebook: Runners Companion
+    page: 103
 powers:
   - name: Improved Reflex
     rating: 2
@@ -96,10 +107,10 @@ skills:
     ungrouped:
       - name: Dodge
         value: 5
-      - name: Archery
-        value: 1
+        type: defense
       - name: Thowing Weapons
         value: 5
+        type: range
   knowledge:
     - name: Maya Culture
       value: 6

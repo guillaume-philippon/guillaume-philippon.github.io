@@ -15,6 +15,9 @@
           {% assign body_total = page.attributes.body.base | plus: page.attributes.body.modifier %}
           {% assign strength_total = page.attributes.strength.base | plus: page.attributes.strength.modifier %}
           {% assign willpower_total = page.attributes.willpower.base | plus: page.attributes.willpower.modifier %}
+          {% assign agilite_total = page.attributes.agility.base | plus: page.attributes.agilite.modifier %}
+          {% assign physic_condition = body_total | divided_by: 2.0 | round | plus: 8 %}
+          {% assign mental_condition = willpower_total | divided_by: 2.0 | round | plus: 8 %}
 
           <h3 class="mt-3">Attributs</h3>
           <ul class="list-group">
@@ -25,25 +28,6 @@
               </li>
             {% endfor %}
           </ul>
-
-          <!-- Initiative -->
-          <div class="card bg-info text-white mt-3">
-            <div class="card-body p-2 text-center">
-              <h6 class="card-title mb-1">Initiative</h6>
-              <p class="card-text mb-0"><strong>{{ initiative }}</strong> (Réaction {{ reaction_total }} + Intuition {{ intuition_total }})</p>
-              <p class="card-text mb-0"><small>+1D6 par passe d'initiative</small></p>
-            </div>
-          </div>
-
-          <!-- Armure -->
-          <div class="card bg-secondary text-white mt-2">
-            <div class="card-body p-2 text-center">
-              <h6 class="card-title mb-1">Armure</h6>
-              <p class="card-text mb-0"><strong>Impact:</strong> {{ page.armor.impact }}</p>
-              <p class="card-text mb-0"><strong>Balistique:</strong> {{ page.armor.balistic }}</p>
-              <p class="card-text mb-0"><strong>Astral:</strong> {{ page.armor.astral }}</p>
-            </div>
-          </div>
 
           <!-- Magie/Edge/Essence -->
           <div class="row mt-3">
@@ -79,57 +63,32 @@
           {% if page.picture %}
             <img src="{{ page.picture }}" class="img-fluid rounded" alt="{{ page.name }}">
           {% endif %}
+          <!-- Armure -->
+          <div class="row">
+            <div class="col-6">
+            <div class="card bg-secondary text-white mt-2">
+              <div class="card-body p-2">
+                <h6 class="card-title mb-1">Armure</h6>
+                <p class="card-text mb-0"><strong>Impact:</strong> {{ page.armor.impact }}</p>
+                <p class="card-text mb-0"><strong>Balistique:</strong> {{ page.armor.balistic }}</p>
+                <p class="card-text mb-0"><strong>Astral:</strong> {{ page.armor.astral }}</p>
+              </div>
+            </div>
+            </div>
+            <div class="col-6">
+            <div class="card mt-2">
+              <div class="card-body p-2 text-center">
+                <h6 class="card-title mb-1">Moniteur de condition</h6>
+                <p class="card-text mb-0"><strong>Physique:</strong> {{ physic_condition }}</p>
+                <p class="card-text mb-0"><strong>Mentale:</strong> {{ mental_condition }}</p>
+              </div>
+            </div>
+            </div>
+          </div>  
+
         </div>
 
-        <!-- Jets de dés courants -->
-        <div class="col-md-4">
-          <h3 class="mt-3">Jets de Dés</h3>
-          <div class="row">
-            <!-- Jet de résistance physique -->
-            <div class="col-12 mb-2">
-              <div class="card">
-                <div class="card-body p-2 text-center">
-                  <h6 class="card-title mb-1">Résistance Physique</h6>
-                  <p class="card-text mb-0"><strong>{{ body_total }}</strong> (Body)</p>
-                </div>
-              </div>
-            </div>
-            <!-- Jet de résistance mentale -->
-            <div class="col-12 mb-2">
-              <div class="card">
-                <div class="card-body p-2 text-center">
-                  <h6 class="card-title mb-1">Résistance Mentale</h6>
-                  <p class="card-text mb-0"><strong>{{ willpower_total }}</strong> (Willpower)</p>
-                </div>
-              </div>
-            </div>
-            <!-- Jet de perception -->
-            <div class="col-12 mb-2">
-              <div class="card">
-                <div class="card-body p-2 text-center">
-                  <h6 class="card-title mb-1">Perception</h6>
-                  <p class="card-text mb-0"><strong>{{ intuition_total }}</strong> (Intuition)</p>
-                </div>
-              </div>
-            </div>
-            <!-- Jet de corps à corps -->
-            <div class="col-12 mb-2">
-              <div class="card">
-                <div class="card-body p-2 text-center">
-                  <h6 class="card-title mb-1">Corps à Corps</h6>
-                  {% assign close_combat_skill = 0 %}
-                  {% for skill in page.skills.active.close_combat %}
-                    {% if skill.value > close_combat_skill %}
-                      {% assign close_combat_skill = skill.value %}
-                    {% endif %}
-                  {% endfor %}
-                  <p class="card-text mb-0"><strong>{{ close_combat_skill | plus: strength_total }}</strong> (Strength + Skill)</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        {% include jets_courants.html %}
 
       <!-- Histoire -->
       <h3 class="mt-3">Histoire</h3>
@@ -143,12 +102,14 @@
       <h3 class="mt-3">Qualités</h3>
       <ul class="list-group mb-3">
         {% for quality in page.qualities %}
-          <li class="list-group-item py-1">{{ quality.name }} (Rating: {{ quality.rating }})</li>
+          <li class="list-group-item py-1"><strong>{{ quality.name }}</strong> (Rating: {{ quality.rating }})
+          <p>{{ quality.description }}</p>
+          </li>
         {% endfor %}
       </ul>
 
       <!-- Pouvoirs Adept -->
-      <h3 class="mt-3">Pouvoirs Adept</h3>
+      <h3 class="mt-3">Pouvoirs Adeptes</h3>
       <ul class="list-group mb-3">
         {% for power in page.powers %}
           <li class="list-group-item py-1">{{ power.name }} (Rating: {{ power.rating }}, Magie: {{ power.magic }})</li>

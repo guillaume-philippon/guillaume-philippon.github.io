@@ -1,0 +1,90 @@
+{% assign dodge = 0 %}
+{% for skill in page.skills.active.ungrouped %}
+  {% if skill.name == 'Dodge' %}
+    {% assign dodge = skill.value %}
+  {% endif %}
+{% endfor %}
+{% assign close_combat_skill = 0 %}
+{% for skill in page.skills.active.close_combat %}
+  {% if skill.value > close_combat_skill %}
+    {% assign close_combat_skill = skill.value %}
+  {% endif %}
+{% endfor %}
+{% assign range_skill = 0 %}
+{% for skill in page.skills.active.firearms %}
+  {% if skill.value > range_skill %}
+    {% assign range_skill = skill.value %}
+  {% endif %}
+{% endfor %}
+{% for skill in page.skills.active.ungrouped %}
+  {% if skill.type == 'range' %}
+    {% if skill.value > range_skill %}
+      {% assign range_skill = skill.value %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+{% assign = initiative_matrice = intuition_total |plus: response_total %}
+{% assign = initiative_astrale = intuition_total | by: 2 %}
+        <!-- Jets de dés courants -->
+        <div class="col-md-4">
+          <div class="row">
+
+          <!-- Initiative -->
+            <div class="col-12 mb-2">
+              <div class="card bg-info text-white mt-3">
+                <div class="card-body p-2 text-center">
+                  <h6 class="card-title mb-1">Initiative</h6>
+                  <p class="card-text mb-0"><strong>{{ initiative }}</strong> (Réaction {{ reaction_total }} + Intuition {{ intuition_total }})</p>
+                  <p class="card-text mb-0"><small> {{ page.turns }} passe d'initiative</small></p>
+                </div>
+              </div>
+              <div class="col-12 mb-2">
+                <ul class="list-group">
+                  <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
+                    <strong>Matrice</strong>
+                    <span><strong> {{ initiative_matrice }}</strong> (Résonance {{ response_total }} + Intuition {{ intuition_total }})</span>
+                  </li>
+                  <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
+                    <strong>Astrale</strong>
+                    <span><strong>{{ initiative_astrale }}</strong> (Intuition {{ intuition_total }} * 2)</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-12 mb-2">
+              <ul class="list-group">
+                <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
+                  <strong>Att. à distance</strong>
+                  <span><strong>{{ agilite_total | plus: range_skill }}</strong> (Agility + Skill)</span>
+                </li>
+                <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
+                  <strong>Déf. à distance</strong>
+                  <span><strong>{{ reaction_total }}</strong> (Reaction)</span>
+                </li>
+                <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
+                  <strong>Att. corps à corps</strong>
+                  <span><strong>{{ strength_total | plus: close_combat_skill }}</strong> (Strenght + Skill)</span>
+                </li>
+                <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
+                  <strong>Déf. corps à corps</strong>
+                  <span><strong>{{ reaction_total | plus: dodge }}</strong> (Reaction + Dodge)</span>
+                </li>
+                <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
+                  <strong>Résistance Physique</strong>
+                  <span><strong>{{ body_total }}</strong> (Body)</span>
+                </li>
+                <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
+                  <strong>Résistance Mental</strong>
+                  <span><strong>{{ willpower_total }}</strong> (Willpower)</span>
+                </li>
+                <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
+                  <strong>Percéption</strong>
+                  <span><strong>{{ intuition_total }}</strong> (Intuition)</span>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
