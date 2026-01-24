@@ -1,0 +1,216 @@
+<div class="container my-3">
+  <div class="card">
+    <div class="card-header bg-dark text-white">
+      <h2 class="mb-0">{{ page.name }} ({{ page.race }})</h2>
+      <p class="mb-0"><small>Lifestyle: {{ page.lifestyle }} | Role: {{ page.role.operational }} / {{ page.role.narrative }}</small></p>
+    </div>
+    <div class="card-body">
+      <!-- Section avec attributs et image -->
+      <div class="row">
+        <!-- Attributs -->
+        <div class="col-md-4">
+          {% assign reaction_total = page.attributes.reaction.base | plus: page.attributes.reaction.modifier %}
+          {% assign intuition_total = page.attributes.intuition.base | plus: page.attributes.intuition.modifier %}
+          {% assign initiative = reaction_total | plus: intuition_total %}
+          {% assign body_total = page.attributes.body.base | plus: page.attributes.body.modifier %}
+          {% assign strength_total = page.attributes.strength.base | plus: page.attributes.strength.modifier %}
+          {% assign willpower_total = page.attributes.willpower.base | plus: page.attributes.willpower.modifier %}
+
+          <h3 class="mt-3">Attributs</h3>
+          <ul class="list-group">
+            {% for attr in page.attributes %}
+              <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
+                <strong>{{ attr[0] | capitalize }}</strong>
+                <span>{{ attr[1].base }}{% if attr[1].modifier != 0 %} ({{ attr[1].modifier }}){% endif %} = <strong>{{ attr[1].base | plus: attr[1].modifier }}</strong></span>
+              </li>
+            {% endfor %}
+          </ul>
+
+          <!-- Initiative -->
+          <div class="card bg-info text-white mt-3">
+            <div class="card-body p-2 text-center">
+              <h6 class="card-title mb-1">Initiative</h6>
+              <p class="card-text mb-0"><strong>{{ initiative }}</strong> (Réaction {{ reaction_total }} + Intuition {{ intuition_total }})</p>
+              <p class="card-text mb-0"><small>+1D6 par passe d'initiative</small></p>
+            </div>
+          </div>
+
+          <!-- Armure -->
+          <div class="card bg-secondary text-white mt-2">
+            <div class="card-body p-2 text-center">
+              <h6 class="card-title mb-1">Armure</h6>
+              <p class="card-text mb-0"><strong>Impact:</strong> {{ page.armor.impact }}</p>
+              <p class="card-text mb-0"><strong>Balistique:</strong> {{ page.armor.balistic }}</p>
+              <p class="card-text mb-0"><strong>Astral:</strong> {{ page.armor.astral }}</p>
+            </div>
+          </div>
+
+          <!-- Magie/Edge/Essence -->
+          <div class="row mt-3">
+            <div class="col-4">
+              <div class="card">
+                <div class="card-body p-2 text-center">
+                  <h6 class="card-title mb-1">Magie</h6>
+                  <p class="card-text mb-0">{{ page.magic.base }}{% if page.magic.modifier != 0 %} ({{ page.magic.modifier }}){% endif %}</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="card">
+                <div class="card-body p-2 text-center">
+                  <h6 class="card-title mb-1">Edge</h6>
+                  <p class="card-text mb-0">{{ page.edge.base }}{% if page.edge.modifier != 0 %} ({{ page.edge.modifier }}){% endif %}</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="card">
+                <div class="card-body p-2 text-center">
+                  <h6 class="card-title mb-1">Essence</h6>
+                  <p class="card-text mb-0">{{ page.essence.base }}{% if page.essence.modifier != 0 %} ({{ page.essence.modifier }}){% endif %}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image -->
+        <div class="col-md-4 text-center">
+          {% if page.picture %}
+            <img src="{{ page.picture }}" class="img-fluid rounded" alt="{{ page.name }}">
+          {% endif %}
+        </div>
+
+        <!-- Jets de dés courants -->
+        <div class="col-md-4">
+          <h3 class="mt-3">Jets de Dés</h3>
+          <div class="row">
+            <!-- Jet de résistance physique -->
+            <div class="col-12 mb-2">
+              <div class="card">
+                <div class="card-body p-2 text-center">
+                  <h6 class="card-title mb-1">Résistance Physique</h6>
+                  <p class="card-text mb-0"><strong>{{ body_total }}</strong> (Body)</p>
+                </div>
+              </div>
+            </div>
+            <!-- Jet de résistance mentale -->
+            <div class="col-12 mb-2">
+              <div class="card">
+                <div class="card-body p-2 text-center">
+                  <h6 class="card-title mb-1">Résistance Mentale</h6>
+                  <p class="card-text mb-0"><strong>{{ willpower_total }}</strong> (Willpower)</p>
+                </div>
+              </div>
+            </div>
+            <!-- Jet de perception -->
+            <div class="col-12 mb-2">
+              <div class="card">
+                <div class="card-body p-2 text-center">
+                  <h6 class="card-title mb-1">Perception</h6>
+                  <p class="card-text mb-0"><strong>{{ intuition_total }}</strong> (Intuition)</p>
+                </div>
+              </div>
+            </div>
+            <!-- Jet de corps à corps -->
+            <div class="col-12 mb-2">
+              <div class="card">
+                <div class="card-body p-2 text-center">
+                  <h6 class="card-title mb-1">Corps à Corps</h6>
+                  {% assign close_combat_skill = 0 %}
+                  {% for skill in page.skills.active.close_combat %}
+                    {% if skill.value > close_combat_skill %}
+                      {% assign close_combat_skill = skill.value %}
+                    {% endif %}
+                  {% endfor %}
+                  <p class="card-text mb-0"><strong>{{ close_combat_skill | plus: strength_total }}</strong> (Strength + Skill)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Histoire -->
+      <h3 class="mt-3">Histoire</h3>
+      <div class="card mb-3">
+        <div class="card-body">
+          <p class="card-text">{{ page.history | markdownify }}</p>
+        </div>
+      </div>
+
+      <!-- Qualités -->
+      <h3 class="mt-3">Qualités</h3>
+      <ul class="list-group mb-3">
+        {% for quality in page.qualities %}
+          <li class="list-group-item py-1">{{ quality.name }} (Rating: {{ quality.rating }})</li>
+        {% endfor %}
+      </ul>
+
+      <!-- Pouvoirs Adept -->
+      <h3 class="mt-3">Pouvoirs Adept</h3>
+      <ul class="list-group mb-3">
+        {% for power in page.powers %}
+          <li class="list-group-item py-1">{{ power.name }} (Rating: {{ power.rating }}, Magie: {{ power.magic }})</li>
+        {% endfor %}
+      </ul>
+
+      <!-- Compétences -->
+      <h3 class="mt-3">Compétences</h3>
+      <div class="row">
+        <!-- Compétences groupées -->
+        {% for group in page.skills.active %}
+          {% if group[0] != "ungrouped" %}
+            <div class="col-md-4 mb-3">
+              <h5>{{ group[0] | replace: "_", " " | capitalize }}</h5>
+              <ul class="list-group">
+                {% for skill in group[1] %}
+                  <li class="list-group-item py-1">{{ skill.name }}: {{ skill.value }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+        {% endfor %}
+
+        <!-- Compétences non groupées -->
+        <div class="col-md-4 mb-3">
+          <h5>Compétences non groupées</h5>
+          <ul class="list-group">
+            {% for skill in page.skills.active.ungrouped %}
+              <li class="list-group-item py-1">{{ skill.name }}: {{ skill.value }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <!-- Connaissances -->
+        <div class="col-md-4 mb-3">
+          <h5>Connaissances</h5>
+          <ul class="list-group">
+            {% for knowledge in page.skills.knowledge %}
+              <li class="list-group-item py-1">{{ knowledge.name }}: {{ knowledge.value }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+
+      <!-- Contacts -->
+      <h3 class="mt-3">Contacts</h3>
+      <ul class="list-group mb-3">
+        {% for contact in page.contacts %}
+          <li class="list-group-item py-1"><strong>{{ contact.name }}</strong> ({{ contact.type }}, Connection: {{ contact.connection }}, Loyalty: {{ contact.loyalty }})</li>
+        {% endfor %}
+      </ul>
+
+      <!-- Équipement -->
+      <h3 class="mt-3">Équipement</h3>
+      <ul class="list-group">
+        {% for item in page.gear %}
+          <li class="list-group-item py-1">
+            <strong>{{ item.name }}</strong> (x{{ item.quantity }}, {{ item.price_unit }}¥,
+            {% if item.damage %}Dégâts: {{ item.damage}}{% endif %})
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>

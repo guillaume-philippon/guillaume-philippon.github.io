@@ -1,6 +1,0 @@
-<ul class="nav nav-sidebar" id="characters_sidebar">
-    <li><a href="#" onClick="filter_cards('all')">All</a></li>
-    {% for category in site.data.shadowrun-boardgame.proficiencies.list %}
-    <li><a href="#" onClick="filter_cards('{{category.alias}}')">{{ category.name }}</a></li>
-    {% endfor %}
-</ul>
