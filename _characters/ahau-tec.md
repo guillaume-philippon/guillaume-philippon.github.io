@@ -35,7 +35,7 @@ attributes:
     base: 1
     modifier: 0
   willpower:
-    base: 1
+    base: 3
     modifier: 0
   charisma:
     base: 1
@@ -104,6 +104,15 @@ skills:
         value: 4
       - name: Unarmed Combat
         value: 4
+    stealth:
+      - name: Disguise
+        value: 1
+      - name: Infiltration
+        value: 1
+      - name: Palming
+        value: 1
+      - name: Shadowing
+        value: 1
     ungrouped:
       - name: Dodge
         value: 5
@@ -132,4 +141,12 @@ gear:
     damage: (STR/2 + 2)P
     sourcebook:
     page:
+  - name: Macauitil
+    quantity: 1
+    price_unit: 3000
+    damage: (STR/2 +2)P
+  - name: Knife
+    quantity: 1
+    price_unit: 20
+    damage: (STR/2 + 1)P
 ---
