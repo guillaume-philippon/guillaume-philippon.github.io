@@ -17,34 +17,42 @@ history: |
   comportementale détectée post-incident.
 attributes:
   body:
-    base: 8
-    modifier: 1
+    base: 9
+    modifier: 0
+    max: 10
     bp: 40
   agility:
     base: 5
     modifier: 0
+    max: 6
     bp: 40
   reaction: 
     base: 5
     modifier: 2
+    max: 6
     bp: 40
   strength: 
     base: 7
     modifier: 0
+    max: 12
     bp: 40
   intuition:
     base: 3
+    max: 6
     modifier: 0
     bp: 20
   logic:
     base: 1
     modifier: 0
+    max: 5
   willpower:
     base: 3
+    max: 6
     modifier: 0
     bp: 20
   charisma:
     base: 1
+    max: 5
     modifier: 0
 armor:
   impact: 6
@@ -90,12 +98,19 @@ powers:
   - name: Improved Reflex
     rating: 2
     magic: 2.5
+    description: |
+      Le pouvoir *Improved Reflexes* augmente la Réaction de +1 par niveau et +1 Passe d'Initiative supplémentaire.
   - name: Mystic Armor
     rating: 6
     magic: 3
+    description: |
+      Le pouvoir *Mystic Armor* (Armure Mystique) confère une armure magique supplémentaire de 1 point par niveau, qui s'ajoute à l'armure physique et protège à la fois contre les dégâts balistiques et d'impact, ainsi que dans les combats astraux.
   - name: Power throw
     rating: 2
     magic: 0.5
+    description: |
+      *Power Throw* ajoute un bonus aux jets de lancer (comme Throwing Weapons), augmente la portée des projectiles et peut infliger des dégâts supplémentaires, aujouter
+      +2 à la force pour déterminer la distance et les dégats.
 skills:
   active:
     athelitics:

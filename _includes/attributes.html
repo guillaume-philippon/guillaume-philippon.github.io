@@ -3,7 +3,7 @@
             {% for attr in page.attributes %}
               <li class="list-group-item  py-1 d-flex justify-content-between align-items-center">
                 <strong>{{ attr[0] | capitalize }}</strong>
-                <span>{{ attr[1].base }}{% if attr[1].modifier != 0 %} (+{{ attr[1].modifier }}){% endif %} = <strong>{{ attr[1].base | plus: attr[1].modifier }}</strong></span>
+                <span><strong>{{ attr[1].base }}{% if attr[1].modifier != 0 %} (+{{ attr[1].modifier }}){% endif %}</strong> <small>/{{ attr[1].max }}</small></span>
               </li>
             {% endfor %}
           </ul>
@@ -13,7 +13,7 @@
             <div class="col-4">
               <div class="card">
                 <div class="card-body p-2 text-center">
-                  <h6 class="card-title mb-1">Magie</h6>
+                  <span class="card-title mb-1"><small>Magie</small></span>
                   <p class="card-text mb-0">{{ page.magic.base }}{% if page.magic.modifier != 0 %} (+{{ page.magic.modifier }}){% endif %}</p>
                 </div>
               </div>
@@ -21,7 +21,7 @@
             <div class="col-4">
               <div class="card">
                 <div class="card-body p-2 text-center">
-                  <h6 class="card-title mb-1">Edge</h6>
+                  <span class="card-title mb-1"><small>Edge</small></span>
                   <p class="card-text mb-0">{{ page.edge.base }}{% if page.edge.modifier != 0 %} (+{{ page.edge.modifier }}){% endif %}</p>
                 </div>
               </div>
@@ -29,7 +29,7 @@
             <div class="col-4">
               <div class="card">
                 <div class="card-body p-2 text-center">
-                  <h6 class="card-title mb-1">Essence</h6>
+                  <span class="card-title mb-1"><small>Essence</small></span>
                   <p class="card-text mb-0">{{ page.essence.base }}{% if page.essence.modifier != 0 %} (+{{ page.essence.modifier }}){% endif %}</p>
                 </div>
               </div>

@@ -1,0 +1,28 @@
+<div class="col-12 mt-2">
+    <div class="col-12 text-center bg-info text-white rounded"><strong>Cyberware</strong></div>
+    <div class="col-12">
+        <table class="table table-sm table-striped ">
+        <thead>
+            <tr>
+            <th scope="col"></th>
+            <th class="text-center">Type</th>
+            <th class="text-center">Essence</th>
+            <th class="text-center">Capacity</th>
+            <th class="text-center">Availability</th>
+            <th class="text-end">Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ware in page.cyberware %}
+            <tr>
+                <th scope="row" data-bs-toggle="tooltip" data-bs-title="{{ware.sourcebook}} (p. {{ware.page}})">{{ ware.name }}</th>
+                <td class="text-center">{{ ware.type }}</td>
+                <td class="text-center">{{ ware.essence }}</td>
+                <td class="text-center">[{{ ware.capacity }}]</td>
+                <td class="text-center">{{ ware.availability }}</td>
+                <td class="text-end">{{ ware.price }} ¥</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+    </div>

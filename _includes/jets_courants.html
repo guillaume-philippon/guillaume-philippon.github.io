@@ -39,7 +39,7 @@
             <ul class="list-unstyled col-12">
               <li class="py-1 d-flex justify-content-between align-items-center">
             <strong>Physique</strong>
-            <span><strong>{{ initiative }}</strong> (Réaction + Intuition)</span></li>
+            <span><strong>{{ initiative }}</strong> <small>(Réaction + Intuition)</small></span></li>
             <li class="py-1 d-flex justify-content-between align-items-center">
               <strong></strong>
               <span><small> {{ page.turns }} passe d'initiative</small></span></li>
@@ -47,11 +47,11 @@
           </li>
           <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
             <strong>Matrice</strong>
-            <span><strong> {{ initiative_matrice }}</strong> (Résonance + Intuition)</span>
+            <span><strong> {{ initiative_matrice }}</strong> <small>(Résonance + Intuition)</small></span>
           </li>
           <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
             <strong>Astrale</strong>
-            <span><strong>{{ initiative_astrale }}</strong> (Intuition * 2)</span>
+            <span><strong>{{ initiative_astrale }}</strong> <small>(Intuition * 2)</small></span>
           </li>
         </ul>
       </div>
@@ -65,12 +65,12 @@
             <ul class="list-unstyled col-12">
               <li class="py-1 d-flex justify-content-between align-items-center">
             <strong>Distance</strong>
-            <span><strong>{{ agilite_total | plus: range_skill }}</strong> (Agility + Skill)</span></li>
+            <span><strong>{{ agilite_total | plus: range_skill }}</strong> <small>(Agility + Skill)</small></span></li>
             </ul>
           </li>
           <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
             <strong>Corps à Corps</strong>
-            <span><strong>{{ strength_total | plus: close_combat_skill }}</strong> (Strenght + Skill)</span>
+            <span><strong>{{ strength_total | plus: close_combat_skill }}</strong> <small>(Strenght + Skill)</small></span>
           </li>
         </ul>
       </div>
@@ -84,12 +84,12 @@
           <ul class="list-unstyled col-12">
             <li class="py-1 d-flex justify-content-between align-items-center">
           <strong>Distance</strong>
-          <span><strong>{{ reaction_total }}</strong> (Reaction)</span></li>
+          <span><strong>{{ reaction_total }}</strong> <small>(Reaction)</small></span></li>
           </ul>
         </li>
         <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
           <strong>Corps à Corps</strong>
-          <span><strong>{{ reaction_total | plus: dodge }}</strong> (Reaction + Dodge)</span>
+          <span><strong>{{ reaction_total | plus: dodge }}</strong> <small>(Reaction + Dodge)</small></span>
         </li>
       </ul>
     </div>

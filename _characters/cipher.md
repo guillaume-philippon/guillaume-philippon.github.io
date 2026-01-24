@@ -14,34 +14,42 @@ attributes:
   body:
     base: 3
     modifier: 0
+    max: 6
     bp: 20
   agility:
     base: 5
     modifier: 0
+    max: 6
     bp: 50
   reaction: 
     base: 5
     modifier: 0
+    max: 6
     bp: 40
   strength: 
     base: 1
     modifier: 0
+    max: 6
     bp: 0
   intuition:
     base: 2
     modifier: 0
+    max: 6
     bp: 10
   logic:
     base: 5
     modifier: 0
+    max: 6
     bp: 40
   willpower:
     base: 5
     modifier: 0
+    max: 6
     bp: 40
   charisma:
     base: 1
     modifier: 0
+    max: 6
     bp: 0
 armor:
   impact: 0
@@ -113,5 +121,40 @@ skills:
     - name: Security Procedures
       value: 6
 contacts:
+cyberware:
+  - name: Commlink
+    essence: 0.2
+    capacity: 2
+    availability: "-"
+    price: 2000
+    type: headware
+  - name: Datajack
+    essence: 0.1
+    capacity: 1
+    availability: "-"
+    price: 500
+    type: headware
+  - name: Hot Sim-module
+    essence: 0.2
+    capacity: 2
+    availability: 12F
+    price: 5000
+    type: headware
+  - name: Smartlink
+    essence: 0.1
+    capacity: 3
+    availability: 8R
+    price: 1000
+    type: eyeware
+  - name: Skillwire (3)
+    essence: 0.6
+    availability: 12
+    price: 6000
+    type: eyeware
+  - name: Wired Reflex (2)
+    essence: 3
+    availability: 12R
+    price: 32000
+    type: bodyware
 gear:
 ---

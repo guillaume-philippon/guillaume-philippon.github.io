@@ -30,9 +30,6 @@
           {% if page.picture %}
             <img src="{{ page.picture }}" class="img-fluid rounded" alt="{{ page.name }}">
           {% endif %}
-          <!-- Armure -->
-          <div class="row">
-          </div>  
 
         </div>
 
@@ -70,11 +67,14 @@
       <h3 class="mt-3">Pouvoirs Adeptes</h3>
       <ul class="list-group mb-3">
         {% for power in page.powers %}
-          <li class="list-group-item py-1">{{ power.name }} (Rating: {{ power.rating }}, Magie: {{ power.magic }})</li>
+          <li class="list-group-item py-1"><strong>{{ power.name }}</strong> (Rating: {{ power.rating }}, Magie: {{ power.magic }})
+          {{ power.description | markdownify }}
+          </li>
         {% endfor %}
       </ul>
       {% endif %}
 
+      {% include cyberware.html %}
       {% include qualities.html %}
 
       <!-- Contacts -->
