@@ -18,45 +18,12 @@
           {% assign agilite_total = page.attributes.agility.base | plus: page.attributes.agilite.modifier %}
           {% assign physic_condition = body_total | divided_by: 2.0 | round | plus: 8 %}
           {% assign mental_condition = willpower_total | divided_by: 2.0 | round | plus: 8 %}
+          {% assign attribute_bp = 0 %}
+          {% for attr in page.attributes %}
+            {% assign attribute_bp = attribute_bp | plus: attr[1].bp %}
+          {% endfor %}
 
-          <h3 class="mt-3">Attributs</h3>
-          <ul class="list-group">
-            {% for attr in page.attributes %}
-              <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
-                <strong>{{ attr[0] | capitalize }}</strong>
-                <span>{{ attr[1].base }}{% if attr[1].modifier != 0 %} (+{{ attr[1].modifier }}){% endif %} = <strong>{{ attr[1].base | plus: attr[1].modifier }}</strong></span>
-              </li>
-            {% endfor %}
-          </ul>
-
-          <!-- Magie/Edge/Essence -->
-          <div class="row mt-3">
-            <div class="col-4">
-              <div class="card">
-                <div class="card-body p-2 text-center">
-                  <h6 class="card-title mb-1">Magie</h6>
-                  <p class="card-text mb-0">{{ page.magic.base }}{% if page.magic.modifier != 0 %} (+{{ page.magic.modifier }}){% endif %}</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="card">
-                <div class="card-body p-2 text-center">
-                  <h6 class="card-title mb-1">Edge</h6>
-                  <p class="card-text mb-0">{{ page.edge.base }}{% if page.edge.modifier != 0 %} (+{{ page.edge.modifier }}){% endif %}</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="card">
-                <div class="card-body p-2 text-center">
-                  <h6 class="card-title mb-1">Essence</h6>
-                  <p class="card-text mb-0">{{ page.essence.base }}{% if page.essence.modifier != 0 %} (+{{ page.essence.modifier }}){% endif %}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+          {% include attributes.html %}
 
         <!-- Image -->
         <div class="col-md-4 text-center">
@@ -65,9 +32,18 @@
           {% endif %}
           <!-- Armure -->
           <div class="row">
-            <div class="col-6">
+          </div>  
+
+        </div>
+
+        {% include jets_courants.html %}
+
+        <div class="row">
+        {% include weapons.html %}
+          <div class="col-3">
+            <div class="col-12">
             <div class="card bg-secondary text-white mt-2">
-              <div class="card-body p-2">
+              <div class="card-body p-2 text-center">
                 <h6 class="card-title mb-1">Armure</h6>
                 <p class="card-text mb-0"><strong>Impact:</strong> {{ page.armor.impact }}</p>
                 <p class="card-text mb-0"><strong>Balistique:</strong> {{ page.armor.balistic }}</p>
@@ -75,7 +51,7 @@
               </div>
             </div>
             </div>
-            <div class="col-6">
+            <div class="col-12">
             <div class="card mt-2">
               <div class="card-body p-2 text-center">
                 <h6 class="card-title mb-1">Moniteur de condition</h6>
@@ -84,77 +60,22 @@
               </div>
             </div>
             </div>
-          </div>  
-
+          </div>
         </div>
+        {% include skills.html %}
 
-        {% include jets_courants.html %}
-
-      <!-- Histoire -->
-      <h3 class="mt-3">Histoire</h3>
-      <div class="card mb-3">
-        <div class="card-body">
-          <p class="card-text">{{ page.history | markdownify }}</p>
-        </div>
-      </div>
-
-      <!-- Qualités -->
-      <h3 class="mt-3">Qualités</h3>
-      <ul class="list-group mb-3">
-        {% for quality in page.qualities %}
-          <li class="list-group-item py-1"><span><strong>{{ quality.name }}</strong></span> (Rating: {{ quality.rating }})
-          <p>{{ quality.description }}</p>
-          </li>
-        {% endfor %}
-      </ul>
 
       <!-- Pouvoirs Adept -->
+       {% if page.powers %}
       <h3 class="mt-3">Pouvoirs Adeptes</h3>
       <ul class="list-group mb-3">
         {% for power in page.powers %}
           <li class="list-group-item py-1">{{ power.name }} (Rating: {{ power.rating }}, Magie: {{ power.magic }})</li>
         {% endfor %}
       </ul>
+      {% endif %}
 
-      <!-- Compétences -->
-      <h3 class="mt-3">Compétences</h3>
-      <div class="row">
-        <!-- Compétences groupées -->
-        {% for group in page.skills.active %}
-          {% if group[0] != "ungrouped" %}
-            <div class="col-md-4 mb-3">
-              <h5>{{ group[0] | replace: "_", " " | capitalize }}</h5>
-              <ul class="list-group">
-                {% for skill in group[1] %}
-                  {% if skill.value > 0 %}
-                  <li class="list-group-item py-1">{{ skill.name }}: {{ skill.value }}</li>
-                  {% endif %}
-                {% endfor %}
-              </ul>
-            </div>
-          {% endif %}
-        {% endfor %}
-
-        <!-- Compétences non groupées -->
-        <div class="col-md-4 mb-3">
-          <h5>Compétences non groupées</h5>
-          <ul class="list-group">
-            {% for skill in page.skills.active.ungrouped %}
-              <li class="list-group-item py-1">{{ skill.name }}: {{ skill.value }}</li>
-            {% endfor %}
-          </ul>
-        </div>
-
-        <!-- Connaissances -->
-        <div class="col-md-4 mb-3">
-          <h5>Connaissances</h5>
-          <ul class="list-group">
-            {% for knowledge in page.skills.knowledge %}
-              <li class="list-group-item py-1">{{ knowledge.name }}: {{ knowledge.value }}</li>
-            {% endfor %}
-          </ul>
-        </div>
-      </div>
+      {% include qualities.html %}
 
       <!-- Contacts -->
       <h3 class="mt-3">Contacts</h3>
@@ -164,6 +85,7 @@
         {% endfor %}
       </ul>
 
+      {% include history.html %}
       <!-- Équipement -->
       <h3 class="mt-3">Équipement</h3>
       <ul class="list-group">

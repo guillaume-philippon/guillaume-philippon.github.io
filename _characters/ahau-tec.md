@@ -19,24 +19,30 @@ attributes:
   body:
     base: 8
     modifier: 1
+    bp: 40
   agility:
     base: 5
     modifier: 0
+    bp: 40
   reaction: 
     base: 5
     modifier: 2
+    bp: 40
   strength: 
     base: 7
     modifier: 0
+    bp: 40
   intuition:
     base: 3
     modifier: 0
+    bp: 20
   logic:
     base: 1
     modifier: 0
   willpower:
     base: 3
     modifier: 0
+    bp: 20
   charisma:
     base: 1
     modifier: 0
@@ -57,22 +63,26 @@ essence:
 qualities:
   - name: Adept
     rating: 1
+    bp: 5
     type: positive
     sourcebook: 20th Anniversary Core Rulebook
     page: 90
   - name: Exceptional Attribute (Body)
     rating: 1
+    bp: 20
     type: positive
     sourcebook: 20th Anniversary Core Rulebook
     page: 90
   - name: Dependances
     rating: 3
+    bp: -15
     type: negative
     sourcebook: Runners Companion
     page: 104
     description: |
       Descendant direct des Zotz-Yax , une tribu orque maya qui a survécu à l’effondrement de la Sixième Monde en préservant ses traditions chamaniques et ses techniques de combat ancestrales.
-  - name: Distinctive Style
+  - name: In debt
+    bp: -5
     rating: 1
     sourcebook: Runners Companion
     page: 103
@@ -144,18 +154,33 @@ contacts:
     connection: 3
     loyalty: 1
 gear:
-  - name: tomahawk
-    quantity: 3
-    price_unit: 150
-    damage: (STR/2 + 2)P
-    sourcebook:
-    page:
-  - name: Macauitil
-    quantity: 1
-    price_unit: 3000
-    damage: (STR/2 +2)P
-  - name: Knife
-    quantity: 1
-    price_unit: 20
-    damage: (STR/2 + 1)P
+  weapons:
+    - name: Tomahawk
+      quantity: 3
+      price: 150
+      reach: 1
+      damage: (STR/2 + 2)P
+      type: 
+        - mele
+        - throwing
+      availability: 4
+      sourcebook: Runner Companion
+      page:
+    - name: Macauitil
+      quantity: 1
+      reach: 1
+      price: 3000
+      availability: 14R
+      sourcebook:  Runner Companion
+      type: 
+        - mele
+      damage: (STR/2 +2)P
+    - name: Knife
+      quantity: 1
+      price: 20
+      type: 
+        - mele
+      damage: (STR/2 + 1)P
+      sourcebook:  20th Anniversary Core Rulebook
+      page:
 ---

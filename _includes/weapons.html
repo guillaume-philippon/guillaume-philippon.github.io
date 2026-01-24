@@ -1,0 +1,62 @@
+<div class="col-9 mt-2">
+    <div class="col-12 text-center bg-info text-white rounded"><strong>Mélée</strong></div>
+    <div class="col-12">
+        <table class="table table-sm table-striped ">
+        <thead>
+            <tr>
+            <th scope="col"></th>
+            <th class="text-center">Reach</th>
+            <th class="text-center">Damage</th>
+            <th class="text-center">AP</th>
+            <th class="text-center">Availability</th>
+            <th class="text-end">Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for gear in page.gear.weapons %}
+                {% if gear.type contains 'mele' %}
+                <tr>
+                    <th scope="row" data-bs-toggle="tooltip" data-bs-title="{{gear.sourcebook}} (p. {{gear.page}})">{{ gear.name }}</th>
+                    <td class="text-center">{{ gear.reach }}</td>
+                    <td class="text-center">{{ gear.damage }}</td>
+                    <td class="text-center">{{ gear. ap}}</td>
+                    <td class="text-center">{{ gear.availability }}</td>
+                    <td class="text-end">{{ gear.price }} ¥</td>
+                </tr>
+                {% endif %}
+            {% endfor %}
+        </tbody>
+        </table>
+    </div>
+    <div class="col-12 text-center bg-info text-white rounded"><strong>Distance</strong></div>
+    <div class="col-12">
+        <table class="table table-sm table-striped">
+        <thead>
+            <tr>
+            <th scope="col"></th>
+            <th class="text-center">Damage</th>
+            <th class="text-center">AP</th>
+            <th class="text-center">Mode</th>
+            <th class="text-center">RC</th>
+            <th class="text-center">Ammo</th>
+            <th class="text-center">Availability</th>
+            <th class="text-end">Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for gear in page.gear.weapons %}
+                {% if gear.type contains 'range' %}
+                <tr>
+                    <th scope="row" data-bs-title="{{gear.sourcebook}} (p. {{gear.page}})">{{ gear.name }}</th>
+                    <td class="text-center">{{ gear.reach }}</td>
+                    <td class="text-center">{{ gear.damage }}</td>
+                    <td class="text-center">{{ gear. ap}}</td>
+                    <td class="text-center">{{ gear.availability }}</td>
+                    <td class="text-end">{{ gear.price }} ¥</td>
+                </tr>
+                {% endif %}
+            {% endfor %}
+        </tbody>
+        </table>
+    </div>
+</div>
