@@ -19,47 +19,39 @@ attributes:
     base: 3
     modifier: 0
     max: 6
-    bp: 20
   agility:
     base: 5
     modifier: 0
     max: 6
-    bp: 50
   reaction: 
     base: 5
-    modifier: 0
+    modifier: 2
     max: 6
-    bp: 40
   strength: 
     base: 1
     modifier: 0
     max: 6
-    bp: 0
   intuition:
     base: 2
     modifier: 0
     max: 6
-    bp: 10
   logic:
     base: 5
-    modifier: 0
+    modifier: 2
     max: 6
-    bp: 40
   willpower:
     base: 5
     modifier: 0
     max: 6
-    bp: 40
   charisma:
     base: 1
     modifier: 0
     max: 6
-    bp: 0
 armor:
   impact: 6
   balistic: 6
   astral: 0
-turns: 1
+turns: 3
 edge:
   base: 2
   modifier: 0
@@ -89,7 +81,7 @@ skills:
   active:
     athelitics:
       - name: Climbing
-        value: 0
+        value: 4
       - name: Gymnatistic
         value: 0
       - name: Running
@@ -130,15 +122,11 @@ skills:
         value: 4
     ungrouped:
       - name: Dodge
-        value: 0
+        value: 4
         type: defense
       - name: Perception
-        value: 0
+        value: 4
   knowledge:
-    - name: Maya Culture
-      value: 6
-    - name: Security Procedures
-      value: 6
 contacts:
 cyberware:
   - name: Commlink
@@ -170,11 +158,16 @@ cyberware:
     availability: 12
     price: 6000
     type: eyeware
-  - name: Wired Reflex (2)
-    essence: 3.0
+  - name: Synaptic Booster (2)
+    essence: 1.0
     availability: 12R
-    price: 32000
-    type: bodyware
+    price: 160000
+    type: bioware
+  - name: Cerebral Booster (2)
+    essence: 0.4
+    availability: 12
+    price: 20000
+    type: bioware
 matrix:
   turns: 2
   commlink:
@@ -189,35 +182,110 @@ matrix:
     common_use:
         analyze:
           loaded: yes
+          skill: Computer
           rating: 6
+          price: 300
+        browser:
+          rating: 6
+          skill: Datasearch
+          price: 300
+        command:
+          rating: 6
+          skill: Varies
+          price: 300
+        edit:
+          rating: 6
+          skill: Computer
           price: 300
         encrypt:
           rating: 6
+          skill: Electronic Warfare
+          price: 300
+        reality_filter:
+          rating: 6
+          skill: Electronic Warfare
+          skill: Response
           price: 300
         scan:
           rating: 6
+          skill: Electronic Warfare
           price: 300
     hacking:
         armor:
           loaded: yes
+          skill: None
           rating: 3
           availability: 6R
           price: 3000
         attack:
           rating: 3
+          skill: Cybercombat / Hacking
+          availability: 6R
+          price: 3000
+        biofeedback_filter:
+          rating: 3
+          skill: None
           availability: 6R
           price: 3000
         black_hammer:
           rating: 3
+          skill: Cybercombat
+          availability: 6R
+          price: 3000
+        blackout:
+          rating: 0
+          skill: Cybercombat
+          availability: 6R
+          price: 0
+        data_bomb:
+          rating: 3
+          skill: None
+          availability: 6R
+          price: 3000
+        decrypt:
+          rating: 3
+          skill: Electronic Warfare
+          availability: 6R
+          price: 3000
+        defuse:
+          rating: 3
+          skill: Hacking
+          availability: 6R
+          price: 3000
+        eccm:
+          rating: 3
+          skill: None
+          availability: 6R
+          price: 3000
+        exploit:
+          rating: 3
+          skill: Hacking
+          availability: 6R
+          price: 3000
+        medic:
+          rating: 3
+          skill: Computer
+          availability: 6R
+          price: 3000
+        sniffer:
+          rating: 3
+          skill: Electronic Warfare / Hacking
+          availability: 6R
+          price: 3000
+        spoof:
+          rating: 3
+          skill: Hacking
           availability: 6R
           price: 3000
         stealth:
           loaded: yes
           rating: 3
+          skill: Hacking
           availability: 6R
           price: 3000
         track:
           loaded: yes
+          skill: Computer
           rating: 3
           availability: 6R
           price: 3000

@@ -1,0 +1,84 @@
+free:
+  swap_icon:
+    program: system
+  change_linked_device_mode:
+    program: system
+  detect_wireless_nodes:
+    program: system
+  jack_out:
+    program: system
+  switch_interface_mode:
+    program: system
+  terminate_data_transfer:
+    program: system
+  transmit_phrase:
+    program: system
+simple:
+  analyze_icon_node:
+    program: analyze
+  call_dismiss_sprite:
+    program: compiling
+  deactivate_program:
+    program: system
+  decrypt:
+    program: system
+  encrypt:
+    program: encrypt
+  issue_command:
+    program: system
+  jump_into:
+    program: system
+  log_off:
+    program: system
+  observe_in_detail:
+    program: system
+  transfer_data:
+    program: system
+complex:
+  capture_wireless_signal:
+    program: sniffer
+  compile_sprite:
+    program: compiling
+  control_device:
+    program: command
+  crash_node:
+    program: exploit
+  crash_program:
+    program: exploit
+  datasearch:
+    program: browse
+  decompile_a_sprite:
+    program: decompiling
+  detect_hidden_node:
+    program: scan
+  disarm_data_bomb:
+    program: defuse
+  edit:
+    program: edit
+  hack_on_the_fly:
+    program: exploit
+  initiate_cryptanalysis:
+    program: decrypt
+  intercept_traffic:
+    program: sniffer
+  jam_signals:
+    program: None
+  log_on:
+    program: system
+  attack:
+    program: Attack/Black Hammer/Blackout
+  reboot:
+    program: system
+  redirect_trace:
+    program: spoof
+  repair_icon:
+    program: medic
+  run_program:
+    program: system
+  set_data_bomb:
+    program: data_bomb
+  spoof_command:
+    program: spoof
+  trace_user:
+    program: track 
+
