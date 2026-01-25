@@ -6,7 +6,7 @@ lifestyle: Middle
 money: 0
 karma: 0
 role:
-  operational: Street Samouraï / Sécurité Rapproché
+  operational: Street Samouraï, Sécurité Rapproché
   narrative: Stabilité, Résilience, Dette
 history: |
   Ancien agent de terrain issu de structures privées opérant en zones instables.
@@ -88,7 +88,7 @@ qualities:
     sourcebook: Runners Companion
     page: 104
     description: |
-      Descendant direct des Zotz-Yax , une tribu orque maya qui a survécu à l’effondrement de la Sixième Monde en préservant ses traditions chamaniques et ses techniques de combat ancestrales.
+      Descendant direct des *Zotz-Yax*, une tribu orque maya qui a survécu à l’effondrement de la Sixième Monde en préservant ses traditions chamaniques et ses techniques de combat ancestrales.
   - name: In debt
     bp: -5
     rating: 1

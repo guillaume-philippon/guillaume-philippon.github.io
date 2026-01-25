@@ -15,6 +15,7 @@
           {% assign body_total = page.attributes.body.base | plus: page.attributes.body.modifier %}
           {% assign strength_total = page.attributes.strength.base | plus: page.attributes.strength.modifier %}
           {% assign willpower_total = page.attributes.willpower.base | plus: page.attributes.willpower.modifier %}
+          {% assign logic_total = page.attributes.logic.base | plus: page.attributes.logic.modifier %}
           {% assign agilite_total = page.attributes.agility.base | plus: page.attributes.agilite.modifier %}
           {% assign physic_condition = body_total | divided_by: 2.0 | round | plus: 8 %}
           {% assign mental_condition = willpower_total | divided_by: 2.0 | round | plus: 8 %}
@@ -30,7 +31,9 @@
           {% if page.picture %}
             <img src="{{ page.picture }}" class="img-fluid rounded" alt="{{ page.name }}">
           {% endif %}
-
+          {% if page.matrix %}
+            {% include matrix.html %}
+          {% endif %}
         </div>
 
         {% include jets_courants.html %}
@@ -61,6 +64,9 @@
         </div>
         {% include skills.html %}
 
+        {% if page.matrix %}
+        {% include programs.html %}
+        {% endif %}
 
       <!-- Pouvoirs Adept -->
        {% if page.powers %}

@@ -1,4 +1,15 @@
+{% assign have_melee = false %}
+{% assign have_range = false %}
+{% for weapon in page.gear.weapons %}
+    {% if weapon.type contains 'mele' %}
+        {% assign have_melee = true %}
+    {% endif %}
+    {% if weapon.type contains 'range' %}
+        {% assign have_range = true %}
+    {% endif %}
+{% endfor %}
 <div class="col-9 mt-2">
+{% if have_melee %}
     <div class="col-12 text-center bg-info text-white rounded"><strong>Mélée</strong></div>
     <div class="col-12">
         <table class="table table-sm table-striped ">
@@ -28,6 +39,8 @@
         </tbody>
         </table>
     </div>
+{% endif %}
+{% if have_range %}
     <div class="col-12 text-center bg-info text-white rounded"><strong>Distance</strong></div>
     <div class="col-12">
         <table class="table table-sm table-striped">
@@ -48,9 +61,11 @@
                 {% if gear.type contains 'range' %}
                 <tr>
                     <th scope="row" data-bs-title="{{gear.sourcebook}} (p. {{gear.page}})">{{ gear.name }}</th>
-                    <td class="text-center">{{ gear.reach }}</td>
                     <td class="text-center">{{ gear.damage }}</td>
-                    <td class="text-center">{{ gear. ap}}</td>
+                    <td class="text-center">{{ gear.ap }}</td>
+                    <td class="text-center">{{ gear.mode }}</td>
+                    <td class="text-center">{{ gear.rc }}</td>
+                    <td class="text-center">{{ gear.ammo }}</td>
                     <td class="text-center">{{ gear.availability }}</td>
                     <td class="text-end">{{ gear.price }} ¥</td>
                 </tr>
@@ -59,4 +74,5 @@
         </tbody>
         </table>
     </div>
+{% endif %}
 </div>
