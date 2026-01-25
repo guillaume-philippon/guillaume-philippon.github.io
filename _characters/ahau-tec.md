@@ -115,44 +115,42 @@ skills:
   active:
     athelitics:
       - name: Climbing
+        attribute: Strenght
         value: 3
       - name: Gymnatistic
+        attribute: Agility
         value: 3
       - name: Running
+        attribute: Strenght
         value: 3
       - name: Swimming
+        attribute: Strenght
         value: 3
     close_combat:
       - name: Blades
+        attribute: Agility
         value: 4
       - name: Clubs
+        attribute: Agility
         value: 4
       - name: Unarmed Combat
+        attribute: Agility
         value: 4
     stealth:
-      - name: Disguise
-        value: 0
       - name: Infiltration
+        attribute: Agility
         value: 4
-      - name: Palming
-        value: 0
-      - name: Shadowing
-        value: 0
-    outdoor:
-      - name: Survival
-        value: 0
-      - name: Navigation
-        value: 0
-      - name: Tracking
-        value: 0
     ungrouped:
       - name: Dodge
+        attribute: Reaction
         value: 5
         type: defense
       - name: Thowing Weapons
+        attribute: Agility
         value: 5
         type: range
       - name: Perception
+        attribute: Intuition
         value: 3
   knowledge:
     - name: Maya Culture

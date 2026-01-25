@@ -80,51 +80,63 @@ qualities:
 skills:
   active:
     athelitics:
-      - name: Climbing
-        value: 4
       - name: Gymnatistic
-        value: 0
-      - name: Running
-        value: 0
-      - name: Swimming
-        value: 0
-    stealth:
-      - name: Disguise
-        value: 0
-      - name: Infiltration
+        attribute: Agility
         value: 4
-      - name: Palming
-        value: 0
-      - name: Shadowing
-        value: 0
+    stealth:
+      - name: Infiltration
+        attribute: Agility
+        value: 4
     firearms:
       - name: Pistols
-        value: 0
+        value: 4
+        attribute: Agility
       - name: Automatics
-        value: 0
+        value: 4
+        attribute: Agility
       - name: Longarms 
-        value: 5
+        value: 4
+        attribute: Agility
     cracking:
       - name: Cybercombat
+        attribute: Logic
         value: 4
       - name: Electronic Warfare
+        attribute: Logic
         value: 4
       - name: Hacking
         value: 4
+        attribute: Logic
     electronics:
       - name: Computer
+        attribute: Logic
         value: 4
       - name: Datasearch
+        attribute: Logic
         value: 4
       - name: Hardware
+        attribute: Logic
         value: 4
       - name: Software
+        attribute: Logic
         value: 4
+    biotech:
+      - name: Cybertechnology
+        attribute: Logic
+        value: 2
+      - name: First-Aid
+        attribute: Logic
+        value: 2
+      - name: Medicine
+        attribute: Logic
+        value: 2
     ungrouped:
       - name: Dodge
         value: 4
+        attribute: Reaction
         type: defense
       - name: Perception
+        attribute: Intuition
         value: 4
   knowledge:
 contacts:
