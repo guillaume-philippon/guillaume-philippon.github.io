@@ -55,8 +55,8 @@ attributes:
     max: 5
     modifier: 0
 armor:
-  impact: 6
-  balistic: 6
+  impact: 6 (+8)
+  balistic: 6 (+6)
   astral: 6
 turns: 3
 magic:
@@ -140,7 +140,7 @@ skills:
         value: 0
     outdoor:
       - name: Survival
-        value: 4
+        value: 0
       - name: Navigation
         value: 0
       - name: Tracking
@@ -153,7 +153,7 @@ skills:
         value: 5
         type: range
       - name: Perception
-        value: 4
+        value: 3
   knowledge:
     - name: Maya Culture
       value: 6
@@ -167,7 +167,7 @@ contacts:
   - name: Officier Kael Riven
     type: Security Officer
     connection: 3
-    loyalty: 1
+    loyalty: 2
 gear:
   weapons:
     - name: Tomahawk
@@ -198,4 +198,9 @@ gear:
       damage: (STR/2 + 1)P
       sourcebook:  20th Anniversary Core Rulebook
       page:
+  armor:
+    - name: Armor Jacket
+      balistic: 8
+      impact: 6
+      price: 900
 ---

@@ -23,6 +23,16 @@
           {% for attr in page.attributes %}
             {% assign attribute_bp = attribute_bp | plus: attr[1].bp %}
           {% endfor %}
+          {% assign cyberware_essence = 0.0 %}
+          {% for ware in page.cyberware %}
+            {% assign cyberware_essence = cyberware_essence | plus:ware.essence %}
+          {% endfor %}
+          {% assign matrix_cost = 0 %}
+          {% for group in page.matrix.programs %}
+            {% for item in group[1] %}
+            {% assign matrix_cost = matrix_cost | plus:item[1].price %}
+            {% endfor %}
+          {% endfor %}
 
           {% include attributes.html %}
 
@@ -91,17 +101,8 @@
         {% endfor %}
       </ul>
 
+      {% include gear.html %}
       {% include history.html %}
-      <!-- Équipement -->
-      <h3 class="mt-3">Équipement</h3>
-      <ul class="list-group">
-        {% for item in page.gear %}
-          <li class="list-group-item py-1">
-            <strong>{{ item.name }}</strong> (x{{ item.quantity }}, {{ item.price_unit }}¥,
-            {% if item.damage %}Dégâts: {{ item.damage}}{% endif %})
-          </li>
-        {% endfor %}
-      </ul>
     </div>
   </div>
 </div>

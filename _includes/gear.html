@@ -1,0 +1,27 @@
+{% assign gear_cost = 0 %}
+{% for group in page.gear %}
+    {% for item in group[1] %}
+        {% assign multiplier = 1 %}
+        {% if item.quantity %}
+            {% assign multiplier = item.quantity %}
+        {% endif %}
+        {% assign item_cost = item.price | times: multiplier %}
+        {% assign gear_cost = gear_cost | plus: item_cost %}
+    {% endfor %}
+{% endfor %}
+
+<!-- Équipement -->
+<h3 class="mt-3">Équipement [{{ gear_cost}} ¥]</h3>
+<ul class="list-group">
+{% for group in page.gear %}
+    {% for item in group[1] %}
+    <li class="list-group-item py-1">
+    <strong>{{ item.name }}</strong> ({% if item.quantity %} x {{ item.quantity }}, {% endif %}{{ item.price }}¥)
+    <p class="ps-4">
+    {% if item.damage %}Dégâts: {{ item.damage}}{% endif %}
+    {% if item.armor %}Impact: {{armor.impact }} {% endif %}
+    </p>
+    </li>
+    {% endfor %}
+{% endfor %}
+</ul>

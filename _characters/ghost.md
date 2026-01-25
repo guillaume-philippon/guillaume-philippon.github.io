@@ -171,7 +171,7 @@ cyberware:
     price: 6000
     type: eyeware
   - name: Wired Reflex (2)
-    essence: 3
+    essence: 3.0
     availability: 12R
     price: 32000
     type: bodyware
@@ -195,7 +195,6 @@ matrix:
           rating: 6
           price: 300
         scan:
-          loaded: yes
           rating: 6
           price: 300
     hacking:
@@ -213,6 +212,11 @@ matrix:
           availability: 6R
           price: 3000
         stealth:
+          loaded: yes
+          rating: 3
+          availability: 6R
+          price: 3000
+        track:
           loaded: yes
           rating: 3
           availability: 6R
@@ -248,8 +252,8 @@ gear:
       availability: 12R
       price: 1100
   armor:
-    - name: Urban Explorer Jumpsuit
-      balistic: 6
+    - name: Armor Jacket
+      balistic: 8
       impact: 6
-      price: 500s
+      price: 900
 ---
