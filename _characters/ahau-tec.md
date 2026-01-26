@@ -9,7 +9,7 @@ role:
   operational: Street Samouraï, Sécurité Rapproché
   narrative: Stabilité, Résilience, Dette
 history: |
-  Ahau-Tec, descendant des **Zotz-Yax**, a été recruté par DracoTech après avoir prouvé sa valeur lors d’un run contre un groupe de *blood mages* qui menaçaient les intérêts de la megacorp dans la jungle du Chiapas. Son statut est celui d’un agent de sécurité spécialisé, officiellement chargé de la protection des actifs dans les zones à haut risque magique et des opérations discrètes nécessitant une expertise chamanique.
+  Ahau-Tec, descendant des **Zotz-Yax**, a été recruté par DracoTech après avoir prouvé sa valeur lors d’un run contre un groupe de *blood mages* qui menaçaient les intérêts de la megacorp dans la jungle du Chiapas. Son statut est celui d’un agent de sécurité spécialisé, officiellement chargé de la protection des actifs dans les zones à haut risque magique et des opérations discrètes nécessitant une expertise de la culture maya.
 attributes:
   body:
     base: 9
