@@ -330,7 +330,7 @@ gear:
         - range
       damage: 8P
       ap: -1
-      rc: (1)
+      rc: 1
       ammo: 14(c)
       availability: 10F
       mode: SA
@@ -344,15 +344,16 @@ gear:
       ammo: 5(m)
       availability: 3R
       price: 475
-    - name: Enfield AS-7
+    - name: FN HAR
       type:
         - range
-      damage: 7P
+      damage: 6P
       ap: -1
-      mode: SA/BF
-      ammo: 10(c) or 24 (d)
-      availability: 12R
-      price: 1100
+      rc: 2
+      mode: SA/BF/FA
+      ammo: 35 (c)
+      availability: 8R
+      price: 1000
   armor:
     - name: Armor Jacket
       balistic: 8
