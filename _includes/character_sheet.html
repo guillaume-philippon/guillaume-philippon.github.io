@@ -1,3 +1,4 @@
+{% include variables.html %}
 <div class="container my-3">
   <div class="card">
     <div class="card-header bg-dark text-white">
@@ -15,27 +16,19 @@
         <div class="col-md-8">{% include history.html %}</div>
       </div>
       <div class="row">
-        <!-- Attributs -->
-        <div class="col-md-4">
-          {% include variables.html %}
-          
+        <div class="col-lg-8">
           {% include attributes.html %}
-
-        <!-- Image -->
-        <div class="col-md-4 text-center">
-          {% include damage.html %}
         </div>
-
+        <div class="col-lg-4">
         {% include jets_courants.html %}
-
-        <div class="row">
-        {% include weapons.html %}
         </div>
-        {% include skills.html %}
+      </div>
+      {% include weapons.html %}
+      {% include skills.html %}
 
-        {% if page.matrix %}
+      {% if page.matrix %}
         {% include programs.html %}
-        {% endif %}
+      {% endif %}
 
       <!-- Pouvoirs Adept -->
        {% if page.powers %}
