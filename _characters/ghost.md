@@ -80,62 +80,62 @@ qualities:
 skills:
   active:
     athelitics:
-      - name: Gymnatistic
+      gymnatistic:
         attribute: Agility
         value: 4
     stealth:
-      - name: Infiltration
+      infiltration:
         attribute: Agility
         value: 4
     firearms:
-      - name: Pistols
+      pistols:
         value: 4
         attribute: Agility
-      - name: Automatics
+      automatics:
         value: 4
         attribute: Agility
-      - name: Longarms 
+      longarms:
         value: 4
         attribute: Agility
     cracking:
-      - name: Cybercombat
+      cybercombat:
         attribute: Logic
         value: 4
-      - name: Electronic Warfare
+      electronic_warfare:
         attribute: Logic
         value: 4
-      - name: Hacking
+      hacking:
         value: 4
         attribute: Logic
     electronics:
-      - name: Computer
+      computer:
         attribute: Logic
         value: 4
-      - name: Datasearch
+      datasearch:
         attribute: Logic
         value: 4
-      - name: Hardware
+      hardware:
         attribute: Logic
         value: 4
-      - name: Software
+      software:
         attribute: Logic
         value: 4
     biotech:
-      - name: Cybertechnology
+      cybertechnology:
         attribute: Logic
         value: 2
-      - name: First-Aid
+      first-aid:
         attribute: Logic
         value: 2
-      - name: Medicine
+      medicine:
         attribute: Logic
         value: 2
     ungrouped:
-      - name: Dodge
+      dodge:
         value: 4
         attribute: Reaction
         type: defense
-      - name: Perception
+      prception:
         attribute: Intuition
         value: 4
   knowledge:
@@ -231,6 +231,7 @@ matrix:
           price: 3000
         attack:
           rating: 3
+          type: attack
           skill: Cybercombat / Hacking
           availability: 6R
           price: 3000
@@ -241,11 +242,13 @@ matrix:
           price: 3000
         black_hammer:
           rating: 3
+          type: attack
           skill: Cybercombat
           availability: 6R
           price: 3000
         blackout:
           rating: 0
+          type: attack
           skill: Cybercombat
           availability: 6R
           price: 0

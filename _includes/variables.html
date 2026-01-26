@@ -1,0 +1,71 @@
+<!-- Total Attribute -->
+{% assign body_total = page.attributes.body.base | plus: page.attributes.body.modifier %}
+{% assign agility_total = page.attributes.agility.base | plus: page.attributes.agilite.modifier %}
+{% assign reaction_total = page.attributes.reaction.base | plus: page.attributes.reaction.modifier %}
+{% assign strength_total = page.attributes.strength.base | plus: page.attributes.strength.modifier %}
+{% assign intuition_total = page.attributes.intuition.base | plus: page.attributes.intuition.modifier %}
+{% assign logic_total = page.attributes.logic.base | plus: page.attributes.logic.modifier %}
+{% assign willpower_total = page.attributes.willpower.base | plus: page.attributes.willpower.modifier %}
+{% assign charisma_total = page.attributes.charisma.base | plus: page.attributes.charisma.modifier %}
+
+<!-- Physical Initiative -->
+{% assign physical_initiative = reaction_total | plus: intuition_total %}
+{% assign astral_initiative = intuition_total | times: 2 %}
+{% assign matrix_initiative = intuition_total | plus: page.matrix.commlink.response %}
+
+<!-- Condition monitor -->
+{% assign physic_condition = body_total | divided_by: 2.0 | round | plus: 8 %}
+{% assign mental_condition = willpower_total | divided_by: 2.0 | round | plus: 8 %}
+
+<!-- Cyber / Bioware essence cost-->
+{% assign cyberware_essence = 0.0 %}
+{% for ware in page.cyberware %}
+    {% assign cyberware_essence = cyberware_essence | plus:ware.essence %}
+{% endfor %}
+
+<!-- Programs nuyens cost -->
+{% assign programs_cost = 0 %}
+{% for group in page.matrix.programs %}
+    {% for item in group[1] %}
+        {% assign programs_cost = programs_cost | plus:item[1].price %}
+    {% endfor %}
+{% endfor %}
+
+<!-- Dodge -->
+{% assign dodge = 0 %}
+{% for skill in page.skills.active.ungrouped %}
+  {% if skill.name == 'Dodge' %}
+    {% assign dodge = skill.value %}
+  {% endif %}
+{% endfor %}
+
+<!-- Highest weapon skill -->
+{% assign highest_melee = dodge %}
+{% for skill in page.skills.active.close_combat %}
+  {% if skill[1].value > highest_melee %}
+    {% assign highest_melee = skill[1].value %}
+  {% endif %}
+{% endfor %}
+
+{% assign highest_range = 0 %}
+{% for skill in page.skills.active.firearms %}
+  {% if skill[1].value > highest_range %}
+    {% assign highest_range = skill[1].value %}
+  {% endif %}
+{% endfor %}
+{% for skill in page.skills.active.ungrouped %}
+  {% if skill[1].type == 'range' %}
+    {% if skill[1].value > highest_range %}
+      {% assign highest_range = skill[1].value %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% assign highest_matrix = 0 %}
+{% for program in page.matrix.programs.hacking %}
+    {% if program[1].type == 'attack' %}
+        {% if program[1].rating > highest_matrix %}
+            {% assign highest_matrix = program[1].rating %}
+        {% endif %}
+    {% endif %}
+{% endfor %}

@@ -28,7 +28,7 @@ attributes:
     bp: 40
   reaction: 
     base: 5
-    modifier: 2
+    modifier: 1
     max: 6
     bp: 40
   strength: 
@@ -58,10 +58,11 @@ armor:
   impact: 6 (+8)
   balistic: 6 (+6)
   astral: 6
-turns: 3
+turns: 2
 magic:
   base: 6
   modifier: 0
+  weapon_focus: 2
 edge:
   base: 1
   modifier: 0
@@ -96,10 +97,15 @@ qualities:
     page: 103
 powers:
   - name: Improved Reflex
-    rating: 2
-    magic: 2.5
+    rating: 1
+    magic: 1.5
     description: |
       Le pouvoir *Improved Reflexes* augmente la Réaction de +1 par niveau et +1 Passe d'Initiative supplémentaire.
+  - name: Astral Perception
+    rating: 1
+    magic: 1
+    description: |
+      Ce pouvoir permet aux adeptes de *voir* le plan astral.
   - name: Mystic Armor
     rating: 6
     magic: 3
@@ -114,48 +120,48 @@ powers:
 skills:
   active:
     athelitics:
-      - name: Climbing
+      climbing:
         attribute: Strenght
-        value: 3
-      - name: Gymnatistic
+        value: 2
+      gymnatistic:
         attribute: Agility
-        value: 3
-      - name: Running
+        value: 2
+      running:
         attribute: Strenght
-        value: 3
-      - name: Swimming
+        value: 2
+      swimming:
         attribute: Strenght
-        value: 3
+        value: 2
     close_combat:
-      - name: Blades
+      blades:
         attribute: Agility
         value: 4
-      - name: Clubs
+      clubs:
         attribute: Agility
         value: 4
-      - name: Unarmed Combat
+      unarmed_combat:
         attribute: Agility
         value: 4
     stealth:
-      - name: Infiltration
+      infiltration:
         attribute: Agility
         value: 4
     ungrouped:
-      - name: Dodge
+      dodge:
         attribute: Reaction
         value: 5
         type: defense
-      - name: Thowing Weapons
+      thowing_weapons:
         attribute: Agility
         value: 5
         type: range
-      - name: Perception
-        attribute: Intuition
-        value: 3
+      astral_combat:
+        attribute: Willpower
+        value: 4
   knowledge:
-    - name: Maya Culture
+    maya_culture:
       value: 6
-    - name: Security Procedures
+    security_ procedures:
       value: 6
 contacts:
   - name: Dr. Lina Krayven
@@ -179,10 +185,10 @@ gear:
       availability: 4
       sourcebook: Runner Companion
       page:
-    - name: Macauitil
+    - name: Macauitil (Weapon Focus 2)
       quantity: 1
       reach: 1
-      price: 3000
+      price: 23000
       availability: 14R
       sourcebook:  Runner Companion
       type: 

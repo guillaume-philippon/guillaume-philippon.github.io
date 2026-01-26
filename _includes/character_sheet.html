@@ -9,31 +9,9 @@
       <div class="row">
         <!-- Attributs -->
         <div class="col-md-4">
-          {% assign reaction_total = page.attributes.reaction.base | plus: page.attributes.reaction.modifier %}
-          {% assign intuition_total = page.attributes.intuition.base | plus: page.attributes.intuition.modifier %}
-          {% assign initiative = reaction_total | plus: intuition_total %}
-          {% assign body_total = page.attributes.body.base | plus: page.attributes.body.modifier %}
-          {% assign strength_total = page.attributes.strength.base | plus: page.attributes.strength.modifier %}
-          {% assign willpower_total = page.attributes.willpower.base | plus: page.attributes.willpower.modifier %}
-          {% assign logic_total = page.attributes.logic.base | plus: page.attributes.logic.modifier %}
-          {% assign agilite_total = page.attributes.agility.base | plus: page.attributes.agilite.modifier %}
-          {% assign physic_condition = body_total | divided_by: 2.0 | round | plus: 8 %}
-          {% assign mental_condition = willpower_total | divided_by: 2.0 | round | plus: 8 %}
-          {% assign attribute_bp = 0 %}
-          {% for attr in page.attributes %}
-            {% assign attribute_bp = attribute_bp | plus: attr[1].bp %}
-          {% endfor %}
-          {% assign cyberware_essence = 0.0 %}
-          {% for ware in page.cyberware %}
-            {% assign cyberware_essence = cyberware_essence | plus:ware.essence %}
-          {% endfor %}
-          {% assign matrix_cost = 0 %}
-          {% for group in page.matrix.programs %}
-            {% for item in group[1] %}
-            {% assign matrix_cost = matrix_cost | plus:item[1].price %}
-            {% endfor %}
-          {% endfor %}
+          {% include variables.html %}
 
+          
           {% include attributes.html %}
 
         <!-- Image -->
@@ -41,9 +19,7 @@
           {% if page.picture %}
             <img src="{{ page.picture }}" class="img-fluid rounded" alt="{{ page.name }}">
           {% endif %}
-          {% if page.matrix %}
-            {% include matrix.html %}
-          {% endif %}
+          {% include damage.html %}
         </div>
 
         {% include jets_courants.html %}

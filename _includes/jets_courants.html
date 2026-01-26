@@ -1,31 +1,3 @@
-{% assign dodge = 0 %}
-{% for skill in page.skills.active.ungrouped %}
-  {% if skill.name == 'Dodge' %}
-    {% assign dodge = skill.value %}
-  {% endif %}
-{% endfor %}
-{% assign close_combat_skill = 0 %}
-{% for skill in page.skills.active.close_combat %}
-  {% if skill.value > close_combat_skill %}
-    {% assign close_combat_skill = skill.value %}
-  {% endif %}
-{% endfor %}
-{% assign range_skill = 0 %}
-{% for skill in page.skills.active.firearms %}
-  {% if skill.value > range_skill %}
-    {% assign range_skill = skill.value %}
-  {% endif %}
-{% endfor %}
-{% for skill in page.skills.active.ungrouped %}
-  {% if skill.type == 'range' %}
-    {% if skill.value > range_skill %}
-      {% assign range_skill = skill.value %}
-    {% endif %}
-  {% endif %}
-{% endfor %}
-{% assign = initiative_matrice = intuition_total |plus: response_total %}
-{% assign = initiative_astrale = intuition_total | times: 2 %}
-{% assign attaque_matrice_skill = page.skills.active.cracking.cybercombat.value %}
 
 <!-- Jets de dés courants -->
 <div class="col-md-4">
@@ -41,7 +13,7 @@
             <ul class="list-unstyled col-12">
               <li class="py-1 d-flex justify-content-between align-items-center">
                 <strong>Physique</strong>
-                <span><strong>{{ initiative }}</strong> <small>(Réaction + Intuition)</small></span>
+                <span><strong>{{ physical_initiative }}</strong> <small>(Réaction + Intuition)</small></span>
               </li>
               <li class="py-1 d-flex justify-content-between align-items-center">
                 <strong></strong>
@@ -54,7 +26,7 @@
             <ul class="list-unstyled col-12">
               <li class="py-1 d-flex justify-content-between align-items-center">
                 <strong>Matrice</strong>
-                <span><strong> {{ initiative_matrice |plus: page.matrix.commlink.response }}</strong> <small>(Réponse + Intuition)</small></span>
+                <span><strong> {{ matrix_initiative  }}</strong> <small>(Réponse + Intuition)</small></span>
               </li>
               <li class="py-1 d-flex justify-content-between align-items-center">
                 <strong></strong>
@@ -66,7 +38,7 @@
           {% if page.magic %}
           <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
             <strong>Astrale</strong>
-            <span><strong>{{ initiative_astrale }}</strong> <small>(Intuition * 2)</small></span>
+            <span><strong>{{ astral_initiative }}</strong> <small>(Intuition * 2)</small></span>
           </li>
           {% endif %}
         </ul>
@@ -81,17 +53,23 @@
             <ul class="list-unstyled col-12">
               <li class="py-1 d-flex justify-content-between align-items-center">
             <strong>Distance</strong>
-            <span><strong>{{ agilite_total | plus: range_skill }}</strong> <small>(Agility + Skill)</small></span></li>
+            <span><strong>{{ agility_total | plus: highest_range }}</strong> <small>(Agility + Skill)</small></span></li>
             </ul>
           </li>
           <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
             <strong>Corps à Corps</strong>
-            <span><strong>{{ strength_total | plus: close_combat_skill }}</strong> <small>(Strenght + Skill)</small></span>
+            <span><strong>{{ agility_total | plus: highest_melee }}</strong> <small>(Agility + Skill)</small></span>
           </li>
           {% if page.matrix %}
           <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
             <strong>Matrice</strong>
-            <span><strong>{{ logic_total | plus: attaque_matrice_skill }}</strong> <small>(Cybercombat + Software)</small></span>
+            <span><strong>{{ page.skills.active.cracking.cybercombat.value | plus: highest_matrix }}</strong> <small>(Cybercombat + Software)</small></span>
+          </li>
+          {% endif %}
+          {% if page.magic %}
+          <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
+            <strong>Astral</strong>
+            <span><strong>{{ willpower_total | plus: page.magic.weapon_focus }}</strong> <small>(Willpower + Weapon focus)</small></span>
           </li>
           {% endif %}
         </ul>
@@ -111,11 +89,11 @@
         </li>
         <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
           <strong>Corps à Corps</strong>
-          <span><strong>{{ reaction_total | plus: dodge }}</strong> <small>(Reaction + Dodge)</small></span>
+          <span><strong>{{ reaction_total | plus: highest_melee }}</strong> <small>(Reaction + Skill)</small></span>
         </li>
       </ul>
     </div>
-
+     
   </div>
 </div>
       
