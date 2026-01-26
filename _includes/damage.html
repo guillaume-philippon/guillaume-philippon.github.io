@@ -52,10 +52,12 @@
             <strong>Balistic</strong>
             <span><strong>{{ body_total | plus: page.armor.impact }}</strong> <small>(Body + Impact)</small></span>
           </li>
+          {% if page.matrix %}
           <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
-            <strong>Astral</strong>
+            <strong>Matrice</strong>
             <span><strong>{{ page.matrix.commlink.system | plus: page.matrix.programs.hacking.armor.rating }}</strong> <small>(System + Armor)</small></span>
           </li>
+          {% endif %}
         </ul>
         <div class="row mt-2">
           <div class="col-4">
