@@ -15,51 +15,5 @@
         {% include damage.html %}
       </div>
     </div>
-    <div class="col-12">
-          <!-- Magie/Edge/Essence -->
-          <div class="row">
-            <div class="col-4 col-lg-2 mt-2">
-            {% if page.magic %}
-              <div class="card">
-                <div class="card-body p-2 text-center">
-                  <span class="card-title mb-1"><small>Magie</small></span>
-                  <p class="card-text mb-0">{{ page.magic.base }}</p>
-                </div>
-              </div>
-            {% endif %}
-            </div>
-            <div class="col-4 col-lg-2 mt-2">
-              <div class="card">
-                <div class="card-body p-2 text-center">
-                  <span class="card-title mb-1"><small>Edge</small></span>
-                  <p class="card-text mb-0">{{ page.edge.base }}</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-4 col-lg-2 mt-2">
-              <div class="card">
-                <div class="card-body p-2 text-center">
-                  <span class="card-title mb-1"><small>Essence</small></span>
-                  <p class="card-text mb-0">{{ page.essence.base | minus: cyberware_essence }}</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-4 col-lg-2 mt-2">
-              <div class="card">
-                <div class="card-body p-2 text-center">
-                  <span class="card-title mb-1"><small>Physique</small></span>
-                  <p class="card-text mb-0">{{ physic_condition }}</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-4 col-lg-2 mt-2">
-              <div class="card">
-                <div class="card-body p-2 text-center">
-                  <span class="card-title mb-1"><small>Mentale</small></span>
-                  <p class="card-text mb-0">{{ mental_condition }}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-    </div>
+    {% include weapons.html %}
 </div>
