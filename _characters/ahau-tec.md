@@ -15,27 +15,22 @@ attributes:
     base: 9
     modifier: 0
     max: 10
-    bp: 40
   agility:
     base: 5
     modifier: 0
     max: 6
-    bp: 40
   reaction: 
     base: 5
     modifier: 1
     max: 6
-    bp: 40
   strength: 
     base: 7
     modifier: 0
-    max: 12
-    bp: 40
+    max: 8
   intuition:
     base: 1
     max: 6
     modifier: 0
-    bp: 20
   logic:
     base: 1
     modifier: 0
@@ -44,7 +39,6 @@ attributes:
     base: 5
     max: 6
     modifier: 0
-    bp: 20
   charisma:
     base: 1
     max: 5
