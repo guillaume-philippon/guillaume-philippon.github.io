@@ -82,7 +82,7 @@ skills:
     athelitics:
       gymnatistic:
         attribute: Agility
-        value: 4
+        value: 3
     stealth:
       infiltration:
         attribute: Agility
@@ -135,7 +135,7 @@ skills:
         value: 4
         attribute: Reaction
         type: defense
-      prception:
+      perception:
         attribute: Intuition
         value: 4
   knowledge:
