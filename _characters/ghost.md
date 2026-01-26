@@ -77,6 +77,14 @@ qualities:
     description: |
       DracoTech possède des données relativement à jour de mes données personnelles. Les agents de la
       corpo on +6 dés pour identifié le personnage et +2 dés pour pouvoir traquer via *Legwork*.
+  - name: Wanted
+    rating: 1
+    bp: -10
+    sourcebook: Runner Companion
+    page: 110
+    description: |
+      Recherché pour participation à un groupe *techno-terroriste* militant contre l'utilisation
+      militaire de la matrice. [20 000 nuyens]
 skills:
   active:
     athelitics:
@@ -139,7 +147,25 @@ skills:
         attribute: Intuition
         value: 4
   knowledge:
+    securite_matriciel:
+      value: 6
+    programmation_malware:
+      value: 6
+    legislation_cybersecurite:
+      value: 6
+    techno_gang:
+      value: 3
+    projets_secret_militaire:
+      value: 6
 contacts:
+  - name: Neon
+    type: Hackeuse spécialisé dans les base de login/pwd
+    connection: 5
+    loyalty: 1
+  - name: Madame X
+    type: Spécialiste des secrets industriels
+    connection: 3
+    loyalty: 3
 cyberware:
   - name: Commlink
     essence: 0.2
