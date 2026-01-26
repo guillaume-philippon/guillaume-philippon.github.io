@@ -7,18 +7,22 @@
     <div class="card-body">
       <!-- Section avec attributs et image -->
       <div class="row">
+        <div class="col-md-4 text-center">
+          {% if page.picture %}
+            <img src="{{ page.picture }}" class="img-fluid rounded" alt="{{ page.name }}">
+          {% endif %}
+        </div>
+        <div class="col-md-8">{% include history.html %}</div>
+      </div>
+      <div class="row">
         <!-- Attributs -->
         <div class="col-md-4">
           {% include variables.html %}
-
           
           {% include attributes.html %}
 
         <!-- Image -->
         <div class="col-md-4 text-center">
-          {% if page.picture %}
-            <img src="{{ page.picture }}" class="img-fluid rounded" alt="{{ page.name }}">
-          {% endif %}
           {% include damage.html %}
         </div>
 
@@ -26,27 +30,6 @@
 
         <div class="row">
         {% include weapons.html %}
-          <div class="col-3">
-            <div class="col-12">
-            <div class="card bg-secondary text-white mt-2">
-              <div class="card-body p-2 text-center">
-                <h6 class="card-title mb-1">Armure</h6>
-                <p class="card-text mb-0"><strong>Impact:</strong> {{ page.armor.impact }}</p>
-                <p class="card-text mb-0"><strong>Balistique:</strong> {{ page.armor.balistic }}</p>
-                <p class="card-text mb-0"><strong>Astral:</strong> {{ page.armor.astral }}</p>
-              </div>
-            </div>
-            </div>
-            <div class="col-12">
-            <div class="card mt-2">
-              <div class="card-body p-2 text-center">
-                <h6 class="card-title mb-1">Moniteur de condition</h6>
-                <p class="card-text mb-0"><strong>Physique:</strong> {{ physic_condition }}</p>
-                <p class="card-text mb-0"><strong>Mentale:</strong> {{ mental_condition }}</p>
-              </div>
-            </div>
-            </div>
-          </div>
         </div>
         {% include skills.html %}
 
@@ -78,7 +61,6 @@
       </ul>
 
       {% include gear.html %}
-      {% include history.html %}
     </div>
   </div>
 </div>

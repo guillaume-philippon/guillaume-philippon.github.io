@@ -1,4 +1,4 @@
-      <div class="col-12 mt-2">
+      <div class="col-12">
         <div class="col-12 text-center rounded bg-info text-white">Dégats</div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
@@ -18,4 +18,60 @@
           </li>
           {% endif %}
         </ul>
+        <div class="col-12 text-center rounded bg-info text-white">Résistance</div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
+            <strong>Distance</strong>
+            <span><strong>{{ body_total | plus: page.armor.balistic }}</strong> <small>(Body + Balistic)</small></span>
+          </li>
+          <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
+            <strong>Corps à Corps</strong>
+            <span><strong>{{ body_total | plus: page.armor.impact }}</strong> <small>(Body + Impact)</small></span>
+          </li>
+          {% if page.matrix %}
+          <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
+            <strong>Matrice</strong>
+            <span><strong>{{ page.matrix.commlink.system | plus: page.matrix.programs.hacking.armor.rating }}</strong> <small>(System + Armor)</small></span>
+          </li>
+          {% endif %}
+          {% if page.magic %}
+          <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
+            <strong>Astral</strong>
+            <span><strong>{{ body_total | plus: willpower_total }}</strong> <small>(Body + Willpower)</small></span>
+          </li>
+          {% endif %}
+        </ul>
       </div>
+        <div class="col-12 text-center rounded bg-info text-white">Armure</div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
+            <strong>Impact</strong>
+            <span><strong>{{ body_total | plus: page.armor.balistic }}</strong> <small>(Body + Balistic)</small></span>
+          </li>
+          <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
+            <strong>Balistic</strong>
+            <span><strong>{{ body_total | plus: page.armor.impact }}</strong> <small>(Body + Impact)</small></span>
+          </li>
+          <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
+            <strong>Astral</strong>
+            <span><strong>{{ page.matrix.commlink.system | plus: page.matrix.programs.hacking.armor.rating }}</strong> <small>(System + Armor)</small></span>
+          </li>
+        </ul>
+        <div class="row mt-2">
+          <div class="col-4">
+            <div class="card">
+              <div class="card-body p-2 text-center">
+                <span class="card-title mb-1"><small>Physique</small></span>
+                <p class="card-text mb-0">{{ physic_condition }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="card">
+              <div class="card-body p-2 text-center">
+                <span class="card-title mb-1"><small>Mentale</small></span>
+                <p class="card-text mb-0">{{ mental_condition }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
