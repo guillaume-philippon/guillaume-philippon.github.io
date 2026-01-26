@@ -165,11 +165,6 @@ cyberware:
     availability: 8R
     price: 1000
     type: eyeware
-  - name: Skillwire (3)
-    essence: 0.6
-    availability: 12
-    price: 6000
-    type: eyeware
   - name: Synaptic Booster (2)
     essence: 1.0
     availability: 12R
@@ -181,7 +176,8 @@ cyberware:
     price: 20000
     type: bioware
 matrix:
-  turns: 2
+  turns: 3
+  initiative: 1
   commlink:
     name: Fairlight Caliban
     response: 4
@@ -226,84 +222,84 @@ matrix:
         armor:
           loaded: yes
           skill: None
-          rating: 3
-          availability: 6R
-          price: 3000
+          rating: 6
+          availability: 12R
+          price: 6000
         attack:
-          rating: 3
           type: attack
           skill: Cybercombat / Hacking
-          availability: 6R
-          price: 3000
-        biofeedback_filter:
-          rating: 3
-          skill: None
-          availability: 6R
-          price: 3000
-        black_hammer:
-          rating: 3
-          type: attack
-          skill: Cybercombat
-          availability: 6R
-          price: 3000
-        blackout:
           rating: 0
+          availability: 12R
+          price: 0
+        biofeedback_filter:
+          skill: None
+          rating: 0
+          availability: 12R
+          price: 0
+        black_hammer:
           type: attack
           skill: Cybercombat
-          availability: 6R
+          rating: 6
+          availability: 12R
+          price: 6000
+        blackout:
+          type: attack
+          skill: Cybercombat
+          rating: 0
+          availability: 12R
           price: 0
         data_bomb:
-          rating: 3
           skill: None
-          availability: 6R
-          price: 3000
+          rating: 0
+          availability: 12R
+          price: 0
         decrypt:
-          rating: 3
           skill: Electronic Warfare
+          rating: 3
           availability: 6R
           price: 3000
         defuse:
-          rating: 3
           skill: Hacking
-          availability: 6R
-          price: 3000
+          rating: 0
+          availability: 12R
+          price: 0
         eccm:
-          rating: 3
           skill: None
-          availability: 6R
-          price: 3000
+          rating: 0
+          availability: 12R
+          price: 0
         exploit:
-          rating: 3
           skill: Hacking
-          availability: 6R
-          price: 3000
+          rating: 6
+          availability: 12R
+          price: 6000
         medic:
-          rating: 3
           skill: Computer
-          availability: 6R
-          price: 3000
+          rating: 6
+          availability: 12R
+          price: 6000
         sniffer:
-          rating: 3
           skill: Electronic Warfare / Hacking
+          rating: 3
           availability: 6R
           price: 3000
         spoof:
-          rating: 3
           skill: Hacking
-          availability: 6R
-          price: 3000
+          rating: 0
+          availability: 12R
+          price: 0
         stealth:
           loaded: yes
-          rating: 3
           skill: Hacking
-          availability: 6R
-          price: 3000
+          rating: 6
+          availability: 12R
+          price: 6000
         track:
           loaded: yes
           skill: Computer
-          rating: 3
-          availability: 6R
-          price: 3000
+          rating: 6
+          availability: 12R
+          price: 6000
 gear:
   weapons:
     - name: Ares Desert Fox (Sniper)

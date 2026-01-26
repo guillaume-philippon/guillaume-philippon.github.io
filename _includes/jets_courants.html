@@ -26,7 +26,7 @@
             <ul class="list-unstyled col-12">
               <li class="py-1 d-flex justify-content-between align-items-center">
                 <strong>Matrice</strong>
-                <span><strong> {{ matrix_initiative  }}</strong> <small>(Réponse + Intuition)</small></span>
+                <span><strong> {{ matrix_initiative | plus: page.matrix.initiative  }}</strong> <small>(Réponse + Intuition)</small></span>
               </li>
               <li class="py-1 d-flex justify-content-between align-items-center">
                 <strong></strong>
@@ -91,6 +91,12 @@
           <strong>Corps à Corps</strong>
           <span><strong>{{ reaction_total | plus: highest_melee }}</strong> <small>(Reaction + Skill)</small></span>
         </li>
+        {% if page.matrix %}
+          <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
+            <strong>Matrice</strong>
+            <span><strong>{{ page.matrix.commlink.response | plus: page.matrix.commlink.firewall }}</strong> <small>(Response + Firewall)</small></span>
+          </li>
+        {% endif %}
       </ul>
     </div>
      

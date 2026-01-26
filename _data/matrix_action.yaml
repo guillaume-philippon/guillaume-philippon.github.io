@@ -1,84 +1,125 @@
 free:
   swap_icon:
-    program: system
+    program:
+      - system
   change_linked_device_mode:
-    program: system
+    program:
+      - system
   detect_wireless_nodes:
-    program: system
+    program:
+      - system
   jack_out:
-    program: system
+    program:
+      - system
   switch_interface_mode:
-    program: system
+    program:
+      - system
   terminate_data_transfer:
-    program: system
+    program:
+      - system
   transmit_phrase:
-    program: system
+    program:
+      - system
 simple:
   analyze_icon_node:
-    program: analyze
+    program:
+      - analyze
   call_dismiss_sprite:
-    program: compiling
+    program:
+      - compiling
   deactivate_program:
-    program: system
+    program:
+      - system
   decrypt:
-    program: system
+    program:
+      - system
   encrypt:
-    program: encrypt
+    program:
+      - encrypt
   issue_command:
-    program: system
+    program:
+      - system
   jump_into:
-    program: system
+    program:
+      - system
   log_off:
-    program: system
+    program:
+      - system
   observe_in_detail:
-    program: system
+    program:
+      - system
   transfer_data:
-    program: system
+    program:
+      - system
 complex:
   capture_wireless_signal:
-    program: sniffer
+    program:
+      - sniffer
   compile_sprite:
-    program: compiling
+    program:
+      - compiling
   control_device:
-    program: command
+    program:
+      - command
   crash_node:
-    program: exploit
+    program:
+      - exploit
   crash_program:
-    program: exploit
+    program:
+      - exploit
   datasearch:
-    program: browse
+    program:
+      - browse
   decompile_a_sprite:
-    program: decompiling
+    program:
+      - decompiling
   detect_hidden_node:
-    program: scan
+    program:
+      - scan
   disarm_data_bomb:
-    program: defuse
+    program:
+      - defuse
   edit:
-    program: edit
+    program:
+      - edit
   hack_on_the_fly:
-    program: exploit
+    program:
+      - exploit
   initiate_cryptanalysis:
-    program: decrypt
+    program:
+      - decrypt
   intercept_traffic:
-    program: sniffer
+    program:
+      - sniffer
   jam_signals:
-    program: None
+    program:
   log_on:
-    program: system
+    program:
+      - system
   attack:
-    program: Attack/Black Hammer/Blackout
+    program:
+      - attack
+      - black_hammer
+      - blackout
   reboot:
-    program: system
+    program:
+      - system
   redirect_trace:
-    program: spoof
+    program:
+      - spoof
   repair_icon:
-    program: medic
+    program:
+      - medic
   run_program:
-    program: system
+    program:
+      - system
   set_data_bomb:
-    program: data_bomb
+    program:
+      - data_bomb
   spoof_command:
-    program: spoof
+    program:
+      - spoof
   trace_user:
-    program: track 
+    program:
+      - track 
 

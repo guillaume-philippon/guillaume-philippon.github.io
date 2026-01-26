@@ -69,3 +69,21 @@
         {% endif %}
     {% endif %}
 {% endfor %}
+
+<!-- Melee Weapon damage -->
+ {% assign melee_damage = 0 %}
+ {% for weapon in page.gear.weapons %}
+    {% if weapon.type contains 'mele' %}
+        {% if weapon.damage_modifier > melee_damage %}
+            {% assign melee_damage = weapon.damage_modifier %}
+        {% endif %}
+    {% endif %}
+ {% endfor %}
+
+ <!-- Programs cost -->
+ {% assign programs_cost = 0 %}
+ {% for group in page.matrix.programs %}
+    {% for program in group[1] %}
+         {% assign programs_cost = programs_cost | plus: program[1].price %}
+    {% endfor %}
+ {% endfor%}

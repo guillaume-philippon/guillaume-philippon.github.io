@@ -37,7 +37,7 @@ attributes:
     max: 12
     bp: 40
   intuition:
-    base: 3
+    base: 1
     max: 6
     modifier: 0
     bp: 20
@@ -46,7 +46,7 @@ attributes:
     modifier: 0
     max: 5
   willpower:
-    base: 3
+    base: 5
     max: 6
     modifier: 0
     bp: 20
@@ -179,6 +179,7 @@ gear:
       price: 150
       reach: 1
       damage: (STR/2 + 2)P
+      damage_modifier: 2
       type: 
         - mele
         - throwing
@@ -194,12 +195,14 @@ gear:
       type: 
         - mele
       damage: (STR/2 +2)P
+      damage_modifier: 2
     - name: Knife
       quantity: 1
       price: 20
       type: 
         - mele
       damage: (STR/2 + 1)P
+      damage_modifier: 1
       sourcebook:  20th Anniversary Core Rulebook
       page:
   armor:
