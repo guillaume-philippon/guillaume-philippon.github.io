@@ -374,4 +374,8 @@ gear:
     - name: Trauma Patch
       quantity: 5
       price: 500
+  security_device:
+    - name: Maglock Passkey (6)
+      quantity: 1
+      price: 600
 ---
