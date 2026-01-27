@@ -2,7 +2,7 @@
         <div class="col-12 text-center rounded bg-{{ theme_color }}">Dégats</div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
-            <strong>Corps à Corps</strong>
+            <strong>Rapproché</strong>
             <span><strong>{{ strength_total | divided_by: 2.0 | round | plus: melee_damage }}</strong> <small>(Str. /2 + Weapon)</small></span>
           </li>
           {% if page.matrix %}
@@ -28,7 +28,7 @@
             </span>
           </li>
           <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
-            <strong>Corps à Corps</strong>
+            <strong>Rapproché</strong>
             <span><strong>{{ body_total | plus: page.armor.impact }}</strong>
               <small>({{ body_total | plus: page.armor.balistic | plus: impact }})</small> 
               <small>Natural (+ Impact)</small>
