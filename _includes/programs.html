@@ -10,12 +10,38 @@
               <ul class="list-group list-group-flush ps-4">
                 {% for programs in group[1] %}
                   {% if programs[1].rating > 0 %}
+                    {% case programs[1].skill %}
+                      {% when "Computer" %}
+                        {% assign attribute_value = page.skills.active.electronics.computer.value %}
+                      {% when "Datasearch" %}
+                        {% assign attribute_value = page.skills.active.electronics.datasearch.value %}
+                      {% when "Electronic Warfare" %}
+                        {% assign attribute_value = page.skills.active.cracking.electronic_warfare.value %}
+                      {% when "Strength" %}
+                        {% assign attribute_value = strength_total %}
+                      {% when "Intuition" %}
+                        {% assign attribute_value = intuition_total %}
+                      {% when "Logic" %}
+                        {% assign attribute_value = logic_total %}
+                      {% when "Charisma" %}
+                        {% assign attribute_value = charisma_total %}
+                      {% when "Willpower" %}
+                        {% assign attribute_value = willpower_total %}
+                      {% else %}
+                        {% assign attribute_value = 0 %}
+                    {% endcase %}
                   <li class="py-1 d-flex justify-content-between align-items-center 
                     {% if programs[1].loaded != true %}
                     text-body-tertiary
                     {% endif %}
                     ">
-                    <span>{{ programs[0] | replace: "_", " " | capitalize }} ({{ programs[1].skill }})</span><span><strong>{{ programs[1].rating }}</strong></span>
+                    <span>{{ programs[0] | replace: "_", " " | capitalize }} ({{ programs[1].skill }})</span>
+                    <span>
+                      <strong>{{ programs[1].rating }}</strong>
+                      <!--
+                      <small>({{ attribute_value | plus: programs[1].rating }})</small>
+                      -->
+                    </span>
                   </li>
                   {% endif %}
                 {% endfor %}
