@@ -1,7 +1,7 @@
 ---
 name: Jessica *Ghost* Rojas
 race: Humaine
-picture: /assets/images/Cipher.jpg
+picture: /assets/images/Ghost.jpg
 lifestyle: Middle
 money: 0
 karma: 0
