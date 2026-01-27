@@ -17,9 +17,11 @@
     {% for item in group[1] %}
     <li class="list-group-item py-1">
     <strong>{{ item.name }}</strong> ({% if item.quantity %} x {{ item.quantity }}, {% endif %}{{ item.price }}¥)
-    <p class="ps-4">
-    {% if item.damage %}Dégâts: {{ item.damage}}{% endif %}
-    {% if item.armor %}Impact: {{armor.impact }} {% endif %}
+    <ul class="list-unstyled">
+    {% if item.damage %}<li class="ps-4">Dégâts: {{ item.damage}}</li>{% endif %}
+    {% if item.impact %}<li class="ps-4">Impact: {{ page.armor.impact }}</li>{% endif %}
+    {% if item.balistic %}<li class="ps-4">Balistic: {{ page.armor.balistic }}</li>{% endif %}
+    </ul>
     </p>
     </li>
     {% endfor %}
