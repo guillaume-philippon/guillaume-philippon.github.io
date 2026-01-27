@@ -110,16 +110,16 @@ skills:
   active:
     athelitics:
       climbing:
-        attribute: Strenght
+        attribute: Strength
         value: 2
       gymnatistic:
         attribute: Agility
         value: 2
       running:
-        attribute: Strenght
+        attribute: Strength
         value: 2
       swimming:
-        attribute: Strenght
+        attribute: Strength
         value: 2
     close_combat:
       blades:
@@ -150,8 +150,10 @@ skills:
   knowledge:
     maya_culture:
       value: 6
+      attribute: Intuition
     security_ procedures:
       value: 6
+      attribute: Logic
 contacts:
   - name: Dr. Lina Krayven
     type: Doc. affiliated to DracoTech

@@ -146,14 +146,19 @@ skills:
   knowledge:
     securite_matriciel:
       value: 6
+      attribute: Logic
     programmation_malware:
       value: 6
+      attribute: Logic
     legislation_cybersecurite:
       value: 6
+      attribute: Logic
     techno_gang:
       value: 3
+      attribute: Intuition
     projets_secret_militaire:
       value: 6
+      attribute: Logic
 contacts:
   - name: Neon
     type: Hackeuse spécialisé dans les base de login/pwd
