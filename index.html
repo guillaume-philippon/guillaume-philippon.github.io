@@ -6,15 +6,20 @@ title: Personnages
   <h1>Liste des Personnages</h1>
   <div class="row">
     {% for character in site.characters %}
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <div class="card-body bg-{{ character.theme.color }}-subtle">
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <div
+          class="card-body bg-{{ character.theme.color }}-subtle card-custom"
+          style="background-image: url('{{ character.infos.picture }}');"
+        >
+          <div>
             <h5 class="card-title">{{ character.name }}</h5>
             <p class="card-text">{{ character.race }}</p>
-            <a href="{{ character.url }}" class="btn btn-primary">Voir la fiche</a>
           </div>
+          <a href="{{ character.url }}" class="btn btn-primary">Voir la fiche</a>
         </div>
       </div>
+    </div>
     {% endfor %}
   </div>
 </div>
