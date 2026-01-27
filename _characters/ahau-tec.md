@@ -1,10 +1,13 @@
 ---
+infos:
+  height: "2,2"
+  weight: 150
+  picture: /assets/images/Ahau-Tec.png
+  money: 0
+  karma: 0
 name: Ahau-Tech
 race: Ork
-picture: /assets/images/Ahau-Tec.jpg
 lifestyle: Middle
-money: 0
-karma: 0
 role:
   operational: Street Samouraï, Sécurité Rapproché
   narrative: Stabilité, Résilience, Dette

@@ -9,9 +9,19 @@
       <!-- Section avec attributs et image -->
       <div class="row">
         <div class="col-md-4 text-center">
-          {% if page.picture %}
-            <img src="{{ page.picture }}" class="img-fluid rounded" alt="{{ page.name }}">
-          {% endif %}
+          <div class="position-relative">
+            {% if page.infos.picture %}
+              <img src="{{ page.infos.picture }}" class="img-fluid rounded" alt="{{ page.name }}">
+            {% endif %}
+            <div class="position-absolute text-start top-0 end-0 text-white p-1 bg-dark bg-opacity-75 rounded">
+              <ul class="list-unstyled">
+                <li>Taille: {{ page.infos.height }} m</li>
+                <li>Poids: {{ page.infos.weight }} kgs</li>
+                <li>Argent: {{ page.infos.money }} ¥</li>
+                <li>Karma: {{ page.infos.karma }}</li>
+              </ul>
+            </div>
+          </div>
         </div>
         <div class="col-md-8">
           <div>{% include history.html %}</div>
