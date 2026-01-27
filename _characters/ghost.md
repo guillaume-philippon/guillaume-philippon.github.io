@@ -250,7 +250,6 @@ matrix:
     hacking:
         armor:
           loaded: yes
-          skill: None
           rating: 6
           availability: 12R
           price: 6000

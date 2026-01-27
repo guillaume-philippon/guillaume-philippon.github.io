@@ -35,7 +35,7 @@
                     text-body-tertiary
                     {% endif %}
                     ">
-                    <span>{{ programs[0] | replace: "_", " " | capitalize }} ({{ programs[1].skill }})</span>
+                    <span>{{ programs[0] | replace: "_", " " | capitalize }} {% if programs[1].skill %}({{ programs[1].skill }}){% endif %}</span>
                     <span>
                       <strong>{{ programs[1].rating }}</strong>
                       <!--
