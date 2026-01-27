@@ -16,7 +16,7 @@ body {
   position: relative;
 }
 
-.card-custom .btn-primary {
+.card-custom .character {
   align-self: flex-end;
   margin-top: auto;
 }
