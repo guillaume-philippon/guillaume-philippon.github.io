@@ -52,7 +52,9 @@ armor:
   impact: 6
   balistic: 6
   astral: 6
-wound: 3
+wound: 
+  physic: 3
+  mental: 3
 turns: 2
 magic:
   base: 6

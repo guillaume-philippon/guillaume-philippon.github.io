@@ -50,7 +50,9 @@ attributes:
     modifier: 0
     max: 6
 turns: 3
-wound: 3
+wound: 
+  physic: 3
+  mental: 3
 edge:
   base: 2
   modifier: 0

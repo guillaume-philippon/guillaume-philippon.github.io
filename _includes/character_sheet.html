@@ -59,7 +59,7 @@
               <div class="card bg-{{ theme_color }}-subtle">
                 <div class="card-body p-2 text-center">
                   <span class="card-title mb-1"><small>Physique</small></span>
-                  <p class="card-text mb-0">{{ physic_condition }} <small>/{{ page.wound }}</small></p>
+                  <p class="card-text mb-0">{{ physic_condition }} <small>/{{ page.wound.physic }}</small></p>
                 </div>
               </div>
             </div>
@@ -67,7 +67,7 @@
               <div class="card bg-{{ theme_color }}-subtle">
                 <div class="card-body p-2 text-center">
                   <span class="card-title mb-1"><small>Mentale</small></span>
-                  <p class="card-text mb-0">{{ mental_condition }}</p>
+                  <p class="card-text mb-0">{{ mental_condition }} <small>/{{ page.wound.mental }}</small></p>
                 </div>
               </div>
             </div>
