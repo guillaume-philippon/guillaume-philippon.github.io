@@ -8,7 +8,7 @@ title: Personnages
     {% for character in site.characters %}
       <div class="col-md-4 mb-4">
         <div class="card">
-          <div class="card-body">
+          <div class="card-body bg-{{ character.theme.color }}-subtle">
             <h5 class="card-title">{{ character.name }}</h5>
             <p class="card-text">{{ character.race }}</p>
             <a href="{{ character.url }}" class="btn btn-primary">Voir la fiche</a>
