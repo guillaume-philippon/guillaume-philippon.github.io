@@ -95,22 +95,14 @@
             {% for skill in page.skills.knowledge %}
               {% if skill[1].value > 0 %}
                 {% case skill[1].attribute %}
-                  {% when "Body" %}
-                    {% assign attribute_value = body_total %}
-                  {% when "Agility" %}
-                    {% assign attribute_value = agility_total %}
-                  {% when "Reaction" %}
-                    {% assign attribute_value = reaction_total %}
-                  {% when "Strength" %}
-                    {% assign attribute_value = strength_total %}
-                  {% when "Intuition" %}
+                  {% when "Street" %}
                     {% assign attribute_value = intuition_total %}
-                  {% when "Logic" %}
+                  {% when "Academic" %}
                     {% assign attribute_value = logic_total %}
-                  {% when "Charisma" %}
-                    {% assign attribute_value = charisma_total %}
-                  {% when "Willpower" %}
-                    {% assign attribute_value = willpower_total %}
+                  {% when "Professional" %}
+                    {% assign attribute_value = logic_total %}
+                  {% when "Interest" %}
+                    {% assign attribute_value = intuition_total %}
                   {% else %}
                     {% assign attribute_value = 0 %}
                 {% endcase %}

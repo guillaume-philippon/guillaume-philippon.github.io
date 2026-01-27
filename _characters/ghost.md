@@ -49,6 +49,7 @@ armor:
   balistic: 6
   astral: 0
 turns: 3
+wound: 3
 edge:
   base: 2
   modifier: 0
@@ -146,19 +147,19 @@ skills:
   knowledge:
     securite_matriciel:
       value: 6
-      attribute: Logic
+      attribute: Professional
     programmation_malware:
       value: 6
-      attribute: Logic
+      attribute: Academic
     legislation_cybersecurite:
       value: 6
-      attribute: Logic
+      attribute: Professional
     techno_gang:
       value: 3
-      attribute: Intuition
+      attribute: Street
     projets_secret_militaire:
       value: 6
-      attribute: Logic
+      attribute: Interest
 contacts:
   - name: Neon
     type: Hackeuse spécialisé dans les base de login/pwd

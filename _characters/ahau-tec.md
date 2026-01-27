@@ -47,6 +47,7 @@ armor:
   impact: 6 (+8)
   balistic: 6 (+6)
   astral: 6
+wound: 3
 turns: 2
 magic:
   base: 6
@@ -150,10 +151,10 @@ skills:
   knowledge:
     maya_culture:
       value: 6
-      attribute: Intuition
+      attribute: Street
     security_ procedures:
       value: 6
-      attribute: Logic
+      attribute: Professional
 contacts:
   - name: Dr. Lina Krayven
     type: Doc. affiliated to DracoTech
