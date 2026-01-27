@@ -286,9 +286,9 @@ matrix:
           price: 0
         decrypt:
           skill: Electronic Warfare
-          rating: 3
-          availability: 6R
-          price: 3000
+          rating: 1
+          availability: 2R
+          price: 1000
         defuse:
           skill: Hacking
           rating: 0
@@ -311,9 +311,9 @@ matrix:
           price: 6000
         sniffer:
           skill: Electronic Warfare / Hacking
-          rating: 3
-          availability: 6R
-          price: 3000
+          rating: 2
+          availability: 2R
+          price: 1000
         spoof:
           skill: Hacking
           rating: 0
@@ -366,5 +366,12 @@ gear:
     - name: Urban Explorer Jumpsuit
       balistic: 6
       impact: 6
+      price: 500
+  biotech:
+    - name: Medkit (Rat. 6)
+      quantity: 5
+      price: 600
+    - name: Trauma Patch
+      quantity: 5
       price: 500
 ---
