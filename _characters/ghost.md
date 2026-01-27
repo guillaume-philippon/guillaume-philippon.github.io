@@ -29,12 +29,12 @@ attributes:
     modifier: 0
     max: 6
   intuition:
-    base: 4
+    base: 2
     modifier: 0
     max: 6
   logic:
-    base: 3
-    modifier: 0
+    base: 5
+    modifier: 2
     max: 6
   willpower:
     base: 5
@@ -143,7 +143,7 @@ skills:
         type: defense
       perception:
         attribute: Intuition
-        value: 5
+        value: 4
   knowledge:
     securite_matriciel:
       value: 6
@@ -198,6 +198,11 @@ cyberware:
     essence: 1.0
     availability: 12R
     price: 160000
+    type: bioware
+  - name: Cerebral Booster (2)
+    essence: 0.4
+    availability: 12
+    price: 20000
     type: bioware
 matrix:
   turns: 3
