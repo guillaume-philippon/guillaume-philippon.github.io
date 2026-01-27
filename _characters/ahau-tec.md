@@ -1,4 +1,6 @@
 ---
+theme:
+  color: danger
 infos:
   height: "2,2"
   weight: 150
@@ -47,8 +49,8 @@ attributes:
     max: 5
     modifier: 0
 armor:
-  impact: 6 (+8)
-  balistic: 6 (+6)
+  impact: 6
+  balistic: 6
   astral: 6
 wound: 3
 turns: 2

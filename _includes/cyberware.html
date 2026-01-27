@@ -1,7 +1,7 @@
 {% if page.cyberware %}
 <div class="col-12 mt-2">
-    <div class="col-12 text-center bg-primary rounded"><strong>Cyberware</strong></div>
-    <div class="col-12">
+    <div class="col-12 text-center bg-{{ theme_color }} rounded"><strong>Cyberware</strong></div>
+    <div class="d-none d-md-block">
         <table class="table table-sm table-striped ">
         <thead>
             <tr>
@@ -22,6 +22,28 @@
                 <td class="text-center">[{{ ware.capacity }}]</td>
                 <td class="text-center">{{ ware.availability }}</td>
                 <td class="text-end">{{ ware.price }} ¥</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+    </div>
+    <div class="d-md-none">
+        <table class="table table-sm table-striped ">
+        <thead>
+            <tr>
+            <th scope="col"></th>
+            <th class="text-center">Type</th>
+            <th class="text-center">Essence</th>
+            <th class="text-center">Capacity</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ware in page.cyberware %}
+            <tr>
+                <th scope="row" data-bs-toggle="tooltip" data-bs-title="{{ware.sourcebook}} (p. {{ware.page}})">{{ ware.name }}</th>
+                <td class="text-center">{{ ware.type }}</td>
+                <td class="text-center">{{ ware.essence }}</td>
+                <td class="text-center">[{{ ware.capacity }}]</td>
             </tr>
             {% endfor %}
         </tbody>

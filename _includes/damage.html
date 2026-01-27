@@ -1,5 +1,5 @@
       <div class="col-12">
-        <div class="col-12 text-center rounded bg-primary">Dégats</div>
+        <div class="col-12 text-center rounded bg-{{ theme_color }}">Dégats</div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
             <strong>Corps à Corps</strong>
@@ -18,15 +18,21 @@
           </li>
           {% endif %}
         </ul>
-        <div class="col-12 text-center rounded bg-primary">Armure</div>
+        <div class="col-12 text-center rounded bg-{{ theme_color }}">Armure</div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
             <strong>Distance</strong>
-            <span><strong>{{ body_total | plus: page.armor.balistic }}</strong> <small>(Body + Balistic)</small></span>
+            <span><strong>{{ body_total | plus: page.armor.balistic }}</strong> 
+              <small>({{ body_total | plus: page.armor.balistic | plus: balistic }})</small> 
+              <small>Natural (+ Balistic)</small>
+            </span>
           </li>
           <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
             <strong>Corps à Corps</strong>
-            <span><strong>{{ body_total | plus: page.armor.impact }}</strong> <small>(Body + Impact)</small></span>
+            <span><strong>{{ body_total | plus: page.armor.impact }}</strong>
+              <small>({{ body_total | plus: page.armor.balistic | plus: impact }})</small> 
+              <small>Natural (+ Impact)</small>
+            </span>
           </li>
           {% if page.matrix %}
           <li class="list-group-item py-1 d-flex justify-content-between align-items-center">

@@ -1,7 +1,7 @@
 {% include variables.html %}
 <div class="container my-3">
   <div class="card">
-    <div class="card-header bg-success">
+    <div class="card-header bg-{{ theme_color }}">
       <h2 class="mb-0">{{ page.name }} ({{ page.race }})</h2>
       <p class="mb-0"><small>Lifestyle: {{ page.lifestyle }} | Role: {{ page.role.operational }} / {{ page.role.narrative }}</small></p>
     </div>
@@ -13,12 +13,12 @@
             {% if page.infos.picture %}
               <img src="{{ page.infos.picture }}" class="img-fluid rounded" alt="{{ page.name }}">
             {% endif %}
-            <div class="position-absolute text-start top-0 end-0 text-white p-1 bg-dark bg-opacity-10 rounded">
+            <div class="position-absolute text-start top-0 start-0 text-white p-2 bg-dark bg-opacity-50 rounded">
               <ul class="list-unstyled">
-                <li>Taille: {{ page.infos.height }} m</li>
-                <li>Poids: {{ page.infos.weight }} kgs</li>
-                <li>Argent: {{ page.infos.money }} ¥</li>
-                <li>Karma: {{ page.infos.karma }}</li>
+                <li><small>Taille: {{ page.infos.height }} m</small></li>
+                <li><small>Poids: {{ page.infos.weight }} kgs</small></li>
+                <li><small>Argent: {{ page.infos.money }} ¥</small></li>
+                <li><small>Karma: {{ page.infos.karma }}</small></li>
               </ul>
             </div>
           </div>
@@ -31,7 +31,7 @@
           <div class="row">
             <div class="col-4 col-lg-2 mt-2">
             {% if page.magic %}
-              <div class="card bg-primary-subtle">
+              <div class="card bg-{{ theme_color }}-subtle">
                 <div class="card-body p-2 text-center">
                   <span class="card-title mb-1"><small>Magie</small></span>
                   <p class="card-text mb-0">{{ page.magic.base }}</p>
@@ -40,7 +40,7 @@
             {% endif %}
             </div>
             <div class="col-4 col-lg-2 mt-2">
-              <div class="card bg-primary-subtle">
+              <div class="card bg-{{ theme_color }}-subtle">
                 <div class="card-body p-2 text-center">
                   <span class="card-title mb-1"><small>Edge</small></span>
                   <p class="card-text mb-0">{{ page.edge.base }}</p>
@@ -48,7 +48,7 @@
               </div>
             </div>
             <div class="col-4 col-lg-2 mt-2">
-              <div class="card bg-primary-subtle">
+              <div class="card bg-{{ theme_color }}-subtle">
                 <div class="card-body p-2 text-center">
                   <span class="card-title mb-1"><small>Essence</small></span>
                   <p class="card-text mb-0">{{ page.essence.base | minus: cyberware_essence }}</p>
@@ -56,7 +56,7 @@
               </div>
             </div>
             <div class="col-4 col-lg-2 mt-2">
-              <div class="card bg-primary-subtle">
+              <div class="card bg-{{ theme_color }}-subtle">
                 <div class="card-body p-2 text-center">
                   <span class="card-title mb-1"><small>Physique</small></span>
                   <p class="card-text mb-0">{{ physic_condition }} <small>/{{ page.wound }}</small></p>
@@ -64,7 +64,7 @@
               </div>
             </div>
             <div class="col-4 col-lg-2 mt-2">
-              <div class="card bg-primary-subtle">
+              <div class="card bg-{{ theme_color }}-subtle">
                 <div class="card-body p-2 text-center">
                   <span class="card-title mb-1"><small>Mentale</small></span>
                   <p class="card-text mb-0">{{ mental_condition }}</p>
@@ -78,10 +78,10 @@
           </div>
       </div>
       <div class="row">
-        <div class="col-lg-8">
+        <div class="col-lg-8 col-md-6">
           {% include attributes.html %}
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-4 col-md-6">
         {% include jets_courants.html %}
         </div>
       </div>

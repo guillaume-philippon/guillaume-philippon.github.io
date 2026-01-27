@@ -87,3 +87,13 @@
          {% assign programs_cost = programs_cost | plus: program[1].price %}
     {% endfor %}
  {% endfor%}
+
+ <!-- Choix de couleur -->
+  {% assign theme_color = 'primary' %}
+  {% if page.theme.color %}
+    {% assign theme_color = page.theme.color %}
+  {% endif %}
+  
+  <!-- Armor gear -->
+   {% assign balistic = page.gear.armor[0].balistic %}
+   {% assign impact = page.gear.armor[0].impact %}

@@ -1,4 +1,6 @@
 ---
+theme:
+  color: success
 infos:
   height: "1,6"
   weight: 60
@@ -47,10 +49,6 @@ attributes:
     base: 1
     modifier: 0
     max: 6
-armor:
-  impact: 6
-  balistic: 6
-  astral: 0
 turns: 3
 wound: 3
 edge:
@@ -363,8 +361,8 @@ gear:
       availability: 8R
       price: 1000
   armor:
-    - name: Armor Jacket
-      balistic: 8
+    - name: Urban Explorer Jumpsuit
+      balistic: 6
       impact: 6
-      price: 900
+      price: 500
 ---
