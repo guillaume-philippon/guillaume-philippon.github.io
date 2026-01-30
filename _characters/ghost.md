@@ -95,79 +95,79 @@ skills:
   active:
     athelitics:
       gymnatistic:
-        attribute: Agility
+        attribute: agility
         value: 3
     stealth:
       infiltration:
-        attribute: Agility
+        attribute: agility
         value: 4
     firearms:
       pistols:
         value: 4
-        attribute: Agility
+        attribute: agility
       automatics:
         value: 4
-        attribute: Agility
+        attribute: agility
       longarms:
         value: 4
-        attribute: Agility
+        attribute: agility
     cracking:
       cybercombat:
-        attribute: Logic
+        attribute: logic
         value: 4
       electronic_warfare:
-        attribute: Logic
+        attribute: logic
         value: 4
       hacking:
         value: 4
-        attribute: Logic
+        attribute: logic
     electronics:
       computer:
-        attribute: Logic
+        attribute: logic
         value: 4
-      datasearch:
-        attribute: Logic
+      data_search:
+        attribute: logic
         value: 4
       hardware:
-        attribute: Logic
+        attribute: logic
         value: 4
       software:
-        attribute: Logic
+        attribute: logic
         value: 4
     biotech:
       cybertechnology:
-        attribute: Logic
+        attribute: logic
         value: 2
-      first-aid:
-        attribute: Logic
+      first_aid:
+        attribute: logic
         value: 2
       medicine:
-        attribute: Logic
+        attribute: logic
         value: 2
     ungrouped:
       dodge:
         value: 4
-        attribute: Reaction
+        attribute: reaction
         type: defense
       perception:
-        attribute: Intuition
+        attribute: intuition
         value: 4
   knowledge:
     securite_matriciel:
       value: 6
-      attribute: Professional
+      attribute: professional
     programmation_malware:
       value: 6
-      attribute: Academic
+      attribute: academic
     legislation_cybersecurite:
       value: 6
-      attribute: Professional
+      attribute: professional
     techno_gang:
       value: 3
-      attribute: Street
+      attribute: street
     projets_secret_militaire:
       value: 6
-      attribute: Interest
+      attribute: interest
 contacts:
   - name: Neon
     type: Hackeuse spécialisé dans les base de login/pwd

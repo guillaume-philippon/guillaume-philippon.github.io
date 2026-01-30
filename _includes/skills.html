@@ -4,34 +4,39 @@
       <div class="row">
         <!-- Compétences groupées -->
         {% for group in page.skills.active %}
-          {% if group[0] != "ungrouped" %}
             <div class="col-md-4 mb-3">
+              {% if group[0] != "ungrouped" %}
               <h5>{{ group[0] | replace: "_", " " | capitalize }}</h5>
+              {% else %}
+              <h5>Non-groupé</h5>
+              {% endif %}
               <ul class="list-group list-group-flush ps-4">
                 {% for skill in group[1] %}
                   {% if skill[1].value > 0 %}
                     {% case skill[1].attribute %}
-                      {% when "Body" %}
+                      {% when "body" %}
                         {% assign attribute_value = body_total %}
-                      {% when "Agility" %}
+                      {% when "agility" %}
                         {% assign attribute_value = agility_total %}
-                      {% when "Reaction" %}
+                      {% when "reaction" %}
                         {% assign attribute_value = reaction_total %}
-                      {% when "Strength" %}
+                      {% when "strength" %}
                         {% assign attribute_value = strength_total %}
-                      {% when "Intuition" %}
+                      {% when "intuition" %}
                         {% assign attribute_value = intuition_total %}
-                      {% when "Logic" %}
+                      {% when "logic" %}
                         {% assign attribute_value = logic_total %}
-                      {% when "Charisma" %}
+                      {% when "charisma" %}
                         {% assign attribute_value = charisma_total %}
-                      {% when "Willpower" %}
+                      {% when "willpower" %}
                         {% assign attribute_value = willpower_total %}
+                      {% when "magic" %}
+                        {% assign attribute_value = magic.base %}
                       {% else %}
                         {% assign attribute_value = 0 %}
                     {% endcase %}
                   <li class="py-1 d-flex justify-content-between align-items-center">
-                    <span>{{ skill[0] | replace: "_", " " | capitalize }} <small>({{ skill[1].attribute }})</small></span>
+                    <span>{{ skill[0] | replace: "_", " " | capitalize }} <small>({{ skill[1].attribute | capitalize }})</small></span>
                     <span>
                       <strong>{{ skill[1].value }}</strong>
                       {% if attribute_value > 0 %}
@@ -43,49 +48,7 @@
                 {% endfor %}
               </ul>
             </div>
-          {% endif %}
         {% endfor %}
-
-        <!-- Compétences non groupées -->
-        <div class="col-md-4 mb-3">
-          <h5>Compétences non groupées</h5>
-          <ul class="list-group list-group-flush">
-            {% for skill in page.skills.active.ungrouped %}
-              {% if skill[1].value > 0 %}
-                {% case skill[1].attribute %}
-                  {% when "Body" %}
-                    {% assign attribute_value = body_total %}
-                  {% when "Agility" %}
-                    {% assign attribute_value = agility_total %}
-                  {% when "Reaction" %}
-                    {% assign attribute_value = reaction_total %}
-                  {% when "Strength" %}
-                    {% assign attribute_value = strength_total %}
-                  {% when "Intuition" %}
-                    {% assign attribute_value = intuition_total %}
-                  {% when "Logic" %}
-                    {% assign attribute_value = logic_total %}
-                  {% when "Charisma" %}
-                    {% assign attribute_value = charisma_total %}
-                  {% when "Willpower" %}
-                    {% assign attribute_value = willpower_total %}
-                  {% else %}
-                    {% assign attribute_value = 0 %}
-                {% endcase %}
-              <li class="py-1 d-flex justify-content-between align-items-center">
-                <span>{{ skill[0] | replace: "_", " " | capitalize }} <small>({{ skill[1].attribute }})</small></span>
-                <span>
-                  <strong>{{ skill[1].value }}</strong>
-                  {% if attribute_value > 0 %}
-                  <small>({{ skill[1].value | plus: attribute_value }})</small>
-                  {% endif %}
-                </span>
-              </li>
-              {% endif %}
-            {% endfor %}
-          </ul>
-        </div>
-      </div>
 
       <h3 class="mt-3">Connaissances</h3>
       <div class="row">
@@ -95,19 +58,19 @@
             {% for skill in page.skills.knowledge %}
               {% if skill[1].value > 0 %}
                 {% case skill[1].attribute %}
-                  {% when "Street" %}
+                  {% when "street" %}
                     {% assign attribute_value = intuition_total %}
-                  {% when "Academic" %}
+                  {% when "academic" %}
                     {% assign attribute_value = logic_total %}
-                  {% when "Professional" %}
+                  {% when "professional" %}
                     {% assign attribute_value = logic_total %}
-                  {% when "Interest" %}
+                  {% when "interest" %}
                     {% assign attribute_value = intuition_total %}
                   {% else %}
                     {% assign attribute_value = 0 %}
                 {% endcase %}
               <li class="py-1 d-flex justify-content-between align-items-center">
-                <span>{{ skill[0] | replace: "_", " " | capitalize }} <small>({{ skill[1].attribute }})</small></span>
+                <span>{{ skill[0] | replace: "_", " " | capitalize }} <small>({{ skill[1].attribute | capitalize }})</small></span>
                 <span>
                   <strong>{{ skill[1].value }}</strong>
                   {% if attribute_value > 0 %}

@@ -126,50 +126,50 @@ skills:
   active:
     athelitics:
       climbing:
-        attribute: Strength
+        attribute: strength
         value: 2
       gymnatistic:
-        attribute: Agility
+        attribute: agility
         value: 2
       running:
-        attribute: Strength
+        attribute: strength
         value: 2
       swimming:
-        attribute: Strength
+        attribute: strength
         value: 2
     close_combat:
       blades:
-        attribute: Agility
+        attribute: agility
         value: 4
       clubs:
-        attribute: Agility
+        attribute: agility
         value: 4
       unarmed_combat:
-        attribute: Agility
+        attribute: agility
         value: 4
     stealth:
       infiltration:
-        attribute: Agility
+        attribute: agility
         value: 4
     ungrouped:
       dodge:
-        attribute: Reaction
+        attribute: reaction
         value: 5
         type: defense
       thowing_weapons:
-        attribute: Agility
+        attribute: agility
         value: 5
         type: range
       astral_combat:
-        attribute: Willpower
+        attribute: willpower
         value: 4
   knowledge:
     maya_culture:
       value: 6
-      attribute: Street
+      attribute: street
     security_ procedures:
       value: 6
-      attribute: Professional
+      attribute: professional
 contacts:
   - name: Dr. Lina Krayven
     type: Doc. affiliated to DracoTech
