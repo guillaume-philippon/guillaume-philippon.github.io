@@ -51,7 +51,7 @@
                         {% endcase %}
                       <li class="py-1 d-flex justify-content-between align-items-center">
                         {% if 0 >= character_skill_value and skill[1].default %}
-                          <span>{{ skill[0] | replace: "_", " " | capitalize }} <small>({{ skill[1].attribute }} - 1)</small></span>
+                          <span>{{ skill[0] | replace: "_", " " | capitalize }} <small>({{ skill[1].attribute | capitalize }} - 1)</small></span>
                           <span>{{ attribute_value | minus: 1 }}</span>
                         {% endif %}
                         <!--
