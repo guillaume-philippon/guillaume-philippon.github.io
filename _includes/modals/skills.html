@@ -32,6 +32,8 @@
                         {% case skill[1].attribute %}
                           {% when "body" %}
                             {% assign attribute_value = body_total %}
+                          {% when "strength" %}
+                            {% assign attribute_value = strength_total %}
                           {% when "agility" %}
                             {% assign attribute_value = agility_total %}
                           {% when "reaction" %}
