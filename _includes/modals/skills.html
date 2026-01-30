@@ -49,11 +49,14 @@
                           {% else %}
                             {% assign attribute_value = 0 %}
                         {% endcase %}
-                      <li class="py-1 d-flex justify-content-between align-items-center">
-                        {% if 0 >= character_skill_value and skill[1].default %}
+                      {% if 0 >= character_skill_value %}
+                        {% if skill[1].default %}
+                          <li class="py-1 d-flex justify-content-between align-items-center">
+                        {% else %}
+                          <li class="py-1 d-flex justify-content-between align-items-center text-body-tertiary text-decoration-line-through">
+                        {% endif %}
                           <span>{{ skill[0] | replace: "_", " " | capitalize }} <small>({{ skill[1].attribute | capitalize }} - 1)</small></span>
                           <span><strong>{{ attribute_value | minus: 1 }}</strong></span>
-                        {% endif %}
                         <!--
                         <span>
                           <strong>{{ skill[1].value }}</strong>
@@ -61,6 +64,7 @@
                         </span>
                         -->
                       </li>
+                      {% endif %}
                     {% endfor %}
                   </ul>
                 </div>

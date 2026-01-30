@@ -197,7 +197,7 @@ technical:
     first_aid:
       attribute: logic
       default: yes
-    medecine:
+    medicine:
       attribute: logic
 vehicule:
   ungrouped:
