@@ -196,8 +196,13 @@ cyberware:
     availability: 12F
     price: 5000
     type: headware
+  - name: Cybereyes (2)
+    essence: 0.3
+    capacity: 8
+    availability: 4
+    price: 750
   - name: Smartlink
-    essence: 0.1
+    essence: 0
     capacity: 3
     availability: 8R
     price: 1000
