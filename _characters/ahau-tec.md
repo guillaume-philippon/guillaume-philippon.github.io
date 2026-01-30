@@ -6,7 +6,9 @@ infos:
   weight: 150
   picture: /assets/images/Ahau-Tec.png
   money: 0
-  karma: 0
+  karma: 0/0
+  street_cred: 0
+  notoriety: 0
 name: Ahau-Tech
 race: Ork
 lifestyle: Middle

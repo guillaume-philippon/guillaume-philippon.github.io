@@ -6,7 +6,7 @@ infos:
   weight: 60
   picture: /assets/images/Ghost.jpg
   money: 0
-  karma: 0
+  karma: 0/0
 name: Jessica *Ghost* Rojas
 race: Humaine
 lifestyle: Middle
