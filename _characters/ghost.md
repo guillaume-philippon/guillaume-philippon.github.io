@@ -338,8 +338,6 @@ gear:
         - range
       damage:
         description: 8P
-        modifier:
-          range: 8
         type: P
       ap: -1
       rc: 1
@@ -352,8 +350,6 @@ gear:
         - range
       damage:
         description: 5P
-        modifier:
-          range: 5
         type: P
       ap: -1
       mode: SA
@@ -365,8 +361,6 @@ gear:
         - range
       damage:
         description: 6P
-        modifier:
-          range: 6
         type: P
       ap: -1
       rc: 2
