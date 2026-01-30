@@ -74,8 +74,8 @@
  {% assign melee_damage = 0 %}
  {% for weapon in page.gear.weapons %}
     {% if weapon.type contains 'mele' %}
-        {% if weapon.damage_modifier > melee_damage %}
-            {% assign melee_damage = weapon.damage_modifier %}
+        {% if weapon.damage.modifier.melee > melee_damage %}
+            {% assign melee_damage = weapon.damage.modifier.melee %}
         {% endif %}
     {% endif %}
  {% endfor %}

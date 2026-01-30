@@ -336,7 +336,11 @@ gear:
     - name: Ares Desert Fox (Sniper)
       type:
         - range
-      damage: 8P
+      damage:
+        description: 8P
+        modifier:
+          range: 8
+        type: P
       ap: -1
       rc: 1
       ammo: 14(c)
@@ -346,7 +350,11 @@ gear:
     - name: Defiance T-250 (Short)
       type:
         - range
-      damage: 5P
+      damage:
+        description: 5P
+        modifier:
+          range: 5
+        type: P
       ap: -1
       mode: SA
       ammo: 5(m)
@@ -355,7 +363,11 @@ gear:
     - name: FN HAR
       type:
         - range
-      damage: 6P
+      damage:
+        description: 6P
+        modifier:
+          range: 6
+        type: P
       ap: -1
       rc: 2
       mode: SA/BF/FA

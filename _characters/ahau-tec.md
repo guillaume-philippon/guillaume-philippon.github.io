@@ -177,11 +177,15 @@ gear:
       quantity: 3
       price: 150
       reach: 1
-      damage: (STR/2 + 2)P
-      damage_modifier: 2
+      damage:
+        description: (STR/2 + 2)P
+        modifier:
+          range: 2
+          melee: 2
+        type: P
       type: 
         - mele
-        - throwing
+        - range
       availability: 4
       sourcebook: Runner Companion
       page:
@@ -193,15 +197,23 @@ gear:
       sourcebook:  Runner Companion
       type: 
         - mele
-      damage: (STR/2 +2)P
-      damage_modifier: 2
+      damage:
+        description: (STR/2 + 2)P
+        modifier:
+          range: 4
+          melee: 2
+        type: P
     - name: Knife
       quantity: 1
       price: 20
       type: 
         - mele
-      damage: (STR/2 + 1)P
-      damage_modifier: 1
+      damage:
+        description: (STR/2 + 2)P
+        modifier:
+          range: 4
+          melee: 2
+        type: P
       sourcebook:  20th Anniversary Core Rulebook
       page:
   armor:
