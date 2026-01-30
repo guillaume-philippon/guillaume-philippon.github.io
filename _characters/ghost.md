@@ -5,11 +5,11 @@ infos:
   height: "1,6"
   weight: 60
   picture: /assets/images/Ghost.jpg
-  money: 0
+  money: 10
   karma: 0/0
 name: Jessica *Ghost* Rojas
 race: Humaine
-lifestyle: Middle
+lifestyle: street
 role:
   operational:  Analyse Matrix, Sécurité Numérique
   narrative: Données, Vérification, soupçon
