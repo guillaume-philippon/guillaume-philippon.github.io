@@ -1,0 +1,43 @@
+<!-- Modal -->
+<div class="modal fade" id="matrix" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="matrixLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="matrixLabel">Combat Actions</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        {% for action_type in site.data.matrix_action %}
+        <div class="">
+          <h6>{{ action_type[0] | capitalize }} Actions</h6>
+          <ul class="list-group list-group-flush ps-4">
+            {% for action in action_type[1] %}
+              {% assign not_displayed = true %}
+              {% for program_type in page.matrix.programs %}
+                {% if action[1].program  contains 'system' and not_displayed %}
+                  <li class="py-1 d-flex justify-content-between align-items-center">{{ action[0]  | replace: "_", " " | capitalize }} <small>{{ action[1].program | array_to_sentence_string | replace: "_", " " | capitalize}}</small></li>
+                  {% assign not_displayed = false %}
+                {% endif %}
+                {% if not_displayed %}
+                  {% for program in program_type[1] %}
+                    {% if action[1].program  contains program[0] and program[1].rating > 0 and not_displayed %}
+                      <li class="py-1 d-flex justify-content-between align-items-center">{{ action[0]  | replace: "_", " " | capitalize }} <small>{{ action[1].program | array_to_sentence_string | replace: "_", " " | capitalize}}</small></li>
+                      {% assign not_displayed = false %}
+                    {% endif %}
+                  {% endfor %}
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+          </ul>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="modal-footer">
+        <!--
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+        -->
+      </div>
+    </div>
+  </div>
+</div>

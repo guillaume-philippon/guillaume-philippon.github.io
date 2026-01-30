@@ -7,7 +7,7 @@
         <!-- Initiative -->  
         <div class="col-12 text-center rounded bg-{{ theme_color }}">Initiative</div>
         <ul class="list-group list-group-flush ">
-          <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
+          <li class="list-group-item py-1 d-flex justify-content-between align-items-center"  data-bs-toggle="modal" data-bs-target="#actions">
             <ul class="list-unstyled col-12">
               <li class="py-1 d-flex justify-content-between align-items-center">
                 <strong>Physique</strong>
@@ -20,7 +20,7 @@
             </ul>
           </li>
           {% if page.matrix %}
-          <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
+          <li class="list-group-item py-1 d-flex justify-content-between align-items-center"  data-bs-toggle="modal" data-bs-target="#matrix">
             <ul class="list-unstyled col-12">
               <li class="py-1 d-flex justify-content-between align-items-center">
                 <strong>Matrice</strong>
@@ -34,7 +34,7 @@
           </li>
           {% endif %}
           {% if page.magic %}
-          <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
+          <li class="list-group-item py-1 d-flex justify-content-between align-items-center"  data-bs-toggle="modal" data-bs-target="#astral">
             <ul class="list-unstyled col-12">
               <li class="py-1 d-flex justify-content-between align-items-center">
                 <strong>Astrale</strong>

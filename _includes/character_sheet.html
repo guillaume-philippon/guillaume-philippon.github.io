@@ -40,7 +40,7 @@
             {% endif %}
             </div>
             <div class="col-4 col-lg-2 mt-2">
-              <div class="card bg-{{ theme_color }}-subtle">
+              <div class="card bg-{{ theme_color }}-subtle" data-bs-toggle="modal" data-bs-target="#edge">
                 <div class="card-body p-2 text-center">
                   <span class="card-title mb-1"><small>Edge</small></span>
                   <p class="card-text mb-0">{{ page.edge.base }}</p>
@@ -115,6 +115,10 @@
       </ul>
 
       {% include gear.html %}
+      {% include modals/edge.html %}
+      {% include modals/actions.html %}
+      {% include modals/matrix_actions.html %}
+      {% include modals/astral_actions.html %}
     </div>
   </div>
 </div>
