@@ -49,7 +49,12 @@ attributes:
     base: 1
     modifier: 0
     max: 6
-turns: 3
+initiative:
+  matrix:
+    modifier: 1
+    turns: 3
+  physic:
+    turns: 3
 wound: 
   physic: 3
   mental: 3
@@ -208,8 +213,6 @@ cyberware:
     price: 20000
     type: bioware
 matrix:
-  turns: 3
-  initiative: 1
   commlink:
     name: Fairlight Caliban
     response: 4

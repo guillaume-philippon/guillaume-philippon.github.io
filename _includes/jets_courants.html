@@ -11,11 +11,11 @@
             <ul class="list-unstyled col-12">
               <li class="py-1 d-flex justify-content-between align-items-center">
                 <strong>Physique</strong>
-                <span><strong>{{ physical_initiative }}</strong> <small>(Réaction + Intuition)</small></span>
+                <span><strong>{{ physical_initiative | plus: page.initiative.physic.modifier }}</strong> <small>(Réaction + Intuition)</small></span>
               </li>
               <li class="py-1 d-flex justify-content-between align-items-center">
                 <strong></strong>
-                <span><small> {{ page.turns }} passe d'initiative</small></span>
+                <span><small> {{ page.initiative.physic.turns }} passe d'initiative</small></span>
               </li>
             </ul>
           </li>
@@ -24,11 +24,11 @@
             <ul class="list-unstyled col-12">
               <li class="py-1 d-flex justify-content-between align-items-center">
                 <strong>Matrice</strong>
-                <span><strong> {{ matrix_initiative | plus: page.matrix.initiative  }}</strong> <small>(Réponse + Intuition)</small></span>
+                <span><strong> {{ matrix_initiative | plus: page.initiative.matrix.modifier  }}</strong> <small>(Réponse + Intuition)</small></span>
               </li>
               <li class="py-1 d-flex justify-content-between align-items-center">
                 <strong></strong>
-                <span><small> {{ page.matrix.turns }} passe d'initiative</small></span>
+                <span><small> {{ page.initiative.matrix.turns }} passe d'initiative</small></span>
               </li>
             </ul>
           </li>
@@ -42,7 +42,7 @@
               </li>
               <li class="py-1 d-flex justify-content-between align-items-center">
                 <strong></strong>
-                <span><small> 3 passe d'initiative</small></span>
+                <span><small>3 passe d'initiative</small></span>
               </li>
             </ul>
           {% endif %}
@@ -74,7 +74,7 @@
           {% if page.magic %}
           <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
             <strong>Astral</strong>
-            <span><strong>{{ willpower_total | plus: page.magic.weapon_focus }}</strong> <small>(Willpower + Weapon focus)</small></span>
+            <span><strong>{{ page.skills.active.ungrouped.astral_combat.value | plus: willpower_total | plus: page.magic.weapon_focus }}</strong> <small>(Astral Com. + Wil. + Focus)</small></span>
           </li>
           {% endif %}
         </ul>

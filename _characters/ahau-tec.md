@@ -48,6 +48,12 @@ attributes:
     base: 1
     max: 5
     modifier: 0
+initiative:
+  physic:
+    turns: 2
+  astral:
+    turns: 3
+    modifier: 2
 armor:
   impact: 6
   balistic: 6
@@ -55,7 +61,6 @@ armor:
 wound: 
   physic: 3
   mental: 3
-turns: 2
 magic:
   base: 6
   modifier: 0
