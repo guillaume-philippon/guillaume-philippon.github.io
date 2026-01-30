@@ -1,0 +1,80 @@
+<!-- Modal -->
+<div class="modal fade" id="skills" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="skillLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="skillLabel">Combat Actions</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        {% for type in site.data.skills %}
+          <div class="row">
+            <h3>{{ type[0] | capitalize }} Active Skills</h3>
+            <div class="row">
+              {% for group in type[1] %}
+                <div class="col-md-4 mb-3">
+                  {% if group[0] != 'ungrouped' %}
+                    <h5>{{ group[0] | replace: "_", " " | capitalize }}</h5>
+                  {% else %}
+                    <h5></h5>
+                  {% endif %}
+                  <ul class="list-group list-group-flush">
+                    {% for skill in group[1] %}
+                        {{ page.skills.active[group[1]] }}
+                        {% assign character_skill_value = 0 %}
+                        {% for characters_skills_group in page.skills.active %}
+                          {% for characters_skills in characters_skills_group[1] %}
+                            {% if characters_skills[0] == skill[0] %}
+                              {% assign character_skill_value = characters_skills[1].value %}
+                            {% endif %}
+                          {% endfor %}
+                        {% endfor %}
+                        {% case skill[1].attribute %}
+                          {% when "body" %}
+                            {% assign attribute_value = body_total %}
+                          {% when "agility" %}
+                            {% assign attribute_value = agility_total %}
+                          {% when "reaction" %}
+                            {% assign attribute_value = reaction_total %}
+                          {% when "strenght" %}
+                            {% assign attribute_value = strength_total %}
+                          {% when "intuition" %}
+                            {% assign attribute_value = intuition_total %}
+                          {% when "logic" %}
+                            {% assign attribute_value = logic_total %}
+                          {% when "charisma" %}
+                            {% assign attribute_value = charisma_total %}
+                          {% when "willpower" %}
+                            {% assign attribute_value = willpower_total %}
+                          {% else %}
+                            {% assign attribute_value = 0 %}
+                        {% endcase %}
+                      <li class="py-1 d-flex justify-content-between align-items-center">
+                        {% if 0 >= character_skill_value and skill[1].default %}
+                          <span>{{ skill[0] | replace: "_", " " | capitalize }} <small>({{ skill[1].attribute }} - 1)</small></span>
+                          <span>{{ attribute_value | minus: 1 }}</span>
+                        {% endif %}
+                        <!--
+                        <span>
+                          <strong>{{ skill[1].value }}</strong>
+                          <small>({{ skill[1].value | plus: attribute_value }})</small>
+                        </span>
+                        -->
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="modal-footer">
+        <!--
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+        -->
+      </div>
+    </div>
+  </div>
+</div>

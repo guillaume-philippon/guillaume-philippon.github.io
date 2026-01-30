@@ -1,35 +1,220 @@
-attributes:
-  - name: "Force"
-    key: "strength"
-  - name: "Résistance"
-    key: "body"
-  - name: "Agilité"
-    key: "agility"
-  - name: "Réaction"
-    key: "reaction"
-  - name: "Intuition"
-    key: "intuition"
-  - name: "Logique"
-    key: "logic"
-  - name: "Volonté"
-    key: "willpower"
-  - name: "Charisme"
-    key: "charisma"
-  - name: "Edge"
-    key: "edge"
-  - name: "Magie"
-    key: "magic"
-
-skills:
-  - name: "Corps à corps"
-    key: "close_combat"
-  - name: "Esquive"
-    key: "dodge"
-  - name: "Armes de jet"
-    key: "throwing_weapons"
-  - name: "Intimidation"
-    key: "intimidation"
-  - name: "Athlétisme"
-    key: "athletics"
-  - name: "Perception"
-    key: "perception"
+combat:
+  ungrouped:
+    archery:
+      attribute: agility
+      default: yes
+    dodge:
+      attribute: reaction
+      default: yes
+    exotic_melee_weapon:
+      attribute: agility
+      default: yes
+    exotic_ranged_weapon:
+      attribute: agility
+      default: yes
+    heavy_weapons:
+      attribute: agility
+      default: yes
+    throwing_weapons:
+      attribute: agility
+      default: yes
+  firearms:
+    automatics:
+      attribute: agility
+      default: yes
+    longarms:
+      attribute: agility
+      default: yes
+    pistols:
+      attribute: agility
+      default: yes
+  close_combat:
+    blades:
+      attribute: agility
+      default: yes
+    clubs:
+      attribute: agility
+      default: yes
+    unarmed_combat:
+      attribute: agility
+      default: yes
+magical:
+  ungrouped:
+    arcana:
+      attribute: logic
+    assensing:
+      attribute: intuition
+    astral_combat:
+      attribute: willpower
+    enchanting:
+      attribute: magic
+  conjuring:
+    banishing:
+      attribute: magic
+    binding:
+      attribute: magic
+    summoning:
+      attribute: magic
+  sorcery:
+    counterspelling:
+      attribute: magic
+    ritual_spellcasting:
+      attribute: magic
+    spellcasting:
+      attribute: magic
+physical:
+  ungrouped:
+    diving:
+      attribute: body
+      default: yes
+    escape_artist:
+      attribute: agility
+      default: yes
+    parachuting:
+      attribute: body
+      default: yes
+    perception:
+      attribute: intuition
+      default: yes
+  athletics:
+    climbing:
+      attribute: strength
+      default: yes
+    gymnastics:
+      attribute: agility
+      default: yes
+    running:
+      attribute: strength
+      default: yes
+    swimming:
+      attribute: strength
+      default: yes
+  stealth:
+    disguise:
+      attribute: intuition
+      default: yes
+    infiltration:
+      attribute: agility
+      default: yes
+    palming:
+      attribute: agility
+      default: yes
+    shadowing:
+      attribute: intuition
+      default: yes
+  outdoors:
+    navigation:
+      attribute: intuition
+      default: yes
+    survival:
+      attribute: willpower
+      default: yes
+    tracking:
+      attribute: intuition
+      default: yes
+resonance:
+  tasking:
+    compiling:
+      attribute: resonance
+    decompiling:
+      attribute: resonance
+    registering:
+      attribute: resonance
+social:
+  ungrouped:
+    instruction:
+      attribute: charisma
+      default: yes
+    inimidation:
+      attribute: charisma
+      default: yes
+  influence:
+    con:
+      attribute: charisma
+      default: yes
+    etiquette:
+      attribute: charisma
+      default: yes
+    leadership:
+      attribute: charisma
+      default: yes
+    negociation:
+      attribute: charisma
+      default: yes
+technical:
+  ungrouped:
+    armorer:
+      attribute: logic
+      default: yes
+    artisan:
+      attribute: intuition
+      default: yes
+    chemistry:
+      attribute: logic
+    demolitions:
+      attribute: logic
+      default: yes
+    forgery:
+      attribute: agility
+      default: yes
+    locksmith:
+      attribute: agility
+      default: yes
+  mechanics:
+    aeronautics_mechanic:
+      attribute: logic
+    automotive_mechanic:
+      attribute: logic
+    hardware:
+      attribute: logic
+    industrial_mechanic:
+      attribute: logic
+    nautical_mechanic:
+      attribute: logic
+  electronics:
+    computer:
+      attribute: logic
+      default: yes
+    data_search:
+      attribute: logic
+      default: yes
+    hardware:
+      attribute: logic
+    software:
+      attribute: logic
+  cracking:
+    cybercombat:
+      attribute: logic
+      default: yes
+    electronic_warfare:
+      attribute: logic
+    hacking:
+      attribute: logic
+      default: yes
+  biotech:
+    cybertechnology:
+      attribute: logic
+    first_aid:
+      attribute: logic
+      default: yes
+    medecine:
+      attribute: logic
+vehicule:
+  ungrouped:
+    gunnery:
+      attribute: agility
+      default: yes
+    pilot_aerospace:
+      attribute: reaction
+    pilot_aircraft:
+      attribute: reaction
+    pilot_anthroform:
+      attribute: reaction
+    pilot_exotic_vehicule:
+      attribute: reaction
+    pilot_ground_craft:
+      attribute: reaction
+      default: yes
+    pilot_watercraft:
+      attribute: reaction
+      default: yes
