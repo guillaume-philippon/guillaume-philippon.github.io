@@ -72,6 +72,7 @@ essence:
   base: 6
   modifier: 0
 qualities:
+  - name: Low-Light Vision
   - name: Adept
     rating: 1
     bp: 5
