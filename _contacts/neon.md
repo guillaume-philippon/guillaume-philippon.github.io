@@ -1,5 +1,5 @@
 ---
-title: Neon
+full_name: Neon
 type: Hackeuse spécialisée dans les bases de données
 connection: 5
 loyalty: 1

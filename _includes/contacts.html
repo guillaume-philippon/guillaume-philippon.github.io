@@ -6,10 +6,10 @@
       <li class="list-group-item py-1 contact-item" data-bs-toggle="modal" data-bs-target="#contactModal-{{ contact_id | replace: '.md', '' }}">
         <div class="d-flex align-items-center">
           {% if contact.image %}
-            <img src="{{ contact.image }}" alt="{{ contact.title }}" class="rounded-circle me-3" style="width: 50px; height: 50px; object-fit: cover;">
+            <img src="{{ contact.image }}" alt="{{ contact.full_name }}" class="rounded-circle me-3" style="width: 50px; height: 50px; object-fit: cover;">
           {% endif %}
           <div>
-            <strong>{{ contact.title }}</strong> ({{ contact.type }}, Connection: {{ contact.connection }}, Loyalty: {{ contact.loyalty }})
+            <strong>{{ contact.full_name }}</strong> ({{ contact.type }}, Connection: {{ contact.connection }}, Loyalty: {{ contact.loyalty }})
           </div>
         </div>
       </li>
@@ -19,7 +19,7 @@
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="contactModalLabel-{{ contact_id | replace: '.md', '' }}">{{ contact.title }}</h5>
+              <h5 class="modal-title" id="contactModalLabel-{{ contact_id | replace: '.md', '' }}">{{ contact.full_name }}</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -28,6 +28,7 @@
                   {% if contact.image %}
                     <img src="{{ contact.image }}" alt="{{ contact.title }}" class="img-fluid rounded mb-3" style="max-height: 200px; object-fit: cover;">
                   {% endif %}
+                  <p><strong>Nom:</strong> {{ contact.full_name }}</p>
                   <p><strong>Type:</strong> {{ contact.type }}</p>
                   <p><strong>Connection:</strong> {{ contact.connection }}</p>
                   <p><strong>Loyalty:</strong> {{ contact.loyalty }}</p>

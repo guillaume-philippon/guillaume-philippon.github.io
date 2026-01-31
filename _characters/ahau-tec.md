@@ -9,7 +9,7 @@ infos:
   karma: 5/5
   street_cred: 0
   notoriety: 0
-name: Ahau-Tech
+full_name: Ahau-Tech
 race: Ork
 lifestyle: street
 role:

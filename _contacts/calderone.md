@@ -1,5 +1,5 @@
 ---
-title: Calderone
+full_name: Calderone
 type: Contact local dans les Favelas de Mérida
 connection: 2
 loyalty: 2

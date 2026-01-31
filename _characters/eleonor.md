@@ -4,10 +4,10 @@ theme:
 infos:
   height: "1,6"
   weight: 120
-  picture: /assets/images/eleonor.jpg
+  picture: /assets/images/Eleonor.jpg
   money: 0
   karma: 0/0
-name: Eleonor O'Neil
+full_name: Eleonor O'Neil
 race: Elfe
 lifestyle: street
 role:

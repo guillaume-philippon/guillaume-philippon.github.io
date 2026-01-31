@@ -2,7 +2,7 @@
 <div class="container my-3">
   <div class="card">
     <div class="card-header bg-{{ theme_color }}">
-      <h2 class="mb-0">{{ page.name }} ({{ page.race }})</h2>
+      <h2 class="mb-0">{{ page.full_name }} ({{ page.race }})</h2>
       <p class="mb-0"><small>Lifestyle: {{ page.lifestyle }} | Role: {{ page.role.operational }} / {{ page.role.narrative }}</small></p>
     </div>
     <div class="card-body">
@@ -11,7 +11,7 @@
         <div class="col-md-4 text-center">
           <div class="position-relative">
             {% if page.infos.picture %}
-              <img src="{{ page.infos.picture }}" class="img-fluid rounded" alt="{{ page.name }}">
+              <img src="{{ page.infos.picture }}" class="img-fluid rounded" alt="{{ page.full_name }}">
             {% endif %}
             <div class="position-absolute text-start top-0 start-0 text-white p-2 bg-dark bg-opacity-50 rounded">
               <ul class="list-unstyled">

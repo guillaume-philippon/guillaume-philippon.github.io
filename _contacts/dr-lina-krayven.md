@@ -1,5 +1,5 @@
 ---
-title: Dr. Lina Krayven
+full_name: Dr. Lina Krayven
 type: Médecin affiliée à DracoTech
 connection: 3
 loyalty: 3

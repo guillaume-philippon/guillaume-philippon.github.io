@@ -1,5 +1,5 @@
 ---
-title: Officier Kael Riven
+full_name: Officier Kael Riven
 type: Officier de sécurité à DracoTech
 connection: 3
 loyalty: 2

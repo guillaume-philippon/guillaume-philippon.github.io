@@ -7,7 +7,7 @@ infos:
   picture: /assets/images/Ghost.jpg
   money: 10
   karma: 5/5
-name: Jessica *Ghost* Rojas
+full_name: Jessica *Ghost* Rojas
 race: Humaine
 lifestyle: street
 role:

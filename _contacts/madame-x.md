@@ -1,5 +1,5 @@
 ---
-title: Madame X
+full_name: Madame X
 type: Spécialiste des secrets industriels
 connection: 3
 loyalty: 3
