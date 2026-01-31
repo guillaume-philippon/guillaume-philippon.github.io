@@ -62,19 +62,32 @@ layout: default
       {{ content | markdownify }}
     </section>
 
-    <!-- Galerie d'images -->
-    {% if page.images %}
-    <section class="adventure-gallery mt-5">
-      <h2 class="section-title mb-3">Galerie d'Illustrations</h2>
-      <div class="row">
-        {% for image in page.images %}
-        <div class="col-md-4 mb-3">
-          <img src="{{ image }}" class="img-fluid rounded adventure-image" alt="Illustration">
-        </div>
-        {% endfor %}
-      </div>
-    </section>
-    {% endif %}
+    <!-- Images intégrées dans le contenu - alternance droite/gauche -->
+    <style>
+      .adventure-content img {
+        max-width: 100%;
+        height: auto;
+        border: 2px solid #ffcc00;
+        border-radius: 8px;
+        margin: 1rem 0;
+      }
+      
+      .adventure-content .image-right {
+        float: right;
+        margin-left: 1rem;
+        margin-right: 0;
+      }
+      
+      .adventure-content .image-left {
+        float: left;
+        margin-right: 1rem;
+        margin-left: 0;
+      }
+      
+      .adventure-content .clearfix {
+        clear: both;
+      }
+    </style>
   </article>
 </div>
 
