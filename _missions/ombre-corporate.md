@@ -1,7 +1,8 @@
 ---
 layout: adventure
 title: "Ombre Corporate"
-date: 2024-01-31
+date: 2024-01-31  # Date de publication (pour Jekyll)
+game_date: 2075-01-31  # Date dans l'univers Shadowrun
 description: "Une mission d'infiltration dans les locaux de Renraku pour récupérer des données sensibles."
 location: "Seattle, Downtown - Renraku Arcology"
 difficulty: 4

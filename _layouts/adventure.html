@@ -10,7 +10,8 @@ layout: default
       
       <div class="adventure-meta row mb-4">
         <div class="col-md-6">
-          <p><strong>Date:</strong> {{ page.date | date: "%d %B %Y" }}</p>
+          <p><strong>Date (Univers):</strong> {{ page.game_date | date: "%d %B %Y" }}</p>
+          <p><strong>Date (Publication):</strong> {{ page.date | date: "%d %B %Y" }}</p>
           <p><strong>Lieu:</strong> {{ page.location }}</p>
           <p><strong>Durée estimée:</strong> {{ page.estimated_time }}</p>
         </div>
