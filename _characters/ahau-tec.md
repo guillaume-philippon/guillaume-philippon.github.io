@@ -170,6 +170,9 @@ skills:
     security_ procedures:
       value: 6
       attribute: professional
+    jungle_survival:
+      value: 5
+      attribute: street
 contacts:
   - dr-lina-krayven.md
   - officier-kael-riven.md
