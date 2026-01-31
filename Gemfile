@@ -1,9 +1,13 @@
 source "https://rubygems.org"
 
-# Utiliser les versions spécifiques pour éviter les conflits
+# Utiliser Jekyll 4 avec les gems nécessaires
 gem "jekyll", "~> 4.3.3"
-gem "github-pages", "~> 228", group: :jekyll_plugins
-gem "public_suffix", "~> 5.0"
+gem "kramdown", "~> 2.3"
+gem "kramdown-parser-gfm", "~> 1.1"
+gem "webrick", "~> 1.7"
+
+# Pour GitHub Pages compatibility
+gem "github-pages-health-check", "~> 1.17"
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
