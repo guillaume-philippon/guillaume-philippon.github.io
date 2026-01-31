@@ -1,0 +1,134 @@
+---
+layout: default
+---
+{% assign characters = "" %}
+{% for charactere in site.characters %}
+  {% for charactere_contact in charactere.contacts %}
+    {% if charactere_contact.contact == page.name %}
+      {% if characters == "" %}
+        {% assign characteres = characteres | append: charactere.full_name %}
+      {% else %}
+        {% assign characteres = characteres | append: ", " | append: charactere.full_name %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+<div class="container my-4">
+  <div class="card">
+    <div class="card-header bg-primary text-white">
+      <h2 class="mb-0">{{ page.full_name }}</h2>
+      <p class="mb-0">{{ page.type }}</p>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <!-- Colonne de gauche : Image et infos principales -->
+        <div class="col-md-4 text-center">
+          {% if page.image %}
+          <img src="{{ page.image }}" alt="{{ page.full_name }}" 
+               class="img-fluid rounded-circle mb-3" style="max-width: 250px; height: 250px; object-fit: cover;">
+          {% else %}
+          <img src="/assets/images/contacts/placeholder.jpg" alt="{{ page.full_name }}" 
+               class="img-fluid rounded-circle mb-3" style="max-width: 250px; height: 250px; object-fit: cover;">
+          {% endif %}
+          
+          <div class="card mb-3">
+            <div class="card-body">
+              <h5 class="card-title">Informations</h5>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Connection:</strong> {{ page.connection }}</li>
+                {% if page.loyalty %}
+                <li class="list-group-item"><strong>Loyalty:</strong> {{ page.loyalty }}</li>
+                {% endif %}
+                <li class="list-group-item"><strong>Personnage associé:</strong> {{ characteres }}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Colonne de droite : Description et détails -->
+        <div class="col-md-8">
+          <div class="mb-4">
+            <h4>Description</h4>
+            {{ content }}
+          </div>
+          
+          <!-- Attributs -->
+          {% if page.attributes %}
+          <div class="mb-4">
+            <h4>Attributs</h4>
+            <div class="row">
+              <div class="col-6">
+                <ul class="list-unstyled">
+                  <li><strong>Body:</strong> {{ page.attributes.body }}</li>
+                  <li><strong>Agility:</strong> {{ page.attributes.agility }}</li>
+                  <li><strong>Reaction:</strong> {{ page.attributes.reaction }}</li>
+                  <li><strong>Strength:</strong> {{ page.attributes.strength }}</li>
+                </ul>
+              </div>
+              <div class="col-6">
+                <ul class="list-unstyled">
+                  <li><strong>Intuition:</strong> {{ page.attributes.intuition }}</li>
+                  <li><strong>Logic:</strong> {{ page.attributes.logic }}</li>
+                  <li><strong>Willpower:</strong> {{ page.attributes.willpower }}</li>
+                  <li><strong>Charisma:</strong> {{ page.attributes.charisma }}</li>
+                </ul>
+              </div>
+            </div>
+            {% if page.attributes.magic %}
+            <p><strong>Magic:</strong> {{ page.attributes.magic }}</p>
+            {% endif %}
+          </div>
+          {% endif %}
+          
+          <!-- Compétences -->
+          {% if page.skills %}
+          <div class="mb-4">
+            <h4>Compétences</h4>
+            {% for skill_category in page.skills %}
+              {% assign category = skill_category[0] %}
+              {% assign skills = skill_category[1] %}
+              {% if category != 'knowledge' %}
+              <div class="mb-2">
+                <strong>{{ category | replace: '_', ' ' | capitalize }}:</strong>
+                {% for skill in skills %}
+                  {% assign skill_name = skill[0] %}
+                  {% assign skill_value = skill[1] %}
+                  {{ skill_name | replace: '_', ' ' | capitalize }} ({{ skill_value }}), 
+                {% endfor %}
+              </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+          {% endif %}
+          
+          <!-- Connaissances -->
+          {% if page.skills.knowledge %}
+          <div class="mb-4">
+            <h4>Connaissances</h4>
+            {% for knowledge in page.skills.knowledge %}
+              {% assign knowledge_name = knowledge[0] %}
+              {% assign knowledge_value = knowledge[1] %}
+              <div class="mb-1">
+                {{ knowledge_name | replace: '_', ' ' | capitalize }} ({{ knowledge_value }})
+              </div>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bouton de retour -->
+    <div class="card-footer text-end">
+      <a href="/" class="btn btn-secondary">Retour à la liste des personnages</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .contact-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+  }
+</style>

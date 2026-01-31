@@ -174,9 +174,12 @@ skills:
       value: 4
       attribute: academic
 contacts:
-  - dr-lina-krayven.md
-  - calderone.md
-  - chaman-ixchel.md
+  - contact: dr-lina-krayven.md
+    loyalty: 3
+  - contact: calderone.md
+    loyalty: 2
+  - contact: chaman-ixchel.md
+    loyalty: 5
 gear:
   weapons:
     - name: Tomahawk

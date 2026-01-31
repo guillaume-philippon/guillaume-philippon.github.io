@@ -2,8 +2,6 @@
 full_name: Big Jim
 type: Fixeur du milieu underground
 connection: 4
-loyalty: 3
-character: eleonor
 image: /assets/images/contacts/big-jim.jpg
 attributes:
   body: 5
@@ -28,4 +26,4 @@ skills:
     black_market: 4
 ---
 
-Big Jim est un fixeur bien connecté dans le milieu underground. Il peut fournir des armes, des équipements et des informations sur les activités criminelles locales. Il a une bonne relation avec Eleonor et lui fournit régulièrement du travail.
+Big Jim est un fixeur bien connecté dans le milieu underground. Il peut fournir des armes, des équipements et des informations sur les activités criminelles locales. Il a une bonne relation avec plusieurs runners et leur fournit régulièrement du travail.

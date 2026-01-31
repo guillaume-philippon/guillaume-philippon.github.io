@@ -12,6 +12,8 @@ collections:
   contacts:
     output: true
     permalink: /contacts/:name/
+  relations:
+    output: false
 
 defaults:
   - scope:
@@ -19,3 +21,8 @@ defaults:
       type: "characters"
     values:
       layout: "character"
+  - scope:
+      path: ""
+      type: "contacts"
+    values:
+      layout: "contact"

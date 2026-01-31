@@ -175,8 +175,10 @@ skills:
       value: 3
       attribute: professional
 contacts:
-  - neon.md
-  - madame-x.md
+  - contact: neon.md
+    loyalty: 1
+  - contact: madame-x.md
+    loyalty: 3
 cyberware:
   - name: Commlink
     essence: 0.2
