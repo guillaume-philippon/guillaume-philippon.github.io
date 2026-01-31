@@ -6,6 +6,7 @@
       <!-- {{ contact.name }} == {{ contact_id }} -->
     {% endfor %}
     {% if contact %}
+      <!--
       <li class="list-group-item py-1 contact-item" data-bs-toggle="modal" data-bs-target="#contactModal-{{ contact_id | replace: '.md', '' }}">
         <div class="d-flex align-items-center">
           {% if contact.image %}
@@ -16,7 +17,7 @@
           </div>
         </div>
       </li>
-      
+     -->
       <!-- Modal pour ce contact -->
       <div class="modal fade" id="contactModal-{{ contact_id | replace: '.md', '' }}" tabindex="-1" aria-labelledby="contactModalLabel-{{ contact_id | replace: '.md', '' }}" aria-hidden="true">
         <div class="modal-dialog modal-lg">

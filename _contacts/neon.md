@@ -1,8 +1,8 @@
 ---
 full_name: Neon
 type: Hackeuse spécialisée dans les bases de données
-connection: 5
-loyalty: 1
+connection: 3
+loyalty: 3
 character: ghost
 name: neon.md
 image: /assets/images/contacts/neon.jpg
