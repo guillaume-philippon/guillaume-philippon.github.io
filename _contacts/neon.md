@@ -2,7 +2,7 @@
 full_name: Neon
 name: neon.md
 type: Hackeuse spécialisée dans les bases de données
-connection: 5
+connection: 3
 image: /assets/images/contacts/neon.jpg
 attributes:
   body: 2

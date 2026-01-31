@@ -12,11 +12,11 @@
           </div>
         </div>
         <div class="col-md-3">
-          <div class="contact-icons">
+          <div class="contact-icons row">
             {% for contact_id in page.contacts %}
               {% assign contact = site.contacts | where_exp: "item", "item.name == contact_id.contact" | first %}
               {% if contact %}
-                <div class="mb-2 contact-item" data-bs-toggle="tooltip" data-bs-placement="left" title="{{ contact.full_name }} ({{ contact.connection }} / {{ contact_id.loyalty }})">
+                <div class="mb-2 col-4 contact-item" data-bs-toggle="tooltip" data-bs-placement="left" title="{{ contact.full_name }} ({{ contact.connection }} / {{ contact_id.loyalty }})">
                   <a href="#" data-bs-toggle="modal" data-bs-target="#contactModal-{{ contact_id.contact | replace: '.md', '' }}" class="text-decoration-none text-dark">
                     {% if contact.image %}
                       <img src="{{ contact.image }}" alt="{{ contact.full_name }}" class="contact-icon rounded-circle me-2" 
@@ -26,7 +26,9 @@
                            style="width: 40px; height: 40px; object-fit: cover; cursor: pointer;">
                     {% endif %}
                   </a>
+                  <!--
                   <small>{{ contact.full_name }}</small>
+                  -->
                 </div>
               {% endif %}
             {% endfor %}

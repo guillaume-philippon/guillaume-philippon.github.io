@@ -174,7 +174,7 @@ skills:
       attribute: professional
 contacts:
   - contact: neon.md
-    loyalty: 1
+    loyalty: 3
   - contact: madame-x.md
     loyalty: 3
 cyberware:
