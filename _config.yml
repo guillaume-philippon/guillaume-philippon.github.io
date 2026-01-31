@@ -12,6 +12,9 @@ collections:
   contacts:
     output: true
     permalink: /contacts/:name/
+  missions:
+    output: true
+    permalink: /missions/:name/
   relations:
     output: false
 
@@ -26,3 +29,8 @@ defaults:
       type: "contacts"
     values:
       layout: "contact"
+  - scope:
+      path: ""
+      type: "adventure"
+    values:
+      layout: "adventure"

@@ -78,8 +78,17 @@ title: Aventures Shadowrun
 
   <!-- Liste des aventures -->
   <div class="row" id="adventures-list">
-    {% assign sorted_adventures = site.adventures | sort: 'date' | reverse %}
-    {% for adventure in sorted_adventures %}
+    {% assign adventures = site.pages | where: "layout", "adventure" | sort: 'date' | reverse %}
+    
+    {% if adventures.size == 0 %}
+    <div class="col-12 text-center">
+      <div class="alert alert-info" style="background-color: #2a2a2a; border: 1px solid #ffcc00; color: #e0e0e0;">
+        <h4 class="alert-heading" style="color: #ffcc00;">Aucune aventure disponible</h4>
+        <p class="mb-0">Il n'y a pas encore d'aventures publiées. Revenez plus tard !</p>
+      </div>
+    </div>
+    {% else %}
+    {% for adventure in adventures %}
     <div class="col-md-4 mb-4 adventure-card" 
          data-difficulty="{{ adventure.difficulty }}"
          data-duration="{{ adventure.estimated_time }}"
@@ -117,13 +126,14 @@ title: Aventures Shadowrun
               <span class="badge bg-primary-subtle text-primary" style="font-size: 0.7rem;">{{ tag }}</span>
             {% endfor %}
           </div>
-          <a href="{{ adventure.url }}" class="btn mt-2 w-100" style="background-color: #ffcc00; color: #000; font-weight: 600; font-size: 0.9rem;">
-            Voir l'aventure
+          <a href="/missions/{{ adventure.name | replace: '.md', '.html' }}" class="btn mt-2 w-100" style="background-color: #ffcc00; color: #000; font-weight: 600; font-size: 0.9rem;">
+            Voir la mission
           </a>
         </div>
       </div>
     </div>
     {% endfor %}
+    {% endif %}
   </div>
 </div>
 
