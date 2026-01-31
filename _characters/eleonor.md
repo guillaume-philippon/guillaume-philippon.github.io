@@ -76,6 +76,8 @@ skills:
         attribute: reaction
         value: 5
 contacts:
+  - big-jim.md
+  - doc-harper.md
 cyberware:
   - name: Wired Reflex (Alpha)
     type: bodyware
