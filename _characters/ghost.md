@@ -1,6 +1,4 @@
 ---
-theme:
-  color: success
 infos:
   height: "1,6"
   weight: 60

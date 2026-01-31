@@ -1,7 +1,7 @@
 {% include variables.html %}
-<div class="container my-3">
-  <div class="card">
-    <div class="card-header bg-{{ theme_color }}">
+<div class="character-sheet container my-3">
+  <div class="card ">
+    <div class="card-header">
       <h2 class="mb-0">{{ page.full_name }} ({{ page.race }})</h2>
       <p class="mb-0"><small>Lifestyle: {{ page.lifestyle }} | Role: {{ page.role.operational }} / {{ page.role.narrative }}</small></p>
     </div>
@@ -35,7 +35,7 @@
           <div class="row">
             <div class="col-4 col-lg-2 mt-2">
             {% if page.magic %}
-              <div class="card bg-{{ theme_color }}-subtle">
+              <div class="card">
                 <div class="card-body p-2 text-center">
                   <span class="card-title mb-1"><small>Magie</small></span>
                   <p class="card-text mb-0">{{ page.magic.base }}</p>
@@ -44,7 +44,7 @@
             {% endif %}
             </div>
             <div class="col-4 col-lg-2 mt-2">
-              <div class="card bg-{{ theme_color }}-subtle" data-bs-toggle="modal" data-bs-target="#edge">
+              <div class="card" data-bs-toggle="modal" data-bs-target="#edge">
                 <div class="card-body p-2 text-center">
                   <span class="card-title mb-1"><small>Edge</small></span>
                   <p class="card-text mb-0">{{ page.edge.base }}</p>
@@ -52,7 +52,7 @@
               </div>
             </div>
             <div class="col-4 col-lg-2 mt-2">
-              <div class="card bg-{{ theme_color }}-subtle">
+              <div class="card">
                 <div class="card-body p-2 text-center">
                   <span class="card-title mb-1"><small>Essence</small></span>
                   <p class="card-text mb-0">{{ page.essence.base | minus: cyberware_essence }}</p>
@@ -60,7 +60,7 @@
               </div>
             </div>
             <div class="col-4 col-lg-2 mt-2">
-              <div class="card bg-{{ theme_color }}-subtle">
+              <div class="card">
                 <div class="card-body p-2 text-center">
                   <span class="card-title mb-1"><small>Physique</small></span>
                   <p class="card-text mb-0">{{ physic_condition }} <small>/{{ page.wound.physic }}</small></p>
@@ -68,7 +68,7 @@
               </div>
             </div>
             <div class="col-4 col-lg-2 mt-2">
-              <div class="card bg-{{ theme_color }}-subtle">
+              <div class="card">
                 <div class="card-body p-2 text-center">
                   <span class="card-title mb-1"><small>Mentale</small></span>
                   <p class="card-text mb-0">{{ mental_condition }} <small>/{{ page.wound.mental }}</small></p>

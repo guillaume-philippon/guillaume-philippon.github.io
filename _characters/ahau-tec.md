@@ -1,6 +1,4 @@
 ---
-theme:
-  color: danger
 infos:
   height: "2,2"
   weight: 150

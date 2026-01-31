@@ -9,14 +9,14 @@ title: Personnages
     <div class="col-md-4 mb-4">
       <div class="card">
         <div
-          class="card-body bg-{{ character.theme.color }}-subtle card-custom"
+          class="card-body card-custom"
           style="background-image: url('{{ character.infos.picture }}');"
         >
           <div>
             <h5 class="card-title">{{ character.full_name }}</h5>
             <p class="card-text">{{ character.race }}</p>
           </div>
-          <a href="{{ character.url }}" class="character btn btn-{{ character.theme.color }}">Voir la fiche</a>
+          <a href="{{ character.url }}" class="character btn">Voir la fiche</a>
         </div>
       </div>
     </div>
