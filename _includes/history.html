@@ -1,7 +1,15 @@
       <!-- Histoire -->
       {% if page.history != '' %}
       <h3 class="mt-3">Histoire</h3>
-      {% assign first_paragraph = page.history | split: '</p>' | first | replace: '<p>', '' %}
+      {% assign paragraphs = page.history | split: '' %}
+      {% assign first_paragraph = '' %}
+      {% for line in paragraphs %}
+        {% if line != '' and line != '<p>' and line != '</p>' %}
+          {% if first_paragraph == '' %}
+            {% assign first_paragraph = line %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
       <div class="history-preview">
         <p>{{ first_paragraph | strip }}</p>
         {% if page.infos.picture %}
