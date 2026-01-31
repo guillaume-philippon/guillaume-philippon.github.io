@@ -40,7 +40,7 @@ layout: default
           {% if runner.present %}
           {% assign full_name = runner.name | capitalize %}
           {% for character in site.characters %}
-            {% if character.name == runner.name %}
+            {% if character.key == runner.name %}
               {% assign full_name = character.full_name %}
             {% endif %}
           {% endfor %}
