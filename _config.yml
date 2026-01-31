@@ -1,7 +1,7 @@
 title: Fiches Perso Shadowrun
 description: Générateur de fiches de personnage pour Shadowrun 4ème édition
 baseurl: "/"
-url: "http://localhost:4000"
+url: "https://guillaume-philippon.github.io"
 markdown: kramdown
 
 # Déclaration de la collection
