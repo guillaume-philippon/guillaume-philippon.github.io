@@ -4,6 +4,7 @@ type: Spécialiste des secrets industriels
 connection: 3
 loyalty: 3
 character: ghost
+name: madame-x.md
 image: /assets/images/contacts/madame-x.jpg
 attributes:
   body: 3

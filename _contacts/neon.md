@@ -4,6 +4,7 @@ type: Hackeuse spécialisée dans les bases de données
 connection: 5
 loyalty: 1
 character: ghost
+name: neon.md
 image: /assets/images/contacts/neon.jpg
 attributes:
   body: 2

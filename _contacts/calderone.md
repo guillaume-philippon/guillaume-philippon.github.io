@@ -4,6 +4,7 @@ type: Contact local dans les Favelas de Mérida
 connection: 2
 loyalty: 2
 character: ahau-tec
+name: calderone.md
 image: /assets/images/contacts/calderone.jpg
 attributes:
   body: 4
