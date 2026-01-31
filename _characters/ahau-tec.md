@@ -174,6 +174,7 @@ contacts:
   - dr-lina-krayven.md
   - officier-kael-riven.md
   - calderone.md
+  - chaman-ixchel.md
 gear:
   weapons:
     - name: Tomahawk
