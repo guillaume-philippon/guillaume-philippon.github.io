@@ -1,42 +1,30 @@
 ---
 layout: adventure
-title: "Ombre Corporate"
+title: "Point Mort"
 date: 2024-01-31  # Date de publication (pour Jekyll)
 game_date: 2075-01-31  # Date dans l'univers Shadowrun
-description: "Une mission d'infiltration dans les locaux de Renraku pour récupérer des données sensibles."
-location: "Seattle, Downtown - Renraku Arcology"
-difficulty: 4
-estimated_time: "5-7 heures"
+description: |
+  Un site de surveillance magique a cessé d'émettre, une bonne occasion de tester
+  les compétences de nouvelles recrues
+location: "Merida, Favelas - DracoTech"
+difficulty: 1
+estimated_time: "2-3 heures"
 runners:
   - name: "Ahau-Tec"
-    role: "Mage/Leader"
     karma: 5
-    bonus: 2
-    present: true
-  - name: "Eleonor"
-    role: "Decker/Support"
-    karma: 4
-    bonus: 1
+    bonus: 0
     present: true
   - name: "Ghost"
-    role: "Street Sam/Combat"
-    karma: 6
-    bonus: 3
-    present: true
-  - name: "Neon"
-    role: "Face/Social"
-    karma: 3
+    karma: 5
     bonus: 0
-    present: false
+    present: true
 images:
-  - "/assets/images/contacts/renraku.jpg"
+  - "/assets/images/missions/dracotech.jpg"
   - "/assets/images/contacts/seattle-night.jpg"
   - "/assets/images/contacts/cyberpunk-city.jpg"
 tags:
   - "corporate"
-  - "infiltration"
-  - "hacking"
-  - "combat"
+  - "investigation"
 ---
 
 ## Briefing
@@ -99,26 +87,10 @@ La sortie se transforme en course-poursuite:
 - Dr. Tanaka éliminé (bonus accompli)
 
 **Récompenses:**
-- **Ahau-Tec**: 5 karma + 2 bonus = 7 karma total
-- **Eleonor**: 4 karma + 1 bonus = 5 karma total  
-- **Ghost**: 6 karma + 3 bonus = 9 karma total
+- **Ahau-Tec**: 5 karma
+- **Ghost**: 5 karma
 
 **Conséquences:**
-- Renraku lance une chasse aux runners
-- Réputation +2 pour l'équipe
-- Nouveau contact chez Mitsuhama (merci Eleonor)
+- Nouveau contact dans les Favelas (merci Ahau-Tec)
 
 ## Débriefing
-
-**Points Positifs:**
-- Excellente coordination entre les runners
-- Piratage réussi malgré un ICE niveau 8
-- Élimination propre du Dr. Tanaka
-
-**Points à Améliorer:**
-- Déclenchement d'alarme lors de la récupération
-- Temps d'exfiltration un peu long
-- Utilisation excessive de munitions
-
-**Prochaine Mission:**
-Le Johnson propose une nouvelle mission contre Azzie pour 75,000¥...
