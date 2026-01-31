@@ -76,42 +76,42 @@ title: Aventures Shadowrun
     </div>
   </div>
 
-  <!-- Liste des aventures -->
-  <div class="row" id="adventures-list">
-    {% assign adventures = site.pages | where: "layout", "adventure" | sort: 'date' | reverse %}
+  <!-- Liste des missions -->
+  <div class="row" id="missions-list">
+    {% assign missions = site.missions | sort: 'date' | reverse %}
     
-    {% if adventures.size == 0 %}
+    {% if missions.size == 0 %}
     <div class="col-12 text-center">
       <div class="alert alert-info" style="background-color: #2a2a2a; border: 1px solid #ffcc00; color: #e0e0e0;">
-        <h4 class="alert-heading" style="color: #ffcc00;">Aucune aventure disponible</h4>
-        <p class="mb-0">Il n'y a pas encore d'aventures publiées. Revenez plus tard !</p>
+        <h4 class="alert-heading" style="color: #ffcc00;">Aucune mission disponible</h4>
+        <p class="mb-0">Il n'y a pas encore de missions publiées. Revenez plus tard !</p>
       </div>
     </div>
     {% else %}
-    {% for adventure in adventures %}
+    {% for mission in missions %}
     <div class="col-md-4 mb-4 adventure-card" 
          data-difficulty="{{ adventure.difficulty }}"
          data-duration="{{ adventure.estimated_time }}"
          data-tags="{{ adventure.tags | join: ' ' }}">
       <div class="card h-100" style="background-color: #2a2a2a; border: 1px solid #ffcc00; border-radius: 8px; overflow: hidden;">
         <div class="card-header" style="background: linear-gradient(145deg, #1a1a1a 0%, #2d2d2d 100%); border-bottom: 1px solid #ffcc00;">
-          <h5 class="card-title mb-0" style="color: #ffcc00; font-size: 1.2rem;">{{ adventure.title }}</h5>
+          <h5 class="card-title mb-0" style="color: #ffcc00; font-size: 1.2rem;">{{ mission.title }}</h5>
         </div>
         <div class="card-body" style="color: #e0e0e0;">
-          <p class="card-text mb-2">{{ adventure.description }}</p>
+          <p class="card-text mb-2">{{ mission.description }}</p>
           <div class="mb-3">
             <small class="text-muted">
-              <i class="fas fa-map-marker-alt"></i> {{ adventure.location }}<br>
-              <i class="fas fa-clock"></i> {{ adventure.estimated_time }}<br>
+              <i class="fas fa-map-marker-alt"></i> {{ mission.location }}<br>
+              <i class="fas fa-clock"></i> {{ mission.estimated_time }}<br>
               <i class="fas fa-star"></i> 
               {% for i in (1..5) %}
-                {% if i <= adventure.difficulty %}⭐{% else %}☆{% endif %}
+                {% if i <= mission.difficulty %}⭐{% else %}☆{% endif %}
               {% endfor %}
             </small>
           </div>
           <div class="mb-3">
             <h6 style="color: #ffcc00; font-size: 0.9rem;">Runners:</h6>
-            {% for runner in adventure.runners %}
+            {% for runner in mission.runners %}
               {% if runner.present %}
               <span class="badge bg-warning text-dark me-1" style="font-size: 0.8rem;">
                 {{ runner.name }} ({{ runner.karma }}+{{ runner.bonus }})
@@ -122,11 +122,11 @@ title: Aventures Shadowrun
         </div>
         <div class="card-footer" style="background-color: #1a1a1a; border-top: 1px solid #ffcc00;">
           <div class="d-flex justify-content-between">
-            {% for tag in adventure.tags %}
+            {% for tag in mission.tags %}
               <span class="badge bg-primary-subtle text-primary" style="font-size: 0.7rem;">{{ tag }}</span>
             {% endfor %}
           </div>
-          <a href="/missions/{{ adventure.name | replace: '.md', '.html' }}" class="btn mt-2 w-100" style="background-color: #ffcc00; color: #000; font-weight: 600; font-size: 0.9rem;">
+          <a href="/missions/{{ mission.name }}/" class="btn mt-2 w-100" style="background-color: #ffcc00; color: #000; font-weight: 600; font-size: 0.9rem;">
             Voir la mission
           </a>
         </div>

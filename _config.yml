@@ -31,6 +31,6 @@ defaults:
       layout: "contact"
   - scope:
       path: ""
-      type: "adventure"
+      type: "missions"
     values:
       layout: "adventure"
