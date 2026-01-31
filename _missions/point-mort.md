@@ -54,11 +54,11 @@ Le bâtiment, situé dans les favelas à 35 km de Mérida, est un relais de surv
 
 Un cercle rituel avec des glyphes non identifiés était présent au centre de la pièce. **Ahau-Tec** n’a pas reconnu leur signification, ce qui suggère une origine obscure ou spécifique à une tradition magique peu commune. Les ordinateurs sur place indiquaient que le site (**DT-YUC-17**) était toujours marqué comme actif dans les registres, bien que tout ait été désactivé manuellement.
 
-Aucune preuve ne confirme une intrusion externe, une faille de sécurité ou une maintenance planifiée. La désactivation semble délibérée, mais la raison (intervention interne, infiltration contrôlée, ou autre) reste indéterminée.
-
 <div class="image-left">
   <img src="/assets/images/missions/DT-YUC-17-indoor.jpg" class="img-fluid rounded" alt="DT-YUC-17">
 </div>
+
+Aucune preuve ne confirme une intrusion externe, une faille de sécurité ou une maintenance planifiée. La désactivation semble délibérée, mais la raison (intervention interne, infiltration contrôlée, ou autre) reste indéterminée.
 
 Le transformateur électrique éteint à proximité du bâtiment était la source d’alimentation principale du site **DT-YUC-17**. Son réenclenchement a rétabli l’électricité dans les installations.
 
@@ -76,26 +76,12 @@ Les squatteurs autour du bâtiment n’ont fourni aucune information utile, à l
 **Miguel Varga** a confirmé que trois membres de l’équipe ont été redéployés, mais aucune information n’est disponible concernant Rafael Itsa. Le site **DT-YUC-17** est désormais de nouveau actif après le rétablissement de l’alimentation électrique.
 La mission s’est conclue par la destruction du cercle rituel, libérant l’esprit d’observation lié au rituel. La demande de **Miguel Varga** de neutraliser l’esprit avant le retour a été exécutée. L’enquête est terminée.
 
-
-## Conclusion
-
-**Miguel Varga**, responsable opérationnel de **DracoSec**, vous a reçu au siège discret de **DracoTech** à *Mérida*. Il a présenté la mission comme une évaluation de vos capacités opérationnelles. Le site **DT-YUC-17**, un relais de surveillance non critique situé dans les favelas à 35 km de *Mérida*, avait cessé d’émettre sans explication.
-
-Après investigation, vous avez découvert que le site avait été volontairement désactivé, avec un cercle rituel et un esprit d’observation présent. Le transformateur électrique éteint a été réactivé, rétablissant l’alimentation et confirmant que la coupure était intentionnelle.
-
-**Calderone**, un membre de l’équipe resté sur place, a révélé que **Rafael Itsa** avait ordonné l’arrêt des opérations et préparé le rituel. Miguel a confirmé le redéploiement de trois membres de l’équipe, mais aucune information sur **Rafael Itsa** n’était disponible.
-
-La mission s’est terminée par la destruction du cercle rituel et la libération de l’esprit. Miguel a confirmé la fin de l’enquête et demandé de neutraliser l’esprit avant le retour.
-
 <div class="image-left">
   <img src="/assets/images/contacts/placeholder.jpg" class="img-fluid rounded" alt="Calderone">
 </div>
 
-**Rafael Itsa** n’a pas disparu sans raison. Les ombres de Mérida murmurent encore son nom, et les rituels abandonnés portent son empreinte. Ce n’est qu’une question de temps avant que ses choix ne resurgissent—avec les conséquences qu’ils entraînent. Préparez-vous à le recroiser, là où la magie et la technologie s’entrechoquent.
+## Conclusion
 
-**Récompenses:**
-- **Ahau-Tec**: 5 karma
-- **Ghost**: 5 karma
+L’aventure **Point Mort** a plongé les runners dans les bas-fonds de *Mérida*, une cité où magie, technologie et corruption s’entremêlent sous un ciel de néons et de chaleur étouffante. Chaque membre a joué un rôle clé : l’orc **Ahau-Tec**, alliant force brute et traditions ancestrales, le decker **Ghost**, maître des intrusions virtuelles, l’elfe chamane **Maya**, guide entre les mondes physique et spirituel, et le nain rigger **Patch**, expert en drones et en tactiques.
 
-**Conséquences:**
-- Nouveau contact dans les Favelas (**Calderone**)
+**Rafael Itsa** n’a pas disparu sans raison. Les ombres de *Mérida* murmurent encore son nom, et les rituels abandonnés portent son empreinte. Ce n’est qu’une question de temps avant que ses choix ne resurgissent—avec les conséquences qu’ils entraînent. Préparez-vous à le recroiser, là où la magie et la technologie s’entrechoquent.
