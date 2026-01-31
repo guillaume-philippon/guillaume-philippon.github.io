@@ -3,7 +3,7 @@ layout: default
 title: Aventures Shadowrun
 --- 
 
-<div class="container my-5 character-sheet">
+<div class="container my-5">
   <h1 class="text-center mb-4" style="color: #ffcc00; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
     Collection d'Aventures Shadowrun
   </h1>
@@ -90,11 +90,11 @@ title: Aventures Shadowrun
     </div>
     {% else %}
     {% for mission in missions %}
-    <div class="col-md-4 mb-4 adventure-card" 
+    <div class="col-md-4 mb-4" 
          data-difficulty="{{ adventure.difficulty }}"
          data-duration="{{ adventure.estimated_time }}"
          data-tags="{{ adventure.tags | join: ' ' }}">
-      <div class="card h-100" style="background-color: #2a2a2a; border: 0px solid #ffcc00; border-radius: 8px; overflow: hidden;">
+      <div class="card h-100 adventure-card" style="background-color: #2a2a2a; overflow: hidden;">
         <div class="card-header" style="background: linear-gradient(145deg, #1a1a1a 0%, #2d2d2d 100%); border-bottom: 1px solid #ffcc00;">
           <h5 class="card-title mb-0" style="color: #ffcc00; font-size: 1.2rem;">{{ mission.title }}</h5>
         </div>
