@@ -170,9 +170,9 @@ skills:
     security_ procedures:
       value: 4
       attribute: professional
-    jungle_survival:
+    politique_tribale:
       value: 4
-      attribute: street
+      attribute: academic
 contacts:
   - dr-lina-krayven.md
   - calderone.md
