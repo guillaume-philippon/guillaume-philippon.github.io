@@ -1,0 +1,199 @@
+--- 
+layout: default
+title: Aventures Shadowrun
+--- 
+
+<div class="container my-5">
+  <h1 class="text-center mb-4" style="color: #ffcc00; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
+    Collection d'Aventures Shadowrun
+  </h1>
+  
+  <div class="row mb-4">
+    <div class="col-md-8">
+      <p class="lead" style="color: #e0e0e0;">
+        Découvrez nos scénarios complets pour Shadowrun, avec des briefings détaillés,
+        des objectifs clairs et des récompenses en karma pour vos runners.
+      </p>
+    </div>
+    <div class="col-md-4 text-end">
+      <a href="/" class="btn" style="background-color: #ffcc00; color: #000; font-weight: 600;">
+        Retour à l'accueil
+      </a>
+    </div>
+  </div>
+
+  <!-- Filtres -->
+  <div class="row mb-4">
+    <div class="col-12">
+      <div class="card" style="background-color: #2a2a2a; border: 1px solid #ffcc00;">
+        <div class="card-body">
+          <h5 class="card-title" style="color: #ffcc00;">Filtrer les aventures</h5>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="difficulty-filter" style="color: #e0e0e0;">Difficulté</label>
+                <select id="difficulty-filter" class="form-select" style="background-color: #1e1e1e; color: #e0e0e0; border: 1px solid #555;">
+                  <option value="all">Toutes</option>
+                  <option value="1">⭐ (Facile)</option>
+                  <option value="2">⭐⭐ (Moyenne)</option>
+                  <option value="3">⭐⭐⭐ (Difficile)</option>
+                  <option value="4">⭐⭐⭐⭐ (Très difficile)</option>
+                  <option value="5">⭐⭐⭐⭐⭐ (Légendaire)</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="duration-filter" style="color: #e0e0e0;">Durée</label>
+                <select id="duration-filter" class="form-select" style="background-color: #1e1e1e; color: #e0e0e0; border: 1px solid #555;">
+                  <option value="all">Toutes</option>
+                  <option value="short">Courtes (&lt; 3h)</option>
+                  <option value="medium">Moyennes (3-6h)</option>
+                  <option value="long">Longues (&gt; 6h)</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label for="type-filter" style="color: #e0e0e0;">Type</label>
+                <select id="type-filter" class="form-select" style="background-color: #1e1e1e; color: #e0e0e0; border: 1px solid #555;">
+                  <option value="all">Tous</option>
+                  <option value="corporate">Corporate</option>
+                  <option value="street">Rue</option>
+                  <option value="matrix">Matrice</option>
+                  <option value="magic">Magie</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-3 d-flex align-items-end">
+              <button id="reset-filters" class="btn w-100" style="background-color: #ffcc00; color: #000; font-weight: 600;">
+                Réinitialiser
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Liste des aventures -->
+  <div class="row" id="adventures-list">
+    {% assign sorted_adventures = site.adventures | sort: 'date' | reverse %}
+    {% for adventure in sorted_adventures %}
+    <div class="col-md-4 mb-4 adventure-card" 
+         data-difficulty="{{ adventure.difficulty }}"
+         data-duration="{{ adventure.estimated_time }}"
+         data-tags="{{ adventure.tags | join: ' ' }}">
+      <div class="card h-100" style="background-color: #2a2a2a; border: 1px solid #ffcc00; border-radius: 8px; overflow: hidden;">
+        <div class="card-header" style="background: linear-gradient(145deg, #1a1a1a 0%, #2d2d2d 100%); border-bottom: 1px solid #ffcc00;">
+          <h5 class="card-title mb-0" style="color: #ffcc00; font-size: 1.2rem;">{{ adventure.title }}</h5>
+        </div>
+        <div class="card-body" style="color: #e0e0e0;">
+          <p class="card-text mb-2">{{ adventure.description }}</p>
+          <div class="mb-3">
+            <small class="text-muted">
+              <i class="fas fa-map-marker-alt"></i> {{ adventure.location }}<br>
+              <i class="fas fa-clock"></i> {{ adventure.estimated_time }}<br>
+              <i class="fas fa-star"></i> 
+              {% for i in (1..5) %}
+                {% if i <= adventure.difficulty %}⭐{% else %}☆{% endif %}
+              {% endfor %}
+            </small>
+          </div>
+          <div class="mb-3">
+            <h6 style="color: #ffcc00; font-size: 0.9rem;">Runners:</h6>
+            {% for runner in adventure.runners %}
+              {% if runner.present %}
+              <span class="badge bg-warning text-dark me-1" style="font-size: 0.8rem;">
+                {{ runner.name }} ({{ runner.karma }}+{{ runner.bonus }})
+              </span>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+        <div class="card-footer" style="background-color: #1a1a1a; border-top: 1px solid #ffcc00;">
+          <div class="d-flex justify-content-between">
+            {% for tag in adventure.tags %}
+              <span class="badge bg-primary-subtle text-primary" style="font-size: 0.7rem;">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          <a href="{{ adventure.url }}" class="btn mt-2 w-100" style="background-color: #ffcc00; color: #000; font-weight: 600; font-size: 0.9rem;">
+            Voir l'aventure
+          </a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<!-- JavaScript pour les filtres -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Fonction pour filtrer les aventures
+  function filterAdventures() {
+    const difficulty = document.getElementById('difficulty-filter').value;
+    const duration = document.getElementById('duration-filter').value;
+    const type = document.getElementById('type-filter').value;
+    
+    const cards = document.querySelectorAll('.adventure-card');
+    
+    cards.forEach(card => {
+      const cardDifficulty = card.getAttribute('data-difficulty');
+      const cardDuration = card.getAttribute('data-duration');
+      const cardTags = card.getAttribute('data-tags');
+      
+      let show = true;
+      
+      // Filtre par difficulté
+      if (difficulty !== 'all' && cardDifficulty != difficulty) {
+        show = false;
+      }
+      
+      // Filtre par durée
+      if (show && duration !== 'all') {
+        const hours = parseInt(cardDuration);
+        if ((duration === 'short' && hours >= 3) ||
+            (duration === 'medium' && (hours < 3 || hours > 6)) ||
+            (duration === 'long' && hours <= 6)) {
+          show = false;
+        }
+      }
+      
+      // Filtre par type
+      if (show && type !== 'all' && !cardTags.includes(type)) {
+        show = false;
+      }
+      
+      card.style.display = show ? 'block' : 'none';
+    });
+  }
+  
+  // Ajouter les écouteurs d'événements
+  document.getElementById('difficulty-filter').addEventListener('change', filterAdventures);
+  document.getElementById('duration-filter').addEventListener('change', filterAdventures);
+  document.getElementById('type-filter').addEventListener('change', filterAdventures);
+  document.getElementById('reset-filters').addEventListener('click', function() {
+    document.getElementById('difficulty-filter').value = 'all';
+    document.getElementById('duration-filter').value = 'all';
+    document.getElementById('type-filter').value = 'all';
+    filterAdventures();
+  });
+});
+</script>
+
+<!-- Style supplémentaire -->
+<style>
+.adventure-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.adventure-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(255, 204, 0, 0.2);
+}
+
+.card {
+  transition: all 0.3s ease;
+}
+</style>

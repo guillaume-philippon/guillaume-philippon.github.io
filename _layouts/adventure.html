@@ -1,0 +1,125 @@
+--- 
+layout: default 
+--- 
+
+<div class="container adventure-container my-4">
+  <article class="adventure-article">
+    <!-- En-tête de l'aventure -->
+    <header class="adventure-header mb-4">
+      <h1 class="adventure-title text-center mb-3">{{ page.title }}</h1>
+      
+      <div class="adventure-meta row mb-4">
+        <div class="col-md-6">
+          <p><strong>Date:</strong> {{ page.date | date: "%d %B %Y" }}</p>
+          <p><strong>Lieu:</strong> {{ page.location }}</p>
+          <p><strong>Durée estimée:</strong> {{ page.estimated_time }}</p>
+        </div>
+        <div class="col-md-6">
+          <p><strong>Difficulté:</strong> 
+            {% for i in (1..5) %}
+              {% if i <= page.difficulty %}⭐{% else %}☆{% endif %}
+            {% endfor %}
+          </p>
+          <p><strong>Tags:</strong> 
+            {% for tag in page.tags %}
+              <span class="badge bg-primary-subtle text-primary me-1">{{ tag }}</span>
+            {% endfor %}
+          </p>
+        </div>
+      </div>
+      
+      <p class="adventure-description lead">{{ page.description }}</p>
+    </header>
+
+    <!-- Liste des Runners -->
+    <section class="adventure-runners mb-5">
+      <h2 class="section-title mb-3">Runners Participants</h2>
+      <div class="row">
+        {% for runner in page.runners %}
+          {% if runner.present %}
+          <div class="col-md-4 mb-3">
+            <div class="card runner-card h-100">
+              <div class="card-body">
+                <h5 class="card-title">{{ runner.name }}</h5>
+                <p class="card-text">{{ runner.role }}</p>
+                <div class="d-flex justify-content-between">
+                  <span class="badge bg-warning text-dark">Karma: {{ runner.karma }}</span>
+                  {% if runner.bonus %}
+                    <span class="badge bg-success">Bonus: +{{ runner.bonus }}</span>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- Contenu de l'aventure avec illustrations -->
+    <section class="adventure-content">
+      {{ content | markdownify }}
+    </section>
+
+    <!-- Galerie d'images -->
+    {% if page.images %}
+    <section class="adventure-gallery mt-5">
+      <h2 class="section-title mb-3">Galerie d'Illustrations</h2>
+      <div class="row">
+        {% for image in page.images %}
+        <div class="col-md-4 mb-3">
+          <img src="{{ image }}" class="img-fluid rounded adventure-image" alt="Illustration">
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+  </article>
+</div>
+
+<!-- Style spécifique pour les aventures -->
+<style>
+.adventure-container {
+  background-color: #1e1e1e;
+  border: 1px solid #ffcc00;
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+.adventure-title {
+  color: #ffcc00;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.adventure-header {
+  border-bottom: 2px solid #ffcc00;
+  padding-bottom: 1rem;
+}
+
+.adventure-description {
+  color: #e0e0e0;
+  font-style: italic;
+}
+
+.section-title {
+  color: #ffcc00;
+  font-size: 1.8rem;
+  border-bottom: 1px solid #ffcc00;
+  padding-bottom: 0.5rem;
+}
+
+.runner-card {
+  background-color: #2a2a2a;
+  border: 1px solid #ffcc00;
+}
+
+.adventure-image {
+  border: 2px solid #ffcc00;
+  transition: transform 0.3s ease;
+}
+
+.adventure-image:hover {
+  transform: scale(1.05);
+}
+</style>
