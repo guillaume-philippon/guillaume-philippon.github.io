@@ -168,6 +168,15 @@ skills:
     projets_secret_militaire:
       value: 6
       attribute: interest
+    cryptographie_avancee:
+      value: 5
+      attribute: academic
+    reseaux_obscurs:
+      value: 5
+      attribute: street
+    contre_mesures_electroniques:
+      value: 4
+      attribute: professional
 contacts:
   - neon.md
   - madame-x.md
