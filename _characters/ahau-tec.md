@@ -6,7 +6,7 @@ infos:
   weight: 150
   picture: /assets/images/Ahau-Tec.png
   money: 60
-  karma: 0/0
+  karma: 5/5
   street_cred: 0
   notoriety: 0
 name: Ahau-Tech
@@ -179,6 +179,10 @@ contacts:
     type: Security Officer
     connection: 3
     loyalty: 2
+  - name: Calderone
+    type: Contact dans les Favelas de Mérida
+    connection: 2
+    loyalty:2
 gear:
   weapons:
     - name: Tomahawk
