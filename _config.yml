@@ -9,6 +9,9 @@ collections:
   characters:
     output: true
     permalink: /characters/:name/
+  contacts:
+    output: true
+    permalink: /contacts/:name/
 
 defaults:
   - scope:

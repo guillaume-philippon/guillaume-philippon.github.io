@@ -171,18 +171,9 @@ skills:
       value: 6
       attribute: professional
 contacts:
-  - name: Dr. Lina Krayven
-    type: Doc. affiliated to DracoTech
-    connection: 3
-    loyalty: 3
-  - name: Officier Kael Riven
-    type: Security Officer
-    connection: 3
-    loyalty: 2
-  - name: Calderone
-    type: Contact dans les Favelas de Mérida
-    connection: 2
-    loyalty: 2
+  - dr-lina-krayven.md
+  - officier-kael-riven.md
+  - calderone.md
 gear:
   weapons:
     - name: Tomahawk

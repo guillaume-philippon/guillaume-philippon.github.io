@@ -1,0 +1,102 @@
+<h3 class="mt-3">Contacts</h3>
+<ul class="list-group mb-3">
+  {% for contact_id in page.contacts %}
+    {% assign contact = site.contacts | where_exp: "item", "item.name == contact_id" | first %}
+    {% if contact %}
+      <li class="list-group-item py-1 contact-item" data-bs-toggle="modal" data-bs-target="#contactModal-{{ contact_id | replace: '.md', '' }}">
+        <div class="d-flex align-items-center">
+          {% if contact.image %}
+            <img src="{{ contact.image }}" alt="{{ contact.title }}" class="rounded-circle me-3" style="width: 50px; height: 50px; object-fit: cover;">
+          {% endif %}
+          <div>
+            <strong>{{ contact.title }}</strong> ({{ contact.type }}, Connection: {{ contact.connection }}, Loyalty: {{ contact.loyalty }})
+          </div>
+        </div>
+      </li>
+      
+      <!-- Modal pour ce contact -->
+      <div class="modal fade" id="contactModal-{{ contact_id | replace: '.md', '' }}" tabindex="-1" aria-labelledby="contactModalLabel-{{ contact_id | replace: '.md', '' }}" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="contactModalLabel-{{ contact_id | replace: '.md', '' }}">{{ contact.title }}</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-4 text-center">
+                  {% if contact.image %}
+                    <img src="{{ contact.image }}" alt="{{ contact.title }}" class="img-fluid rounded mb-3" style="max-height: 200px; object-fit: cover;">
+                  {% endif %}
+                  <p><strong>Type:</strong> {{ contact.type }}</p>
+                  <p><strong>Connection:</strong> {{ contact.connection }}</p>
+                  <p><strong>Loyalty:</strong> {{ contact.loyalty }}</p>
+                </div>
+                <div class="col-md-8">
+                  {% if contact.content %}
+                    <div class="mb-3">{{ contact.content | markdownify }}</div>
+                  {% endif %}
+                  
+                  {% if contact.attributes %}
+                    <h5>Attributs</h5>
+                    <div class="row mb-3">
+                      <div class="col-6">
+                        <p><strong>Body:</strong> {{ contact.attributes.body }}</p>
+                        <p><strong>Agility:</strong> {{ contact.attributes.agility }}</p>
+                        <p><strong>Reaction:</strong> {{ contact.attributes.reaction }}</p>
+                        <p><strong>Strength:</strong> {{ contact.attributes.strength }}</p>
+                      </div>
+                      <div class="col-6">
+                        <p><strong>Intuition:</strong> {{ contact.attributes.intuition }}</p>
+                        <p><strong>Logic:</strong> {{ contact.attributes.logic }}</p>
+                        <p><strong>Willpower:</strong> {{ contact.attributes.willpower }}</p>
+                        <p><strong>Charisma:</strong> {{ contact.attributes.charisma }}</p>
+                      </div>
+                    </div>
+                  {% endif %}
+                  
+                  {% if contact.skills %}
+                    <h5>Compétences</h5>
+                    <div class="mb-3">
+                      {% for skill_category in contact.skills %}
+                        {% assign category = skill_category[0] %}
+                        {% assign skills = skill_category[1] %}
+                        {% if category != 'knowledge' %}
+                          <strong>{{ category | replace: '_', ' ' | capitalize }}:</strong>
+                          {% for skill in skills %}
+                            {% assign skill_name = skill[0] %}
+                            {% assign skill_value = skill[1] %}
+                            {{ skill_name | replace: '_', ' ' | capitalize }} ({{ skill_value }}), 
+                          {% endfor %}
+                          <br>
+                        {% endif %}
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                  
+                  {% if contact.skills.knowledge %}
+                    <h5>Connaissances</h5>
+                    <div class="mb-3">
+                      {% for knowledge in contact.skills.knowledge %}
+                        {% assign knowledge_name = knowledge[0] %}
+                        {% assign knowledge_value = knowledge[1] %}
+                        {{ knowledge_name | replace: '_', ' ' | capitalize }} ({{ knowledge_value }}), 
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% else %}
+      <li class="list-group-item py-1">
+        <strong>{{ contact_id }}</strong> (Contact not found)
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>

@@ -169,14 +169,8 @@ skills:
       value: 6
       attribute: interest
 contacts:
-  - name: Neon
-    type: Hackeuse spécialisé dans les base de login/pwd
-    connection: 5
-    loyalty: 1
-  - name: Madame X
-    type: Spécialiste des secrets industriels
-    connection: 3
-    loyalty: 3
+  - neon.md
+  - madame-x.md
 cyberware:
   - name: Commlink
     essence: 0.2
