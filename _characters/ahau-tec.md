@@ -182,7 +182,7 @@ contacts:
   - name: Calderone
     type: Contact dans les Favelas de Mérida
     connection: 2
-    loyalty:2
+    loyalty: 2
 gear:
   weapons:
     - name: Tomahawk
