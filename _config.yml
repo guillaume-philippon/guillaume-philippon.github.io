@@ -33,4 +33,4 @@ defaults:
       path: ""
       type: "missions"
     values:
-      layout: "adventure"
+      layout: "mission"

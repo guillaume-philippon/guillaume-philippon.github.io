@@ -5,6 +5,7 @@ infos:
   picture: /assets/images/Eleonor.jpg
   money: 0
   karma: 0/0
+key: eleonor
 history: |
   Eleonor O'Neil a commencé sa carrière dans les arènes clandestines d’Urban Brawl à Seattle avant de basculer dans le shadowrunning. Ce passé lui a forgé une réputation de combattante acharnée, capable de tenir tête à des adversaires plus lourds et mieux équipés grâce à sa rapidité, son instinct et sa connaissance des combats de rue. Ses cyberimplants, initialement conçus pour optimiser ses performances dans l’arène, sont devenus des outils de survie dans les ombres de la ville.
 
@@ -81,9 +82,9 @@ skills:
         attribute: reaction
         value: 5
 contacts:
-  - contact: big-jim.md
+  - contact: big-jim
     loyalty: 3
-  - contact: doc-harper.md
+  - contact: doc-harper
     loyalty: 4
 cyberware:
   - name: Wired Reflex (Alpha)

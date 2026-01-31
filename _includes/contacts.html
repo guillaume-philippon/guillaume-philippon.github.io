@@ -1,7 +1,6 @@
-<h3 class="mt-3">Contacts</h3>
 <ul class="list-group mb-3">
   {% for contact_id in page.contacts %}
-    {% assign contact = site.contacts | where_exp: "item", "item.name == contact_id.contact" | first %}
+    {% assign contact = site.contacts | where_exp: "item", "item.key == contact_id.contact" | first %}
     {% if contact %}
       <!-- Modal pour ce contact -->
       <div class="modal fade" id="contactModal-{{ contact_id.contact | replace: '.md', '' }}" tabindex="-1" aria-labelledby="contactModalLabel-{{ contact_id.contact | replace: '.md', '' }}" aria-hidden="true">

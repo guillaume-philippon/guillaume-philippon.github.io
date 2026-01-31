@@ -7,7 +7,8 @@ infos:
   karma: 5/5
   street_cred: 0
   notoriety: 0
-full_name: Ahau-Tech
+key: ahau-tec
+full_name: Ahau-Tec
 race: Ork
 lifestyle: street
 role:
@@ -172,11 +173,11 @@ skills:
       value: 4
       attribute: academic
 contacts:
-  - contact: dr-lina-krayven.md
+  - contact: dr-lina-krayven
     loyalty: 3
-  - contact: calderone.md
+  - contact: calderone
     loyalty: 2
-  - contact: chaman-ixchel.md
+  - contact: chaman-ixchel
     loyalty: 5
 gear:
   weapons:

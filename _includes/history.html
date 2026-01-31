@@ -14,7 +14,7 @@
         <div class="col-md-3">
           <div class="contact-icons row">
             {% for contact_id in page.contacts %}
-              {% assign contact = site.contacts | where_exp: "item", "item.name == contact_id.contact" | first %}
+              {% assign contact = site.contacts | where_exp: "item", "item.key == contact_id.contact" | first %}
               {% if contact %}
                 <div class="mb-2 col-4 contact-item" data-bs-toggle="tooltip" data-bs-placement="left" title="{{ contact.full_name }} ({{ contact.connection }} / {{ contact_id.loyalty }})">
                   <a href="#" data-bs-toggle="modal" data-bs-target="#contactModal-{{ contact_id.contact | replace: '.md', '' }}" class="text-decoration-none text-dark">

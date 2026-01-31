@@ -1,6 +1,6 @@
 ---
 full_name: Neon
-name: neon.md
+key: neon
 type: Hackeuse spécialisée dans les bases de données
 connection: 3
 image: /assets/images/contacts/neon.jpg
@@ -29,3 +29,4 @@ skills:
 ---
 
 Neon est une hackeuse spécialisée dans l'extraction de bases de données d'identifiants et de mots de passe. Elle a une connexion élevée mais une loyauté variable. Ses compétences en hacking et en sécurité des bases de données sont exceptionnelles.
+>

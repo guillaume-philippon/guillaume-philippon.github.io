@@ -23,6 +23,7 @@ title: Aventures Shadowrun
   </div>
 
   <!-- Filtres -->
+   <!--
   <div class="row mb-4">
     <div class="col-12">
       <div class="card" style="background-color: #2a2a2a; border: 1px solid #ffcc00;">
@@ -75,7 +76,7 @@ title: Aventures Shadowrun
       </div>
     </div>
   </div>
-
+-->
   <!-- Liste des missions -->
   <div class="row" id="missions-list">
     {% assign missions = site.missions | sort: 'date' | reverse %}
@@ -93,7 +94,7 @@ title: Aventures Shadowrun
          data-difficulty="{{ adventure.difficulty }}"
          data-duration="{{ adventure.estimated_time }}"
          data-tags="{{ adventure.tags | join: ' ' }}">
-      <div class="card h-100" style="background-color: #2a2a2a; border: 1px solid #ffcc00; border-radius: 8px; overflow: hidden;">
+      <div class="card h-100" style="background-color: #2a2a2a; border: 0px solid #ffcc00; border-radius: 8px; overflow: hidden;">
         <div class="card-header" style="background: linear-gradient(145deg, #1a1a1a 0%, #2d2d2d 100%); border-bottom: 1px solid #ffcc00;">
           <h5 class="card-title mb-0" style="color: #ffcc00; font-size: 1.2rem;">{{ mission.title }}</h5>
         </div>

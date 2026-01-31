@@ -2,7 +2,7 @@
 full_name: Dr. Harper
 type: Médecin clandestin
 connection: 3
-name: doc-harper.md
+key: doc-harper
 image: /assets/images/contacts/doc-harper.jpg
 attributes:
   body: 3

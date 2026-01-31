@@ -1,5 +1,4 @@
 ---
-layout: adventure
 title: "Point Mort"
 date: 2024-01-31  # Date de publication (pour Jekyll)
 game_date: 2075-01-31  # Date dans l'univers Shadowrun
@@ -10,11 +9,19 @@ location: "Merida, Favelas - DracoTech"
 difficulty: 1
 estimated_time: "2-3 heures"
 runners:
-  - name: "Ahau-Tec"
+  - name: ahau-tec
     karma: 5
     bonus: 0
     present: true
-  - name: "Ghost"
+  - name: ghost
+    karma: 5
+    bonus: 0
+    present: true
+  - name: maya
+    karma: 5
+    bonus: 0
+    present: true
+  - name: patch
     karma: 5
     bonus: 0
     present: true

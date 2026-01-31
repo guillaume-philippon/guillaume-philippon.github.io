@@ -8,6 +8,7 @@ infos:
 full_name: Jessica *Ghost* Rojas
 race: Humaine
 lifestyle: street
+key: ghost
 role:
   operational:  Analyse Matrix, Sécurité Numérique
   narrative: Données, Vérification, soupçon
@@ -173,9 +174,9 @@ skills:
       value: 3
       attribute: professional
 contacts:
-  - contact: neon.md
+  - contact: neon
     loyalty: 3
-  - contact: madame-x.md
+  - contact: madame-x
     loyalty: 3
 cyberware:
   - name: Commlink

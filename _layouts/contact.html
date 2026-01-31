@@ -4,7 +4,7 @@ layout: default
 {% assign characters = "" %}
 {% for charactere in site.characters %}
   {% for charactere_contact in charactere.contacts %}
-    {% if charactere_contact.contact == page.name %}
+    {% if charactere_contact.contact == page.key %}
       {% if characters == "" %}
         {% assign characteres = characteres | append: charactere.full_name %}
       {% else %}
@@ -15,7 +15,7 @@ layout: default
 {% endfor %}
 <div class="container my-4">
   <div class="card">
-    <div class="card-header bg-primary text-white">
+    <div class="card-header text-white">
       <h2 class="mb-0">{{ page.full_name }}</h2>
       <p class="mb-0">{{ page.type }}</p>
     </div>

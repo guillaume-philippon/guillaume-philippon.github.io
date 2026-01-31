@@ -1,7 +1,7 @@
 ---
 layout: contact
 full_name: Rafael Itsa
-name: rafael-itsa.md
+key: rafael-itsa
 type: "-"
 connection: "-"
 attributes:

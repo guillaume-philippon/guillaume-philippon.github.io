@@ -2,7 +2,7 @@
 full_name: Dr. Lina Krayven
 type: Médecin affiliée à DracoTech
 connection: 3
-name: dr-lina-krayven.md
+key: dr-lina-krayven
 image: /assets/images/contacts/dr-lina-krayven.jpg
 attributes:
   body: 3
