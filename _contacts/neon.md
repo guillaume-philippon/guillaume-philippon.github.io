@@ -1,5 +1,6 @@
 ---
 full_name: Neon
+name: neon.md
 type: Hackeuse spécialisée dans les bases de données
 connection: 5
 image: /assets/images/contacts/neon.jpg

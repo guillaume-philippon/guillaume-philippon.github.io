@@ -3,13 +3,13 @@
   <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="skillLabel">Combat Actions</h1>
+        <h1 class="modal-title fs-5" id="skillLabel">Compétences</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         {% for type in site.data.skills %}
           <div class="row">
-            <h3>{{ type[0] | capitalize }} Active Skills</h3>
+            <h3>{{ type[0] | capitalize }} Compétences Actives</h3>
             <div class="row">
               {% for group in type[1] %}
                 <div class="col-md-4 mb-3">

@@ -2,8 +2,7 @@
 full_name: Dr. Harper
 type: Médecin clandestin
 connection: 3
-loyalty: 4
-character: eleonor
+name: doc-harper.md
 image: /assets/images/contacts/doc-harper.jpg
 attributes:
   body: 3

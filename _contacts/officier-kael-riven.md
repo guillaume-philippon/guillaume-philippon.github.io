@@ -1,6 +1,7 @@
 ---
 full_name: Officier Kael Riven
 type: Officier de sécurité à DracoTech
+name: officier-kael-riven.md
 connection: 3
 image: /assets/images/contacts/officier-kael-riven.jpg
 attributes:

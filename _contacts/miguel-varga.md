@@ -2,6 +2,7 @@
 layout: contact
 full_name: Miguel Varga
 type: Responsable Opérationnel de DracoSec
+name: miguel-varga.md
 connection: "-"
 image: /assets/images/contacts/miguel-varga.jpg
 attributes:

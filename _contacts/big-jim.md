@@ -3,6 +3,7 @@ full_name: Big Jim
 type: Fixeur du milieu underground
 connection: 4
 image: /assets/images/contacts/big-jim.jpg
+name: big-jim.md
 attributes:
   body: 5
   agility: 3

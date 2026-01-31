@@ -3,6 +3,7 @@ full_name: Calderone
 type: Contact local dans les Favelas de Mérida
 connection: 2
 image: /assets/images/contacts/calderone.jpg
+name: calderone.md
 attributes:
   body: 4
   agility: 5
