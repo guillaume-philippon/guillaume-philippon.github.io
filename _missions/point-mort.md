@@ -18,10 +18,6 @@ runners:
     karma: 5
     bonus: 0
     present: true
-images:
-  - "/assets/images/missions/dracotech.jpg"
-  - "/assets/images/contacts/seattle-night.jpg"
-  - "/assets/images/contacts/cyberpunk-city.jpg"
 tags:
   - "corporate"
   - "investigation"
@@ -29,58 +25,27 @@ tags:
 
 ## Briefing
 
-<div class="image-right">
+<div class="image-left">
   <img src="/assets/images/missions/dracotech.jpg" class="img-fluid rounded" alt="Renraku Arcology">
 </div>
 
-**Johnson:** "Nous avons besoin que vous récupériez des données dans les serveurs de Renraku. Il s'agit de prototypes de cyberware expérimental. Le paiement est de 50,000¥ par runner, plus des bonus selon les données supplémentaires que vous pourrez récupérer."
+Vous avez été conviés au siège discret de **DracoTech** à *Mérida*, un bâtiment conçu pour passer inaperçu. **Miguel Varga*, responsable opérationnel de *DracoSec* (département sécurisation des sites), vous a accueillis. Il a présenté la mission comme une évaluation de vos capacités opérationnelles.
 
-**Objectif Principal:**
-- Infiltrer le niveau 42 de l'arcologie Renraku
-- Récupérer les données du projet "Chimère"
-- Extraire sans se faire repérer
+Le site cible, situé dans les favelas à 35 km de *Mérida*, est un ancien site d’observation ayant cessé d’émettre, contrairement aux procédures standard. Sur place, le bâtiment semble abandonné, entouré de squats. Une investigation révèle qu’un rituel d’observation passive, utilisant un esprit d’observation, était en place. Une tour de contrôle magique active, identifiée comme un résonateur thumaturgique passif, se trouve à proximité.
 
-**Objectifs Secondaires:**
-- Récupérer des échantillons de cyberware (Bonus: +2 karma)
-- Éliminer le Dr. Tanaka (Bonus: +3 karma, optionnel)
-- Saboter le laboratoire (Bonus: +1 karma)
+L’arrêt des émissions pourrait être lié à une défaillance du rituel, une corruption de l’esprit, ou une interruption entre la tour et le bâtiment. Aucune cause définitive n’a encore été identifiée.
 
 ## Développement
 
-[Illustration 2 - Seattle by Night]
-
-### Phase 1: Infiltration
-Le groupe décide d'une approche en trois phases:
-
-1. **Eleonor** va pirater les systèmes externes pour désactiver les caméras
-2. **Ghost** et **Ahau-Tec** vont servir d'équipe d'assaut principale
-3. **Neon** (bien que non présent) avait préparé des faux badges
-
-**Complications:**
-- Détection par les ICE de Renraku (niveau 6)
-- Équipe de réponse rapide déployée
-- Dr. Tanaka alerte les services de sécurité
-
-### Phase 2: Récupération des Données
-Dans le laboratoire:
-- **Eleonor** doit combattre un ICE niveau 8
-- **Ahau-Tec** trouve les données mais déclenche une alarme
-- **Ghost** doit éliminer 4 gardes de sécurité
-
-**Loot Récolté:**
-- Données du projet "Chimère" (Objectif principal accompli)
-- 2 échantillons de cyberware expérimental
-- Terminal de contrôle principal piraté
-
-### Phase 3: Exfiltration
-La sortie se transforme en course-poursuite:
-- **Eleonor** crée une diversion en déclenchant un incendie
-- **Ghost** couvre la retraite avec son fusil de sniper
-- **Ahau-Tec** utilise un sort de brume pour masquer leur fuite
+<div class="image-right">
+  <img src="/assets/images/missions/DT-YUC-17.jpg" class="img-fluid rounded" alt="Renraku Arcology">
+</div>
 
 ## Conclusion
 
-[Illustration 3 - Cyberpunk City]
+<div class="image-left">
+  <img src="/assets/images/missions/dracotech.jpg" class="img-fluid rounded" alt="Renraku Arcology">
+</div>
 
 **Résultats:**
 - Mission accomplie avec succès

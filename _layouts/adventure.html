@@ -65,7 +65,7 @@ layout: default
     <!-- Images intégrées dans le contenu - alternance droite/gauche -->
     <style>
       .adventure-content img {
-        max-width: 200px;
+        max-width: 300px;
         height: auto;
         border: 2px solid #ffcc00;
         border-radius: 8px;
@@ -85,6 +85,14 @@ layout: default
       }
       
       .adventure-content .clearfix {
+        clear: both;
+      }
+      
+      /* Ajout automatique de clearfix après les images pour éviter les chevauchements */
+      .adventure-content .image-right::after,
+      .adventure-content .image-left::after {
+        content: "";
+        display: table;
         clear: both;
       }
     </style>
