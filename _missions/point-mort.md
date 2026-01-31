@@ -29,7 +29,9 @@ tags:
 
 ## Briefing
 
-[Illustration 1 - Renraku Arcology]
+<div class="image-right">
+  <img src="/assets/images/missions/dracotech.jpg" class="img-fluid rounded" alt="Renraku Arcology">
+</div>
 
 **Johnson:** "Nous avons besoin que vous récupériez des données dans les serveurs de Renraku. Il s'agit de prototypes de cyberware expérimental. Le paiement est de 50,000¥ par runner, plus des bonus selon les données supplémentaires que vous pourrez récupérer."
 
