@@ -2,6 +2,9 @@
 <ul class="list-group mb-3">
   {% for contact_id in page.contacts %}
     {% assign contact = site.contacts | where_exp: "item", "item.name == contact_id" | first %}
+    {% for contact in site.contacts %}
+      <!-- {{ contact.name }} == {{ contact_id }} -->
+    {% endfor %}
     {% if contact %}
       <li class="list-group-item py-1 contact-item" data-bs-toggle="modal" data-bs-target="#contactModal-{{ contact_id | replace: '.md', '' }}">
         <div class="d-flex align-items-center">
