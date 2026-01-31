@@ -1,8 +1,8 @@
 ---
 full_name: Chaman Ixchel
 type: Chaman et guide spirituel maya
-connection: 4
-loyalty: 5
+connection: 1
+loyalty: 4
 character: ahau-tec
 image: /assets/images/contacts/chaman-ixchel.jpg
 attributes:

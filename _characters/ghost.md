@@ -157,25 +157,22 @@ skills:
       value: 6
       attribute: professional
     programmation_malware:
-      value: 6
+      value: 4
       attribute: academic
     legislation_cybersecurite:
-      value: 6
+      value: 4
       attribute: professional
     techno_gang:
       value: 3
       attribute: street
     projets_secret_militaire:
-      value: 6
+      value: 4
       attribute: interest
-    cryptographie_avancee:
-      value: 5
-      attribute: academic
     reseaux_obscurs:
-      value: 5
+      value: 3
       attribute: street
     contre_mesures_electroniques:
-      value: 4
+      value: 3
       attribute: professional
 contacts:
   - neon.md

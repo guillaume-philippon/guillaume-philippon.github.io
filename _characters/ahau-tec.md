@@ -165,17 +165,16 @@ skills:
         value: 4
   knowledge:
     maya_culture:
-      value: 6
+      value: 4
       attribute: street
     security_ procedures:
-      value: 6
+      value: 4
       attribute: professional
     jungle_survival:
-      value: 5
+      value: 4
       attribute: street
 contacts:
   - dr-lina-krayven.md
-  - officier-kael-riven.md
   - calderone.md
   - chaman-ixchel.md
 gear:
