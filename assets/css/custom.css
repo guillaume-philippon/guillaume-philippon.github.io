@@ -424,6 +424,152 @@ footer {
   min-height: 30px;
 }
 
+/* Style pour la barre verticale et le volet flottant */
+.sidebar-toggle {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1002;
+  background-color: #2a2a2a;
+  border-left: 1px solid #555;
+  border-radius: 8px 0 0 8px;
+  padding: 5px;
+}
+
+.sidebar-toggle button {
+  background-color: #ffcc00;
+  border: none;
+  color: #000;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.sidebar-toggle button:hover {
+  background-color: #e6b800;
+}
+
+/* Style pour le composant Offcanvas de Bootstrap */
+.offcanvas {
+  background-color: #1e1e1e;
+  border-left: 2px solid #ffcc00;
+  width: 400px;
+}
+
+.offcanvas-header {
+  background: linear-gradient(145deg, #1a1a1a 0%, #2d2d2d 100%);
+  border-bottom: 1px solid #ffcc00;
+  padding: 15px;
+}
+
+.offcanvas-title {
+  color: #ffcc00;
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.offcanvas-body {
+  padding: 15px;
+  overflow-y: auto;
+}
+
+.panel-tabs {
+  margin-bottom: 15px;
+}
+
+.panel-tabs .nav-tabs {
+  border-bottom: 2px solid #ffcc00;
+}
+
+.panel-tabs .nav-link {
+  color: #ffcc00;
+  font-weight: 600;
+  background-color: #2e2e2e;
+  border: 1px solid #555;
+  margin-right: 5px;
+  padding: 8px 12px;
+  min-width: 50px;
+  text-align: center;
+}
+
+.panel-tabs .nav-link i {
+  font-size: 1.2rem;
+}
+
+.panel-tabs .nav-link.active {
+  background-color: #ffcc00;
+  color: #000;
+  border-color: #ffcc00 #ffcc00 #ffffff;
+}
+
+/* Style pour aligner les attributs en bas */
+.attributes-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 300px;
+}
+
+/* Style pour la barre verticale avec icônes */
+.sidebar-toggle {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1002;
+  background-color: #2a2a2a;
+  border-left: 1px solid #555;
+  border-radius: 8px 0 0 8px;
+  padding: 10px 5px;
+}
+
+.icon-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.icon-sidebar .icon-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  color: #ffcc00;
+  transition: all 0.3s ease;
+  padding: 8px;
+}
+
+.icon-sidebar .icon-wrapper:hover {
+  color: #e6b800;
+  transform: scale(1.1);
+}
+
+.icon-sidebar .icon-wrapper i {
+  font-size: 1.5rem;
+  margin-bottom: 3px;
+}
+
+.icon-sidebar .icon-wrapper .badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #ffcc00 !important;
+  color: #000 !important;
+  font-weight: 600;
+  border-radius: 50%;
+  padding: 3px 6px;
+  font-size: 0.7rem;
+  min-width: 20px;
+  text-align: center;
+}
+
+.icon-sidebar .icon-wrapper .badge:empty {
+  display: none;
+}
+
 /* Style pour les éléments strong dans les modales - en jaune */
 .modal-content strong,
 .modal-body strong,
