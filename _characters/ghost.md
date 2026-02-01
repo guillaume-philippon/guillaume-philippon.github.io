@@ -177,6 +177,9 @@ cyberware:
     availability: 8R
     price: 1000
     type: eyeware
+    modifier:
+      attack:
+        range: 2
   - name: Synaptic Booster (2)
     essence: 1.0
     availability: 12R

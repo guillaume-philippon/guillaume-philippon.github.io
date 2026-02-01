@@ -77,6 +77,9 @@
     {% endfor %}
   {% endfor %}
 {% endfor %}
+{% for cyberware in page.cyberware %}
+  {% assign range_attack = range_attack | plus: cyberware.modifier.attack.range %}
+{% endfor %}
 <!-- Valeur de range_attack: {{ range_attack }}-->
 
 {% assign melee_attack = 0 %}
@@ -103,7 +106,10 @@
     {% endfor %}
   {% endfor %}
 {% endfor %}
-<!-- Valeur de range_attack: {{ range_attack }}-->
+{% for cyberware in page.cyberware %}
+  {% assign melee_attack = melee_attack | plus: cyberware.modifier.attack.melee %}
+{% endfor %}
+<!-- Valeur de melee_attack: {{ melee_attack }}-->
 
 {% assign matrix_attack = 0 %}
 {% for group in page.matrix.programs %}

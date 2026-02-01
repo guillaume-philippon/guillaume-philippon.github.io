@@ -120,6 +120,9 @@ cyberware:
     capacity: 3
     availability: 8R
     price: 1000
+    modifier:
+      attack:
+        range: 2
   - name: Cyberarm Gyromount
     type: accessories
     capacity: 4
