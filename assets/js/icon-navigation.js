@@ -1,6 +1,15 @@
+/**
+ * Icon Navigation - Gestion de la navigation entre les icônes et les onglets
+ * 
+ * Ce script permet d'ouvrir le volet flottant sur l'onglet correspondant
+ * lorsque l'on clique sur une icône dans la barre verticale.
+ */
 document.addEventListener('DOMContentLoaded', function() {
   // Sélectionner toutes les icônes dans la barre verticale
   const iconWrappers = document.querySelectorAll('.sidebar-toggle .icon-wrapper');
+  
+  // Si aucune icône n'est trouvée, quitter
+  if (iconWrappers.length === 0) return;
   
   // Ajouter des gestionnaires d'événements pour chaque icône
   iconWrappers.forEach((wrapper) => {
@@ -10,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // Récupérer l'onglet à activer depuis l'attribut data-tab
       const tabId = this.getAttribute('data-tab');
       
-      // Stocker l'onglet à activer dans un attribut data
+      // Stocker l'onglet à activer dans un attribut data pour le récupérer plus tard
       if (tabId) {
         this.setAttribute('data-target-tab', tabId);
       }
@@ -30,20 +39,18 @@ document.addEventListener('DOMContentLoaded', function() {
         // Activer l'onglet correspondant
         const tabButton = document.querySelector(`button[data-bs-target="#${targetTab}"]`);
         if (tabButton) {
-          // Désactiver tous les onglets
-          document.querySelectorAll('.nav-link').forEach(link => {
-            link.classList.remove('active');
-          });
-          document.querySelectorAll('.tab-pane').forEach(pane => {
-            pane.classList.remove('show', 'active');
+          // Désactiver tous les onglets et panneaux
+          const allTabs = document.querySelectorAll('.nav-link, .tab-pane');
+          allTabs.forEach(element => {
+            element.classList.remove('active', 'show');
           });
           
-          // Activer l'onglet cible
+          // Activer l'onglet et le panneau cibles
           tabButton.classList.add('active');
           document.getElementById(targetTab).classList.add('show', 'active');
         }
         
-        // Supprimer l'attribut data pour les prochaines ouvertures
+        // Nettoyer l'attribut data pour les prochaines ouvertures
         activeIcon.removeAttribute('data-target-tab');
       }
     });

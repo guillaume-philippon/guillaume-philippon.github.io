@@ -2,48 +2,7 @@
 <div class="character-sheet container my-3">
   <div class="card">
     <!-- Barre verticale droite pour le volet flottant -->
-    <div class="sidebar-toggle">
-      <div class="icon-sidebar">
-        {% if page.cyberware %}
-        <div class="icon-wrapper" data-bs-toggle="offcanvas" data-bs-target="#floatingPanel" title="Cyberware" data-tab="cyberware">
-          <i class="fa-solid fa-microchip"></i>
-          <span class="badge">{{ page.cyberware | size }}</span>
-        </div>
-        {% endif %}
-        
-        {% if page.powers %}
-        <div class="icon-wrapper" data-bs-toggle="offcanvas" data-bs-target="#floatingPanel" title="Pouvoirs" data-tab="powers">
-          <i class="fa-solid fa-yin-yang"></i>
-          <span class="badge">{{ page.powers | size }}</span>
-        </div>
-        {% endif %}
-        
-        {% if page.qualities %}
-        <div class="icon-wrapper" data-bs-toggle="offcanvas" data-bs-target="#floatingPanel" title="Qualités" data-tab="qualities">
-          <i class="fas fa-star"></i>
-          <span class="badge">{{ page.qualities | size }}</span>
-        </div>
-        {% endif %}
-        
-        {% if page.gear %}
-        <div class="icon-wrapper" data-bs-toggle="offcanvas" data-bs-target="#floatingPanel" title="Équipement" data-tab="gear">
-          <i class="fa-solid fa-briefcase"></i>
-          <span class="badge">
-            {% assign gear_count = 0 %}
-            {% for group in page.gear %}
-              {% for item in group[1] %}
-                {% assign gear_count = gear_count | plus: 1 %}
-                {% if item.quantity %}
-                  {% assign gear_count = gear_count | plus: item.quantity | minus: 1 %}
-                {% endif %}
-              {% endfor %}
-            {% endfor %}
-            {{ gear_count }}
-          </span>
-        </div>
-        {% endif %}
-      </div>
-    </div>
+    {% include icon_sidebar.html %}
     
     <!-- Volet flottant - Utilisation du composant Offcanvas de Bootstrap -->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="floatingPanel" aria-labelledby="floatingPanelLabel">
