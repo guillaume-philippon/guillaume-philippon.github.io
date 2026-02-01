@@ -23,9 +23,8 @@ skills:
   influence:
     leadership: 4
     negotiation: 3
-  perception:
-    visual: 4
-    auditory: 3
+  ungrouped:
+    perception: 3
   knowledge:
     security_procedures: 6
     corporate_operations: 5

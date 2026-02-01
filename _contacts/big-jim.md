@@ -18,7 +18,8 @@ skills:
     negotiation: 5
     leadership: 4
     etiquette: 3
-  perception: 4
+  ungrouped:
+    perception: 4
   knowledge:
     underground_arms_dealing: 6
     street_gangs: 5

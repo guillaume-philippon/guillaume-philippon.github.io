@@ -20,7 +20,8 @@ skills:
   influence:
     negotiation: 4
     etiquette: 3
-  perception: 5
+  ungrouped:
+    perception: 5
   knowledge:
     street_gangs: 6
     local_history: 5
