@@ -8,7 +8,7 @@ role:
   operational: Infiltrateur
   narrative: Ombre
 infos:
-  picture: /assets/images/Ahau-Tec.png
+  picture: /assets/images/contacts/placeholder.jpg
   height: 1.80
   weight: 80
   money: 50000
