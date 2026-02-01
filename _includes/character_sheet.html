@@ -1,8 +1,8 @@
 {% include variables.html %}
 <div class="character-sheet container my-3">
   <div class="card">
-    <!-- Barre verticale droite pour le volet flottant -->
-    {% include icon_sidebar.html %}
+<!-- Barre verticale droite pour le volet flottant -->
+{% include icon_sidebar.html %}
     
     <!-- Volet flottant - Utilisation du composant Offcanvas de Bootstrap -->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="floatingPanel" aria-labelledby="floatingPanelLabel">
@@ -126,13 +126,18 @@
         </div>
       </div>
     </div>
+
+    <!-- Entete de la fiche -->
     <div class="card-header">
       <h2 class="mb-0">{{ page.full_name }} ({{ page.race }})</h2>
       <p class="mb-0"><small>Lifestyle: {{ page.lifestyle }} | Role: {{ page.role.operational }} / {{ page.role.narrative }}</small></p>
     </div>
+
+    
     <div class="card-body">
       <!-- Section avec attributs et image -->
       <div class="row">
+        <!-- Image -->
         <div class="col-md-4 text-center">
           <div class="position-relative">
             {% if page.infos.picture %}
@@ -152,6 +157,7 @@
             </div>
           </div>
         </div>
+        <!-- Section Histoire -->
         <div class="col-md-8">
           <div>{% include history.html %}</div>
           <div>
@@ -209,39 +215,40 @@
                 </div>
               </div>
             </div>
-          </div>
           {% endif %}
+          </div>
     </div>
 
           </div>
           </div>
       </div>
+
+      <!-- Section Attributes & Jets -->
       <div class="row">
         <div class="col-lg-8 col-md-6">
-          {% include attributes.html %}
+{% include attributes.html %}
         </div>
         <div class="col-lg-4 col-md-6">
-        {% include jets_courants.html %}
+{% include jets_courants.html %}
         </div>
       </div>
       
+      <!-- Section Skills -->
+{% include skills.html %}
 
-      {% include skills.html %}
-
+      <!-- Section Matrice -->
       {% if page.matrix %}
-        {% include programs.html %}
+{% include programs.html %}
       {% endif %}
 
-
-
-      <!-- Contacts -->
-      {% include condition_modal.html %}
-      {% include contacts.html %}
-      {% include modals/edge.html %}
-      {% include modals/actions.html %}
-      {% include modals/matrix_actions.html %}
-      {% include modals/astral_actions.html %}
-      {% include modals/skills.html %}
+      <!-- Différents Modals -->
+{% include condition_modal.html %}
+{% include contacts.html %}
+{% include modals/edge.html %}
+{% include modals/actions.html %}
+{% include modals/matrix_actions.html %}
+{% include modals/astral_actions.html %}
+{% include modals/skills.html %}
     </div>
   </div>
 </div>
