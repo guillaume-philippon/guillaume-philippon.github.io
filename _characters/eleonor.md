@@ -67,20 +67,13 @@ essence:
   modifier: 0
 skills:
   active:
-    firearms:
-      pistols:
-        value: 4
-        attribute: agility
-      automatics:
-        value: 4
-        attribute: agility
-      longarms:
-        value: 4
-        attribute: agility
-    ungrouped:
-      dodge:
-        attribute: reaction
-        value: 5
+    combat:
+      firearms:
+        pistols: 4
+        automatics: 4
+        longarms: 4
+      ungrouped:
+        dodge: 5
 contacts:
   - contact: big-jim
     loyalty: 3

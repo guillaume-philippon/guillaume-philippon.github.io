@@ -92,65 +92,34 @@ qualities:
       militaire de la matrice. [20 000 nuyens]
 skills:
   active:
-    athelitics:
-      gymnatistic:
-        attribute: agility
-        value: 3
-    stealth:
-      infiltration:
-        attribute: agility
-        value: 4
-    firearms:
-      pistols:
-        value: 4
-        attribute: agility
-      automatics:
-        value: 4
-        attribute: agility
-      longarms:
-        value: 4
-        attribute: agility
-    cracking:
-      cybercombat:
-        attribute: logic
-        value: 4
-      electronic_warfare:
-        attribute: logic
-        value: 4
-      hacking:
-        value: 4
-        attribute: logic
-    electronics:
-      computer:
-        attribute: logic
-        value: 4
-      data_search:
-        attribute: logic
-        value: 4
-      hardware:
-        attribute: logic
-        value: 4
-      software:
-        attribute: logic
-        value: 4
-    biotech:
-      cybertechnology:
-        attribute: logic
-        value: 2
-      first_aid:
-        attribute: logic
-        value: 2
-      medicine:
-        attribute: logic
-        value: 2
-    ungrouped:
-      dodge:
-        value: 4
-        attribute: reaction
-        type: defense
-      perception:
-        attribute: intuition
-        value: 4
+    physical:
+      athletics:
+        gymnastics: 3
+      ungrouped:
+        perception: 4
+      stealth:
+        infiltration: 4
+    combat:
+      firearms:
+        pistols: 4
+        automatics: 4
+        longarms: 4
+      ungrouped:
+        dodge: 4
+    technical:
+      electronics:
+        computer: 4
+        data_search: 4
+        hardware: 4
+        software: 4
+      biotech:
+        cybertechnology: 2
+        first_aid: 2
+        medicine: 2
+      cracking:
+        cybercombat: 4
+        electronic_warfare: 4
+        hacking: 4
   knowledge:
     securite_matriciel:
       value: 6

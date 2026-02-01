@@ -123,45 +123,25 @@ powers:
       +2 à la force pour déterminer la distance et les dégats.
 skills:
   active:
-    athelitics:
-      climbing:
-        attribute: strength
-        value: 2
-      gymnatistic:
-        attribute: agility
-        value: 2
-      running:
-        attribute: strength
-        value: 2
-      swimming:
-        attribute: strength
-        value: 2
-    close_combat:
-      blades:
-        attribute: agility
-        value: 4
-      clubs:
-        attribute: agility
-        value: 4
-      unarmed_combat:
-        attribute: agility
-        value: 4
-    stealth:
-      infiltration:
-        attribute: agility
-        value: 4
-    ungrouped:
-      dodge:
-        attribute: reaction
-        value: 5
-        type: defense
-      thowing_weapons:
-        attribute: agility
-        value: 5
-        type: range
-      astral_combat:
-        attribute: willpower
-        value: 4
+    physical:
+      athletics:
+        climbing: 2
+        gymnastics: 2
+        running: 2
+        swimming: 2
+      stealth:
+        infiltration: 4
+    combat:
+      close_combat:
+        blades: 4
+        clubs: 4
+        unarmed_combat: 4
+      ungrouped:
+        dodge: 5
+        throwing_weapons: 5
+    magical:
+      ungrouped:
+        astral_combat: 4
   knowledge:
     maya_culture:
       value: 4

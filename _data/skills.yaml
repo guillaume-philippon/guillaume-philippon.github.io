@@ -3,41 +3,53 @@ combat:
     archery:
       attribute: agility
       default: yes
+      type: range_attack
     dodge:
       attribute: reaction
       default: yes
+      type: melee_defense
     exotic_melee_weapon:
       attribute: agility
       default: yes
+      type: melee_attack
     exotic_ranged_weapon:
       attribute: agility
       default: yes
+      type: range_attack
     heavy_weapons:
       attribute: agility
       default: yes
+      type: range_attack
     throwing_weapons:
       attribute: agility
       default: yes
+      type: range_attack
   firearms:
     automatics:
       attribute: agility
       default: yes
+      type: range_attack
     longarms:
       attribute: agility
       default: yes
+      type: range_attack
     pistols:
       attribute: agility
       default: yes
+      type: range_attack
   close_combat:
     blades:
       attribute: agility
       default: yes
+      type: melee_attack
     clubs:
       attribute: agility
       default: yes
+      type: melee_attack
     unarmed_combat:
       attribute: agility
       default: yes
+      type: melee_attack
 magical:
   ungrouped:
     arcana:
@@ -46,6 +58,7 @@ magical:
       attribute: intuition
     astral_combat:
       attribute: willpower
+      type: magic_attack
     enchanting:
       attribute: magic
   conjuring:
@@ -186,6 +199,7 @@ technical:
     cybercombat:
       attribute: logic
       default: yes
+      type: matrix_attack
     electronic_warfare:
       attribute: logic
     hacking:

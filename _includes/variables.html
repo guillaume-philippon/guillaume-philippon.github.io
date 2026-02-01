@@ -1,4 +1,3 @@
-<!-- Total Attribute -->
 {% assign body_total = page.attributes.body.base | plus: page.attributes.body.modifier %}
 {% assign agility_total = page.attributes.agility.base | plus: page.attributes.agilite.modifier %}
 {% assign reaction_total = page.attributes.reaction.base | plus: page.attributes.reaction.modifier %}
@@ -8,22 +7,18 @@
 {% assign willpower_total = page.attributes.willpower.base | plus: page.attributes.willpower.modifier %}
 {% assign charisma_total = page.attributes.charisma.base | plus: page.attributes.charisma.modifier %}
 
-<!-- Physical Initiative -->
 {% assign physical_initiative = reaction_total | plus: intuition_total %}
 {% assign astral_initiative = intuition_total | times: 2 %}
 {% assign matrix_initiative = intuition_total | plus: page.matrix.commlink.response %}
 
-<!-- Condition monitor -->
 {% assign physic_condition = body_total | divided_by: 2.0 | round | plus: 8 %}
 {% assign mental_condition = willpower_total | divided_by: 2.0 | round | plus: 8 %}
 
-<!-- Cyber / Bioware essence cost-->
 {% assign cyberware_essence = 0.0 %}
 {% for ware in page.cyberware %}
     {% assign cyberware_essence = cyberware_essence | plus:ware.essence %}
 {% endfor %}
 
-<!-- Programs nuyens cost -->
 {% assign programs_cost = 0 %}
 {% for group in page.matrix.programs %}
     {% for item in group[1] %}
@@ -31,69 +26,95 @@
     {% endfor %}
 {% endfor %}
 
-<!-- Dodge -->
-{% assign dodge = 0 %}
-{% for skill in page.skills.active.ungrouped %}
-  {% if skill.name == 'Dodge' %}
-    {% assign dodge = skill.value %}
-  {% endif %}
-{% endfor %}
-
-<!-- Highest weapon skill -->
-{% assign highest_melee = dodge %}
-{% for skill in page.skills.active.close_combat %}
-  {% if skill[1].value > highest_melee %}
-    {% assign highest_melee = skill[1].value %}
-  {% endif %}
-{% endfor %}
-
-{% assign highest_range = 0 %}
-{% for skill in page.skills.active.firearms %}
-  {% if skill[1].value > highest_range %}
-    {% assign highest_range = skill[1].value %}
-  {% endif %}
-{% endfor %}
-{% for skill in page.skills.active.ungrouped %}
-  {% if skill[1].type == 'range' %}
-    {% if skill[1].value > highest_range %}
-      {% assign highest_range = skill[1].value %}
-    {% endif %}
-  {% endif %}
-{% endfor %}
-
-{% assign highest_matrix = 0 %}
-{% for program in page.matrix.programs.hacking %}
-    {% if program[1].type == 'attack' %}
-        {% if program[1].rating > highest_matrix %}
-            {% assign highest_matrix = program[1].rating %}
-        {% endif %}
-    {% endif %}
-{% endfor %}
-
-<!-- Melee Weapon damage -->
- {% assign melee_damage = 0 %}
- {% for weapon in page.gear.weapons %}
-    {% if weapon.type contains 'mele' %}
-        {% if weapon.damage.modifier.melee > melee_damage %}
-            {% assign melee_damage = weapon.damage.modifier.melee %}
-        {% endif %}
-    {% endif %}
- {% endfor %}
-
- <!-- Programs cost -->
- {% assign programs_cost = 0 %}
- {% for group in page.matrix.programs %}
-    {% for program in group[1] %}
-         {% assign programs_cost = programs_cost | plus: program[1].price %}
+{% assign melee_defense = 0 %}
+{% for category in page.skills.active %}
+  {% for group in category[1] %}
+    {% for skill in group[1] %}
+      {% for category_data in site.data.skills %}
+        {% for group_data in category_data[1] %}
+          {% if group_data[0] == group[0] %}
+            {% for skill_data in group_data[1] %}
+              {% if skill_data[0] == skill[0] %}
+                {% if skill_data[1].type == 'melee_defense' %}
+                  {% if skill[1] > melee_defense %}
+                    {% assign melee_defense = skill[1] %}
+                  {% endif %}
+                {% endif %}
+                {% break %}
+              {% endif %}
+            {% endfor %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
     {% endfor %}
- {% endfor%}
+  {% endfor %}
+{% endfor %}
+<!-- Valeur de melee_defense: {{ melee_defense }}-->
 
- <!-- Choix de couleur -->
-  {% assign theme_color = 'primary' %}
-  {% if page.theme.color %}
-    {% assign theme_color = page.theme.color %}
-  {% endif %}
-  
-  <!-- Armor gear -->
-   {% assign balistic = page.gear.armor[0].balistic %}
-   {% assign impact = page.gear.armor[0].impact %}
+{% assign range_attack = 0 %}
+{% for category in page.skills.active %}
+  {% for group in category[1] %}
+    {% for skill in group[1] %}
+      {% for category_data in site.data.skills %}
+        {% for group_data in category_data[1] %}
+          {% if group_data[0] == group[0] %}
+            {% for skill_data in group_data[1] %}
+              {% if skill_data[0] == skill[0] %}
+                {% if skill_data[1].type == 'range_attack' %}
+                  {% if skill[1] > range_attack %}
+                    {% assign range_attack = skill[1] %}
+                  {% endif %}
+                {% endif %}
+                {% break %}
+              {% endif %}
+            {% endfor %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    {% endfor %}
+  {% endfor %}
+{% endfor %}
+<!-- Valeur de range_attack: {{ range_attack }}-->
+
+{% assign melee_attack = 0 %}
+{% for category in page.skills.active %}
+  {% for group in category[1] %}
+    {% for skill in group[1] %}
+      {% for category_data in site.data.skills %}
+        {% for group_data in category_data[1] %}
+          {% if group_data[0] == group[0] %}
+            {% for skill_data in group_data[1] %}
+              {% if skill_data[0] == skill[0] %}
+                {% if skill_data[1].type == 'melee_attack' %}
+                  {% if skill[1] > melee_attack %}
+                    {% assign melee_attack = skill[1] %}
+                  {% endif %}
+                {% endif %}
+                {% break %}
+              {% endif %}
+            {% endfor %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    {% endfor %}
+  {% endfor %}
+{% endfor %}
+<!-- Valeur de range_attack: {{ range_attack }}-->
+
+{% assign matrix_attack = 0 %}
+{% for group in page.matrix.programs %}
+  {% for program in group[1] %}
+    {% if program[1].type == 'attack' %}
+      {% if program[1].rating >matrix_attack %}
+        {% assign matrix_attack =  program[1].rating %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+<!-- Valeur de matrix_attack: {{ matrix_attack }}-->
+
+{% assign balistic = page.gear.armor[0].balistic %}
+{% assign impact = page.gear.armor[0].impact %}

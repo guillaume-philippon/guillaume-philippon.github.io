@@ -58,17 +58,17 @@
             <ul class="list-unstyled col-12">
               <li class="py-1 d-flex justify-content-between align-items-center">
             <strong>Distance</strong>
-            <span><strong>{{ agility_total | plus: highest_range }}</strong> <small>(Agility + Skill)</small></span></li>
+            <span><strong>{{ agility_total | plus: range_attack }}</strong> <small>(Agility + Skill)</small></span></li>
             </ul>
           </li>
           <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
             <strong>Mélée</strong>
-            <span><strong>{{ agility_total | plus: highest_melee }}</strong> <small>(Agility + Skill)</small></span>
+            <span><strong>{{ agility_total | plus: melee_attack }}</strong> <small>(Agility + Skill)</small></span>
           </li>
           {% if page.matrix %}
           <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
             <strong>Matrice</strong>
-            <span><strong>{{ page.skills.active.cracking.cybercombat.value | plus: highest_matrix }}</strong> <small>(Cybercombat + Software)</small></span>
+            <span><strong>{{ page.skills.active.technical.cracking.cybercombat | plus: matrix_attack }}</strong> <small>(Cybercombat + Software)</small></span>
           </li>
           {% endif %}
           {% if page.magic %}
@@ -94,7 +94,7 @@
         </li>
         <li class="list-group-item my-1 d-flex justify-content-between align-items-center">
           <strong>Mélée</strong>
-          <span><strong>{{ reaction_total | plus: highest_melee }}</strong> <small>(Reaction + Skill)</small></span>
+          <span><strong>{{ reaction_total | plus: melee_defense }}</strong> <small>(Reaction + Skill)</small></span>
         </li>
         {% if page.matrix %}
           <li class="list-group-item my-1 d-flex justify-content-between align-items-center">
