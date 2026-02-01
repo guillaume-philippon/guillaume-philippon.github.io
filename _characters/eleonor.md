@@ -56,6 +56,9 @@ attributes:
 initiative:
   physic:
     turns: 3
+condition:
+  physical:
+    modifier: 4
 wound: 
   physic: 3
   mental: 3
@@ -128,4 +131,35 @@ cyberware:
     availability: 8R
     price: 2000
 gear:
+  weapons:
+    - name: Ares Crusader
+      type:
+        - range
+      damage:
+        description: 4P
+        type: P
+      ap: -1
+      rc: 2
+      mode: SA/BF
+      ammo: 40(c)
+      availability: 7R
+      price: 700
+    - name: Ares Alpha
+      type:
+        - range
+      damage:
+        description: 6P
+        type: P
+      ap: -1
+      rc: 2
+      mode: SA/BF/FA
+      ammo: 42 (c)
+      availability: 12F
+      price: 1700
+  armor:
+    - name: Armor Jacket
+      balistic: 8
+      impact: 6
+      price: 900
+      availability: 2
 ---

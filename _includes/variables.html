@@ -11,8 +11,8 @@
 {% assign astral_initiative = intuition_total | times: 2 %}
 {% assign matrix_initiative = intuition_total | plus: page.matrix.commlink.response %}
 
-{% assign physic_condition = body_total | divided_by: 2.0 | round | plus: 8 %}
-{% assign mental_condition = willpower_total | divided_by: 2.0 | round | plus: 8 %}
+{% assign physic_condition = body_total | divided_by: 2.0 | round | plus: 8 | plus: page.condition.physical.modifier %}
+{% assign mental_condition = willpower_total | divided_by: 2.0 | round | plus: 8 | plus: page.condition.mental.modifier %}
 {% assign matrix_condition = page.matrix.commlink.system | divided_by: 2.0 | round | plus: 8 %}
 
 {% assign cyberware_essence = 0.0 %}
