@@ -2,6 +2,7 @@
 <input type="hidden" id="character-key" value="{{ page.key }}">
 <input type="hidden" id="base-physical-condition" value="{{ physic_condition }}">
 <input type="hidden" id="base-mental-condition" value="{{ mental_condition }}">
+<input type="hidden" id="base-matrix-condition" value="{{ matrix_condition }}">
 
 <div class="modal fade" id="conditionModal" tabindex="-1" aria-labelledby="conditionModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -17,6 +18,9 @@
           </li>
           <li class="nav-item" role="presentation">
             <button class="nav-link" id="mental-tab" data-bs-toggle="tab" data-bs-target="#mental" type="button" role="tab">Mentale</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="matrix-tab" data-bs-toggle="tab" data-bs-target="#matrix" type="button" role="tab">Matrix</button>
           </li>
         </ul>
         <div class="tab-content" id="conditionTabsContent">
@@ -47,6 +51,21 @@
                 <button class="btn btn-danger" id="modal-add-mental-damage">+1 Dégât</button>
                 <button class="btn btn-success" id="modal-remove-mental-damage">-1 Dégât</button>
                 <button class="btn btn-warning" id="modal-reset-mental-damage">Réinitialiser</button>
+              </div>
+            </div>
+          </div>
+          <!-- Matrix Condition Tab -->
+          <div class="tab-pane fade" id="matrix" role="tabpanel">
+            <div class="mt-3 text-center">
+              <h5>Condition Matrix</h5>
+              <div class="display-4" id="modal-matrix-condition">0</div>
+              <div class="mb-3">
+                <span class="badge bg-primary">Max: <span id="modal-matrix-max">{{ matrix_condition }}</span></span>
+              </div>
+              <div class="d-grid gap-2">
+                <button class="btn btn-danger" id="modal-add-matrix-damage">+1 Dégât</button>
+                <button class="btn btn-success" id="modal-remove-matrix-damage">-1 Dégât</button>
+                <button class="btn btn-warning" id="modal-reset-matrix-damage">Réinitialiser</button>
               </div>
             </div>
           </div>

@@ -13,6 +13,7 @@
 
 {% assign physic_condition = body_total | divided_by: 2.0 | round | plus: 8 %}
 {% assign mental_condition = willpower_total | divided_by: 2.0 | round | plus: 8 %}
+{% assign matrix_condition = page.matrix.commlink.system | divided_by: 2.0 | round | plus: 8 %}
 
 {% assign cyberware_essence = 0.0 %}
 {% for ware in page.cyberware %}

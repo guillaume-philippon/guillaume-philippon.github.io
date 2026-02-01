@@ -21,14 +21,17 @@ function updateConditionDisplays() {
   const characterKey = document.getElementById('character-key').value;
   const maxPhysical = parseInt(document.getElementById('base-physical-condition').value);
   const maxMental = parseInt(document.getElementById('base-mental-condition').value);
+  const maxMatrix = parseInt(document.getElementById('matrix-condition')?.value || '0');
   const maxPhysicalWound = parseInt(document.getElementById('max-physical-wound')?.value || '3');
   const maxMentalWound = parseInt(document.getElementById('max-mental-wound')?.value || '3');
+  const maxMatrixWound = parseInt(document.getElementById('max-matrix-wound')?.value || '3');
   
   // Get current values from cookies (or 0 if no cookie)
   let physicalDamage = parseInt(getCookie(`${characterKey}_physical_damage`) || '0');
   let mentalDamage = parseInt(getCookie(`${characterKey}_mental_damage`) || '0');
+  let matrixDamage = parseInt(getCookie(`${characterKey}_matrix_damage`) || '0');
   
-  console.log(`Initializing condition tracker for ${characterKey}: Physical=${physicalDamage}, Mental=${mentalDamage}`);
+  console.log(`Initializing condition tracker for ${characterKey}: Physical=${physicalDamage}, Mental=${mentalDamage}, Matrix=${matrixDamage}`);
   
   // Calculate wounds (number of wound boxes filled)
   const physicalWounds = maxPhysicalWound > 0 ? Math.floor(physicalDamage / maxPhysicalWound) : 0;
@@ -37,6 +40,9 @@ function updateConditionDisplays() {
   // Update main displays
   document.getElementById('current-physical-condition').textContent = physicalDamage;
   document.getElementById('current-mental-condition').textContent = mentalDamage;
+  if (document.getElementById('current-matrix-condition')) {
+    document.getElementById('current-matrix-condition').textContent = matrixDamage;
+  }
   
   // Update wound counters (modulo calculation)
   if (document.getElementById('physical-wound-counter')) {
@@ -44,6 +50,9 @@ function updateConditionDisplays() {
   }
   if (document.getElementById('mental-wound-counter')) {
     document.getElementById('mental-wound-counter').textContent = `(${mentalWounds})`;
+  }
+  if (document.getElementById('matrix-wound-counter')) {
+    document.getElementById('matrix-wound-counter').textContent = `(${matrixWounds})`;
   }
   
   // Update modal displays if modal is open
@@ -57,6 +66,12 @@ function updateConditionDisplays() {
     document.getElementById('modal-mental-condition').textContent = mentalDamage;
     if (document.getElementById('modal-mental-wounds')) {
       document.getElementById('modal-mental-wounds').textContent = `(${mentalWounds})`;
+    }
+  }
+  if (document.getElementById('modal-matrix-condition')) {
+    document.getElementById('modal-matrix-condition').textContent = matrixDamage;
+    if (document.getElementById('modal-matrix-wounds')) {
+      document.getElementById('modal-matrix-wounds').textContent = `(${matrixWounds})`;
     }
   }
 }
@@ -122,11 +137,46 @@ function resetMentalDamage() {
   updateConditionDisplays();
 }
 
+// Matrix damage functions
+function addMatrixDamage() {
+  const characterKey = document.getElementById('character-key').value;
+  // Use matrix_condition if defined, otherwise use a reasonable default
+  // Default to 10 for characters with matrix capabilities, 8 otherwise
+  const hasMatrix = document.getElementById('matrix-condition') !== null;
+  const maxDamage = parseInt(document.getElementById('base-matrix-condition')?.value || '0');
+  let damage = parseInt(getCookie(`${characterKey}_matrix_damage`) || '0');
+  
+  // Only allow incrementing if we haven't reached max
+  if (damage < maxDamage) {
+    damage++;
+    setCookie(`${characterKey}_matrix_damage`, damage);
+    updateConditionDisplays();
+  }
+}
+
+function removeMatrixDamage() {
+  const characterKey = document.getElementById('character-key').value;
+  let damage = parseInt(getCookie(`${characterKey}_matrix_damage`) || '0');
+  
+  if (damage > 0) {
+    damage--;
+    setCookie(`${characterKey}_matrix_damage`, damage);
+    updateConditionDisplays();
+  }
+}
+
+function resetMatrixDamage() {
+  const characterKey = document.getElementById('character-key').value;
+  setCookie(`${characterKey}_matrix_damage`, '0');
+  updateConditionDisplays();
+}
+
 // Force reset all counters to zero (for new sessions)
 function resetAllConditions() {
   const characterKey = document.getElementById('character-key').value;
   setCookie(`${characterKey}_physical_damage`, '0');
   setCookie(`${characterKey}_mental_damage`, '0');
+  setCookie(`${characterKey}_matrix_damage`, '0');
   updateConditionDisplays();
   console.log(`All conditions reset to zero for ${characterKey}`);
 }
@@ -150,6 +200,9 @@ document.addEventListener('DOMContentLoaded', function() {
       } else if (conditionType === 'mental') {
         const mentalTab = new bootstrap.Tab(document.getElementById('mental-tab'));
         mentalTab.show();
+      } else if (conditionType === 'matrix') {
+        const matrixTab = new bootstrap.Tab(document.getElementById('matrix-tab'));
+        matrixTab.show();
       }
     });
   }
@@ -161,4 +214,7 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('modal-add-mental-damage')?.addEventListener('click', addMentalDamage);
   document.getElementById('modal-remove-mental-damage')?.addEventListener('click', removeMentalDamage);
   document.getElementById('modal-reset-mental-damage')?.addEventListener('click', resetMentalDamage);
+  document.getElementById('modal-add-matrix-damage')?.addEventListener('click', addMatrixDamage);
+  document.getElementById('modal-remove-matrix-damage')?.addEventListener('click', removeMatrixDamage);
+  document.getElementById('modal-reset-matrix-damage')?.addEventListener('click', resetMatrixDamage);
 });
