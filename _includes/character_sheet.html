@@ -178,18 +178,19 @@
               </div>
             </div>
             <div class="col-4 col-lg-2 mt-2">
-              <div class="card">
+              <div class="card" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#conditionModal" data-condition-type="physical">
                 <div class="card-body p-2 text-center">
                   <span class="card-title mb-1"><small>Physique</small></span>
-                  <p class="card-text mb-0">{{ physic_condition }} <small>/{{ page.wound.physic }}</small></p>
+                  <p class="card-text mb-0"><span id="current-physical-condition">0</span><small>/{{ physic_condition }}</small> <small id="physical-wound-counter" class="text-muted">(0)</small></p>
                 </div>
               </div>
             </div>
             <div class="col-4 col-lg-2 mt-2">
-              <div class="card">
+              <div class="card" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#conditionModal" data-condition-type="mental">
                 <div class="card-body p-2 text-center">
                   <span class="card-title mb-1"><small>Mentale</small></span>
-                  <p class="card-text mb-0">{{ mental_condition }} <small>/{{ page.wound.mental }}</small></p>
+                  <p class="card-text mb-0"><span id="current-mental-condition">0</span><small>/{{ mental_condition }}</small> <small id="mental-wound-counter" class="text-muted">(0)</small></p>
+                  
                 </div>
               </div>
             </div>
@@ -218,6 +219,7 @@
 
 
       <!-- Contacts -->
+      {% include condition_modal.html %}
       {% include contacts.html %}
       {% include modals/edge.html %}
       {% include modals/actions.html %}
