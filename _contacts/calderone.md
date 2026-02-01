@@ -15,14 +15,12 @@ attributes:
   charisma: 4
 skills:
   stealth:
-    urban: 4
-    wilderness: 3
+    infiltration: 4
+    disguise: 3
   influence:
     negotiation: 4
     etiquette: 3
-  perception:
-    visual: 5
-    auditory: 4
+  perception: 5
   knowledge:
     street_gangs: 6
     local_history: 5

@@ -17,9 +17,7 @@ skills:
   influence:
     negotiation: 5
     leadership: 4
-  perception:
-    visual: 5
-    auditory: 4
+  perception: 5
   knowledge:
     corporate_secrets: 6
     industrial_espionage: 5
