@@ -326,7 +326,7 @@ gear:
       availability: 10F
       mode: SA
       price: 3350
-    - name: Defiance T-250 (Short)
+    - name: Ares Predator IV
       type:
         - range
       damage:
@@ -334,9 +334,9 @@ gear:
         type: P
       ap: -1
       mode: SA
-      ammo: 5(m)
-      availability: 3R
-      price: 475
+      ammo: 15(c)
+      availability: 4R
+      price: 350
     - name: FN HAR
       type:
         - range

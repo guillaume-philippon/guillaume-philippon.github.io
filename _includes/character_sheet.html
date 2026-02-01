@@ -13,15 +13,21 @@
       <div class="offcanvas-body">
         <div class="panel-tabs">
           <ul class="nav nav-tabs" id="panelTabs" role="tablist">
+            {% if page.cyberware %}
             <li class="nav-item" role="presentation">
               <button class="nav-link active" id="cyberware-tab" data-bs-toggle="tab" data-bs-target="#cyberware" type="button" role="tab" title="Cyberware"><i class="fa-solid fa-microchip"></i></button>
             </li>
+            {% endif %}
+            {% if page.powers %}
             <li class="nav-item" role="presentation">
               <button class="nav-link" id="powers-tab" data-bs-toggle="tab" data-bs-target="#powers" type="button" role="tab" title="Pouvoirs"><i class="fa-solid fa-yin-yang"></i></button>
             </li>
+            {% endif %}
+            {% if page.qualities %}
             <li class="nav-item" role="presentation">
               <button class="nav-link" id="qualities-tab" data-bs-toggle="tab" data-bs-target="#qualities" type="button" role="tab" title="Qualités"><i class="fas fa-angles-up"></i></button>
             </li>
+            {% endif %}
             <li class="nav-item" role="presentation">
               <button class="nav-link" id="gear-tab" data-bs-toggle="tab" data-bs-target="#gear" type="button" role="tab" title="Équipement"><i class="fa-solid fa-briefcase"></i></button>
             </li>
@@ -78,7 +84,8 @@
                 <li class="list-group-item py-1">
                   <span data-bs-toggle="tooltip" data-bs-title="{{quality.sourcebook}} (p. {{quality.page}})">
                     <strong>{{ quality.name }}</strong>
-                  </span> (Rating: {{ quality.rating }}, {{ quality.bp }} BP)
+                  </span>
+                  {% if quality.rating %} (Rating: {{ quality.rating }}) {% endif %} {% if quality.bp %} [{{ quality.bp }} BP] {% endif %}
                   {{ quality.description | markdownify }}
                 </li>
                 {% endfor %}

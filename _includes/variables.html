@@ -123,5 +123,17 @@
 {% endfor %}
 <!-- Valeur de matrix_attack: {{ matrix_attack }}-->
 
+{% assign matrix_damage = 0 %}
+{% for group in page.matrix.programs %}
+  {% for program in group[1] %}
+    {% if program[1].type == 'attack' %}
+      {% if program[1].rating >matrix_attack %}
+        {% assign matrix_attack =  program[1].rating %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+<!-- Valeur de matrix_attack: {{ matrix_attack }}-->
+
 {% assign balistic = page.gear.armor[0].balistic %}
 {% assign impact = page.gear.armor[0].impact %}

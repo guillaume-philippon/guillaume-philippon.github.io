@@ -89,14 +89,24 @@
             </div>
           {% endfor %}
         {% endfor %}
+      </div>
 
       <h3 class="mt-3">Knowledge Skills</h3>
       <div class="row">
         <!-- Connaissances -->
         <div class="col-md-4 mb-3">
           <ul class="list-group list-group-flush">
+            {% assign counter = 0 %}
             {% for skill in page.skills.knowledge %}
               {% if skill[1].value > 0 %}
+                {% if counter == 4 %}
+                  </ul></div> 
+                  <div class="col-md-4 mb-3">
+                  <ul class="list-group list-group-flush">
+                  {% assign counter = 0 %}
+                {% else %}
+                  {% assign counter = counter | plus: 1 %}
+                {% endif %}
                 {% case skill[1].attribute %}
                   {% when "street" %}
                     {% assign attribute_value = intuition_total %}
