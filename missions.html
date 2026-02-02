@@ -114,7 +114,7 @@ title: Aventures Shadowrun
             <h6 style="color: #ffcc00; font-size: 0.9rem;">Runners:</h6>
             {% for runner in mission.runners %}
               {% if runner.present %}
-              <span class="badge bg-warning text-dark me-1" style="font-size: 0.8rem;">
+              <span class="badge bg-warning text-dark me-1 mb-1" style="font-size: 0.8rem;">
                 {{ runner.name }} ({{ runner.karma }}+{{ runner.bonus }})
               </span>
               {% endif %}

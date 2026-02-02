@@ -52,6 +52,24 @@ layout: default
             {{ content }}
           </div>
           
+          {% assign contact_missions = site.missions | where_exp: "mission", "mission.contacts" %}
+
+          <h4>Missions</h3>
+          <div class="row mt-4 mb-4">
+          {% if contact_missions.size > 0 %}
+            <p>
+            {% for mission in contact_missions %}
+              {% assign contact_info = mission.contacts | where_exp: "contact", "contact.contact == page.key" | first %}
+              {% if contact_info %}
+                <a href="{{ mission.url }}">{{ mission.title | replace: "-", " " }}</a>, 
+              {% endif %}
+            {% endfor %}
+            </p>
+          {% else %}
+          <p>Aucune mission enregistrée pour ce contact.</p>
+          {% endif %}
+          </div>
+
           <!-- Attributs -->
           {% if page.attributes %}
           <div class="mb-4">
