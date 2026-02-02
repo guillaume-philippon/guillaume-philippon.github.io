@@ -140,9 +140,7 @@ function resetMentalDamage() {
 // Matrix damage functions
 function addMatrixDamage() {
   const characterKey = document.getElementById('character-key').value;
-  // Use matrix_condition if defined, otherwise use a reasonable default
-  // Default to 10 for characters with matrix capabilities, 8 otherwise
-  const hasMatrix = document.getElementById('matrix-condition') !== null;
+  // Use base-matrix-condition for the maximum value
   const maxDamage = parseInt(document.getElementById('base-matrix-condition')?.value || '0');
   let damage = parseInt(getCookie(`${characterKey}_matrix_damage`) || '0');
   
