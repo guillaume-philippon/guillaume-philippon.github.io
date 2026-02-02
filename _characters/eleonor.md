@@ -195,7 +195,7 @@ gear:
       availability: 2
   vehicule:
     - name: Thundercloud Contrail
-      image: /assets/images/vehicles/thundercloud-contrail.svg
+      image: /assets/images/vehicles/thundercloud-contrail.jpg
       handling: 1
       accel: 20/40
       speed: 180

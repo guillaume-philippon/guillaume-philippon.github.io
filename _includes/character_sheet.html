@@ -146,16 +146,14 @@
                 {% for vehicle in page.gear.vehicule %}
                 <div class="col-12">
                   <div class="card vehicle-card">
-                    <div class="row g-0">
-                      {% if vehicle.image %}
-                      <div class="col-md-4 vehicle-image-container">
-                        <div class="vehicle-image-wrapper">
-                          <img src="{{ vehicle.image }}" class="img-fluid rounded-start vehicle-image" alt="{{ vehicle.name }}">
-                        </div>
+                    {% if vehicle.image %}
+                    <div class="vehicle-image-container">
+                      <div class="vehicle-image-wrapper">
+                        <img src="{{ vehicle.image }}" class="img-fluid vehicle-image" alt="{{ vehicle.name }}">
                       </div>
-                      {% endif %}
-                      <div class="{% if vehicle.image %}col-md-8{% else %}col-12{% endif %}">
-                        <div class="card-body">
+                    </div>
+                    {% endif %}
+                    <div class="card-body">
                           <h5 class="card-title">{{ vehicle.name }}</h5>
                           <div class="vehicle-stats">
                             <ul class="list-group list-group-flush ps-4">
