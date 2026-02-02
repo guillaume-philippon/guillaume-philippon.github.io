@@ -1,0 +1,467 @@
+# Données structurées pour les actions Matrix de Shadowrun 4ème édition
+# Classées par type d'action et avec les informations pertinentes
+
+free_actions:
+  - name: "Modifier/Changer d'icône"
+    program: ["system"]
+    description: |
+      Vous modifiez un détail d'une icône représentant votre persona ou l'un des
+      programmes, fichiers ou nœuds que vous possédez, ou vous changez l'icône pour une
+      icône pré-rendue que vous avez stockée.
+    reference: "p. 227"
+
+  - name: "Changer le mode d'un appareil lié"
+    program: ["system"]
+    description: |
+      Vous changez le mode d'un appareil Matrix qui est lié à votre persona
+      soit par un abonnement, soit parce que votre identifiant d'accès est approuvé par
+      l'appareil. Les changements de mode incluent les modes de tir d'arme, l'état
+      marche/arrêt, les paramètres de la machine à café, la température du thermostat, l'étage
+      de l'ascenseur, et autres.
+    reference: "p. 227"
+
+  - name: "Détecter les nœuds sans fil actifs/passifs"
+    program: ["system"]
+    description: |
+      Vous trouvez automatiquement tous les nœuds dans la portée du signal qui sont en
+      mode Actif ou Passif.
+    reference: "p. 227"
+
+  - name: "Se déconnecter"
+    program: ["system"]
+    description: |
+      Vous vous déconnectez de votre persona. En RA, il s'agit simplement de
+      fermer votre interface. En RV, cela signifie retirer votre connexion de votre
+      commlink, soit en retirant les trodes, en débranchant une prise de données,
+      ou en coupant une connexion neurale. Les technomanciens rompent mentalement
+      leur connexion avec la Matrice. Si vous vous déconnectez alors que vous êtes en RV, vous subissez
+      un dumpshock. Cela nécessite une Action Complexe et un test réussi si votre connexion est
+      bloquée ouverte par un programme IC noir.
+    reference: "p. 227"
+
+  - name: "Changer de mode d'interface"
+    program: ["system"]
+    description: |
+      Vous changez votre perception de la RA à la RV ou vice versa. Notez que
+      le passage en RV rend votre corps mou, alors ne le faites pas dans des
+      endroits dangereux. Si vous passez de la RV à la RA, vous pourriez perdre une ou plusieurs
+      Passes d'Initiative. Si votre connexion est bloquée ouverte par une attaque IC noire
+      vous ne pouvez pas changer de mode d'interface.
+    reference: "p. 227"
+
+  - name: "Terminer un transfert de données"
+    program: ["system"]
+    description: |
+      Vous terminez un transfert de données que vous avez initié. Vous pouvez également terminer des
+      transferts de données initiés par d'autres si vous avez l'accès et les permissions appropriés sur
+      au moins l'un des nœuds impliqués dans le transfert.
+    reference: "p. 227"
+
+  - name: "Transmettre une phrase"
+    program: ["system"]
+    description: |
+      Vous parlez ou envoyez un message texte comme vous le feriez dans le monde physique,
+      mais à un ou plusieurs destinataires via la Matrice. Cela peut également être utilisé
+      pour faire en sorte qu'un agent ou un appareil commence ou arrête d'exécuter des ordres
+      précédemment donnés, comme faire en sorte qu'un drone lance une attaque sur une cible
+      préarrangée ou qu'un autocuiseur commence un dîner pré-programmé.
+    reference: "p. 227"
+
+simple_actions:
+  - name: "Analyser une icône/nœud"
+    program: ["analyze"]
+    description: |
+      Vous faites un Test de Perception Matrix, qui est soit un Test Simple soit
+      un Test Opposé d'Ordinateur + Analyser. Cette action est décrite en détail
+      à la page 228.
+    reference: "p. 228"
+
+  - name: "Appeler/Renvoyer un sprite"
+    program: ["compiling"]
+    description: |
+      Vous appelez soit un sprite précédemment compilé ou enregistré depuis la
+      Résonance, soit vous renvoyez l'un de vos sprites attendre dans la Résonance
+      jusqu'à ce que vous l'appeliez.
+    reference: "p. 239"
+
+  - name: "Désactiver un programme"
+    program: ["system"]
+    description: |
+      Vous changez le statut d'un programme de "en cours d'exécution" à "chargé". Cette action peut
+      également être utilisée sur un agent, auquel cas tous ses programmes en cours d'exécution
+      s'arrêtent également.
+    reference: "p. 228"
+
+  - name: "Déchiffrer"
+    program: ["system"]
+    description: |
+      Si vous avez la clé d'un chiffrement particulier, vous le déchiffrez avec cette
+      action. Si vous utilisez cela sur un fichier, le fichier devient déchiffré. Si vous utilisez
+      cela sur un nœud ou un trafic Matrix, vous pouvez accéder au nœud ou lire le
+      trafic, mais il reste chiffré pour les autres.
+    reference: "p. 228"
+
+  - name: "Chiffrer"
+    program: ["encrypt"]
+    description: |
+      Vous chiffrez un fichier, un ensemble de fichiers, un nœud ou un lien de communication. Vous choisissez
+      également un mot de passe que vous ou un autre utilisateur pouvez utiliser pour déchiffrer le fichier.
+      Vous pouvez chiffrer plusieurs fichiers ensemble dans un seul fichier d'archive. Vous
+      pouvez également attacher une bombe de données à un fichier chiffré.
+    reference: "p. 228"
+
+  - name: "Donner des ordres"
+    program: ["system"]
+    description: |
+      Vous donnez une courte liste d'ordres à un agent, un drone ou un appareil qui
+      accepte votre identifiant d'accès comme autorisé à le faire. Vous pouvez envoyer la liste
+      d'ordres à plusieurs destinataires, mais ce doit être la même liste d'ordres; des ordres différents
+      nécessitent l'utilisation d'une autre Action Simple.
+    reference: "p. 225"
+
+  - name: "Sauter dans un drone/véhicule/appareil"
+    program: ["system"]
+    description: |
+      Vous sautez dans un drone, un véhicule ou un appareil en RV. Cette action est de-
+      crire en détail dans Sauter dedans.
+    reference: "p. 245"
+
+  - name: "Se déconnecter"
+    program: ["system"]
+    description: |
+      Votre persona se déconnecte d'un nœud, rompant l'abonnement et la connexion
+      à ce nœud. Vous pouvez également utiliser cela pour vous déconnecter élégamment de
+      votre persona tout en étant en RV, évitant ainsi le dumpshock. Notez que les programmes IC noirs
+      sont capables de vous empêcher de vous déconnecter.
+    reference: "p. 237"
+
+  - name: "Observer en détail"
+    program: ["system"]
+    description: |
+      Vous examinez l'un des nœuds auxquels votre persona est connectée (c'est-à-dire,
+      un nœud dans lequel elle se trouve). Cela diffère de l'action Analyser un nœud
+      car cela se concentre sur la sculpture du nœud plutôt que sur ses attributs.
+      Contrairement à l'observation dans le monde physique, vous percevez automatiquement
+      toutes les icônes qui n'exécutent pas Furtivité car elles sont cataloguées par votre commlink.
+    reference: "p. 228"
+
+  - name: "Transférer des données"
+    program: ["system"]
+    description: |
+      Vous transférez un fichier ou un ensemble de fichiers d'un nœud à un autre. La plupart des
+      transferts durent jusqu'à la fin du Tour de Combat actuel ; les vitesses de connexion
+      de la Matrice sont suffisamment rapides pour que seuls les fichiers de taille véritablement
+      épique prennent plus de temps que la normale.
+    reference: "p. 228"
+
+complex_actions:
+  - name: "Capturer un signal sans fil"
+    program: ["sniffer"]
+    description: |
+      Vous écoutez le trafic sans fil allant et venant d'un appareil. Vous devez
+      être dans la portée du signal de l'appareil pour capturer le trafic. Vous devez réussir
+      un test de Guerre Électronique + Sniffer (3) pour commencer la capture,
+      et ensuite vous pouvez copier, enregistrer ou transférer le trafic sans un autre
+      test tant que vous restez dans la portée du signal de l'appareil cible et
+      maintenez le programme Sniffer en cours d'exécution.
+      Il n'y a aucun moyen pour les autres parties de détecter votre capture (sans
+      accès à votre commlink, bien sûr). Si le trafic est chiffré, vous
+      devez casser le chiffrement avant qu'il puisse être capturé.
+    reference: "p. 229"
+
+  - name: "Compiler un sprite"
+    program: ["compiling"]
+    description: |
+      Vous compilez un sprite en utilisant les règles à la page 240.
+    reference: "p. 240"
+
+  - name: "Contrôler un appareil"
+    program: ["command"]
+    description: |
+      Vous contrôlez un appareil à travers la Matrice, en utilisant votre programme Command
+      comme une télécommande ou un contrôleur de jeu vidéo. Le pool de dés de
+      n'importe quel test que vous faites en utilisant cette action utilise le rating de votre Command
+      programme à la place de l'attribut que vous utiliseriez avec la
+      compétence appropriée comme d'habitude. Par exemple, tirer avec un fusil monté sur drone
+      sur une cible nécessiterait un test de Armes Longues + Command, et utiliser
+      un soudeur sous-marin à distance nécessiterait un test de Mécanique Nautique +
+      Command.
+      Notez que si l'action à effectuer est normalement une Action Simple,
+      l'exécuter via l'action Contrôler un Appareil est toujours une
+      Action Complexe.
+    reference: "p. 229"
+
+  - name: "Faire crasher un nœud"
+    program: ["exploit"]
+    description: |
+      Vous faites crasher un nœud (pas une persona) auquel votre icône accède actuellement.
+      Faites un test de Piratage + Exploit (Système + Pare-feu, Action Complexe)
+      étendu. Lorsque vous atteignez le seuil, le nœud crash et
+      redémarre. Le nœud émet une alerte restreinte contre
+      l'attaquant lorsqu'il est attaqué pour la première fois (ce qui donne au nœud un +4 au
+      Pare-feu parmi d'autres effets listés à la page 238). Tout utilisateur accédant
+      au nœud via RV doit résister au Dumpshock lorsque le nœud crash, y
+      compris le hacker.
+    reference: "p. 238"
+
+  - name: "Faire crasher un programme"
+    program: ["exploit"]
+    description: |
+      Vous initiez une attaque sur un programme en cours d'exécution qui n'est pas un agent, un
+      persona, ou une autre icône avec un Moniteur de Condition. Le programme cible
+      doit être en cours d'exécution dans le même nœud que votre icône ou être exécuté par une icône qui est
+      dans le même nœud que votre icône. Faites un test Opposé de Piratage + Exploit vs.
+      le Pare-feu + Système de la cible. Si vous réussissez, vous faites crasher le programme,
+      ce qui change son statut de "en cours d'exécution" à "chargé".
+    reference: "p. 238"
+
+  - name: "Recherche de données"
+    program: ["browse", "scan", "analyze", "sniffer"]
+    description: |
+      Vous recherchez dans la Matrice des informations sur un sujet. Il s'agit d'un test
+      de Recherche de Données + Browse étendu avec un seuil et un intervalle variables,
+      selon la disponibilité générale des informations en question
+      and the "area" being searched, respectively. Some information is pro-
+      tégées et gardées secrètes, stockées dans un nœud qui n'est pas accessible depuis la
+      Matrice, et ne peuvent donc pas être trouvées sans accéder aux nœuds sur lesquels
+      les données sont cachées, bien qu'une Recherche de Données puisse être effectuée pour trouver l'
+      emplacement des informations.
+      Toutes les actions de Recherche de Données n'utilisent pas le programme Browse. Cette action
+      peut être utilisée sur n'importe quelle grande quantité de données, comme une liste d'icônes dans un nœud,
+      des nœuds dans une portée de signal, ou du trafic réseau. Lorsque vous utilisez cette action pour
+      ces recherches spéciales, utilisez le programme qui est utilisé pour collecter l'infor-
+      mation que vous recherchez. Par exemple, utilisez Recherche de Données
+      + Scan pour trouver tous les smartlinks sans fil dans la portée du signal, ou Données
+      Recherche + Analyser pour trouver tous les agents dans un nœud, ou Recherche de Données +
+      Sniffer pour trouver une phrase spécifique dans le trafic sans fil que vous avez intercepté.
+    reference: "p. 230"
+
+  - name: "Décompiler un sprite"
+    program: ["decompiling"]
+    description: |
+      Vous tentez de décompiler un sprite, en suivant les règles à la page 241.
+    reference: "p. 241"
+
+  - name: "Détecter un nœud caché"
+    program: ["scan"]
+    description: |
+      Vous tentez de localiser un nœud caché. Vous devez être conscient du nœud,
+      ou au moins avoir une bonne idée de l'endroit où l'appareil devrait se trouver (par ex-
+      emple, si votre commlink ne détecte pas de nœud pour M. Johnson mais
+      vous êtes assez sûr qu'il a un PAN, ou lorsque vous pouvez voir le drone de sécurité
+      mais qu'il fonctionne en mode Caché). Pour trouver le nœud, faites un
+      test de Guerre Électronique + Scan (4).
+      Vous pouvez également effectuer une recherche générale des nœuds Cachés qui
+      sont dans la portée mutuelle du Signal. Dans ce cas, le test est un
+      test de Guerre Électronique + Scan (15+, 1 Tour de Combat) étendu, plutôt qu'une
+      Action Complexe.
+    reference: "p. 230"
+
+  - name: "Désamorcer une bombe de données"
+    program: ["disarm"]
+    description: |
+      Vous tentez de désamorcer une bombe de données que vous avez détectée (généralement avec
+      un test de Perception Matrix). Faites un test Opposé entre votre Piratage
+      + Désamorçage et le Rating de la Bombe de Données x 2. Si vous obtenez des succès nets, la
+      bombe de données est supprimée et effacée. Si ce n'est pas le cas, la bombe de données s'active, caus-
+      ant ses dégâts et pouvant détruire tout fichier auquel elle était attachée.
+    reference: "p. 233"
+
+  - name: "Éditer"
+    program: ["edit"]
+    description: |
+      Edit allows you to create, change, or delete any kind of file. A Complex
+      Action is required to alter one detail of a file: about a sentence of text
+      or a detail of an image or about a second of video or audio (gamemas-
+      ter's discretion). This requires a successful Computer + Edit Test with
+      a threshold set by the gamemaster using the Success Test Difficulties
+      Table (p. 62) based on the extent, quality, and complexity of the edits
+      being made. Continuous editing of a device's output requires the
+      expenditure of a Simple Action every Initiative Phase for the dura-
+      tion. Note that controlling the device (via the Control Device action,
+      p. 229) may allow you simple control similar to Edit (i.e., by freezing
+      image capture at source or turning off audio reception).
+    reference: "p. 231"
+
+  - name: "Piratage à la volée"
+    program: ["exploit"]
+    description: |
+      Vous tentez de créer un compte pour vous-même sur un autre nœud. Il s'agit d'un
+      test de Piratage + Exploit (Pare-feu de la cible, Action Complexe) étendu.
+      Lorsque vous atteignez le seuil, vous obtenez un compte sur le nœud cible.
+      Ce processus est décrit plus en détail dans Piratage de la Matrice.
+    reference: "p. 235"
+
+  - name: "Lancer une cryptanalyse"
+    program: ["decrypt"]
+    description: |
+      Vous faites démarrer votre programme Decrypt pour travailler sur un chiffrement
+      auquel vous avez accès. La cryptanalyse est un test de Guerre Électronique +
+      Decrypt (rating de chiffrement x 2, 1 Tour de Combat) étendu. Lorsque
+      vous atteignez le seuil, le chiffrement est cassé. Lorsque vous cassez le
+      chiffrement d'un fichier, le fichier devient déchiffré. Lorsque vous utilisez cela sur
+      un nœud, vous pouvez accéder à ce nœud, mais il reste chiffré pour les autres.
+      Une fois que vous avez initié la cryptanalyse, votre programme Decrypt
+      prend le relais et s'exécute de manière autonome, en utilisant votre compétence en Guerre Électronique.
+      rating. Un programme Decrypt en cours d'exécution ne peut travailler que sur un chiffrement
+      à la fois, mais plusieurs programmes Decrypt peuvent travailler sur différents
+      chiffrements simultanément ; chaque programme Decrypt effectue son propre
+      test étendu et ne peut pas collaborer avec d'autres programmes.
+    reference: "p. 231"
+
+  - name: "Intercepter le trafic"
+    program: ["sniffer"]
+    description: |
+      Vous interceptez le trafic entre deux nœuds. Pour ce faire, vous devez avoir
+      accès à un nœud par lequel tout le trafic passe ; si le trafic est
+      divisé entre des nœuds intermédiaires, vous ne pouvez pas l'intercepter sauf si vous avez une icône dans tous les nœuds par
+      lesquels le trafic est acheminé. Pour la plupart, cette action n'est efficace que dans
+      un réseau filaire, mais elle peut s'appliquer au trafic (principalement) sans fil si
+      le nombre de nœuds impliqués est suffisamment petit.
+      Pour écouter le trafic, faites un test de Piratage + Sniffer ; les succès
+      de ce test sont le seuil pour que les autres détectent l'écoute avec
+      un test de Perception Matrix. Le trafic peut être copié et enregistré ou trans-
+      féré à un tiers sans tests supplémentaires. Si vous souhaitez bloquer
+      ou modifier une partie du trafic avant de l'envoyer, vous devez utiliser l'
+      action Éditer. Pour insérer du trafic falsifié, vous devez réussir un test Opposé
+      entre votre Piratage + Sniffer et le Pare-feu + Système du destinataire.
+      Si le trafic est chiffré, vous devez casser le chiffrement avant
+      qu'il puisse être intercepté.
+    reference: "p. 232"
+
+  - name: "Brouiller les signaux"
+    program: []
+    description: |
+      Vous démarrez un appareil de brouillage. Vous pouvez choisir n'importe quel nombre d'appareils connus
+      à exclure du brouillage lorsque vous initiez le brouillage,
+      et pouvez changer la liste avec une autre action Brouiller les Signaux. Lorsque
+      le brouilleur est activé, chaque appareil avec un rating de Signal inférieur à celui
+      du brouilleur (avec les modificateurs donnés dans la description du
+      brouilleur) sont brouillés et perdent la connectivité sans fil. Notez que
+      un appareil exécutant un programme ECCM ajoute le rating de ce programme
+      à son Signal à des fins de contre-brouillage.
+    reference: "p. 330"
+
+  - name: "Se connecter"
+    program: ["system"]
+    description: |
+      Vous ouvrez un abonnement à un nœud, et votre icône apparaît là. Cela
+      ne nécessite aucun test, mais nécessite soit l'authentification appropriée à un
+      compte (comme un code d'accès) ou un compte piraté. Vous avez également besoin d'une
+      connexion à l'appareil du nœud, soit avec une connexion filaire ou une connexion sans fil
+      connection (en étant dans la portée mutuelle du Signal ou en établissant un chemin
+      à travers plusieurs appareils).
+    reference: "p. 232"
+
+  - name: "Attaque Matrix"
+    program: ["attack", "black_hammer", "blackout"]
+    description: |
+      Vous effectuez une attaque contre une autre icône dans un nœud où votre icône
+      existe actuellement. Vous ne pouvez attaquer que des cibles avec un
+      Moniteur de Condition : agents, IC, et autres icônes de persona. Cette action
+      est décrite plus en détail dans Cybercombat.
+    reference: "p. 236"
+
+  - name: "Redémarrer"
+    program: ["system"]
+    description: |
+      Vous initiez un redémarrage d'un appareil avec une Action Complexe. Vous devez avoir
+      les privilèges appropriés pour le faire (généralement un compte admin) et vous
+      devez faire un test étendu de Système + Réponse (10, 1 Tour de Combat).
+      Lorsque suffisamment de succès sont obtenus, tous les programmes s'arrêtent et tous les abon-
+      nements sont terminés et toute personne qui exécute encore sa persona
+      sur l'appareil est coupée de la Matrice, subissant un dumpshock s'ils sont en RV. Le redémarrage du système prend un nombre de Tours de Combat
+      égal au Système de l'appareil (ou Rating de l'Appareil). L'appareil redémarre ensuite en
+      faisant un test étendu de Système + Réponse (10, 1 Tour de Combat).
+      L'appareil ne crée aucun nœud après l'initiation d'un
+      redémarrage jusqu'à ce qu'il atteigne le seuil du test étendu.
+    reference: "p. 238"
+
+  - name: "Rediriger la trace"
+    program: ["spoof"]
+    description: |
+      Vous brouillez votre trace de données active contre une tentative de suivi active,
+      rendant plus difficile pour un programme Track en cours d'exécution de trouver le nœud de votre persona.
+      Faites un test Opposé de Piratage + Spoof vs. le
+      Ordinateur + Track de l'icône de suivi ; le nombre de succès nets de ce test sont ajoutés
+      au seuil dont l'icône de suivi a besoin. Vous pouvez effectuer cette action
+      plusieurs fois contre la même cible. Cette action ne fonctionne que contre
+      une tentative de suivi en cours.
+    reference: "p. 238"
+
+  - name: "Réparer une icône"
+    program: ["medic"]
+    description: |
+      Vous soignez les dégâts Matrix qu'une persona, un agent ou une icône IC a
+      subis. Faites un test d'Ordinateur + Medic (dégâts subis x 2, Action Complexe)
+      étendu. Lorsque le seuil est atteint, tous les dégâts sont
+      supprimés de l'icône cible. Notez qu'il est possible que le seuil
+      change pendant le test étendu si l'icône subit d'autres dégâts.
+      Cette action ne répare que les dégâts Matrix et ne peut donc pas être utilisée pour
+      soigner les technomanciens.
+    reference: "p. 238"
+
+  - name: "Exécuter un programme"
+    program: ["system"]
+    description: |
+      Vous exécutez un programme, un agent ou un IC qui est chargé dans un appareil auquel vous
+      avez accès et les privilèges appropriés. Cela change le statut du programme
+      de "chargé" à "en cours d'exécution". Les programmes doivent être en cours d'exécution pour être utilisés.
+    reference: "p. 232"
+
+  - name: "Placer une bombe de données"
+    program: ["data_bomb"]
+    description: |
+      Vous placez une bombe de données dans un fichier ou un nœud. Lorsque vous le faites, vous devez
+      choisir le rating pour la bombe de données (jusqu'au rating du programme Data
+      Bomb), si elle supprimera le fichier ou fera crasher le
+      nœud auquel elle est attachée lorsqu'elle est activée comme effet secondaire, et
+      le code d'accès requis pour la désactiver. Les bombes de données peuvent être attachées à
+      des archives qui sont également protégées par des programmes de Chiffrement.
+      La manière dont une bombe de données se déclenche dépend du fait qu'elle soit attachée
+      à un fichier ou à un nœud : elle s'active lorsqu'un fichier est accédé, ou lorsqu'une icône
+      se connecte à un nœud, respectivement, sans utiliser le code d'accès de la bombe de données.
+      Lorsque une bombe de données est déclenchée, elle cause des dégâts Matrix égaux à son rating à
+      l'icône qui l'a déclenchée et effectue son effet secondaire (le cas échéant), puis
+      est supprimée. Si le code d'accès est utilisé, la bombe de données ne s'active pas
+      et reste attachée au fichier ou au nœud.
+      Une bombe de données peut être détectée avec un test de Perception Matrix
+      (p. 228). Si elle a été détectée, elle peut être désamorcée avec l'action Désamorcer une
+      Bombe de Données ; une bombe de données désamorcée est supprimée.
+    reference: "p. 233"
+
+  - name: "Usurper une commande"
+    program: ["spoof"]
+    description: |
+      Vous envoyez une commande à un appareil ou à un agent, en prétendant qu'elle provient d'une
+      source autorisée. Vous devez avoir un identifiant d'accès à partir duquel la cible
+      accepte les commandes (généralement en effectuant un test de Perception Matrix sur la
+      source autorisée ou en traçant son icône). Pour usurper une cible, choisissez
+      une commande (selon l'action Donner des Ordres) et effectuez un
+      test Opposé entre votre Piratage + Spoof et le Pilot + Pare-feu (Système + Pare-feu pour les
+      appareils périphériques) de la cible ; si vous réussissez,
+      la cible accepte la commande comme légitime. Chaque action Usurper une Commande
+      ne s'applique qu'à une seule commande ; plusieurs commandes nécessitent
+      plusieurs tentatives d'Usurpation de Commande.
+    reference: "p. 239"
+
+  - name: "Tracer un utilisateur"
+    program: ["track"]
+    description: |
+      Vous tracez une icône jusqu'à son nœud d'origine. Il s'agit d'un test
+      d'Ordinateur + Track (10, Action Complexe) étendu. La cible peut augmenter
+      le seuil avec l'action Rediriger la Trace, et un programme Stealth
+      exécuté par votre cible agit comme un modificateur négatif du pool de dés.
+      Lorsque vous atteignez le seuil du test étendu, vous avez
+      réussi à tracer la cible, apprenant l'identifiant d'accès de la cible et
+      l'emplacement de l'appareil hébergeant le nœud d'origine (généralement le commlink de l'utilisateur).
+      Si la cible utilise une connexion filaire à la Matrice, vous
+      apprenez sa localisation exacte. S'il utilise une connexion sans fil, vous avez
+      sa localisation triangulée à environ 50 mètres près. Tant que vous
+      maintenez votre programme Track en cours d'exécution et que la cible reste connectée
+      à la Matrice, vous pouvez continuer à surveiller la localisation de la cible. Les IC noirs
+      peuvent faciliter la trace.
+      Vous pouvez également utiliser cette action pour tracer un abonnement à son autre
+      extrémité. Par exemple, vous pouvez tracer l'abonnement d'un drone au
+      rigger qui le contrôle.
+    reference: "p. 239"

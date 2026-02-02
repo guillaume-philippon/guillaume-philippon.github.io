@@ -556,6 +556,28 @@
           </li>
         </ul>
       </div>
+      <div class="modal-body">
+        <h3>Actions par Programme</h3>
+        <div class="row">
+          {% assign all_programs = "system,analyze,compiling,encrypt,decrypt,exploit,browse,scan,command,sniffer,disarm,edit,medic,decompiling,spoof,track,attack,black_hammer,blackout,data_bomb" | split: "," %}
+          {% for program_name in all_programs %}
+            {% assign matching_actions = site.data.matrix.free_actions | concat: site.data.matrix.simple_actions | concat: site.data.matrix.complex_actions | where_exp: "action", "action.program contains program_name" %}
+            {% if matching_actions.size > 0 %}
+            <div class="col-md-4 mb-3">
+              <h5>{{ program_name | replace: "_", " " | capitalize }}</h5>
+              <ul class="list-unstyled">
+                {% for action in matching_actions %}
+                <li class="mb-2">
+                  <i class="bi bi-arrow-right me-2"></i>
+                  {{ action.name | replace: "_", " " }}
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
       <div class="modal-footer">
         <!--
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
