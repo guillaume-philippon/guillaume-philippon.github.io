@@ -24,8 +24,8 @@ function deleteCookie(name) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  // Sélectionner tous les éléments de programme dans la liste
-  const programItems = document.querySelectorAll('#matrix-programs .list-group-item, #matrix-programs .py-1');
+  // Sélectionner uniquement les éléments de programme individuels (pas les titres de groupe)
+  const programItems = document.querySelectorAll('#matrix-programs .list-group-item > .list-group-item, #matrix-programs .ps-4 > .py-1');
   
   // Si aucun programme n'est trouvé, quitter
   if (programItems.length === 0) return;
