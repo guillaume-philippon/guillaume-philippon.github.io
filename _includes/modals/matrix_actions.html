@@ -558,9 +558,21 @@
       </div>
       <div class="modal-body">
         <h3>Actions par Programme</h3>
+        {% if page.matrix and page.matrix.programs %}
         <div class="row">
           {% assign all_programs = "system,analyze,compiling,encrypt,decrypt,exploit,browse,scan,command,sniffer,disarm,edit,medic,decompiling,spoof,track,attack,black_hammer,blackout,data_bomb" | split: "," %}
           {% for program_name in all_programs %}
+            {% assign character_has_program = false %}
+            {% for program_group in page.matrix.programs %}
+              {% assign programs = program_group[1] %}
+              {% for program in programs %}
+                {% if program[0] == program_name and program[1].rating > 0 %}
+                  {% assign character_has_program = true %}
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+            
+            {% if character_has_program %}
             {% assign matching_actions = site.data.matrix.free_actions | concat: site.data.matrix.simple_actions | concat: site.data.matrix.complex_actions | where_exp: "action", "action.program contains program_name" %}
             {% if matching_actions.size > 0 %}
             <div class="col-md-4 mb-3">
@@ -575,8 +587,12 @@
               </ul>
             </div>
             {% endif %}
+            {% endif %}
           {% endfor %}
         </div>
+        {% else %}
+        <p class="text-muted">Aucun programme trouvé pour ce personnage.</p>
+        {% endif %}
       </div>
       <div class="modal-footer">
         <!--
