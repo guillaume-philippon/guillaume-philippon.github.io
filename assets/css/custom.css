@@ -37,7 +37,7 @@ body {
 }
 
 /* Design Thématique Shadowrun - Header très compact */
-.card-header, .card-header.bg-success, .card-header.bg-danger {
+.card-header {
   background: linear-gradient(145deg, #1a1a1a 0%, #2d2d2d 100%) !important;
   border: none;
   box-shadow: none;
@@ -100,23 +100,6 @@ body {
   border-radius: 0 0 8px 8px;
 }
 
-/* Style pour les cartes internes (Magie, Edge, etc.) */
-.card.bg-primary-subtle, 
-.card.bg-success-subtle, 
-.card.bg-danger-subtle {
-  background-color: #3a3a3a !important;
-  border: 1px solid #555;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  color: #e0e0e0;
-}
-
-.card.bg-primary-subtle .card-body, 
-.card.bg-success-subtle .card-body, 
-.card.bg-danger-subtle .card-body {
-  padding: 0.5rem;
-  background-color: #2e2e2e;
-}
-
 /* Style pour les titres de section */
 .card-body h3 {
   color: #ffcc00;
@@ -143,74 +126,6 @@ body {
   background-color: #ffcc00;
   color: #000;
   font-weight: 600;
-}
-
-/* Surcharge des couleurs Bootstrap pour harmoniser avec le thème sombre */
-.bg-primary, .bg-success, .bg-danger {
-  background-color: #3a3a3a !important;
-  color: #e0e0e0 !important;
-  border: 1px solid #555 !important;
-}
-
-/* Style pour les en-têtes de section avec couleur thématique */
-.bg-primary, .bg-success, .bg-danger {
-  background: linear-gradient(145deg, #252525 0%, #3a3a3a 100%) !important;
-  border: 1px solid #ffcc00 !important;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
-}
-
-/* Style spécifique pour les cartes subtiles */
-.bg-primary-subtle, .bg-success-subtle, .bg-danger-subtle {
-  background-color: #3a3a3a !important;
-  border: 1px solid #555 !important;
-  color: #e0e0e0 !important;
-}
-
-/* Style pour les en-têtes de section (Dégats, Armure, Initiative, etc.) */
-.col-12.text-center.rounded.bg-primary,
-.col-12.text-center.rounded.bg-success,
-.col-12.text-center.rounded.bg-danger {
-  background: linear-gradient(145deg, #252525 0%, #3a3a3a 100%) !important;
-  border: 1px solid #ffcc00 !important;
-  color: #ffcc00 !important;
-  font-weight: 600 !important;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
-  padding: 0.5rem !important;
-  margin: 0.5rem 0 !important;
-}
-
-/* Style pour les titres de section dans les includes */
-.col-12.text-center.bg-primary rounded strong,
-.col-12.text-center.bg-success rounded strong,
-.col-12.text-center.bg-danger rounded strong {
-  color: #ffcc00 !important;
-  font-weight: 600 !important;
-}
-
-/* Style pour l'en-tête des compétences */
-.col-12.border.bg-primary.text-center,
-.col-12.border.bg-success.text-center,
-.col-12.border.bg-danger.text-center {
-  background: linear-gradient(145deg, #252525 0%, #3a3a3a 100%) !important;
-  border: 1px solid #ffcc00 !important;
-  color: #ffcc00 !important;
-  font-weight: 600 !important;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important;
-  padding: 0.5rem !important;
-  margin: 0.5rem 0 !important;
-}
-
-/* Style pour les boutons */
-.btn-primary, .btn-success, .btn-danger {
-  background-color: #ffcc00;
-  border-color: #e6b800;
-  color: #000;
-  font-weight: 600;
-}
-
-.btn-primary:hover, .btn-success:hover, .btn-danger:hover {
-  background-color: #e6b800;
-  border-color: #cc9900;
 }
 
 /* Style pour les infos de l'image */
