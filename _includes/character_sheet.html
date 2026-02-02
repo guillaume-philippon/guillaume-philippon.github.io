@@ -15,7 +15,7 @@
           <ul class="nav nav-tabs" id="panelTabs" role="tablist">
             {% if page.cyberware %}
             <li class="nav-item" role="presentation">
-              <button class="nav-link active" id="cyberware-tab" data-bs-toggle="tab" data-bs-target="#cyberware" type="button" role="tab" title="Cyberware"><i class="fa-solid fa-microchip"></i></button>
+              <button class="nav-link active" id="cyberware-tab" data-bs-toggle="tab" data-bs-target="#cyberware" type="button" role="tab" title="Cyberware"><i class="fa-solid fa-robot"></i></button>
             </li>
             {% endif %}
             {% if page.powers %}
@@ -26,6 +26,11 @@
             {% if page.qualities %}
             <li class="nav-item" role="presentation">
               <button class="nav-link" id="qualities-tab" data-bs-toggle="tab" data-bs-target="#qualities" type="button" role="tab" title="Qualités"><i class="fas fa-angles-up"></i></button>
+            </li>
+            {% endif %}
+            {% if page.matrix.commlink %}
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="commlink-tab" data-bs-toggle="tab" data-bs-target="#commlink" type="button" role="tab" title="Commlink"><i class="fa-solid fa-microchip"></i></button>
             </li>
             {% endif %}
             <li class="nav-item" role="presentation">
@@ -94,6 +99,11 @@
               <p>Aucune qualité</p>
             {% endif %}
           </div>
+          {% if page.matrix.commlink %}
+          <div class="tab-pane fade" id="commlink" role="tabpanel">
+{% include matrix.html %}
+          </div>
+          {% endif %}
           <div class="tab-pane fade" id="gear" role="tabpanel">
             {% assign gear_cost = 0 %}
             {% for group in page.gear %}
@@ -235,11 +245,6 @@
       
       <!-- Section Skills -->
 {% include skills.html %}
-
-      <!-- Section Matrice -->
-      {% if page.matrix %}
-{% include programs.html %}
-      {% endif %}
 
       <!-- Différents Modals -->
 {% include condition_modal.html %}

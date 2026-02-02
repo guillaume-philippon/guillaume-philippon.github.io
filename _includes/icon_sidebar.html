@@ -2,7 +2,7 @@
   <div class="icon-sidebar">
     {% if page.cyberware %}
     <div class="icon-wrapper" data-bs-toggle="offcanvas" data-bs-target="#floatingPanel" title="Cyberware" data-tab="cyberware">
-      <i class="fa-solid fa-microchip"></i>
+      <i class="fa-solid fa-robot"></i>
       <span class="badge">{{ page.cyberware | size }}</span>
     </div>
     {% endif %}
@@ -18,6 +18,13 @@
     <div class="icon-wrapper" data-bs-toggle="offcanvas" data-bs-target="#floatingPanel" title="Qualités" data-tab="qualities">
       <i class="fas fa-angles-up"></i>
       <span class="badge">{{ page.qualities | size }}</span>
+    </div>
+    {% endif %}
+    
+    {% if page.matrix.commlink %}
+    <div class="icon-wrapper" data-bs-toggle="offcanvas" data-bs-target="#floatingPanel" title="Commlink" data-tab="commlink">
+      <i class="fa-solid fa-microchip"></i>
+      <span class="badge">1</span>
     </div>
     {% endif %}
     
