@@ -138,7 +138,7 @@ social:
     instruction:
       attribute: charisma
       default: yes
-    inimidation:
+    intimidation:
       attribute: charisma
       default: yes
   influence:

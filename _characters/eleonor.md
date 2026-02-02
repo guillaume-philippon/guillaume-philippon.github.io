@@ -75,13 +75,25 @@ skills:
         pistols: 4
         automatics: 4
         longarms: 4
+      close_combat:
+        blades: 4
+        clubs: 4
+        unarmed_combat: 4
       ungrouped:
         dodge: 5
+    social:
+      ungrouped:
+        intimidation: 5
+      influence:
+        con: 4
+        etiquette: 4
+        leadership: 4
+        negociation: 4
 contacts:
   - contact: big-jim
     loyalty: 3
   - contact: doc-harper
-    loyalty: 4
+    loyalty: 3
 matrix:
   commlink:
     name: Disposable Commlink
@@ -143,6 +155,14 @@ cyberware:
     price: 2000
 gear:
   weapons:
+    - name: Hand Razors (Retractable)
+      type:
+        - melee
+      damage:
+        description: (Str./2 +2)P
+        base:
+          melee: 2
+      price: 900
     - name: Ares Crusader
       type:
         - range
@@ -173,4 +193,14 @@ gear:
       impact: 6
       price: 900
       availability: 2
+  vehicule:
+    - name: Thundercloud Contrail
+      handling: 1
+      accel: 20/40
+      speed: 180
+      pilot: 1
+      body: 6
+      armor: 4
+      sensor: 1
+      price: 5000
 ---

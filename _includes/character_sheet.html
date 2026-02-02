@@ -36,6 +36,11 @@
             <li class="nav-item" role="presentation">
               <button class="nav-link" id="gear-tab" data-bs-toggle="tab" data-bs-target="#gear" type="button" role="tab" title="Équipement"><i class="fa-solid fa-briefcase"></i></button>
             </li>
+            {% if page.vehicule %}
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="vehicles-tab" data-bs-toggle="tab" data-bs-target="#vehicles" type="button" role="tab" title="Véhicules"><i class="fa-solid fa-car"></i></button>
+            </li>
+            {% endif %}
           </ul>
         </div>
         <div class="tab-content" id="panelTabsContent">
@@ -133,6 +138,43 @@
               {% endfor %}
             </ul>
           </div>
+          {% if page.vehicule %}
+          <div class="tab-pane fade" id="vehicles" role="tabpanel">
+            <h5>Véhicules</h5>
+            <div class="table-responsive">
+              <table class="table table-sm table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">Nom</th>
+                    <th class="text-center">Conduite</th>
+                    <th class="text-center">Accélération</th>
+                    <th class="text-center">Vitesse</th>
+                    <th class="text-center">Pilote</th>
+                    <th class="text-center">Corps</th>
+                    <th class="text-center">Armure</th>
+                    <th class="text-center">Capteurs</th>
+                    <th class="text-center">Prix</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for vehicle in page.vehicule %}
+                  <tr>
+                    <td>{{ vehicle.name }}</td>
+                    <td class="text-center">{{ vehicle.handling }}</td>
+                    <td class="text-center">{{ vehicle.accel }}</td>
+                    <td class="text-center">{{ vehicle.speed }}</td>
+                    <td class="text-center">{{ vehicle.pilot }}</td>
+                    <td class="text-center">{{ vehicle.body }}</td>
+                    <td class="text-center">{{ vehicle.armor }}</td>
+                    <td class="text-center">{{ vehicle.sensor }}</td>
+                    <td class="text-center">{{ vehicle.price }}¥</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          {% endif %}
         </div>
       </div>
     </div>
