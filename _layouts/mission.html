@@ -39,20 +39,38 @@ layout: default
         {% for runner in page.runners %}
           {% if runner.present %}
           {% assign full_name = runner.name | capitalize %}
+          {% assign picture = "/assets/images/contacts/placeholder.jpg" %}
+          {% assign url = "" %}
           {% for character in site.characters %}
             {% if character.key == runner.name %}
               {% assign full_name = character.full_name %}
+              {% assign picture = character.infos.picture %}
+              {% assign url = character.url %}
+              {% break %}
             {% endif %}
           {% endfor %}
-          <div class="col-md-4 mb-3">
-            <div class="card runner-card h-100">
+          <div class="col-md-3 mb-3">
+            <div class="card h-100">
               <div class="card-body">
-                <h5 class="card-title">{{ full_name }}</h5>
-                <p class="card-text">{{ runner.role }}</p>
+                <div class="row">
+                  <div class="col-8">
+                    {% if url != "" %}
+                    <a  href="{{ url }}">
+                    {% endif %}
+                      <h5 class="card-title">{{ full_name }}</h5>
+                    {% if url != "" %}
+                    </a>
+                    {% endif %}
+                  </div>
+                  <div class="col-4">
+                    <img src="{{ picture }}" alt="{{ full_name }}" class="rounded-circle me-2" 
+                        style="width: 40px; height: 40px; object-fit: cover; cursor: pointer;">
+                  </div>
+                </div>
                 <div class="d-flex justify-content-between">
-                  <span class="badge bg-warning text-dark">Karma: {{ runner.karma }}</span>
+                  <span class="badge bg-warning text-dark mt-3">Karma: {{ runner.karma }}</span>
                   {% if runner.bonus %}
-                    <span class="badge bg-success">Bonus: +{{ runner.bonus }}</span>
+                    <span class="badge bg-success mt-3">Bonus: +{{ runner.bonus }}</span>
                   {% endif %}
                 </div>
               </div>
