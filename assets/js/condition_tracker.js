@@ -24,12 +24,12 @@ function setCookie(name, value, days = 7) {
 // Update condition displays
 function updateConditionDisplays() {
   const characterKey = document.getElementById('character-key').value;
-  const maxPhysical = parseInt(document.getElementById('base-physical-condition').value || '0');
-  const maxMental = parseInt(document.getElementById('base-mental-condition').value || '0');
-  const maxMatrix = parseInt(document.getElementById('base-matrix-condition')?.value || '0');
-  const maxPhysicalWound = parseInt(document.getElementById('max-physical-wound')?.value || '3');
-  const maxMentalWound = parseInt(document.getElementById('max-mental-wound')?.value || '3');
-  const maxMatrixWound = parseInt(document.getElementById('max-matrix-wound')?.value || '3');
+  const maxPhysical = parseInt(document.getElementById('base-physical-condition').value || 0);
+  const maxMental = parseInt(document.getElementById('base-mental-condition').value || 0);
+  const maxMatrix = parseInt(document.getElementById('base-matrix-condition')?.value || 0);
+  const maxPhysicalWound = parseInt(document.getElementById('max-physical-wound')?.value || 3);
+  const maxMentalWound = parseInt(document.getElementById('max-mental-wound')?.value || 3);
+  const maxMatrixWound = parseInt(document.getElementById('max-matrix-wound')?.value || 3);
   
   // Get current values from cookies (or 0 if no cookie)
   let physicalDamage = getCookie(`${characterKey}_physical_damage`);
@@ -91,8 +91,8 @@ function updateConditionDisplays() {
 function addPhysicalDamage() {
   const characterKey = document.getElementById('character-key').value;
   const maxDamage = parseInt(document.getElementById('base-physical-condition').value);
-  let damage = parseInt(getCookie(`${characterKey}_physical_damage`) || '0');
-  
+  let damage = parseInt(getCookie(`${characterKey}_physical_damage`) || 0);
+  console.log(`Add dmg ${getCookie(`${characterKey}_physical_damage`)}`);
   if (damage < maxDamage) {
     damage++;
     setCookie(`${characterKey}_physical_damage`, damage);
@@ -103,7 +103,7 @@ function addPhysicalDamage() {
 function addMentalDamage() {
   const characterKey = document.getElementById('character-key').value;
   const maxDamage = parseInt(document.getElementById('base-mental-condition').value);
-  let damage = parseInt(getCookie(`${characterKey}_mental_damage`) || '0');
+  let damage = parseInt(getCookie(`${characterKey}_mental_damage`) || 0);
   
   if (damage < maxDamage) {
     damage++;
@@ -115,7 +115,7 @@ function addMentalDamage() {
 // Remove damage functions
 function removePhysicalDamage() {
   const characterKey = document.getElementById('character-key').value;
-  let damage = parseInt(getCookie(`${characterKey}_physical_damage`) || '0');
+  let damage = parseInt(getCookie(`${characterKey}_physical_damage`) || 0);
   
   if (damage > 0) {
     damage--;
@@ -126,7 +126,7 @@ function removePhysicalDamage() {
 
 function removeMentalDamage() {
   const characterKey = document.getElementById('character-key').value;
-  let damage = parseInt(getCookie(`${characterKey}_mental_damage`) || '0');
+  let damage = parseInt(getCookie(`${characterKey}_mental_damage`) || 0);
   
   if (damage > 0) {
     damage--;
@@ -138,13 +138,13 @@ function removeMentalDamage() {
 // Reset functions
 function resetPhysicalDamage() {
   const characterKey = document.getElementById('character-key').value;
-  setCookie(`${characterKey}_physical_damage`, '0');
+  setCookie(`${characterKey}_physical_damage`, 0);
   updateConditionDisplays();
 }
 
 function resetMentalDamage() {
   const characterKey = document.getElementById('character-key').value;
-  setCookie(`${characterKey}_mental_damage`, '0');
+  setCookie(`${characterKey}_mental_damage`, 0);
   updateConditionDisplays();
 }
 
@@ -152,8 +152,8 @@ function resetMentalDamage() {
 function addMatrixDamage() {
   const characterKey = document.getElementById('character-key').value;
   // Use base-matrix-condition for the maximum value
-  const maxDamage = parseInt(document.getElementById('base-matrix-condition')?.value || '0');
-  let damage = parseInt(getCookie(`${characterKey}_matrix_damage`) || '0');
+  const maxDamage = parseInt(document.getElementById('base-matrix-condition')?.value || 0);
+  let damage = parseInt(getCookie(`${characterKey}_matrix_damage`) || 0);
   
   // Only allow incrementing if we haven't reached max
   if (damage < maxDamage) {
@@ -165,7 +165,7 @@ function addMatrixDamage() {
 
 function removeMatrixDamage() {
   const characterKey = document.getElementById('character-key').value;
-  let damage = parseInt(getCookie(`${characterKey}_matrix_damage`) || '0');
+  let damage = parseInt(getCookie(`${characterKey}_matrix_damage`) || 0);
   
   if (damage > 0) {
     damage--;
@@ -176,16 +176,16 @@ function removeMatrixDamage() {
 
 function resetMatrixDamage() {
   const characterKey = document.getElementById('character-key').value;
-  setCookie(`${characterKey}_matrix_damage`, '0');
+  setCookie(`${characterKey}_matrix_damage`, 0);
   updateConditionDisplays();
 }
 
 // Force reset all counters to zero (for new sessions)
 function resetAllConditions() {
   const characterKey = document.getElementById('character-key').value;
-  setCookie(`${characterKey}_physical_damage`, '0');
-  setCookie(`${characterKey}_mental_damage`, '0');
-  setCookie(`${characterKey}_matrix_damage`, '0');
+  setCookie(`${characterKey}_physical_damage`, 0);
+  setCookie(`${characterKey}_mental_damage`, 0);
+  setCookie(`${characterKey}_matrix_damage`, 0);
   updateConditionDisplays();
   console.log(`All conditions reset to zero for ${characterKey}`);
 }

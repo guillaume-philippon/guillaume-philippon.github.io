@@ -168,11 +168,6 @@ contacts:
     loyalty: 2
   - contact: chaman-ixchel
     loyalty: 5
-condition:
-  physical:
-    modifier: 0
-  mental:
-    modifier: 0
 wound:
   physic: 3
   mental: 3
