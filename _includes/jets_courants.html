@@ -55,11 +55,8 @@
         <h3 class="mt-3">Attaque</h3>
         <ul class="list-group list-group-flush">
           <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
-            <ul class="list-unstyled col-12">
-              <li class="py-1 d-flex justify-content-between align-items-center">
             <strong>Distance</strong>
-            <span><strong>{{ agility_total | plus: range_attack }}</strong> <small>(Agility + Skill)</small></span></li>
-            </ul>
+            <span><strong>{{ agility_total | plus: range_attack }}</strong> <small>(Agility + Skill)</small></span>
           </li>
           <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
             <strong>Mélée</strong>
@@ -79,30 +76,26 @@
           {% endif %}
         </ul>
       </div>
+    </div>
 
-
-    
-    <!-- Défense -->
-    <div class="col-12 mb-2">
-      <h3 class="mt-3">Défense</h3>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
-          <ul class="list-unstyled col-12">
-            <li class="py-1 d-flex justify-content-between align-items-center">
-          <strong>Distance</strong>
-          <span><strong>{{ reaction_total }}</strong> <small>(Reaction)</small></span></li>
-          </ul>
-        </li>
-        <li class="list-group-item my-1 d-flex justify-content-between align-items-center">
-          <strong>Mélée</strong>
-          <span><strong>{{ reaction_total | plus: melee_defense }}</strong> <small>(Reaction + Skill)</small></span>
-        </li>
-        {% if page.matrix %}
-          <li class="list-group-item my-1 d-flex justify-content-between align-items-center">
+        <!-- Défense -->
+      <div class="col-12 mb-2">
+        <h3 class="mt-3">Défense</h3>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
+            <strong>Distance</strong>
+            <span><strong>{{ reaction_total }}</strong> <small>(Reaction)</small></span>
+          </li>
+          <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
+            <strong>Mélée</strong>
+            <span><strong>{{ reaction_total | plus: melee_defense }}</strong> <small>(Reaction + Skill)</small></span>
+          </li>
+          {% if page.matrix %}
+          <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
             <strong>Matrice</strong>
             <span><strong>{{ page.matrix.commlink.response | plus: page.matrix.commlink.firewall }}</strong> <small>(Response + Firewall)</small></span>
           </li>
-        {% endif %}
-      </ul>
-    </div>
-  </div>
+          {% endif %}
+        </ul>
+      </div>
+    
