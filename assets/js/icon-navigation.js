@@ -54,5 +54,35 @@ document.addEventListener('DOMContentLoaded', function() {
         activeIcon.removeAttribute('data-target-tab');
       }
     });
+    
+    // Gérer la fermeture du volet glissant pour supprimer l'ombre résiduelle
+    offcanvasElement.addEventListener('hidden.bs.offcanvas', function() {
+      // Supprimer le backdrop manuellement si nécessaire
+      const backdrop = document.querySelector('.offcanvas-backdrop');
+      if (backdrop) {
+        backdrop.remove();
+      }
+      
+      // Supprimer les classes de flou si elles existent
+      const body = document.querySelector('body');
+      if (body) {
+        body.classList.remove('offcanvas-open');
+      }
+    });
+    
+    // Gérer les clics à l'extérieur pour une fermeture propre
+    document.addEventListener('click', function(e) {
+      // Vérifier si le clic est à l'extérieur du volet glissant
+      if (offcanvasElement.classList.contains('show') && 
+          !offcanvasElement.contains(e.target) && 
+          !e.target.closest('.sidebar-toggle')) {
+        
+        // Fermer le volet glissant via Bootstrap
+        const bootstrapOffcanvas = bootstrap.Offcanvas.getInstance(offcanvasElement);
+        if (bootstrapOffcanvas) {
+          bootstrapOffcanvas.hide();
+        }
+      }
+    });
   }
 });
