@@ -11,7 +11,7 @@
       </div>
       <div class="modal-body">
         <div class="row">
-          <div class="col-md-6">
+          <div class="">
             <div class="text-center mb-4">
               <h5>Edge Disponible</h5>
               <div class="display-4" id="current-edge-value">{{ page.edge.base }}</div>
@@ -19,13 +19,19 @@
                 <span class="badge bg-warning">Max: <span id="max-edge-value">{{ page.edge.base }}</span></span>
               </div>
               <div class="d-grid gap-2 mb-4">
-                <button class="btn btn-danger" id="spend-edge-button">-1 Edge</button>
-                <button class="btn btn-success" id="restore-edge-button">+1 Edge</button>
+                <div class="row">
+                  <div class="col-6 d-grid">
+                    <button class="btn btn-danger" id="spend-edge-button">-1 Edge</button>
+                  </div>
+                  <div class="col-6 d-grid">
+                    <button class="btn btn-success" id="restore-edge-button">+1 Edge</button>
+                  </div>
+                </div>
                 <button class="btn btn-warning" id="reset-edge-button">Réinitialiser</button>
               </div>
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="">
             <div class="edge-rules">
               <h5 class="mb-3">Règles d'utilisation de l'Edge</h5>
               <ul class="edge-rule-list">
