@@ -21,7 +21,7 @@ function updateConditionDisplays() {
   const characterKey = document.getElementById('character-key').value;
   const maxPhysical = parseInt(document.getElementById('base-physical-condition').value);
   const maxMental = parseInt(document.getElementById('base-mental-condition').value);
-  const maxMatrix = parseInt(document.getElementById('matrix-condition')?.value || '0');
+  const maxMatrix = parseInt(document.getElementById('base-matrix-condition')?.value || '0');
   const maxPhysicalWound = parseInt(document.getElementById('max-physical-wound')?.value || '3');
   const maxMentalWound = parseInt(document.getElementById('max-mental-wound')?.value || '3');
   const maxMatrixWound = parseInt(document.getElementById('max-matrix-wound')?.value || '3');
