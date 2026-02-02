@@ -5,7 +5,11 @@
 function getCookie(name) {
   const value = `; ${document.cookie}`;
   const parts = value.split(`; ${name}=`);
-  if (parts.length === 2) return parts.pop().split(';').shift();
+  if (parts.length === 2) {
+    const cookieValue = parts.pop().split(';').shift();
+    // Return the cookie value if it's a valid number, otherwise return '0'
+    return !isNaN(parseInt(cookieValue)) ? cookieValue : '0';
+  }
   return '0';
 }
 
@@ -19,8 +23,8 @@ function setCookie(name, value, days = 7) {
 // Update condition displays
 function updateConditionDisplays() {
   const characterKey = document.getElementById('character-key').value;
-  const maxPhysical = parseInt(document.getElementById('base-physical-condition').value);
-  const maxMental = parseInt(document.getElementById('base-mental-condition').value);
+  const maxPhysical = parseInt(document.getElementById('base-physical-condition').value || '0');
+  const maxMental = parseInt(document.getElementById('base-mental-condition').value || '0');
   const maxMatrix = parseInt(document.getElementById('base-matrix-condition')?.value || '0');
   const maxPhysicalWound = parseInt(document.getElementById('max-physical-wound')?.value || '3');
   const maxMentalWound = parseInt(document.getElementById('max-mental-wound')?.value || '3');
@@ -31,7 +35,13 @@ function updateConditionDisplays() {
   let mentalDamage = parseInt(getCookie(`${characterKey}_mental_damage`) || '0');
   let matrixDamage = parseInt(getCookie(`${characterKey}_matrix_damage`) || '0');
   
+  // Ensure values are valid numbers (not NaN)
+  physicalDamage = isNaN(physicalDamage) ? 0 : physicalDamage;
+  mentalDamage = isNaN(mentalDamage) ? 0 : mentalDamage;
+  matrixDamage = isNaN(matrixDamage) ? 0 : matrixDamage;
+  
   console.log(`Initializing condition tracker for ${characterKey}: Physical=${physicalDamage}, Mental=${mentalDamage}, Matrix=${matrixDamage}`);
+  console.log(`Max values: Physical=${maxPhysical}, Mental=${maxMental}, Matrix=${maxMatrix}`);
   
   // Calculate wounds (number of wound boxes filled)
   const physicalWounds = maxPhysicalWound > 0 ? Math.floor(physicalDamage / maxPhysicalWound) : 0;
