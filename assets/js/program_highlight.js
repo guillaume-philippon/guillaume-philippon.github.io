@@ -5,6 +5,24 @@
  * en ajoutant/supprimant une classe CSS.
  */
 
+// Fonctions pour gérer les cookies
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+}
+
+function setCookie(name, value, days) {
+  const date = new Date();
+  date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+  const expires = `expires=${date.toUTCString()}`;
+  document.cookie = `${name}=${JSON.stringify(value)};${expires};path=/`;
+}
+
+function deleteCookie(name) {
+  document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;`;
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   // Sélectionner tous les éléments de programme dans la liste
   const programItems = document.querySelectorAll('#matrix-programs .list-group-item, #matrix-programs .py-1');
@@ -21,9 +39,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // Basculer la classe de surbrillance
         this.classList.toggle('program-highlight');
         
-        // Stocker l'état dans localStorage pour persistance
+        // Stocker l'état dans un cookie pour persistance
         const programName = programSpan.textContent.trim();
-        const highlightedPrograms = JSON.parse(localStorage.getItem('highlightedPrograms') || '[]');
+        const highlightedPrograms = JSON.parse(getCookie('highlightedPrograms') || '[]');
         
         if (this.classList.contains('program-highlight')) {
           // Ajouter à la liste si pas déjà présent
@@ -38,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
           }
         }
         
-        localStorage.setItem('highlightedPrograms', JSON.stringify(highlightedPrograms));
+        setCookie('highlightedPrograms', highlightedPrograms, 30);
         
         // Mettre à jour la visibilité du bouton
         updateClearButtonVisibility();
@@ -55,8 +73,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
   
-  // Charger les programmes mis en surbrillance depuis localStorage
-  const highlightedPrograms = JSON.parse(localStorage.getItem('highlightedPrograms') || '[]');
+  // Charger les programmes mis en surbrillance depuis le cookie
+  const highlightedPrograms = JSON.parse(getCookie('highlightedPrograms') || '[]');
   
   if (highlightedPrograms.length > 0) {
     programItems.forEach((item) => {
@@ -83,8 +101,8 @@ document.addEventListener('DOMContentLoaded', function() {
       item.classList.remove('program-highlight');
     });
     
-    // Effacer le localStorage
-    localStorage.removeItem('highlightedPrograms');
+    // Effacer le cookie
+    deleteCookie('highlightedPrograms');
     
     // Masquer le bouton
     clearButton.style.display = 'none';
