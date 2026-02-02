@@ -767,3 +767,82 @@ footer {
 .edge-card:hover, .physical-card:hover, .mental-card:hover, .matrix-card:hover {
   animation: pulse 0.5s ease;
 }
+
+/* Style spécifique pour le modal Edge */
+#edge .modal-content {
+  background: linear-gradient(135deg, #111111 0%, #222222 100%);
+  border: 2px solid #ffcc00;
+}
+
+#edge .modal-header {
+  background: linear-gradient(145deg, #1a1a1a 0%, #2d2d2d 100%);
+  border-bottom: 1px solid rgba(255, 204, 0, 0.3);
+}
+
+#edge .edge-rules {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 1rem;
+  border: 1px solid rgba(255, 204, 0, 0.2);
+}
+
+#edge .edge-rule-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#edge .edge-rule-list li {
+  color: #e0e0e0;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+#edge .edge-rule-list li:before {
+  content: "•";
+  color: #ffcc00;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+/* Style pour les boutons Edge */
+#edge .btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  font-weight: 600;
+}
+
+#edge .btn-danger:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
+}
+
+#edge .btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+  font-weight: 600;
+}
+
+#edge .btn-success:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
+}
+
+#edge .btn-warning {
+  background-color: #ffc107;
+  border-color: #ffc107;
+  color: #212529;
+  font-weight: 600;
+}
+
+#edge .btn-warning:hover {
+  background-color: #e0a800;
+  border-color: #d39e00;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(255, 193, 7, 0.3);
+}

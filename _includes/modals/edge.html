@@ -1,55 +1,161 @@
-<!-- Modal -->
+<!-- Edge Management Modal -->
+<input type="hidden" id="character-key" value="{{ page.key }}">
+<input type="hidden" id="base-edge-value" value="{{ page.edge.base }}">
+
 <div class="modal fade" id="edge" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="edgeLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Dépenser l'Edge</h1>
+        <h1 class="modal-title fs-5" id="edgeLabel">Gestion de l'Edge</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <ul>
-            <li>
-            Vous pouvez déclarer l'utilisation de l'Edge avant de lancer les dés pour un test (ou un intervalle
-            de test étendu). Vous pouvez ajouter un nombre de dés supplémentaires égal à votre
-            attribut Edge complet au pool de dés. Tous les dés (pas seulement les dés Edge) lancés lors de ce
-            test sont soumis à la Règle des Six (p. 62), ce qui signifie que si vous lancez un 6, vous le comptez
-            comme un succès et vous le relancez.
-            </li>
-            <li>
-            Vous pouvez déclarer l'utilisation de l'Edge après avoir lancé les dés pour un test. Dans ce cas,
-            vous pouvez lancer un nombre de dés supplémentaires égal à votre attribut Edge complet et ajouter
-            their hits to the test’s total. The Rule of Six (p. 62), however, applies only to the
-            dés Edge supplémentaires lancés, et non au pool de dés original.
-            </li>
-            <li>
-            Vous pouvez relancer tous les dés d'un test unique qui n'a pas obtenu de succès.
-            </li>
-            <li>
-            Vous pouvez effectuer un test de Coup de Chance (p. 61) même si votre pool de dés a été réduit à 0
-            ou moins ; lancez uniquement vos dés Edge pour ce test (la Règle des Six ne s'applique pas).
-            </li>
-            <li>
-            Vous pouvez passer en premier lors d'une Passe d'Initiative, indépendamment de votre Score d'Initiative (voir
-            Initiative et Edge, p. 145). Si plusieurs personnages dépensent de l'Edge pour passer en premier lors de la
-            même passe, ces personnages passent dans l'ordre selon leurs Scores d'Initiative en premier,
-            puis tout le monde passe selon leurs Scores d'Initiative.
-            </li>
-            <li>
-            Vous pouvez obtenir 1 Passe d'Initiative supplémentaire pour ce Tour de Combat uniquement (voir Initiative
-            et Edge, p. 145).
-            </li>
-            <li>
-            Vous pouvez annuler les effets d'un raté ou d'un raté critique.
-            </li>
-            <li>Vous pouvez invoquer la règle du déclencheur du Mort (p. 163).</li>
-        </ul>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="text-center mb-4">
+              <h5>Edge Disponible</h5>
+              <div class="display-4" id="current-edge-value">{{ page.edge.base }}</div>
+              <div class="mb-3">
+                <span class="badge bg-warning">Max: <span id="max-edge-value">{{ page.edge.base }}</span></span>
+              </div>
+              <div class="d-grid gap-2 mb-4">
+                <button class="btn btn-danger" id="spend-edge-button">-1 Edge</button>
+                <button class="btn btn-success" id="restore-edge-button">+1 Edge</button>
+                <button class="btn btn-warning" id="reset-edge-button">Réinitialiser</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="edge-rules">
+              <h5 class="mb-3">Règles d'utilisation de l'Edge</h5>
+              <ul class="edge-rule-list">
+                <li>
+                  Vous pouvez déclarer l'utilisation de l'Edge avant de lancer les dés pour un test (ou un intervalle
+                  de test étendu). Vous pouvez ajouter un nombre de dés supplémentaires égal à votre
+                  attribut Edge complet au pool de dés. Tous les dés (pas seulement les dés Edge) lancés lors de ce
+                  test sont soumis à la Règle des Six (p. 62), ce qui signifie que si vous lancez un 6, vous le comptez
+                  comme un succès et vous le relancez.
+                </li>
+                <li>
+                  Vous pouvez déclarer l'utilisation de l'Edge après avoir lancé les dés pour un test. Dans ce cas,
+                  vous pouvez lancer un nombre de dés supplémentaires égal à votre attribut Edge complet et ajouter
+                  their hits to the test’s total. The Rule of Six (p. 62), however, applies only to the
+                  dés Edge supplémentaires lancés, et non au pool de dés original.
+                </li>
+                <li>
+                  Vous pouvez relancer tous les dés d'un test unique qui n'a pas obtenu de succès.
+                </li>
+                <li>
+                  Vous pouvez effectuer un test de Coup de Chance (p. 61) même si votre pool de dés a été réduit à 0
+                  ou moins ; lancez uniquement vos dés Edge pour ce test (la Règle des Six ne s'applique pas).
+                </li>
+                <li>
+                  Vous pouvez passer en premier lors d'une Passe d'Initiative, indépendamment de votre Score d'Initiative (voir
+                  Initiative et Edge, p. 145). Si plusieurs personnages dépensent de l'Edge pour passer en premier lors de la
+                  même passe, ces personnages passent dans l'ordre selon leurs Scores d'Initiative en premier,
+                  puis tout le monde passe selon leurs Scores d'Initiative.
+                </li>
+                <li>
+                  Vous pouvez obtenir 1 Passe d'Initiative supplémentaire pour ce Tour de Combat uniquement (voir Initiative
+                  et Edge, p. 145).
+                </li>
+                <li>
+                  Vous pouvez annuler les effets d'un raté ou d'un raté critique.
+                </li>
+                <li>Vous pouvez invoquer la règle du déclencheur du Mort (p. 163).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="modal-footer">
-        <!--
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
-        -->
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
       </div>
     </div>
   </div>
 </div>
+
+<!-- Edge Management Script -->
+<script>
+// Edge Management Functions
+function getEdgeCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) {
+    const cookieValue = parts.pop().split(';').shift();
+    const parsedValue = parseInt(cookieValue);
+    return !isNaN(parsedValue) ? parsedValue : 0;
+  }
+  return 0;
+}
+
+function setEdgeCookie(name, value, days = 7) {
+  const date = new Date();
+  date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+  const expires = `expires=${date.toUTCString()}`;
+  document.cookie = `${name}=${value}; ${expires}; path=/`;
+}
+
+function updateEdgeDisplay() {
+  const characterKey = document.getElementById('character-key').value;
+  const maxEdge = parseInt(document.getElementById('base-edge-value').value);
+  let currentEdge = getEdgeCookie(`${characterKey}_edge`);
+  
+  // Ensure valid value
+  currentEdge = isNaN(currentEdge) ? maxEdge : currentEdge;
+  currentEdge = Math.min(currentEdge, maxEdge); // Don't exceed max
+  
+  // Update displays
+  document.getElementById('current-edge-value').textContent = currentEdge;
+  
+  // Update the main page display if it exists
+  const mainEdgeDisplay = document.querySelector('.edge-card .card-text');
+  if (mainEdgeDisplay) {
+    mainEdgeDisplay.textContent = currentEdge;
+  }
+  
+  console.log(`Edge updated: ${currentEdge}/${maxEdge}`);
+}
+
+function spendEdge() {
+  const characterKey = document.getElementById('character-key').value;
+  let currentEdge = getEdgeCookie(`${characterKey}_edge`);
+  
+  if (currentEdge > 0) {
+    currentEdge--;
+    setEdgeCookie(`${characterKey}_edge`, currentEdge);
+    updateEdgeDisplay();
+  }
+}
+
+function restoreEdge() {
+  const characterKey = document.getElementById('character-key').value;
+  const maxEdge = parseInt(document.getElementById('base-edge-value').value);
+  let currentEdge = getEdgeCookie(`${characterKey}_edge`);
+  
+  if (currentEdge < maxEdge) {
+    currentEdge++;
+    setEdgeCookie(`${characterKey}_edge`, currentEdge);
+    updateEdgeDisplay();
+  }
+}
+
+function resetEdge() {
+  const characterKey = document.getElementById('character-key').value;
+  const maxEdge = parseInt(document.getElementById('base-edge-value').value);
+  
+  setEdgeCookie(`${characterKey}_edge`, maxEdge);
+  updateEdgeDisplay();
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', function() {
+  // Set up button event listeners
+  document.getElementById('spend-edge-button')?.addEventListener('click', spendEdge);
+  document.getElementById('restore-edge-button')?.addEventListener('click', restoreEdge);
+  document.getElementById('reset-edge-button')?.addEventListener('click', resetEdge);
+  
+  // Initialize display
+  updateEdgeDisplay();
+});
+</script>
