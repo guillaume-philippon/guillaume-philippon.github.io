@@ -82,6 +82,14 @@ contacts:
     loyalty: 3
   - contact: doc-harper
     loyalty: 4
+matrix:
+  commlink:
+    name: Disposable Commlink
+    response: 1
+    signal: 3
+    firewall: 2
+    system: 1
+    price: 300
 cyberware:
   - name: Wired Reflex (Alpha)
     type: bodyware

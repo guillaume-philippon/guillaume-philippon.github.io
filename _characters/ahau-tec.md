@@ -121,6 +121,14 @@ powers:
     description: |
       *Power Throw* ajoute un bonus aux jets de lancer (comme Throwing Weapons), augmente la portée des projectiles et peut infliger des dégâts supplémentaires, aujouter
       +2 à la force pour déterminer la distance et les dégats.
+matrix:
+  commlink:
+    name: Disposable Commlink
+    response: 1
+    signal: 3
+    firewall: 2
+    system: 1
+    price: 300
 skills:
   active:
     physical:
