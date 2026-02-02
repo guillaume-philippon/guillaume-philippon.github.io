@@ -7,10 +7,11 @@ function getCookie(name) {
   const parts = value.split(`; ${name}=`);
   if (parts.length === 2) {
     const cookieValue = parts.pop().split(';').shift();
-    // Return the cookie value if it's a valid number, otherwise return '0'
-    return !isNaN(parseInt(cookieValue)) ? cookieValue : '0';
+    // Return the cookie value if it's a valid number, otherwise return 0
+    const parsedValue = parseInt(cookieValue);
+    return !isNaN(parsedValue) ? parsedValue : 0;
   }
-  return '0';
+  return 0;
 }
 
 function setCookie(name, value, days = 7) {
@@ -31,11 +32,11 @@ function updateConditionDisplays() {
   const maxMatrixWound = parseInt(document.getElementById('max-matrix-wound')?.value || '3');
   
   // Get current values from cookies (or 0 if no cookie)
-  let physicalDamage = parseInt(getCookie(`${characterKey}_physical_damage`) || '0');
-  let mentalDamage = parseInt(getCookie(`${characterKey}_mental_damage`) || '0');
-  let matrixDamage = parseInt(getCookie(`${characterKey}_matrix_damage`) || '0');
+  let physicalDamage = getCookie(`${characterKey}_physical_damage`);
+  let mentalDamage = getCookie(`${characterKey}_mental_damage`);
+  let matrixDamage = getCookie(`${characterKey}_matrix_damage`);
   
-  // Ensure values are valid numbers (not NaN)
+  // Ensure values are valid numbers (not NaN) - redundant check but safe
   physicalDamage = isNaN(physicalDamage) ? 0 : physicalDamage;
   mentalDamage = isNaN(mentalDamage) ? 0 : mentalDamage;
   matrixDamage = isNaN(matrixDamage) ? 0 : matrixDamage;
