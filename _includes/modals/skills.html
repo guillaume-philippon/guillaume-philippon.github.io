@@ -22,11 +22,13 @@
                     {% for skill in group[1] %}
                         {{ page.skills.active[group[1]] }}
                         {% assign character_skill_value = 0 %}
-                        {% for characters_skills_group in page.skills.active %}
-                          {% for characters_skills in characters_skills_group[1] %}
-                            {% if characters_skills[0] == skill[0] %}
-                              {% assign character_skill_value = characters_skills[1].value %}
-                            {% endif %}
+                        {% for characters_skills_category in page.skills.active %}
+                          {% for characters_skills_group in characters_skills_category[1] %}
+                            {% for characters_skills in characters_skills_group[1] %}
+                              {% if characters_skills[0] == skill[0] %}
+                                {% assign character_skill_value = characters_skills[1].value %}
+                              {% endif %}
+                            {% endfor %}
                           {% endfor %}
                         {% endfor %}
                         {% case skill[1].attribute %}
@@ -50,20 +52,13 @@
                             {% assign attribute_value = 0 %}
                         {% endcase %}
                       {% if 0 >= character_skill_value %}
-                        {% if skill[1].default %}
+                        {% assign default_value = attribute_value | minus: 1 %}
+                        {% if skill[1].default and default_value != 0 %}
                           <li class="py-1 d-flex justify-content-between align-items-center">
-                        {% else %}
-                          <li class="py-1 d-flex justify-content-between align-items-center text-body-tertiary text-decoration-line-through">
-                        {% endif %}
                           <span>{{ skill[0] | replace: "_", " " | capitalize }} <small>({{ skill[1].attribute | capitalize }} - 1)</small></span>
                           <span><strong>{{ attribute_value | minus: 1 }}</strong></span>
-                        <!--
-                        <span>
-                          <strong>{{ skill[1].value }}</strong>
-                          <small>({{ skill[1].value | plus: attribute_value }})</small>
-                        </span>
-                        -->
-                      </li>
+                          </li>
+                        {% endif %}
                       {% endif %}
                     {% endfor %}
                   </ul>
@@ -74,10 +69,6 @@
         {% endfor %}
       </div>
       <div class="modal-footer">
-        <!--
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
-        -->
       </div>
     </div>
   </div>

@@ -606,6 +606,12 @@ footer {
   font-weight: 600 !important;
 }
 
+/* Style pour les valeurs de compétences en jaune */
+.skill-value {
+  color: #ffcc00 !important;
+  font-weight: 600 !important;
+}
+
 .program-highlight:before {
   content: '';
   position: absolute;
