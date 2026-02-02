@@ -760,3 +760,95 @@ footer {
     font-size: 0.85rem;
   }
 }
+
+/* Effets hover pour les cartes Edge, Physique, Mentale et Matrix */
+.edge-card, .physical-card, .mental-card, .matrix-card {
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+/* Effet hover pour Edge - Or brillant */
+.edge-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(255, 204, 0, 0.3);
+  border-color: #ffcc00;
+  background: linear-gradient(135deg, #2d2d2d 0%, #404040 100%);
+}
+
+.edge-card:hover .card-title {
+  color: #ffcc00 !important;
+  font-weight: 600;
+}
+
+.edge-card:hover .card-text {
+  color: #ffffff !important;
+  font-weight: 500;
+}
+
+/* Effet hover pour Physique - Rouge énergique */
+.physical-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(255, 50, 50, 0.3);
+  border-color: #ff3232;
+  background: linear-gradient(135deg, #2d2d2d 0%, #404040 100%);
+}
+
+.physical-card:hover .card-title {
+  color: #ff3232 !important;
+  font-weight: 600;
+}
+
+.physical-card:hover .card-text {
+  color: #ffffff !important;
+  font-weight: 500;
+}
+
+/* Effet hover pour Mentale - Bleu électrique */
+.mental-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(50, 150, 255, 0.3);
+  border-color: #3296ff;
+  background: linear-gradient(135deg, #2d2d2d 0%, #404040 100%);
+}
+
+.mental-card:hover .card-title {
+  color: #3296ff !important;
+  font-weight: 600;
+}
+
+.mental-card:hover .card-text {
+  color: #ffffff !important;
+  font-weight: 500;
+}
+
+/* Effet hover pour Matrix - Vert cyber */
+.matrix-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(50, 255, 150, 0.3);
+  border-color: #32ff96;
+  background: linear-gradient(135deg, #2d2d2d 0%, #404040 100%);
+}
+
+.matrix-card:hover .card-title {
+  color: #32ff96 !important;
+  font-weight: 600;
+}
+
+.matrix-card:hover .card-text {
+  color: #ffffff !important;
+  font-weight: 500;
+}
+
+/* Animation de pulse pour attirer l'attention */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.edge-card:hover, .physical-card:hover, .mental-card:hover, .matrix-card:hover {
+  animation: pulse 0.5s ease;
+}
