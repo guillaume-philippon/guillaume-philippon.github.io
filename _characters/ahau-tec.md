@@ -168,6 +168,22 @@ contacts:
     loyalty: 2
   - contact: chaman-ixchel
     loyalty: 5
+condition:
+  physical:
+    modifier: 0
+  mental:
+    modifier: 0
+wound:
+  physic: 3
+  mental: 3
+matrix:
+  commlink:
+    name: Disposable Commlink
+    response: 1
+    signal: 3
+    firewall: 2
+    system: 1
+    price: 300
 gear:
   weapons:
     - name: Tomahawk
