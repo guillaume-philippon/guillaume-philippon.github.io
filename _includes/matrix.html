@@ -29,7 +29,10 @@
                     {% for program in group[1] %}
                       {% if program[1].rating > 0 %}
                         <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
-                          <span>{{ program[0] | replace: "_", " " | capitalize }} ({{ program[1].skill }})</span>
+                          <span>{{ program[0] | replace: "_", " " | capitalize }} 
+                            {% if program[1].skill != None %}
+                            <small>({{ program[1].skill }})</small>
+                            {% endif %}</span>
                           <span><strong>{{ program[1].rating }}</strong></span>
                         </li>
                       {% endif %}
