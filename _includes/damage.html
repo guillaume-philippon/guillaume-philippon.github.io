@@ -5,13 +5,19 @@
             <strong>Mélée</strong>
             <span><strong>{{ strength_total | divided_by: 2.0 | round | plus: melee_damage }}</strong> <small>(Str. /2 + Weapon)</small></span>
           </li>
-          {% if page.matrix %}
+          <!--
+          <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
+            <strong>Distance</strong>
+            <span><strong>{{ range_damage }}</strong> <small>(Weapon)</small></span>
+          </li>
+          -->
+          {% if page.matrix and matrix_attack > 0 %}
           <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
             <strong>Matrice</strong>
             <span><strong>{{ matrix_attack }}</strong> <small>(Programs + Net hits)</small></span>
           </li>
           {% endif %}
-          {% if page.magic %}
+          {% if page.magic and page.magic.type != 'adept' %}
           <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
             <strong>Astral</strong>
             <span><strong>{{ charisma_total | divided_by: 2.0 | round }}</strong> <small>(Char. /2)</small></span>

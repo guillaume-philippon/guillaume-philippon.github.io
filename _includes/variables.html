@@ -53,6 +53,17 @@
 {% endfor %}
 <!-- Valeur de melee_defense: {{ melee_defense }}-->
 
+{% assign melee_damage = 0 %}
+{% for weapon in page.gear.weapons %}
+  {% if weapon.type contains 'melee' %}
+    {% assign weapon_damage = weapon.damage.base.melee | plus:  weapon.damage.modifier.melee %}
+    {% if weapon_damage > melee_damage %}
+      {% assign melee_damage = weapon_damage %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+<!-- Valeur de melee_damage: {{ melee_damage }}-->
+
 {% assign range_attack = 0 %}
 {% for category in page.skills.active %}
   {% for group in category[1] %}
@@ -81,6 +92,17 @@
   {% assign range_attack = range_attack | plus: cyberware.modifier.attack.range %}
 {% endfor %}
 <!-- Valeur de range_attack: {{ range_attack }}-->
+
+{% assign range_damage = 0 %}
+{% for weapon in page.gear.weapons %}
+  {% if weapon.type contains 'range' %}
+    {% assign weapon_damage = weapon.damage.base.range | plus:  weapon.damage.modifier.range %}
+    {% if weapon_damage > range_damage %}
+      {% assign range_damage = weapon_damage %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+<!-- Valeur de range_damage: {{ range_damage }}-->
 
 {% assign melee_attack = 0 %}
 {% for category in page.skills.active %}

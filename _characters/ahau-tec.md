@@ -63,6 +63,7 @@ wound:
   physic: 3
   mental: 3
 magic:
+  type: adept
   base: 6
   modifier: 0
   weapon_focus: 2
@@ -174,13 +175,15 @@ gear:
       price: 150
       reach: 1
       damage:
-        description: (STR/2 + 2)P
-        modifier:
+        description: (Str./2 + 2)P
+        base:
           range: 2
           melee: 2
+        modifier:
+          range: 2
         type: P
       type: 
-        - mele
+        - melee
         - range
       availability: 4
       sourcebook: Runner Companion
@@ -192,23 +195,24 @@ gear:
       availability: 14R
       sourcebook:  Runner Companion
       type: 
-        - mele
+        - melee
       damage:
-        description: (STR/2 + 2)P
-        modifier:
-          range: 4
+        description: (Str./2 + 2)P
+        base:
           melee: 2
         type: P
     - name: Knife
       quantity: 1
       price: 20
       type: 
-        - mele
+        - melee
       damage:
-        description: (STR/2 + 2)P
-        modifier:
-          range: 4
+        description: (Str./2 + 2)P
+        base:
+          range: 2
           melee: 2
+        modifier:
+          range: 2
         type: P
       sourcebook:  20th Anniversary Core Rulebook
       page:

@@ -1,7 +1,7 @@
 {% assign have_melee = false %}
 {% assign have_range = false %}
 {% for weapon in page.gear.weapons %}
-    {% if weapon.type contains 'mele' %}
+    {% if weapon.type contains 'melee' %}
         {% assign have_melee = true %}
     {% endif %}
     {% if weapon.type contains 'range' %}
@@ -26,11 +26,14 @@
         </thead>
         <tbody>
             {% for gear in page.gear.weapons %}
-                {% if gear.type contains 'mele' %}
+                {% if gear.type contains 'melee' %}
                 <tr>
                     <th scope="row" data-bs-toggle="tooltip" data-bs-title="{{gear.sourcebook}} (p. {{gear.page}})">{{ gear.name }}</th>
                     <td class="text-center">{{ gear.reach }}</td>
                     <td class="text-center"><small>{{ gear.damage.description }}
+                    {% if gear.damage.modifier.melee %}
+                            (+{{ gear.damage.modifier.melee }})
+                    {% endif %}
                     </small></td>
                     <td class="text-center">{{ gear. ap}}</td>
                     <td class="text-center">{{ gear.availability }}</td>

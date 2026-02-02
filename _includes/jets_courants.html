@@ -15,7 +15,7 @@
               </li>
               <li class="py-1 d-flex justify-content-between align-items-center">
                 <strong></strong>
-                <span><small> {{ page.initiative.physic.turns }} passe d'initiative</small></span>
+                <span><small> {{ page.initiative.physic.turns | default: 1 }} passe d'initiative</small></span>
               </li>
             </ul>
           </li>
@@ -28,17 +28,17 @@
               </li>
               <li class="py-1 d-flex justify-content-between align-items-center">
                 <strong></strong>
-                <span><small> {{ page.initiative.matrix.turns }} passe d'initiative</small></span>
+                <span><small> {{ page.initiative.matrix.turns | default: 1 }} passe d'initiative</small></span>
               </li>
             </ul>
           </li>
           {% endif %}
-          {% if page.magic %}
+          {% if page.magic and page.magic.type != 'adept' %}
           <li class="list-group-item py-1 d-flex justify-content-between align-items-center"  data-bs-toggle="modal" data-bs-target="#astral">
             <ul class="list-unstyled col-12">
               <li class="py-1 d-flex justify-content-between align-items-center">
                 <strong>Astrale</strong>
-                <span><strong>{{ astral_initiative }}</strong> <small>(Intuition * 2)</small></span>
+                <span><strong>{{ astral_initiative | default: 3 }}</strong> <small>(Intuition * 2)</small></span>
               </li>
               <li class="py-1 d-flex justify-content-between align-items-center">
                 <strong></strong>
