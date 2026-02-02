@@ -122,9 +122,9 @@
               <li class="py-1 d-flex justify-content-between align-items-center">
                 <span>{{ skill[0] | replace: "_", " " | capitalize }} <small>({{ skill[1].attribute | capitalize }})</small></span>
                 <span>
-                  <strong class="skill-value">{{ skill[1].value }}</strong>
+                  <small>{{ skill[1].value }}</small>
                   {% if attribute_value > 0 %}
-                  <small>({{ skill[1].value | plus: attribute_value }})</small>
+                  (<strong class="skill-value">{{ skill[1].value | plus: attribute_value }}</strong>)
                   {% endif %}
                 </span>
               </li>
