@@ -644,3 +644,93 @@ footer {
   color: #ffffff !important;
   font-weight: 600 !important;
 }
+
+/* Styles pour les cartes de véhicules */
+.vehicle-cards {
+  margin-top: 15px;
+}
+
+.vehicle-card {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  border: 1px solid #ffcc00;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vehicle-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 204, 0, 0.2);
+  border-color: #ffdd44;
+}
+
+.vehicle-image {
+  height: 200px;
+  object-fit: cover;
+  border-right: 1px solid rgba(255, 204, 0, 0.2);
+}
+
+.vehicle-card .card-body {
+  padding: 1.5rem;
+}
+
+.vehicle-card .card-title {
+  color: #ffcc00;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(255, 204, 0, 0.3);
+  padding-bottom: 0.5rem;
+}
+
+.vehicle-stats {
+  margin-top: 1rem;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  border-left: 3px solid #ffcc00;
+}
+
+.stat-item i {
+  color: #ffcc00;
+  margin-right: 0.75rem;
+  width: 20px;
+  text-align: center;
+}
+
+.stat-label {
+  color: #ffcc00;
+  font-weight: 500;
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.stat-value {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .vehicle-image {
+    height: 180px;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 204, 0, 0.2);
+  }
+
+  .vehicle-card {
+    margin-bottom: 1rem;
+  }
+
+  .stat-item {
+    font-size: 0.85rem;
+  }
+}

@@ -45,5 +45,12 @@
       </span>
     </div>
     {% endif %}
+    
+    {% if page.gear.vehicule %}
+    <div class="icon-wrapper" data-bs-toggle="offcanvas" data-bs-target="#floatingPanel" title="Véhicules" data-tab="vehicles">
+      <i class="fa-solid fa-car"></i>
+      <span class="badge">{{ page.gear.vehicule | size }}</span>
+    </div>
+    {% endif %}
   </div>
 </div>
