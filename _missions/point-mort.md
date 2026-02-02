@@ -25,6 +25,13 @@ runners:
     karma: 5
     bonus: 0
     present: true
+contacts:
+  - contact: calderone
+    role: "Contact local dans les Favelas"
+    description: "A fourni des informations sur l'équipe et le rituel d'observation passive"
+  - contact: miguel-varga
+    role: "Responsable opérationnel de DracoSec"
+    description: "A briefé l'équipe et confirmé le redéploiement des membres"
 tags:
   - "corporate"
   - "investigation"
@@ -85,3 +92,22 @@ La mission s’est conclue par la destruction du cercle rituel, libérant l’es
 L’aventure **Point Mort** a plongé les runners dans les bas-fonds de *Mérida*, une cité où magie, technologie et corruption s’entremêlent sous un ciel de néons et de chaleur étouffante. Chaque membre a joué un rôle clé : l’orc **Ahau-Tec**, alliant force brute et traditions ancestrales, le decker **Ghost**, maître des intrusions virtuelles, l’elfe chamane **Maya**, guide entre les mondes physique et spirituel, et le nain rigger **Patch**, expert en drones et en tactiques.
 
 **Rafael Itsa** n’a pas disparu sans raison. Les ombres de *Mérida* murmurent encore son nom, et les rituels abandonnés portent son empreinte. Ce n’est qu’une question de temps avant que ses choix ne resurgissent—avec les conséquences qu’ils entraînent. Préparez-vous à le recroiser, là où la magie et la technologie s’entrechoquent.
+
+## Contacts Rencontrés
+
+{% if page.contacts %}
+<div class="row mt-4">
+  {% for contact in page.contacts %}
+  <div class="col-md-6 mb-4">
+    <div class="card bg-dark text-white">
+      <div class="card-body">
+        <h5 class="card-title text-warning" style="text-transform: capitalize;">{{ contact.contact | replace: "-", " " }}</h5>
+        <p class="card-text"><strong>Rôle:</strong> {{ contact.role }}</p>
+        <p class="card-text"><strong>Description:</strong> {{ contact.description }}</p>
+        <a href="/contacts/{{ contact.contact }}" class="btn btn-sm btn-outline-warning">Voir la fiche complète</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
