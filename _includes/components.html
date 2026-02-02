@@ -1,0 +1,78 @@
+{% comment %}
+Composants réutilisables pour le site Shadowrun
+Ce fichier contient des composants HTML/Liquid qui peuvent être réutilisés dans plusieurs pages
+{% endcomment %}
+
+{% comment %}
+Composant : Carte de mission pour les contacts
+Utilisation : {% include components.html component="mission_card" mission=mission contact_info=contact_info %}
+{% endcomment %}
+
+{% if include.component == "mission_card" %}
+<div class="col-md-6 mb-4">
+  <div class="card bg-dark text-white">
+    <div class="card-body">
+      <h5 class="card-title text-warning" style="text-transform: capitalize;">{{ include.mission.title | replace: "-", " " }}</h5>
+      <p class="card-text"><strong>Date:</strong> {{ include.mission.game_date }}</p>
+      <p class="card-text"><strong>Rôle:</strong> {{ include.contact_info.role }}</p>
+      <p class="card-text"><strong>Description:</strong> {{ include.contact_info.description }}</p>
+      <a href="{{ include.mission.url }}" class="btn btn-sm btn-outline-warning">Voir la mission</a>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% comment %}
+Composant : Carte de contact pour les missions
+Utilisation : {% include components.html component="contact_card" contact=contact %}
+{% endcomment %}
+
+{% if include.component == "contact_card" %}
+<div class="col-md-6 mb-4">
+  <div class="card bg-dark text-white">
+    <div class="card-body">
+      <h5 class="card-title text-warning" style="text-transform: capitalize;">{{ include.contact.contact | replace: "-", " " }}</h5>
+      <p class="card-text"><strong>Rôle:</strong> {{ include.contact.role }}</p>
+      <p class="card-text"><strong>Description:</strong> {{ include.contact.description }}</p>
+      <a href="/contacts/{{ include.contact.contact }}" class="btn btn-sm btn-outline-warning">Voir la fiche complète</a>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% comment %}
+Composant : Section des missions pour les contacts
+Utilisation : {% include components.html component="contact_missions" contact_key=page.key %}
+{% endcomment %}
+
+{% if include.component == "contact_missions" %}
+{% assign contact_missions = site.missions | where_exp: "mission", "mission.contacts" %}
+
+{% if contact_missions.size > 0 %}
+<div class="row mt-4">
+  {% for mission in contact_missions %}
+    {% assign contact_info = mission.contacts | where_exp: "contact", "contact.contact == include.contact_key" | first %}
+    {% if contact_info %}
+      {% include components.html component="mission_card" mission=mission contact_info=contact_info %}
+    {% endif %}
+  {% endfor %}
+</div>
+{% else %}
+<p>Aucune mission enregistrée pour ce contact.</p>
+{% endif %}
+{% endif %}
+
+{% comment %}
+Composant : Section des contacts pour les missions
+Utilisation : {% include components.html component="mission_contacts" contacts=page.contacts %}
+{% endcomment %}
+
+{% if include.component == "mission_contacts" %}
+{% if include.contacts %}
+<div class="row mt-4">
+  {% for contact in include.contacts %}
+    {% include components.html component="contact_card" contact=contact %}
+  {% endfor %}
+</div>
+{% endif %}
+{% endif %}

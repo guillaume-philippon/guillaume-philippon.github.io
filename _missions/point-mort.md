@@ -95,19 +95,4 @@ L’aventure **Point Mort** a plongé les runners dans les bas-fonds de *Mérida
 
 ## Contacts Rencontrés
 
-{% if page.contacts %}
-<div class="row mt-4">
-  {% for contact in page.contacts %}
-  <div class="col-md-6 mb-4">
-    <div class="card bg-dark text-white">
-      <div class="card-body">
-        <h5 class="card-title text-warning" style="text-transform: capitalize;">{{ contact.contact | replace: "-", " " }}</h5>
-        <p class="card-text"><strong>Rôle:</strong> {{ contact.role }}</p>
-        <p class="card-text"><strong>Description:</strong> {{ contact.description }}</p>
-        <a href="/contacts/{{ contact.contact }}" class="btn btn-sm btn-outline-warning">Voir la fiche complète</a>
-      </div>
-    </div>
-  </div>
-  {% endfor %}
-</div>
-{% endif %}
+{% include components.html component="mission_contacts" contacts=page.contacts %}

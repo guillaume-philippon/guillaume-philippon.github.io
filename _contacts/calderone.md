@@ -29,3 +29,7 @@ skills:
 ---
 
 Calderone est un contact local dans les favelas de Mérida, spécialisé dans les informations sur les activités criminelles et les mouvements des gangs. Il connaît bien les rues et les groupes criminels de la région.
+
+## Missions
+
+{% include components.html component="contact_missions" contact_key=page.key %}
