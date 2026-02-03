@@ -83,6 +83,8 @@ L’état des systèmes après le rétablissement du courant permettra de vérif
 ## Calderone
 
 Les squatteurs autour du bâtiment n’ont fourni aucune information utile, à l’exception de l’identification de *Calderone*, un membre de l’équipe resté sur place. *Calderone*, après discussion et consommation d’alcool, a révélé que l’équipe était composée de cinq membres, dirigée par *José*. *Rafael Itsa*, un autre membre, a ordonné l’arrêt des opérations et préparé le rituel d’observation passive. **Calderone** ignore les raisons de cet arrêt.
+
+
 *Miguel Varga* a confirmé que trois membres de l’équipe ont été redéployés, mais aucune information n’est disponible concernant *Rafael Itsa*. Le site **DT-YUC-17** est désormais de nouveau actif après le rétablissement de l’alimentation électrique.
 La mission s’est conclue par la destruction du cercle rituel, libérant l’esprit d’observation lié au rituel. La demande de *Miguel Varga* de neutraliser l’esprit avant le retour a été exécutée. L’enquête est terminée.
 
