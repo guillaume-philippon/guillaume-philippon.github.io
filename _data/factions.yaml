@@ -1,0 +1,91 @@
+# Factions - Corporations, Gangs, et autres organisations
+# Structure:
+# - id: identifiant unique
+#   name: nom de la faction
+#   type: corpo|gang|gov|other
+#   description: description courte
+#   reputation: valeur de réputation (1-10)
+#   influence: zone d'influence
+#   color: couleur thématique (pour les badges)
+#   logo: chemin vers le logo (optionnel)
+
+- id: draco-tech
+  name: DracoTech
+  type: corpo
+  description: Megacorporation spécialisée dans la technologie magique et la sécurité
+  reputation: 8
+  influence: Mondiale
+  color: "#ff6b6b"
+  logo: "/assets/images/dracotech.jpg"
+
+- id: aztechnology
+  name: Aztechnology
+  type: corpo
+  description: Megacorp axée sur la biotechnologie et les armes
+  reputation: 9
+  influence: Amérique Centrale
+  color: "#4ecdc4"
+
+- id: renraku
+  name: Renraku Computer Systems
+  type: corpo
+  description: Leader mondial en informatique et intelligence artificielle
+  reputation: 7
+  influence: Mondiale
+  color: "#45b7d1"
+
+- id: yakuza
+  name: Yakuza
+  type: gang
+  description: Organisation criminelle japonaise avec des liens corporatistes
+  reputation: 6
+  influence: Japon, Seattle
+  color: "#f9ca24"
+
+- id: ancients
+  name: The Ancients
+  type: gang
+  description: Gang elfique ancien et puissant
+  reputation: 5
+  influence: Seattle
+  color: "#6c5ce7"
+
+- id: mctirnan-bois
+  name: McTirnan Bois
+  type: gang
+  description: Gang écossais spécialisé dans le trafic d'armes
+  reputation: 4
+  influence: Boston, Seattle
+  color: "#a29bfe"
+
+- id: lone-star
+  name: Lone Star Security
+  type: other
+  description: Entreprise de sécurité privée dominante
+  reputation: 7
+  influence: UCAS
+  color: "#fd79a8"
+
+- id: knight-errant
+  name: Knight Errant
+  type: other
+  description: Service de sécurité et police privée
+  reputation: 6
+  influence: Mondiale
+  color: "#e17055"
+
+- id: ares-macrotech
+  name: Ares Macrotechnology
+  type: corpo
+  description: Megacorp spécialisée dans l'armement et la sécurité
+  reputation: 9
+  influence: Mondiale
+  color: "#ff7675"
+
+- id: saeder-krupp
+  name: Saeder-Krupp
+  type: corpo
+  description: Megacorp allemande, leader en technologie lourde
+  reputation: 10
+  influence: Europe, Mondiale
+  color: "#55efc4"
