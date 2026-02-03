@@ -15,6 +15,9 @@ role:
 history: |
   Elle a infiltré un serveur sécurisé pour voler des données sur un prototype d’**IA militaire autonome**, conçu pour contrôler des drones de combat et des systèmes de surveillance de masse. Au lieu de simplement exfiltrer les données, elle a modifié les algorithmes de ciblage de l’IA, provoquant une série d’attaques accidentelles contre des infrastructures civiles lors d’un test en conditions réelles. Résultat : des coupures de courant massives, des drones devenant incontrôlables, et des dégâts matériels estimés à plusieurs millions de nuyens.
 profil: Méfiant, force capacité d'analyse, risque de sur-interprétation
+factions:
+  allies:
+    - draco-tech
 attributes:
   body:
     base: 3

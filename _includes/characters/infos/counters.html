@@ -1,0 +1,55 @@
+<!-- Magie/Edge/Essence -->
+<div class="row">
+    <div class="col-4 col-lg-2 mt-2">
+    {% if page.magic %}
+        <div class="card">
+            <div class="card-body p-2 text-center">
+                <span class="card-title mb-1"><small>Magie</small></span>
+                <p class="card-text mb-0">{{ page.magic.base }}</p>
+            </div>
+        </div>
+    {% endif %}
+    </div>
+    <div class="col-4 col-lg-2 mt-2">
+        <div class="card edge-card" data-bs-toggle="modal" data-bs-target="#edge">
+            <div class="card-body p-2 text-center">
+                <span class="card-title mb-1"><small>Edge</small></span>
+                <p class="card-text mb-0">{{ page.edge.base }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-4 col-lg-2 mt-2">
+        <div class="card">
+            <div class="card-body p-2 text-center">
+                <span class="card-title mb-1"><small>Essence</small></span>
+                <p class="card-text mb-0">{{ page.essence.base | minus: cyberware_essence }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-4 col-lg-2 mt-2">
+        <div class="card physical-card" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#conditionModal" data-condition-type="physical">
+            <div class="card-body p-2 text-center">
+                <span class="card-title mb-1"><small>Physique</small></span>
+                <p class="card-text mb-0"><span id="current-physical-condition">0</span><small>/{{ physic_condition }}</small> <small id="physical-wound-counter" class="text-muted">(0)</small></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-4 col-lg-2 mt-2">
+        <div class="card mental-card" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#conditionModal" data-condition-type="mental">
+            <div class="card-body p-2 text-center">
+                <span class="card-title mb-1"><small>Mentale</small></span>
+                <p class="card-text mb-0"><span id="current-mental-condition">0</span><small>/{{ mental_condition }}</small> <small id="mental-wound-counter" class="text-muted">(0)</small></p>
+            </div>
+        </div>
+    </div>
+    {% if page.matrix %}
+    <div class="col-4 col-lg-2 mt-2">
+        <div class="card matrix-card" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#conditionModal" data-condition-type="matrix">
+            <div class="card-body p-2 text-center">
+                <span class="card-title mb-1"><small>Matrix</small></span>
+                <p class="card-text mb-0"><span id="current-matrix-condition">0</span>/{{ matrix_condition }}</p>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>

@@ -94,6 +94,14 @@ contacts:
     loyalty: 3
   - contact: doc-harper
     loyalty: 3
+factions:
+  allies:
+    - lone-star
+  enemies:
+    - yakuza
+  neutral:
+    - draco-tech
+    - renraku
 matrix:
   commlink:
     name: Disposable Commlink

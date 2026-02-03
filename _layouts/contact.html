@@ -52,6 +52,13 @@ layout: default
             {{ content }}
           </div>
           
+          <!-- Faction Relations -->
+          {% if page.faction_relations %}
+          <div class="mb-4">
+            {% include faction_relations.html relations=page.faction_relations %}
+          </div>
+          {% endif %}
+          
           {% assign contact_missions = site.missions | where_exp: "mission", "mission.contacts" %}
 
           <h4>Missions</h3>

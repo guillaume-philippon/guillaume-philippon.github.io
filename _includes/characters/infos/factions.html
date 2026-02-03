@@ -1,0 +1,49 @@
+{%- comment -%}
+Faction Relations Component
+
+Usage:
+{% include factions.html factions=page.factions %}
+
+Requires:
+- relations.allies: array of faction IDs
+- relations.enemies: array of faction IDs
+- relations.neutral: array of faction IDs
+{%- endcomment -%}
+
+{% if page.factions %}
+<div class="faction-relations mt-4">
+  <h3 class="mb-3" style="color: #ffcc00; border-bottom: 1px solid rgba(255, 204, 0, 0.3); padding-bottom: 0.5rem;">
+    Factions
+  </h3>
+  
+  {% if page.factions.allies and page.factions.allies.size > 0 %}
+      {% for faction_id in page.factions.allies %}
+        {% assign faction = site.factions | where: "id", faction_id | first %}
+        {% if faction %}
+        {% else %}
+          <span class="badge bg-success p-1">{{ faction_id }}</span>
+        {% endif %}
+      {% endfor %}
+  {% endif %}
+  
+  {% if page.factions.enemies and page.factions.enemies.size > 0 %}
+      {% for faction_id in page.factions.enemies %}
+        {% assign faction = site.factions | where: "id", faction_id | first %}
+        {% if faction %}
+        {% else %}
+          <span class="badge bg-danger p-1">{{ faction_id }}</span>
+        {% endif %}
+      {% endfor %}
+  {% endif %}
+  
+  {% if page.factions.neutral and page.factions.neutral.size > 0 %}
+      {% for faction_id in page.factions.neutral %}
+        {% assign faction = site.factions | where: "id", faction_id | first %}
+        {% if faction %}
+        {% else %}
+          <span class="badge bg-secondary p-1">{{ faction_id }}</span>
+        {% endif %}
+      {% endfor %}
+  {% endif %}
+</div>
+{% endif %}

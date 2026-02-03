@@ -1,0 +1,17 @@
+<div class="position-relative">
+    {% if page.infos.picture %}
+    <a href="#" data-bs-toggle="modal" data-bs-target="#historyModal">
+    <img src="{{ page.infos.picture }}" class="img-fluid rounded" alt="{{ page.full_name }}">
+    </a>
+    {% endif %}
+    <div class="position-absolute text-start top-0 start-0 text-white p-2 bg-dark bg-opacity-50 rounded">
+        <ul class="list-unstyled">
+        <li><small>Taille: {{ page.infos.height }} m</small></li>
+        <li><small>Poids: {{ page.infos.weight }} kgs</small></li>
+        <li><small>Argent: {{ page.infos.money }} ¥</small></li>
+        <li><small>Karma: {{ page.infos.karma }}</small></li>
+        <li><small>Street Cred: {{ page.infos.street_cred }}</small></li>
+        <li><small>Notoriety: {{ page.infos.notoriety }}</small></li>
+        </ul>
+    </div>
+</div>

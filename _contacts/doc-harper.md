@@ -22,6 +22,14 @@ skills:
     combat_medicine: 6
     cyberware_installation: 5
     street_pharmacology: 4
+factions:
+  allies:
+    - lone-star
+  enemies:
+    - yakuza
+  neutral:
+    - draco-tech
+    - renraku
 ---
 
 Dr. Harper est un médecin clandestin qui travaille dans les zones urbaines dangereuses. Il est spécialisé dans les soins aux runners et peut fournir des soins médicaux discrets, des implants cyberware et des médicaments illégaux.

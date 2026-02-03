@@ -15,8 +15,6 @@ collections:
   missions:
     output: true
     permalink: /missions/:name/
-  relations:
-    output: false
   factions:
     output: true
     permalink: /factions/:name/

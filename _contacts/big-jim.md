@@ -24,6 +24,14 @@ skills:
     underground_arms_dealing: 6
     street_gangs: 5
     black_market: 4
+factions:
+  allies:
+    - yakuza
+    - ancients
+  enemies:
+    - lone-star
+  neutral:
+    - draco-tech
 ---
 
 Big Jim est un fixeur bien connecté dans le milieu underground. Il peut fournir des armes, des équipements et des informations sur les activités criminelles locales. Il a une bonne relation avec plusieurs runners et leur fournit régulièrement du travail.

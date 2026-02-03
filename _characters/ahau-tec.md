@@ -168,6 +168,9 @@ contacts:
     loyalty: 2
   - contact: chaman-ixchel
     loyalty: 5
+factions:
+  allies:
+    - draco-tech
 wound:
   physic: 3
   mental: 3
