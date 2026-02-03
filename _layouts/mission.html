@@ -3,17 +3,15 @@ layout: default
 --- 
 
 <div class="container adventure-container my-4 character-sheet">
-  <article class="adventure-article">
-    <!-- En-tête de l'aventure -->
-    <header class="adventure-header mb-4">
-      <h1 class="adventure-title text-center mb-3">{{ page.title }}</h1>
+  <div class="card">
+    <div class="card-header">
+      <h2 class="mb-0">{{ page.title }}</h2>
+      <p class="mb-0"><small>{{ page.location }} | Durée: {{ page.estimated_time }}</small></p>
       
-      <div class="adventure-meta row mb-4">
+      <div class="row mb-4">
         <div class="col-md-6">
           <p><strong>Date (Univers):</strong> {{ page.game_date | date: "%d %B %Y" }}</p>
           <p><strong>Date (Publication):</strong> {{ page.date | date: "%d %B %Y" }}</p>
-          <p><strong>Lieu:</strong> {{ page.location }}</p>
-          <p><strong>Durée estimée:</strong> {{ page.estimated_time }}</p>
         </div>
         <div class="col-md-6">
           <p><strong>Difficulté:</strong> 
@@ -29,13 +27,14 @@ layout: default
         </div>
       </div>
       
-      <p class="adventure-description lead">{{ page.description }}</p>
+      <p class="lead">{{ page.description }}</p>
     </header>
-
-    <div class="row">
+    
+    <div class="card-body">
+      <div class="row">
       <!-- Liste des Runners -->
       <section class="adventure-runners mb-5 col-lg-8">
-        <h2 class="section-title mb-3">Runners Participants</h2>
+        <h3 class="mb-3">Runners Participants</h3>
         <div class="row">
           {% for runner in page.runners %}
             {% if runner.present %}
@@ -51,23 +50,22 @@ layout: default
               {% endif %}
             {% endfor %}
             <div class="col-12 col-md-6 mb-3">
-              <div class="card h-100">
-                <div class="card-body">
+              {% if url != "" %}
+              <a href="{{ url }}" class="card-link-wrapper">
+              {% endif %}
+              <div class="card h-100 runner-card">
+                <div class="card-header">
                   <div class="row">
                     <div class="col-8">
-                      {% if url != "" %}
-                      <a  href="{{ url }}">
-                      {% endif %}
-                        <h5 class="card-title">{{ full_name }}</h5>
-                      {% if url != "" %}
-                      </a>
-                      {% endif %}
+                        <h6 class="card-title mb-0">{{ full_name }}</h6>
                     </div>
                     <div class="col-4">
                       <img src="{{ picture }}" alt="{{ full_name }}" class="rounded-circle me-2" 
-                          style="width: 40px; height: 40px; object-fit: cover; cursor: pointer;">
+                          style="width: 40px; height: 40px; object-fit: cover;">
                     </div>
                   </div>
+                </div>
+                <div class="card-body">
                   <div class="justify-content-between d-flex pt-2">
                     <div class="position-absolute bottom-0 p-2">
                       <span class="badge bg-warning text-dark mt-3">Karma: {{ runner.karma }}</span>
@@ -78,13 +76,16 @@ layout: default
                   </div>
                 </div>
               </div>
+              {% if url != "" %}
+              </a>
+              {% endif %}
             </div>
             {% endif %}
           {% endfor %}
         </div>
       </section>
       <section class="adventure-contacts mb-5 col-lg-4">
-        <h2 class="section-title mb-3">Contacts Rencontrés</h2>
+        <h3 class="mb-3">Contacts Rencontrés</h3>
         <div class="row">
           {% for contact_id in page.contacts %}
             {% assign full_name = contact_id.contact | capitalize %}
@@ -93,43 +94,81 @@ layout: default
             {% for contact in site.contacts %}
               {% if contact.key == contact_id.contact %}
                 {% assign full_name = contact.full_name %}
-                {% assign picture = contact.image %}
+                {% if contact.image %}
+                  {% assign picture = contact.image %}
+                {% endif %}
                 {% assign url = contact.url %}
                 {% break %}
               {% endif %}
             {% endfor %}
             <div class="mb-3">
-              <div class="card h-100">
-                <div class="card-body">
+              {% if url != "" %}
+              <a href="{{ url }}" class="card-link-wrapper">
+              {% endif %}
+              <div class="card h-100 contact-card">
+                <div class="card-header">
                   <div class="row">
                     <div class="col-8">
-                      {% if url != "" %}
-                      <a  href="{{ url }}">
-                      {% endif %}
-                        <h5 class="card-title">{{ full_name }}</h5>
-                      {% if url != "" %}
-                      </a>
-                      {% endif %}
+                        <h6 class="card-title mb-0">{{ full_name }}</h6>
                     </div>
                     <div class="col-4">
                       <img src="{{ picture }}" alt="{{ full_name }}" class="rounded-circle me-2" 
-                          style="width: 40px; height: 40px; object-fit: cover; cursor: pointer;">
+                          style="width: 40px; height: 40px; object-fit: cover;">
                     </div>
                   </div>
                 </div>
               </div>
+              {% if url != "" %}
+              </a>
+              {% endif %}
             </div>
           {% endfor %}
         </div>
       </section>
       </div>
     <!-- Contenu de l'aventure avec illustrations -->
-    <section class="adventure-content">
-      {{ content | markdownify }}
-    </section>
+    <div class="card-body">
+      <section class="adventure-content">
+        {{ content | markdownify }}
+      </section>
+    </div>
 
     <!-- Images intégrées dans le contenu - alternance droite/gauche -->
     <style>
+      /* Style pour les liens des cartes */
+      .card-link-wrapper {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        transition: transform 0.3s ease;
+      }
+      
+      .card-link-wrapper:hover {
+        transform: translateY(-5px);
+      }
+      
+      /* Style pour les cartes des runners */
+      .runner-card {
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+      }
+      
+      .runner-card:hover {
+        border-color: #ffcc00;
+        box-shadow: 0 0 20px rgba(255, 204, 0, 0.3);
+      }
+      
+      /* Style pour les cartes des contacts */
+      .contact-card {
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+      }
+      
+      .contact-card:hover {
+        border-color: #ffcc00;
+        box-shadow: 0 0 20px rgba(255, 204, 0, 0.3);
+      }
+      
       /* Style pour les éléments en gras dans les missions */
       .adventure-content strong,
       .adventure-content b {
@@ -143,6 +182,13 @@ layout: default
         border: 2px solid #ffcc00;
         border-radius: 8px;
         margin: 1rem 0;
+        box-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
+        transition: all 0.3s ease;
+      }
+      
+      .adventure-content img:hover {
+        box-shadow: 0 0 25px rgba(255, 204, 0, 0.8);
+        transform: scale(1.02);
       }
       
       .adventure-content .image-right {
@@ -208,55 +254,8 @@ layout: default
         text-shadow: 0 0 10px rgba(255, 204, 0, 0.7);
       }
     </style>
-  </article>
+  </div>
 </div>
-
-<!-- Style spécifique pour les aventures -->
-<style>
-.adventure-container {
-  background-color: #1e1e1e;
-  border: 1px solid #ffcc00;
-  border-radius: 8px;
-  padding: 2rem;
-}
-
-.adventure-title {
-  color: #ffcc00;
-  font-size: 2.5rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.adventure-header {
-  border-bottom: 2px solid #ffcc00;
-  padding-bottom: 1rem;
-}
-
-.adventure-description {
-  color: #e0e0e0;
-  font-style: italic;
-}
-
-.section-title {
-  color: #ffcc00;
-  font-size: 1.8rem;
-  border-bottom: 1px solid #ffcc00;
-  padding-bottom: 0.5rem;
-}
-
-.runner-card {
-  background-color: #2a2a2a;
-  border: 1px solid #ffcc00;
-}
-
-.adventure-image {
-  border: 2px solid #ffcc00;
-  transition: transform 0.3s ease;
-}
-
-.adventure-image:hover {
-  transform: scale(1.05);
-}
-</style>
 
 <!-- Modal pour afficher les images en grand -->
 <div id="imageModal" class="image-modal">
