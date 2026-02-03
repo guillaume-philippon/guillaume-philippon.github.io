@@ -104,9 +104,8 @@ title: Aventures Shadowrun
             <small class="text-muted">
               <i class="fas fa-map-marker-alt"></i> {{ mission.location }}<br>
               <i class="fas fa-clock"></i> {{ mission.estimated_time }}<br>
-              <i class="fas fa-star"></i> 
               {% for i in (1..5) %}
-                {% if i <= mission.difficulty %}⭐{% else %}☆{% endif %}
+                {% if i <= mission.difficulty %}<i class="fa-solid fa-gun" style="color: #ffcc00"></i>{% else %}<i class="fa-solid fa-gun"></i>{% endif %}
               {% endfor %}
             </small>
           </div>

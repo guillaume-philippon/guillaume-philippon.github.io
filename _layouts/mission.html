@@ -18,7 +18,7 @@ layout: default
         <div class="col-md-6">
           <p><strong>Difficulté:</strong> 
             {% for i in (1..5) %}
-              {% if i <= page.difficulty %}⭐{% else %}☆{% endif %}
+              {% if i <= page.difficulty %}<i class="fa-solid fa-gun" style="color: #ffcc00"></i>{% else %}<i class="fa-solid fa-gun"></i>{% endif %}
             {% endfor %}
           </p>
           <p><strong>Tags:</strong> 
@@ -32,57 +32,97 @@ layout: default
       <p class="adventure-description lead">{{ page.description }}</p>
     </header>
 
-    <!-- Liste des Runners -->
-    <section class="adventure-runners mb-5">
-      <h2 class="section-title mb-3">Runners Participants</h2>
-      <div class="row">
-        {% for runner in page.runners %}
-          {% if runner.present %}
-          {% assign full_name = runner.name | capitalize %}
-          {% assign picture = "/assets/images/contacts/placeholder.jpg" %}
-          {% assign url = "" %}
-          {% for character in site.characters %}
-            {% if character.key == runner.name %}
-              {% assign full_name = character.full_name %}
-              {% assign picture = character.infos.picture %}
-              {% assign url = character.url %}
-              {% break %}
-            {% endif %}
-          {% endfor %}
-          <div class="col-md-3 mb-3">
-            <div class="card h-100">
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-8">
-                    {% if url != "" %}
-                    <a  href="{{ url }}">
-                    {% endif %}
-                      <h5 class="card-title">{{ full_name }}</h5>
-                    {% if url != "" %}
-                    </a>
-                    {% endif %}
+    <div class="row">
+      <!-- Liste des Runners -->
+      <section class="adventure-runners mb-5 col-lg-8">
+        <h2 class="section-title mb-3">Runners Participants</h2>
+        <div class="row">
+          {% for runner in page.runners %}
+            {% if runner.present %}
+            {% assign full_name = runner.name | capitalize %}
+            {% assign picture = "/assets/images/contacts/placeholder.jpg" %}
+            {% assign url = "" %}
+            {% for character in site.characters %}
+              {% if character.key == runner.name %}
+                {% assign full_name = character.full_name %}
+                {% assign picture = character.infos.picture %}
+                {% assign url = character.url %}
+                {% break %}
+              {% endif %}
+            {% endfor %}
+            <div class="col-12 col-md-6 mb-3">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-8">
+                      {% if url != "" %}
+                      <a  href="{{ url }}">
+                      {% endif %}
+                        <h5 class="card-title">{{ full_name }}</h5>
+                      {% if url != "" %}
+                      </a>
+                      {% endif %}
+                    </div>
+                    <div class="col-4">
+                      <img src="{{ picture }}" alt="{{ full_name }}" class="rounded-circle me-2" 
+                          style="width: 40px; height: 40px; object-fit: cover; cursor: pointer;">
+                    </div>
                   </div>
-                  <div class="col-4">
-                    <img src="{{ picture }}" alt="{{ full_name }}" class="rounded-circle me-2" 
-                        style="width: 40px; height: 40px; object-fit: cover; cursor: pointer;">
-                  </div>
-                </div>
-                <div class="justify-content-between d-flex pt-2">
-                  <div class="position-absolute bottom-0 p-2">
-                    <span class="badge bg-warning text-dark mt-3">Karma: {{ runner.karma }}</span>
-                    {% if runner.bonus %}
-                      <span class="badge bg-success mt-3">Bonus: +{{ runner.bonus }}</span>
-                    {% endif %}
+                  <div class="justify-content-between d-flex pt-2">
+                    <div class="position-absolute bottom-0 p-2">
+                      <span class="badge bg-warning text-dark mt-3">Karma: {{ runner.karma }}</span>
+                      {% if runner.bonus %}
+                        <span class="badge bg-success mt-3">Bonus: +{{ runner.bonus }}</span>
+                      {% endif %}
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          {% endif %}
-        {% endfor %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      </section>
+      <section class="adventure-contacts mb-5 col-lg-4">
+        <h2 class="section-title mb-3">Contacts Rencontrés</h2>
+        <div class="row">
+          {% for contact_id in page.contacts %}
+            {% assign full_name = contact_id.contact | capitalize %}
+            {% assign picture = "/assets/images/contacts/placeholder.jpg" %}
+            {% assign url = "" %}
+            {% for contact in site.contacts %}
+              {% if contact.key == contact_id.contact %}
+                {% assign full_name = contact.full_name %}
+                {% assign picture = contact.image %}
+                {% assign url = contact.url %}
+                {% break %}
+              {% endif %}
+            {% endfor %}
+            <div class="mb-3">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-8">
+                      {% if url != "" %}
+                      <a  href="{{ url }}">
+                      {% endif %}
+                        <h5 class="card-title">{{ full_name }}</h5>
+                      {% if url != "" %}
+                      </a>
+                      {% endif %}
+                    </div>
+                    <div class="col-4">
+                      <img src="{{ picture }}" alt="{{ full_name }}" class="rounded-circle me-2" 
+                          style="width: 40px; height: 40px; object-fit: cover; cursor: pointer;">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
       </div>
-    </section>
-
     <!-- Contenu de l'aventure avec illustrations -->
     <section class="adventure-content">
       {{ content | markdownify }}

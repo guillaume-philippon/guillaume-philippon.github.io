@@ -92,11 +92,3 @@ La mission s’est conclue par la destruction du cercle rituel, libérant l’es
 L’aventure **Point Mort** a plongé les runners dans les bas-fonds de **Mérida**, une cité où magie, technologie et corruption s’entremêlent sous un ciel de néons et de chaleur étouffante. Chaque membre a joué un rôle clé : l’orc *Ahau-Tec*, alliant force brute et traditions ancestrales, le decker *Ghost*, maître des intrusions virtuelles, l’elfe chamane *Maya*, guide entre les mondes physique et spirituel, et le nain rigger *Patch*, expert en drones et en tactiques.
 
 *Rafael Itsa* n’a pas disparu sans raison. Les ombres de *Mérida* murmurent encore son nom, et les rituels abandonnés portent son empreinte. Ce n’est qu’une question de temps avant que ses choix ne resurgissent—avec les conséquences qu’ils entraînent. Préparez-vous à le recroiser, là où la magie et la technologie s’entrechoquent.
-
-## Contacts Rencontrés
-
-{% include components.html component="mission_contacts" contacts=page.contacts %}
-
-## Runners Participants
-
-{% include components.html component="mission_runners" runners=page.runners %}
