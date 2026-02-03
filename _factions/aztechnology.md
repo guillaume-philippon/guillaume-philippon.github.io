@@ -6,6 +6,7 @@ description: Megacorp axée sur la biotechnologie et les armes
 reputation: 9
 influence: Amérique Centrale
 color: "#4ecdc4"
+logo: "/assets/images/factions/aztechnology.png"
 ---
 
 ## Aztechnology
