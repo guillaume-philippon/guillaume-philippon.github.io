@@ -29,6 +29,9 @@ skills:
     security_procedures: 6
     corporate_operations: 5
     risk_assessment: 4
+factions:
+  allies:
+    - dracotech
 ---
 
 Officier de sécurité chez **DracoTech**, *Kael Riven* est responsable de la coordination des opérations de sécurité dans les zones à haut risque. Il a une bonne formation en sécurité et une expérience des opérations de terrain.

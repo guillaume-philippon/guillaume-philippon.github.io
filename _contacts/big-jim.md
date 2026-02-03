@@ -38,8 +38,6 @@ factions:
     - ancients
   enemies:
     - lone-star
-  neutral:
-    - draco-tech
 
 # Notes et Détails
 role: Fournisseur d'armes et d'équipements underground

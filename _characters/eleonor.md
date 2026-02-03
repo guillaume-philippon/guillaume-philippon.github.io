@@ -91,8 +91,6 @@ factions:
     - ares
   enemies:
     - renraku
-  neutral:
-    - dracotech
 matrix:
   commlink:
     name: Disposable Commlink

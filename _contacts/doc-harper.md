@@ -35,9 +35,6 @@ faction_relations:
     - lone-star
   enemies:
     - yakuza
-  neutral:
-    - draco-tech
-    - renraku
 
 # Notes et Détails
 role: Médecin clandestin et chirurgien cyberware
