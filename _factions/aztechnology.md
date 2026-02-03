@@ -1,5 +1,5 @@
 ---
-id: aztechnology
+key: aztechnology
 type: corpo
 name: Aztechnology
 description: Megacorp axée sur la biotechnologie et les armes

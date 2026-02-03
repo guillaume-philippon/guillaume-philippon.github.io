@@ -170,7 +170,7 @@ contacts:
     loyalty: 5
 factions:
   allies:
-    - draco-tech
+    - dracotech
 wound:
   physic: 3
   mental: 3

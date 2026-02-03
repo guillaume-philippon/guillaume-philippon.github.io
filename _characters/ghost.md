@@ -17,7 +17,7 @@ history: |
 profil: Méfiant, force capacité d'analyse, risque de sur-interprétation
 factions:
   allies:
-    - draco-tech
+    - dracotech
 attributes:
   body:
     base: 3

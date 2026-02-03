@@ -18,30 +18,75 @@ Requires:
   
   {% if page.factions.allies and page.factions.allies.size > 0 %}
       {% for faction_id in page.factions.allies %}
-        {% assign faction = site.factions | where: "id", faction_id | first %}
-        {% if faction %}
+        {% for faction in site.factions %}
+          {% if faction.key == faction_id %}
+            {% assign faction_image = faction.logo %}
+            {% assign faction_name = faction.name %}
+            {% assign faction_url = faction.url %}
+          {% endif %}
+        {% endfor %}
+        {% if faction_image %}
+            <a href="{{ faction_url }}" style="text-decoration: none; color: white;">
+            <img src="{{ faction_image }}" alt="{{ faction_id }}" class="faction-icon-ally rounded-circle me-2" 
+                  style="width: 40px; height: 40px; object-fit: cover; cursor: pointer;"
+                  data-bs-toggle="tooltip" data-bs-title="{{ faction_name }}">
+            </a>
         {% else %}
+          {% if faction_name %}
+          <span class="badge bg-danger p-1"><a href="{{ faction_url }}" style="text-decoration: none; color: white;">{{ faction_name }}</a></span>
+          {% else %}
           <span class="badge bg-success p-1">{{ faction_id }}</span>
+          {% endif %}
         {% endif %}
       {% endfor %}
   {% endif %}
   
   {% if page.factions.enemies and page.factions.enemies.size > 0 %}
       {% for faction_id in page.factions.enemies %}
-        {% assign faction = site.factions | where: "id", faction_id | first %}
-        {% if faction %}
+        {% for faction in site.factions %}
+          {% if faction.key == faction_id %}
+            {% assign faction_image = faction.logo %}
+            {% assign faction_name = faction.name %}
+            {% assign faction_url = faction.url %}
+          {% endif %}
+        {% endfor %}
+        {% if faction_image %}
+            <a href="{{ faction_url }}" style="text-decoration: none; color: white;">
+            <img src="{{ faction_image }}" alt="{{ faction_id }}" class="faction-icon-ennemy rounded-circle me-2" 
+                  style="width: 40px; height: 40px; object-fit: cover; cursor: pointer;"
+                  data-bs-toggle="tooltip" data-bs-title="{{ faction_name }}">
+            </a>
         {% else %}
+          {% if faction_name %}
+          <span class="badge bg-danger p-1"><a href="{{ faction_url }}" style="text-decoration: none; color: white;">{{ faction_name }}</a></span>
+          {% else %}
           <span class="badge bg-danger p-1">{{ faction_id }}</span>
+          {% endif %}
         {% endif %}
       {% endfor %}
   {% endif %}
   
   {% if page.factions.neutral and page.factions.neutral.size > 0 %}
       {% for faction_id in page.factions.neutral %}
-        {% assign faction = site.factions | where: "id", faction_id | first %}
-        {% if faction %}
+        {% for faction in site.factions %}
+          {% if faction.key == faction_id %}
+            {% assign faction_image = faction.logo %}
+            {% assign faction_name = faction.name %}
+            {% assign faction_url = faction.url %}
+          {% endif %}
+        {% endfor %}
+        {% if faction_image %}
+            <a href="{{ faction_url }}" style="text-decoration: none; color: white;">
+            <img src="{{ faction_image }}" alt="{{ faction_id }}" class="faction-icon-neutral rounded-circle me-2" 
+                  style="width: 40px; height: 40px; object-fit: cover; cursor: pointer;"
+                  data-bs-toggle="tooltip" data-bs-title="{{ faction_name }}">
+            </a>
         {% else %}
-          <span class="badge bg-secondary p-1">{{ faction_id }}</span>
+          {% if faction_name %}
+          <span class="badge bg-danger p-1"><a href="{{ faction_url }}" style="text-decoration: none; color: white;">{{ faction_name }}</a></span>
+          {% else %}
+          <span class="badge bg-warning p-1">{{ faction_id }}</span>
+          {% endif %}
         {% endif %}
       {% endfor %}
   {% endif %}

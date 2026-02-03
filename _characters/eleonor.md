@@ -96,12 +96,11 @@ contacts:
     loyalty: 3
 factions:
   allies:
-    - lone-star
+    - ares
   enemies:
-    - yakuza
-  neutral:
-    - draco-tech
     - renraku
+  neutral:
+    - dracotech
 matrix:
   commlink:
     name: Disposable Commlink

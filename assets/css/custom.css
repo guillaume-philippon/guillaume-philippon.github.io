@@ -888,3 +888,15 @@ footer {
   border-radius: 6px;
   font-weight: 500;
 }
+
+.faction-icon-ally {
+  border: solid 2px #4CAF50;
+}
+
+.faction-icon-ennemy {
+  border: solid 2px #F44336;
+}
+
+.faction-icon-neutral {
+  border: solid 2px #ffcc00;
+}

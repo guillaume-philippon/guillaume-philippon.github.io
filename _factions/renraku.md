@@ -1,5 +1,5 @@
 ---
-id: renraku
+key: renraku
 type: corpo
 name: Renraku Computer Systems
 description: Leader mondial en informatique et intelligence artificielle

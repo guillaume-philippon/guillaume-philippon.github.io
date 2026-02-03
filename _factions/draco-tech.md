@@ -1,12 +1,12 @@
 ---
-id: draco-tech
+key: dracotech
 name: DracoTech
 type: corpo
 description: Megacorporation spécialisée dans la technologie magique et la sécurité
 reputation: 8
 influence: Mondiale
 color: "#ff6b6b"
-logo: "/assets/images/dracotech.jpg"
+logo: "/assets/images/factions/dracotech.png"
 ---
 
 ## DracoTech
