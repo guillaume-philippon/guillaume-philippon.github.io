@@ -7,7 +7,7 @@ connection: 3
 key: doc-harper
 image: /assets/images/contacts/doc-harper.jpg
 
-# Attributs (1-10)
+# Attributs (1-6)
 attributes:
   body: 3
   agility: 4

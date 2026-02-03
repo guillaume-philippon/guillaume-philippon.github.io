@@ -13,6 +13,10 @@ attributes:
   logic: 3
   willpower: 4
   charisma: 4
+# Relations avec les Factions
+factions:
+  allies:
+    - dracotech
 skills:
   stealth:
     infiltration: 4

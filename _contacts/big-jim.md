@@ -32,7 +32,7 @@ skills:
     black_market: 4
 
 # Relations avec les Factions
-faction_relations:
+factions:
   allies:
     - yakuza
     - ancients
