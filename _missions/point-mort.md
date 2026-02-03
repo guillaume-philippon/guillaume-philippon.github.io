@@ -32,6 +32,9 @@ contacts:
   - contact: miguel-varga
     role: "Responsable opérationnel de DracoSec"
     description: "A briefé l'équipe et confirmé le redéploiement des membres"
+  - contact: rafael-itsa
+    role: "Mage affilié a DracoTech"
+    description: "A stopper la mission de surveillance du site DT-YUC-17"
 tags:
   - "corporate"
   - "investigation"

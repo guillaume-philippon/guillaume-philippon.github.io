@@ -26,6 +26,9 @@ skills:
     database_security: 6
     encryption_techniques: 5
     corporate_systems: 4
+factions:
+  allies:
+    - cendres_numeriques
 ---
 
 **Neon** est une hackeuse spécialisée dans l'extraction de bases de données d'identifiants et de mots de passe. Elle a une connexion élevée mais une loyauté variable. Ses compétences en hacking et en sécurité des bases de données sont exceptionnelles.
