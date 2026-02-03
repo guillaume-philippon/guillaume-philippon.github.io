@@ -102,7 +102,7 @@ layout: default
             {% endif %}
             
             <!-- Contacts who have relations with this faction -->
-            {% assign related_contacts = site.contacts | where_exp: "contact", "contact.factions.allies contains page.key or contact.factions.enemies contains page.key or contact.factions.neutral contains page.key" %}
+            {% assign related_contacts = site.contacts | where_exp: "contact", "contact.factions.allies contains page.key" | concat: (site.contacts | where_exp: "contact", "contact.factions.enemies contains page.key") | concat: (site.contacts | where_exp: "contact", "contact.factions.neutral contains page.key") | uniq %}
             {% if related_contacts.size > 0 %}
             <div class="mb-4">
               <h6 style="color: #6c757d; margin-bottom: 1rem;">👤 Contacts Liés</h6>
