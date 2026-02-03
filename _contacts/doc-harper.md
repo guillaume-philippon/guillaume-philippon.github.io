@@ -1,9 +1,13 @@
 ---
+# Informations Principales
 full_name: Dr. Harper
-type: Médecin clandestin
+type: Médecin
+description: Médecin clandestin spécialisé en cybertechnologie
 connection: 3
 key: doc-harper
 image: /assets/images/contacts/doc-harper.jpg
+
+# Attributs (1-10)
 attributes:
   body: 3
   agility: 4
@@ -13,6 +17,8 @@ attributes:
   logic: 6
   willpower: 5
   charisma: 3
+
+# Compétences
 skills:
   biotech:
     medicine: 5
@@ -22,12 +28,22 @@ skills:
     combat_medicine: 6
     cyberware_installation: 5
     street_pharmacology: 4
-factions:
+
+# Relations avec les Factions
+faction_relations:
   allies:
     - lone-star
   enemies:
     - yakuza
   neutral:
+    - draco-tech
+    - renraku
+
+# Notes et Détails
+role: Médecin clandestin et chirurgien cyberware
+specialization: Soins médicaux discrets et implants cyberware
+reputation: Expert en médecine de combat et cybertechnologie
+---
     - draco-tech
     - renraku
 ---

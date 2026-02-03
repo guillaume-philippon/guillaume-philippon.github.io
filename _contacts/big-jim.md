@@ -1,9 +1,13 @@
 ---
+# Informations Principales
 full_name: Big Jim
-type: Fixeur du milieu underground
+type: Fixeur
+description: Fixeur du milieu underground
 connection: 3
 image: /assets/images/contacts/big-jim.jpg
 key: big-jim
+
+# Attributs (1-10)
 attributes:
   body: 5
   agility: 3
@@ -13,6 +17,8 @@ attributes:
   logic: 3
   willpower: 4
   charisma: 5
+
+# Compétences
 skills:
   influence:
     negotiation: 5
@@ -24,7 +30,9 @@ skills:
     underground_arms_dealing: 6
     street_gangs: 5
     black_market: 4
-factions:
+
+# Relations avec les Factions
+faction_relations:
   allies:
     - yakuza
     - ancients
@@ -32,6 +40,11 @@ factions:
     - lone-star
   neutral:
     - draco-tech
+
+# Notes et Détails
+role: Fournisseur d'armes et d'équipements underground
+specialization: Marché noir et réseaux criminels
+reputation: Bien connecté dans le milieu underground
 ---
 
 Big Jim est un fixeur bien connecté dans le milieu underground. Il peut fournir des armes, des équipements et des informations sur les activités criminelles locales. Il a une bonne relation avec plusieurs runners et leur fournit régulièrement du travail.
