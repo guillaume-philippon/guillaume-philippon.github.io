@@ -61,8 +61,8 @@ layout: default
               <div class="row">
                 {% for entity in all_allies %}
                 <div class="col-md-4 mb-3">
-                  <a href="{{ entity.url }}" class="text-decoration-none">
-                    <div class="card entity-card" style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); color: #e0e0e0;">
+                  <a href="{{ entity.url }}" class="card-link-wrapper">
+                    <div class="card entity-card ally-card" style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); color: #e0e0e0;">
                       <div class="card-body text-center">
                         {% if entity.infos %}
                           <!-- This is a character -->
@@ -104,8 +104,8 @@ layout: default
               <div class="row">
                 {% for entity in all_enemies %}
                 <div class="col-md-4 mb-3">
-                  <a href="{{ entity.url }}" class="text-decoration-none">
-                    <div class="card entity-card" style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); color: #e0e0e0;">
+                  <a href="{{ entity.url }}" class="card-link-wrapper">
+                    <div class="card entity-card enemy-card" style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); color: #e0e0e0;">
                       <div class="card-body text-center">
                         {% if entity.infos %}
                           <!-- This is a character -->
@@ -236,5 +236,45 @@ layout: default
 .list-group-item-action:hover {
   background: rgba(255, 204, 0, 0.2) !important;
   color: #ffffff !important;
+}
+
+/* Card link wrapper styles */
+.card-link-wrapper {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.card-link-wrapper:hover {
+  transform: translateY(-5px);
+}
+
+/* Entity card styles */
+.entity-card {
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  overflow: hidden;
+}
+
+.ally-card:hover {
+  border-color: #28a745;
+  box-shadow: 0 0 20px rgba(40, 167, 69, 0.3);
+  transform: translateY(-3px);
+}
+
+.enemy-card:hover {
+  border-color: #dc3545;
+  box-shadow: 0 0 20px rgba(220, 53, 69, 0.3);
+  transform: translateY(-3px);
+}
+
+/* Image hover effects */
+.entity-card img {
+  transition: transform 0.3s ease;
+}
+
+.entity-card:hover img {
+  transform: scale(1.1);
 }
 </style>
