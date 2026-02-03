@@ -102,12 +102,13 @@ layout: default
             {% endif %}
             
             <!-- Contacts who have relations with this faction -->
-            {% assign related_contacts = site.contacts | where_exp: "contact", "contact.factions.allies contains page.key" | concat: (site.contacts | where_exp: "contact", "contact.factions.enemies contains page.key") | concat: (site.contacts | where_exp: "contact", "contact.factions.neutral contains page.key") | uniq %}
-            {% if related_contacts.size > 0 %}
+            <!-- Contacts who are allies with this faction -->
+            {% assign allied_contacts = site.contacts | where_exp: "contact", "contact.factions.allies contains page.key" %}
+            {% if allied_contacts.size > 0 %}
             <div class="mb-4">
-              <h6 style="color: #6c757d; margin-bottom: 1rem;">👤 Contacts Liés</h6>
+              <h6 style="color: #28a745; margin-bottom: 1rem;">👥 Contacts Alliés</h6>
               <div class="row">
-                {% for contact in related_contacts %}
+                {% for contact in allied_contacts %}
                 <div class="col-md-4 mb-3">
                   <a href="{{ contact.url }}" class="text-decoration-none">
                     <div class="card contact-card" style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); color: #e0e0e0;">
@@ -115,13 +116,44 @@ layout: default
                         {% if contact.image %}
                           <img src="{{ contact.image }}" alt="{{ contact.full_name }}" 
                                class="img-fluid rounded-circle mb-2" 
-                               style="width: 60px; height: 60px; object-fit: cover; border: 2px solid #ffcc00;">
+                               style="width: 60px; height: 60px; object-fit: cover; border: 2px solid #28a745;">
                         {% else %}
                           <img src="/assets/images/contacts/placeholder.jpg" alt="{{ contact.full_name }}" 
                                class="img-fluid rounded-circle mb-2" 
-                               style="width: 60px; height: 60px; object-fit: cover; border: 2px solid #ffcc00;">
+                               style="width: 60px; height: 60px; object-fit: cover; border: 2px solid #28a745;">
                         {% endif %}
-                        <h6 class="mb-0" style="color: #ffcc00;">{{ contact.full_name }}</h6>
+                        <h6 class="mb-0" style="color: #28a745;">{{ contact.full_name }}</h6>
+                        <small class="text-muted">{{ contact.type }}</small>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+            {% endif %}
+            
+            <!-- Contacts who are enemies with this faction -->
+            {% assign enemy_contacts = site.contacts | where_exp: "contact", "contact.factions.enemies contains page.key" %}
+            {% if enemy_contacts.size > 0 %}
+            <div class="mb-4">
+              <h6 style="color: #dc3545; margin-bottom: 1rem;">⚔️ Contacts Ennemis</h6>
+              <div class="row">
+                {% for contact in enemy_contacts %}
+                <div class="col-md-4 mb-3">
+                  <a href="{{ contact.url }}" class="text-decoration-none">
+                    <div class="card contact-card" style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); color: #e0e0e0;">
+                      <div class="card-body text-center">
+                        {% if contact.image %}
+                          <img src="{{ contact.image }}" alt="{{ contact.full_name }}" 
+                               class="img-fluid rounded-circle mb-2" 
+                               style="width: 60px; height: 60px; object-fit: cover; border: 2px solid #dc3545;">
+                        {% else %}
+                          <img src="/assets/images/contacts/placeholder.jpg" alt="{{ contact.full_name }}" 
+                               class="img-fluid rounded-circle mb-2" 
+                               style="width: 60px; height: 60px; object-fit: cover; border: 2px solid #dc3545;">
+                        {% endif %}
+                        <h6 class="mb-0" style="color: #dc3545;">{{ contact.full_name }}</h6>
                         <small class="text-muted">{{ contact.type }}</small>
                       </div>
                     </div>
