@@ -96,3 +96,7 @@ L’aventure **Point Mort** a plongé les runners dans les bas-fonds de **Mérid
 ## Contacts Rencontrés
 
 {% include components.html component="mission_contacts" contacts=page.contacts %}
+
+## Runners Participants
+
+{% include components.html component="mission_runners" runners=page.runners %}
