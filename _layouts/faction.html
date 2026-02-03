@@ -3,171 +3,137 @@ layout: default
 ---
 
 <div class="container my-5">
-  <div class="row">
-    <div class="col-lg-8">
-      <div class="card faction-detail-card mb-4">
-        <div class="card-header" style="background: linear-gradient(135deg, #111111 0%, #222222 100%); border-bottom: 1px solid #ffcc00;">
-          <h1 class="mb-0" style="color: #ffcc00;">{{ page.name }}</h1>
+  <div class="card faction-detail-card mb-4">
+    <div class="card-header" style="background: linear-gradient(135deg, #111111 0%, #222222 100%); border-bottom: 1px solid #ffcc00;">
+      <h1 class="mb-0" style="color: #ffcc00;">{{ page.name }}</h1>
+    </div>
+    <div class="card-body" style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); color: #e0e0e0;">
+      <div class="row mb-4">
+        <div class="col-md-3 text-center">
+          {% if page.logo %}
+            <img src="{{ page.logo }}" alt="{{ page.name }}" class="img-fluid rounded-circle" 
+                  style="border: 2px solid #ffcc00; max-width: 150px; margin: 0 auto;">
+          {% else %}
+            <div class="faction-logo-placeholder-large rounded-circle mx-auto d-flex align-items-center justify-content-center" 
+                  style="width: 150px; height: 150px; border: 2px solid #ffcc00; background-color: {{ page.color }};">
+              <span class="text-white font-weight-bold" style="font-size: 48px;">{{ page.name | slice: 0, 1 }}</span>
+            </div>
+          {% endif %}
         </div>
-        <div class="card-body" style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); color: #e0e0e0;">
-          <div class="row mb-4">
-            <div class="col-md-3 text-center">
-              {% if page.logo %}
-                <img src="{{ page.logo }}" alt="{{ page.name }}" class="img-fluid rounded-circle" 
-                     style="border: 2px solid #ffcc00; max-width: 150px; margin: 0 auto;">
-              {% else %}
-                <div class="faction-logo-placeholder-large rounded-circle mx-auto d-flex align-items-center justify-content-center" 
-                     style="width: 150px; height: 150px; border: 2px solid #ffcc00; background-color: {{ page.color }};">
-                  <span class="text-white font-weight-bold" style="font-size: 48px;">{{ page.name | slice: 0, 1 }}</span>
-                </div>
-              {% endif %}
-            </div>
-            <div class="col-md-9">
-              <div class="faction-info mb-3">
-                <h4 style="color: #ffcc00; border-bottom: 1px solid rgba(255, 204, 0, 0.3); padding-bottom: 0.5rem;">
-                  Informations Générales
-                </h4>
-                <div class="row">
-                  <div class="col-sm-6">
-                    <strong>Type:</strong> {{ page.type | capitalize }}<br>
-                    <strong>Réputation:</strong> {{ page.reputation }}/10<br>
-                    <strong>Influence:</strong> {{ page.influence }}
-                  </div>
-                </div>
-              </div>
-              <div class="faction-description">
-                <p>{{ page.description }}</p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="faction-content">
-            {{ content }}
-          </div>
-          
-          <!-- Characters and Contacts related to this faction -->
-          <div class="faction-connections mt-5">
+        <div class="col-md-9">
+          <div class="faction-info mb-3">
             <h4 style="color: #ffcc00; border-bottom: 1px solid rgba(255, 204, 0, 0.3); padding-bottom: 0.5rem;">
-              Personnages et Contacts Liés
+              Informations Générales
             </h4>
-            
-            <!-- Combined allies (characters + contacts) -->
-            {% assign allied_characters = site.characters | where_exp: "character", "character.factions.allies contains page.key" %}
-            {% assign allied_contacts = site.contacts | where_exp: "contact", "contact.factions.allies contains page.key" %}
-            {% assign all_allies = allied_characters | concat: allied_contacts %}
-            {% if all_allies.size > 0 %}
-            <div class="mb-4">
-              <h6 style="color: #28a745; margin-bottom: 1rem;">👥 Alliés</h6>
-              <div class="row">
-                {% for entity in all_allies %}
-                <div class="col-md-4 mb-3">
-                  <a href="{{ entity.url }}" class="card-link-wrapper">
-                    <div class="card entity-card ally-card" style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); color: #e0e0e0;">
-                      <div class="card-body text-center">
-                        {% if entity.infos %}
-                          <!-- This is a character -->
-                          <img src="{{ entity.infos.picture }}" alt="{{ entity.full_name }}" 
-                               class="img-fluid rounded-circle mb-2" 
-                               style="width: 60px; height: 60px; object-fit: cover; border: 2px solid #28a745;">
-                          <h6 class="mb-0" style="color: #28a745;">{{ entity.full_name }}</h6>
-                          <small class="text-muted">👤 {{ entity.race }}</small>
-                        {% else %}
-                          <!-- This is a contact -->
-                          {% if entity.image %}
-                            <img src="{{ entity.image }}" alt="{{ entity.full_name }}" 
-                                 class="img-fluid rounded-circle mb-2" 
-                                 style="width: 60px; height: 60px; object-fit: cover; border: 2px solid #28a745;">
-                          {% else %}
-                            <img src="/assets/images/contacts/placeholder.jpg" alt="{{ entity.full_name }}" 
-                                 class="img-fluid rounded-circle mb-2" 
-                                 style="width: 60px; height: 60px; object-fit: cover; border: 2px solid #28a745;">
-                          {% endif %}
-                          <h6 class="mb-0" style="color: #28a745;">{{ entity.full_name }}</h6>
-                          <small class="text-muted">📞 {{ entity.type }}</small>
-                        {% endif %}
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                {% endfor %}
+            <div class="row">
+              <div class="col-sm-6">
+                <strong>Type:</strong> {{ page.type | capitalize }}<br>
+                <strong>Réputation:</strong> {{ page.reputation }}/10<br>
+                <strong>Influence:</strong> {{ page.influence }}
               </div>
             </div>
-            {% endif %}
-            
-            <!-- Combined enemies (characters + contacts) -->
-            {% assign enemy_characters = site.characters | where_exp: "character", "character.factions.enemies contains page.key" %}
-            {% assign enemy_contacts = site.contacts | where_exp: "contact", "contact.factions.enemies contains page.key" %}
-            {% assign all_enemies = enemy_characters | concat: enemy_contacts %}
-            {% if all_enemies.size > 0 %}
-            <div class="mb-4">
-              <h6 style="color: #dc3545; margin-bottom: 1rem;">⚔️ Ennemis</h6>
-              <div class="row">
-                {% for entity in all_enemies %}
-                <div class="col-md-4 mb-3">
-                  <a href="{{ entity.url }}" class="card-link-wrapper">
-                    <div class="card entity-card enemy-card" style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); color: #e0e0e0;">
-                      <div class="card-body text-center">
-                        {% if entity.infos %}
-                          <!-- This is a character -->
-                          <img src="{{ entity.infos.picture }}" alt="{{ entity.full_name }}" 
-                               class="img-fluid rounded-circle mb-2" 
-                               style="width: 60px; height: 60px; object-fit: cover; border: 2px solid #dc3545;">
-                          <h6 class="mb-0" style="color: #dc3545;">{{ entity.full_name }}</h6>
-                          <small class="text-muted">👤 {{ entity.race }}</small>
-                        {% else %}
-                          <!-- This is a contact -->
-                          {% if entity.image %}
-                            <img src="{{ entity.image }}" alt="{{ entity.full_name }}" 
-                                 class="img-fluid rounded-circle mb-2" 
-                                 style="width: 60px; height: 60px; object-fit: cover; border: 2px solid #dc3545;">
-                          {% else %}
-                            <img src="/assets/images/contacts/placeholder.jpg" alt="{{ entity.full_name }}" 
-                                 class="img-fluid rounded-circle mb-2" 
-                                 style="width: 60px; height: 60px; object-fit: cover; border: 2px solid #dc3545;">
-                          {% endif %}
-                          <h6 class="mb-0" style="color: #dc3545;">{{ entity.full_name }}</h6>
-                          <small class="text-muted">📞 {{ entity.type }}</small>
-                        {% endif %}
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                {% endfor %}
-              </div>
-            </div>
-            {% endif %}
-            
-            <!-- Contacts who are enemies with this faction -->
-            {% assign enemy_contacts = site.contacts | where_exp: "contact", "contact.factions.enemies contains page.key" %}
-            {% if enemy_contacts.size > 0 %}
-            <div class="mb-4">
-              <h6 style="color: #dc3545; margin-bottom: 1rem;">⚔️ Contacts Ennemis</h6>
-              <div class="row">
-
+          </div>
+          <div class="faction-description">
+            <p>{{ page.description }}</p>
           </div>
         </div>
       </div>
-    </div>
-            {% endif %}
-    
-    <div class="col-lg-4">
-      <div class="card faction-sidebar-card">
-        <div class="card-header" style="background: linear-gradient(135deg, #111111 0%, #222222 100%); border-bottom: 1px solid #ffcc00;">
-          <h3 style="color: #ffcc00; margin-bottom: 0;">Navigation</h3>
-        </div>
-        <div class="card-body" style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);">
-          <div class="list-group list-group-flush">
-            <a href="#" class="list-group-item list-group-item-action" style="background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 204, 0, 0.1); color: #e0e0e0;">
-              Informations
-            </a>
-            <a href="#" class="list-group-item list-group-item-action" style="background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 204, 0, 0.1); color: #e0e0e0;">
-              Histoire
-            </a>
-            <a href="#" class="list-group-item list-group-item-action" style="background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 204, 0, 0.1); color: #e0e0e0;">
-              Relations
-            </a>
+      
+      <div class="faction-content">
+        {{ content }}
+      </div>
+      
+      <!-- Characters and Contacts related to this faction -->
+      <div class="faction-connections mt-5">
+        <h4 style="color: #ffcc00; border-bottom: 1px solid rgba(255, 204, 0, 0.3); padding-bottom: 0.5rem;">
+          Personnages et Contacts Liés
+        </h4>
+        
+        <!-- Combined allies (characters + contacts) -->
+        {% assign allied_characters = site.characters | where_exp: "character", "character.factions.allies contains page.key" %}
+        {% assign allied_contacts = site.contacts | where_exp: "contact", "contact.factions.allies contains page.key" %}
+        {% assign all_allies = allied_characters | concat: allied_contacts %}
+        {% if all_allies.size > 0 %}
+        <div class="mb-4">
+          <h6 style="color: #28a745; margin-bottom: 1rem;">👥 Alliés</h6>
+          <div class="row">
+            {% for entity in all_allies %}
+            <div class="col-md-4 mb-3">
+              <a href="{{ entity.url }}" class="card-link-wrapper">
+                <div class="card entity-card ally-card" style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); color: #e0e0e0;">
+                  <div class="card-body text-center">
+                    {% if entity.infos %}
+                      <!-- This is a character -->
+                      <img src="{{ entity.infos.picture }}" alt="{{ entity.full_name }}" 
+                            class="img-fluid rounded-circle mb-2" 
+                            style="width: 60px; height: 60px; object-fit: cover; border: 2px solid #28a745;">
+                      <h6 class="mb-0" style="color: #28a745;">{{ entity.full_name }}</h6>
+                      <small class="text-muted">👤 {{ entity.race }}</small>
+                    {% else %}
+                      <!-- This is a contact -->
+                      {% if entity.image %}
+                        <img src="{{ entity.image }}" alt="{{ entity.full_name }}" 
+                              class="img-fluid rounded-circle mb-2" 
+                              style="width: 60px; height: 60px; object-fit: cover; border: 2px solid #28a745;">
+                      {% else %}
+                        <img src="/assets/images/contacts/placeholder.jpg" alt="{{ entity.full_name }}" 
+                              class="img-fluid rounded-circle mb-2" 
+                              style="width: 60px; height: 60px; object-fit: cover; border: 2px solid #28a745;">
+                      {% endif %}
+                      <h6 class="mb-0" style="color: #28a745;">{{ entity.full_name }}</h6>
+                      <small class="text-muted">📞 {{ entity.type }}</small>
+                    {% endif %}
+                  </div>
+                </div>
+              </a>
+            </div>
+            {% endfor %}
           </div>
         </div>
+        {% endif %}
+        
+        <!-- Combined enemies (characters + contacts) -->
+        {% assign enemy_characters = site.characters | where_exp: "character", "character.factions.enemies contains page.key" %}
+        {% assign enemy_contacts = site.contacts | where_exp: "contact", "contact.factions.enemies contains page.key" %}
+        {% assign all_enemies = enemy_characters | concat: enemy_contacts %}
+        {% if all_enemies.size > 0 %}
+        <div class="mb-4">
+          <h6 style="color: #dc3545; margin-bottom: 1rem;">⚔️ Ennemis</h6>
+          <div class="row">
+            {% for entity in all_enemies %}
+            <div class="col-md-4 mb-3">
+              <a href="{{ entity.url }}" class="card-link-wrapper">
+                <div class="card entity-card enemy-card" style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); color: #e0e0e0;">
+                  <div class="card-body text-center">
+                    {% if entity.infos %}
+                      <!-- This is a character -->
+                      <img src="{{ entity.infos.picture }}" alt="{{ entity.full_name }}" 
+                            class="img-fluid rounded-circle mb-2" 
+                            style="width: 60px; height: 60px; object-fit: cover; border: 2px solid #dc3545;">
+                      <h6 class="mb-0" style="color: #dc3545;">{{ entity.full_name }}</h6>
+                      <small class="text-muted">👤 {{ entity.race }}</small>
+                    {% else %}
+                      <!-- This is a contact -->
+                      {% if entity.image %}
+                        <img src="{{ entity.image }}" alt="{{ entity.full_name }}" 
+                              class="img-fluid rounded-circle mb-2" 
+                              style="width: 60px; height: 60px; object-fit: cover; border: 2px solid #dc3545;">
+                      {% else %}
+                        <img src="/assets/images/contacts/placeholder.jpg" alt="{{ entity.full_name }}" 
+                              class="img-fluid rounded-circle mb-2" 
+                              style="width: 60px; height: 60px; object-fit: cover; border: 2px solid #dc3545;">
+                      {% endif %}
+                      <h6 class="mb-0" style="color: #dc3545;">{{ entity.full_name }}</h6>
+                      <small class="text-muted">📞 {{ entity.type }}</small>
+                    {% endif %}
+                  </div>
+                </div>
+              </a>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
       </div>
     </div>
   </div>
