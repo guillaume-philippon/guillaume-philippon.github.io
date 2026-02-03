@@ -25,4 +25,4 @@ skills:
     megacorp_operations: 4
 ---
 
-Madame X est une spécialiste des secrets industriels, capable de fournir des informations sensibles sur les megacorps et leurs projets. Elle a une bonne connaissance des opérations des megacorps et des techniques d'espionnage industriel.
+*Madame X* est une spécialiste des secrets industriels, capable de fournir des informations sensibles sur les megacorps et leurs projets. Elle a une bonne connaissance des opérations des megacorps et des techniques d'espionnage industriel.

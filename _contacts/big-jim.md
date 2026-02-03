@@ -47,4 +47,4 @@ specialization: Marché noir et réseaux criminels
 reputation: Bien connecté dans le milieu underground
 ---
 
-Big Jim est un fixeur bien connecté dans le milieu underground. Il peut fournir des armes, des équipements et des informations sur les activités criminelles locales. Il a une bonne relation avec plusieurs runners et leur fournit régulièrement du travail.
+*Big Jim* est un fixeur bien connecté dans le milieu underground. Il peut fournir des armes, des équipements et des informations sur les activités criminelles locales. Il a une bonne relation avec plusieurs runners et leur fournit régulièrement du travail.

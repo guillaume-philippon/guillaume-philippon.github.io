@@ -24,4 +24,4 @@ skills:
     draco_tech_procedures: 4
 ---
 
-Dr. Lina Krayven est une médecin affiliée à DracoTech, spécialisée dans les soins aux employés de la megacorp dans les zones à haut risque. Elle a une solide formation médicale et une bonne connaissance des procédures de DracoTech.
+*Dr. Lina Krayven* est une médecin affiliée à **DracoTech**, spécialisée dans les soins aux employés de la megacorp dans les zones à haut risque. Elle a une solide formation médicale et une bonne connaissance des procédures de **DracoTech**.

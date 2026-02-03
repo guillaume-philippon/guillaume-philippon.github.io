@@ -43,9 +43,9 @@ tags:
 
 ## Briefing
 
-Vous avez été conviés au siège discret de **DracoTech** à *Mérida*, un bâtiment conçu pour passer inaperçu. **Miguel Varga**, responsable opérationnel de **DracoSec** (département sécurisation des sites), vous a accueillis. Il a présenté la mission comme une évaluation de vos capacités opérationnelles.
+Vous avez été conviés au siège discret de **DracoTech** à **Mérida**, un bâtiment conçu pour passer inaperçu. *Miguel Varga*, responsable opérationnel de **DracoSec** (département sécurisation des sites), vous a accueillis. Il a présenté la mission comme une évaluation de vos capacités opérationnelles.
 
-Le site cible, situé dans les favelas à 35 km de *Mérida*, est un ancien site d’observation ayant cessé d’émettre, contrairement aux procédures standard. Sur place, le bâtiment semble abandonné, entouré de squats. Une investigation révèle qu’un rituel d’observation passive, utilisant un esprit d’observation, était en place. Une tour de contrôle magique active, identifiée comme un résonateur thumaturgique passif, se trouve à proximité.
+Le site cible, situé dans les favelas à 35 km de **Mérida**, est un ancien site d’observation ayant cessé d’émettre, contrairement aux procédures standard. Sur place, le bâtiment semble abandonné, entouré de squats. Une investigation révèle qu’un rituel d’observation passive, utilisant un esprit d’observation, était en place. Une tour de contrôle magique active, identifiée comme un résonateur thumaturgique passif, se trouve à proximité.
 
 L’arrêt des émissions pourrait être lié à une défaillance du rituel, une corruption de l’esprit, ou une interruption entre la tour et le bâtiment. Aucune cause définitive n’a encore été identifiée.
 
@@ -57,9 +57,9 @@ L’arrêt des émissions pourrait être lié à une défaillance du rituel, une
 
 Vos investigations sur le site **DT-YUC-17** ont révélé les éléments suivants :
 
-Le bâtiment, situé dans les favelas à 35 km de Mérida, est un relais de surveillance actif non critique de **DracoTech**. L’accès a été possible grâce à vos badges **DracoTech**. À l’intérieur, les systèmes semblaient avoir été éteints volontairement, sans signe de lutte ou de panne technique.
+Le bâtiment, situé dans les favelas à 35 km de **Mérida**, est un relais de surveillance actif non critique de **DracoTech**. L’accès a été possible grâce à vos badges **DracoTech**. À l’intérieur, les systèmes semblaient avoir été éteints volontairement, sans signe de lutte ou de panne technique.
 
-Un cercle rituel avec des glyphes non identifiés était présent au centre de la pièce. **Ahau-Tec** n’a pas reconnu leur signification, ce qui suggère une origine obscure ou spécifique à une tradition magique peu commune. Les ordinateurs sur place indiquaient que le site (**DT-YUC-17**) était toujours marqué comme actif dans les registres, bien que tout ait été désactivé manuellement.
+Un cercle rituel avec des glyphes non identifiés était présent au centre de la pièce. *Ahau-Tec* n’a pas reconnu leur signification, ce qui suggère une origine obscure ou spécifique à une tradition magique peu commune. Les ordinateurs sur place indiquaient que le site (**DT-YUC-17**) était toujours marqué comme actif dans les registres, bien que tout ait été désactivé manuellement.
 
 <div class="image-left">
   <img src="/assets/images/missions/DT-YUC-17-indoor.jpg" class="img-fluid rounded" alt="DT-YUC-17">
@@ -79,9 +79,9 @@ L’état des systèmes après le rétablissement du courant permettra de vérif
 
 ## Calderone
 
-Les squatteurs autour du bâtiment n’ont fourni aucune information utile, à l’exception de l’identification de **Calderone**, un membre de l’équipe resté sur place. **Calderone**, après discussion et consommation d’alcool, a révélé que l’équipe était composée de cinq membres, dirigée par José. Rafael Itsa, un autre membre, a ordonné l’arrêt des opérations et préparé le rituel d’observation passive. **Calderone** ignore les raisons de cet arrêt.
-**Miguel Varga** a confirmé que trois membres de l’équipe ont été redéployés, mais aucune information n’est disponible concernant Rafael Itsa. Le site **DT-YUC-17** est désormais de nouveau actif après le rétablissement de l’alimentation électrique.
-La mission s’est conclue par la destruction du cercle rituel, libérant l’esprit d’observation lié au rituel. La demande de **Miguel Varga** de neutraliser l’esprit avant le retour a été exécutée. L’enquête est terminée.
+Les squatteurs autour du bâtiment n’ont fourni aucune information utile, à l’exception de l’identification de *Calderone*, un membre de l’équipe resté sur place. *Calderone*, après discussion et consommation d’alcool, a révélé que l’équipe était composée de cinq membres, dirigée par *José*. *Rafael Itsa*, un autre membre, a ordonné l’arrêt des opérations et préparé le rituel d’observation passive. **Calderone** ignore les raisons de cet arrêt.
+*Miguel Varga* a confirmé que trois membres de l’équipe ont été redéployés, mais aucune information n’est disponible concernant *Rafael Itsa*. Le site **DT-YUC-17** est désormais de nouveau actif après le rétablissement de l’alimentation électrique.
+La mission s’est conclue par la destruction du cercle rituel, libérant l’esprit d’observation lié au rituel. La demande de *Miguel Varga* de neutraliser l’esprit avant le retour a été exécutée. L’enquête est terminée.
 
 <div class="image-left">
   <img src="/assets/images/contacts/placeholder.jpg" class="img-fluid rounded" alt="Calderone">
@@ -89,9 +89,9 @@ La mission s’est conclue par la destruction du cercle rituel, libérant l’es
 
 ## Conclusion
 
-L’aventure **Point Mort** a plongé les runners dans les bas-fonds de *Mérida*, une cité où magie, technologie et corruption s’entremêlent sous un ciel de néons et de chaleur étouffante. Chaque membre a joué un rôle clé : l’orc **Ahau-Tec**, alliant force brute et traditions ancestrales, le decker **Ghost**, maître des intrusions virtuelles, l’elfe chamane **Maya**, guide entre les mondes physique et spirituel, et le nain rigger **Patch**, expert en drones et en tactiques.
+L’aventure **Point Mort** a plongé les runners dans les bas-fonds de **Mérida**, une cité où magie, technologie et corruption s’entremêlent sous un ciel de néons et de chaleur étouffante. Chaque membre a joué un rôle clé : l’orc *Ahau-Tec*, alliant force brute et traditions ancestrales, le decker *Ghost*, maître des intrusions virtuelles, l’elfe chamane *Maya*, guide entre les mondes physique et spirituel, et le nain rigger *Patch*, expert en drones et en tactiques.
 
-**Rafael Itsa** n’a pas disparu sans raison. Les ombres de *Mérida* murmurent encore son nom, et les rituels abandonnés portent son empreinte. Ce n’est qu’une question de temps avant que ses choix ne resurgissent—avec les conséquences qu’ils entraînent. Préparez-vous à le recroiser, là où la magie et la technologie s’entrechoquent.
+*Rafael Itsa* n’a pas disparu sans raison. Les ombres de *Mérida* murmurent encore son nom, et les rituels abandonnés portent son empreinte. Ce n’est qu’une question de temps avant que ses choix ne resurgissent—avec les conséquences qu’ils entraînent. Préparez-vous à le recroiser, là où la magie et la technologie s’entrechoquent.
 
 ## Contacts Rencontrés
 

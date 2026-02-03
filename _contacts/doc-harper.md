@@ -44,8 +44,5 @@ role: Médecin clandestin et chirurgien cyberware
 specialization: Soins médicaux discrets et implants cyberware
 reputation: Expert en médecine de combat et cybertechnologie
 ---
-    - draco-tech
-    - renraku
----
 
-Dr. Harper est un médecin clandestin qui travaille dans les zones urbaines dangereuses. Il est spécialisé dans les soins aux runners et peut fournir des soins médicaux discrets, des implants cyberware et des médicaments illégaux.
+*Dr. Harper* est un médecin clandestin qui travaille dans les zones urbaines dangereuses. Il est spécialisé dans les soins aux runners et peut fournir des soins médicaux discrets, des implants cyberware et des médicaments illégaux.

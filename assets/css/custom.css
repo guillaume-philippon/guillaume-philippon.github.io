@@ -507,11 +507,13 @@ footer {
 }
 
 /* Style pour les éléments strong dans les modales - en jaune */
-.modal-content strong,
-.modal-body strong,
-.modal-header strong {
+strong {
   color: #ffcc00 !important;
   font-weight: 600 !important;
+}
+
+em {
+  color: #ff0000 !important;
 }
 
 /* Style pour la surbrillance des programmes */

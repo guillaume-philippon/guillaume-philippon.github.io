@@ -26,4 +26,4 @@ skills:
     herbalism: 4
 ---
 
-Chaman Ixchel est un guide spirituel et chaman de la communauté maya. Il est un membre respecté des Zotz-Yax, la tribu d'Ahau-Tec, et lui fournit des conseils spirituels, des protections magiques et des connaissances sur les traditions ancestrales mayas. Il peut également fournir des remèdes à base de plantes et des conseils sur les esprits et le plan astral.
+*Chaman Ixchel* est un guide spirituel et chaman de la communauté maya. Il est un membre respecté des **Zotz-Yax**, la tribu d'*Ahau-Tec*, et lui fournit des conseils spirituels, des protections magiques et des connaissances sur les traditions ancestrales mayas. Il peut également fournir des remèdes à base de plantes et des conseils sur les esprits et le plan astral.
