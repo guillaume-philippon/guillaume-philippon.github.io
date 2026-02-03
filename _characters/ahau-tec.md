@@ -169,6 +169,7 @@ contacts:
 factions:
   allies:
     - dracotech
+    - zotzyax
 wound:
   physic: 3
   mental: 3

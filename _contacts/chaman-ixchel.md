@@ -24,6 +24,9 @@ skills:
     astral_plane: 5
     spirit_lore: 4
     herbalism: 4
+factions:
+  allies:
+    - zotzyax
 ---
 
 *Chaman Ixchel* est un guide spirituel et chaman de la communauté maya. Il est un membre respecté des **Zotz-Yax**, la tribu d'*Ahau-Tec*, et lui fournit des conseils spirituels, des protections magiques et des connaissances sur les traditions ancestrales mayas. Il peut également fournir des remèdes à base de plantes et des conseils sur les esprits et le plan astral.

@@ -11,35 +11,19 @@ logo: "/assets/images/factions/dracotech.png"
 
 ## DracoTech
 
-**Type:** Megacorporation (AAA)
+**Type:** Megacorporation (A)
 
-**Siège Social:** Atlanta, UCAS
+**Siège Social:** Mérida, Yucatan
 
 **Secteurs d'Activité:**
 - Technologie magique
 - Sécurité et défense
 - Recherche paranormale
-- Biotechnologie avancée
 
 **Histoire:**
-Fondée en 2035 par le Dr. Richard Draco, DracoTech s'est rapidement imposée comme un leader dans le domaine de la technologie magique. Spécialisée dans la fusion entre magie et technologie, l'entreprise a développé des innovations révolutionnaires dans les domaines de la sécurité, de la défense et de la recherche paranormale.
 
-**Produits et Services:**
-- Systèmes de sécurité magique
-- Armes et armures enchantées
-- Recherche en biotechnologie
-- Consulting en sécurité corporative
-- Développement de logiciels de détection magique
+**DracoTech** est une mégacorporation spécialisée dans la sécurité avancée et la recherche d’artefacts, combinant expertise technologique et magie structurée. Contrairement à d’autres acteurs du secteur, elle se distingue par une approche éthique, encadrant ses activités par des protocoles stricts visant à limiter les abus et les dérives. Ses opérations intègrent des systèmes de surveillance hybrides, utilisant des rituels magiques et des infrastructures high-tech pour sécuriser des sites sensibles ou étudier des objets aux propriétés mystérieuses.
 
-**Culture d'Entreprise:**
-DracoTech est connue pour son approche agressive de la recherche et du développement, ainsi que pour son utilisation intensive de la magie dans ses opérations. L'entreprise a une réputation de secret et de paranoïa, avec des mesures de sécurité extrêmes.
+**DracoTech** ne se contente pas d’exploiter les ressources magiques et technologiques : elle cherche à comprendre leurs implications, à en maîtriser les risques, et à en partager les bénéfices de manière contrôlée.
 
-**Présence dans Shadowrun:**
-DracoTech est un acteur majeur dans le monde de Shadowrun, souvent impliquée dans des intrigues corporatives et des opérations secrètes. L'entreprise est un employeur potentiel pour les shadowrunners, bien que travailler pour eux soit souvent dangereux.
-
-**Relations:**
-- **Alliés:** Aucune alliance publique majeure
-- **Rivaux:** Aztechnology, Renraku
-- **Ennemis:** Groupes anti-corporatistes, certains gangs
-
-**Note:** DracoTech est particulièrement active dans la lutte contre les menaces magiques et paranormales, ce qui en fait un acteur clé dans les intrigues impliquant la magie noire et les créatures surnaturelles.
+Cette vision positionne **DracoTech** comme un acteur unique dans le paysage des mégacorporations, où la quête de profit coexiste avec une volonté affiché de responsabilité et de durabilité. Ses équipes, formées à la fois aux enjeux magiques et technologiques, opèrent selon des directives claires, réduisant les marges de manœuvre pour les initiatives individuelles non autorisées. Cela en fait une entité à la fois redoutée pour son efficacité et respectée pour son approche mesurée.
