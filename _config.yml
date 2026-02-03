@@ -17,6 +17,9 @@ collections:
     permalink: /missions/:name/
   relations:
     output: false
+  factions:
+    output: true
+    permalink: /factions/:name/
 
 defaults:
   - scope:
@@ -34,3 +37,8 @@ defaults:
       type: "missions"
     values:
       layout: "mission"
+  - scope:
+      path: ""
+      type: "factions"
+    values:
+      layout: "faction"
