@@ -1,0 +1,144 @@
+---
+layout: default
+permalink: /404.html
+---
+
+<div class="container-fluid error-404-container">
+  <div class="row justify-content-center align-items-center min-vh-100">
+    <div class="col-md-8 col-lg-6 text-center">
+      <div class="error-404-card">
+        <div class="error-404-header">
+          <h1 class="error-404-title">404</h1>
+          <div class="error-404-subtitle">Page Introuvable</div>
+        </div>
+        
+        <div class="error-404-content">
+          <p class="error-404-message">
+            Désolé, la page que vous cherchez n'existe pas ou a été déplacée.
+          </p>
+          
+          <div class="error-404-icon mb-4">
+            <i class="fa-solid fa-skull-crossbones" style="font-size: 4rem; color: #ffcc00;"></i>
+          </div>
+          
+          <p class="error-404-suggestion">
+            Peut-être avez-vous suivi un lien incorrect ou la page a été supprimée.
+          </p>
+          
+          <div class="mt-4">
+            <a href="/" class="btn btn-error-404">
+              <i class="fa-solid fa-home me-2"></i>
+              Retour à l'accueil
+            </a>
+          </div>
+        </div>
+        
+        <div class="error-404-footer mt-4">
+          <small class="text-muted">
+            "La matrice est un système, Neo. Ce système est notre ennemi." - Morpheus
+          </small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.error-404-container {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  color: #e0e0e0;
+  padding: 2rem 0;
+}
+
+.error-404-card {
+  background: linear-gradient(145deg, #111111 0%, #222222 100%);
+  border: 2px solid #ffcc00;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(255, 204, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.error-404-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(255, 204, 0, 0.3);
+}
+
+.error-404-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 204, 0, 0.3);
+}
+
+.error-404-title {
+  font-size: 6rem;
+  font-weight: 800;
+  color: #ffcc00;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+  margin-bottom: 0.5rem;
+  animation: pulse 2s infinite;
+}
+
+.error-404-subtitle {
+  font-size: 1.5rem;
+  color: #ffcc00;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.error-404-message {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #adadad;
+}
+
+.error-404-suggestion {
+  font-size: 1rem;
+  color: #888888;
+  margin-bottom: 2rem;
+}
+
+.btn-error-404 {
+  background: linear-gradient(135deg, #ffcc00 0%, #e0a800 100%);
+  color: #212529;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-error-404:hover {
+  background: linear-gradient(135deg, #e0a800 0%, #d39e00 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+}
+
+.error-404-footer {
+  font-style: italic;
+  color: #666666;
+}
+
+@keyframes pulse {
+  0% { text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5); }
+  50% { text-shadow: 3px 3px 6px rgba(255, 204, 0, 0.3); }
+  100% { text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5); }
+}
+
+@media (max-width: 768px) {
+  .error-404-title {
+    font-size: 4rem;
+  }
+  
+  .error-404-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .error-404-message {
+    font-size: 1rem;
+  }
+}
+</style>
