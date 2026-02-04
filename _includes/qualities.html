@@ -1,9 +1,0 @@
-      <!-- Qualités -->
-      <h3 class="mt-3">Qualités</h3>
-      <ul class="list-group mb-3">
-        {% for quality in page.qualities %}
-          <li class="list-group-item py-1"><span data-bs-toggle="tooltip" data-bs-title="{{quality.sourcebook}} (p. {{quality.page}})"><strong>{{ quality.name }}</strong></span> (Rating: {{ quality.rating }}, {{ quality.bp }} BP)
-          {{ quality.description | markdownify }}
-          </li>
-        {% endfor %}
-      </ul>
