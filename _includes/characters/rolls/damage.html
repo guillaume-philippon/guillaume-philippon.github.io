@@ -10,7 +10,7 @@
     <span><strong>{{ matrix_attack }}</strong> <small>(Programs + Net hits)</small></span>
   </li>
   {% endif %}
-  {% if page.magic and page.magic.type != 'adept' %}
+  {% if page.magic.magician %}
   <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
     <strong>Astral</strong>
     <span><strong>{{ charisma_total | divided_by: 2.0 | round }}</strong> <small>(Char. /2)</small></span>

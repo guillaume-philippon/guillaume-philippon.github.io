@@ -1,0 +1,210 @@
+# Powers Data Structure
+# This file contains magical powers information with support for levels and categories
+
+# Power Categories
+categories:
+  - id: adept
+    name: "Adept Powers"
+    description: "Powers available to adepts"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 310
+  - id: magician
+    name: "Magician Powers"
+    description: "Powers available to magicians"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 310
+  - id: technomancer
+    name: "Technomancer Powers"
+    description: "Powers available to technomancers"
+    sourcebook: "Unwired"
+    page: 120
+
+# Power Types
+types:
+  - id: active
+    name: "Active Powers"
+    description: "Powers that require activation"
+  - id: passive
+    name: "Passive Powers"
+    description: "Powers that are always active"
+  - id: sustained
+    name: "Sustained Powers"
+    description: "Powers that require concentration to maintain"
+
+# Power Database
+powers:
+  - id: improved_reflexes
+    name: "Improved Reflexes"
+    category: adept
+    type: passive
+    magic_cost: 1.5
+    description: "Augments reaction and initiative"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 312
+    levels:
+      - level: 1
+        magic_cost: 1.5
+        reaction_bonus: 1
+        initiative_pass: 1
+        description: "+1 Reaction, +1 Initiative Pass"
+      - level: 2
+        magic_cost: 3.0
+        reaction_bonus: 2
+        initiative_pass: 2
+        description: "+2 Reaction, +2 Initiative Passes"
+      - level: 3
+        magic_cost: 4.5
+        reaction_bonus: 3
+        initiative_pass: 3
+        description: "+3 Reaction, +3 Initiative Passes"
+
+  - id: astral_perception
+    name: "Astral Perception"
+    category: adept
+    type: passive
+    magic_cost: 1.0
+    description: "Allows perception of the astral plane"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 311
+    levels:
+      - level: 1
+        magic_cost: 1.0
+        description: "Basic astral perception"
+
+  - id: mystic_armor
+    name: "Mystic Armor"
+    category: adept
+    type: passive
+    magic_cost: 3.0
+    description: "Provides magical armor protection"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 313
+    levels:
+      - level: 1
+        magic_cost: 3.0
+        armor_bonus: 1
+        description: "+1 Armor"
+      - level: 2
+        magic_cost: 6.0
+        armor_bonus: 2
+        description: "+2 Armor"
+      - level: 3
+        magic_cost: 9.0
+        armor_bonus: 3
+        description: "+3 Armor"
+      - level: 4
+        magic_cost: 12.0
+        armor_bonus: 4
+        description: "+4 Armor"
+      - level: 5
+        magic_cost: 15.0
+        armor_bonus: 5
+        description: "+5 Armor"
+      - level: 6
+        magic_cost: 18.0
+        armor_bonus: 6
+        description: "+6 Armor"
+
+  - id: power_throw
+    name: "Power Throw"
+    category: adept
+    type: active
+    magic_cost: 0.5
+    description: "Enhances throwing strength and accuracy"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 314
+    levels:
+      - level: 1
+        magic_cost: 0.5
+        strength_bonus: 1
+        description: "+1 Strength for throwing"
+      - level: 2
+        magic_cost: 1.0
+        strength_bonus: 2
+        description: "+2 Strength for throwing"
+      - level: 3
+        magic_cost: 1.5
+        strength_bonus: 3
+        description: "+3 Strength for throwing"
+
+  - id: spellcasting
+    name: "Spellcasting"
+    category: magician
+    type: active
+    magic_cost: 0.0
+    description: "Ability to cast spells"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 310
+    levels:
+      - level: 1
+        magic_cost: 0.0
+        description: "Basic spellcasting ability"
+
+  - id: summoning
+    name: "Summoning"
+    category: magician
+    type: active
+    magic_cost: 0.0
+    description: "Ability to summon spirits"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 310
+    levels:
+      - level: 1
+        magic_cost: 0.0
+        description: "Basic summoning ability"
+
+  - id: binding
+    name: "Binding"
+    category: magician
+    type: active
+    magic_cost: 0.0
+    description: "Ability to bind spirits"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 310
+    levels:
+      - level: 1
+        magic_cost: 0.0
+        description: "Basic binding ability"
+
+  - id: complex_form_use
+    name: "Complex Form Use"
+    category: technomancer
+    type: active
+    magic_cost: 0.0
+    description: "Ability to use complex forms"
+    sourcebook: "Unwired"
+    page: 120
+    levels:
+      - level: 1
+        magic_cost: 0.0
+        description: "Basic complex form use"
+
+# Power Modifications
+modifications:
+  - id: extended
+    name: "Extended"
+    description: "Extends the duration of the power"
+    magic_cost_multiplier: 1.5
+  - id: focused
+    name: "Focused"
+    description: "Increases the effectiveness of the power"
+    magic_cost_multiplier: 2.0
+  - id: subtle
+    name: "Subtle"
+    description: "Makes the power less noticeable"
+    magic_cost_multiplier: 1.2
+
+# Power Limitations
+limitations:
+  - id: limited_duration
+    name: "Limited Duration"
+    description: "Power has a shorter duration"
+    magic_cost_multiplier: 0.8
+  - id: restricted_use
+    name: "Restricted Use"
+    description: "Power can only be used in specific situations"
+    magic_cost_multiplier: 0.7
+  - id: noticeable
+    name: "Noticeable"
+    description: "Power is more obvious to observers"
+    magic_cost_multiplier: 0.9

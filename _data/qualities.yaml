@@ -1,0 +1,257 @@
+# Qualities Data Structure
+# This file contains character qualities information with support for levels and categories
+
+# Quality Categories
+categories:
+  - id: positive
+    name: "Positive Qualities"
+    description: "Beneficial traits that enhance character abilities"
+  - id: negative
+    name: "Negative Qualities"
+    description: "Detrimental traits that hinder character abilities"
+  - id: racial
+    name: "Racial Qualities"
+    description: "Qualities specific to character race"
+  - id: magical
+    name: "Magical Qualities"
+    description: "Qualities related to magical abilities"
+
+# Quality Types
+types:
+  - id: physical
+    name: "Physical Qualities"
+    description: "Qualities affecting physical attributes"
+  - id: mental
+    name: "Mental Qualities"
+    description: "Qualities affecting mental attributes"
+  - id: social
+    name: "Social Qualities"
+    description: "Qualities affecting social interactions"
+  - id: magical
+    name: "Magical Qualities"
+    description: "Qualities affecting magical abilities"
+  - id: special
+    name: "Special Qualities"
+    description: "Unique or special qualities"
+
+# Quality Database
+qualities:
+  - id: low_light_vision
+    name: "Low-Light Vision"
+    category: racial
+    type: physical
+    bp_cost: 0
+    description: "Ability to see in low-light conditions"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 90
+    applies_to:
+      - "Orks"
+      - "Trolls"
+      - "Dwarves"
+      - "Elves"
+
+  - id: adept
+    name: "Adept"
+    category: magical
+    type: magical
+    bp_cost: 5
+    description: "Character has adept powers"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 90
+    levels:
+      - level: 1
+        bp_cost: 5
+        magic_points: 1
+        description: "Basic adept abilities"
+
+  - id: exceptional_attribute
+    name: "Exceptional Attribute"
+    category: positive
+    type: physical
+    bp_cost: 20
+    description: "One attribute is exceptionally high"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 90
+    levels:
+      - level: 1
+        bp_cost: 20
+        attribute_bonus: 1
+        description: "+1 to one attribute"
+      - level: 2
+        bp_cost: 40
+        attribute_bonus: 2
+        description: "+2 to one attribute"
+
+  - id: dependances
+    name: "Dependances"
+    category: negative
+    type: social
+    bp_cost: -15
+    description: "Character has dependencies or obligations"
+    sourcebook: "Runners Companion"
+    page: 104
+    levels:
+      - level: 1
+        bp_cost: -5
+        description: "Minor dependencies"
+      - level: 2
+        bp_cost: -10
+        description: "Moderate dependencies"
+      - level: 3
+        bp_cost: -15
+        description: "Major dependencies"
+
+  - id: in_debt
+    name: "In Debt"
+    category: negative
+    type: social
+    bp_cost: -5
+    description: "Character owes money or favors"
+    sourcebook: "Runners Companion"
+    page: 103
+    levels:
+      - level: 1
+        bp_cost: -5
+        debt_amount: "Moderate"
+        description: "Moderate debt"
+      - level: 2
+        bp_cost: -10
+        debt_amount: "Large"
+        description: "Large debt"
+      - level: 3
+        bp_cost: -15
+        debt_amount: "Massive"
+        description: "Massive debt"
+
+  - id: analytical_mind
+    name: "Analytical Mind"
+    category: positive
+    type: mental
+    bp_cost: 5
+    description: "Enhanced analytical abilities"
+    sourcebook: "Runner Companion"
+    page: 96
+    levels:
+      - level: 1
+        bp_cost: 5
+        logic_bonus: 2
+        description: "+2 dice to logic tests for analysis"
+
+  - id: records_on_file
+    name: "Records on File"
+    category: negative
+    type: social
+    bp_cost: -10
+    description: "Character has records in corporate databases"
+    sourcebook: "Runner Companion"
+    page: 109
+    levels:
+      - level: 1
+        bp_cost: -10
+        tracking_bonus: 6
+        description: "+6 dice for identification"
+
+  - id: wanted
+    name: "Wanted"
+    category: negative
+    type: social
+    bp_cost: -10
+    description: "Character is wanted by authorities"
+    sourcebook: "Runner Companion"
+    page: 110
+    levels:
+      - level: 1
+        bp_cost: -10
+        bounty: 20000
+        description: "Wanted for minor crimes"
+      - level: 2
+        bp_cost: -20
+        bounty: 50000
+        description: "Wanted for serious crimes"
+      - level: 3
+        bp_cost: -30
+        bounty: 100000
+        description: "Wanted for major crimes"
+
+  - id: toughness
+    name: "Toughness"
+    category: positive
+    type: physical
+    bp_cost: 5
+    description: "Increased physical resilience"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 92
+    levels:
+      - level: 1
+        bp_cost: 5
+        damage_resistance: 1
+        description: "+1 damage resistance"
+      - level: 2
+        bp_cost: 10
+        damage_resistance: 2
+        description: "+2 damage resistance"
+
+  - id: poor_self_control
+    name: "Poor Self Control"
+    category: negative
+    type: mental
+    bp_cost: -10
+    description: "Difficulty controlling emotions or impulses"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 106
+    levels:
+      - level: 1
+        bp_cost: -10
+        willpower_penalty: 1
+        description: "Mild self-control issues"
+      - level: 2
+        bp_cost: -20
+        willpower_penalty: 2
+        description: "Serious self-control issues"
+
+# Quality Modifications
+modifications:
+  - id: enhanced
+    name: "Enhanced"
+    description: "Enhances the quality's effects"
+    bp_cost_multiplier: 1.5
+  - id: limited
+    name: "Limited"
+    description: "Reduces the quality's effects"
+    bp_cost_multiplier: 0.7
+  - id: situational
+    name: "Situational"
+    description: "Quality only applies in specific situations"
+    bp_cost_multiplier: 0.8
+
+# Quality Limitations
+limitations:
+  - id: temporary
+    name: "Temporary"
+    description: "Quality is not always active"
+    bp_cost_multiplier: 0.6
+  - id: noticeable
+    name: "Noticeable"
+    description: "Quality is obvious to others"
+    bp_cost_multiplier: 0.8
+  - id: controlled
+    name: "Controlled"
+    description: "Quality can be controlled or suppressed"
+    bp_cost_multiplier: 0.9
+
+# Quality Synergies
+synergies:
+  - id: adept_magician
+    name: "Adept/Magician Synergy"
+    description: "Bonus for having both adept and magician qualities"
+    applies_to:
+      - "adept"
+      - "magician"
+    bp_bonus: 5
+  - id: tough_analytical
+    name: "Tough/Analytical Synergy"
+    description: "Bonus for having both physical and mental resilience"
+    applies_to:
+      - "toughness"
+      - "analytical_mind"
+    bp_bonus: 3

@@ -12,7 +12,7 @@
             <button class="nav-link active" id="cyberware-tab" data-bs-toggle="tab" data-bs-target="#cyberware" type="button" role="tab" title="Cyberware"><i class="fa-solid fa-robot"></i></button>
         </li>
         {% endif %}
-        {% if page.powers %}
+        {% if page.magic.adept.powers %}
         <li class="nav-item" role="presentation">
             <button class="nav-link" id="powers-tab" data-bs-toggle="tab" data-bs-target="#powers" type="button" role="tab" title="Pouvoirs"><i class="fa-solid fa-yin-yang"></i></button>
         </li>
@@ -67,9 +67,9 @@
         {% endif %}
         </div>
         <div class="tab-pane fade" id="powers" role="tabpanel">
-        {% if page.powers %}
+        {% if page.magic.adept.powers %}
             <ul class="list-group">
-            {% for power in page.powers %}
+            {% for power in page.magic.adept.powers %}
             <li class="list-group-item py-1">
                 <strong>{{ power.name }}</strong> (Rating: {{ power.rating }}, Magie: {{ power.magic }})
                 {{ power.description | markdownify }}

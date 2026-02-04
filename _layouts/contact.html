@@ -6,9 +6,9 @@ layout: default
   {% for charactere_contact in charactere.contacts %}
     {% if charactere_contact.contact == page.key %}
       {% if characters == "" %}
-        {% assign characteres = characteres | append: charactere.full_name %}
+        {% assign characteres = characteres | append: charactere.infos.full_name %}
       {% else %}
-        {% assign characteres = characteres | append: ", " | append: charactere.full_name %}
+        {% assign characteres = characteres | append: ", " | append: charactere.infos.full_name %}
       {% endif %}
     {% endif %}
   {% endfor %}

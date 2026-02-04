@@ -1,17 +1,23 @@
 ---
+# Informations générales sur le personnage
 infos:
   height: "1,6"
   weight: 120
   picture: /assets/images/Eleonor.jpg
   money: 0
   karma: 0/0
+  full_name: Eleonor O'Neil
+  race: Elfe
+  lifestyle: street
+  # Rôle du personnage
+  role:
+    operational:  Street Samouraï
+    narrative: 
+
+# Identifiants du personnage
 key: eleonor
-full_name: Eleonor O'Neil
-race: Elfe
-lifestyle: street
-role:
-  operational:  Street Samouraï
-  narrative: 
+
+# Attributs de base
 attributes:
   body:
     base: 5
@@ -45,21 +51,33 @@ attributes:
     base: 3
     modifier: 0
     max: 8
+
+# Initiative
 initiative:
   physic:
     turns: 3
-condition:
-  physical:
-    modifier: 4
+
+# Armure
+armor:
+  balistic: 8
+  impact: 6
+
+# Blessures
 wound: 
   physic: 3
   mental: 3
+
+# Edge
 edge:
   base: 1
   modifier: 0
+
+# Essence
 essence:
   base: 6
   modifier: 0
+
+# Compétences
 skills:
   active:
     combat:
@@ -81,16 +99,22 @@ skills:
         etiquette: 4
         leadership: 4
         negociation: 4
+
+# Contacts
 contacts:
   - contact: big-jim
     loyalty: 3
   - contact: doc-harper
     loyalty: 3
+
+# Factions
 factions:
   allies:
     - ares
   enemies:
     - renraku
+
+# Matrice
 matrix:
   commlink:
     name: Disposable Commlink
@@ -99,6 +123,8 @@ matrix:
     firewall: 2
     system: 1
     price: 300
+
+# Cyberware
 cyberware:
   - name: Wired Reflex (Alpha)
     type: bodyware
@@ -150,6 +176,8 @@ cyberware:
     capacity: 7
     availability: 8R
     price: 2000
+
+# Équipement
 gear:
   weapons:
     - name: Hand Razors (Retractable)
@@ -202,6 +230,7 @@ gear:
       sensor: 1
       price: 5000
 ---
+# Description du personnage
 *Eleonor O'Neil* a commencé sa carrière dans les arènes clandestines d’*Urban Brawl* à **Seattle** avant de basculer dans le shadowrunning. Ce passé lui a forgé une réputation de combattante acharnée, capable de tenir tête à des adversaires plus lourds et mieux équipés grâce à sa rapidité, son instinct et sa connaissance des combats de rue. Ses cyberimplants, initialement conçus pour optimiser ses performances dans l’arène, sont devenus des outils de survie dans les ombres de la ville.
 
 Bien qu’elle ait quitté les combats organisés après le désastre sur le bateau de plaisance, elle reste profondément liée à ses anciens compagnons de run. Ces liens ne sont pas seulement professionnels : ce sont des survivants comme elle, des gens qui comprennent ce que signifie vivre avec des cicatrices invisibles. Elle les retrouve parfois dans des repaires discrets, des bars enfumés ou des ateliers de mécaniciens illégaux, où ils échangent des informations, des services ou simplement un silence complice.

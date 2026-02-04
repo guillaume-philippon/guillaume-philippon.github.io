@@ -67,8 +67,8 @@ layout: default
                       <img src="{{ entity.infos.picture }}" alt="{{ entity.full_name }}" 
                             class="img-fluid rounded-circle mb-2" 
                             style="width: 60px; height: 60px; object-fit: cover; border: 2px solid #28a745;">
-                      <h6 class="mb-0" style="color: #28a745;">{{ entity.full_name }}</h6>
-                      <small class="text-muted">👤 {{ entity.race }}</small>
+                      <h6 class="mb-0" style="color: #28a745;">{{ entity.infos.full_name }}</h6>
+                      <small class="text-muted">👤 {{ entity.infos.race }}</small>
                     {% else %}
                       <!-- This is a npc -->
                       {% if entity.image %}
@@ -76,7 +76,7 @@ layout: default
                               class="img-fluid rounded-circle mb-2" 
                               style="width: 60px; height: 60px; object-fit: cover; border: 2px solid #28a745;">
                       {% else %}
-                        <img src="/assets/images/npcs/placeholder.jpg" alt="{{ entity.full_name }}" 
+                        <img src="/assets/images/npcs/placeholder.jpg" alt="{{ entity.infos.full_name }}" 
                               class="img-fluid rounded-circle mb-2" 
                               style="width: 60px; height: 60px; object-fit: cover; border: 2px solid #28a745;">
                       {% endif %}
@@ -110,8 +110,8 @@ layout: default
                       <img src="{{ entity.infos.picture }}" alt="{{ entity.full_name }}" 
                             class="img-fluid rounded-circle mb-2" 
                             style="width: 60px; height: 60px; object-fit: cover; border: 2px solid #dc3545;">
-                      <h6 class="mb-0" style="color: #dc3545;">{{ entity.full_name }}</h6>
-                      <small class="text-muted">👤 {{ entity.race }}</small>
+                      <h6 class="mb-0" style="color: #dc3545;">{{ entity.infos.full_name }}</h6>
+                      <small class="text-muted">👤 {{ entity.infos.race }}</small>
                     {% else %}
                       <!-- This is a npc -->
                       {% if entity.image %}

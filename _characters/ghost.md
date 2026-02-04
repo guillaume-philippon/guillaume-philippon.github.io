@@ -1,21 +1,26 @@
 ---
+# Informations générales sur le personnage
 infos:
   height: "1,6"
   weight: 60
   picture: /assets/images/Ghost.jpg
   money: 10
   karma: 5/5
-full_name: Jessica *Ghost* Rojas
-race: Humaine
-lifestyle: street
+  full_name: Jessica *Ghost* Rojas
+  race: Humaine
+  lifestyle: street
+  # Rôle du personnage
+  role:
+    operational:  Analyse Matrix, Sécurité Numérique
+    narrative: Données, Vérification, soupçon
+
+# Identifiants du personnage
 key: ghost
-role:
-  operational:  Analyse Matrix, Sécurité Numérique
-  narrative: Données, Vérification, soupçon
+
+# Profil
 profil: Méfiant, force capacité d'analyse, risque de sur-interprétation
-factions:
-  allies:
-    - dracotech
+
+# Attributs de base
 attributes:
   body:
     base: 3
@@ -49,21 +54,36 @@ attributes:
     base: 1
     modifier: 0
     max: 6
+
+# Initiative
 initiative:
   matrix:
     modifier: 1
     turns: 3
   physic:
     turns: 3
+
+# Armure
+armor:
+  balistic: 6
+  impact: 6
+
+# Blessures
 wound: 
   physic: 3
   mental: 3
+
+# Edge
 edge:
   base: 2
   modifier: 0
+
+# Essence
 essence:
   base: 6
   modifier: 0
+
+# Qualités
 qualities:
   - name: Analytical Mind
     rating: 1
@@ -91,6 +111,8 @@ qualities:
     description: |
       Recherché pour participation à un groupe *techno-terroriste* militant contre l'utilisation
       militaire de la matrice. [20 000 nuyens]
+
+# Compétences
 skills:
   active:
     physical:
@@ -143,54 +165,21 @@ skills:
     contre_mesures_electroniques:
       value: 3
       attribute: professional
+
+# Contacts
 contacts:
   - contact: neon
     loyalty: 3
   - contact: madame-x
     loyalty: 3
-cyberware:
-  - name: Commlink
-    essence: 0.2
-    capacity: 2
-    availability: "-"
-    price: 2000
-    type: headware
-  - name: Datajack
-    essence: 0.1
-    capacity: 1
-    availability: "-"
-    price: 500
-    type: headware
-  - name: Hot Sim-module
-    essence: 0.2
-    capacity: 2
-    availability: 12F
-    price: 5000
-    type: headware
-  - name: Cybereyes (2)
-    essence: 0.3
-    capacity: 8
-    availability: 4
-    price: 750
-  - name: Smartlink
-    essence: 0
-    capacity: 3
-    availability: 8R
-    price: 1000
-    type: eyeware
-    modifier:
-      attack:
-        range: 2
-  - name: Synaptic Booster (2)
-    essence: 1.0
-    availability: 12R
-    price: 160000
-    type: bioware
-  - name: Cerebral Booster (2)
-    essence: 0.4
-    availability: 12
-    price: 20000
-    type: bioware
+
+# Factions
+factions:
+  allies:
+    - cendres_numeriques
+    - dracotech
+
+# Matrice
 matrix:
   commlink:
     name: Fairlight Caliban
@@ -313,6 +302,53 @@ matrix:
           rating: 6
           availability: 12R
           price: 6000
+
+# Cyberware
+cyberware:
+  - name: Commlink
+    essence: 0.2
+    capacity: 2
+    availability: "-"
+    price: 2000
+    type: headware
+  - name: Datajack
+    essence: 0.1
+    capacity: 1
+    availability: "-"
+    price: 500
+    type: headware
+  - name: Hot Sim-module
+    essence: 0.2
+    capacity: 2
+    availability: 12F
+    price: 5000
+    type: headware
+  - name: Cybereyes (2)
+    essence: 0.3
+    capacity: 8
+    availability: 4
+    price: 750
+  - name: Smartlink
+    essence: 0
+    capacity: 3
+    availability: 8R
+    price: 1000
+    type: eyeware
+    modifier:
+      attack:
+        range: 2
+  - name: Synaptic Booster (2)
+    essence: 1.0
+    availability: 12R
+    price: 160000
+    type: bioware
+  - name: Cerebral Booster (2)
+    essence: 0.4
+    availability: 12
+    price: 20000
+    type: bioware
+
+# Équipement
 gear:
   weapons:
     - name: Ares Desert Fox (Sniper)
@@ -366,9 +402,6 @@ gear:
     - name: Maglock Passkey (6)
       quantity: 1
       price: 600
-factions:
-  allies:
-    - cendres_numeriques
-    - dracotech
 ---
+# Description du personnage
 *Jessica Ghost Rojas* a infiltré un serveur sécurisé pour voler des données sur un prototype d’**IA militaire autonome**, conçu pour contrôler des drones de combat et des systèmes de surveillance de masse. Au lieu de simplement exfiltrer les données, elle a modifié les algorithmes de ciblage de l’IA, provoquant une série d’attaques accidentelles contre des infrastructures civiles lors d’un test en conditions réelles. Résultat : des coupures de courant massives, des drones devenant incontrôlables, et des dégâts matériels estimés à plusieurs millions de nuyens.

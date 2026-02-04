@@ -1,4 +1,5 @@
 ---
+# Informations générales sur le personnage
 infos:
   height: "2,2"
   weight: 150
@@ -7,13 +8,18 @@ infos:
   karma: 5/5
   street_cred: 0
   notoriety: 0
+  full_name: Ahau-Tec
+  race: Ork
+  lifestyle: street
+  # Rôle du personnage
+  role:
+    operational: Street Samouraï, Sécurité Rapproché
+    narrative: Stabilité, Résilience, Dette
+
+# Identifiants du personnage
 key: ahau-tec
-full_name: Ahau-Tec
-race: Ork
-lifestyle: street
-role:
-  operational: Street Samouraï, Sécurité Rapproché
-  narrative: Stabilité, Résilience, Dette
+
+# Attributs de base
 attributes:
   body:
     base: 9
@@ -47,30 +53,68 @@ attributes:
     base: 1
     max: 5
     modifier: 0
+
+# Initiative
 initiative:
   physic:
     turns: 2
   astral:
     turns: 3
     modifier: 2
+
+# Armure
 armor:
   impact: 6
   balistic: 6
   astral: 6
+
+# Blessures
 wound: 
   physic: 3
   mental: 3
+
+# Magie
 magic:
-  type: adept
   base: 6
   modifier: 0
   weapon_focus: 2
+  type: adept
+  adept:
+    # Pouvoirs
+    powers:
+      - name: Improved Reflex
+        rating: 1
+        magic: 1.5
+        description: |
+          Le pouvoir *Improved Reflexes* augmente la Réaction de +1 par niveau et +1 Passe d'Initiative supplémentaire.
+      - name: Astral Perception
+        rating: 1
+        magic: 1
+        description: |
+          Ce pouvoir permet aux adeptes de *voir* le plan astral.
+      - name: Mystic Armor
+        rating: 6
+        magic: 3
+        description: |
+          Le pouvoir *Mystic Armor* (Armure Mystique) confère une armure magique supplémentaire de 1 point par niveau, qui s'ajoute à l'armure physique et protège à la fois contre les dégâts balistiques et d'impact, ainsi que dans les combats astraux.
+      - name: Power throw
+        rating: 2
+        magic: 0.5
+        description: |
+          *Power Throw* ajoute un bonus aux jets de lancer (comme Throwing Weapons), augmente la portée des projectiles et peut infliger des dégâts supplémentaires, aujouter
+          +2 à la force pour déterminer la distance et les dégats.
+
+# Edge
 edge:
   base: 1
   modifier: 0
+
+# Essence
 essence:
   base: 6
   modifier: 0
+
+# Qualités
 qualities:
   - name: Low-Light Vision
   - name: Adept
@@ -98,36 +142,9 @@ qualities:
     rating: 1
     sourcebook: Runners Companion
     page: 103
-powers:
-  - name: Improved Reflex
-    rating: 1
-    magic: 1.5
-    description: |
-      Le pouvoir *Improved Reflexes* augmente la Réaction de +1 par niveau et +1 Passe d'Initiative supplémentaire.
-  - name: Astral Perception
-    rating: 1
-    magic: 1
-    description: |
-      Ce pouvoir permet aux adeptes de *voir* le plan astral.
-  - name: Mystic Armor
-    rating: 6
-    magic: 3
-    description: |
-      Le pouvoir *Mystic Armor* (Armure Mystique) confère une armure magique supplémentaire de 1 point par niveau, qui s'ajoute à l'armure physique et protège à la fois contre les dégâts balistiques et d'impact, ainsi que dans les combats astraux.
-  - name: Power throw
-    rating: 2
-    magic: 0.5
-    description: |
-      *Power Throw* ajoute un bonus aux jets de lancer (comme Throwing Weapons), augmente la portée des projectiles et peut infliger des dégâts supplémentaires, aujouter
-      +2 à la force pour déterminer la distance et les dégats.
-matrix:
-  commlink:
-    name: Disposable Commlink
-    response: 1
-    signal: 3
-    firewall: 2
-    system: 1
-    price: 300
+
+
+# Compétences
 skills:
   active:
     physical:
@@ -159,6 +176,8 @@ skills:
     politique_tribale:
       value: 4
       attribute: academic
+
+# Contacts
 contacts:
   - contact: dr-lina-krayven
     loyalty: 3
@@ -166,13 +185,14 @@ contacts:
     loyalty: 2
   - contact: chaman-ixchel
     loyalty: 5
+
+# Factions
 factions:
   allies:
     - dracotech
     - zotzyax
-wound:
-  physic: 3
-  mental: 3
+
+# Matrice
 matrix:
   commlink:
     name: Disposable Commlink
@@ -181,6 +201,8 @@ matrix:
     firewall: 2
     system: 1
     price: 300
+
+# Équipement
 gear:
   weapons:
     - name: Tomahawk
@@ -235,4 +257,5 @@ gear:
       impact: 6
       price: 900
 ---
+# Description du personnage
   *Ahau-Tec*, descendant des **Zotz-Yax**, a été recruté par **DracoTech** après avoir prouvé sa valeur lors d’un run contre un groupe de *blood mages* qui menaçaient les intérêts de la megacorp dans la jungle du **Chiapas**. Son statut est celui d’un agent de sécurité spécialisé, officiellement chargé de la protection des actifs dans les zones à haut risque magique et des opérations discrètes nécessitant une expertise de la culture maya.

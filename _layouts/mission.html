@@ -43,7 +43,7 @@ layout: default
             {% assign url = "" %}
             {% for character in site.characters %}
               {% if character.key == runner.name %}
-                {% assign full_name = character.full_name %}
+                {% assign full_name = character.infos.full_name %}
                 {% assign picture = character.infos.picture %}
                 {% assign url = character.url %}
                 {% break %}
