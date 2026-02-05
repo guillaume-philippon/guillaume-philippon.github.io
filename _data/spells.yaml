@@ -1,0 +1,344 @@
+# Spells Data Structure
+# This file contains magical spells information with support for categories and types
+
+# Spell Categories
+categories:
+  - id: combat
+    name: "Combat Spells"
+    description: "Spells used in combat situations"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 180
+  - id: detection
+    name: "Detection Spells"
+    description: "Spells used for sensing and detecting"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 185
+  - id: health
+    name: "Health Spells"
+    description: "Spells used for healing and health manipulation"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 190
+  - id: illusion
+    name: "Illusion Spells"
+    description: "Spells that create illusions"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 195
+  - id: manipulation
+    name: "Manipulation Spells"
+    description: "Spells that manipulate objects or forces"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 200
+
+# Spell Types
+types:
+  - id: physical
+    name: "Physical Spells"
+    description: "Spells that affect the physical world"
+    drain: "Physical"
+  - id: mana
+    name: "Mana Spells"
+    description: "Spells that affect magical energy"
+    drain: "Stun"
+  - id: dual
+    name: "Dual-Natured Spells"
+    description: "Spells that affect both physical and astral"
+    drain: "Physical or Stun"
+
+# Spell Ranges
+ranges:
+  - id: touch
+    name: "Touch"
+    description: "Spell requires physical contact"
+  - id: line_of_sight
+    name: "Line of Sight"
+    description: "Spell requires visual contact"
+  - id: area
+    name: "Area"
+    description: "Spell affects an area"
+  - id: self
+    name: "Self"
+    description: "Spell only affects the caster"
+
+# Spell Durations
+durations:
+  - id: instant
+    name: "Instant"
+    description: "Spell has immediate effect"
+  - id: sustained
+    name: "Sustained"
+    description: "Spell requires concentration to maintain"
+  - id: permanent
+    name: "Permanent"
+    description: "Spell has permanent effect"
+
+# Spell Database
+spells:
+  - id: power_bolt
+    name: "Power Bolt"
+    category: combat
+    type: physical
+    range: line_of_sight
+    duration: instant
+    drain: "Physical"
+    force: "Variable"
+    description: "Creates a bolt of magical energy that inflicts damage"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 181
+    effects:
+      - "Damage: Force x 2 (Physical)"
+      - "AP: -Force"
+    levels:
+      - level: 1
+        force: 1
+        damage: "2P"
+        ap: -1
+      - level: 2
+        force: 2
+        damage: "4P"
+        ap: -2
+      - level: 3
+        force: 3
+        damage: "6P"
+        ap: -3
+
+  - id: heal
+    name: "Heal"
+    category: health
+    type: mana
+    range: touch
+    duration: instant
+    drain: "Stun"
+    force: "Variable"
+    description: "Heals physical damage"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 191
+    effects:
+      - "Heals: Force boxes of physical damage"
+    levels:
+      - level: 1
+        force: 1
+        healing: "1 box"
+      - level: 2
+        force: 2
+        healing: "2 boxes"
+      - level: 3
+        force: 3
+        healing: "3 boxes"
+
+  - id: invisibility
+    name: "Invisibility"
+    category: illusion
+    type: mana
+    range: line_of_sight
+    duration: sustained
+    drain: "Stun"
+    force: "Variable"
+    description: "Makes target invisible"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 196
+    effects:
+      - "Target becomes invisible"
+      - "Detection test: Force vs. Perception"
+    levels:
+      - level: 1
+        force: 1
+        detection_threshold: 1
+      - level: 2
+        force: 2
+        detection_threshold: 2
+      - level: 3
+        force: 3
+        detection_threshold: 3
+
+  - id: levitate
+    name: "Levitate"
+    category: manipulation
+    type: physical
+    range: line_of_sight
+    duration: sustained
+    drain: "Physical"
+    force: "Variable"
+    description: "Allows target to float in the air"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 201
+    effects:
+      - "Target can move vertically at Force meters per combat turn"
+      - "Maximum height: Force x 2 meters"
+    levels:
+      - level: 1
+        force: 1
+        speed: "1 m/turn"
+        max_height: "2 m"
+      - level: 2
+        force: 2
+        speed: "2 m/turn"
+        max_height: "4 m"
+      - level: 3
+        force: 3
+        speed: "3 m/turn"
+        max_height: "6 m"
+
+  - id: detect_life
+    name: "Detect Life"
+    category: detection
+    type: mana
+    range: line_of_sight
+    duration: sustained
+    drain: "Stun"
+    force: "Variable"
+    description: "Detects living beings"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 186
+    effects:
+      - "Detects living beings within Force x 10 meters"
+      - "Can sense number and general location"
+    levels:
+      - level: 1
+        force: 1
+        range: "10 m"
+      - level: 2
+        force: 2
+        range: "20 m"
+      - level: 3
+        force: 3
+        range: "30 m"
+
+  - id: armor
+    name: "Armor"
+    category: combat
+    type: mana
+    range: touch
+    duration: sustained
+    drain: "Stun"
+    force: "Variable"
+    description: "Creates magical armor"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 182
+    effects:
+      - "Adds Force to Armor rating"
+      - "Only affects target touched"
+    levels:
+      - level: 1
+        force: 1
+        armor_bonus: 1
+      - level: 2
+        force: 2
+        armor_bonus: 2
+      - level: 3
+        force: 3
+        armor_bonus: 3
+
+  - id: stun_bolt
+    name: "Stun Bolt"
+    category: combat
+    type: mana
+    range: line_of_sight
+    duration: instant
+    drain: "Stun"
+    force: "Variable"
+    description: "Creates a bolt of stun energy"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 183
+    effects:
+      - "Damage: Force x 2 (Stun)"
+      - "AP: -Force"
+    levels:
+      - level: 1
+        force: 1
+        damage: "2S"
+        ap: -1
+      - level: 2
+        force: 2
+        damage: "4S"
+        ap: -2
+      - level: 3
+        force: 3
+        damage: "6S"
+        ap: -3
+
+# Spell Modifications
+modifications:
+  - id: extended_range
+    name: "Extended Range"
+    description: "Increases the spell's range"
+    drain_multiplier: 1.2
+    effect: "Range x 2"
+  - id: extended_duration
+    name: "Extended Duration"
+    description: "Increases the spell's duration"
+    drain_multiplier: 1.3
+    effect: "Duration x 2"
+  - id: increased_power
+    name: "Increased Power"
+    description: "Increases the spell's effectiveness"
+    drain_multiplier: 1.5
+    effect: "Force + 1"
+
+# Spell Limitations
+limitations:
+  - id: reduced_range
+    name: "Reduced Range"
+    description: "Decreases the spell's range"
+    drain_multiplier: 0.8
+    effect: "Range / 2"
+  - id: reduced_duration
+    name: "Reduced Duration"
+    description: "Decreases the spell's duration"
+    drain_multiplier: 0.7
+    effect: "Duration / 2"
+  - id: limited_target
+    name: "Limited Target"
+    description: "Spell only affects specific targets"
+    drain_multiplier: 0.8
+    effect: "Only affects one target type"
+
+# Spell Synergies
+synergies:
+  - id: combat_detection
+    name: "Combat/Detection Synergy"
+    description: "Bonus for combining combat and detection spells"
+    applies_to:
+      - "power_bolt"
+      - "detect_life"
+    drain_reduction: 1
+  - id: health_manipulation
+    name: "Health/Manipulation Synergy"
+    description: "Bonus for combining health and manipulation spells"
+    applies_to:
+      - "heal"
+      - "levitate"
+    drain_reduction: 1
+
+# Spell Resistance
+resistance:
+  - id: spell_defense
+    name: "Spell Defense"
+    description: "Basic defense against spells"
+    attribute: "Willpower"
+  - id: counterspelling
+    name: "Counterspelling"
+    description: "Active defense against spells"
+    attribute: "Magic"
+  - id: spell_resistance
+    name: "Spell Resistance"
+    description: "Innate resistance to spells"
+    attribute: "Body"
+
+# Spell Descriptors
+descriptors:
+  - id: fire
+    name: "Fire"
+    description: "Fire-based spells"
+    effect: "Fire damage"
+  - id: ice
+    name: "Ice"
+    description: "Ice-based spells"
+    effect: "Cold damage"
+  - id: lightning
+    name: "Lightning"
+    description: "Lightning-based spells"
+    effect: "Electric damage"
+  - id: acid
+    name: "Acid"
+    description: "Acid-based spells"
+    effect: "Corrosive damage"

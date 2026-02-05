@@ -78,7 +78,6 @@ magic:
   base: 6
   modifier: 0
   weapon_focus: 2
-  type: adept
   adept:
     # Pouvoirs
     powers:

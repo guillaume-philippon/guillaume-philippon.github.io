@@ -17,6 +17,11 @@
             <button class="nav-link" id="powers-tab" data-bs-toggle="tab" data-bs-target="#powers" type="button" role="tab" title="Pouvoirs"><i class="fa-solid fa-yin-yang"></i></button>
         </li>
         {% endif %}
+        {% if page.magic.magician.spells %}
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="spells-tab" data-bs-toggle="tab" data-bs-target="#spells" type="button" role="tab" title="Sorts"><i class="fa-solid fa-wand-sparkles"></i></button>
+        </li>
+        {% endif %}
         {% if page.qualities %}
         <li class="nav-item" role="presentation">
             <button class="nav-link" id="qualities-tab" data-bs-toggle="tab" data-bs-target="#qualities" type="button" role="tab" title="Qualités"><i class="fas fa-angles-up"></i></button>
@@ -38,8 +43,8 @@
         </ul>
     </div>
     <div class="tab-content" id="panelTabsContent">
-        <div class="tab-pane fade show active" id="cyberware" role="tabpanel">
         {% if page.cyberware %}
+        <div class="tab-pane fade show active" id="cyberware" role="tabpanel">
             <div class="table-responsive">
             <table class="table table-sm table-striped">
                 <thead>
@@ -62,9 +67,106 @@
                 </tbody>
             </table>
             </div>
-        {% else %}
-            <p>Aucun cyberware</p>
+        </div>
         {% endif %}
+        
+        {% if page.magic.magician.spells %}
+        <div class="tab-pane fade" id="spells" role="tabpanel">
+            <ul class="list-group">
+            {% for spell_id in page.magic.magician.spells %}
+                {% assign spell = site.data.spells.spells | where: "id", spell_id | first %}
+                {% if spell %}
+                <li class="list-group-item py-1">
+                    <strong>{{ spell.name }}</strong> ({{ spell.category | capitalize }})
+                    <ul class="list-unstyled ps-4">
+                        <li><strong>Type:</strong> {{ spell.type }}</li>
+                        <li><strong>Portée:</strong> {{ spell.range }}</li>
+                        <li><strong>Durée:</strong> {{ spell.duration }}</li>
+                        <li><strong>Drain:</strong> {{ spell.drain }}</li>
+                        <li><strong>Effets:</strong>
+                            <ul class="list-unstyled ps-4">
+                            {% for effect in spell.effects %}
+                                <li>{{ effect }}</li>
+                            {% endfor %}
+                            </ul>
+                        </li>
+                    </ul>
+                    {{ spell.description | markdownify }}
+                </li>
+                {% else %}
+                <li class="list-group-item py-1">
+                    <strong>{{ spell_id }}</strong> (Sort non trouvé dans la base de données)
+                </li>
+                {% endif %}
+            {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        
+        {% if page.magic.adept.powers %}
+        <div class="tab-pane fade" id="powers" role="tabpanel">
+            <ul class="list-group">
+            {% for power in page.magic.adept.powers %}
+            <li class="list-group-item py-1">
+                <strong>{{ power.name }}</strong> (Rating: {{ power.rating }}, Magie: {{ power.magic }})
+                {{ power.description | markdownify }}
+            </li>
+            {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        
+        {% if page.qualities %}
+        <div class="tab-pane fade" id="qualities" role="tabpanel">
+            <h5>Qualités</h5>
+            <ul class="list-group">
+            {% for quality in page.qualities %}
+            <li class="list-group-item py-1">
+                <span data-bs-toggle="tooltip" data-bs-title="{{quality.sourcebook}} (p. {{quality.page}})">
+                <strong>{{ quality.name }}</strong>
+                </span>
+                {% if quality.rating %} (Rating: {{ quality.rating }}) {% endif %} {% if quality.bp %} [{{ quality.bp }} BP] {% endif %}
+                {{ quality.description | markdownify }}
+            </li>
+            {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        
+        {% if page.matrix.commlink %}
+        <div class="tab-pane fade" id="commlink" role="tabpanel">
+{% include characters/sidebar/matrix.html %}
+        </div>
+        {% endif %}
+        
+        <div class="tab-pane fade" id="gear" role="tabpanel">
+{% assign gear_cost = 0 %}
+{% for group in page.gear %}
+    {% for item in group[1] %}
+    {% assign multiplier = 1 %}
+    {% if item.quantity %}
+        {% assign multiplier = item.quantity %}
+    {% endif %}
+    {% assign item_cost = item.price | times: multiplier %}
+    {% assign gear_cost = gear_cost | plus: item_cost %}
+    {% endfor %}
+{% endfor %}
+ 
+<h5>Équipement [{{ gear_cost}} ¥]</h5>
+<ul class="list-group">
+    {% for group in page.gear %}
+    {% for item in group[1] %}
+    <li class="list-group-item py-1">
+        <strong>{{ item.name }}</strong> ({% if item.quantity %} x {{ item.quantity }}, {% endif %}{{ item.price }}¥)
+        <ul class="list-unstyled">
+        {% if item.damage %}<li class="ps-4">Dégâts: {{ item.damage.description }}</li>{% endif %}
+        {% if item.impact %}<li class="ps-4">Impact: {{ item.impact }}</li>{% endif %}
+        {% if item.balistic %}<li class="ps-4">Balistic: {{ item.balistic }}</li>{% endif %}
+        </ul>
+    </li>
+    {% endfor %}
+    {% endfor %}
+</ul>
         </div>
         <div class="tab-pane fade" id="powers" role="tabpanel">
         {% if page.magic.adept.powers %}
@@ -78,6 +180,40 @@
             </ul>
         {% else %}
             <p>Aucun pouvoir</p>
+        {% endif %}
+        </div>
+        <div class="tab-pane fade" id="spells" role="tabpanel">
+        {% if page.magic.magician.spells %}
+            <ul class="list-group">
+            {% for spell_id in page.magic.magician.spells %}
+                {% assign spell = site.data.spells.spells | where: "id", spell_id | first %}
+                {% if spell %}
+                <li class="list-group-item py-1">
+                    <strong>{{ spell.name }}</strong> ({{ spell.category | capitalize }})
+                    <ul class="list-unstyled ps-4">
+                        <li><strong>Type:</strong> {{ spell.type }}</li>
+                        <li><strong>Portée:</strong> {{ spell.range }}</li>
+                        <li><strong>Durée:</strong> {{ spell.duration }}</li>
+                        <li><strong>Drain:</strong> {{ spell.drain }}</li>
+                        <li><strong>Effets:</strong>
+                            <ul class="list-unstyled ps-4">
+                            {% for effect in spell.effects %}
+                                <li>{{ effect }}</li>
+                            {% endfor %}
+                            </ul>
+                        </li>
+                    </ul>
+                    {{ spell.description | markdownify }}
+                </li>
+                {% else %}
+                <li class="list-group-item py-1">
+                    <strong>{{ spell_id }}</strong> (Sort non trouvé dans la base de données)
+                </li>
+                {% endif %}
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>Aucun sort</p>
         {% endif %}
         </div>
         <div class="tab-pane fade" id="qualities" role="tabpanel">
@@ -220,3 +356,6 @@
     </div>
     </div>
 </div>
+
+<!-- Script to activate the appropriate tab -->
+<script src="/assets/js/flap_activation.js"></script>

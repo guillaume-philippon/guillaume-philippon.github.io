@@ -14,6 +14,13 @@
     </div>
     {% endif %}
     
+    {% if page.magic.magician.spells %}
+    <div class="icon-wrapper" data-bs-toggle="offcanvas" data-bs-target="#floatingPanel" title="Sorts" data-tab="spells">
+      <i class="fa-solid fa-wand-sparkles"></i>
+      <span class="badge">{{ page.magic.magician.spells | size }}</span>
+    </div>
+    {% endif %}
+    
     {% if page.qualities %}
     <div class="icon-wrapper" data-bs-toggle="offcanvas" data-bs-target="#floatingPanel" title="Qualités" data-tab="qualities">
       <i class="fas fa-angles-up"></i>
