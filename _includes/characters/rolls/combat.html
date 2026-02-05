@@ -11,7 +11,7 @@
             <ul class="list-unstyled col-12">
               <li class="py-1 d-flex justify-content-between align-items-center">
                 <strong>Physique</strong>
-                <span><strong>{{ physical_initiative | plus: page.initiative.physic.bonus }}</strong> <small>(Réaction + Intuition)</small></span>
+                <span><strong>{{ physical_initiative | plus: page.initiative.physic.bonus }}</strong> <small>(Réa. + Int.)</small></span>
               </li>
               <li class="py-1 d-flex justify-content-between align-items-center">
                 <strong></strong>
@@ -24,7 +24,7 @@
             <ul class="list-unstyled col-12">
               <li class="py-1 d-flex justify-content-between align-items-center">
                 <strong>Matrice</strong>
-                <span><strong> {{ matrix_initiative | plus: page.initiative.matrix.bonus  }}</strong> <small>(Réponse + Intuition)</small></span>
+                <span><strong> {{ matrix_initiative | plus: page.initiative.matrix.bonus  }}</strong> <small>(Rép. + Int. + Bon.)</small></span>
               </li>
               <li class="py-1 d-flex justify-content-between align-items-center">
                 <strong></strong>
@@ -38,7 +38,7 @@
             <ul class="list-unstyled col-12">
               <li class="py-1 d-flex justify-content-between align-items-center">
                 <strong>Astrale</strong>
-                <span><strong>{{ astral_initiative | default: 3 }}</strong> <small>(Intuition * 2)</small></span>
+                <span><strong>{{ astral_initiative | default: 3 }}</strong> <small>(Int. * 2)</small></span>
               </li>
               <li class="py-1 d-flex justify-content-between align-items-center">
                 <strong></strong>
@@ -56,22 +56,22 @@
         <ul class="list-group list-group-flush">
           <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
             <strong>Distance</strong>
-            <span><strong>{{ agility_total | plus: range_attack }}</strong> <small>(Agility + Skill)</small></span>
+            <span><strong>{{ agility_total | plus: range_attack }}</strong> <small>(Agi. + Ski. + Bon.)</small></span>
           </li>
           <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
             <strong>Mélée</strong>
-            <span><strong>{{ agility_total | plus: melee_attack }}</strong> <small>(Agility + Skill)</small></span>
+            <span><strong>{{ agility_total | plus: melee_attack }}</strong> <small>(Agi. + Ski. + Bon.)</small></span>
           </li>
           {% if page.matrix %}
           <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
             <strong>Matrice</strong>
-            <span><strong>{{ page.skills.active.technical.cracking.cybercombat | plus: matrix_attack }}</strong> <small>(Cybercombat + Software)</small></span>
+            <span><strong>{{ page.skills.active.technical.cracking.cybercombat | plus: matrix_attack }}</strong> <small>(Cybercombat + Soft. + Bon.)</small></span>
           </li>
           {% endif %}
           {% if page.magic %}
           <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
             <strong>Astral</strong>
-            <span><strong>{{ page.skills.active.magical.ungrouped.astral_combat | plus: willpower_total | plus: page.magic.weapon_focus }}</strong> <small>(Astral Com. + Wil. + Focus)</small></span>
+            <span><strong>{{ page.skills.active.magical.ungrouped.astral_combat | plus: willpower_total | plus: page.magic.weapon_focus }}</strong> <small>(Astral Com. + Wil. + Foc.)</small></span>
           </li>
           {% endif %}
         </ul>
@@ -84,16 +84,16 @@
         <ul class="list-group list-group-flush">
           <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
             <strong>Distance</strong>
-            <span><strong>{{ reaction_total }}</strong> <small>(Reaction)</small></span>
+            <span><strong>{{ reaction_total }}</strong> <small>(Réa.)</small></span>
           </li>
           <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
             <strong>Mélée</strong>
-            <span><strong>{{ reaction_total | plus: melee_defense }}</strong> <small>(Reaction + Skill)</small></span>
+            <span><strong>{{ reaction_total | plus: melee_defense }}</strong> <small>(Réa. + Ski.)</small></span>
           </li>
           {% if page.matrix %}
           <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
             <strong>Matrice</strong>
-            <span><strong>{{ page.matrix.commlink.response | plus: page.matrix.commlink.firewall }}</strong> <small>(Response + Firewall)</small></span>
+            <span><strong>{{ page.matrix.commlink.response | plus: page.matrix.commlink.firewall | plus: matrix_defense }}</strong> <small>(Rép. + Fir. + Bon.)</small></span>
           </li>
           {% endif %}
         </ul>

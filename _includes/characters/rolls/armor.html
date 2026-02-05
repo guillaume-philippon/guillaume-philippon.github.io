@@ -4,20 +4,20 @@
       <strong>Distance</strong>
       <span><strong>{{ body_total | plus: page.armor.balistic }}</strong> 
         <small>({{ body_total | plus: page.armor.balistic | plus: balistic }})</small> 
-        <small>Natural (+ Balistic)</small>
+        <small>Nat. (+ Balistic)</small>
       </span>
     </li>
     <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
       <strong>Mélée</strong>
       <span><strong>{{ body_total | plus: page.armor.impact }}</strong>
         <small>({{ body_total | plus: page.armor.balistic | plus: impact }})</small> 
-        <small>Natural (+ Impact)</small>
+        <small>Nat. (+ Impact)</small>
       </span>
     </li>
     {% if page.matrix %}
     <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
       <strong>Matrice</strong>
-      <span><strong>{{ page.matrix.commlink.system | plus: page.matrix.programs.hacking.armor.rating | plus: matrix_armor }}</strong> <small>(System + Armor)</small></span>
+      <span><strong>{{ page.matrix.commlink.system | plus: page.matrix.programs.hacking.armor.rating | plus: matrix_armor }}</strong> <small>(Sys. + Arm. + Bon.)</small></span>
     </li>
     {% endif %}
     {% if page.magic %}
