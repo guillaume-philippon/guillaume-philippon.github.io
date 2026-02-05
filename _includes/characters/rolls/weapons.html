@@ -31,8 +31,8 @@
                     <th scope="row" data-bs-toggle="tooltip" data-bs-title="{{gear.sourcebook}} (p. {{gear.page}})">{{ gear.name }}</th>
                     <td class="text-center">{{ gear.reach }}</td>
                     <td class="text-center"><small>{{ gear.damage.description }}
-                    {% if gear.damage.modifier.melee %}
-                            (+{{ gear.damage.modifier.melee }})
+                    {% if gear.damage.bonus.melee %}
+                            (+{{ gear.damage.bonus.melee }})
                     {% endif %}
                     </small></td>
                     <td class="text-center">{{ gear. ap}}</td>
@@ -69,8 +69,8 @@
                     <td class="text-center">
                         <small>
                         {{ gear.damage.description }}
-                        {% if gear.damage.modifier.range %}
-                            (+{{ gear.damage.modifier.range }})
+                        {% if gear.damage.bonus.range %}
+                            (+{{ gear.damage.bonus.range }})
                         {% endif %}
                         </small>
                     </td>

@@ -113,7 +113,7 @@ cyberware:
     effects:
       - "Smartgun system interface"
       - "Attack bonus: +2 (range)"
-    modifier:
+    bonus:
       attack:
         range: 2
 

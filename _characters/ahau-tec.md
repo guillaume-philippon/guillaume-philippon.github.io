@@ -23,36 +23,36 @@ key: ahau-tec
 attributes:
   body:
     base: 9
-    modifier: 0
+    bonus: 0
     max: 10
   agility:
     base: 5
-    modifier: 0
+    bonus: 0
     max: 6
   reaction: 
     base: 5
-    modifier: 1
+    bonus: 1
     max: 6
   strength: 
     base: 7
-    modifier: 0
+    bonus: 0
     max: 8
   intuition:
     base: 1
     max: 6
-    modifier: 0
+    bonus: 0
   logic:
     base: 1
-    modifier: 0
+    bonus: 0
     max: 5
   willpower:
     base: 5
     max: 6
-    modifier: 0
+    bonus: 0
   charisma:
     base: 1
     max: 5
-    modifier: 0
+    bonus: 0
 
 # Initiative
 initiative:
@@ -60,7 +60,7 @@ initiative:
     turns: 2
   astral:
     turns: 3
-    modifier: 2
+    bonus: 2
 
 # Armure
 armor:
@@ -76,7 +76,7 @@ wound:
 # Magie
 magic:
   base: 6
-  modifier: 0
+  bonus: 0
   weapon_focus: 2
   adept:
     powers:
@@ -92,12 +92,12 @@ magic:
 # Edge
 edge:
   base: 1
-  modifier: 0
+  bonus: 0
 
 # Essence
 essence:
   base: 6
-  modifier: 0
+  bonus: 0
 
 # Qualités
 qualities:
@@ -199,7 +199,7 @@ gear:
         base:
           range: 2
           melee: 2
-        modifier:
+        bonus:
           range: 2
         type: P
       type: 
@@ -231,7 +231,7 @@ gear:
         base:
           range: 2
           melee: 2
-        modifier:
+        bonus:
           range: 2
         type: P
       sourcebook:  20th Anniversary Core Rulebook

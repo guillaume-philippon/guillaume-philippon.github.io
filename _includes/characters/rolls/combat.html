@@ -11,7 +11,7 @@
             <ul class="list-unstyled col-12">
               <li class="py-1 d-flex justify-content-between align-items-center">
                 <strong>Physique</strong>
-                <span><strong>{{ physical_initiative | plus: page.initiative.physic.modifier }}</strong> <small>(Réaction + Intuition)</small></span>
+                <span><strong>{{ physical_initiative | plus: page.initiative.physic.bonus }}</strong> <small>(Réaction + Intuition)</small></span>
               </li>
               <li class="py-1 d-flex justify-content-between align-items-center">
                 <strong></strong>
@@ -24,7 +24,7 @@
             <ul class="list-unstyled col-12">
               <li class="py-1 d-flex justify-content-between align-items-center">
                 <strong>Matrice</strong>
-                <span><strong> {{ matrix_initiative | plus: page.initiative.matrix.modifier  }}</strong> <small>(Réponse + Intuition)</small></span>
+                <span><strong> {{ matrix_initiative | plus: page.initiative.matrix.bonus  }}</strong> <small>(Réponse + Intuition)</small></span>
               </li>
               <li class="py-1 d-flex justify-content-between align-items-center">
                 <strong></strong>

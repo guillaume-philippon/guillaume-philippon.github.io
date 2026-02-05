@@ -24,41 +24,41 @@ profil: Méfiant, force capacité d'analyse, risque de sur-interprétation
 attributes:
   body:
     base: 3
-    modifier: 0
+    bonus: 0
     max: 6
   agility:
     base: 5
-    modifier: 0
+    bonus: 0
     max: 6
   reaction: 
     base: 5
-    modifier: 2
+    bonus: 2
     max: 6
   strength: 
     base: 1
-    modifier: 0
+    bonus: 0
     max: 6
   intuition:
     base: 2
-    modifier: 0
+    bonus: 0
     max: 6
   logic:
     base: 5
-    modifier: 2
+    bonus: 2
     max: 6
   willpower:
     base: 5
-    modifier: 0
+    bonus: 0
     max: 6
   charisma:
     base: 1
-    modifier: 0
+    bonus: 0
     max: 6
 
 # Initiative
 initiative:
   matrix:
-    modifier: 1
+    bonus: 1
     turns: 3
   physic:
     turns: 3
@@ -76,12 +76,12 @@ wound:
 # Edge
 edge:
   base: 2
-  modifier: 0
+  bonus: 0
 
 # Essence
 essence:
   base: 6
-  modifier: 0
+  bonus: 0
 
 # Qualités
 qualities:

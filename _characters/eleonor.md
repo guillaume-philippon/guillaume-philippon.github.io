@@ -21,35 +21,35 @@ key: eleonor
 attributes:
   body:
     base: 5
-    modifier: 0
+    bonus: 0
     max: 6
   agility:
     base: 6
-    modifier: 0
+    bonus: 0
     max: 7
   reaction: 
     base: 5
-    modifier: 2
+    bonus: 2
     max: 6
   strength: 
     base: 3
-    modifier: 0
+    bonus: 0
     max: 6
   intuition:
     base: 5
-    modifier: 0
+    bonus: 0
     max: 6
   logic:
     base: 1
-    modifier: 0
+    bonus: 0
     max: 6
   willpower:
     base: 3
-    modifier: 0
+    bonus: 0
     max: 6
   charisma:
     base: 3
-    modifier: 0
+    bonus: 0
     max: 8
 
 # Initiative
@@ -70,17 +70,17 @@ wound:
 # Edge
 edge:
   base: 1
-  modifier: 0
+  bonus: 0
 
 # Essence
 essence:
   base: 6
-  modifier: 0
+  bonus: 0
 
 # Conditions
 condition:
   physical:
-    modifier: 4
+    bonus: 4
 
 # Compétences
 skills:

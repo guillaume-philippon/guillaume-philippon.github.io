@@ -1,18 +1,18 @@
-{% assign body_total = page.attributes.body.base | plus: page.attributes.body.modifier %}
-{% assign agility_total = page.attributes.agility.base | plus: page.attributes.agilite.modifier %}
-{% assign reaction_total = page.attributes.reaction.base | plus: page.attributes.reaction.modifier %}
-{% assign strength_total = page.attributes.strength.base | plus: page.attributes.strength.modifier %}
-{% assign intuition_total = page.attributes.intuition.base | plus: page.attributes.intuition.modifier %}
-{% assign logic_total = page.attributes.logic.base | plus: page.attributes.logic.modifier %}
-{% assign willpower_total = page.attributes.willpower.base | plus: page.attributes.willpower.modifier %}
-{% assign charisma_total = page.attributes.charisma.base | plus: page.attributes.charisma.modifier %}
+{% assign body_total = page.attributes.body.base | plus: page.attributes.body.bonus %}
+{% assign agility_total = page.attributes.agility.base | plus: page.attributes.agilite.bonus %}
+{% assign reaction_total = page.attributes.reaction.base | plus: page.attributes.reaction.bonus %}
+{% assign strength_total = page.attributes.strength.base | plus: page.attributes.strength.bonus %}
+{% assign intuition_total = page.attributes.intuition.base | plus: page.attributes.intuition.bonus %}
+{% assign logic_total = page.attributes.logic.base | plus: page.attributes.logic.bonus %}
+{% assign willpower_total = page.attributes.willpower.base | plus: page.attributes.willpower.bonus %}
+{% assign charisma_total = page.attributes.charisma.base | plus: page.attributes.charisma.bonus %}
 
 {% assign physical_initiative = reaction_total | plus: intuition_total %}
 {% assign astral_initiative = intuition_total | times: 2 %}
 {% assign matrix_initiative = intuition_total | plus: page.matrix.commlink.response %}
 
-{% assign physic_condition = body_total | divided_by: 2.0 | round | plus: 8 | plus: page.condition.physical.modifier %}
-{% assign mental_condition = willpower_total | divided_by: 2.0 | round | plus: 8 | plus: page.condition.mental.modifier %}
+{% assign physic_condition = body_total | divided_by: 2.0 | round | plus: 8 | plus: page.condition.physical.bonus %}
+{% assign mental_condition = willpower_total | divided_by: 2.0 | round | plus: 8 | plus: page.condition.mental.bonus %}
 {% assign matrix_condition = page.matrix.commlink.system | divided_by: 2.0 | round | plus: 8 %}
 
 {% assign cyberware_essence = 0.0 %}
@@ -87,7 +87,7 @@
 {% assign melee_damage = 0 %}
 {% for weapon in page.gear.weapons %}
   {% if weapon.type contains 'melee' %}
-    {% assign weapon_damage = weapon.damage.base.melee | plus:  weapon.damage.modifier.melee %}
+    {% assign weapon_damage = weapon.damage.base.melee | plus:  weapon.damage.bonus.melee %}
     {% if weapon_damage > melee_damage %}
       {% assign melee_damage = weapon_damage %}
     {% endif %}
@@ -120,14 +120,14 @@
   {% endfor %}
 {% endfor %}
 {% for cyberware in page.cyberware %}
-  {% assign range_attack = range_attack | plus: cyberware.modifier.attack.range %}
+  {% assign range_attack = range_attack | plus: cyberware.bonus.attack.range %}
 {% endfor %}
 <!-- Valeur de range_attack: {{ range_attack }}-->
 
 {% assign range_damage = 0 %}
 {% for weapon in page.gear.weapons %}
   {% if weapon.type contains 'range' %}
-    {% assign weapon_damage = weapon.damage.base.range | plus:  weapon.damage.modifier.range %}
+    {% assign weapon_damage = weapon.damage.base.range | plus:  weapon.damage.bonus.range %}
     {% if weapon_damage > range_damage %}
       {% assign range_damage = weapon_damage %}
     {% endif %}
