@@ -24,11 +24,9 @@ profil: Méfiant, force capacité d'analyse, risque de sur-interprétation
 attributes:
   body:
     base: 3
-    bonus: 0
     max: 6
   agility:
     base: 5
-    bonus: 0
     max: 6
   reaction: 
     base: 5
@@ -36,11 +34,9 @@ attributes:
     max: 6
   strength: 
     base: 1
-    bonus: 0
     max: 6
   intuition:
     base: 2
-    bonus: 0
     max: 6
   logic:
     base: 5
@@ -48,11 +44,9 @@ attributes:
     max: 6
   willpower:
     base: 5
-    bonus: 0
     max: 6
   charisma:
     base: 1
-    bonus: 0
     max: 6
 
 # Initiative

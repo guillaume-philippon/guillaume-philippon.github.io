@@ -21,11 +21,9 @@ key: eleonor
 attributes:
   body:
     base: 5
-    bonus: 0
     max: 6
   agility:
     base: 6
-    bonus: 0
     max: 7
   reaction: 
     base: 5
@@ -33,23 +31,18 @@ attributes:
     max: 6
   strength: 
     base: 3
-    bonus: 0
     max: 6
   intuition:
     base: 5
-    bonus: 0
     max: 6
   logic:
     base: 1
-    bonus: 0
     max: 6
   willpower:
     base: 3
-    bonus: 0
     max: 6
   charisma:
     base: 3
-    bonus: 0
     max: 8
 
 # Initiative

@@ -23,11 +23,9 @@ key: ahau-tec
 attributes:
   body:
     base: 9
-    bonus: 0
     max: 10
   agility:
     base: 5
-    bonus: 0
     max: 6
   reaction: 
     base: 5
@@ -35,24 +33,19 @@ attributes:
     max: 6
   strength: 
     base: 7
-    bonus: 0
     max: 8
   intuition:
     base: 1
     max: 6
-    bonus: 0
   logic:
     base: 1
-    bonus: 0
     max: 5
   willpower:
     base: 5
     max: 6
-    bonus: 0
   charisma:
     base: 1
     max: 5
-    bonus: 0
 
 # Initiative
 initiative:
