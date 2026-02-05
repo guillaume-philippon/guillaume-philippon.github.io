@@ -181,6 +181,12 @@ factions:
 
 # Matrice
 matrix:
+  bonus:
+    attack: 2
+    defense: 2
+    damage: 2
+    armor: 2
+    skills: 2
   commlink:
     name: Fairlight Caliban
     response: 4
@@ -305,48 +311,16 @@ matrix:
 
 # Cyberware
 cyberware:
-  - name: Commlink
-    essence: 0.2
-    capacity: 2
-    availability: "-"
-    price: 2000
-    type: headware
-  - name: Datajack
-    essence: 0.1
-    capacity: 1
-    availability: "-"
-    price: 500
-    type: headware
-  - name: Hot Sim-module
-    essence: 0.2
-    capacity: 2
-    availability: 12F
-    price: 5000
-    type: headware
-  - name: Cybereyes (2)
-    essence: 0.3
-    capacity: 8
-    availability: 4
-    price: 750
-  - name: Smartlink
-    essence: 0
-    capacity: 3
-    availability: 8R
-    price: 1000
-    type: eyeware
-    modifier:
-      attack:
-        range: 2
-  - name: Synaptic Booster (2)
-    essence: 1.0
-    availability: 12R
-    price: 160000
-    type: bioware
-  - name: Cerebral Booster (2)
-    essence: 0.4
-    availability: 12
-    price: 20000
-    type: bioware
+  - id: commlink
+  - id: datajack
+  - id: hot_sim_module
+  - id: cybereyes
+    capacity:
+      - id: smartlink
+  - id: synaptic_booster
+    level: 2
+  - id: cerebral_booster
+    level: 2
 
 # Équipement
 gear:

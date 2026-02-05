@@ -59,8 +59,8 @@ initiative:
 
 # Armure
 armor:
-  balistic: 8
-  impact: 6
+  balistic: 0
+  impact: 0
 
 # Blessures
 wound: 
@@ -76,6 +76,11 @@ edge:
 essence:
   base: 6
   modifier: 0
+
+# Conditions
+condition:
+  physical:
+    modifier: 4
 
 # Compétences
 skills:
@@ -126,56 +131,24 @@ matrix:
 
 # Cyberware
 cyberware:
-  - name: Wired Reflex (Alpha)
-    type: bodyware
-    essence: 2.4
-    availability: 12R
-    price: 64000
-  - name: Obvious Cyber Leg (Alpha/Customized)
-    type: cyberlimb
-    essence: 0.8
-    capacity: 20
-    price: 37500
-  - name: Obvious Cyber Leg (Alpha/Customized)
-    type: cyberlimb
-    essence: 0.8
-    capacity: 20
-    price: 37500
-  - name: Obvious Cyber Arm (Alpha/Customized)
-    type: cyberlimb
-    essence: 0.8
-    capacity: 15
-    price: 37500
-  - name: Obvious Cyber Arm (Alpha/Customized)
-    type: cyberlimb
-    essence: 0.8
-    capacity: 15
-    price: 37500
-  - name: Cybereyes (2)
-    type: eyeware
-    essence: 0.3
-    capacity: 8
-    availability: 4
-    price: 750
-  - name: Smartlink
-    type: eyeware
-    essence: 0
-    capacity: 3
-    availability: 8R
-    price: 1000
-    modifier:
-      attack:
-        range: 2
-  - name: Cyberarm Gyromount
-    type: accessories
-    capacity: 4
-    availability: 12F
-    price: 6000
-  - name: Cyber Holster
-    type: accessories
-    capacity: 7
-    availability: 8R
-    price: 2000
+  - id: wired_reflex
+    grade: alpha
+    level: 2
+  - id: cyber_leg
+    grade: alpha
+  - id: cyber_leg
+    grade: alpha
+    capacity:
+    - id: cyber_holster
+  - id: cyber_arm
+    grade: alpha
+    capacity:
+    - id: cyberarm_gyromount
+  - id: cyber_arm
+    grade: alpha
+  - id: cybereyes
+    capacity:
+      - id: smartlink
 
 # Équipement
 gear:

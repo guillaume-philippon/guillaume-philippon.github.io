@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test d'accès aux données</title>
+</head>
+<body>
+    <h1>Test d'accès aux données</h1>
+    
+    <h2>Cyberware List</h2>
+    <pre id="cyberware-data"></pre>
+    
+    <h2>Powers List</h2>
+    <pre id="powers-data"></pre>
+    
+    <h2>Spells</h2>
+    <pre id="spells-data"></pre>
+    
+    <script>
+        // Test d'accès aux données via Liquid (ceci est un test statique)
+        // Dans Jekyll, ces données seraient accessibles via site.data
+        console.log("Test d'accès aux données");
+        
+        // Affichage des données pour débogage
+        document.getElementById('cyberware-data').textContent = "Les données cyberware devraient être accessibles via site.data.cyberware_list['cyberware_list']";
+        document.getElementById('powers-data').textContent = "Les données powers devraient être accessibles via site.data.powers_list['powers_list']";
+        document.getElementById('spells-data').textContent = "Les données spells devraient être accessibles via site.data.spells.spells";
+    </script>
+</body>
+</html>
