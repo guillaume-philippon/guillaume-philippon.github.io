@@ -45,28 +45,70 @@
     <div class="tab-content" id="panelTabsContent">
         {% if page.cyberware %}
         <div class="tab-pane fade show active" id="cyberware" role="tabpanel">
-            <div class="table-responsive">
-            <table class="table table-sm table-striped">
-                <thead>
-                <tr>
-                    <th scope="col">Nom</th>
-                    <th class="text-center">Type</th>
-                    <th class="text-center">Essence</th>
-                    <th class="text-center">Capacity</th>
-                </tr>
-                </thead>
-                <tbody>
-                {% for ware in page.cyberware %}
-                <tr>
-                    <td>{{ ware.name }}</td>
-                    <td class="text-center">{{ ware.type }}</td>
-                    <td class="text-center">{{ ware.essence }}</td>
-                    <td class="text-center">[{{ ware.capacity }}]</td>
-                </tr>
-                {% endfor %}
-                </tbody>
-            </table>
-            </div>
+            <ul class="list-group">
+            {% for ware in page.cyberware %}
+                {% assign ware_data = site.data.cyberware.cyberware | where: "id", ware.id | first %}
+                {% if ware_data %}
+                <li class="list-group-item py-1">
+                    <strong>{{ ware_data.name }}</strong>
+                    <ul class="list-unstyled ps-4">
+                        <li><strong>Type:</strong> {{ ware_data.type }}</li>
+                        <li><strong>Essence:</strong>
+                            {% if ware_data.essence %}
+                            {{ ware_data.essence }}
+                            {% endif %}
+                            {% for ware_data_level in ware_data.levels %}
+                                {% if ware_data_level.level == ware.level %}
+                                    {{ ware_data_level.essence }}
+                                {% endif %}
+                            {% endfor %}
+                        </li>
+                        {% if ware_data.capacity %}
+                        <li><strong>Capacity:</strong> [{{ ware_data.capacity }}]
+                        <ul class="list-unstyled ps-4">
+                            {% for item in ware.capacity %}
+                            <li>
+                                {% assign ware_data_capacity = site.data.cyberware.cyberware | where: "id", item.id | first %}
+                                    <strong>{{ ware_data_capacity.name }}</strong> [-{{ ware_data_capacity.capacity }}]: 
+                                    <ul>
+                                        {% for effect in ware_data_capacity.effects %}
+                                        <li>{{ effect }}</li>
+                                        {% endfor %}
+                                    </ul>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        </li>
+                        {% endif %}
+                        {% if ware.grade %}
+                        <li><strong>Grade:</strong> {{ ware.grade }}</li>
+                        {% endif %}
+                        {% if ware.level %}
+                        <li><strong>Niveau:</strong> {{ ware.level }}</li>
+                        {% endif %}
+                        <li><strong>Effets:</strong>
+                            <ul class="list-unstyled ps-4">
+                            {% for effect in ware_data.effects %}
+                                <li>{{ effect }}</li>
+                            {% endfor %}
+                            {% for ware_data_level in ware_data.levels %}
+                                {% if ware_data_level.level == ware.level %}
+                                    {% for effect in ware_data_level.effects %}
+                                    <li>{{ effect }}</li>
+                                    {% endfor %}
+                                {% endif %}
+                            {% endfor %}
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                {% else %}
+                <li class="list-group-item py-1">
+                    <strong>{{ ware.id }}</strong> (Cyberware non trouvé dans la base de données)
+                </li>
+                {% endif %}
+            {% endfor %}
+            </ul>
         </div>
         {% endif %}
         
@@ -98,19 +140,6 @@
                     <strong>{{ spell_id }}</strong> (Sort non trouvé dans la base de données)
                 </li>
                 {% endif %}
-            {% endfor %}
-            </ul>
-        </div>
-        {% endif %}
-        
-        {% if page.magic.adept.powers %}
-        <div class="tab-pane fade" id="powers" role="tabpanel">
-            <ul class="list-group">
-            {% for power in page.magic.adept.powers %}
-            <li class="list-group-item py-1">
-                <strong>{{ power.name }}</strong> (Rating: {{ power.rating }}, Magie: {{ power.magic }})
-                {{ power.description | markdownify }}
-            </li>
             {% endfor %}
             </ul>
         </div>
@@ -172,10 +201,28 @@
         {% if page.magic.adept.powers %}
             <ul class="list-group">
             {% for power in page.magic.adept.powers %}
-            <li class="list-group-item py-1">
-                <strong>{{ power.name }}</strong> (Rating: {{ power.rating }}, Magie: {{ power.magic }})
-                {{ power.description | markdownify }}
-            </li>
+                {% assign power_data = site.data.powers.powers | where: "id", power.id | first %}
+                {% if power_data %}
+                <li class="list-group-item py-1">
+                    <strong>{{ power_data.name }}</strong> (Rating: {{ power.rating }}, Magie: {{ power_data.magic_cost }})
+                    <ul class="list-unstyled ps-4">
+                        <li><strong>Type:</strong> {{ power_data.type }}</li>
+                        <li><strong>Catégorie:</strong> {{ power_data.category }}</li>
+                        <li><strong>Effets:</strong>
+                            <ul class="list-unstyled ps-4">
+                            {% for effect in power_data.effects %}
+                                <li>{{ effect }}</li>
+                            {% endfor %}
+                            </ul>
+                        </li>
+                    </ul>
+                    {{ power_data.description | markdownify }}
+                </li>
+                {% else %}
+                <li class="list-group-item py-1">
+                    <strong>{{ power.id }}</strong> (Pouvoir non trouvé dans la base de données)
+                </li>
+                {% endif %}
             {% endfor %}
             </ul>
         {% else %}

@@ -16,9 +16,40 @@
 {% assign matrix_condition = page.matrix.commlink.system | divided_by: 2.0 | round | plus: 8 %}
 
 {% assign cyberware_essence = 0.0 %}
-{% for ware in page.cyberware %}
-    {% assign cyberware_essence = cyberware_essence | plus:ware.essence %}
+{% assign cyberware_cost = 0.0 %}
+{% for ware_id in page.cyberware %}
+    {% assign cyberware_id = ware_id.id %}
+    {% assign cyberware_id_grade = ware_id.grade %}
+    {% assign cyberware_id_level = ware_id.level %}
+    {% assign essence_multiplier = 1 %}
+    {% assign cost_multiplier = 1 %}
+    {% for grade in site.data.cyberware.grades %}
+      {% if grade[0] == cyberware_id_grade %}
+        {% assign essence_multiplier = grade[1].essence_multiplier %}
+        {% assign cost_multiplier = grade[1].cost_multiplier %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+    {% for ware in site.data.cyberware.cyberware %}
+      {% if ware.id == cyberware_id %}
+        {% if ware.essence %}
+          {% assign cyberware_id_essence = ware.essence | times: essence_multiplier %}
+          {% assign cyberware_essence = cyberware_essence | plus: cyberware_id_essence %}
+        {% endif %}
+        {% if cyberware_id_level %}
+          {% for level in ware.levels %}
+            {% if level.level ==  cyberware_id_level %}
+            {% assign cyberware_id_essence = level.essence | times: essence_multiplier %}
+            {% assign cyberware_essence = cyberware_essence | plus: cyberware_id_essence %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+    <!-- ware_id {{ ware_id }}: {{ cyberware_id_essence }} essence -->
 {% endfor %}
+<!-- cyberware_essence: {{ cyberware_essence }} -->
 
 {% assign programs_cost = 0 %}
 {% for group in page.matrix.programs %}
@@ -128,9 +159,6 @@
     {% endfor %}
   {% endfor %}
 {% endfor %}
-{% for cyberware in page.cyberware %}
-  {% assign melee_attack = melee_attack | plus: cyberware.modifier.attack.melee %}
-{% endfor %}
 <!-- Valeur de melee_attack: {{ melee_attack }}-->
 
 {% assign matrix_attack = 0 %}
@@ -143,6 +171,7 @@
     {% endif %}
   {% endfor %}
 {% endfor %}
+{% assign matrix_attack = matrix_attack | plus: page.matrix.bonus.attack %}
 <!-- Valeur de matrix_attack: {{ matrix_attack }}-->
 
 {% assign matrix_damage = 0 %}
@@ -155,7 +184,11 @@
     {% endif %}
   {% endfor %}
 {% endfor %}
-<!-- Valeur de matrix_attack: {{ matrix_attack }}-->
+{% assign matrix_damage = matrix_damage | plus: page.matrix.bonus.damage %}
+<!-- Valeur de matrix_damage: {{ matrix_damage }}-->
+
+{% assign matrix_armor = 0%}
+{% assign matrix_armor = matrix_armor | plus: page.matrix.bonus.armor %}
 
 {% assign balistic = page.gear.armor[0].balistic %}
 {% assign impact = page.gear.armor[0].impact %}

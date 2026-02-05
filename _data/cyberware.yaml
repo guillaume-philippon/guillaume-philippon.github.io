@@ -1,289 +1,257 @@
-# Cyberware Data Structure
-# This file contains cyberware information with support for grades and levels
+# Cyberware List
+# This file contains the complete list of cyberware available in the game
 
-# Cyberware Grades Definition
+# Cyberware Grades
 grades:
   standard:
     essence_multiplier: 1.0
     price_multiplier: 1.0
     description: "Standard quality cyberware"
   alpha:
-    essence_multiplier: 0.9
+    essence_multiplier: 0.8
     price_multiplier: 2.0
     description: "High-quality cyberware with reduced essence cost"
   beta:
-    essence_multiplier: 0.8
+    essence_multiplier: 0.7
     price_multiplier: 4.0
     description: "Top-of-the-line cyberware with minimal essence cost"
   delta:
-    essence_multiplier: 0.7
-    price_multiplier: 8.0
+    essence_multiplier: 0.5
+    price_multiplier: 10.0
     description: "Experimental cyberware with cutting-edge technology"
-  used:
-    essence_multiplier: 1.0
-    price_multiplier: 0.5
-    availability_modifier: +2
-    description: "Second-hand cyberware with potential wear"
 
-# Cyberware Categories
-categories:
-  - id: bodyware
-    name: "Bodyware"
-    description: "Internal cybernetic enhancements"
-  - id: cyberlimb
-    name: "Cyberlimbs"
-    description: "Full limb replacements"
-  - id: eyeware
-    name: "Eyeware"
-    description: "Eye enhancements and replacements"
-  - id: headware
-    name: "Headware"
-    description: "Head-mounted cybernetics"
-  - id: accessories
-    name: "Accessories"
-    description: "Additional cybernetic accessories"
-  - id: bioware
-    name: "Bioware"
-    description: "Biological enhancements"
-
-# Cyberware Database
 cyberware:
   - id: wired_reflex
     name: "Wired Reflex"
-    category: bodyware
-    base_essence: 2.7
-    base_price: 32000
+    type: bodyware
+    capacity: null
     availability: 12R
+    price: 64000
     description: "Augments reaction and initiative"
     sourcebook: "20th Anniversary Core Rulebook"
     page: 320
     levels:
       - level: 1
-        essence: 2.7
-        price: 32000
+        essence: 2
+        price: 11000
         reaction_bonus: 1
         initiative_pass: 1
+        effects:
+          - "Reaction: +1"
+          - "Initiative: +1 passes"
       - level: 2
-        essence: 5.4
-        price: 64000
+        essence: 3
+        price: 32000
         reaction_bonus: 2
         initiative_pass: 2
+        effects:
+          - "Reaction: +2"
+          - "Initiative: +2 passes"
       - level: 3
-        essence: 8.1
-        price: 96000
+        essence: 5
+        price: 100000
         reaction_bonus: 3
         initiative_pass: 3
+        effects:
+          - "Reaction: +3"
+          - "Initiative: +3 passes"
 
   - id: cyber_leg
-    name: "Cyber Leg"
-    category: cyberlimb
-    base_essence: 0.9
-    base_price: 25000
+    name: "Obvious Cyber Leg"
+    type: cyberlimb
+    essence: 1.0
+    capacity: 20
     availability: 12
-    description: "Full cybernetic leg replacement"
+    price: 37500
+    description: "Full cybernetic leg replacement with customization"
     sourcebook: "20th Anniversary Core Rulebook"
     page: 322
-    capacity: 8
-    levels:
-      - level: 1
-        essence: 0.9
-        price: 25000
-        capacity: 8
-      - level: 2
-        essence: 1.8
-        price: 50000
-        capacity: 16
-      - level: 3
-        essence: 2.7
-        price: 75000
-        capacity: 24
+    effects:
+      - "Full leg replacement"
+      - "Custom appearance"
+      - "Capacity: 20"
 
   - id: cyber_arm
-    name: "Cyber Arm"
-    category: cyberlimb
-    base_essence: 0.9
-    base_price: 25000
+    name: "Obvious Cyber Arm"
+    type: cyberlimb
+    essence: 1.0
+    capacity: 15
     availability: 12
-    description: "Full cybernetic arm replacement"
+    price: 37500
+    description: "Full cybernetic arm replacement with customization"
     sourcebook: "20th Anniversary Core Rulebook"
     page: 322
-    capacity: 6
-    levels:
-      - level: 1
-        essence: 0.9
-        price: 25000
-        capacity: 6
-      - level: 2
-        essence: 1.8
-        price: 50000
-        capacity: 12
-      - level: 3
-        essence: 2.7
-        price: 75000
-        capacity: 18
+    effects:
+      - "Full arm replacement"
+      - "Custom appearance"
+      - "Capacity: 15"
 
   - id: cybereyes
-    name: "Cybereyes"
-    category: eyeware
-    base_essence: 0.3
-    base_price: 750
+    name: "Cybereyes (2)"
+    type: eyeware
+    essence: 0.3
+    capacity: 8
     availability: 4
+    price: 750
     description: "Cybernetic eye replacement with various enhancements"
     sourcebook: "20th Anniversary Core Rulebook"
     page: 324
-    capacity: 4
-    levels:
-      - level: 1
-        essence: 0.3
-        price: 750
-        capacity: 4
-      - level: 2
-        essence: 0.6
-        price: 1500
-        capacity: 8
+    effects:
+      - "Full eye replacement"
+      - "Capacity: 8 for enhancements"
 
   - id: smartlink
     name: "Smartlink"
-    category: eyeware
-    base_essence: 0
-    base_price: 1000
+    type: eyeware
+    essence: 0
+    capacity: 3
     availability: 8R
+    price: 1000
     description: "Provides smartgun system interface"
     sourcebook: "20th Anniversary Core Rulebook"
     page: 325
-    capacity: 3
+    effects:
+      - "Smartgun system interface"
+      - "Attack bonus: +2 (range)"
     modifier:
       attack:
         range: 2
 
   - id: cyberarm_gyromount
     name: "Cyberarm Gyromount"
-    category: accessories
-    base_price: 6000
+    type: accessories
+    essence: 0
+    capacity: 4
     availability: 12F
+    price: 6000
     description: "Stabilizes weapons mounted on cyberarms"
     sourcebook: "20th Anniversary Core Rulebook"
     page: 328
-    capacity: 4
+    effects:
+      - "Weapon stabilization"
+      - "Reduces recoil"
 
   - id: cyber_holster
     name: "Cyber Holster"
-    category: accessories
-    base_price: 2000
+    type: accessories
+    essence: 0
+    capacity: 7
     availability: 8R
+    price: 2000
     description: "Quick-draw system for cyberarms"
     sourcebook: "20th Anniversary Core Rulebook"
     page: 328
-    capacity: 7
+    effects:
+      - "Quick-draw system"
+      - "Faster weapon access"
 
   - id: commlink
     name: "Commlink"
-    category: headware
-    base_essence: 0.2
-    base_price: 2000
-    availability: "-"
-    description: "Internal communication device"
-    sourcebook: "Unwired"
-    page: 50
+    type: headware
+    essence: 0.2
     capacity: 2
+    availability: "-"
+    price: 2000
+    description: "Internal communication device"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 339
+    effects:
+      - "Internal commlink"
+      - "Secure communication"
 
   - id: datajack
     name: "Datajack"
-    category: headware
-    base_essence: 0.1
-    base_price: 500
-    availability: "-"
-    description: "Direct neural interface for data transfer"
-    sourcebook: "Unwired"
-    page: 52
+    type: headware
+    essence: 0.1
     capacity: 1
+    availability: "-"
+    price: 500
+    description: "Direct neural interface for data transfer"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 339
+    effects:
+      - "Direct neural interface"
+      - "High-speed data transfer"
 
   - id: hot_sim_module
     name: "Hot Sim-module"
-    category: headware
-    base_essence: 0.2
-    base_price: 5000
-    availability: 12F
-    description: "Allows hot-sim VR experience"
-    sourcebook: "Unwired"
-    page: 54
+    type: headware
+    essence: 0.2
     capacity: 2
+    availability: 12F
+    price: 5000
+    description: "Allows hot-sim VR experience"
+    sourcebook:  "20th Anniversary Core Rulebook"
+    page: 339
+    bonus:
+      matrix: 2
+    effects:
+      - "Hot-sim VR capability"
+      - "+2 Test matrice"
 
   - id: synaptic_booster
     name: "Synaptic Booster"
-    category: bioware
-    base_essence: 1.0
-    base_price: 80000
+    type: bioware
+    capacity: null
     availability: 12R
     description: "Enhances mental processing speed"
     sourcebook: "Augmentation"
     page: 60
     levels:
       - level: 1
-        essence: 1.0
+        essence: 0.5
         price: 80000
-        logic_bonus: 1
-        intuition_bonus: 1
+        bonus:
+          reaction: 1
+          initiative_pass: 1
+        effects:
+          - "Reaction: +1"
+          - "+1 passe d'initiative"
       - level: 2
-        essence: 2.0
+        essence: 1.0
         price: 160000
-        logic_bonus: 2
-        intuition_bonus: 2
+        bonus:
+          reaction: 2
+          initiative_pass: 2
+        effects:
+          - "Reaction: +2"
+          - "+2 passe d'initiative"
+      - level: 3
+        essence: 1.5
+        price: 240000
+        bonus:
+          reaction: 3
+          initiative_pass: 3
+        effects:
+          - "Reaction: +2"
+          - "+2 passe d'initiative"
 
   - id: cerebral_booster
     name: "Cerebral Booster"
-    category: bioware
-    base_essence: 0.4
-    base_price: 10000
-    availability: 12
+    type: bioware
+    capacity: null
     description: "Improves cognitive functions"
     sourcebook: "Augmentation"
     page: 62
     levels:
       - level: 1
-        essence: 0.4
+        essence: 0.2
         price: 10000
-        logic_bonus: 1
+        bonus:
+          logic: 1
+        effects:
+          - "Logic: +1"
       - level: 2
-        essence: 0.8
+        essence: 0.4
         price: 20000
-        logic_bonus: 2
-
-# Cyberware Accessories (can be added to cyberlimbs)
-accessories:
-  - id: weapon_mount
-    name: "Weapon Mount"
-    category: accessories
-    capacity: 2
-    price: 1500
-    description: "Allows mounting weapons on cyberlimbs"
-  - id: hidden_compartment
-    name: "Hidden Compartment"
-    category: accessories
-    capacity: 1
-    price: 500
-    description: "Concealed storage in cyberlimbs"
-  - id: tool_attachment
-    name: "Tool Attachment"
-    category: accessories
-    capacity: 1
-    price: 300
-    description: "Allows attaching tools to cyberlimbs"
-
-# Cyberware Modifications
-modifications:
-  - id: customized
-    name: "Customized"
-    description: "Custom appearance and features"
-    price_multiplier: 1.2
-    essence_multiplier: 1.0
-  - id: obvious
-    name: "Obvious"
-    description: "Clearly visible cyberware"
-    price_multiplier: 0.8
-    essence_multiplier: 1.0
-  - id: concealed
-    name: "Concealed"
-    description: "Hidden or disguised cyberware"
-    price_multiplier: 1.5
-    essence_multiplier: 1.0
+        bonus:
+          logic: 2
+        effects:
+          - "Logic: +2"
+      - level: 3
+        essence: 0.6
+        price: 30000
+        bonus:
+          logic: 3
+        effects:
+          - "Logic: +2"

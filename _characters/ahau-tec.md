@@ -79,29 +79,15 @@ magic:
   modifier: 0
   weapon_focus: 2
   adept:
-    # Pouvoirs
     powers:
-      - name: Improved Reflex
+      - id: improved_reflexes
         rating: 1
-        magic: 1.5
-        description: |
-          Le pouvoir *Improved Reflexes* augmente la Réaction de +1 par niveau et +1 Passe d'Initiative supplémentaire.
-      - name: Astral Perception
+      - id: astral_perception
         rating: 1
-        magic: 1
-        description: |
-          Ce pouvoir permet aux adeptes de *voir* le plan astral.
-      - name: Mystic Armor
+      - id: mystic_armor
         rating: 6
-        magic: 3
-        description: |
-          Le pouvoir *Mystic Armor* (Armure Mystique) confère une armure magique supplémentaire de 1 point par niveau, qui s'ajoute à l'armure physique et protège à la fois contre les dégâts balistiques et d'impact, ainsi que dans les combats astraux.
-      - name: Power throw
+      - id: power_throw
         rating: 2
-        magic: 0.5
-        description: |
-          *Power Throw* ajoute un bonus aux jets de lancer (comme Throwing Weapons), augmente la portée des projectiles et peut infliger des dégâts supplémentaires, aujouter
-          +2 à la force pour déterminer la distance et les dégats.
 
 # Edge
 edge:

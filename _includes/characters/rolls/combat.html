@@ -71,7 +71,7 @@
           {% if page.magic %}
           <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
             <strong>Astral</strong>
-            <span><strong>{{ page.skills.active.ungrouped.astral_combat.value | plus: willpower_total | plus: page.magic.weapon_focus }}</strong> <small>(Astral Com. + Wil. + Focus)</small></span>
+            <span><strong>{{ page.skills.active.magical.ungrouped.astral_combat | plus: willpower_total | plus: page.magic.weapon_focus }}</strong> <small>(Astral Com. + Wil. + Focus)</small></span>
           </li>
           {% endif %}
         </ul>
