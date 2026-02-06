@@ -3,19 +3,19 @@
 
 # Cyberware Grades
 grades:
-  standard:
+  - id: standard
     essence_multiplier: 1.0
     price_multiplier: 1.0
     description: "Standard quality cyberware"
-  alpha:
+  - id: alpha
     essence_multiplier: 0.8
     price_multiplier: 2.0
     description: "High-quality cyberware with reduced essence cost"
-  beta:
+  - id: beta
     essence_multiplier: 0.7
     price_multiplier: 4.0
     description: "Top-of-the-line cyberware with minimal essence cost"
-  delta:
+  - id: delta
     essence_multiplier: 0.5
     price_multiplier: 10.0
     description: "Experimental cyberware with cutting-edge technology"

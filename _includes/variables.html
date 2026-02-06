@@ -1,3 +1,5 @@
+<!-- Variables 
+{% comment %} Caclul des valeurs totales d'attribut {% endcomment %}
 {% assign body_total = page.attributes.body.base | plus: page.attributes.body.bonus %}
 {% assign agility_total = page.attributes.agility.base | plus: page.attributes.agilite.bonus %}
 {% assign reaction_total = page.attributes.reaction.base | plus: page.attributes.reaction.bonus %}
@@ -7,49 +9,63 @@
 {% assign willpower_total = page.attributes.willpower.base | plus: page.attributes.willpower.bonus %}
 {% assign charisma_total = page.attributes.charisma.base | plus: page.attributes.charisma.bonus %}
 
+
+{% comment %} Caclul des initiatives {% endcomment %}
 {% assign physical_initiative = reaction_total | plus: intuition_total %}
 {% assign astral_initiative = intuition_total | times: 2 %}
 {% assign matrix_initiative = intuition_total | plus: page.matrix.commlink.response %}
 
+{% comment %} Calcul des moniteurs de conditions {% endcomment %}
 {% assign physic_condition = body_total | divided_by: 2.0 | round | plus: 8 | plus: page.condition.physical.bonus %}
 {% assign mental_condition = willpower_total | divided_by: 2.0 | round | plus: 8 | plus: page.condition.mental.bonus %}
 {% assign matrix_condition = page.matrix.commlink.system | divided_by: 2.0 | round | plus: 8 %}
 
+{% comment %} Calcul des couts cyberware & bioware {% endcomment %}
 {% assign cyberware_essence = 0.0 %}
 {% assign cyberware_cost = 0.0 %}
+
+cyberware:
 {% for ware_id in page.cyberware %}
     {% assign cyberware_id = ware_id.id %}
-    {% assign cyberware_id_grade = ware_id.grade %}
+    {% if ware_id.grade %}
+      {% assign cyberware_id_grade = ware_id.grade %}
+    {% else %}
+      {% assign cyberware_id_grade = 'standard' %}
+    {% endif %}
     {% assign cyberware_id_level = ware_id.level %}
-    {% assign essence_multiplier = 1 %}
-    {% assign cost_multiplier = 1 %}
-    {% for grade in site.data.cyberware.grades %}
-      {% if grade[0] == cyberware_id_grade %}
-        {% assign essence_multiplier = grade[1].essence_multiplier %}
-        {% assign cost_multiplier = grade[1].cost_multiplier %}
-        {% break %}
-      {% endif %}
-    {% endfor %}
-    {% for ware in site.data.cyberware.cyberware %}
-      {% if ware.id == cyberware_id %}
-        {% if ware.essence %}
-          {% assign cyberware_id_essence = ware.essence | times: essence_multiplier %}
-          {% assign cyberware_essence = cyberware_essence | plus: cyberware_id_essence %}
-        {% endif %}
-        {% if cyberware_id_level %}
-          {% for level in ware.levels %}
-            {% if level.level ==  cyberware_id_level %}
-            {% assign cyberware_id_essence = level.essence | times: essence_multiplier %}
-            {% assign cyberware_essence = cyberware_essence | plus: cyberware_id_essence %}
-            {% endif %}
-          {% endfor %}
-        {% endif %}
-        {% break %}
-      {% endif %}
-    {% endfor %}
-    <!-- ware_id {{ ware_id }}: {{ cyberware_id_essence }} essence -->
+
+    {% comment %} Recuperation des informations sur le grade {% endcomment %}
+    {% assign grade_data = site.data.cyberware.grades | where: "id", cyberware_id_grade | first %}
+    {% assign essence_multiplier = grade_data.essence_multiplier %}
+    {% assign cost_multiplier = grade_data.cost_multiplier %}
+
+    {% comment %} Recuperation des informations sur le cyberware {% endcomment %}
+    {% assign ware_data = site.data.cyberware.cyberware | where: "id", cyberware_id %}
+
+    {% comment %} Si le cyberware n'a pas de niveau {% endcomment %}
+    {% if ware_data[0].essence %}
+      {% assign cyberware_id_essence = ware_data[0].essence | times: essence_multiplier %}
+      {% assign cyberware_essence = cyberware_essence | plus: cyberware_id_essence %}
+    {% endif %}
+
+    {% comment %} Si le cyberware a un niveau {% endcomment %}
+    {% if cyberware_id_level %}
+      {% assign level_data = ware_data[0].levels | "level", cyberware_id_level | first %}
+      {% assign cyberware_id_essence = level_data.essence | times: essence_multiplier %}
+      {% assign cyberware_essence = cyberware_essence | plus: cyberware_id_essence %}
+    {% endif %}
+
+  - id: {{ cyberware_id }} 
+    grade: {{ cyberware_id_grade }}
+    level: {{ cyberware_id_level }}
+    essence: {{ cyberware_id_essence }}
+    essence_multiplier: {{ essence_multiplier }}
+    essence_total: {{ cyberware_essence }}
 {% endfor %}
-<!-- cyberware_essence: {{ cyberware_essence }} -->
+-- Total --
+essence: {{ cyberware_essence }}
+cost: {{ cyberware_cost }}
+  
 
 {% assign programs_cost = 0 %}
 {% for group in page.matrix.programs %}
@@ -58,43 +74,16 @@
     {% endfor %}
 {% endfor %}
 
-{% assign melee_defense = 0 %}
-{% for category in page.skills.active %}
-  {% for group in category[1] %}
-    {% for skill in group[1] %}
-      {% for category_data in site.data.skills %}
-        {% for group_data in category_data[1] %}
-          {% if group_data[0] == group[0] %}
-            {% for skill_data in group_data[1] %}
-              {% if skill_data[0] == skill[0] %}
-                {% if skill_data[1].type == 'melee_defense' %}
-                  {% if skill[1] > melee_defense %}
-                    {% assign melee_defense = skill[1] %}
-                  {% endif %}
-                {% endif %}
-                {% break %}
-              {% endif %}
-            {% endfor %}
-            {% break %}
-          {% endif %}
-        {% endfor %}
-      {% endfor %}
-    {% endfor %}
-  {% endfor %}
-{% endfor %}
-<!-- Valeur de melee_defense: {{ melee_defense }}-->
+rolls:
+  initiative:
+{% assign initiative_physic = 0 %}
+    physic: {{ initiative_physic }}
+{% assign initiative_astral = 0 %}
+    astral: {{ initiative_astral }}
+{% assign initiative_matrix = 0 %}
+    matrix: {{ initiative_matrix }}
 
-{% assign melee_damage = 0 %}
-{% for weapon in page.gear.weapons %}
-  {% if weapon.type contains 'melee' %}
-    {% assign weapon_damage = weapon.damage.base.melee | plus:  weapon.damage.bonus.melee %}
-    {% if weapon_damage > melee_damage %}
-      {% assign melee_damage = weapon_damage %}
-    {% endif %}
-  {% endif %}
-{% endfor %}
-<!-- Valeur de melee_damage: {{ melee_damage }}-->
-
+  attack:
 {% assign range_attack = 0 %}
 {% for category in page.skills.active %}
   {% for group in category[1] %}
@@ -119,22 +108,8 @@
     {% endfor %}
   {% endfor %}
 {% endfor %}
-{% for cyberware in page.cyberware %}
-  {% assign range_attack = range_attack | plus: cyberware.bonus.attack.range %}
-{% endfor %}
-<!-- Valeur de range_attack: {{ range_attack }}-->
-
-{% assign range_damage = 0 %}
-{% for weapon in page.gear.weapons %}
-  {% if weapon.type contains 'range' %}
-    {% assign weapon_damage = weapon.damage.base.range | plus:  weapon.damage.bonus.range %}
-    {% if weapon_damage > range_damage %}
-      {% assign range_damage = weapon_damage %}
-    {% endif %}
-  {% endif %}
-{% endfor %}
-<!-- Valeur de range_damage: {{ range_damage }}-->
-
+{% assign range_attack = range_attack | plus: agility_total | plus: page.attack.range %}
+    range: {{ range_attack }}
 {% assign melee_attack = 0 %}
 {% for category in page.skills.active %}
   {% for group in category[1] %}
@@ -159,8 +134,8 @@
     {% endfor %}
   {% endfor %}
 {% endfor %}
-<!-- Valeur de melee_attack: {{ melee_attack }}-->
-
+{% assign melee_attack = melee_attack | plus: agility_total | plus: page.attack.melee %}
+    melee: {{ melee_attack }}
 {% assign matrix_attack = 0 %}
 {% for group in page.matrix.programs %}
   {% for program in group[1] %}
@@ -171,9 +146,69 @@
     {% endif %}
   {% endfor %}
 {% endfor %}
-{% assign matrix_attack = matrix_attack | plus: page.matrix.bonus.attack %}
-<!-- Valeur de matrix_attack: {{ matrix_attack }}-->
+{% assign matrix_attack = matrix_attack | plus: page.skills.active.technical.cracking.cybercombat | plus: page.attack.matrix %}
+    matrix: {{ matrix_attack }}
+{% assign astral_attack = 0 %}
+{% assign astral_attack = astral_attack | plus: page.skills.active.magical.ungrouped.astral_combat | plus: willpower_total | plus: page.magic.weapon_focus %}
+    astral: {{ astral_attack }}
 
+  defense:
+{% assign range_defense = reaction_total %}
+    range: {{ range_defense }}
+{% assign melee_defense = 0 %}
+{% for category in page.skills.active %}
+  {% for group in category[1] %}
+    {% for skill in group[1] %}
+      {% for category_data in site.data.skills %}
+        {% for group_data in category_data[1] %}
+          {% if group_data[0] == group[0] %}
+            {% for skill_data in group_data[1] %}
+              {% if skill_data[0] == skill[0] %}
+                {% if skill_data[1].type == 'melee_defense' %}
+                  {% if skill[1] > melee_defense %}
+                    {% assign melee_defense = skill[1] %}
+                  {% endif %}
+                {% endif %}
+                {% break %}
+              {% endif %}
+            {% endfor %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    {% endfor %}
+  {% endfor %}
+{% endfor %}
+{% assign melee_defense = melee_defense | plus: reaction_total %}
+    melee: {{ melee_defense }}
+{% assign matrix_defense = 0%}
+{% assign matrix_defense = matrix_defense | plus: page.matrix.bonus.defense %}
+{% assign matrix_defense = matrix_defense | plus: page.matrix.commlink.response | plus: page.matrix.commlink.firewall %}
+    matrix: {{ matrix_defense }}
+{% assign astral_defense = 0 %}
+    astral: {{ astral_defense }}
+
+  damage:
+{% assign range_damage = 0 %}
+{% for weapon in page.gear.weapons %}
+  {% if weapon.type contains 'range' %}
+    {% assign weapon_damage = weapon.damage.base.range | plus:  weapon.damage.bonus.range %}
+    {% if weapon_damage > range_damage %}
+      {% assign range_damage = weapon_damage %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+    range: {{ range_damage }}
+{% assign melee_damage = 0 %}
+{% for weapon in page.gear.weapons %}
+  {% if weapon.type contains 'melee' %}
+    {% assign weapon_damage = weapon.damage.base.melee | plus:  weapon.damage.bonus.melee %}
+    {% if weapon_damage > melee_damage %}
+      {% assign melee_damage = weapon_damage %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+    melee: {{ melee_damage }}
 {% assign matrix_damage = 0 %}
 {% for group in page.matrix.programs %}
   {% for program in group[1] %}
@@ -185,13 +220,24 @@
   {% endfor %}
 {% endfor %}
 {% assign matrix_damage = matrix_damage | plus: page.matrix.bonus.damage %}
-<!-- Valeur de matrix_damage: {{ matrix_damage }}-->
-
+    matrix: {{ matrix_damage }}
+{% assign astral_damage = 0 %}
+    astral: {{ astral_damage }}
+  
+  armor:
+    natural:
+{% assign armor_natural_balistic = 0 %}
+      balistic: {{ armor_natural_balistic }}
+{% assign armor_natural_impact = 0 %}
+      impact: {{ armor_natural_impact }}
+{% assign armor_natural_astral = 0 %}
+      astral: {{ armor_natural_astral }}
+    gear:
+{% assign balistic = page.gear.armor[0].balistic %}
+      balistic: {{ balistic }}
+{% assign impact = page.gear.armor[0].impact %}
+      impact: {{ impact }}
 {% assign matrix_armor = 0%}
 {% assign matrix_armor = matrix_armor | plus: page.matrix.bonus.armor %}
-
-{% assign matrix_defense = 0%}
-{% assign matrix_defense = matrix_defense | plus: page.matrix.bonus.defense %}
-
-{% assign balistic = page.gear.armor[0].balistic %}
-{% assign impact = page.gear.armor[0].impact %}
+      matrix: {{ matrix_armor }}
+-->

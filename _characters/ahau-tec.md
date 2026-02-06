@@ -1,4 +1,7 @@
 ---
+# Identifiants du personnage
+key: ahau-tec
+
 # Informations générales sur le personnage
 infos:
   height: "2,2"
@@ -15,9 +18,6 @@ infos:
   role:
     operational: Street Samouraï, Sécurité Rapproché
     narrative: Stabilité, Résilience, Dette
-
-# Identifiants du personnage
-key: ahau-tec
 
 # Attributs de base
 attributes:
@@ -47,24 +47,38 @@ attributes:
     base: 1
     max: 5
 
-# Initiative
+# Blessures
+condition:
+  physical:
+    wound: 3
+  mental:
+    wound: 3
+
+# Bonus Init.
 initiative:
   physic:
     turns: 2
-  astral:
-    turns: 3
-    bonus: 2
+
+# Bonus atk
+attack:
+  physical:
+
+# Bonus def
+defense:
+
+# Bonus damage
+damage:
 
 # Armure
 armor:
-  impact: 6
-  balistic: 6
-  astral: 6
+  natural:
+    impact: 6
+    balistic: 6
+    astral: 6
+  gear:
+    impact: 6
+    balistic: 8
 
-# Blessures
-wound: 
-  physic: 3
-  mental: 3
 
 # Magie
 magic:

@@ -61,25 +61,26 @@
         <ul class="list-group list-group-flush">
           <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
             <strong>Distance</strong>
-            <span><strong>{{ agility_total | plus: range_attack }}</strong>
+            <span><strong>{{ range_attack }}</strong>
                <small data-bs-toggle="tooltip" data-bs-toggle="tooltip" data-bs-title="">(Agi. + Ski. + Bon.)</small></span>
           </li>
           <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
             <strong>Mélée</strong>
-            <span><strong>{{ agility_total | plus: melee_attack }}</strong>
+            <span><strong>{{ melee_attack }}</strong>
                <small data-bs-toggle="tooltip" data-bs-toggle="tooltip" data-bs-title="">(Agi. + Ski. + Bon.)</small></span>
           </li>
           {% if page.matrix %}
           <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
             <strong>Matrice</strong>
-            <span><strong>{{ page.skills.active.technical.cracking.cybercombat | plus: matrix_attack }}</strong>
+            <span><strong>{{ matrix_attack }}</strong>
                <small data-bs-toggle="tooltip" data-bs-toggle="tooltip" data-bs-title="">(Cybercombat + Soft. + Bon.)</small></span>
           </li>
           {% endif %}
           {% if page.magic %}
           <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
             <strong>Astral</strong>
-            <span><strong>{{ page.skills.active.magical.ungrouped.astral_combat | plus: willpower_total | plus: page.magic.weapon_focus }}</strong>
+            <span>
+              <strong>{{ astral_attack }}</strong>
                <small data-bs-toggle="tooltip" data-bs-toggle="tooltip" data-bs-title="">(Astral Com. + Wil. + Foc.)</small></span>
           </li>
           {% endif %}
@@ -93,12 +94,12 @@
         <ul class="list-group list-group-flush">
           <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
             <strong>Distance</strong>
-            <span><strong>{{ reaction_total }}</strong> <small data-bs-toggle="tooltip" data-bs-toggle="tooltip" data-bs-title="">(Réa.)</small></span>
+            <span><strong>{{ range_defense }}</strong> <small data-bs-toggle="tooltip" data-bs-toggle="tooltip" data-bs-title="">(Réa.)</small></span>
           </li>
           <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
             <strong>Mélée</strong>
             <span>
-              <strong>{{ reaction_total | plus: melee_defense }}</strong>
+              <strong>{{ melee_defense }}</strong>
                <small data-bs-toggle="tooltip" data-bs-toggle="tooltip" data-bs-title="">(Réa. + Ski.)</small>
             </span>
           </li>
@@ -106,7 +107,7 @@
           <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
             <strong>Matrice</strong>
             <span>
-              <strong>{{ page.matrix.commlink.response | plus: page.matrix.commlink.firewall | plus: matrix_defense }}</strong>
+              <strong>{{ matrix_defense }}</strong>
               <small data-bs-toggle="tooltip" data-bs-toggle="tooltip" data-bs-title="">(Rép. + Fir. + Bon.)</small>
             </span>
           </li>
