@@ -72,15 +72,8 @@ qualities:
     description: "One attribute is exceptionally high"
     sourcebook: "20th Anniversary Core Rulebook"
     page: 90
-    levels:
-      - level: 1
-        bp_cost: 20
-        attribute_bonus: 1
-        description: "+1 to one attribute"
-      - level: 2
-        bp_cost: 40
-        attribute_bonus: 2
-        description: "+2 to one attribute"
+    attribute_bonus: 1
+    description: "+1 to one attribute"
 
   - id: dependances
     name: "Dependances"

@@ -4,26 +4,28 @@
       <strong>Distance</strong>
       <span><strong>{{ body_total | plus: page.armor.balistic }}</strong> 
         <small>({{ body_total | plus: page.armor.balistic | plus: balistic }})</small> 
-        <small>Nat. (+ Balistic)</small>
+        <small data-bs-toggle="tooltip" data-bs-title="Bod.({{ body_total }}) + Nat.({{ page.armor.balistic }}) + Bal.({{ balistic }})">Bod. + Nat. (+ Balistic)</small>
       </span>
     </li>
     <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
       <strong>Mélée</strong>
       <span><strong>{{ body_total | plus: page.armor.impact }}</strong>
-        <small>({{ body_total | plus: page.armor.balistic | plus: impact }})</small> 
-        <small>Nat. (+ Impact)</small>
+        <small>({{ body_total | plus: page.armor.impact | plus: impact }})</small> 
+        <small data-bs-toggle="tooltip"  data-bs-title="Bod.({{ body_total }}) + Nat.({{ page.armor.impact }}) + Bal.({{ impact }})">Bod. + Nat. (+ Impact)</small>
       </span>
     </li>
     {% if page.matrix %}
     <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
       <strong>Matrice</strong>
-      <span><strong>{{ page.matrix.commlink.system | plus: page.matrix.programs.hacking.armor.rating | plus: matrix_armor }}</strong> <small>(Sys. + Arm. + Bon.)</small></span>
+      <span><strong>{{ page.matrix.commlink.system | plus: page.matrix.programs.hacking.armor.rating | plus: matrix_armor }}</strong>
+        <small  data-bs-toggle="tooltip"  data-bs-title="Sys.({{ page.matrix.commlink.system }}) + Arm.({{ page.matrix.programs.hacking.armor.rating }}) + Bon.({{ matrix_armor }})">(Sys. + Arm. + Bon.)</small></span>
     </li>
     {% endif %}
     {% if page.magic %}
     <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
       <strong>Astral</strong>
-      <span><strong>{{ body_total | plus: willpower_total | plus: page.armor.astral }}</strong> <small>(Bod. + Wil. + Astral)</small></span>
+      <span><strong>{{ body_total | plus: willpower_total | plus: page.armor.astral }}</strong>
+        <small data-bs-toggle="tooltip"  data-bs-title="Bod.({{ body_total }})+ Wil.({{ willpower_total }}) + Astral({{ page.armor.astral }})">(Bod. + Wil. + Astral)</small></span>
     </li>
     {% endif %}
   </ul>
