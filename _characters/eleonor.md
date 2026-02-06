@@ -97,6 +97,22 @@ skills:
         etiquette: 4
         leadership: 4
         negociation: 4
+  knowledge:
+    seattle_street_gangs:
+      value: 4
+      attribute: street
+    urban_combat_tactics:
+      value: 5
+      attribute: professional
+    shadowrunner_lore:
+      value: 3
+      attribute: interest
+    cyberware_maintenance:
+      value: 4
+      attribute: professional
+    black_market_operations:
+      value: 2
+      attribute: street
 
 # Contacts
 contacts:
