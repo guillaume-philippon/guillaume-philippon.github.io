@@ -129,38 +129,9 @@
         {% if has_other_gear %}
 {% include characters/sidebar/gear/other.html %}
         {% endif %}
-        <div class="tab-pane fade" id="powers" role="tabpanel">
         {% if page.magic.adept.powers %}
-            <ul class="list-group">
-            {% for power in page.magic.adept.powers %}
-                {% assign power_data = site.data.powers.powers | where: "id", power.id | first %}
-                {% if power_data %}
-                <li class="list-group-item py-1">
-                    <strong>{{ power_data.name }}</strong> (Rating: {{ power.rating }}, Magie: {{ power_data.magic_cost }})
-                    <ul class="list-unstyled ps-4">
-                        <li><strong>Type:</strong> {{ power_data.type }}</li>
-                        <li><strong>Catégorie:</strong> {{ power_data.category }}</li>
-                        <li><strong>Effets:</strong>
-                            <ul class="list-unstyled ps-4">
-                            {% for effect in power_data.effects %}
-                                <li>{{ effect }}</li>
-                            {% endfor %}
-                            </ul>
-                        </li>
-                    </ul>
-                    {{ power_data.description | markdownify }}
-                </li>
-                {% else %}
-                <li class="list-group-item py-1">
-                    <strong>{{ power.id }}</strong> (Pouvoir non trouvé dans la base de données)
-                </li>
-                {% endif %}
-            {% endfor %}
-            </ul>
-        {% else %}
-            <p>Aucun pouvoir</p>
+{% include characters/sidebar/powers.html %}
         {% endif %}
-        </div>
         <div class="tab-pane fade" id="spells" role="tabpanel">
         {% if page.magic.magician.spells %}
             <ul class="list-group">
