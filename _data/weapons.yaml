@@ -1,0 +1,290 @@
+# Weapons List
+# This file contains the complete list of weapons available in the game
+
+weapons:
+  - id: hand_razors_retractable
+    name: "Hand Razors (Retractable)"
+    type: melee
+    damage:
+      description: "(Str./2 +2)P"
+      base:
+        melee: 2
+    price: 900
+    availability: 2R
+    description: "Retractable hand razors for close combat"
+
+  - id: ares_crusader
+    name: "Ares Crusader"
+    type: range
+    damage:
+      description: "4P"
+      type: "P"
+    ap: -1
+    rc: 2
+    mode: "SA/BF"
+    ammo: "40(c)"
+    availability: 7R
+    price: 700
+    description: "Reliable pistol from Ares"
+
+  - id: ares_alpha
+    name: "Ares Alpha"
+    type: range
+    damage:
+      description: "6P"
+      type: "P"
+    ap: -1
+    rc: 2
+    mode: "SA/BF/FA"
+    ammo: "42(c)"
+    availability: 12F
+    price: 1700
+    description: "Heavy pistol from Ares"
+
+  - id: ares_desert_fox
+    name: "Ares Desert Fox (Sniper)"
+    type: range
+    damage:
+      description: "8P"
+      type: "P"
+    ap: -1
+    rc: 1
+    mode: "SA"
+    ammo: "14(c)"
+    availability: 10F
+    price: 3350
+    description: "Sniper rifle from Ares"
+
+  - id: ares_predator_iv
+    name: "Ares Predator IV"
+    type: range
+    damage:
+      description: "5P"
+      type: "P"
+    ap: -1
+    mode: "SA"
+    ammo: "15(c)"
+    availability: 4R
+    price: 350
+    description: "Light pistol from Ares"
+
+  - id: fn_har
+    name: "FN HAR"
+    type: range
+    damage:
+      description: "6P"
+      type: "P"
+    ap: -1
+    rc: 2
+    mode: "SA/BF/FA"
+    ammo: "35(c)"
+    availability: 8R
+    price: 1000
+    description: "Assault rifle from FN"
+
+  - id: colt_america_l36
+    name: "Colt America L36"
+    type: range
+    damage:
+      description: "5P"
+      type: "P"
+    ap: 0
+    mode: "SA"
+    ammo: "15(c)"
+    availability: 4R
+    price: 450
+    description: "Standard pistol from Colt"
+
+  - id: remington_roomsweeper
+    name: "Remington Roomsweeper"
+    type: range
+    damage:
+      description: "8P"
+      type: "P"
+    ap: -1
+    mode: "SA"
+    ammo: "12(c)"
+    availability: 6R
+    price: 650
+    description: "Shotgun from Remington"
+
+  - id: ak_97
+    name: "AK-97"
+    type: range
+    damage:
+      description: "6P"
+      type: "P"
+    ap: -1
+    rc: 2
+    mode: "SA/BF/FA"
+    ammo: "30(c)"
+    availability: 8R
+    price: 1200
+    description: "Assault rifle, modern version of the classic AK-47"
+
+  - id: ingram_smartgun_xii
+    name: "Ingram Smartgun XII"
+    type: range
+    damage:
+      description: "5P"
+      type: "P"
+    ap: 0
+    mode: "BF/FA"
+    ammo: "32(c)"
+    availability: 6R
+    price: 850
+    description: "Submachine gun with smartgun system"
+
+  - id: yamaha_raiden
+    name: "Yamaha Raiden"
+    type: range
+    damage:
+      description: "6P"
+      type: "P"
+    ap: -1
+    rc: 2
+    mode: "SA/BF"
+    ammo: "30(c)"
+    availability: 8R
+    price: 1100
+    description: "Assault rifle from Yamaha"
+
+  - id: streetline_special
+    name: "Streetline Special"
+    type: range
+    damage:
+      description: "5P"
+      type: "P"
+    ap: 0
+    mode: "SA"
+    ammo: "10(c)"
+    availability: 4R
+    price: 200
+    description: "Cheap and reliable street pistol"
+
+  - id: monofilament_whip
+    name: "Monofilament Whip"
+    type: melee
+    damage:
+      description: "(Str. + 3)P"
+      base:
+        melee: 3
+    price: 1500
+    availability: 12F
+    description: "Monofilament whip for close combat"
+
+  - id: katana
+    name: "Katana"
+    type: melee
+    damage:
+      description: "(Str. + 2)P"
+      base:
+        melee: 2
+    price: 1200
+    availability: 8R
+    description: "Traditional Japanese sword"
+
+  - id: combat_axe
+    name: "Combat Axe"
+    type: melee
+    damage:
+      description: "(Str. + 2)P"
+      base:
+        melee: 2
+    price: 300
+    availability: 4R
+    description: "Axe designed for combat"
+
+  - id: stun_baton
+    name: "Stun Baton"
+    type: melee
+    damage:
+      description: "6S(e)"
+      type: "S(e)"
+    price: 250
+    availability: 3R
+    description: "Non-lethal baton that delivers electric shocks"
+
+  - id: taser
+    name: "Taser"
+    type: range
+    damage:
+      description: "5S(e)"
+      type: "S(e)"
+    mode: "SA"
+    ammo: "10(c)"
+    availability: 4R
+    price: 350
+    description: "Non-lethal weapon that delivers electric shocks"
+
+  - id: grenade_fragmentation
+    name: "Grenade (Fragmentation)"
+    type: explosive
+    damage:
+      description: "10P (12m radius)"
+      type: "P"
+    price: 150
+    availability: 8R
+    description: "Standard fragmentation grenade"
+
+  - id: grenade_flash_bang
+    name: "Grenade (Flash-Bang)"
+    type: explosive
+    damage:
+      description: "8S (10m radius, -3 dice penalty)"
+      type: "S"
+    price: 120
+    availability: 6R
+    description: "Non-lethal grenade that creates bright flash and loud noise"
+
+  - id: grenade_smoke
+    name: "Grenade (Smoke)"
+    type: explosive
+    damage:
+      description: "No damage (creates smoke screen)"
+      type: "None"
+    price: 80
+    availability: 4R
+    description: "Creates a smoke screen for cover"
+
+  - id: tomahawk
+    name: "Tomahawk"
+    type:
+      - melee
+      - range
+    damage:
+      description: "(Str./2 + 2)P"
+      base:
+        melee: 2
+        throwing: 2
+    range:
+      melee: 1
+    price: 150
+    availability: 4
+    description: "Traditional Native American axe that can be used in melee or thrown"
+
+  - id: knife
+    name: "Couteau de combat"
+    price: 20
+    type: 
+      - melee
+    damage:
+      description: (Str./2 + 1)P
+      base:
+        range: 1
+        melee: 1
+      type: P
+    sourcebook:  20th Anniversary Core Rulebook
+    page:
+
+
+  - id: macuahuitl
+    name: "Macuahuitl"
+    type: melee
+    damage:
+      description: "(Str./2 + 2)P"
+      base:
+        melee: 2
+    price: 23000
+    availability: 14R
+    description: "Traditional Aztec obsidian-edged club"

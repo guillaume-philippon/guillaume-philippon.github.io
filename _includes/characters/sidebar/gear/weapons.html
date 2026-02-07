@@ -1,0 +1,74 @@
+<div class="tab-pane fade" id="weapons" role="tabpanel">
+    <div class="row">
+    {% for weapon in page.gear.weapons %}
+        {% assign weapon_data = site.data.weapons.weapons | where: "id", weapon.id | first %}
+        {% if weapon_data %}
+        <div class="mt-2">
+            <div class="card h-100">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <strong>{{ weapon_data.name }}</strong>
+                    <span>
+                        {% if weapon_data.type contains "melee" and weapon_data.type contains "throwing" %}
+                            <i class="fa-solid fa-axe-battle"></i>
+                        {% elsif weapon_data.type contains "melee" %}
+                            <i class="fa-solid fa-knife"></i>
+                        {% elsif weapon_data.type contains "range" %}
+                            <i class="fa-solid fa-gun"></i>
+                        {% elsif weapon_data.type contains "explosive" %}
+                            <i class="fa-solid fa-bomb"></i>
+                        {% else %}
+                            <i class="fa-solid fa-question"></i>
+                        {% endif %}
+                    </span>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled">
+                        <li><strong>Type:</strong> 
+                            {% if weapon_data.type %}
+                                {% for type in weapon_data.type %}
+                                    {{ type | capitalize }}{% unless forloop.last %}, {% endunless %}
+                                {% endfor %}
+                            {% endif %}
+                        </li>
+                        <li><strong>Price:</strong> {{ weapon_data.price }}¥</li>
+                        {% if weapon_data.availability %}
+                        <li><strong>Availability:</strong> {{ weapon_data.availability }}</li>
+                        {% endif %}
+                        <li><strong>Damage:</strong> {{ weapon_data.damage.description }}</li>
+                        {% if weapon_data.ap %}
+                        <li><strong>AP:</strong> {{ weapon_data.ap }}</li>
+                        {% endif %}
+                        {% if weapon_data.rc %}
+                        <li><strong>RC:</strong> {{ weapon_data.rc }}</li>
+                        {% endif %}
+                        {% if weapon_data.mode %}
+                        <li><strong>Mode:</strong> {{ weapon_data.mode }}</li>
+                        {% endif %}
+                        {% if weapon_data.ammo %}
+                        <li><strong>Ammo:</strong> {{ weapon_data.ammo }}</li>
+                        {% endif %}
+                        {% if weapon_data.range %}
+                        <li><strong>Range:</strong> 
+                            {% if weapon_data.range.melee %}{{ weapon_data.range.melee }}{% endif %}
+                            {% if weapon_data.range.throwing %} (Thrown: {{ weapon_data.range.throwing }}){% endif %}
+                        </li>
+                        {% endif %}
+                        {% if weapon_data.description %}
+                        <li><strong>Description:</strong> {{ weapon_data.description }}</li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <strong>{{ weapon.id }}</strong> (Weapon not found in database)
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    {% endfor %}
+    </div>
+</div>

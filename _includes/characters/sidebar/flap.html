@@ -32,9 +32,21 @@
             <button class="nav-link" id="commlink-tab" data-bs-toggle="tab" data-bs-target="#commlink" type="button" role="tab" title="Commlink"><i class="fa-solid fa-microchip"></i></button>
         </li>
         {% endif %}
+        <!--
         <li class="nav-item" role="presentation">
             <button class="nav-link" id="gear-tab" data-bs-toggle="tab" data-bs-target="#gear" type="button" role="tab" title="Équipement"><i class="fa-solid fa-briefcase"></i></button>
         </li>
+        -->
+        {% if page.gear.weapons %}
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="weapons-tab" data-bs-toggle="tab" data-bs-target="#weapons" type="button" role="tab" title="Armes"><i class="fa-solid fa-gun"></i></button>
+        </li>
+        {% endif %}
+        {% if page.gear.armor %}
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="armor-tab" data-bs-toggle="tab" data-bs-target="#armor" type="button" role="tab" title="Armures"><i class="fa-solid fa-shield"></i></button>
+        </li>
+        {% endif %}
         {% if page.gear.vehicule %}
         <li class="nav-item" role="presentation">
             <button class="nav-link" id="vehicles-tab" data-bs-toggle="tab" data-bs-target="#vehicles" type="button" role="tab" title="Véhicules"><i class="fa-solid fa-car"></i></button>
@@ -44,72 +56,7 @@
     </div>
     <div class="tab-content" id="panelTabsContent">
         {% if page.cyberware %}
-        <div class="tab-pane fade show active" id="cyberware" role="tabpanel">
-            <ul class="list-group">
-            {% for ware in page.cyberware %}
-                {% assign ware_data = site.data.cyberware.cyberware | where: "id", ware.id | first %}
-                {% if ware_data %}
-                <li class="list-group-item py-1">
-                    <strong>{{ ware_data.name }}</strong>
-                    <ul class="list-unstyled ps-4">
-                        <li><strong>Type:</strong> {{ ware_data.type }}</li>
-                        <li><strong>Essence:</strong>
-                            {% if ware_data.essence %}
-                            {{ ware_data.essence }}
-                            {% endif %}
-                            {% for ware_data_level in ware_data.levels %}
-                                {% if ware_data_level.level == ware.level %}
-                                    {{ ware_data_level.essence }}
-                                {% endif %}
-                            {% endfor %}
-                        </li>
-                        {% if ware_data.capacity %}
-                        <li><strong>Capacity:</strong> [{{ ware_data.capacity }}]
-                        <ul class="list-unstyled ps-4">
-                            {% for item in ware.capacity %}
-                            <li>
-                                {% assign ware_data_capacity = site.data.cyberware.cyberware | where: "id", item.id | first %}
-                                    <strong>{{ ware_data_capacity.name }}</strong> [-{{ ware_data_capacity.capacity }}]: 
-                                    <ul>
-                                        {% for effect in ware_data_capacity.effects %}
-                                        <li>{{ effect }}</li>
-                                        {% endfor %}
-                                    </ul>
-                            </li>
-                            {% endfor %}
-                        </ul>
-                        </li>
-                        {% endif %}
-                        {% if ware.grade %}
-                        <li><strong>Grade:</strong> {{ ware.grade }}</li>
-                        {% endif %}
-                        {% if ware.level %}
-                        <li><strong>Niveau:</strong> {{ ware.level }}</li>
-                        {% endif %}
-                        <li><strong>Effets:</strong>
-                            <ul class="list-unstyled ps-4">
-                            {% for effect in ware_data.effects %}
-                                <li>{{ effect }}</li>
-                            {% endfor %}
-                            {% for ware_data_level in ware_data.levels %}
-                                {% if ware_data_level.level == ware.level %}
-                                    {% for effect in ware_data_level.effects %}
-                                    <li>{{ effect }}</li>
-                                    {% endfor %}
-                                {% endif %}
-                            {% endfor %}
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                {% else %}
-                <li class="list-group-item py-1">
-                    <strong>{{ ware.id }}</strong> (Cyberware non trouvé dans la base de données)
-                </li>
-                {% endif %}
-            {% endfor %}
-            </ul>
-        </div>
+{% include characters/sidebar/cyberware.html %}
         {% endif %}
         
         {% if page.magic.magician.spells %}
@@ -145,58 +92,23 @@
         </div>
         {% endif %}
         
-        {% if page.qualities %}
-        <div class="tab-pane fade" id="qualities" role="tabpanel">
-            <h5>Qualités</h5>
-            <ul class="list-group">
-            {% for quality in page.qualities %}
-            <li class="list-group-item py-1">
-                <span data-bs-toggle="tooltip" data-bs-title="{{quality.sourcebook}} (p. {{quality.page}})">
-                <strong>{{ quality.name }}</strong>
-                </span>
-                {% if quality.rating %} (Rating: {{ quality.rating }}) {% endif %} {% if quality.bp %} [{{ quality.bp }} BP] {% endif %}
-                {{ quality.description | markdownify }}
-            </li>
-            {% endfor %}
-            </ul>
-        </div>
-        {% endif %}
-        
         {% if page.matrix.commlink %}
         <div class="tab-pane fade" id="commlink" role="tabpanel">
 {% include characters/sidebar/matrix.html %}
         </div>
         {% endif %}
         
-        <div class="tab-pane fade" id="gear" role="tabpanel">
-{% assign gear_cost = 0 %}
-{% for group in page.gear %}
-    {% for item in group[1] %}
-    {% assign multiplier = 1 %}
-    {% if item.quantity %}
-        {% assign multiplier = item.quantity %}
-    {% endif %}
-    {% assign item_cost = item.price | times: multiplier %}
-    {% assign gear_cost = gear_cost | plus: item_cost %}
-    {% endfor %}
-{% endfor %}
- 
-<h5>Équipement [{{ gear_cost}} ¥]</h5>
-<ul class="list-group">
-    {% for group in page.gear %}
-    {% for item in group[1] %}
-    <li class="list-group-item py-1">
-        <strong>{{ item.name }}</strong> ({% if item.quantity %} x {{ item.quantity }}, {% endif %}{{ item.price }}¥)
-        <ul class="list-unstyled">
-        {% if item.damage %}<li class="ps-4">Dégâts: {{ item.damage.description }}</li>{% endif %}
-        {% if item.impact %}<li class="ps-4">Impact: {{ item.impact }}</li>{% endif %}
-        {% if item.balistic %}<li class="ps-4">Balistic: {{ item.balistic }}</li>{% endif %}
-        </ul>
-    </li>
-    {% endfor %}
-    {% endfor %}
-</ul>
-        </div>
+        {% if page.gear.weapons %}
+{% include characters/sidebar/gear/weapons.html %}
+        {% endif %}
+        
+        {% if page.gear.armor %}
+{% include characters/sidebar/gear/armor.html %}
+        {% endif %}
+        
+        {% if page.gear.vehicule %}
+{% include characters/sidebar/gear/vehicles.html %}
+        {% endif %}
         <div class="tab-pane fade" id="powers" role="tabpanel">
         {% if page.magic.adept.powers %}
             <ul class="list-group">
@@ -263,24 +175,9 @@
             <p>Aucun sort</p>
         {% endif %}
         </div>
-        <div class="tab-pane fade" id="qualities" role="tabpanel">
         {% if page.qualities %}
-            <h5>Qualités</h5>
-            <ul class="list-group">
-            {% for quality in page.qualities %}
-            <li class="list-group-item py-1">
-                <span data-bs-toggle="tooltip" data-bs-title="{{quality.sourcebook}} (p. {{quality.page}})">
-                <strong>{{ quality.name }}</strong>
-                </span>
-                {% if quality.rating %} (Rating: {{ quality.rating }}) {% endif %} {% if quality.bp %} [{{ quality.bp }} BP] {% endif %}
-                {{ quality.description | markdownify }}
-            </li>
-            {% endfor %}
-            </ul>
-        {% else %}
-            <p>Aucune qualité</p>
+{% include characters/sidebar/qualities.html %}
         {% endif %}
-        </div>
         {% if page.matrix.commlink %}
         <div class="tab-pane fade" id="commlink" role="tabpanel">
 {% include characters/sidebar/matrix.html %}

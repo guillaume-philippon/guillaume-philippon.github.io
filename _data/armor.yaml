@@ -1,0 +1,147 @@
+# Armor List
+# This file contains the complete list of armor available in the game
+
+armor:
+  - id: armor_jacket
+    name: "Armor Jacket"
+    type: body
+    balistic: 8
+    impact: 6
+    price: 900
+    availability: 2
+    description: "Standard armor jacket for protection"
+
+  - id: urban_explorer_jumpsuit
+    name: "Urban Explorer Jumpsuit"
+    type: full_body
+    balistic: 6
+    impact: 6
+    price: 500
+    availability: 4
+    description: "Lightweight jumpsuit with basic protection"
+
+  - id: armored_coat
+    name: "Armored Coat"
+    type: body
+    balistic: 6
+    impact: 4
+    price: 600
+    availability: 3
+    description: "Stylish coat with hidden armor"
+
+  - id: combat_armor
+    name: "Combat Armor"
+    type: full_body
+    balistic: 10
+    impact: 8
+    price: 1500
+    availability: 8R
+    description: "Heavy combat armor for serious protection"
+
+  - id: helmet_standard
+    name: "Helmet (Standard)"
+    type: head
+    balistic: 2
+    impact: 2
+    price: 200
+    availability: 2
+    description: "Standard protective helmet"
+
+  - id: helmet_combat
+    name: "Helmet (Combat)"
+    type: head
+    balistic: 3
+    impact: 3
+    price: 500
+    availability: 4R
+    description: "Enhanced combat helmet"
+
+  - id: riot_shield
+    name: "Riot Shield"
+    type: shield
+    balistic: 10
+    impact: 8
+    price: 800
+    availability: 6R
+    description: "Large shield for riot control"
+
+  - id: ballistic_shield
+    name: "Ballistic Shield"
+    type: shield
+    balistic: 12
+    impact: 10
+    price: 1200
+    availability: 8R
+    description: "Heavy shield for ballistic protection"
+
+  - id: tactical_vest
+    name: "Tactical Vest"
+    type: body
+    balistic: 6
+    impact: 4
+    price: 700
+    availability: 4
+    description: "Tactical vest with armor plates"
+
+  - id: stealth_armor
+    name: "Stealth Armor"
+    type: full_body
+    balistic: 6
+    impact: 4
+    price: 1200
+    availability: 10F
+    description: "Light armor with stealth capabilities"
+
+  - id: chemical_protection_suit
+    name: "Chemical Protection Suit"
+    type: full_body
+    balistic: 4
+    impact: 2
+    price: 800
+    availability: 6R
+    description: "Suit for protection against chemical hazards"
+
+  - id: fire_resistant_suit
+    name: "Fire Resistant Suit"
+    type: full_body
+    balistic: 4
+    impact: 3
+    price: 900
+    availability: 8R
+    description: "Suit with fire resistant properties"
+
+  - id: armored_gloves
+    name: "Armored Gloves"
+    type: accessory
+    balistic: 1
+    impact: 1
+    price: 150
+    availability: 2
+    description: "Gloves with basic armor protection"
+
+  - id: armored_boots
+    name: "Armored Boots"
+    type: accessory
+    balistic: 1
+    impact: 1
+    price: 200
+    availability: 3
+    description: "Boots with basic armor protection"
+
+  - id: forearm_guards
+    name: "Forearm Guards"
+    type: accessory
+    balistic: 2
+    impact: 1
+    price: 250
+    availability: 4
+    description: "Guards for forearm protection"
+
+  - id: tactical_helmet
+    name: "Tactical Helmet"
+    type: head
+    balistic: 3
+    impact: 2
+    price: 600
+    availability: 6R
+    description: "Tactical helmet with enhanced protection"

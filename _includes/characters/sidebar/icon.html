@@ -35,21 +35,17 @@
     </div>
     {% endif %}
     
-    {% if page.gear %}
-    <div class="icon-wrapper" data-bs-toggle="offcanvas" data-bs-target="#floatingPanel" title="Équipement" data-tab="gear">
-      <i class="fa-solid fa-briefcase"></i>
-      <span class="badge">
-        {% assign gear_count = 0 %}
-        {% for group in page.gear %}
-          {% for item in group[1] %}
-            {% assign gear_count = gear_count | plus: 1 %}
-            {% if item.quantity %}
-              {% assign gear_count = gear_count | plus: item.quantity | minus: 1 %}
-            {% endif %}
-          {% endfor %}
-        {% endfor %}
-        {{ gear_count }}
-      </span>
+    {% if page.gear.weapons %}
+    <div class="icon-wrapper" data-bs-toggle="offcanvas" data-bs-target="#floatingPanel" title="Armes" data-tab="weapons">
+      <i class="fa-solid fa-gun"></i>
+      <span class="badge">{{ page.gear.weapons | size }}</span>
+    </div>
+    {% endif %}
+    
+    {% if page.gear.armor %}
+    <div class="icon-wrapper" data-bs-toggle="offcanvas" data-bs-target="#floatingPanel" title="Armures" data-tab="armor">
+      <i class="fa-solid fa-shield"></i>
+      <span class="badge">{{ page.gear.armor | size }}</span>
     </div>
     {% endif %}
     

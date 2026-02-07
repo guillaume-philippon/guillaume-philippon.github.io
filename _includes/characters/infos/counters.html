@@ -5,7 +5,7 @@
         <div class="card">
             <div class="card-body p-2 text-center">
                 <span class="card-title mb-1"><small>Magie</small></span>
-                <p class="card-text mb-0">{{ page.magic.base }}</p>
+                <p class="card-text mb-0">{{ magic }}</p>
             </div>
         </div>
     {% endif %}
@@ -14,7 +14,7 @@
         <div class="card edge-card" data-bs-toggle="modal" data-bs-target="#edge">
             <div class="card-body p-2 text-center">
                 <span class="card-title mb-1"><small>Edge</small></span>
-                <p class="card-text mb-0">{{ page.edge.base }}</p>
+                <p class="card-text mb-0">{{ edge }}</p>
             </div>
         </div>
     </div>
@@ -22,7 +22,7 @@
         <div class="card">
             <div class="card-body p-2 text-center">
                 <span class="card-title mb-1"><small>Essence</small></span>
-                <p class="card-text mb-0">{{ page.essence.base | minus: cyberware_essence }}</p>
+                <p class="card-text mb-0">{{ essence }}</p>
             </div>
         </div>
     </div>

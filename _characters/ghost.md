@@ -57,6 +57,27 @@ initiative:
   physic:
     turns: 3
 
+# Bonus atk
+attack:
+  range: 2
+  matrix: 2
+
+# Bonus def
+defense:
+
+# Bonus damage
+damage:
+
+# Armure
+armor:
+  natural:
+    impact: 6
+    balistic: 6
+    astral: 6
+  gear:
+    impact: 6
+    balistic: 8
+
 # Armure
 armor:
   balistic: 6
@@ -79,32 +100,9 @@ essence:
 
 # Qualités
 qualities:
-  - name: Analytical Mind
-    rating: 1
-    bp: 5
-    type: positive
-    sourcebook: Runner Companion
-    page: 96
-    description: |
-      +2 dés aux tests de logique qui implique la reconnaissance de forme, une analyse de preuves,
-      la recherche d'indice ou la résolution d'énigmes. +2 dés aux jet de *Data Search* et *Software*.
-  - name: Records on File
-    rating: 1
-    bp: -10
-    type: negative
-    sourcebook: Runner Companion
-    page: 109
-    description: |
-      DracoTech possède des données relativement à jour de mes données personnelles. Les agents de la
-      corpo on +6 dés pour identifié le personnage et +2 dés pour pouvoir traquer via *Legwork*.
-  - name: Wanted
-    rating: 1
-    bp: -10
-    sourcebook: Runner Companion
-    page: 110
-    description: |
-      Recherché pour participation à un groupe *techno-terroriste* militant contre l'utilisation
-      militaire de la matrice. [20 000 nuyens]
+  - name: analytical_mind
+  - name: records_on_file
+  - name: wanted
 
 # Compétences
 skills:
@@ -319,46 +317,11 @@ cyberware:
 # Équipement
 gear:
   weapons:
-    - name: Ares Desert Fox (Sniper)
-      type:
-        - range
-      damage:
-        description: 8P
-        type: P
-      ap: -1
-      rc: 1
-      ammo: 14(c)
-      availability: 10F
-      mode: SA
-      price: 3350
-    - name: Ares Predator IV
-      type:
-        - range
-      damage:
-        description: 5P
-        type: P
-      ap: -1
-      mode: SA
-      ammo: 15(c)
-      availability: 4R
-      price: 350
-    - name: FN HAR
-      type:
-        - range
-      damage:
-        description: 6P
-        type: P
-      ap: -1
-      rc: 2
-      mode: SA/BF/FA
-      ammo: 35 (c)
-      availability: 8R
-      price: 1000
+    - id: ares_desert_fox
+    - id: ares_predator_iv
+    - id: fn_har
   armor:
-    - name: Urban Explorer Jumpsuit
-      balistic: 6
-      impact: 6
-      price: 500
+    - id: urban_explorer_jumpsuit
   biotech:
     - name: Medkit (Rat. 6)
       quantity: 5

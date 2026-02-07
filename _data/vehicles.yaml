@@ -1,0 +1,198 @@
+# Vehicles List
+# This file contains the complete list of vehicles available in the game
+
+vehicles:
+  - id: thundercloud_contrail
+    name: "Thundercloud Contrail"
+    type: motorcycle
+    handling: 1
+    accel: "20/40"
+    speed: 180
+    pilot: 1
+    body: 6
+    armor: 4
+    sensor: 1
+    price: 5000
+    description: "High-speed motorcycle from Thundercloud"
+
+  - id: yamaha_rapier
+    name: "Yamaha Rapier"
+    type: motorcycle
+    handling: 2
+    accel: "18/36"
+    speed: 160
+    pilot: 1
+    body: 5
+    armor: 3
+    sensor: 1
+    price: 4500
+    description: "Agile motorcycle from Yamaha"
+
+  - id: harley_davidson_scorpion
+    name: "Harley-Davidson Scorpion"
+    type: motorcycle
+    handling: 1
+    accel: "15/30"
+    speed: 140
+    pilot: 1
+    body: 7
+    armor: 5
+    sensor: 1
+    price: 6000
+    description: "Heavy motorcycle from Harley-Davidson"
+
+  - id: toyota_narco
+    name: "Toyota Narco"
+    type: car
+    handling: 1
+    accel: "10/20"
+    speed: 120
+    pilot: 1
+    body: 8
+    armor: 6
+    sensor: 2
+    price: 12000
+    description: "Standard car from Toyota"
+
+  - id: gmc_bulldog
+    name: "GMC Bulldog"
+    type: van
+    handling: 0
+    accel: "8/16"
+    speed: 100
+    pilot: 1
+    body: 10
+    armor: 8
+    sensor: 2
+    price: 18000
+    description: "Heavy van from GMC"
+
+  - id: ares_roadmaster
+    name: "Ares Roadmaster"
+    type: truck
+    handling: -1
+    accel: "6/12"
+    speed: 80
+    pilot: 1
+    body: 12
+    armor: 10
+    sensor: 3
+    price: 25000
+    description: "Heavy truck from Ares"
+
+  - id: eagle_spirit
+    name: "Eagle Spirit"
+    type: drone
+    handling: 3
+    accel: "30/60"
+    speed: 200
+    pilot: 0
+    body: 4
+    armor: 2
+    sensor: 3
+    price: 8000
+    description: "Small reconnaissance drone"
+
+  - id: rotodrone
+    name: "Rotodrone"
+    type: drone
+    handling: 2
+    accel: "20/40"
+    speed: 150
+    pilot: 0
+    body: 6
+    armor: 4
+    sensor: 4
+    price: 12000
+    description: "Medium-sized rotary drone"
+
+  - id: doberman
+    name: "Doberman"
+    type: drone
+    handling: 1
+    accel: "15/30"
+    speed: 120
+    pilot: 0
+    body: 8
+    armor: 6
+    sensor: 5
+    price: 20000
+    description: "Heavy combat drone"
+
+  - id: citymaster
+    name: "CityMaster"
+    type: car
+    handling: 2
+    accel: "12/24"
+    speed: 140
+    pilot: 1
+    body: 6
+    armor: 4
+    sensor: 2
+    price: 10000
+    description: "Compact city car"
+
+  - id: jackrabbit_gt
+    name: "Jackrabbit GT"
+    type: car
+    handling: 3
+    accel: "15/30"
+    speed: 160
+    pilot: 1
+    body: 5
+    armor: 3
+    sensor: 3
+    price: 15000
+    description: "Sporty compact car"
+
+  - id: gecko
+    name: "Gecko"
+    type: car
+    handling: 1
+    accel: "8/16"
+    speed: 100
+    pilot: 1
+    body: 9
+    armor: 7
+    sensor: 2
+    price: 14000
+    description: "Off-road capable vehicle"
+
+  - id: thundercloud_zephyr
+    name: "Thundercloud Zephyr"
+    type: motorcycle
+    handling: 2
+    accel: "22/44"
+    speed: 200
+    pilot: 1
+    body: 5
+    armor: 3
+    sensor: 2
+    price: 6000
+    description: "High-performance motorcycle"
+
+  - id: ares_duck
+    name: "Ares Duck"
+    type: boat
+    handling: 1
+    accel: "5/10"
+    speed: 60
+    pilot: 1
+    body: 8
+    armor: 6
+    sensor: 2
+    price: 18000
+    description: "Small motorboat"
+
+  - id: sea_dragon
+    name: "Sea Dragon"
+    type: boat
+    handling: 0
+    accel: "4/8"
+    speed: 50
+    pilot: 1
+    body: 10
+    armor: 8
+    sensor: 3
+    price: 25000
+    description: "Medium-sized boat"

@@ -60,14 +60,18 @@ initiative:
     turns: 2
 
 # Bonus atk
-attack:
-  physical:
+#attack:
+#  range:
+#  melee:
+#  matrix:
+#  astral:
 
 # Bonus def
 defense:
 
 # Bonus damage
 damage:
+  astral: 2
 
 # Armure
 armor:
@@ -108,32 +112,12 @@ essence:
 
 # Qualités
 qualities:
-  - name: Low-Light Vision
-  - name: Adept
-    rating: 1
-    bp: 5
-    type: positive
-    sourcebook: 20th Anniversary Core Rulebook
-    page: 90
-  - name: Exceptional Attribute (Body)
-    rating: 1
-    bp: 20
-    type: positive
-    sourcebook: 20th Anniversary Core Rulebook
-    page: 90
-  - name: Dependances
-    rating: 3
-    bp: -15
-    type: negative
-    sourcebook: Runners Companion
-    page: 104
-    description: |
-      Descendant direct des *Zotz-Yax*, une tribu orque maya qui a survécu à l’effondrement de la Sixième Monde en préservant ses traditions chamaniques et ses techniques de combat ancestrales.
-  - name: In debt
-    bp: -5
-    rating: 1
-    sourcebook: Runners Companion
-    page: 103
+  - name: low_light_vision
+  - name: adept
+  - name: exceptional_attribute
+  - name: dependents
+    level: 3
+  - name: in_debt
 
 
 # Compétences
@@ -197,57 +181,15 @@ matrix:
 # Équipement
 gear:
   weapons:
-    - name: Tomahawk
+    - id: tomahawk
       quantity: 3
-      price: 150
-      reach: 1
-      damage:
-        description: (Str./2 + 2)P
-        base:
-          range: 2
-          melee: 2
-        bonus:
-          range: 2
-        type: P
-      type: 
-        - melee
-        - range
-      availability: 4
-      sourcebook: Runner Companion
-      page:
-    - name: Macuahuitl (Weapon Focus 2)
+    - id: macuahuitl
       quantity: 1
-      reach: 1
-      price: 23000
-      availability: 14R
-      sourcebook:  Runner Companion
-      type: 
-        - melee
-      damage:
-        description: (Str./2 + 2)P
-        base:
-          melee: 2
-        type: P
-    - name: Knife
+      note: "Weapon Focus 2"
+    - id: knife
       quantity: 1
-      price: 20
-      type: 
-        - melee
-      damage:
-        description: (Str./2 + 2)P
-        base:
-          range: 2
-          melee: 2
-        bonus:
-          range: 2
-        type: P
-      sourcebook:  20th Anniversary Core Rulebook
-      page:
   armor:
-    - name: Armor Jacket
-      balistic: 8
-      impact: 6
-      price: 900
+    - id: armor_jacket
 ---
 # Description du personnage
   *Ahau-Tec*, descendant des **Zotz-Yax**, a été recruté par **DracoTech** après avoir prouvé sa valeur lors d’un run contre un groupe de *blood mages* qui menaçaient les intérêts de la megacorp dans la jungle du **Chiapas**. Son statut est celui d’un agent de sécurité spécialisé, officiellement chargé de la protection des actifs dans les zones à haut risque magique et des opérations discrètes nécessitant une expertise de la culture maya.

@@ -1,23 +1,32 @@
 <!-- Variables 
 {% comment %} Caclul des valeurs totales d'attribut {% endcomment %}
-{% assign body_total = page.attributes.body.base | plus: page.attributes.body.bonus %}
-{% assign agility_total = page.attributes.agility.base | plus: page.attributes.agilite.bonus %}
-{% assign reaction_total = page.attributes.reaction.base | plus: page.attributes.reaction.bonus %}
-{% assign strength_total = page.attributes.strength.base | plus: page.attributes.strength.bonus %}
-{% assign intuition_total = page.attributes.intuition.base | plus: page.attributes.intuition.bonus %}
-{% assign logic_total = page.attributes.logic.base | plus: page.attributes.logic.bonus %}
-{% assign willpower_total = page.attributes.willpower.base | plus: page.attributes.willpower.bonus %}
-{% assign charisma_total = page.attributes.charisma.base | plus: page.attributes.charisma.bonus %}
+{% assign body = page.attributes.body.base | plus: page.attributes.body.bonus %}
+{% assign agility = page.attributes.agility.base | plus: page.attributes.agilite.bonus %}
+{% assign reaction = page.attributes.reaction.base | plus: page.attributes.reaction.bonus %}
+{% assign strength = page.attributes.strength.base | plus: page.attributes.strength.bonus %}
+{% assign intuition = page.attributes.intuition.base | plus: page.attributes.intuition.bonus %}
+{% assign logic = page.attributes.logic.base | plus: page.attributes.logic.bonus %}
+{% assign willpower = page.attributes.willpower.base | plus: page.attributes.willpower.bonus %}
+{% assign charisma = page.attributes.charisma.base | plus: page.attributes.charisma.bonus %}
 
+{% assign magic = page.magic.base | plus: page.magic.bonus %}
+{% assign edge = page.edge.base | plus: page.edge.bonus %}
+{% assign essence = page.essence.base | plus: page.essence.bonus %}
+
+{% comment %} Attribute only test {% endcomment %}
+{% assign composure = willpower | plus: charisma %}
+{% assign judge_intentions = intuition | plus: charisma %}
+{% assign lifting_and_carrying = strength | plus: body %}
+{% assign memory = logic | plus: willpower %}
 
 {% comment %} Caclul des initiatives {% endcomment %}
-{% assign physical_initiative = reaction_total | plus: intuition_total %}
-{% assign astral_initiative = intuition_total | times: 2 %}
-{% assign matrix_initiative = intuition_total | plus: page.matrix.commlink.response %}
+{% assign physical_initiative = reaction | plus: intuition  | plus: page.initiative.physic.bonus %}
+{% assign astral_initiative = intuition | times: 2  | plus: page.initiative.astral.bonus %}
+{% assign matrix_initiative = intuition | plus: page.matrix.commlink.response  | plus: page.initiative.matrix.bonus %}
 
 {% comment %} Calcul des moniteurs de conditions {% endcomment %}
-{% assign physic_condition = body_total | divided_by: 2.0 | round | plus: 8 | plus: page.condition.physical.bonus %}
-{% assign mental_condition = willpower_total | divided_by: 2.0 | round | plus: 8 | plus: page.condition.mental.bonus %}
+{% assign physic_condition = body | divided_by: 2.0 | round | plus: 8 | plus: page.condition.physical.bonus %}
+{% assign mental_condition = willpower | divided_by: 2.0 | round | plus: 8 | plus: page.condition.mental.bonus %}
 {% assign matrix_condition = page.matrix.commlink.system | divided_by: 2.0 | round | plus: 8 %}
 
 {% comment %} Calcul des couts cyberware & bioware {% endcomment %}
@@ -46,6 +55,17 @@ cyberware:
     {% if ware_data[0].essence %}
       {% assign cyberware_id_essence = ware_data[0].essence | times: essence_multiplier %}
       {% assign cyberware_essence = cyberware_essence | plus: cyberware_id_essence %}
+      {% comment %} Calcul des bonus {% endcomment %}
+      {% if ware_data[0].bonus %}
+        {% assign cyberware_bonus_body = ware_data[0].bonus.attribute.body %}
+        {% assign cyberware_bonus_agility = ware_data[0].bonus.attribute.agility %}
+        {% assign cyberware_bonus_reaction = ware_data[0].bonus.attribute.reaction %}
+        {% assign cyberware_bonus_strength = ware_data[0].bonus.attribute.strength %}
+        {% assign cyberware_bonus_intuition = ware_data[0].bonus.attribute.intuition %}
+        {% assign cyberware_bonus_logic = ware_data[0].bonus.attribute.logic %}
+        {% assign cyberware_bonus_willpower = ware_data[0].bonus.attribute.willpower %}
+        {% assign cyberware_bonus_charisma = ware_data[0].bonus.attribute.charisma %}
+      {% endif %}
     {% endif %}
 
     {% comment %} Si le cyberware a un niveau {% endcomment %}
@@ -55,17 +75,19 @@ cyberware:
       {% assign cyberware_essence = cyberware_essence | plus: cyberware_id_essence %}
     {% endif %}
 
+    {% comment %} Calcul des bonus du cyberware {% endcomment %}
+
   - id: {{ cyberware_id }} 
     grade: {{ cyberware_id_grade }}
     level: {{ cyberware_id_level }}
     essence: {{ cyberware_id_essence }}
     essence_multiplier: {{ essence_multiplier }}
-    essence_total: {{ cyberware_essence }}
+    essence: {{ cyberware_essence }}
 {% endfor %}
 -- Total --
 essence: {{ cyberware_essence }}
 cost: {{ cyberware_cost }}
-  
+{% assign essence = essence | minus: cyberware_essence %}  
 
 {% assign programs_cost = 0 %}
 {% for group in page.matrix.programs %}
@@ -108,7 +130,7 @@ rolls:
     {% endfor %}
   {% endfor %}
 {% endfor %}
-{% assign range_attack = range_attack | plus: agility_total | plus: page.attack.range %}
+{% assign range_attack = range_attack | plus: agility | plus: page.attack.range %}
     range: {{ range_attack }}
 {% assign melee_attack = 0 %}
 {% for category in page.skills.active %}
@@ -134,7 +156,7 @@ rolls:
     {% endfor %}
   {% endfor %}
 {% endfor %}
-{% assign melee_attack = melee_attack | plus: agility_total | plus: page.attack.melee %}
+{% assign melee_attack = melee_attack | plus: agility | plus: page.attack.melee %}
     melee: {{ melee_attack }}
 {% assign matrix_attack = 0 %}
 {% for group in page.matrix.programs %}
@@ -149,11 +171,11 @@ rolls:
 {% assign matrix_attack = matrix_attack | plus: page.skills.active.technical.cracking.cybercombat | plus: page.attack.matrix %}
     matrix: {{ matrix_attack }}
 {% assign astral_attack = 0 %}
-{% assign astral_attack = astral_attack | plus: page.skills.active.magical.ungrouped.astral_combat | plus: willpower_total | plus: page.magic.weapon_focus %}
+{% assign astral_attack = astral_attack | plus: page.skills.active.magical.ungrouped.astral_combat | plus: willpower | plus: page.magic.weapon_focus %}
     astral: {{ astral_attack }}
 
   defense:
-{% assign range_defense = reaction_total %}
+{% assign range_defense = reaction %}
     range: {{ range_defense }}
 {% assign melee_defense = 0 %}
 {% for category in page.skills.active %}
@@ -179,7 +201,7 @@ rolls:
     {% endfor %}
   {% endfor %}
 {% endfor %}
-{% assign melee_defense = melee_defense | plus: reaction_total %}
+{% assign melee_defense = melee_defense | plus: reaction %}
     melee: {{ melee_defense }}
 {% assign matrix_defense = 0%}
 {% assign matrix_defense = matrix_defense | plus: page.matrix.bonus.defense %}
@@ -226,18 +248,18 @@ rolls:
   
   armor:
     natural:
-{% assign armor_natural_balistic = 0 %}
+{% assign armor_natural_balistic = body | plus: page.armor.natural.balistic %}
       balistic: {{ armor_natural_balistic }}
-{% assign armor_natural_impact = 0 %}
+{% assign armor_natural_impact = body | plus: page.armor.natural.impact %}
       impact: {{ armor_natural_impact }}
-{% assign armor_natural_astral = 0 %}
+{% assign armor_natural_astral = body | plus: willpower | plus: page.armor.natural.astral %}
       astral: {{ armor_natural_astral }}
     gear:
 {% assign balistic = page.gear.armor[0].balistic %}
       balistic: {{ balistic }}
 {% assign impact = page.gear.armor[0].impact %}
       impact: {{ impact }}
-{% assign matrix_armor = 0%}
+{% assign matrix_armor = page.matrix.commlink.system | plus: page.matrix.programs.hacking.armor.rating %}
 {% assign matrix_armor = matrix_armor | plus: page.matrix.bonus.armor %}
       matrix: {{ matrix_armor }}
 -->

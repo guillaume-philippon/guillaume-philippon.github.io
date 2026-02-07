@@ -1,0 +1,53 @@
+<div class="tab-pane fade" id="armor" role="tabpanel">
+    <div class="row">
+    {% for armor_item in page.gear.armor %}
+        {% assign armor_data = site.data.armor.armor | where: "id", armor_item.id | first %}
+        {% if armor_data %}
+        <div class="mt-2">
+            <div class="card h-100">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <strong>{{ armor_data.name }}</strong>
+                    <span>
+                        {% if armor_data.type == "body" %}
+                            <i class="fa-solid fa-shirt"></i>
+                        {% elsif armor_data.type == "full_body" %}
+                            <i class="fa-solid fa-user-shield"></i>
+                        {% elsif armor_data.type == "head" %}
+                            <i class="fa-solid fa-helmet-battle"></i>
+                        {% elsif armor_data.type == "shield" %}
+                            <i class="fa-solid fa-shield"></i>
+                        {% elsif armor_data.type == "accessory" %}
+                            <i class="fa-solid fa-gloves"></i>
+                        {% else %}
+                            <i class="fa-solid fa-question"></i>
+                        {% endif %}
+                    </span>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled">
+                        <li><strong>Type:</strong> {{ armor_data.type | replace: "_", " " | capitalize }}</li>
+                        <li><strong>Price:</strong> {{ armor_data.price }}¥</li>
+                        {% if armor_data.availability %}
+                        <li><strong>Availability:</strong> {{ armor_data.availability }}</li>
+                        {% endif %}
+                        <li><strong>Ballistic:</strong> {{ armor_data.balistic }}</li>
+                        <li><strong>Impact:</strong> {{ armor_data.impact }}</li>
+                        {% if armor_data.description %}
+                        <li><strong>Description:</strong> {{ armor_data.description }}</li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <strong>{{ armor_item.id }}</strong> (Armor not found in database)
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    {% endfor %}
+    </div>
+</div>

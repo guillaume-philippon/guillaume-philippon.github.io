@@ -1,250 +1,477 @@
-# Qualities Data Structure
-# This file contains character qualities information with support for levels and categories
+# Qualities List
+# This file contains the complete list of qualities available in the game
 
-# Quality Categories
-categories:
-  - id: positive
-    name: "Positive Qualities"
-    description: "Beneficial traits that enhance character abilities"
-  - id: negative
-    name: "Negative Qualities"
-    description: "Detrimental traits that hinder character abilities"
-  - id: racial
-    name: "Racial Qualities"
-    description: "Qualities specific to character race"
-  - id: magical
-    name: "Magical Qualities"
-    description: "Qualities related to magical abilities"
-
-# Quality Types
-types:
-  - id: physical
-    name: "Physical Qualities"
-    description: "Qualities affecting physical attributes"
-  - id: mental
-    name: "Mental Qualities"
-    description: "Qualities affecting mental attributes"
-  - id: social
-    name: "Social Qualities"
-    description: "Qualities affecting social interactions"
-  - id: magical
-    name: "Magical Qualities"
-    description: "Qualities affecting magical abilities"
-  - id: special
-    name: "Special Qualities"
-    description: "Unique or special qualities"
-
-# Quality Database
 qualities:
   - id: low_light_vision
-    name: "Low-Light Vision"
-    category: racial
-    type: physical
-    bp_cost: 0
-    description: "Ability to see in low-light conditions"
-    sourcebook: "20th Anniversary Core Rulebook"
-    page: 90
-    applies_to:
-      - "Orks"
-      - "Trolls"
-      - "Dwarves"
-      - "Elves"
-
+    name: "Low-light Vision"
+    bp: 10
+    category: positive
+    sourcebook: 20th Anniversary Core Rulebook
+    page: 315
+    description: |
+      Enhanced vision in low-light conditions.
   - id: adept
     name: "Adept"
-    category: magical
-    type: magical
-    bp_cost: 5
-    description: "Character has adept powers"
-    sourcebook: "20th Anniversary Core Rulebook"
-    page: 90
-    levels:
-      - level: 1
-        bp_cost: 5
-        magic_points: 1
-        description: "Basic adept abilities"
-
-  - id: exceptional_attribute
-    name: "Exceptional Attribute"
+    rating: 1
+    bp: 5
     category: positive
-    type: physical
-    bp_cost: 20
-    description: "One attribute is exceptionally high"
-    sourcebook: "20th Anniversary Core Rulebook"
+    sourcebook: 20th Anniversary Core Rulebook
     page: 90
-    attribute_bonus: 1
-    description: "+1 to one attribute"
-
-  - id: dependances
-    name: "Dependances"
-    category: negative
-    type: social
-    bp_cost: -15
-    description: "Character has dependencies or obligations"
-    sourcebook: "Runners Companion"
-    page: 104
-    levels:
-      - level: 1
-        bp_cost: -5
-        description: "Minor dependencies"
-      - level: 2
-        bp_cost: -10
-        description: "Moderate dependencies"
-      - level: 3
-        bp_cost: -15
-        description: "Major dependencies"
-
-  - id: in_debt
-    name: "In Debt"
-    category: negative
-    type: social
-    bp_cost: -5
-    description: "Character owes money or favors"
-    sourcebook: "Runners Companion"
-    page: 103
-    levels:
-      - level: 1
-        bp_cost: -5
-        debt_amount: "Moderate"
-        description: "Moderate debt"
-      - level: 2
-        bp_cost: -10
-        debt_amount: "Large"
-        description: "Large debt"
-      - level: 3
-        bp_cost: -15
-        debt_amount: "Massive"
-        description: "Massive debt"
-
+    description: |
+      Magical adept with access to adept powers.
   - id: analytical_mind
     name: "Analytical Mind"
     category: positive
     type: mental
-    bp_cost: 5
-    description: "Enhanced analytical abilities"
+    bp: 5
+    description: "Enhanced logical analysis and pattern recognition"
     sourcebook: "Runner Companion"
     page: 96
+    effects:
+      - "+2 dice to Logic tests involving pattern recognition, evidence analysis, clue finding, or puzzle solving"
+      - "+2 dice to Data Search and Software tests"
     levels:
       - level: 1
-        bp_cost: 5
-        logic_bonus: 2
-        description: "+2 dice to logic tests for analysis"
+        bp: 5
 
   - id: records_on_file
     name: "Records on File"
     category: negative
     type: social
-    bp_cost: -10
-    description: "Character has records in corporate databases"
+    bp: -10
+    description: "Corporation has up-to-date personal data on the character"
     sourcebook: "Runner Companion"
     page: 109
+    effects:
+      - "Corporate agents get +6 dice to identify the character"
+      - "+2 dice to track via Legwork"
     levels:
       - level: 1
-        bp_cost: -10
-        tracking_bonus: 6
-        description: "+6 dice for identification"
+        bp: -10
 
   - id: wanted
     name: "Wanted"
     category: negative
     type: social
-    bp_cost: -10
-    description: "Character is wanted by authorities"
+    bp: -10
+    description: "Character is wanted by authorities for past crimes"
     sourcebook: "Runner Companion"
     page: 110
+    effects:
+      - "Authorities actively search for the character"
+      - "May have bounty on character's head"
     levels:
       - level: 1
-        bp_cost: -10
+        bp: -10
         bounty: 20000
-        description: "Wanted for minor crimes"
-      - level: 2
-        bp_cost: -20
-        bounty: 50000
-        description: "Wanted for serious crimes"
-      - level: 3
-        bp_cost: -30
-        bounty: 100000
-        description: "Wanted for major crimes"
 
   - id: toughness
     name: "Toughness"
     category: positive
     type: physical
-    bp_cost: 5
+    bp: 10
     description: "Increased physical resilience"
     sourcebook: "20th Anniversary Core Rulebook"
-    page: 92
+    page: 315
+    effects:
+      - "+1 to Body attribute maximum"
+      - "Better resistance to physical damage"
     levels:
       - level: 1
-        bp_cost: 5
-        damage_resistance: 1
-        description: "+1 damage resistance"
-      - level: 2
-        bp_cost: 10
-        damage_resistance: 2
-        description: "+2 damage resistance"
+        bp: 10
+        body_bonus: 1
+
+  - id: exceptional_attribute
+    name: "Exceptional Attribute"
+    category: positive
+    type: physical
+    bp: 14
+    description: "One physical attribute is exceptionally high"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 315
+    effects:
+      - "One physical attribute (Body, Agility, Reaction, or Strength) has +1 to maximum"
+    levels:
+      - level: 1
+        bp: 14
+        attribute_bonus: 1
+
+  - id: quick_healer
+    name: "Quick Healer"
+    category: positive
+    type: physical
+    bp: 10
+    description: "Faster natural healing"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 315
+    effects:
+      - "Heal one additional box of physical damage per day"
+    levels:
+      - level: 1
+        bp: 10
+        healing_bonus: 1
+
+  - id: natural_immunity
+    name: "Natural Immunity"
+    category: positive
+    type: physical
+    bp: 10
+    description: "Immunity to specific diseases or toxins"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 315
+    effects:
+      - "Immune to one specific disease or toxin"
+    levels:
+      - level: 1
+        bp: 10
 
   - id: poor_self_control
     name: "Poor Self Control"
     category: negative
     type: mental
-    bp_cost: -10
-    description: "Difficulty controlling emotions or impulses"
+    bp: -15
+    description: "Difficulty controlling emotions and impulses"
     sourcebook: "20th Anniversary Core Rulebook"
-    page: 106
+    page: 316
+    effects:
+      - "More likely to lose control in stressful situations"
+      - "May act impulsively"
     levels:
       - level: 1
-        bp_cost: -10
-        willpower_penalty: 1
-        description: "Mild self-control issues"
+        bp: -15
+        self_control_penalty: -2
+
+  - id: addiction
+    name: "Addiction"
+    category: negative
+    type: physical
+    bp: -10
+    description: "Character is addicted to a substance"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 316
+    effects:
+      - "Must regularly consume the substance"
+      - "Withdrawal symptoms if substance is not available"
+    levels:
+      - level: 1
+        bp: -10
+        addiction_severity: mild
       - level: 2
-        bp_cost: -20
-        willpower_penalty: 2
-        description: "Serious self-control issues"
+        bp: -20
+        addiction_severity: moderate
+      - level: 3
+        bp: -30
+        addiction_severity: severe
 
-# Quality Modifications
-modifications:
-  - id: enhanced
-    name: "Enhanced"
-    description: "Enhances the quality's effects"
-    bp_cost_multiplier: 1.5
-  - id: limited
-    name: "Limited"
-    description: "Reduces the quality's effects"
-    bp_cost_multiplier: 0.7
-  - id: situational
-    name: "Situational"
-    description: "Quality only applies in specific situations"
-    bp_cost_multiplier: 0.8
+  - id: combat_paranoia
+    name: "Combat Paranoia"
+    category: negative
+    type: mental
+    bp: -10
+    description: "Extreme caution and paranoia in combat situations"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 316
+    effects:
+      - "May hesitate or overreact in combat"
+      - "Difficulty trusting others in dangerous situations"
+    levels:
+      - level: 1
+        bp: -10
+        combat_penalty: -1
 
-# Quality Limitations
-limitations:
-  - id: temporary
-    name: "Temporary"
-    description: "Quality is not always active"
-    bp_cost_multiplier: 0.6
-  - id: noticeable
-    name: "Noticeable"
-    description: "Quality is obvious to others"
-    bp_cost_multiplier: 0.8
-  - id: controlled
-    name: "Controlled"
-    description: "Quality can be controlled or suppressed"
-    bp_cost_multiplier: 0.9
+  - id: exceptional_attribute_mental
+    name: "Exceptional Attribute (Mental)"
+    category: positive
+    type: mental
+    bp: 14
+    description: "One mental attribute is exceptionally high"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 315
+    effects:
+      - "One mental attribute (Charisma, Intuition, Logic, or Willpower) has +1 to maximum"
+    levels:
+      - level: 1
+        bp: 14
+        attribute_bonus: 1
 
-# Quality Synergies
-synergies:
-  - id: adept_magician
-    name: "Adept/Magician Synergy"
-    description: "Bonus for having both adept and magician qualities"
-    applies_to:
-      - "adept"
-      - "magician"
-    bp_bonus: 5
-  - id: tough_analytical
-    name: "Tough/Analytical Synergy"
-    description: "Bonus for having both physical and mental resilience"
-    applies_to:
-      - "toughness"
-      - "analytical_mind"
-    bp_bonus: 3
+  - id: magic_resistance
+    name: "Magic Resistance"
+    category: positive
+    type: magical
+    bp: 10
+    description: "Increased resistance to magical effects"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 315
+    effects:
+      - "+2 dice to resist magical effects"
+      - "Better defense against spells and magical attacks"
+    levels:
+      - level: 1
+        bp: 10
+        magic_resistance_bonus: 2
+
+  - id: spirit_affinity
+    name: "Spirit Affinity"
+    category: positive
+    type: magical
+    bp: 10
+    description: "Special affinity with a particular type of spirit"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 315
+    effects:
+      - "+2 dice to summoning and binding tests for specific spirit type"
+      - "Better control over spirits of that type"
+    levels:
+      - level: 1
+        bp: 10
+        spirit_bonus: 2
+
+  - id: astral_beacon
+    name: "Astral Beacon"
+    category: negative
+    type: magical
+    bp: -15
+    description: "Character is easily visible in the astral plane"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 316
+    effects:
+      - "Easier to detect in astral space"
+      - "May attract unwanted astral attention"
+    levels:
+      - level: 1
+        bp: -15
+        astral_visibility_penalty: -4
+
+  - id: code_of_honor
+    name: "Code of Honor"
+    category: negative
+    type: social
+    bp: -10
+    description: "Character follows a strict personal code"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 316
+    effects:
+      - "Must adhere to personal code of conduct"
+      - "May refuse certain actions or missions"
+    levels:
+      - level: 1
+        bp: -10
+
+  - id: dependents
+    name: "Dependents"
+    category: negative
+    type: social
+    bp: -10
+    description: "Character has people who depend on them"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 316
+    effects:
+      - "Must provide for dependents"
+      - "Dependents may be targeted by enemies"
+    levels:
+      - level: 1
+        bp: -10
+        dependents_count: 1
+      - level: 2
+        bp: -20
+        dependents_count: 2
+      - level: 3
+        bp: -30
+        dependents_count: 3
+
+  - id: enemy
+    name: "Enemy"
+    category: negative
+    type: social
+    bp: -15
+    description: "Character has a personal enemy"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 316
+    effects:
+      - "Enemy actively works against the character"
+      - "May cause problems or complications"
+    levels:
+      - level: 1
+        bp: -15
+        enemy_power: minor
+      - level: 2
+        bp: -30
+        enemy_power: major
+
+  - id: in_debt
+    name: "In Debt"
+    category: negative
+    type: social
+    bp: -10
+    description: "Character owes money or favors"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 316
+    effects:
+      - "Must repay debt"
+      - "Creditors may demand payment or favors"
+    levels:
+      - level: 1
+        bp: -10
+        debt_amount: 10000
+      - level: 2
+        bp: -20
+        debt_amount: 50000
+      - level: 3
+        bp: -30
+        debt_amount: 100000
+
+  - id: simsense_vertigo
+    name: "Simsense Vertigo"
+    category: negative
+    type: physical
+    bp: -10
+    description: "Character experiences vertigo from simsense"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 316
+    effects:
+      - "Difficulty using simsense technology"
+      - "May experience nausea or disorientation"
+    levels:
+      - level: 1
+        bp: -10
+        simsense_penalty: -2
+
+  - id: distinctive_style
+    name: "Distinctive Style"
+    category: negative
+    type: social
+    bp: -5
+    description: "Character has a distinctive and recognizable style"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 316
+    effects:
+      - "Easier to recognize and track"
+      - "May stand out in crowds"
+    levels:
+      - level: 1
+        bp: -5
+
+  - id: exceptional_attribute_social
+    name: "Exceptional Attribute (Social)"
+    category: positive
+    type: social
+    bp: 14
+    description: "One social attribute is exceptionally high"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 315
+    effects:
+      - "One social attribute (Charisma or Edge) has +1 to maximum"
+    levels:
+      - level: 1
+        bp: 14
+        attribute_bonus: 1
+
+  - id: first_impression
+    name: "First Impression"
+    category: positive
+    type: social
+    bp: 10
+    description: "Character makes strong first impressions"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 315
+    effects:
+      - "+2 dice to first impression social tests"
+      - "Better initial reactions from others"
+    levels:
+      - level: 1
+        bp: 10
+        first_impression_bonus: 2
+
+  - id: linguist
+    name: "Linguist"
+    category: positive
+    type: mental
+    bp: 6
+    description: "Character is skilled in multiple languages"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 315
+    effects:
+      - "Knows multiple languages"
+      - "Better communication in diverse situations"
+    levels:
+      - level: 1
+        bp: 6
+        languages_known: 3
+
+  - id: perfect_time
+    name: "Perfect Time"
+    category: positive
+    type: mental
+    bp: 10
+    description: "Character has an excellent sense of time"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 315
+    effects:
+      - "Always knows the exact time"
+      - "Better time management and planning"
+    levels:
+      - level: 1
+        bp: 10
+
+  - id: photographic_memory
+    name: "Photographic Memory"
+    category: positive
+    type: mental
+    bp: 15
+    description: "Character has perfect recall of visual information"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 315
+    effects:
+      - "Perfect recall of visual information"
+      - "Better memory for details"
+    levels:
+      - level: 1
+        bp: 15
+        memory_bonus: 4
+
+  - id: school_of_hard_knocks
+    name: "School of Hard Knocks"
+    category: positive
+    type: mental
+    bp: 10
+    description: "Character has learned from difficult experiences"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 315
+    effects:
+      - "+2 dice to street-related knowledge skills"
+      - "Better understanding of tough situations"
+    levels:
+      - level: 1
+        bp: 10
+        street_knowledge_bonus: 2
+
+  - id: spirit_bane
+    name: "Spirit Bane"
+    category: negative
+    type: magical
+    bp: -15
+    description: "Character is particularly vulnerable to a type of spirit"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 316
+    effects:
+      - "Vulnerable to specific spirit type"
+      - "Spirits of that type get bonuses against character"
+    levels:
+      - level: 1
+        bp: -15
+        spirit_vulnerability: specific
+
+  - id: thermographic_vision
+    name: "Thermographic Vision"
+    category: positive
+    type: physical
+    bp: 10
+    description: "Character can see heat signatures"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 315
+    effects:
+      - "Can see heat signatures"
+      - "Better vision in darkness and through smoke"
+    levels:
+      - level: 1
+        bp: 10

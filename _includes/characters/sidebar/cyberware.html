@@ -1,0 +1,96 @@
+<div class="tab-pane fade show active" id="cyberware" role="tabpanel">
+    <div class="row">
+    {% for ware in page.cyberware %}
+        {% assign ware_data = site.data.cyberware.cyberware | where: "id", ware.id | first %}
+        {% if ware_data %}
+        <div class="col-12 mt-2">
+            <div class="card h-100">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <strong>{{ ware_data.name }}
+                        {% if ware.level %}
+                            <i class="bi bi-{{ ware.level }}-circle-fill"></i>
+                        {% endif %}
+                    </strong>
+                    <span>
+                        {% case ware_data.type %}
+                            {% when "headware" %}
+                                <i class="fa-solid fa-brain"></i>
+                            {% when "eyeware" %}
+                                <i class="fa-solid fa-eye"></i>
+                            {% when "earware" %}
+                                <i class="fa-solid fa-ear-listen"></i>
+                            {% when "bodyware" %}
+                                <i class="fa-solid fa-lungs"></i>
+                            {% when "cyberlimb" %}
+                                <i class="fa-solid fa-person-rays"></i>
+                            {% when "bioware" %}
+                                <i class="fa-solid fa-capsules"></i>
+                            {% else %}
+                                <i class="fa-solid fa-question"></i>
+                        {% endcase %}
+                        {% case ware.grade %}
+                            {% when "alpha" %} &alpha; 
+                            {% when "beta" %} &beta; 
+                            {% when "delta" %} &delta; 
+                        {% endcase %}
+                    </span>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled">
+                        <li><strong><i class="bi bi-heartbreak-fill"></i>:</strong>
+                            {% if ware_data.essence %}
+                            {{ ware_data.essence }}
+                            {% endif %}
+                            {% for ware_data_level in ware_data.levels %}
+                                {% if ware_data_level.level == ware.level %}
+                                    {{ ware_data_level.essence }}
+                                {% endif %}
+                            {% endfor %}
+                        </li>
+                        {% if ware_data.capacity %}
+                        <li><strong>Capacity:</strong> [{{ ware_data.capacity }}]
+                        <ul class="list-unstyled ps-3">
+                            {% for item in ware.capacity %}
+                            <li>
+                                {% assign ware_data_capacity = site.data.cyberware.cyberware | where: "id", item.id | first %}
+                                    <strong>{{ ware_data_capacity.name }}</strong> [-{{ ware_data_capacity.capacity }}]: 
+                                    <ul>
+                                        {% for effect in ware_data_capacity.effects %}
+                                        <li>{{ effect }}</li>
+                                        {% endfor %}
+                                    </ul>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        </li>
+                        {% endif %}
+                        <li><strong>Effets:</strong>
+                            <ul class="list-unstyled ps-3">
+                            {% for effect in ware_data.effects %}
+                                <li>{{ effect }}</li>
+                            {% endfor %}
+                            {% for ware_data_level in ware_data.levels %}
+                                {% if ware_data_level.level == ware.level %}
+                                    {% for effect in ware_data_level.effects %}
+                                    <li>{{ effect }}</li>
+                                    {% endfor %}
+                                {% endif %}
+                            {% endfor %}
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <strong>{{ ware.id }}</strong> (Cyberware non trouvé dans la base de données)
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    {% endfor %}
+    </div>
+</div>

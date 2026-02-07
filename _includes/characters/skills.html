@@ -52,25 +52,25 @@
               {% if skill_found and skill_value > 0 %}
                 {% case skill_data.attribute %}
                   {% when "body" %}
-                    {% assign attribute_value = body_total %}
+                    {% assign attribute_value = body %}
                   {% when "agility" %}
-                    {% assign attribute_value = agility_total %}
+                    {% assign attribute_value = agility %}
                   {% when "reaction" %}
-                    {% assign attribute_value = reaction_total %}
+                    {% assign attribute_value = reaction %}
                   {% when "strength" %}
-                    {% assign attribute_value = strength_total %}
+                    {% assign attribute_value = strength %}
                   {% when "intuition" %}
-                    {% assign attribute_value = intuition_total %}
+                    {% assign attribute_value = intuition %}
                   {% when "logic" %}
-                    {% assign attribute_value = logic_total %}
+                    {% assign attribute_value = logic %}
                   {% when "charisma" %}
-                    {% assign attribute_value = charisma_total %}
+                    {% assign attribute_value = charisma %}
                   {% when "willpower" %}
-                    {% assign attribute_value = willpower_total %}
+                    {% assign attribute_value = willpower %}
                   {% when "magic" %}
                     {% assign attribute_value = magic.base %}
                   {% when "resonance" %}
-                    {% assign attribute_value = resonance_total %}
+                    {% assign attribute_value = resonance %}
                   {% else %}
                     {% assign attribute_value = 0 %}
                 {% endcase %}
@@ -109,13 +109,13 @@
           {% endif %}
           {% case skill[1].attribute %}
             {% when "street" %}
-              {% assign attribute_value = intuition_total %}
+              {% assign attribute_value = intuition %}
             {% when "academic" %}
-              {% assign attribute_value = logic_total %}
+              {% assign attribute_value = logic %}
             {% when "professional" %}
-              {% assign attribute_value = logic_total %}
+              {% assign attribute_value = logic %}
             {% when "interest" %}
-              {% assign attribute_value = intuition_total %}
+              {% assign attribute_value = intuition %}
             {% else %}
               {% assign attribute_value = 0 %}
           {% endcase %}
@@ -170,21 +170,21 @@
                         {% endfor %}
                         {% case skill[1].attribute %}
                           {% when "body" %}
-                            {% assign attribute_value = body_total %}
+                            {% assign attribute_value = body %}
                           {% when "agility" %}
-                            {% assign attribute_value = agility_total %}
+                            {% assign attribute_value = agility %}
                           {% when "reaction" %}
-                            {% assign attribute_value = reaction_total %}
+                            {% assign attribute_value = reaction %}
                           {% when "strength" %}
-                            {% assign attribute_value = strength_total %}
+                            {% assign attribute_value = strength %}
                           {% when "intuition" %}
-                            {% assign attribute_value = intuition_total %}
+                            {% assign attribute_value = intuition %}
                           {% when "logic" %}
-                            {% assign attribute_value = logic_total %}
+                            {% assign attribute_value = logic %}
                           {% when "charisma" %}
-                            {% assign attribute_value = charisma_total %}
+                            {% assign attribute_value = charisma %}
                           {% when "willpower" %}
-                            {% assign attribute_value = willpower_total %}
+                            {% assign attribute_value = willpower %}
                           {% else %}
                             {% assign attribute_value = 0 %}
                         {% endcase %}

@@ -34,24 +34,33 @@ cyberware:
       - level: 1
         essence: 2
         price: 11000
-        reaction_bonus: 1
-        initiative_pass: 1
+        bonus:
+          reaction: 1
+          initiative:
+            physical:
+              pass: 1
         effects:
           - "Reaction: +1"
           - "Initiative: +1 passes"
       - level: 2
         essence: 3
         price: 32000
-        reaction_bonus: 2
-        initiative_pass: 2
+        bonus:
+          reaction: 2
+          initiative:
+            physical:
+              pass: 2
         effects:
           - "Reaction: +2"
           - "Initiative: +2 passes"
       - level: 3
         essence: 5
         price: 100000
-        reaction_bonus: 3
-        initiative_pass: 3
+        bonus:
+          reaction: 3
+          initiative:
+            physical:
+              pass: 3
         effects:
           - "Reaction: +3"
           - "Initiative: +3 passes"
@@ -69,7 +78,6 @@ cyberware:
     effects:
       - "Full leg replacement"
       - "Custom appearance"
-      - "Capacity: 20"
 
   - id: cyber_arm
     name: "Obvious Cyber Arm"
@@ -84,10 +92,9 @@ cyberware:
     effects:
       - "Full arm replacement"
       - "Custom appearance"
-      - "Capacity: 15"
 
   - id: cybereyes
-    name: "Cybereyes (2)"
+    name: "Cybereyes"
     type: eyeware
     essence: 0.3
     capacity: 8
@@ -98,7 +105,6 @@ cyberware:
     page: 324
     effects:
       - "Full eye replacement"
-      - "Capacity: 8 for enhancements"
 
   - id: smartlink
     name: "Smartlink"
@@ -129,7 +135,7 @@ cyberware:
     page: 328
     effects:
       - "Weapon stabilization"
-      - "Reduces recoil"
+      - "Reduces recoil -4"
 
   - id: cyber_holster
     name: "Cyber Holster"
@@ -184,7 +190,16 @@ cyberware:
     sourcebook:  "20th Anniversary Core Rulebook"
     page: 339
     bonus:
-      matrix: 2
+      attack:
+        matrix: 2
+      defense:
+        matrix: 2
+      damage:
+        matrix: 2
+      initiative:
+        matrix:
+          roll: 1
+          pass: 2
     effects:
       - "Hot-sim VR capability"
       - "+2 Test matrice"

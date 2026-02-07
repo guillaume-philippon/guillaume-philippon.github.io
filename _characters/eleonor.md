@@ -114,6 +114,11 @@ skills:
       value: 2
       attribute: street
 
+# Qualités
+qualities:
+  - name: toughness
+  - name: combat_paranoia
+
 # Contacts
 contacts:
   - contact: big-jim
@@ -162,55 +167,14 @@ cyberware:
 # Équipement
 gear:
   weapons:
-    - name: Hand Razors (Retractable)
-      type:
-        - melee
-      damage:
-        description: (Str./2 +2)P
-        base:
-          melee: 2
-      price: 900
-    - name: Ares Crusader
-      type:
-        - range
-      damage:
-        description: 4P
-        type: P
-      ap: -1
-      rc: 2
-      mode: SA/BF
-      ammo: 40(c)
-      availability: 7R
-      price: 700
-    - name: Ares Alpha
-      type:
-        - range
-      damage:
-        description: 6P
-        type: P
-      ap: -1
-      rc: 2
-      mode: SA/BF/FA
-      ammo: 42 (c)
-      availability: 12F
-      price: 1700
+    - id: hand_razors_retractable
+    - id: ares_crusader
+    - id: ares_alpha
   armor:
-    - name: Armor Jacket
-      balistic: 8
-      impact: 6
-      price: 900
-      availability: 2
+    - id: armor_jacket
   vehicule:
-    - name: Thundercloud Contrail
+    - id: thundercloud_contrail
       image: /assets/images/vehicles/thundercloud-contrail.jpg
-      handling: 1
-      accel: 20/40
-      speed: 180
-      pilot: 1
-      body: 6
-      armor: 4
-      sensor: 1
-      price: 5000
 ---
 # Description du personnage
 *Eleonor O'Neil* a commencé sa carrière dans les arènes clandestines d’*Urban Brawl* à **Seattle** avant de basculer dans le shadowrunning. Ce passé lui a forgé une réputation de combattante acharnée, capable de tenir tête à des adversaires plus lourds et mieux équipés grâce à sa rapidité, son instinct et sa connaissance des combats de rue. Ses cyberimplants, initialement conçus pour optimiser ses performances dans l’arène, sont devenus des outils de survie dans les ombres de la ville.

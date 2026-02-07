@@ -3,7 +3,7 @@
     {% for attr in page.attributes %}
     <li class="list-group-item  py-1 d-flex justify-content-between align-items-center">
         <strong>{{ attr[0] | capitalize }}</strong>
-        <span><strong>{{ attr[1].base }}{% if attr[1].bonus %} (+{{ attr[1].bonus }}){% endif %}</strong> <small>/{{ attr[1].max }}</small></span>
+        <span><strong>{{ attr[1].base }}</strong>{% if attr[1].bonus %} <em>(+{{ attr[1].bonus }})</em>{% endif %} <small>/{{ attr[1].max }}</small></span>
     </li>
     {% endfor %}
 </ul>

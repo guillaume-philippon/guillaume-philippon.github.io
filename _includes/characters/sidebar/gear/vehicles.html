@@ -1,0 +1,97 @@
+<div class="tab-pane fade" id="vehicles" role="tabpanel">
+    <div class="row">
+    {% for vehicle in page.gear.vehicule %}
+        {% assign vehicle_data = site.data.vehicles.vehicles | where: "id", vehicle.id | first %}
+        {% if vehicle_data %}
+        <div class="mt-2">
+            <div class="card vehicle-card">
+            {% if vehicle.image %}
+            <div class="vehicle-image-container">
+                <div class="vehicle-image-wrapper">
+                <img src="{{ vehicle.image }}" class="img-fluid vehicle-image" alt="{{ vehicle.name }}">
+                </div>
+            </div>
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">{{ vehicle_data.name }}</h5>
+                <div class="vehicle-stats">
+                <ul class="list-group list-group-flush ps-4">
+                    <li class="py-1 d-flex justify-content-between align-items-center">
+                        <span>
+                        <i class="fa-solid fa-steering-wheel"></i>
+                        <span class="stat-label">Conduite:</span>
+                        </span>
+                        <span class="stat-value">{{ vehicle_data.handling }}</span>
+                    </li>
+                    <li class="py-1 d-flex justify-content-between align-items-center">
+                        <span>
+                        <i class="fa-solid fa-gauge-high"></i>
+                        <span class="stat-label">Accélération:</span>
+                        </span>
+                        <span class="stat-value">{{ vehicle_data.accel }}</span>
+                    </li>
+                    <li class="py-1 d-flex justify-content-between align-items-center">
+                        <span>
+                        <i class="fa-solid fa-tachometer-alt"></i>
+                        <span class="stat-label">Vitesse:</span>
+                        </span>
+                        <span class="stat-value">{{ vehicle_data.speed }} km/h</span>
+                    </li>
+                    <li class="py-1 d-flex justify-content-between align-items-center">
+                        <span>
+                        <i class="fa-solid fa-user-astronaut"></i>
+                        <span class="stat-label">Pilote:</span>
+                        </span>
+                        <span class="stat-value">{{ vehicle_data.pilot }}</span>
+                    </li>
+                    <li class="py-1 d-flex justify-content-between align-items-center">
+                        <span>
+                        <i class="fa-solid fa-shield-alt"></i>
+                        <span class="stat-label">Corps:</span>
+                        </span>
+                        <span class="stat-value">{{ vehicle_data.body }}</span>
+                    </li>
+                    <li class="py-1 d-flex justify-content-between align-items-center">
+                        <span>
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span class="stat-label">Armure:</span>
+                        </span>
+                        <span class="stat-value">{{ vehicle_data.armor }}</span>
+                    </li>
+                    <li class="py-1 d-flex justify-content-between align-items-center">
+                        <span>
+                        <i class="fa-solid fa-satellite-dish"></i>
+                        <span class="stat-label">Capteurs:</span>
+                        </span>
+                        <span class="stat-value">{{ vehicle_data.sensor }}</span>
+                    </li>
+                    <li class="py-1 d-flex justify-content-between align-items-center">
+                        <span>
+                        <i class="fa-solid fa-coins"></i>
+                        <span class="stat-label">Prix:</span>
+                        </span>
+                        <span class="stat-value">{{ vehicle_data.price }}¥</span>
+                    </li>
+                    {% if vehicle_data.description %}
+                    <li class="py-1">
+                        <span class="stat-label">Description:</span>
+                        <span class="stat-value">{{ vehicle_data.description }}</span>
+                    </li>
+                    {% endif %}
+                </ul>
+                </div>
+            </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="col-12">
+            <div class="card h-100">
+                <div class="card-body">
+                    <strong>{{ vehicle.id }}</strong> (Vehicle not found in database)
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    {% endfor %}
+    </div>
+</div>
