@@ -1,41 +1,63 @@
 <div class="tab-pane fade" id="other_gear" role="tabpanel">
-    <div class="accordion" id="otherGearAccordion">
+    {% assign has_other_gear = false %}
+    {% assign unique_id = 0 %}
+    
+    {% for gear_category in page.gear %}
+        {% if gear_category[0] != "weapons" and gear_category[0] != "armor" and gear_category[0] != "vehicule" %}
+            {% assign has_other_gear = true %}
+        {% endif %}
+    {% endfor %}
+    
+    {% if has_other_gear %}
         {% for gear_category in page.gear %}
             {% if gear_category[0] != "weapons" and gear_category[0] != "armor" and gear_category[0] != "vehicule" %}
-                {% for item in gear_category[1] %}
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="otherGearHeading{{ forloop.index0 }}">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#otherGearCollapse{{ forloop.index0 }}" aria-expanded="false" aria-controls="otherGearCollapse{{ forloop.index0 }}">
-                                <strong>{{ item.name }}</strong>
-                            </button>
-                        </h2>
-                        <div id="otherGearCollapse{{ forloop.index0 }}" class="accordion-collapse collapse" aria-labelledby="otherGearHeading{{ forloop.index0 }}" data-bs-parent="#otherGearAccordion">
-                            <div class="accordion-body">
-                                <ul class="list-unstyled">
-                                    {% if item.quantity %}
-                                    <li><strong>Quantity:</strong> {{ item.quantity }}</li>
-                                    {% endif %}
-                                    {% if item.price %}
-                                    <li><strong>Price:</strong> {{ item.price }}¥</li>
-                                    {% endif %}
-                                    {% if item.description %}
-                                    <li><strong>Description:</strong> {{ item.description }}</li>
-                                    {% endif %}
-                                    {% if item.type %}
-                                    <li><strong>Type:</strong> 
-                                        {% if item.type %}
-                                            {% for type in item.type %}
-                                                {{ type | capitalize }}{% unless forloop.last %}, {% endunless %}
-                                            {% endfor %}
-                                        {% endif %}
-                                    </li>
-                                    {% endif %}
-                                </ul>
+                {% assign category_name = gear_category[0] | capitalize | replace: "_", " " %}
+                {% assign category_items = gear_category[1] %}
+                {% assign category_slug = gear_category[0] | replace: "_", "-" %}
+                
+                <div class="mb-3">
+                    <h5 class="mb-3">{{ category_name }} ({{ category_items.size }})</h5>
+                    <div class="accordion" id="otherGearAccordion-{{ category_slug }}">
+                        {% for item in category_items %}
+                            {% assign item_id = forloop.index0 | plus: unique_id %}
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="otherGearHeading-{{ category_slug }}-{{ item_id }}">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#otherGearCollapse-{{ category_slug }}-{{ item_id }}" aria-expanded="false" aria-controls="otherGearCollapse-{{ category_slug }}-{{ item_id }}">
+                                        <strong>{{ item.name }}</strong>
+                                    </button>
+                                </h2>
+                                <div id="otherGearCollapse-{{ category_slug }}-{{ item_id }}" class="accordion-collapse collapse" aria-labelledby="otherGearHeading-{{ category_slug }}-{{ item_id }}" data-bs-parent="#otherGearAccordion-{{ category_slug }}">
+                                    <div class="accordion-body">
+                                        <ul class="list-unstyled">
+                                            {% if item.quantity %}
+                                            <li><strong>Quantity:</strong> {{ item.quantity }}</li>
+                                            {% endif %}
+                                            {% if item.price %}
+                                            <li><strong>Price:</strong> {{ item.price }}¥</li>
+                                            {% endif %}
+                                            {% if item.description %}
+                                            <li><strong>Description:</strong> {{ item.description }}</li>
+                                            {% endif %}
+                                            {% if item.type %}
+                                            <li><strong>Type:</strong> 
+                                                {% if item.type %}
+                                                    {% for type in item.type %}
+                                                        {{ type | capitalize }}{% unless forloop.last %}, {% endunless %}
+                                                    {% endfor %}
+                                                {% endif %}
+                                            </li>
+                                            {% endif %}
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                            {% assign unique_id = unique_id | plus: 1 %}
+                        {% endfor %}
                     </div>
-                {% endfor %}
+                </div>
             {% endif %}
         {% endfor %}
-    </div>
+    {% else %}
+        <p>Aucun équipement autre.</p>
+    {% endif %}
 </div>
