@@ -1,6 +1,5 @@
 <div class="tab-pane fade" id="other_gear" role="tabpanel">
     {% assign has_other_gear = false %}
-    {% assign unique_id = 0 %}
     
     {% for gear_category in page.gear %}
         {% if gear_category[0] != "weapons" and gear_category[0] != "armor" and gear_category[0] != "vehicule" %}
@@ -13,22 +12,18 @@
             {% if gear_category[0] != "weapons" and gear_category[0] != "armor" and gear_category[0] != "vehicule" %}
                 {% assign category_name = gear_category[0] | capitalize | replace: "_", " " %}
                 {% assign category_items = gear_category[1] %}
-                {% assign category_slug = gear_category[0] | replace: "_", "-" %}
                 
-                <div class="mb-3">
+                <div class="mb-4">
                     <h5 class="mb-3">{{ category_name }} ({{ category_items.size }})</h5>
-                    <div class="accordion" id="otherGearAccordion-{{ category_slug }}">
+                    <div class="row row-cols-1 g-3">
                         {% for item in category_items %}
-                            {% assign item_id = forloop.index0 | plus: unique_id %}
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="otherGearHeading-{{ category_slug }}-{{ item_id }}">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#otherGearCollapse-{{ category_slug }}-{{ item_id }}" aria-expanded="false" aria-controls="otherGearCollapse-{{ category_slug }}-{{ item_id }}">
+                            <div class="col">
+                                <div class="card h-100">
+                                    <div class="card-header bg-light">
                                         <strong>{{ item.name }}</strong>
-                                    </button>
-                                </h2>
-                                <div id="otherGearCollapse-{{ category_slug }}-{{ item_id }}" class="accordion-collapse collapse" aria-labelledby="otherGearHeading-{{ category_slug }}-{{ item_id }}" data-bs-parent="#otherGearAccordion-{{ category_slug }}">
-                                    <div class="accordion-body">
-                                        <ul class="list-unstyled">
+                                    </div>
+                                    <div class="card-body">
+                                        <ul class="list-unstyled mb-0">
                                             {% if item.quantity %}
                                             <li><strong>Quantity:</strong> {{ item.quantity }}</li>
                                             {% endif %}
@@ -51,7 +46,6 @@
                                     </div>
                                 </div>
                             </div>
-                            {% assign unique_id = unique_id | plus: 1 %}
                         {% endfor %}
                     </div>
                 </div>

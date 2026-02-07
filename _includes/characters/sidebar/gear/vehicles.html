@@ -1,16 +1,14 @@
 <div class="tab-pane fade" id="vehicles" role="tabpanel">
-    <div class="accordion" id="vehiclesAccordion">
+    <div class="row row-cols-1 g-3">
     {% for vehicle in page.gear.vehicule %}
         {% assign vehicle_data = site.data.vehicles.vehicles | where: "id", vehicle.id | first %}
         {% if vehicle_data %}
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="vehicleHeading{{ forloop.index0 }}">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#vehicleCollapse{{ forloop.index0 }}" aria-expanded="false" aria-controls="vehicleCollapse{{ forloop.index0 }}">
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-header bg-light">
                     <strong>{{ vehicle_data.name }}</strong>
-                </button>
-            </h2>
-            <div id="vehicleCollapse{{ forloop.index0 }}" class="accordion-collapse collapse" aria-labelledby="vehicleHeading{{ forloop.index0 }}" data-bs-parent="#vehiclesAccordion">
-                <div class="accordion-body">
+                </div>
+                <div class="card-body">
                     {% if vehicle.image %}
                     <div class="vehicle-image-container mb-3">
                         <div class="vehicle-image-wrapper">
@@ -18,7 +16,6 @@
                         </div>
                     </div>
                     {% endif %}
-                    <h5 class="card-title">{{ vehicle_data.name }}</h5>
                     <div class="vehicle-stats">
                     <ul class="list-group list-group-flush ps-4">
                     <li class="py-1 d-flex justify-content-between align-items-center">
@@ -89,7 +86,7 @@
             </div>
         </div>
         {% else %}
-        <div class="col-12">
+        <div class="col">
             <div class="card h-100">
                 <div class="card-body">
                     <strong>{{ vehicle.id }}</strong> (Vehicle not found in database)

@@ -1,46 +1,42 @@
 <div class="tab-pane fade show active" id="cyberware" role="tabpanel">
-    <div class="accordion" id="cyberwareAccordion">
+    <div class="row row-cols-1 g-3">
     {% for ware in page.cyberware %}
         {% assign ware_data = site.data.cyberware.cyberware | where: "id", ware.id | first %}
         {% if ware_data %}
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="cyberwareHeading{{ forloop.index0 }}">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cyberwareCollapse{{ forloop.index0 }}" aria-expanded="false" aria-controls="cyberwareCollapse{{ forloop.index0 }}">
-                    <div class="d-flex justify-content-between align-items-center w-100">
-                        <strong>{{ ware_data.name }}
-                            {% if ware.level %}
-                                <i class="bi bi-{{ ware.level }}-circle-fill"></i>
-                            {% endif %}
-                        </strong>
-                        <span>
-                            {% case ware_data.type %}
-                                {% when "headware" %}
-                                    <i class="fa-solid fa-brain"></i>
-                                {% when "eyeware" %}
-                                    <i class="fa-solid fa-eye"></i>
-                                {% when "earware" %}
-                                    <i class="fa-solid fa-ear-listen"></i>
-                                {% when "bodyware" %}
-                                    <i class="fa-solid fa-lungs"></i>
-                                {% when "cyberlimb" %}
-                                    <i class="fa-solid fa-person-rays"></i>
-                                {% when "bioware" %}
-                                    <i class="fa-solid fa-capsules"></i>
-                                {% else %}
-                                    <i class="fa-solid fa-question"></i>
-                            {% endcase %}
-                            {% case ware.grade %}
-                                {% when "alpha" %} &alpha; 
-                                {% when "beta" %} &beta; 
-                                {% when "delta" %} &delta; 
-                            {% endcase %}
-                        </span>
-                    </div>
-                </button>
-            </h2>
-            <div id="cyberwareCollapse{{ forloop.index0 }}" class="accordion-collapse collapse" aria-labelledby="cyberwareHeading{{ forloop.index0 }}" data-bs-parent="#cyberwareAccordion">
-                <div class="accordion-body">
-                    <ul class="list-unstyled">
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-header bg-light d-flex justify-content-between align-items-center">
+                    <strong>{{ ware_data.name }}
+                        {% if ware.level %}
+                            <i class="bi bi-{{ ware.level }}-circle-fill"></i>
+                        {% endif %}
+                    </strong>
+                    <span>
+                        {% case ware_data.type %}
+                            {% when "headware" %}
+                                <i class="fa-solid fa-brain"></i>
+                            {% when "eyeware" %}
+                                <i class="fa-solid fa-eye"></i>
+                            {% when "earware" %}
+                                <i class="fa-solid fa-ear-listen"></i>
+                            {% when "bodyware" %}
+                                <i class="fa-solid fa-lungs"></i>
+                            {% when "cyberlimb" %}
+                                <i class="fa-solid fa-person-rays"></i>
+                            {% when "bioware" %}
+                                <i class="fa-solid fa-capsules"></i>
+                            {% else %}
+                                <i class="fa-solid fa-question"></i>
+                        {% endcase %}
+                        {% case ware.grade %}
+                            {% when "alpha" %} &alpha; 
+                            {% when "beta" %} &beta; 
+                            {% when "delta" %} &delta; 
+                        {% endcase %}
+                    </span>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled mb-0">
                         <li><strong><i class="bi bi-heartbreak-fill"></i>:</strong>
                             {% if ware_data.essence %}
                             {{ ware_data.essence }}

@@ -1,28 +1,24 @@
 <div class="tab-pane fade" id="powers" role="tabpanel">
-    <div class="accordion" id="powersAccordion">
+    <div class="row row-cols-1 g-3">
     {% for power in page.magic.adept.powers %}
         {% assign power_data = site.data.powers.powers | where: "id", power.id | first %}
         {% if power_data %}
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="powerHeading{{ forloop.index0 }}">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#powerCollapse{{ forloop.index0 }}" aria-expanded="false" aria-controls="powerCollapse{{ forloop.index0 }}">
-                    <div class="d-flex justify-content-between align-items-center w-100">
-                        <strong>{{ power_data.name }}</strong>
-                        <span>
-                            {% if power_data.category == "adept" %}
-                                <i class="fa-solid fa-yin-yang" data-bs-toggle="tooltip" title="Adept Power"></i>
-                            {% elsif power_data.category == "magician" %}
-                                <i class="fa-solid fa-wand-sparkles" data-bs-toggle="tooltip" title="Magician Power"></i>
-                            {% else %}
-                                <i class="fa-solid fa-question" data-bs-toggle="tooltip" title="Unknown Type"></i>
-                            {% endif %}
-                        </span>
-                    </div>
-                </button>
-            </h2>
-            <div id="powerCollapse{{ forloop.index0 }}" class="accordion-collapse collapse" aria-labelledby="powerHeading{{ forloop.index0 }}" data-bs-parent="#powersAccordion">
-                <div class="accordion-body">
-                    <ul class="list-unstyled">
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-header bg-light d-flex justify-content-between align-items-center">
+                    <strong>{{ power_data.name }}</strong>
+                    <span>
+                        {% if power_data.category == "adept" %}
+                            <i class="fa-solid fa-yin-yang" data-bs-toggle="tooltip" title="Adept Power"></i>
+                        {% elsif power_data.category == "magician" %}
+                            <i class="fa-solid fa-wand-sparkles" data-bs-toggle="tooltip" title="Magician Power"></i>
+                        {% else %}
+                            <i class="fa-solid fa-question" data-bs-toggle="tooltip" title="Unknown Type"></i>
+                        {% endif %}
+                    </span>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled mb-0">
                         <li><strong>Category:</strong> {{ power_data.category | capitalize }}</li>
                         <li><strong>Type:</strong> {{ power_data.type | capitalize }}</li>
                         <li><strong>Rating:</strong> {{ power.rating }}</li>
