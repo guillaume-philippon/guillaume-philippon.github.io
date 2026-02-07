@@ -1,7 +1,7 @@
 <!-- Variables 
 {% comment %} Caclul des valeurs totales d'attribut {% endcomment %}
 {% assign body = page.attributes.body.base | plus: page.attributes.body.bonus %}
-{% assign agility = page.attributes.agility.base | plus: page.attributes.agilite.bonus %}
+{% assign agility = page.attributes.agility.base | plus: page.attributes.agility.bonus %}
 {% assign reaction = page.attributes.reaction.base | plus: page.attributes.reaction.bonus %}
 {% assign strength = page.attributes.strength.base | plus: page.attributes.strength.bonus %}
 {% assign intuition = page.attributes.intuition.base | plus: page.attributes.intuition.bonus %}
@@ -223,10 +223,13 @@ rolls:
     range: {{ range_damage }}
 {% assign melee_damage = 0 %}
 {% for weapon in page.gear.weapons %}
-  {% if weapon.type contains 'melee' %}
-    {% assign weapon_damage = weapon.damage.base.melee | plus:  weapon.damage.bonus.melee %}
-    {% if weapon_damage > melee_damage %}
-      {% assign melee_damage = weapon_damage %}
+  {% assign weapon_data = site.data.weapons.weapons | where: "id", weapon.id | first %}
+  {% if weapon_data %}
+    {% if weapon_data.type contains 'melee' %}
+      {% assign weapon_damage = weapon_data.damage.base.melee | default: 0 %}
+      {% if weapon_damage > melee_damage %}
+        {% assign melee_damage = weapon_damage %}
+      {% endif %}
     {% endif %}
   {% endif %}
 {% endfor %}
@@ -255,10 +258,21 @@ rolls:
 {% assign armor_natural_astral = body | plus: willpower | plus: page.armor.natural.astral %}
       astral: {{ armor_natural_astral }}
     gear:
-{% assign balistic = page.gear.armor[0].balistic %}
+{% if page.gear.armor and page.gear.armor[0] %}
+  {% assign armor_data = site.data.armor.armor | where: "id", page.gear.armor[0].id | first %}
+  {% if armor_data %}
+{% assign balistic = armor_data.balistic %}
       balistic: {{ balistic }}
-{% assign impact = page.gear.armor[0].impact %}
+{% assign impact = armor_data.impact %}
       impact: {{ impact }}
+  {% else %}
+      balistic: 0
+      impact: 0
+  {% endif %}
+{% else %}
+      balistic: 0
+      impact: 0
+{% endif %}
 {% assign matrix_armor = page.matrix.commlink.system | plus: page.matrix.programs.hacking.armor.rating %}
 {% assign matrix_armor = matrix_armor | plus: page.matrix.bonus.armor %}
       matrix: {{ matrix_armor }}

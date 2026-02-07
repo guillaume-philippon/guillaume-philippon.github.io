@@ -55,5 +55,25 @@
       <span class="badge">{{ page.gear.vehicule | size }}</span>
     </div>
     {% endif %}
+    {% assign has_other_gear = false %}
+    {% for gear_category in page.gear %}
+        {% if gear_category[0] != "weapons" and gear_category[0] != "armor" and gear_category[0] != "vehicule" %}
+            {% assign has_other_gear = true %}
+        {% endif %}
+    {% endfor %}
+    {% if has_other_gear %}
+    <div class="icon-wrapper" data-bs-toggle="offcanvas" data-bs-target="#floatingPanel" title="Autre équipement" data-tab="other_gear">
+      <i class="fa-solid fa-box-open"></i>
+      <span class="badge">
+        {% assign other_gear_count = 0 %}
+        {% for gear_category in page.gear %}
+            {% if gear_category[0] != "weapons" and gear_category[0] != "armor" and gear_category[0] != "vehicule" %}
+                {% assign other_gear_count = other_gear_count | plus: gear_category[1] | size %}
+            {% endif %}
+        {% endfor %}
+        {{ other_gear_count }}
+      </span>
+    </div>
+    {% endif %}
   </div>
 </div>

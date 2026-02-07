@@ -72,6 +72,7 @@ defense:
 # Bonus damage
 damage:
   astral: 2
+  range: 2
 
 # Armure
 armor:
