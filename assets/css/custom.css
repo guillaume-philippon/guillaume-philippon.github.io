@@ -677,6 +677,38 @@ em {
   }
 }
 
+/* Styles pour corriger l'accordéon Bootstrap dans le volet glissant */
+.offcanvas-body .card-header {
+  cursor: pointer;
+}
+
+.offcanvas-body .card-header button.btn-link {
+  color: #ffcc00;
+  text-decoration: none;
+  padding: 0;
+  margin-left: 0.5rem;
+}
+
+.offcanvas-body .card-header button.btn-link i {
+  transition: transform 0.3s ease;
+}
+
+.offcanvas-body .card-header button.btn-link.collapsed i {
+  transform: rotate(-90deg);
+}
+
+.offcanvas-body .card-header button.btn-link:not(.collapsed) i {
+  transform: rotate(0deg);
+}
+
+.offcanvas-body .collapse:not(.show) {
+  display: none;
+}
+
+.offcanvas-body .collapse.show {
+  display: block;
+}
+
 /* Effets hover pour les cartes Edge, Physique, Mentale et Matrix */
 .edge-card, .physical-card, .mental-card, .matrix-card {
   transition: all 0.3s ease;
@@ -991,3 +1023,5 @@ em {
 .character-image-link:active::after {
   animation: pulseGlow 0.8s ease;
 }
+
+

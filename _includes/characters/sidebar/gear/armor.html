@@ -1,29 +1,33 @@
 <div class="tab-pane fade" id="armor" role="tabpanel">
-    <div class="row">
+    <div class="accordion" id="armorAccordion">
     {% for armor_item in page.gear.armor %}
         {% assign armor_data = site.data.armor.armor | where: "id", armor_item.id | first %}
         {% if armor_data %}
-        <div class="mt-2">
-            <div class="card h-100">
-                <div class="card-header d-flex justify-content-between align-items-center">
-                    <strong>{{ armor_data.name }}</strong>
-                    <span>
-                        {% if armor_data.type == "body" %}
-                            <i class="fa-solid fa-shirt"></i>
-                        {% elsif armor_data.type == "full_body" %}
-                            <i class="fa-solid fa-user-shield"></i>
-                        {% elsif armor_data.type == "head" %}
-                            <i class="fa-solid fa-helmet-battle"></i>
-                        {% elsif armor_data.type == "shield" %}
-                            <i class="fa-solid fa-shield"></i>
-                        {% elsif armor_data.type == "accessory" %}
-                            <i class="fa-solid fa-gloves"></i>
-                        {% else %}
-                            <i class="fa-solid fa-question"></i>
-                        {% endif %}
-                    </span>
-                </div>
-                <div class="card-body">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="armorHeading{{ forloop.index0 }}">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#armorCollapse{{ forloop.index0 }}" aria-expanded="false" aria-controls="armorCollapse{{ forloop.index0 }}">
+                    <div class="d-flex justify-content-between align-items-center w-100">
+                        <strong>{{ armor_data.name }}</strong>
+                        <span>
+                            {% if armor_data.type == "body" %}
+                                <i class="fa-solid fa-shirt"></i>
+                            {% elsif armor_data.type == "full_body" %}
+                                <i class="fa-solid fa-user-shield"></i>
+                            {% elsif armor_data.type == "head" %}
+                                <i class="fa-solid fa-helmet-battle"></i>
+                            {% elsif armor_data.type == "shield" %}
+                                <i class="fa-solid fa-shield"></i>
+                            {% elsif armor_data.type == "accessory" %}
+                                <i class="fa-solid fa-gloves"></i>
+                            {% else %}
+                                <i class="fa-solid fa-question"></i>
+                            {% endif %}
+                        </span>
+                    </div>
+                </button>
+            </h2>
+            <div id="armorCollapse{{ forloop.index0 }}" class="accordion-collapse collapse" aria-labelledby="armorHeading{{ forloop.index0 }}" data-bs-parent="#armorAccordion">
+                <div class="accordion-body">
                     <ul class="list-unstyled">
                         <li><strong>Type:</strong> {{ armor_data.type | replace: "_", " " | capitalize }}</li>
                         <li><strong>Price:</strong> {{ armor_data.price }}¥</li>

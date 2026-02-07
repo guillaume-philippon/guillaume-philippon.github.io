@@ -1,14 +1,16 @@
 <div class="tab-pane fade" id="other_gear" role="tabpanel">
-    <div class="row row-cols-1 row-cols-md-2 g-3">
+    <div class="accordion" id="otherGearAccordion">
         {% for gear_category in page.gear %}
             {% if gear_category[0] != "weapons" and gear_category[0] != "armor" and gear_category[0] != "vehicule" %}
                 {% for item in gear_category[1] %}
-                    <div class="col">
-                        <div class="card h-100">
-                            <div class="card-header">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="otherGearHeading{{ forloop.index0 }}">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#otherGearCollapse{{ forloop.index0 }}" aria-expanded="false" aria-controls="otherGearCollapse{{ forloop.index0 }}">
                                 <strong>{{ item.name }}</strong>
-                            </div>
-                            <div class="card-body">
+                            </button>
+                        </h2>
+                        <div id="otherGearCollapse{{ forloop.index0 }}" class="accordion-collapse collapse" aria-labelledby="otherGearHeading{{ forloop.index0 }}" data-bs-parent="#otherGearAccordion">
+                            <div class="accordion-body">
                                 <ul class="list-unstyled">
                                     {% if item.quantity %}
                                     <li><strong>Quantity:</strong> {{ item.quantity }}</li>

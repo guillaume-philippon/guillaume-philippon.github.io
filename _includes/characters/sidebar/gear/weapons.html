@@ -1,27 +1,31 @@
 <div class="tab-pane fade" id="weapons" role="tabpanel">
-    <div class="row">
+    <div class="accordion" id="weaponsAccordion">
     {% for weapon in page.gear.weapons %}
         {% assign weapon_data = site.data.weapons.weapons | where: "id", weapon.id | first %}
         {% if weapon_data %}
-        <div class="mt-2">
-            <div class="card h-100">
-                <div class="card-header d-flex justify-content-between align-items-center">
-                    <strong>{{ weapon_data.name }}</strong>
-                    <span>
-                        {% if weapon_data.type contains "melee" and weapon_data.type contains "range" %}
-                            <i class="fa-solid fa-fan" data-bs-toggle="tooltip" title="Melee/Throwing"></i>
-                        {% elsif weapon_data.type contains "melee" %}
-                            <i class="fa-solid fa-hand-fist" data-bs-toggle="tooltip" title="Melee"></i>
-                        {% elsif weapon_data.type contains "range" %}
-                            <i class="fa-solid fa-gun" data-bs-toggle="tooltip" title="Ranged"></i>
-                        {% elsif weapon_data.type contains "explosive" %}
-                            <i class="fa-solid fa-bomb" data-bs-toggle="tooltip" title="Explosive"></i>
-                        {% else %}
-                            <i class="fa-solid fa-question" data-bs-toggle="tooltip" title="Unknown"></i>
-                        {% endif %}
-                    </span>
-                </div>
-                <div class="card-body">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="weaponHeading{{ forloop.index0 }}">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#weaponCollapse{{ forloop.index0 }}" aria-expanded="false" aria-controls="weaponCollapse{{ forloop.index0 }}">
+                    <div class="d-flex justify-content-between align-items-center w-100">
+                        <strong>{{ weapon_data.name }}</strong>
+                        <span>
+                            {% if weapon_data.type contains "melee" and weapon_data.type contains "range" %}
+                                <i class="fa-solid fa-fan" data-bs-toggle="tooltip" title="Melee/Throwing"></i>
+                            {% elsif weapon_data.type contains "melee" %}
+                                <i class="fa-solid fa-hand-fist" data-bs-toggle="tooltip" title="Melee"></i>
+                            {% elsif weapon_data.type contains "range" %}
+                                <i class="fa-solid fa-gun" data-bs-toggle="tooltip" title="Ranged"></i>
+                            {% elsif weapon_data.type contains "explosive" %}
+                                <i class="fa-solid fa-bomb" data-bs-toggle="tooltip" title="Explosive"></i>
+                            {% else %}
+                                <i class="fa-solid fa-question" data-bs-toggle="tooltip" title="Unknown"></i>
+                            {% endif %}
+                        </span>
+                    </div>
+                </button>
+            </h2>
+            <div id="weaponCollapse{{ forloop.index0 }}" class="accordion-collapse collapse" aria-labelledby="weaponHeading{{ forloop.index0 }}" data-bs-parent="#weaponsAccordion">
+                <div class="accordion-body">
                     <ul class="list-unstyled">
                         <li><strong>Price:</strong> {{ weapon_data.price }}¥</li>
                         {% if weapon_data.availability %}
