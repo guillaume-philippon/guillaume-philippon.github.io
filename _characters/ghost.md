@@ -334,5 +334,8 @@ gear:
       quantity: 1
       price: 600
 ---
-# Description du personnage
-*Jessica Ghost Rojas* a infiltré un serveur sécurisé pour voler des données sur un prototype d’**IA militaire autonome**, conçu pour contrôler des drones de combat et des systèmes de surveillance de masse. Au lieu de simplement exfiltrer les données, elle a modifié les algorithmes de ciblage de l’IA, provoquant une série d’attaques accidentelles contre des infrastructures civiles lors d’un test en conditions réelles. Résultat : des coupures de courant massives, des drones devenant incontrôlables, et des dégâts matériels estimés à plusieurs millions de nuyens.
+*Jessica Ghost Rojas* a été recrutée par les **Cendres Numériques** pour ses compétences en infiltration et sabotage matriciel. Lors d’une opération d’exfiltration de données sur un prototype d’IA militaire autonome d’**Aztechnology**, elle a modifié les algorithmes de ciblage, déclenchant des attaques accidentelles contre des infrastructures civiles. L’incident a causé des coupures de courant massives et des dommages estimés à plusieurs millions de nuyens, forçant *Ghost* à disparaître.
+
+**DracoTech** l’a récupérée, lui offrant une nouvelle identité et une protection en échange de ses services. Bien qu’elle travaille désormais pour la corporation, de ses liens avec les **Cendres Numériques**, *Ghost* ne restent en contact qu'avec avec *Neon* et *Madame X*. *Neon*, decker spécialiste des intrusions, et *Madame X*, fixeuse et stratège. Ces relations ne sont pas transactionnelles mais ancrées dans une loyauté partagée et une histoire commune.
+
+*Ghost* est une asset précieuse pour **DracoTech**, et sa loyauté envers la corporation est absolue. Ses compétences en font une opératrice redoutable, et elle n’utilise ses contacts résiduels avec *Neon* et *Madame X* que pour renforcer son efficacité au service de **DracoTech**. Aucune ambiguïté ne subsiste quant à ses priorités.

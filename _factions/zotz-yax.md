@@ -11,7 +11,7 @@ logo: "/assets/images/factions/zotz-yax.png"
 
 ## Zotz-Yax
 
-Les **Zotz-Yax** sont une tribu orque d’ascendance maya, établie dans les jungles et les grottes sacrées du **Chiapas**. Leur survie repose sur la préservation de leurs traditions chamaniques et de leurs techniques de combat ancestrales, héritées de la Sixième Monde.
+Les **Zotz-Yax** sont une tribu orque d’ascendance maya, basée près de *Mérida*. Leur survie repose sur la préservation de leurs traditions chamaniques et de leurs techniques de combat ancestrales, héritées de la Sixième Monde.
 
 Leur société est organisée autour de trois groupes : les chamans, les guerriers et les artisans. Les chamans, dirigés par *Ixchel*, maintiennent le lien avec les esprits du *Xibalba* et supervisent les rituels, comme le *Xibalba-Kex*, qui marque l’initiation des guerriers. Ces derniers protègent les sites sacrés et exécutent les décisions tribales. Les artisans, quant à eux, fabriquent des armes traditionnelles (comme le Macuahuitl) et des artefacts en obsidienne et en jade.
 

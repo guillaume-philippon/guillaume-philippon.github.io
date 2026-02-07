@@ -192,5 +192,10 @@ gear:
   armor:
     - id: armor_jacket
 ---
-# Description du personnage
-  *Ahau-Tec*, descendant des **Zotz-Yax**, a été recruté par **DracoTech** après avoir prouvé sa valeur lors d’un run contre un groupe de *blood mages* qui menaçaient les intérêts de la megacorp dans la jungle du **Chiapas**. Son statut est celui d’un agent de sécurité spécialisé, officiellement chargé de la protection des actifs dans les zones à haut risque magique et des opérations discrètes nécessitant une expertise de la culture maya.
+*Ahau-Tec* est un membre actif de la tribu **Zotz-Yax**, basée près de **Mérida** dans la péninsule du **Yucatán**. Contrairement aux tribus isolées, les **Zotz-Yax** ont établi des accords pragmatiques avec certaines mégacorporations, dont DracoTech, pour protéger leurs artefacts sacrés et leurs territoires.
+
+Initié par le rituel du **Xibalba-Kex**, *Ahau-Tec* est un guerrier marqué par les esprits des grottes sacrées, portant des tatouages magiques et une connexion profonde avec les forces du **Xibalba**. Il a été remarqué par **DracoTech** après un combat contre des *blood mages* menaçant les intérêts de la corporation. Son habileté au combat et sa connaissance des rituels mayas ont attiré l’attention de **DracoTech**, qui l’a recruté comme agent de sécurité spécialisé. Il sert désormais de pont entre la tribu **Zotz-Yax** et la corporation, tout en restant un membre actif de sa communauté. Son rôle est de protéger les actifs de **DracoTech** dans les zones à risque magique et de négocier des accords respectueux des traditions **Zotz-Yax**.
+
+*Ahau-Tec* reste ancré dans sa communauté. Il participe aux rituels tribaux et partage les ressources obtenues via **DracoTech** avec les siens, tout en veillant à ce que les intérêts de la tribu ne soient pas compromis. Il porte toujours les symboles de son héritage : tatouages rituels, bijoux en jade, et un Macuahuitl en obsidienne renforcée.
+
+Son objectif principal est de récupérer le *Codex de Zotz*, volé par des *blood mages* liés à **Aztechnology**. Pour cela, il utilise ses connexions chez **DracoTech** tout en restant loyal aux **Zotz-Yax**. Il navigue entre les deux mondes avec pragmatisme, sabordant les opérations corporations qui menacent les sites sacrés et utilisant les ressources modernes pour renforcer la sécurité de sa tribu. Sa position est délicate, mais son statut de membre respecté des **Zotz-Yax** lui permet de concilier ces deux aspects de sa vie.
