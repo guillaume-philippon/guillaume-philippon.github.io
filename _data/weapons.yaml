@@ -251,12 +251,12 @@ weapons:
     name: "Tomahawk"
     type:
       - melee
-      - range
+      - throwing
     damage:
       description: "(Str./2 + 2)P"
       base:
         melee: 2
-        throwing: 2
+        range: 2
     range:
       melee: 1
     price: 150
@@ -268,7 +268,7 @@ weapons:
     price: 20
     type: 
       - melee
-      - range
+      - throwing
     damage:
       description: (Str./2 + 1)P
       base:

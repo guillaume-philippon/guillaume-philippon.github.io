@@ -176,7 +176,6 @@ gear:
     - id: thundercloud_contrail
       image: /assets/images/vehicles/thundercloud-contrail.jpg
 ---
-# Description du personnage
 *Eleonor O'Neil* a commencé sa carrière dans les arènes clandestines d’*Urban Brawl* à **Seattle** avant de basculer dans le shadowrunning. Ce passé lui a forgé une réputation de combattante acharnée, capable de tenir tête à des adversaires plus lourds et mieux équipés grâce à sa rapidité, son instinct et sa connaissance des combats de rue. Ses cyberimplants, initialement conçus pour optimiser ses performances dans l’arène, sont devenus des outils de survie dans les ombres de la ville.
 
 Bien qu’elle ait quitté les combats organisés après le désastre sur le bateau de plaisance, elle reste profondément liée à ses anciens compagnons de run. Ces liens ne sont pas seulement professionnels : ce sont des survivants comme elle, des gens qui comprennent ce que signifie vivre avec des cicatrices invisibles. Elle les retrouve parfois dans des repaires discrets, des bars enfumés ou des ateliers de mécaniciens illégaux, où ils échangent des informations, des services ou simplement un silence complice.

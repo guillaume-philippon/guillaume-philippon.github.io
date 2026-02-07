@@ -205,13 +205,15 @@ rolls:
   damage:
 {%- assign range_damage = 0 -%}
 {%- for weapon in page.gear.weapons -%}
-  {%- if weapon.type contains 'range' -%}
-    {%- assign weapon_damage = weapon.damage.base.range | plus:  weapon.damage.bonus.range -%}
+  {%- assign weapon_data = site.data.weapons.weapons | where: "id", weapon.id | first -%}
+  {%- if weapon_data.type contains 'throwing' -%}
+    {%- assign weapon_damage = weapon_data.damage.base.range | plus: weapon_data.damage.bonus.range -%}
     {%- if weapon_damage > range_damage -%}
       {%- assign range_damage = weapon_damage -%}
     {%- endif -%}
   {%- endif -%}
 {%- endfor %}
+{%- assign range_damage = range_damage | plus: page.damage.range %}
     range: {{ range_damage }}
 {%- assign melee_damage = 0 -%}
 {%- for weapon in page.gear.weapons -%}
@@ -224,7 +226,8 @@ rolls:
       {%- endif -%}
     {%- endif -%}
   {%- endif -%}
-{%- endfor %}
+{%- endfor -%}
+{%- assign melee_damage = melee_damage | plus: page.damage.melee %}
     melee: {{ melee_damage }}
 {%- assign matrix_damage = 0 -%}
 {%- for group in page.matrix.programs -%}
@@ -239,6 +242,7 @@ rolls:
 {%- assign matrix_damage = matrix_damage | plus: page.matrix.bonus.damage %}
     matrix: {{ matrix_damage }}
 {%- assign astral_damage = 0 %}
+{%- assign astral_damage = astral_damage | plus: page.damage.astral %}
     astral: {{ astral_damage }}
   
   armor:
@@ -268,4 +272,23 @@ rolls:
 {%- assign matrix_armor = page.matrix.commlink.system | plus: page.matrix.programs.hacking.armor.rating -%}
 {%- assign matrix_armor = matrix_armor | plus: page.matrix.bonus.armor %}
       matrix: {{ matrix_armor }}
+
+{%- assign have_melee = false -%}
+{%- assign have_range = false -%}
+{%- assign have_throwing = false -%}
+{%- for weapon in page.gear.weapons -%}
+    {%- assign weapon_data = site.data.weapons.weapons | where: "id", weapon.id | first -%}
+    {%- if weapon_data -%}
+        {%- if weapon_data.type contains 'melee' -%}
+            {%- assign have_melee = true -%}
+        {%- endif -%}
+        {%- if weapon_data.type contains 'range' or weapon_data.type contains 'throwing'  -%}
+            {%- assign have_range = true -%}
+        {%- endif -%}
+        {%- if weapon_data.type contains 'throwing'  -%}
+            {%- assign have_throwing = true -%}
+        {%- endif -%}
+    {%- endif -%}
+{%- endfor -%}
+
 -->
