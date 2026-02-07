@@ -5,7 +5,12 @@
         {% if ware_data %}
         <div class="col">
             <div class="card h-100">
-                <div class="card-header bg-light d-flex justify-content-between align-items-center">
+                <div class="card-header bg-light d-flex justify-content-between align-items-center" 
+                     data-bs-toggle="collapse" 
+                     data-bs-target="#cyberwareCollapse{{ forloop.index0 }}" 
+                     aria-expanded="false" 
+                     aria-controls="cyberwareCollapse{{ forloop.index0 }}" 
+                     style="cursor: pointer;">
                     <strong>{{ ware_data.name }}
                         {% if ware.level %}
                             <i class="bi bi-{{ ware.level }}-circle-fill"></i>
@@ -35,50 +40,52 @@
                         {% endcase %}
                     </span>
                 </div>
-                <div class="card-body">
-                    <ul class="list-unstyled mb-0">
-                        <li><strong><i class="bi bi-heartbreak-fill"></i>:</strong>
-                            {% if ware_data.essence %}
-                            {{ ware_data.essence }}
-                            {% endif %}
-                            {% for ware_data_level in ware_data.levels %}
-                                {% if ware_data_level.level == ware.level %}
-                                    {{ ware_data_level.essence }}
+                <div id="cyberwareCollapse{{ forloop.index0 }}" class="collapse" data-bs-parent=".row">
+                    <div class="card-body">
+                        <ul class="list-unstyled mb-0">
+                            <li><strong><i class="bi bi-heartbreak-fill"></i>:</strong>
+                                {% if ware_data.essence %}
+                                {{ ware_data.essence }}
                                 {% endif %}
-                            {% endfor %}
-                        </li>
-                        {% if ware_data.capacity %}
-                        <li><strong>Capacity:</strong> [{{ ware_data.capacity }}]
-                        <ul class="list-unstyled ps-3">
-                            {% for item in ware.capacity %}
-                            <li>
-                                {% assign ware_data_capacity = site.data.cyberware.cyberware | where: "id", item.id | first %}
-                                    <strong>{{ ware_data_capacity.name }}</strong> [-{{ ware_data_capacity.capacity }}]: 
-                                    <ul>
-                                        {% for effect in ware_data_capacity.effects %}
+                                {% for ware_data_level in ware_data.levels %}
+                                    {% if ware_data_level.level == ware.level %}
+                                        {{ ware_data_level.essence }}
+                                    {% endif %}
+                                {% endfor %}
+                            </li>
+                            {% if ware_data.capacity %}
+                            <li><strong>Capacity:</strong> [{{ ware_data.capacity }}]
+                            <ul class="list-unstyled ps-3">
+                                {% for item in ware.capacity %}
+                                <li>
+                                    {% assign ware_data_capacity = site.data.cyberware.cyberware | where: "id", item.id | first %}
+                                        <strong>{{ ware_data_capacity.name }}</strong> [-{{ ware_data_capacity.capacity }}]: 
+                                        <ul>
+                                            {% for effect in ware_data_capacity.effects %}
+                                            <li>{{ effect }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                            </li>
+                            {% endif %}
+                            <li><strong>Effets:</strong>
+                                <ul class="list-unstyled ps-3">
+                                {% for effect in ware_data.effects %}
+                                    <li>{{ effect }}</li>
+                                {% endfor %}
+                                {% for ware_data_level in ware_data.levels %}
+                                    {% if ware_data_level.level == ware.level %}
+                                        {% for effect in ware_data_level.effects %}
                                         <li>{{ effect }}</li>
                                         {% endfor %}
-                                    </ul>
+                                    {% endif %}
+                                {% endfor %}
+                                </ul>
                             </li>
-                            {% endfor %}
                         </ul>
-                        </li>
-                        {% endif %}
-                        <li><strong>Effets:</strong>
-                            <ul class="list-unstyled ps-3">
-                            {% for effect in ware_data.effects %}
-                                <li>{{ effect }}</li>
-                            {% endfor %}
-                            {% for ware_data_level in ware_data.levels %}
-                                {% if ware_data_level.level == ware.level %}
-                                    {% for effect in ware_data_level.effects %}
-                                    <li>{{ effect }}</li>
-                                    {% endfor %}
-                                {% endif %}
-                            {% endfor %}
-                            </ul>
-                        </li>
-                    </ul>
+                    </div>
                 </div>
             </div>
         </div>

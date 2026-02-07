@@ -5,7 +5,12 @@
         {% if power_data %}
         <div class="col">
             <div class="card h-100">
-                <div class="card-header bg-light d-flex justify-content-between align-items-center">
+                <div class="card-header bg-light d-flex justify-content-between align-items-center" 
+                     data-bs-toggle="collapse" 
+                     data-bs-target="#powerCollapse{{ forloop.index0 }}" 
+                     aria-expanded="false" 
+                     aria-controls="powerCollapse{{ forloop.index0 }}" 
+                     style="cursor: pointer;">
                     <strong>{{ power_data.name }}</strong>
                     <span>
                         {% if power_data.category == "adept" %}
@@ -17,60 +22,62 @@
                         {% endif %}
                     </span>
                 </div>
-                <div class="card-body">
-                    <ul class="list-unstyled mb-0">
-                        <li><strong>Category:</strong> {{ power_data.category | capitalize }}</li>
-                        <li><strong>Type:</strong> {{ power_data.type | capitalize }}</li>
-                        <li><strong>Rating:</strong> {{ power.rating }}</li>
-                        <li><strong>Magic Cost:</strong> {{ power_data.magic_cost }}</li>
-                        {% if power_data.description %}
-                        <li><strong>Description:</strong> {{ power_data.description }}</li>
-                        {% endif %}
-                        {% if power_data.sourcebook %}
-                        <li><strong>Source:</strong> {{ power_data.sourcebook }} (p. {{ power_data.page }})</li>
-                        {% endif %}
-                        <li><strong>Effects:</strong>
-                            <ul class="list-unstyled ps-3">
-                            {% for effect in power_data.effects %}
-                                <li>{{ effect }}</li>
-                            {% endfor %}
-                            {% for level in power_data.levels %}
-                                {% if level.level == power.rating %}
-                                    {% if level.reaction_bonus %}
-                                    <li>Reaction Bonus: +{{ level.reaction_bonus }}</li>
+                <div id="powerCollapse{{ forloop.index0 }}" class="collapse" data-bs-parent=".row">
+                    <div class="card-body">
+                        <ul class="list-unstyled mb-0">
+                            <li><strong>Category:</strong> {{ power_data.category | capitalize }}</li>
+                            <li><strong>Type:</strong> {{ power_data.type | capitalize }}</li>
+                            <li><strong>Rating:</strong> {{ power.rating }}</li>
+                            <li><strong>Magic Cost:</strong> {{ power_data.magic_cost }}</li>
+                            {% if power_data.description %}
+                            <li><strong>Description:</strong> {{ power_data.description }}</li>
+                            {% endif %}
+                            {% if power_data.sourcebook %}
+                            <li><strong>Source:</strong> {{ power_data.sourcebook }} (p. {{ power_data.page }})</li>
+                            {% endif %}
+                            <li><strong>Effects:</strong>
+                                <ul class="list-unstyled ps-3">
+                                {% for effect in power_data.effects %}
+                                    <li>{{ effect }}</li>
+                                {% endfor %}
+                                {% for level in power_data.levels %}
+                                    {% if level.level == power.rating %}
+                                        {% if level.reaction_bonus %}
+                                        <li>Reaction Bonus: +{{ level.reaction_bonus }}</li>
+                                        {% endif %}
+                                        {% if level.initiative_pass %}
+                                        <li>Initiative Pass: +{{ level.initiative_pass }}</li>
+                                        {% endif %}
+                                        {% if level.armor_bonus %}
+                                        <li>Armor Bonus: +{{ level.armor_bonus }}</li>
+                                        {% endif %}
+                                        {% if level.strength_bonus %}
+                                        <li>Strength Bonus: +{{ level.strength_bonus }}</li>
+                                        {% endif %}
+                                        {% if level.defense_bonus %}
+                                        <li>Defense Bonus: +{{ level.defense_bonus }}</li>
+                                        {% endif %}
+                                        {% if level.initiative_bonus %}
+                                        <li>Initiative Bonus: +{{ level.initiative_bonus }}</li>
+                                        {% endif %}
+                                        {% if level.damage_bonus %}
+                                        <li>Damage Bonus: +{{ level.damage_bonus }}</li>
+                                        {% endif %}
+                                        {% if level.resistance_bonus %}
+                                        <li>Resistance Bonus: +{{ level.resistance_bonus }}</li>
+                                        {% endif %}
+                                        {% if level.healing_bonus %}
+                                        <li>Healing Bonus: +{{ level.healing_bonus }}</li>
+                                        {% endif %}
+                                        {% if level.combat_bonus %}
+                                        <li>Combat Bonus: +{{ level.combat_bonus }}</li>
+                                        {% endif %}
                                     {% endif %}
-                                    {% if level.initiative_pass %}
-                                    <li>Initiative Pass: +{{ level.initiative_pass }}</li>
-                                    {% endif %}
-                                    {% if level.armor_bonus %}
-                                    <li>Armor Bonus: +{{ level.armor_bonus }}</li>
-                                    {% endif %}
-                                    {% if level.strength_bonus %}
-                                    <li>Strength Bonus: +{{ level.strength_bonus }}</li>
-                                    {% endif %}
-                                    {% if level.defense_bonus %}
-                                    <li>Defense Bonus: +{{ level.defense_bonus }}</li>
-                                    {% endif %}
-                                    {% if level.initiative_bonus %}
-                                    <li>Initiative Bonus: +{{ level.initiative_bonus }}</li>
-                                    {% endif %}
-                                    {% if level.damage_bonus %}
-                                    <li>Damage Bonus: +{{ level.damage_bonus }}</li>
-                                    {% endif %}
-                                    {% if level.resistance_bonus %}
-                                    <li>Resistance Bonus: +{{ level.resistance_bonus }}</li>
-                                    {% endif %}
-                                    {% if level.healing_bonus %}
-                                    <li>Healing Bonus: +{{ level.healing_bonus }}</li>
-                                    {% endif %}
-                                    {% if level.combat_bonus %}
-                                    <li>Combat Bonus: +{{ level.combat_bonus }}</li>
-                                    {% endif %}
-                                {% endif %}
-                            {% endfor %}
-                            </ul>
-                        </li>
-                    </ul>
+                                {% endfor %}
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

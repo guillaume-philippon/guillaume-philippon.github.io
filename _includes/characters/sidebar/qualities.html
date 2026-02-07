@@ -5,7 +5,12 @@
         {% if quality_data %}
         <div class="col">
             <div class="card h-100">
-                <div class="card-header bg-light d-flex justify-content-between align-items-center">
+                <div class="card-header bg-light d-flex justify-content-between align-items-center" 
+                     data-bs-toggle="collapse" 
+                     data-bs-target="#qualityCollapse{{ forloop.index0 }}" 
+                     aria-expanded="false" 
+                     aria-controls="qualityCollapse{{ forloop.index0 }}" 
+                     style="cursor: pointer;">
                     <strong>{{ quality_data.name }}</strong>
                     <span class="badge bg-{{ quality_data.category }} text-white">
                         {% if quality_data.category == "positive" %}
@@ -15,88 +20,90 @@
                         {% endif %}
                     </span>
                 </div>
-                <div class="card-body">
-                    <ul class="list-unstyled mb-0">
-                        <li><strong>Type:</strong> {{ quality_data.type | capitalize }}</li>
-                        <li><strong>BP:</strong> {{ quality_data.bp }}</li>
-                        {% if quality_data.description %}
-                        <li><strong>Description:</strong> {{ quality_data.description }}</li>
-                        {% endif %}
-                        {% if quality_data.sourcebook %}
-                        <li><strong>Source:</strong> {{ quality_data.sourcebook }} (p. {{ quality_data.page }})</li>
-                        {% endif %}
-                        <li><strong>Effects:</strong>
-                            <ul class="list-unstyled ps-3">
-                            {% for effect in quality_data.effects %}
-                                <li>{{ effect }}</li>
-                            {% endfor %}
-                            {% for level in quality_data.levels %}
-                                {% if level.level == quality.rating %}
-                                    {% if level.bp %}
-                                    <li>BP: {{ level.bp }}</li>
+                <div id="qualityCollapse{{ forloop.index0 }}" class="collapse" data-bs-parent=".row">
+                    <div class="card-body">
+                        <ul class="list-unstyled mb-0">
+                            <li><strong>Type:</strong> {{ quality_data.type | capitalize }}</li>
+                            <li><strong>BP:</strong> {{ quality_data.bp }}</li>
+                            {% if quality_data.description %}
+                            <li><strong>Description:</strong> {{ quality_data.description }}</li>
+                            {% endif %}
+                            {% if quality_data.sourcebook %}
+                            <li><strong>Source:</strong> {{ quality_data.sourcebook }} (p. {{ quality_data.page }})</li>
+                            {% endif %}
+                            <li><strong>Effects:</strong>
+                                <ul class="list-unstyled ps-3">
+                                {% for effect in quality_data.effects %}
+                                    <li>{{ effect }}</li>
+                                {% endfor %}
+                                {% for level in quality_data.levels %}
+                                    {% if level.level == quality.rating %}
+                                        {% if level.bp %}
+                                        <li>BP: {{ level.bp }}</li>
+                                        {% endif %}
+                                        {% if level.body_bonus %}
+                                        <li>Body Bonus: +{{ level.body_bonus }}</li>
+                                        {% endif %}
+                                        {% if level.attribute_bonus %}
+                                        <li>Attribute Bonus: +{{ level.attribute_bonus }}</li>
+                                        {% endif %}
+                                        {% if level.healing_bonus %}
+                                        <li>Healing Bonus: +{{ level.healing_bonus }}</li>
+                                        {% endif %}
+                                        {% if level.magic_resistance_bonus %}
+                                        <li>Magic Resistance Bonus: +{{ level.magic_resistance_bonus }}</li>
+                                        {% endif %}
+                                        {% if level.spirit_bonus %}
+                                        <li>Spirit Bonus: +{{ level.spirit_bonus }}</li>
+                                        {% endif %}
+                                        {% if level.astral_visibility_penalty %}
+                                        <li>Astral Visibility Penalty: {{ level.astral_visibility_penalty }}</li>
+                                        {% endif %}
+                                        {% if level.self_control_penalty %}
+                                        <li>Self Control Penalty: {{ level.self_control_penalty }}</li>
+                                        {% endif %}
+                                        {% if level.addiction_severity %}
+                                        <li>Addiction Severity: {{ level.addiction_severity }}</li>
+                                        {% endif %}
+                                        {% if level.combat_penalty %}
+                                        <li>Combat Penalty: {{ level.combat_penalty }}</li>
+                                        {% endif %}
+                                        {% if level.bounty %}
+                                        <li>Bounty: {{ level.bounty }}¥</li>
+                                        {% endif %}
+                                        {% if level.dependents_count %}
+                                        <li>Dependents: {{ level.dependents_count }}</li>
+                                        {% endif %}
+                                        {% if level.enemy_power %}
+                                        <li>Enemy Power: {{ level.enemy_power }}</li>
+                                        {% endif %}
+                                        {% if level.debt_amount %}
+                                        <li>Debt Amount: {{ level.debt_amount }}¥</li>
+                                        {% endif %}
+                                        {% if level.simsense_penalty %}
+                                        <li>Simsense Penalty: {{ level.simsense_penalty }}</li>
+                                        {% endif %}
+                                        {% if level.first_impression_bonus %}
+                                        <li>First Impression Bonus: +{{ level.first_impression_bonus }}</li>
+                                        {% endif %}
+                                        {% if level.languages_known %}
+                                        <li>Languages Known: {{ level.languages_known }}</li>
+                                        {% endif %}
+                                        {% if level.memory_bonus %}
+                                        <li>Memory Bonus: +{{ level.memory_bonus }}</li>
+                                        {% endif %}
+                                        {% if level.street_knowledge_bonus %}
+                                        <li>Street Knowledge Bonus: +{{ level.street_knowledge_bonus }}</li>
+                                        {% endif %}
+                                        {% if level.spirit_vulnerability %}
+                                        <li>Spirit Vulnerability: {{ level.spirit_vulnerability }}</li>
+                                        {% endif %}
                                     {% endif %}
-                                    {% if level.body_bonus %}
-                                    <li>Body Bonus: +{{ level.body_bonus }}</li>
-                                    {% endif %}
-                                    {% if level.attribute_bonus %}
-                                    <li>Attribute Bonus: +{{ level.attribute_bonus }}</li>
-                                    {% endif %}
-                                    {% if level.healing_bonus %}
-                                    <li>Healing Bonus: +{{ level.healing_bonus }}</li>
-                                    {% endif %}
-                                    {% if level.magic_resistance_bonus %}
-                                    <li>Magic Resistance Bonus: +{{ level.magic_resistance_bonus }}</li>
-                                    {% endif %}
-                                    {% if level.spirit_bonus %}
-                                    <li>Spirit Bonus: +{{ level.spirit_bonus }}</li>
-                                    {% endif %}
-                                    {% if level.astral_visibility_penalty %}
-                                    <li>Astral Visibility Penalty: {{ level.astral_visibility_penalty }}</li>
-                                    {% endif %}
-                                    {% if level.self_control_penalty %}
-                                    <li>Self Control Penalty: {{ level.self_control_penalty }}</li>
-                                    {% endif %}
-                                    {% if level.addiction_severity %}
-                                    <li>Addiction Severity: {{ level.addiction_severity }}</li>
-                                    {% endif %}
-                                    {% if level.combat_penalty %}
-                                    <li>Combat Penalty: {{ level.combat_penalty }}</li>
-                                    {% endif %}
-                                    {% if level.bounty %}
-                                    <li>Bounty: {{ level.bounty }}¥</li>
-                                    {% endif %}
-                                    {% if level.dependents_count %}
-                                    <li>Dependents: {{ level.dependents_count }}</li>
-                                    {% endif %}
-                                    {% if level.enemy_power %}
-                                    <li>Enemy Power: {{ level.enemy_power }}</li>
-                                    {% endif %}
-                                    {% if level.debt_amount %}
-                                    <li>Debt Amount: {{ level.debt_amount }}¥</li>
-                                    {% endif %}
-                                    {% if level.simsense_penalty %}
-                                    <li>Simsense Penalty: {{ level.simsense_penalty }}</li>
-                                    {% endif %}
-                                    {% if level.first_impression_bonus %}
-                                    <li>First Impression Bonus: +{{ level.first_impression_bonus }}</li>
-                                    {% endif %}
-                                    {% if level.languages_known %}
-                                    <li>Languages Known: {{ level.languages_known }}</li>
-                                    {% endif %}
-                                    {% if level.memory_bonus %}
-                                    <li>Memory Bonus: +{{ level.memory_bonus }}</li>
-                                    {% endif %}
-                                    {% if level.street_knowledge_bonus %}
-                                    <li>Street Knowledge Bonus: +{{ level.street_knowledge_bonus }}</li>
-                                    {% endif %}
-                                    {% if level.spirit_vulnerability %}
-                                    <li>Spirit Vulnerability: {{ level.spirit_vulnerability }}</li>
-                                    {% endif %}
-                                {% endif %}
-                            {% endfor %}
-                            </ul>
-                        </li>
-                    </ul>
+                                {% endfor %}
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

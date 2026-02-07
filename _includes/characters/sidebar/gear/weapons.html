@@ -5,7 +5,12 @@
         {% if weapon_data %}
         <div class="col">
             <div class="card h-100">
-                <div class="card-header bg-light d-flex justify-content-between align-items-center">
+                <div class="card-header bg-light d-flex justify-content-between align-items-center" 
+                     data-bs-toggle="collapse" 
+                     data-bs-target="#weaponCollapse{{ forloop.index0 }}" 
+                     aria-expanded="false" 
+                     aria-controls="weaponCollapse{{ forloop.index0 }}" 
+                     style="cursor: pointer;">
                     <strong>{{ weapon_data.name }}</strong>
                     <span>
                         {% if weapon_data.type contains "melee" and weapon_data.type contains "range" %}
@@ -21,35 +26,37 @@
                         {% endif %}
                     </span>
                 </div>
-                <div class="card-body">
-                    <ul class="list-unstyled mb-0">
-                        <li><strong>Price:</strong> {{ weapon_data.price }}¥</li>
-                        {% if weapon_data.availability %}
-                        <li><strong>Availability:</strong> {{ weapon_data.availability }}</li>
-                        {% endif %}
-                        <li><strong>Damage:</strong> {{ weapon_data.damage.description }}</li>
-                        {% if weapon_data.ap %}
-                        <li><strong>AP:</strong> {{ weapon_data.ap }}</li>
-                        {% endif %}
-                        {% if weapon_data.rc %}
-                        <li><strong>RC:</strong> {{ weapon_data.rc }}</li>
-                        {% endif %}
-                        {% if weapon_data.mode %}
-                        <li><strong>Mode:</strong> {{ weapon_data.mode }}</li>
-                        {% endif %}
-                        {% if weapon_data.ammo %}
-                        <li><strong>Ammo:</strong> {{ weapon_data.ammo }}</li>
-                        {% endif %}
-                        {% if weapon_data.range %}
-                        <li><strong>Range:</strong> 
-                            {% if weapon_data.range.melee %}{{ weapon_data.range.melee }}{% endif %}
-                            {% if weapon_data.range.throwing %} (Thrown: {{ weapon_data.range.throwing }}){% endif %}
-                        </li>
-                        {% endif %}
-                        {% if weapon_data.description %}
-                        <li><strong>Description:</strong> {{ weapon_data.description }}</li>
-                        {% endif %}
-                    </ul>
+                <div id="weaponCollapse{{ forloop.index0 }}" class="collapse" data-bs-parent=".row">
+                    <div class="card-body">
+                        <ul class="list-unstyled mb-0">
+                            <li><strong>Price:</strong> {{ weapon_data.price }}¥</li>
+                            {% if weapon_data.availability %}
+                            <li><strong>Availability:</strong> {{ weapon_data.availability }}</li>
+                            {% endif %}
+                            <li><strong>Damage:</strong> {{ weapon_data.damage.description }}</li>
+                            {% if weapon_data.ap %}
+                            <li><strong>AP:</strong> {{ weapon_data.ap }}</li>
+                            {% endif %}
+                            {% if weapon_data.rc %}
+                            <li><strong>RC:</strong> {{ weapon_data.rc }}</li>
+                            {% endif %}
+                            {% if weapon_data.mode %}
+                            <li><strong>Mode:</strong> {{ weapon_data.mode }}</li>
+                            {% endif %}
+                            {% if weapon_data.ammo %}
+                            <li><strong>Ammo:</strong> {{ weapon_data.ammo }}</li>
+                            {% endif %}
+                            {% if weapon_data.range %}
+                            <li><strong>Range:</strong> 
+                                {% if weapon_data.range.melee %}{{ weapon_data.range.melee }}{% endif %}
+                                {% if weapon_data.range.throwing %} (Thrown: {{ weapon_data.range.throwing }}){% endif %}
+                            </li>
+                            {% endif %}
+                            {% if weapon_data.description %}
+                            <li><strong>Description:</strong> {{ weapon_data.description }}</li>
+                            {% endif %}
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

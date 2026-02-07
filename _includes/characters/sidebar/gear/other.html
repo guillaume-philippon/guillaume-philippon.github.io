@@ -19,30 +19,37 @@
                         {% for item in category_items %}
                             <div class="col">
                                 <div class="card h-100">
-                                    <div class="card-header bg-light">
+                                    <div class="card-header bg-light" 
+                                         data-bs-toggle="collapse" 
+                                         data-bs-target="#otherGearCollapse{{ forloop.index0 }}" 
+                                         aria-expanded="false" 
+                                         aria-controls="otherGearCollapse{{ forloop.index0 }}" 
+                                         style="cursor: pointer;">
                                         <strong>{{ item.name }}</strong>
                                     </div>
-                                    <div class="card-body">
-                                        <ul class="list-unstyled mb-0">
-                                            {% if item.quantity %}
-                                            <li><strong>Quantity:</strong> {{ item.quantity }}</li>
-                                            {% endif %}
-                                            {% if item.price %}
-                                            <li><strong>Price:</strong> {{ item.price }}¥</li>
-                                            {% endif %}
-                                            {% if item.description %}
-                                            <li><strong>Description:</strong> {{ item.description }}</li>
-                                            {% endif %}
-                                            {% if item.type %}
-                                            <li><strong>Type:</strong> 
-                                                {% if item.type %}
-                                                    {% for type in item.type %}
-                                                        {{ type | capitalize }}{% unless forloop.last %}, {% endunless %}
-                                                    {% endfor %}
+                                    <div id="otherGearCollapse{{ forloop.index0 }}" class="collapse" data-bs-parent=".row">
+                                        <div class="card-body">
+                                            <ul class="list-unstyled mb-0">
+                                                {% if item.quantity %}
+                                                <li><strong>Quantity:</strong> {{ item.quantity }}</li>
                                                 {% endif %}
-                                            </li>
-                                            {% endif %}
-                                        </ul>
+                                                {% if item.price %}
+                                                <li><strong>Price:</strong> {{ item.price }}¥</li>
+                                                {% endif %}
+                                                {% if item.description %}
+                                                <li><strong>Description:</strong> {{ item.description }}</li>
+                                                {% endif %}
+                                                {% if item.type %}
+                                                <li><strong>Type:</strong> 
+                                                    {% if item.type %}
+                                                        {% for type in item.type %}
+                                                            {{ type | capitalize }}{% unless forloop.last %}, {% endunless %}
+                                                        {% endfor %}
+                                                    {% endif %}
+                                                </li>
+                                                {% endif %}
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
