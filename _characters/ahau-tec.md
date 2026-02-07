@@ -186,7 +186,7 @@ gear:
       quantity: 3
     - id: macuahuitl
       quantity: 1
-      note: "Weapon Focus 2"
+      focus: 2
     - id: knife
       quantity: 1
   armor:

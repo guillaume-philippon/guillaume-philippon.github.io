@@ -2,12 +2,12 @@
 <h3 class="mt-3">Weapons</h3>
 {% if have_melee %}
     <!-- Melee Weapon -->
-    <div class="col-12">
+    <div class="d-none d-md-block">
         <table class="table table-sm table-striped ">
         <thead>
             <tr>
             <th scope="col"></th>
-            <th class="text-center">Reach/Range</th>
+            <th class="text-center">Reach</th>
             <th class="text-center">Damage</th>
             <th class="text-center">AP</th>
             <th class="text-center">Availability</th>
@@ -20,7 +20,12 @@
                 {% if weapon_data %}
                     {% if weapon_data.type contains 'melee' or weapon_data.type contains 'throwing' %}
                     <tr>
-                        <th scope="row" data-bs-toggle="tooltip" data-bs-title="{{ weapon_data.description }}">{{ weapon_data.name }}</th>
+                        <th scope="row">{{ weapon_data.name }}
+
+                            {% if weapon.focus %}
+                                <i class="fa-solid fa-wand-sparkles"  data-bs-toggle="tooltip" data-bs-title="Focus: {{ weapon.focus }}"></i>
+                            {% endif %}
+                        </th>
                         <td class="text-center">
                             {% if weapon_data.range.melee %}{{ weapon_data.range.melee }}{% endif %}
                             {% if weapon_data.range.throwing %}/{{ weapon_data.range.throwing }}{% endif %}
@@ -29,6 +34,40 @@
                         <td class="text-center">{{ weapon_data.ap | default: "-" }}</td>
                         <td class="text-center">{{ weapon_data.availability }}</td>
                         <td class="text-end">{{ weapon_data.price }} ¥</td>
+                    </tr>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </tbody>
+        </table>
+    </div>
+    <div class="d-md-none">
+        <table class="table table-sm table-striped ">
+        <thead>
+            <tr>
+            <th scope="col"></th>
+            <th class="text-center">Reach</th>
+            <th class="text-center">Damage</th>
+            <th class="text-center">AP</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for weapon in page.gear.weapons %}
+                {% assign weapon_data = site.data.weapons.weapons | where: "id", weapon.id | first %}
+                {% if weapon_data %}
+                    {% if weapon_data.type contains 'melee' or weapon_data.type contains 'throwing' %}
+                    <tr>
+                        <th scope="row">{{ weapon_data.name }}
+                            {% if weapon.focus %}
+                                <i class="fa-solid fa-wand-sparkles"  data-bs-toggle="tooltip" data-bs-title="Focus: {{ weapon.focus }}"></i>
+                            {% endif %}
+                        </th>
+                        <td class="text-center">
+                            {% if weapon_data.range.melee %}{{ weapon_data.range.melee }}{% endif %}
+                            {% if weapon_data.range.throwing %}/{{ weapon_data.range.throwing }}{% endif %}
+                        </td>
+                        <td class="text-center"><small>{{ weapon_data.damage.description }}</small></td>
+                        <td class="text-center">{{ weapon_data.ap | default: "-" }}</td>
                     </tr>
                     {% endif %}
                 {% endif %}
@@ -59,7 +98,7 @@
                 {% if weapon_data %}
                     {% if weapon_data.type contains 'range' or weapon_data.type contains 'throwing' %}
                     <tr>
-                        <th scope="row" data-bs-title="{{ weapon_data.description }}">{{ weapon_data.name }}</th>
+                        <th scope="row">{{ weapon_data.name }}</th>
                         <td class="text-center">
                             <small>{{ weapon_data.damage.description }}</small>
                         </td>
@@ -93,9 +132,9 @@
             {% for weapon in page.gear.weapons %}
                 {% assign weapon_data = site.data.weapons.weapons | where: "id", weapon.id | first %}
                 {% if weapon_data %}
-                    {% if weapon_data.type contains 'range' %}
+                    {% if weapon_data.type contains 'range' or weapon_data.type contains 'throwing' %}
                     <tr>
-                        <th scope="row" data-bs-title="{{ weapon_data.description }}">{{ weapon_data.name }}</th>
+                        <th scope="row">{{ weapon_data.name }}</th>
                         <td class="text-center">{{ weapon_data.damage.description }}</td>
                         <td class="text-center">{{ weapon_data.ap | default: "-" }}</td>
                         <td class="text-center">{{ weapon_data.mode | default: "-" }}</td>
