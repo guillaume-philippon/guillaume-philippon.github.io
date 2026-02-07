@@ -189,117 +189,37 @@ matrix:
     price: 9500
   programs:
     common_use:
-        analyze:
-          loaded: yes
-          skill: Computer
-          rating: 6
-          price: 300
-        browser:
-          rating: 6
-          skill: Datasearch
-          price: 300
-        command:
-          rating: 6
-          skill: Varies
-          price: 300
-        edit:
-          rating: 6
-          skill: Computer
-          price: 300
-        encrypt:
-          rating: 6
-          skill: Electronic Warfare
-          price: 300
-        reality_filter:
-          rating: 6
-          skill: Electronic Warfare
-          skill: Response
-          price: 300
-        scan:
-          rating: 6
-          skill: Electronic Warfare
-          price: 300
+      - id: analyze
+        rating: 6
+      - id: browser
+        rating: 6
+      - id: command
+        rating: 6
+      - id: edit
+        rating: 6
+      - id: encrypt
+        rating: 6
+      - id: reality_filter
+        rating: 6
+      - id: scan
+        rating: 6
     hacking:
-        armor:
-          loaded: yes
-          rating: 6
-          availability: 12R
-          price: 6000
-        attack:
-          type: attack
-          skill: Cybercombat / Hacking
-          rating: 0
-          availability: 12R
-          price: 0
-        biofeedback_filter:
-          skill: None
-          rating: 0
-          availability: 12R
-          price: 0
-        black_hammer:
-          type: attack
-          skill: Cybercombat
-          rating: 6
-          availability: 12R
-          price: 6000
-        blackout:
-          type: attack
-          skill: Cybercombat
-          rating: 0
-          availability: 12R
-          price: 0
-        data_bomb:
-          skill: None
-          rating: 0
-          availability: 12R
-          price: 0
-        decrypt:
-          skill: Electronic Warfare
-          rating: 1
-          availability: 2R
-          price: 1000
-        defuse:
-          skill: Hacking
-          rating: 0
-          availability: 12R
-          price: 0
-        eccm:
-          skill: None
-          rating: 0
-          availability: 12R
-          price: 0
-        exploit:
-          skill: Hacking
-          rating: 6
-          availability: 12R
-          price: 6000
-        medic:
-          skill: Computer
-          rating: 6
-          availability: 12R
-          price: 6000
-        sniffer:
-          skill: Electronic Warfare / Hacking
-          rating: 2
-          availability: 2R
-          price: 1000
-        spoof:
-          skill: Hacking
-          rating: 0
-          availability: 12R
-          price: 0
-        stealth:
-          loaded: yes
-          skill: Hacking
-          rating: 6
-          availability: 12R
-          price: 6000
-        track:
-          loaded: yes
-          skill: Computer
-          rating: 6
-          availability: 12R
-          price: 6000
+      - id: armor
+        rating: 6
+      - id: black_hammer
+        rating: 6
+      - id: decrypt
+        rating: 1
+      - id: exploit
+        rating: 6
+      - id: medic
+        rating: 6
+      - id: sniffer
+        rating: 2
+      - id: stealth
+        rating: 6
+      - id: track
+        rating: 6
 
 # Cyberware
 cyberware:

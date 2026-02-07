@@ -27,13 +27,28 @@
                   <strong>{{ group[0] | replace: "_", " " | capitalize }}</strong>
                   <ul class="list-group list-group-flush ps-4">
                     {% for program in group[1] %}
-                      {% if program[1].rating > 0 %}
+                      {%- for programs_data in site.data.programs -%}
+                        {%- assign program_data = programs_data[1] | where_exp: "item", "item.id == program.id" | first -%}
+                        {% if program_data %}
+                          {% break %}
+                        {% endif %}
+                      {%- endfor -%}
+                      {% if program_data %}
                         <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
-                          <span>{{ program[0] | replace: "_", " " | capitalize }} 
-                            {% if program[1].skill != None %}
-                            <small>({{ program[1].skill }})</small>
+                          <span>{{ program_data.name }}
+                            {% if program_data.skills and program_data.skills.size > 0 %}
+                            <small>(
+                              {% for skill_ref in program_data.skills %}
+                                {% assign skill_parts = skill_ref | split: "." %}
+                                {% assign skill_name = skill_parts | last | replace: "_", " " | capitalize %}
+                                {{ skill_name }}{% unless forloop.last %}, {% endunless %}
+                              {% endfor %}
+                            )</small>
+                            {% endif %}
+                            {% if program.loaded %}
+                            <small>[Loaded]</small>
                             {% endif %}</span>
-                          <span><strong>{{ program[1].rating }}</strong></span>
+                          <span><strong>{{ program.rating | default: program_data.rating }}</strong></span>
                         </li>
                       {% endif %}
                     {% endfor %}
@@ -42,32 +57,37 @@
               {% endif %}
             {% endfor %}
           </ul>
-
+<!--
         <h6 class="mt-3">Actions par Programme</h3>
-          {% assign all_programs = "system,analyze,compiling,encrypt,decrypt,exploit,browse,scan,command,sniffer,disarm,edit,medic,decompiling,spoof,track,attack,black_hammer,blackout,data_bomb" | split: "," %}
-          {% for program_name in all_programs %}
+          {% assign common_use_programs = site.data.programs.common_use | map: "name" | compact %}
+          {% assign hacking_programs = site.data.programs.hacking | map: "name" | compact %}
+          {% assign other_programs = site.data.programs.other | map: "name" | compact %}
+          {% assign all_programs = common_use_programs | concat: hacking_programs | concat: other_programs %}
+          {% for program_data in all_programs %}
             {% assign character_has_program = false %}
             {% for program_group in page.matrix.programs %}
               {% assign programs = program_group[1] %}
               {% for program in programs %}
-                {% if program[0] == program_name and program[1].rating > 0 %}
+                {% if program.id == program_data.id %}
                   {% assign character_has_program = true %}
-
                 {% endif %}
               {% endfor %}
             {% endfor %}
 
-            {% if character_has_program %}
-
-            {% assign matching_actions = site.data.matrix.free_actions | concat: site.data.matrix.simple_actions | concat: site.data.matrix.complex_actions | where_exp: "action", "action.program contains program_name" %}
-            {% if matching_actions.size > 0 %}
-              <ul class="list-group list-group-flush">
-                {% for action in matching_actions %}
-                <li class="py-1 d-flex justify-content-between align-items-center">
-                  {{ action.name | replace: "_", " " }} <small>{{ program_name | replace: "_", " " | capitalize }}</small>
-                </li>
-                {% endfor %}
-              </ul>
-            {% endif %}
+            {% if character_has_program and program_data.rating > 0 %}
+              {% assign free_actions = site.data.matrix.free_actions | where: "program", program_data.id %}
+              {% assign simple_actions = site.data.matrix.simple_actions | where: "program", program_data.id %}
+              {% assign complex_actions = site.data.matrix.complex_actions | where: "program", program_data.id %}
+              {% assign matching_actions = free_actions | concat: simple_actions | concat: complex_actions %}
+              {% if matching_actions.size > 0 %}
+                <ul class="list-group list-group-flush">
+                  {% for action in matching_actions %}
+                  <li class="py-1 d-flex justify-content-between align-items-center">
+                    {{ action.name | replace: "_", " " }} <small>{{ program_data.name }}</small>
+                  </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
             {% endif %}
           {% endfor %}
+-->

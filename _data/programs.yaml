@@ -1,0 +1,266 @@
+# Programs List
+# This file contains the complete list of matrix programs available in the game
+
+common_use:
+  - id: analyze
+    name: "Analyze"
+    loaded: true
+    skills:
+      - "technical.electronics.computer"
+    price: 300
+    description: "Analyzes data and files"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 240
+
+  - id: browser
+    name: "Browser"
+    skills:
+      - "technical.electronics.data_search"
+    price: 300
+    description: "Browses the matrix and accesses data"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 240
+
+  - id: command
+    name: "Command"
+    skills:
+      - "technical.electronics.computer"
+    price: 300
+    description: "Controls devices and systems"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 240
+
+  - id: edit
+    name: "Edit"
+    skills:
+      - "technical.electronics.computer"
+    rating: 6
+    description: "Edits files and data"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 240
+
+  - id: encrypt
+    name: "Encrypt"
+    skills:
+      - "technical.electronics.electronic_warfare"
+    rating: 6
+    description: "Encrypts data and communications"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 240
+
+  - id: reality_filter
+    name: "Reality Filter"
+    skills:
+      - "technical.electronics.electronic_warfare"
+      - "technical.electronics.response"
+    price: 300
+    description: "Filters and modifies sensory input"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 240
+
+  - id: scan
+    name: "Scan"
+    skills:
+      - "technical.electronics.electronic_warfare"
+    price: 300
+    description: "Scans matrix environment and devices"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 240
+
+hacking:
+  - id: armor
+    name: "Armor"
+    loaded: true
+    availability: 12R
+    price: 6000
+    description: "Provides additional protection in the matrix"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 241
+
+  - id: attack
+    name: "Attack"
+    type: "attack"
+    skills:
+      - "technical.cracking.cybercombat"
+      - "technical.cracking.hacking"
+    availability: 12R
+    price: 0
+    description: "Base attack program"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 241
+
+  - id: biofeedback_filter
+    name: "Biofeedback Filter"
+    skills: []
+    availability: 12R
+    price: 0
+    description: "Filters biofeedback interference"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 241
+
+  - id: black_hammer
+    name: "Black Hammer"
+    type: "attack"
+    skills:
+      - "technical.cracking.cybercombat"
+    rating: 6
+    availability: 12R
+    price: 6000
+    description: "Powerful attack program"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 241
+
+  - id: blackout
+    name: "Blackout"
+    type: "attack"
+    skills:
+      - "technical.cracking.cybercombat"
+    availability: 12R
+    price: 0
+    description: "Disables target systems"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 241
+
+  - id: data_bomb
+    name: "Data Bomb"
+    skills: []
+    availability: 12R
+    price: 0
+    description: "Creates data bombs for delayed attacks"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 241
+
+  - id: decrypt
+    name: "Decrypt"
+    skills:
+      - "technical.electronics.electronic_warfare"
+    availability: 2R
+    price: 1000
+    description: "Decrypts encrypted data"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 241
+
+  - id: defuse
+    name: "Defuse"
+    skills:
+      - "technical.cracking.hacking"
+    availability: 12R
+    price: 0
+    description: "Defuses data bombs"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 241
+
+  - id: eccm
+    name: "ECCM"
+    skills: []
+    availability: 12R
+    price: 0
+    description: "Electronic Counter-Countermeasures"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 241
+
+  - id: exploit
+    name: "Exploit"
+    skills:
+      - "technical.cracking.hacking"
+    availability: 12R
+    price: 6000
+    description: "Exploits system vulnerabilities"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 241
+
+  - id: medic
+    name: "Medic"
+    skills:
+      - "technical.electronics.computer"
+    availability: 12R
+    price: 6000
+    description: "Repairs matrix damage"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 241
+
+  - id: sniffer
+    name: "Sniffer"
+    skills:
+      - "technical.electronics.electronic_warfare"
+      - "technical.cracking.hacking"
+    availability: 2R
+    price: 1000
+    description: "Detects and analyzes matrix traffic"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 241
+
+  - id: spoof
+    name: "Spoof"
+    skills:
+      - "technical.cracking.hacking"
+    availability: 12R
+    price: 0
+    description: "Spoofs identity and credentials"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 241
+
+  - id: stealth
+    name: "Stealth"
+    loaded: true
+    skills:
+      - "technical.cracking.hacking"
+    rating: 6
+    availability: 12R
+    price: 6000
+    description: "Enhances stealth in the matrix"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 241
+
+  - id: track
+    name: "Track"
+    loaded: true
+    skills:
+      - "technical.electronics.computer"
+    rating: 6
+    availability: 12R
+    price: 6000
+    description: "Tracks targets in the matrix"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 241
+
+other:
+  - id: baby_monitor
+    name: "Baby Monitor"
+    skill: "None"
+    rating: 0
+    availability: 4R
+    price: 500
+    description: "Monitors and alerts on specific matrix events"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 242
+
+  - id: config
+    name: "Config"
+    skill: "Computer"
+    rating: 0
+    availability: 2R
+    price: 100
+    description: "Configures system settings"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 242
+
+  - id: decrypt
+    name: "Decrypt"
+    skill: "Electronic Warfare"
+    rating: 0
+    availability: 2R
+    price: 100
+    description: "Basic decryption program"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 242
+
+  - id: encrypt
+    name: "Encrypt"
+    skill: "Electronic Warfare"
+    rating: 0
+    availability: 2R
+    price: 100
+    description: "Basic encryption program"
+    sourcebook: "20th Anniversary Core Rulebook"
+    page: 242
