@@ -1,0 +1,17 @@
+attributes:
+  - id: body
+    name: "Constitution"
+  - id: strength
+    name: "Force"
+  - id: agility
+    name: "Agilité"
+  - id: reaction
+    name: "Réaction"
+  - id: intuition
+    name: "Intuition"
+  - id: willpower
+    name: "Volonté"
+  - id: charisma
+    name: "Charisme"
+  - id: logic
+    name: "Logique"

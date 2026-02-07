@@ -1,279 +1,271 @@
-<!-- Variables 
-{% comment %} Caclul des valeurs totales d'attribut {% endcomment %}
-{% assign body = page.attributes.body.base | plus: page.attributes.body.bonus %}
-{% assign agility = page.attributes.agility.base | plus: page.attributes.agility.bonus %}
-{% assign reaction = page.attributes.reaction.base | plus: page.attributes.reaction.bonus %}
-{% assign strength = page.attributes.strength.base | plus: page.attributes.strength.bonus %}
-{% assign intuition = page.attributes.intuition.base | plus: page.attributes.intuition.bonus %}
-{% assign logic = page.attributes.logic.base | plus: page.attributes.logic.bonus %}
-{% assign willpower = page.attributes.willpower.base | plus: page.attributes.willpower.bonus %}
-{% assign charisma = page.attributes.charisma.base | plus: page.attributes.charisma.bonus %}
+<!-- Variables
 
-{% assign magic = page.magic.base | plus: page.magic.bonus %}
-{% assign edge = page.edge.base | plus: page.edge.bonus %}
-{% assign essence = page.essence.base | plus: page.essence.bonus %}
+{% comment -%} Caclul des valeurs totales d'attribut {%- endcomment -%}
+{%- assign body = page.attributes.body.base | plus: page.attributes.body.bonus -%}
+{%- assign agility = page.attributes.agility.base | plus: page.attributes.agility.bonus -%}
+{%- assign reaction = page.attributes.reaction.base | plus: page.attributes.reaction.bonus -%}
+{%- assign strength = page.attributes.strength.base | plus: page.attributes.strength.bonus -%}
+{%- assign intuition = page.attributes.intuition.base | plus: page.attributes.intuition.bonus -%}
+{%- assign logic = page.attributes.logic.base | plus: page.attributes.logic.bonus -%}
+{%- assign willpower = page.attributes.willpower.base | plus: page.attributes.willpower.bonus -%}
+{%- assign charisma = page.attributes.charisma.base | plus: page.attributes.charisma.bonus -%}
 
-{% comment %} Attribute only test {% endcomment %}
-{% assign composure = willpower | plus: charisma %}
-{% assign judge_intentions = intuition | plus: charisma %}
-{% assign lifting_and_carrying = strength | plus: body %}
-{% assign memory = logic | plus: willpower %}
+{%- assign magic = page.magic.base | plus: page.magic.bonus -%}
+{%- assign edge = page.edge.base | plus: page.edge.bonus -%}
+{%- assign essence = page.essence.base | plus: page.essence.bonus -%}
 
-{% comment %} Caclul des initiatives {% endcomment %}
-{% assign physical_initiative = reaction | plus: intuition  | plus: page.initiative.physic.bonus %}
-{% assign astral_initiative = intuition | times: 2  | plus: page.initiative.astral.bonus %}
-{% assign matrix_initiative = intuition | plus: page.matrix.commlink.response  | plus: page.initiative.matrix.bonus %}
+{%- comment -%} Attribute only test {%- endcomment -%}
+{%- assign composure = willpower | plus: charisma -%}
+{%- assign judge_intentions = intuition | plus: charisma -%}
+{%- assign lifting_and_carrying = strength | plus: body -%}
+{%- assign memory = logic | plus: willpower -%}
 
-{% comment %} Calcul des moniteurs de conditions {% endcomment %}
-{% assign physic_condition = body | divided_by: 2.0 | round | plus: 8 | plus: page.condition.physical.bonus %}
-{% assign mental_condition = willpower | divided_by: 2.0 | round | plus: 8 | plus: page.condition.mental.bonus %}
-{% assign matrix_condition = page.matrix.commlink.system | divided_by: 2.0 | round | plus: 8 %}
+{%- comment -%} Caclul des initiatives {%- endcomment -%}
+{%- assign physical_initiative = reaction | plus: intuition  | plus: page.initiative.physic.bonus -%}
+{%- assign astral_initiative = intuition | times: 2  | plus: page.initiative.astral.bonus -%}
+{%- assign matrix_initiative = intuition | plus: page.matrix.commlink.response  | plus: page.initiative.matrix.bonus -%}
 
-{% comment %} Calcul des couts cyberware & bioware {% endcomment %}
-{% assign cyberware_essence = 0.0 %}
-{% assign cyberware_cost = 0.0 %}
+{%- comment -%} Calcul des moniteurs de conditions {%- endcomment -%}
+{%- assign physic_condition = body | divided_by: 2.0 | round | plus: 8 | plus: page.condition.physical.bonus -%}
+{%- assign mental_condition = willpower | divided_by: 2.0 | round | plus: 8 | plus: page.condition.mental.bonus -%}
+{%- assign matrix_condition = page.matrix.commlink.system | divided_by: 2.0 | round | plus: 8 -%}
 
-cyberware:
-{% for ware_id in page.cyberware %}
-    {% assign cyberware_id = ware_id.id %}
-    {% if ware_id.grade %}
-      {% assign cyberware_id_grade = ware_id.grade %}
-    {% else %}
-      {% assign cyberware_id_grade = 'standard' %}
-    {% endif %}
-    {% assign cyberware_id_level = ware_id.level %}
+{%- comment -%} Calcul des couts cyberware & bioware {%- endcomment -%}
+{%- assign cyberware_essence = 0.0 -%}
+{%- assign cyberware_cost = 0.0 -%}
 
-    {% comment %} Recuperation des informations sur le grade {% endcomment %}
-    {% assign grade_data = site.data.cyberware.grades | where: "id", cyberware_id_grade | first %}
-    {% assign essence_multiplier = grade_data.essence_multiplier %}
-    {% assign cost_multiplier = grade_data.cost_multiplier %}
+-- cyberware --
+{% for ware_id in page.cyberware -%}
+    {%- assign cyberware_id = ware_id.id -%}
+    {%- if ware_id.grade -%}
+      {%- assign cyberware_id_grade = ware_id.grade -%}
+    {%- else -%}
+      {%- assign cyberware_id_grade = 'standard' -%}
+    {%- endif -%}
+    {%- assign cyberware_id_level = ware_id.level -%}
 
-    {% comment %} Recuperation des informations sur le cyberware {% endcomment %}
-    {% assign ware_data = site.data.cyberware.cyberware | where: "id", cyberware_id %}
+    {%- comment -%} Recuperation des informations sur le grade {%- endcomment -%}
+    {%- assign grade_data = site.data.cyberware.grades | where: "id", cyberware_id_grade | first -%}
+    {%- assign essence_multiplier = grade_data.essence_multiplier -%}
+    {%- assign cost_multiplier = grade_data.cost_multiplier -%}
 
-    {% comment %} Si le cyberware n'a pas de niveau {% endcomment %}
-    {% if ware_data[0].essence %}
-      {% assign cyberware_id_essence = ware_data[0].essence | times: essence_multiplier %}
-      {% assign cyberware_essence = cyberware_essence | plus: cyberware_id_essence %}
-      {% comment %} Calcul des bonus {% endcomment %}
-      {% if ware_data[0].bonus %}
-        {% assign cyberware_bonus_body = ware_data[0].bonus.attribute.body %}
-        {% assign cyberware_bonus_agility = ware_data[0].bonus.attribute.agility %}
-        {% assign cyberware_bonus_reaction = ware_data[0].bonus.attribute.reaction %}
-        {% assign cyberware_bonus_strength = ware_data[0].bonus.attribute.strength %}
-        {% assign cyberware_bonus_intuition = ware_data[0].bonus.attribute.intuition %}
-        {% assign cyberware_bonus_logic = ware_data[0].bonus.attribute.logic %}
-        {% assign cyberware_bonus_willpower = ware_data[0].bonus.attribute.willpower %}
-        {% assign cyberware_bonus_charisma = ware_data[0].bonus.attribute.charisma %}
-      {% endif %}
-    {% endif %}
+    {%- comment -%} Recuperation des informations sur le cyberware {%- endcomment -%}
+    {%- assign ware_data = site.data.cyberware.cyberware | where: "id", cyberware_id -%}
 
-    {% comment %} Si le cyberware a un niveau {% endcomment %}
-    {% if cyberware_id_level %}
-      {% assign level_data = ware_data[0].levels | "level", cyberware_id_level | first %}
-      {% assign cyberware_id_essence = level_data.essence | times: essence_multiplier %}
-      {% assign cyberware_essence = cyberware_essence | plus: cyberware_id_essence %}
-    {% endif %}
+    {%- comment -%} Si le cyberware n'a pas de niveau {%- endcomment -%}
+    {%- if ware_data[0].essence -%}
+      {%- assign cyberware_id_essence = ware_data[0].essence | times: essence_multiplier -%}
+      {%- assign cyberware_essence = cyberware_essence | plus: cyberware_id_essence -%}
+      {%- comment -%} Calcul des bonus {%- endcomment -%}
+    {%- endif -%}
 
-    {% comment %} Calcul des bonus du cyberware {% endcomment %}
+    {%- comment -%} Si le cyberware a un niveau {%- endcomment -%}
+    {%- if cyberware_id_level -%}
+      {%- assign level_data = ware_data[0].levels | "level", cyberware_id_level | first -%}
+      {%- assign cyberware_id_essence = level_data.essence | times: essence_multiplier -%}
+      {%- assign cyberware_essence = cyberware_essence | plus: cyberware_id_essence -%}
+    {%- endif -%}
+
+    {%- comment -%} Calcul des bonus du cyberware {%- endcomment -%}
 
   - id: {{ cyberware_id }} 
     grade: {{ cyberware_id_grade }}
     level: {{ cyberware_id_level }}
-    essence: {{ cyberware_id_essence }}
     essence_multiplier: {{ essence_multiplier }}
-    essence: {{ cyberware_essence }}
+    essence: {{ cyberware_id_essence }}
+    essence_total: {{ cyberware_essence }}
 {% endfor %}
 -- Total --
 essence: {{ cyberware_essence }}
 cost: {{ cyberware_cost }}
-{% assign essence = essence | minus: cyberware_essence %}  
 
-{% assign programs_cost = 0 %}
-{% for group in page.matrix.programs %}
-    {% for item in group[1] %}
-        {% assign programs_cost = programs_cost | plus:item[1].price %}
-    {% endfor %}
+{%- assign essence = essence | minus: cyberware_essence -%}  
+
+{%- assign programs_cost = 0 -%}
+{% for group in page.matrix.programs -%}
+    {%- for item in group[1] -%}
+        {%- assign programs_cost = programs_cost | plus:item[1].price -%}
+    {%- endfor -%}
 {% endfor %}
 
 rolls:
   initiative:
-{% assign initiative_physic = 0 %}
+{%- assign initiative_physic = 0 %}
     physic: {{ initiative_physic }}
-{% assign initiative_astral = 0 %}
+{%- assign initiative_astral = 0 %}
     astral: {{ initiative_astral }}
-{% assign initiative_matrix = 0 %}
+{%- assign initiative_matrix = 0 %}
     matrix: {{ initiative_matrix }}
 
   attack:
-{% assign range_attack = 0 %}
-{% for category in page.skills.active %}
-  {% for group in category[1] %}
-    {% for skill in group[1] %}
-      {% for category_data in site.data.skills %}
-        {% for group_data in category_data[1] %}
-          {% if group_data[0] == group[0] %}
-            {% for skill_data in group_data[1] %}
-              {% if skill_data[0] == skill[0] %}
-                {% if skill_data[1].type == 'range_attack' %}
-                  {% if skill[1] > range_attack %}
-                    {% assign range_attack = skill[1] %}
-                  {% endif %}
-                {% endif %}
-                {% break %}
-              {% endif %}
-            {% endfor %}
-            {% break %}
-          {% endif %}
-        {% endfor %}
-      {% endfor %}
-    {% endfor %}
-  {% endfor %}
-{% endfor %}
-{% assign range_attack = range_attack | plus: agility | plus: page.attack.range %}
+{%- assign range_attack = 0 -%}
+{%- for category in page.skills.active -%}
+  {%- for group in category[1] -%}
+    {%- for skill in group[1] -%}
+      {%- for category_data in site.data.skills -%}
+        {%- for group_data in category_data[1] -%}
+          {%- if group_data[0] == group[0] -%}
+            {%- for skill_data in group_data[1] -%}
+              {%- if skill_data[0] == skill[0] -%}
+                {%- if skill_data[1].type == 'range_attack' -%}
+                  {%- if skill[1] > range_attack -%}
+                    {%- assign range_attack = skill[1] -%}
+                  {%- endif -%}
+                {%- endif -%}
+                {%- break -%}
+              {%- endif -%}
+            {%- endfor -%}
+            {%- break -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endfor -%}
+    {%- endfor -%}
+  {%- endfor -%}
+{%- endfor -%}
+{%- assign range_attack = range_attack | plus: agility | plus: page.attack.range %}
     range: {{ range_attack }}
-{% assign melee_attack = 0 %}
-{% for category in page.skills.active %}
-  {% for group in category[1] %}
-    {% for skill in group[1] %}
-      {% for category_data in site.data.skills %}
-        {% for group_data in category_data[1] %}
-          {% if group_data[0] == group[0] %}
-            {% for skill_data in group_data[1] %}
-              {% if skill_data[0] == skill[0] %}
-                {% if skill_data[1].type == 'melee_attack' %}
-                  {% if skill[1] > melee_attack %}
-                    {% assign melee_attack = skill[1] %}
-                  {% endif %}
-                {% endif %}
-                {% break %}
-              {% endif %}
-            {% endfor %}
-            {% break %}
-          {% endif %}
-        {% endfor %}
-      {% endfor %}
-    {% endfor %}
-  {% endfor %}
-{% endfor %}
-{% assign melee_attack = melee_attack | plus: agility | plus: page.attack.melee %}
+{%- assign melee_attack = 0 -%}
+{%- for category in page.skills.active -%}
+  {%- for group in category[1] -%}
+    {%- for skill in group[1] -%}
+      {%- for category_data in site.data.skills -%}
+        {%- for group_data in category_data[1] -%}
+          {%- if group_data[0] == group[0] -%}
+            {%- for skill_data in group_data[1] -%}
+              {%- if skill_data[0] == skill[0] -%}
+                {%- if skill_data[1].type == 'melee_attack' -%}
+                  {%- if skill[1] > melee_attack -%}
+                    {%- assign melee_attack = skill[1] -%}
+                  {%- endif -%}
+                {%- endif -%}
+                {%- break -%}
+              {%- endif -%}
+            {%- endfor -%}
+            {%- break -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endfor -%}
+    {%- endfor -%}
+  {%- endfor -%}
+{%- endfor -%}
+{%- assign melee_attack = melee_attack | plus: agility | plus: page.attack.melee %}
     melee: {{ melee_attack }}
-{% assign matrix_attack = 0 %}
-{% for group in page.matrix.programs %}
-  {% for program in group[1] %}
-    {% if program[1].type == 'attack' %}
-      {% if program[1].rating >matrix_attack %}
-        {% assign matrix_attack =  program[1].rating %}
-      {% endif %}
-    {% endif %}
-  {% endfor %}
-{% endfor %}
-{% assign matrix_attack = matrix_attack | plus: page.skills.active.technical.cracking.cybercombat | plus: page.attack.matrix %}
+{%- assign matrix_attack = 0 -%}
+{%- for group in page.matrix.programs -%}
+  {%- for program in group[1] -%}
+    {%- if program[1].type == 'attack' -%}
+      {%- if program[1].rating >matrix_attack -%}
+        {%- assign matrix_attack =  program[1].rating -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endfor -%}
+{%- assign matrix_attack = matrix_attack | plus: page.skills.active.technical.cracking.cybercombat | plus: page.attack.matrix %}
     matrix: {{ matrix_attack }}
-{% assign astral_attack = 0 %}
-{% assign astral_attack = astral_attack | plus: page.skills.active.magical.ungrouped.astral_combat | plus: willpower | plus: page.magic.weapon_focus %}
+{%- assign astral_attack = 0 -%}
+{%- assign astral_attack = astral_attack | plus: page.skills.active.magical.ungrouped.astral_combat | plus: willpower | plus: page.magic.weapon_focus %}
     astral: {{ astral_attack }}
 
   defense:
-{% assign range_defense = reaction %}
+{%- assign range_defense = reaction %}
     range: {{ range_defense }}
-{% assign melee_defense = 0 %}
-{% for category in page.skills.active %}
-  {% for group in category[1] %}
-    {% for skill in group[1] %}
-      {% for category_data in site.data.skills %}
-        {% for group_data in category_data[1] %}
-          {% if group_data[0] == group[0] %}
-            {% for skill_data in group_data[1] %}
-              {% if skill_data[0] == skill[0] %}
-                {% if skill_data[1].type == 'melee_defense' %}
-                  {% if skill[1] > melee_defense %}
-                    {% assign melee_defense = skill[1] %}
-                  {% endif %}
-                {% endif %}
-                {% break %}
-              {% endif %}
-            {% endfor %}
-            {% break %}
-          {% endif %}
-        {% endfor %}
-      {% endfor %}
-    {% endfor %}
-  {% endfor %}
-{% endfor %}
-{% assign melee_defense = melee_defense | plus: reaction %}
+{%- assign melee_defense = 0 -%}
+{%- for category in page.skills.active -%}
+  {%- for group in category[1] -%}
+    {%- for skill in group[1] -%}
+      {%- for category_data in site.data.skills -%}
+        {%- for group_data in category_data[1] -%}
+          {%- if group_data[0] == group[0] -%}
+            {%- for skill_data in group_data[1] -%}
+              {%- if skill_data[0] == skill[0] -%}
+                {%- if skill_data[1].type == 'melee_defense' -%}
+                  {%- if skill[1] > melee_defense -%}
+                    {%- assign melee_defense = skill[1] -%}
+                  {%- endif -%}
+                {%- endif -%}
+                {%- break -%}
+              {%- endif -%}
+            {%- endfor -%}
+            {%- break -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endfor -%}
+    {%- endfor -%}
+  {%- endfor -%}
+{%- endfor -%}
+{%- assign melee_defense = melee_defense | plus: reaction %}
     melee: {{ melee_defense }}
-{% assign matrix_defense = 0%}
-{% assign matrix_defense = matrix_defense | plus: page.matrix.bonus.defense %}
-{% assign matrix_defense = matrix_defense | plus: page.matrix.commlink.response | plus: page.matrix.commlink.firewall %}
+{%- assign matrix_defense = 0%}
+{%- assign matrix_defense = matrix_defense | plus: page.matrix.bonus.defense -%}
+{%- assign matrix_defense = matrix_defense | plus: page.matrix.commlink.response | plus: page.matrix.commlink.firewall %}
     matrix: {{ matrix_defense }}
-{% assign astral_defense = 0 %}
+{%- assign astral_defense = 0 %}
     astral: {{ astral_defense }}
 
   damage:
-{% assign range_damage = 0 %}
-{% for weapon in page.gear.weapons %}
-  {% if weapon.type contains 'range' %}
-    {% assign weapon_damage = weapon.damage.base.range | plus:  weapon.damage.bonus.range %}
-    {% if weapon_damage > range_damage %}
-      {% assign range_damage = weapon_damage %}
-    {% endif %}
-  {% endif %}
-{% endfor %}
+{%- assign range_damage = 0 -%}
+{%- for weapon in page.gear.weapons -%}
+  {%- if weapon.type contains 'range' -%}
+    {%- assign weapon_damage = weapon.damage.base.range | plus:  weapon.damage.bonus.range -%}
+    {%- if weapon_damage > range_damage -%}
+      {%- assign range_damage = weapon_damage -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor %}
     range: {{ range_damage }}
-{% assign melee_damage = 0 %}
-{% for weapon in page.gear.weapons %}
-  {% assign weapon_data = site.data.weapons.weapons | where: "id", weapon.id | first %}
-  {% if weapon_data %}
-    {% if weapon_data.type contains 'melee' %}
-      {% assign weapon_damage = weapon_data.damage.base.melee | default: 0 %}
-      {% if weapon_damage > melee_damage %}
-        {% assign melee_damage = weapon_damage %}
-      {% endif %}
-    {% endif %}
-  {% endif %}
-{% endfor %}
+{%- assign melee_damage = 0 -%}
+{%- for weapon in page.gear.weapons -%}
+  {%- assign weapon_data = site.data.weapons.weapons | where: "id", weapon.id | first -%}
+  {%- if weapon_data -%}
+    {%- if weapon_data.type contains 'melee' -%}
+      {%- assign weapon_damage = weapon_data.damage.base.melee | default: 0 -%}
+      {%- if weapon_damage > melee_damage -%}
+        {%- assign melee_damage = weapon_damage -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor %}
     melee: {{ melee_damage }}
-{% assign matrix_damage = 0 %}
-{% for group in page.matrix.programs %}
-  {% for program in group[1] %}
-    {% if program[1].type == 'attack' %}
-      {% if program[1].rating >matrix_attack %}
-        {% assign matrix_attack =  program[1].rating %}
-      {% endif %}
-    {% endif %}
-  {% endfor %}
-{% endfor %}
-{% assign matrix_damage = matrix_damage | plus: page.matrix.bonus.damage %}
+{%- assign matrix_damage = 0 -%}
+{%- for group in page.matrix.programs -%}
+  {%- for program in group[1] -%}
+    {%- if program[1].type == 'attack' -%}
+      {%- if program[1].rating >matrix_attack -%}
+        {%- assign matrix_attack =  program[1].rating -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endfor -%}
+{%- assign matrix_damage = matrix_damage | plus: page.matrix.bonus.damage %}
     matrix: {{ matrix_damage }}
-{% assign astral_damage = 0 %}
+{%- assign astral_damage = 0 %}
     astral: {{ astral_damage }}
   
   armor:
     natural:
-{% assign armor_natural_balistic = body | plus: page.armor.natural.balistic %}
+{%- assign armor_natural_balistic = body | plus: page.armor.natural.balistic %}
       balistic: {{ armor_natural_balistic }}
-{% assign armor_natural_impact = body | plus: page.armor.natural.impact %}
+{%- assign armor_natural_impact = body | plus: page.armor.natural.impact %}
       impact: {{ armor_natural_impact }}
-{% assign armor_natural_astral = body | plus: willpower | plus: page.armor.natural.astral %}
+{%- assign armor_natural_astral = body | plus: willpower | plus: page.armor.natural.astral %}
       astral: {{ armor_natural_astral }}
     gear:
-{% if page.gear.armor and page.gear.armor[0] %}
-  {% assign armor_data = site.data.armor.armor | where: "id", page.gear.armor[0].id | first %}
-  {% if armor_data %}
-{% assign balistic = armor_data.balistic %}
+{%- if page.gear.armor and page.gear.armor[0] -%}
+  {%- assign armor_data = site.data.armor.armor | where: "id", page.gear.armor[0].id | first -%}
+  {%- if armor_data -%}
+{%- assign balistic = armor_data.balistic %}
       balistic: {{ balistic }}
-{% assign impact = armor_data.impact %}
+{%- assign impact = armor_data.impact %}
       impact: {{ impact }}
-  {% else %}
+  {%- else %}
       balistic: 0
       impact: 0
-  {% endif %}
-{% else %}
+  {%- endif -%}
+{%- else %}
       balistic: 0
       impact: 0
-{% endif %}
-{% assign matrix_armor = page.matrix.commlink.system | plus: page.matrix.programs.hacking.armor.rating %}
-{% assign matrix_armor = matrix_armor | plus: page.matrix.bonus.armor %}
+{%- endif -%}
+{%- assign matrix_armor = page.matrix.commlink.system | plus: page.matrix.programs.hacking.armor.rating -%}
+{%- assign matrix_armor = matrix_armor | plus: page.matrix.bonus.armor %}
       matrix: {{ matrix_armor }}
 -->

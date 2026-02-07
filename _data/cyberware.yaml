@@ -24,9 +24,6 @@ cyberware:
   - id: wired_reflex
     name: "Wired Reflex"
     type: bodyware
-    capacity: null
-    availability: 12R
-    price: 64000
     description: "Augments reaction and initiative"
     sourcebook: "20th Anniversary Core Rulebook"
     page: 320
