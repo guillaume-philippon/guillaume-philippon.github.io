@@ -901,3 +901,93 @@ em {
 .faction-icon-neutral {
   border: solid 2px #ffcc00;
 }
+
+/* Style pour l'image du personnage avec effet hover */
+.character-image-container {
+  transition: all 0.3s ease;
+  overflow: hidden;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.character-image-link {
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+
+.character-image {
+  transition: all 0.5s ease;
+  transform: scale(1);
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.character-image-link:hover .character-image {
+  transform: scale(1.05);
+  filter: brightness(1.1) contrast(1.1);
+  box-shadow: 0 15px 35px rgba(255, 204, 0, 0.4);
+}
+
+.character-image-container:hover {
+  box-shadow: 0 8px 25px rgba(255, 204, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.character-image-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 204, 0, 0.1) 0%, rgba(255, 102, 0, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.character-image-link:hover::before {
+  opacity: 1;
+}
+
+.character-image-link::after {
+  content: '👁️ View Details';
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: #ffcc00;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.character-image-link:hover::after {
+  opacity: 1;
+  bottom: 30px;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(255, 204, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 204, 0, 0);
+  }
+}
+
+.character-image-link:active::after {
+  animation: pulseGlow 0.8s ease;
+}
