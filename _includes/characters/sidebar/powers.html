@@ -11,7 +11,11 @@
                      aria-expanded="false" 
                      aria-controls="powerCollapse{{ forloop.index0 }}" 
                      style="cursor: pointer;">
-                    <strong>{{ power_data.name }}</strong>
+                    <strong>{{ power_data.name }}
+                        {% if power.level %}
+                            <i class="bi bi-{{ power.level }}-circle-fill"></i>
+                        {% endif %}
+                    </strong>
                     <span>
                         {% if power_data.category == "adept" %}
                             <i class="fa-solid fa-yin-yang" data-bs-toggle="tooltip" title="Adept Power"></i>
@@ -27,7 +31,6 @@
                         <ul class="list-unstyled mb-0">
                             <li><strong>Category:</strong> {{ power_data.category | capitalize }}</li>
                             <li><strong>Type:</strong> {{ power_data.type | capitalize }}</li>
-                            <li><strong>Rating:</strong> {{ power.rating }}</li>
                             <li><strong>Magic Cost:</strong> {{ power_data.magic_cost }}</li>
                             {% if power_data.description %}
                             <li><strong>Description:</strong> {{ power_data.description }}</li>
@@ -41,7 +44,7 @@
                                     <li>{{ effect }}</li>
                                 {% endfor %}
                                 {% for level in power_data.levels %}
-                                    {% if level.level == power.rating %}
+                                    {% if level.level == power.level %}
                                         {% if level.reaction_bonus %}
                                         <li>Reaction Bonus: +{{ level.reaction_bonus }}</li>
                                         {% endif %}

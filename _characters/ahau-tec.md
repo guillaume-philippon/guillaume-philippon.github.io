@@ -93,13 +93,12 @@ magic:
   adept:
     powers:
       - id: improved_reflexes
-        rating: 1
+        level: 1
       - id: astral_perception
-        rating: 1
       - id: mystic_armor
-        rating: 6
+        level: 6
       - id: power_throw
-        rating: 2
+        level: 2
 
 # Edge
 edge:
