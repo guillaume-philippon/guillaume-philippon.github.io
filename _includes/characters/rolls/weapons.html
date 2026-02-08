@@ -105,7 +105,22 @@
                         <td class="text-center">{{ weapon_data.ap | default: "-" }}</td>
                         <td class="text-center">{{ weapon_data.mode | default: "-" }}</td>
                         <td class="text-center">{{ weapon_data.rc | default: "-" }}</td>
-                        <td class="text-center">{{ weapon_data.ammo | default: "-" }}</td>
+                        <td class="text-center">
+                            {% if weapon_data.ammo %}
+                            <div class="ammo-counter d-inline-block" data-weapon-id="{{ page.key }}-{{ weapon.id }}-{{ forloop.index0 }}">
+                                <button class="btn btn-xs btn-outline-secondary ammo-decrement" title="Decrement ammo">-</button>
+                                <span class="current-ammo mx-1">{{ weapon_data.ammo }}</span>
+<!--
+                                <span class="text-muted">/</span>
+                                <span class="max-ammo mx-1">{{ weapon_data.ammo }}</span>
+                                -->
+                                <button class="btn btn-xs btn-outline-secondary ammo-increment" title="Increment ammo">+</button>
+                                <i class="fas fa-sync-alt ammo-reload" title="Reload"></i>
+                            </div>
+                            {% else %}
+                            - 
+                            {% endif %}
+                        </td>
                         <td class="text-center">{{ weapon_data.availability }}</td>
                         <td class="text-end">{{ weapon_data.price }} ¥</td>
                     </tr>
@@ -139,7 +154,22 @@
                         <td class="text-center">{{ weapon_data.ap | default: "-" }}</td>
                         <td class="text-center">{{ weapon_data.mode | default: "-" }}</td>
                         <td class="text-center">{{ weapon_data.rc | default: "-" }}</td>
-                        <td class="text-center">{{ weapon_data.ammo | default: "-" }}</td>
+                        <td class="text-center">
+                            {% if weapon_data.ammo %}
+                            <div class="ammo-counter d-inline-block" data-weapon-id="range-weapon-mobile-{{ forloop.index0 }}">
+                                <button class="btn btn-xs btn-outline-secondary ammo-decrement" title="Decrement ammo">-</button>
+                                <span class="current-ammo mx-1">{{ weapon_data.ammo }}</span>
+                                <!--    
+                                <span class="text-muted">/</span>
+                                <span class="max-ammo mx-1">{{ weapon_data.ammo }}</span>
+                                -->
+                                <button class="btn btn-xs btn-outline-secondary ammo-increment" title="Increment ammo">+</button>
+                                <i class="fas fa-sync-alt ammo-reload" title="Reload"></i>
+                            </div>
+                            {% else %}
+                            - 
+                            {% endif %}
+                        </td>
                     </tr>
                     {% endif %}
                 {% endif %}

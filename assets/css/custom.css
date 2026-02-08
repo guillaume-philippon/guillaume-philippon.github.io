@@ -1024,4 +1024,62 @@ em {
   animation: pulseGlow 0.8s ease;
 }
 
+/* Ammo Counter Styles */
+.ammo-counter {
+    vertical-align: middle;
+    font-size: 0.9rem;
+}
+
+.ammo-counter .btn {
+    padding: 0.1rem 0.4rem;
+    line-height: 1;
+    min-width: 24px;
+}
+
+.ammo-counter .current-ammo {
+    font-weight: bold;
+    min-width: 20px;
+    display: inline-block;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.ammo-counter .max-ammo {
+    color: #adadad;
+    font-size: 0.85rem;
+}
+
+.ammo-counter .text-danger {
+    color: #ff4444 !important;
+    font-weight: bold;
+}
+
+.ammo-counter .btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.ammo-counter .ammo-reload {
+    margin-left: 0.5rem;
+    color: #ffcc00;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ammo-counter .ammo-reload:hover {
+    color: #e6b800;
+    transform: scale(1.2) rotate(15deg);
+}
+
+.ammo-counter .ammo-reload.reloading {
+    animation: spin 0.5s ease;
+    color: #ff4444;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 
