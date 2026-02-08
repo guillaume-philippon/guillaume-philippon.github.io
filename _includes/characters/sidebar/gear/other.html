@@ -21,13 +21,13 @@
                                 <div class="card h-100">
                                     <div class="card-header bg-light" 
                                          data-bs-toggle="collapse" 
-                                         data-bs-target="#otherGearCollapse{{ forloop.index0 }}" 
+                                         data-bs-target="#otherGearCollapse-{{ gear_category[0] }}-{{ forloop.index0 }}" 
                                          aria-expanded="false" 
-                                         aria-controls="otherGearCollapse{{ forloop.index0 }}" 
+                                         aria-controls="otherGearCollapse-{{ gear_category[0] }}-{{ forloop.index0 }}" 
                                          style="cursor: pointer;">
                                         <strong>{{ item.name }}</strong>
                                     </div>
-                                    <div id="otherGearCollapse{{ forloop.index0 }}" class="collapse" data-bs-parent=".row">
+                                    <div id="otherGearCollapse-{{ gear_category[0] }}-{{ forloop.index0 }}" class="collapse" data-bs-parent=".row">
                                         <div class="card-body">
                                             <ul class="list-unstyled mb-0">
                                                 {% if item.quantity %}
