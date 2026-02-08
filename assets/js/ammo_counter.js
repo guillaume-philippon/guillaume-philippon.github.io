@@ -36,6 +36,8 @@ function extractAmmoNumber(ammoString) {
 }
 
 // Current weapon being edited
+// Note: weaponId format is "{character-key}-{weapon-id}-{index}" (e.g., "eleonor-ares_crusader-0")
+// This ensures cookies are unique per character per weapon, preventing data mixing
 let currentWeaponId = null;
 let currentAmmoSpan = null;
 let currentMaxAmmo = null;
@@ -88,6 +90,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Load saved ammo count from cookie
+        // Cookie format: "ammo_{character-key}-{weapon-id}-{index}" (e.g., "ammo_eleonor-ares_crusader-0")
+        // This ensures each character's weapon has its own unique cookie, preventing data mixing between characters
         const savedAmmo = getCookie('ammo_' + weaponId);
         if (savedAmmo) {
             // If we have a saved numeric value, use it (replacing the initial "40(c)" format)
@@ -146,6 +150,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 const maxAmmo = extractAmmoNumber(maxAmmoSpan.textContent);
                 if (!isNaN(maxAmmo)) {
                     ammoSpan.textContent = maxAmmo;
+                    // Save to cookie with unique character-weapon identifier
+                    // Cookie format: "ammo_{character-key}-{weapon-id}-{index}" (e.g., "ammo_eleonor-ares_crusader-0")
                     setCookie('ammo_' + weaponId, maxAmmo, 30);
                     ammoSpan.classList.remove('text-danger');
                     
@@ -235,6 +241,8 @@ function setupModalButtons() {
             currentAmmoSpan.textContent = newAmmoValue;
             
             // Save to cookie
+            // Cookie format: "ammo_{character-key}-{weapon-id}-{index}" (e.g., "ammo_eleonor-ares_crusader-0")
+            // This ensures each character's weapon has its own unique cookie, preventing data mixing between characters
             setCookie('ammo_' + currentWeaponId, newAmmoValue, 30);
             
             // Update low ammo warning

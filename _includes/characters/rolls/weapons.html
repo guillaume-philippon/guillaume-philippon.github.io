@@ -1,7 +1,6 @@
 <div class="col-12 mt-2">
 <h3 class="mt-3">Weapons</h3>
 {% if have_melee %}
-     Melee Weapon 
     <div class="d-none d-md-block">
         <table class="table table-sm table-striped ">
         <thead>
@@ -77,7 +76,6 @@
     </div>
 {% endif %}
 {% if have_range or have_throwing %}
-     Range Weapon 
     <div class="d-none d-md-block">
         <table class="table table-sm table-striped">
         <thead>
@@ -128,7 +126,6 @@
         </tbody>
         </table>
     </div>
-     Range Weapon (hide) 
    <div class="d-md-none">
         <table class="table table-sm table-striped">
         <thead>
@@ -157,8 +154,7 @@
                             <div class="ammo-counter d-inline-block" data-weapon-id="range-weapon-mobile-{{ forloop.index0 }}">
                                 <span class="current-ammo mx-1 ammo-modal-trigger" data-bs-toggle="modal" data-bs-target="#ammoModalTemplate" title="Click to edit ammo">{{ weapon_data.ammo }}</span>
                                     
-                                <span class="text-muted">/</span>
-                                <span class="max-ammo mx-1">{{ weapon_data.ammo }}</span>
+                                <span class="max-ammo mx-1 d-none">{{ weapon_data.ammo }}</span>
                                 
                                 <i class="fas fa-sync-alt ammo-reload" title="Reload"></i>
                             </div>
