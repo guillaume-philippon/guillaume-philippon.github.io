@@ -227,6 +227,7 @@ cyberware:
   - id: datajack
   - id: hot_sim_module
   - id: cybereyes
+    level: 2
     capacity:
       - id: smartlink
   - id: synaptic_booster

@@ -47,14 +47,16 @@
                                 {% if ware_data.essence %}
                                 {{ ware_data.essence }}
                                 {% endif %}
-                                {% for ware_data_level in ware_data.levels %}
-                                    {% if ware_data_level.level == ware.level %}
-                                        {{ ware_data_level.essence }}
-                                    {% endif %}
-                                {% endfor %}
+                                {%- assign ware_data_level = ware_data.levels | where: "level", ware.level  | first -%}
+                                {{ ware_data_level.essence }}
                             </li>
-                            {% if ware_data.capacity %}
-                            <li><strong>Capacity:</strong> [{{ ware_data.capacity }}]
+                            {% if ware_data.capacity or   ware_data_level.capacity %}
+                            <li><strong>Capacity:</strong>
+                                {% if ware_data_level.capacity %}
+                                [{{ ware_data_level.capacity }}]
+                                {% else %}
+                                [{{ ware_data.capacity }}]
+                                {% endif %}
                             <ul class="list-unstyled ps-3">
                                 {% for item in ware.capacity %}
                                 <li>

@@ -93,13 +93,26 @@ cyberware:
   - id: cybereyes
     name: "Cybereyes"
     type: eyeware
-    essence: 0.3
-    capacity: 8
-    availability: 4
-    price: 750
     description: "Cybernetic eye replacement with various enhancements"
     sourcebook: "20th Anniversary Core Rulebook"
     page: 324
+    levels:
+      - level: 1
+        essence: 0.2
+        price: 500
+        capacity: 4
+      - level: 2
+        essence: 0.3
+        price: 750
+        capacity: 8
+      - level: 3
+        essence: 0.4
+        price: 1000
+        capacity: 12
+      - level: 4
+        essence: 0.5
+        price: 1500
+        capacity: 16
     effects:
       - "Full eye replacement"
 

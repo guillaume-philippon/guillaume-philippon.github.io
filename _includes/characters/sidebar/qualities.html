@@ -11,7 +11,11 @@
                      aria-expanded="false" 
                      aria-controls="qualityCollapse{{ forloop.index0 }}" 
                      style="cursor: pointer;">
-                    <strong>{{ quality_data.name }}</strong>
+                    <strong>{{ quality_data.name }}
+                        {% if quality.level %}
+                            <i class="bi bi-{{ quality.level }}-circle-fill"></i>
+                        {% endif %}
+                    </strong>
                     <span class="badge bg-{{ quality_data.category }} text-white">
                         {% if quality_data.category == "positive" %}
                             +
@@ -37,7 +41,7 @@
                                     <li>{{ effect }}</li>
                                 {% endfor %}
                                 {% for level in quality_data.levels %}
-                                    {% if level.level == quality.rating %}
+                                    {% if level.level == quality.level %}
                                         {% if level.bp %}
                                         <li>BP: {{ level.bp }}</li>
                                         {% endif %}

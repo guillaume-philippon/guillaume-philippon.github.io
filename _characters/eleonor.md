@@ -161,6 +161,7 @@ cyberware:
   - id: cyber_arm
     grade: alpha
   - id: cybereyes
+    level: 2
     capacity:
       - id: smartlink
 
