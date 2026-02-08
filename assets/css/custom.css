@@ -1030,6 +1030,95 @@ em {
     font-size: 0.9rem;
 }
 
+/* Ammo Modal Styles - Make it stand out on dark background */
+#ammoModalTemplate .modal-content {
+    background-color: #2a2a2a !important;
+    border: 2px solid #ffcc00 !important;
+    box-shadow: 0 0 20px rgba(255, 204, 0, 0.5) !important;
+}
+
+#ammoModalTemplate .modal-header {
+    background: linear-gradient(145deg, #2d2d2d 0%, #3a3a3a 100%) !important;
+    border-bottom: 2px solid #ffcc00 !important;
+}
+
+#ammoModalTemplate .modal-body {
+    background-color: #1e1e1e !important;
+}
+
+#ammoModalTemplate .modal-footer {
+    background-color: #2a2a2a !important;
+    border-top: 1px solid #555 !important;
+}
+
+/* Make modal backdrop more visible */
+#ammoModalTemplate.modal {
+    --bs-modal-bg: rgba(0, 0, 0, 0.7) !important;
+}
+
+#ammoModalTemplate.modal.show .modal-dialog {
+    transform: translate(0, 0) !important;
+}
+
+/* Ensure modal backdrop covers entire screen and is properly styled */
+#ammoModalTemplate.modal.fade .modal-dialog {
+    transition: transform 0.3s ease-out;
+}
+
+#ammoModalTemplate.modal.show .modal-dialog {
+    transform: none;
+}
+
+/* Style for the modal buttons to match our theme */
+#ammoModalTemplate .btn-outline-secondary {
+    border-color: #555 !important;
+    color: #ffcc00 !important;
+    background-color: transparent !important;
+}
+
+#ammoModalTemplate .btn-outline-secondary:hover {
+    background-color: #ffcc00 !important;
+    color: #000 !important;
+    border-color: #ffcc00 !important;
+}
+
+#ammoModalTemplate .btn-outline-warning {
+    border-color: #ff9900 !important;
+    color: #ffcc00 !important;
+    background-color: transparent !important;
+}
+
+#ammoModalTemplate .btn-outline-warning:hover {
+    background-color: #ff9900 !important;
+    color: #000 !important;
+    border-color: #ff9900 !important;
+}
+
+#ammoModalTemplate .btn-warning {
+    background-color: #ff9900 !important;
+    border-color: #ff9900 !important;
+    color: #000 !important;
+}
+
+#ammoModalTemplate .btn-primary {
+    background-color: #ffcc00 !important;
+    border-color: #ffcc00 !important;
+    color: #000 !important;
+}
+
+/* Style for burst buttons */
+#ammoModalTemplate #shortBurstBtn {
+    font-weight: bold;
+}
+
+#ammoModalTemplate #longBurstBtn {
+    font-weight: bold;
+}
+
+#ammoModalTemplate #fullAutoBtn {
+    font-weight: bold;
+}
+
 .ammo-counter .btn {
     padding: 0.1rem 0.4rem;
     line-height: 1;
@@ -1042,6 +1131,19 @@ em {
     display: inline-block;
     text-align: center;
     font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+}
+
+.ammo-counter .current-ammo:hover {
+    background-color: rgba(255, 204, 0, 0.2);
+    transform: scale(1.05);
+}
+
+.ammo-counter .ammo-modal-trigger {
+    cursor: pointer;
 }
 
 .ammo-counter .max-ammo {
