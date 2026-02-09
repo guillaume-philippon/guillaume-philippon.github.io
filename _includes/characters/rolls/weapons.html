@@ -179,13 +179,18 @@
         <div class="mb-3 text-center">
           <h4 id="currentAmmoDisplay" style="color: #ffcc00; font-size: 2rem; margin: 0.5rem 0;">0</h4>
           <div class="d-flex justify-content-center align-items-center mb-3">
+            <!--
             <button class="btn btn-lg btn-outline-secondary" id="decrementBtn" style="min-width: 50px;">-</button>
+            -->
             <span class="mx-3" id="ammoCountDisplay" style="font-size: 1.5rem; font-weight: bold;">0</span>
+            <!--
             <button class="btn btn-lg btn-outline-secondary" id="incrementBtn" style="min-width: 50px;">+</button>
+            -->
           </div>
         </div>
         <div class="mb-3">
           <div class="d-grid gap-2 mb-3">
+            <button class="btn btn-sm btn-outline-warning" id="decrementBtn">Single Shot (-1)</button>
             <button class="btn btn-sm btn-outline-warning" id="shortBurstBtn">Short Burst (-3)</button>
             <button class="btn btn-sm btn-outline-warning" id="longBurstBtn">Long Burst (-6)</button>
             <button class="btn btn-sm btn-outline-warning" id="fullAutoBtn">Full Auto (-10)</button>
@@ -193,9 +198,11 @@
         </div>
         <div class="d-flex justify-content-between mb-3">
           <span>Max: <span id="maxAmmoDisplay" style="font-weight: bold;">0</span></span>
-          <button class="btn btn-sm btn-warning" id="setToMaxBtn">Set to Max</button>
+          <button class="btn btn-sm btn-warning" id="setToMaxBtn">                         
+            <i class="fas fa-sync-alt ammo-reload" title="Reload"></i>
+          </button>
         </div>
-        <div class="form-group">
+        <div class="form-group d-none">
           <label for="ammoCount" class="form-label">Or enter manually:</label>
           <input type="number" class="form-control" id="ammoCount" min="0">
         </div>

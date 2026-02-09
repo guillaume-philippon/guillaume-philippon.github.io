@@ -207,13 +207,14 @@ function setupModalButtons() {
     });
     
     // Increment button
+    /*
     document.getElementById('incrementBtn').addEventListener('click', function() {
         let currentValue = parseInt(document.getElementById('ammoCount').value);
         if (!isNaN(currentValue) && !isNaN(currentMaxAmmo) && currentValue < currentMaxAmmo) {
             currentValue++;
             updateModalDisplay(currentValue);
         }
-    });
+    }); */
     
     // Set to Max button
     document.getElementById('setToMaxBtn').addEventListener('click', function() {
