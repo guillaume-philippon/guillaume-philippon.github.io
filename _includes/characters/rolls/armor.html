@@ -21,7 +21,7 @@
       <strong>Matrice</strong>
       <span>
         <strong>{{ matrix_armor }}</strong>
-        <small  data-bs-toggle="tooltip"  data-bs-title="Sys.({{ page.matrix.commlink.system }}) + Arm.({{ page.matrix.programs.hacking.armor.rating }}) + Bon.({{ matrix_armor }})">(Sys. + Arm. + Bon.)</small></span>
+        <small  data-bs-toggle="tooltip"  data-bs-title="Sys.({{ page.matrix.commlink.system }}) + Arm.({{ matrix_program_armor }}) + Bon.({{ page.armor.gear.matrix }})">(Sys. + Arm. + Bon.)</small></span>
     </li>
     {% endif %}
     {% if page.magic %}
@@ -29,7 +29,7 @@
       <strong>Astral</strong>
       <span>
         <strong>{{ armor_natural_astral }}</strong>
-        <small data-bs-toggle="tooltip"  data-bs-title="Bod.({{ body }})+ Wil.({{ willpower }}) + Astral({{ page.armor.astral }})">(Bod. + Wil. + Astral)</small></span>
+        <small data-bs-toggle="tooltip"  data-bs-title="Bod.({{ body }})+ Wil.({{ willpower }}) + Astral({{ page.armor.natural.astral }})">(Bod. + Wil. + Astral)</small></span>
     </li>
     {% endif %}
   </ul>

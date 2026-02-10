@@ -153,9 +153,15 @@ rolls:
 {%- assign matrix_attack = 0 -%}
 {%- for group in page.matrix.programs -%}
   {%- for program in group[1] -%}
-    {%- if program[1].type == 'attack' -%}
-      {%- if program[1].rating >matrix_attack -%}
-        {%- assign matrix_attack =  program[1].rating -%}
+     {%- for group_data in site.data.programs -%}
+       {%- assign program_data = group_data[1] | where: "id", program.id | default: "" %}
+       {%- if program_data != "" -%}
+        {% break %}
+       {%- endif -%}
+     {%- endfor %}
+    {%- if program_data[0].type == 'attack' -%}
+      {%- if program.rating > matrix_attack -%}
+        {%- assign matrix_attack =  program.rating -%}
       {%- endif -%}
     {%- endif -%}
   {%- endfor -%}
@@ -233,7 +239,7 @@ rolls:
 {%- for group in page.matrix.programs -%}
   {%- for program in group[1] -%}
     {%- if program[1].type == 'attack' -%}
-      {%- if program[1].rating >matrix_attack -%}
+      {%- if program[1].rating > matrix_attack -%}
         {%- assign matrix_attack =  program[1].rating -%}
       {%- endif -%}
     {%- endif -%}
@@ -270,7 +276,12 @@ rolls:
       impact: 0
 {%- endif -%}
 {%- assign matrix_armor = page.matrix.commlink.system | plus: page.matrix.programs.hacking.armor.rating -%}
-{%- assign matrix_armor = matrix_armor | plus: page.matrix.bonus.armor %}
+{%- for program in page.matrix.programs.hacking -%}
+  {%- if program.id == 'armor' -%}
+    {% assign matrix_program_armor = program.rating %}
+  {%- endif -%}
+{%- endfor -%}
+{%- assign matrix_armor = matrix_armor | plus: matrix_program_armor | plus: page.armor.gear.matrix %}
       matrix: {{ matrix_armor }}
 
 {%- assign have_melee = false -%}
@@ -289,6 +300,6 @@ rolls:
             {%- assign have_throwing = true -%}
         {%- endif -%}
     {%- endif -%}
-{%- endfor -%}
+{%- endfor %}
 
 -->

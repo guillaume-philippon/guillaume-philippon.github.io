@@ -77,11 +77,7 @@ armor:
   gear:
     impact: 6
     balistic: 8
-
-# Armure
-armor:
-  balistic: 6
-  impact: 6
+    matrix: 2
 
 # Blessures
 wound: 
@@ -173,12 +169,6 @@ factions:
 
 # Matrice
 matrix:
-  bonus:
-    attack: 2
-    defense: 2
-    damage: 2
-    armor: 2
-    skills: 2
   commlink:
     name: Fairlight Caliban
     response: 4

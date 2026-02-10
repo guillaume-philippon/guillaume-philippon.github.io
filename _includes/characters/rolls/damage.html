@@ -2,24 +2,24 @@
 <ul class="list-group list-group-flush">
   <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
     <strong>Mélée</strong>
-    <span><strong>{{ strength | divided_by: 2.0 | round | plus: melee_damage }}</strong> <small>(Str. /2 + Wea.)</small></span>
+    <span><strong>{{ strength | divided_by: 2.0 | round | plus: melee_damage }}</strong> <small data-bs-toggle="tooltip" data-bs-title="Str.({{ strength }}) /2 + Wea.({{ melee_damage }})">(Str. /2 + Wea.)</small></span>
   </li>
   {% if have_throwing %}
   <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
     <strong>Jet</strong>
-    <span><strong>{{ strength | divided_by: 2.0 | round | plus: range_damage }}</strong> <small>(Str. /2 + Wea.)</small></span>
+    <span><strong>{{ strength | divided_by: 2.0 | round | plus: range_damage }}</strong> <small data-bs-toggle="tooltip" data-bs-title="Str.({{ strength }}) /2 + Wea.({{ range_damage }})">(Str. /2 + Wea.)</small></span>
   </li>
   {% endif %}
   {% if page.matrix and matrix_attack > 0 %}
   <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
     <strong>Matrice</strong>
-    <span><strong>{{ matrix_attack }}</strong> <small>(Prog. + Net hits)</small></span>
+    <span><strong>{{ matrix_attack }}</strong> <small data-bs-toggle="tooltip" data-bs-title="Prog.({{ matrix_attack | minus: page.skills.active.technical.cracking.cybercombat | minus: page.attack.matrix }}) + Net hits">(Prog. + Net hits)</small></span>
   </li>
   {% endif %}
   {% if page.magic.magician %}
   <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
     <strong>Astral</strong>
-    <span><strong>{{ charisma | divided_by: 2.0 | round }}</strong> <small>(Char. /2)</small></span>
+    <span><strong>{{ charisma | divided_by: 2.0 | round }}</strong> <small data-bs-toggle="tooltip" data-bs-title="Char.({{ charisma }}) /2">(Char. /2)</small></span>
   </li>
   {% endif %}
 </ul>

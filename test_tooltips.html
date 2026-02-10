@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Tooltips</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Test des Tooltips</h1>
+        
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <h3>Attaques</h3>
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <strong>Distance</strong>
+                        <span><strong>12</strong>
+                            <small data-bs-toggle="tooltip" data-bs-title="Agi.(6) + Ski.(4) + Bon.(2)">(Agi. + Ski. + Bon.)</small></span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <strong>Mélée</strong>
+                        <span><strong>10</strong>
+                            <small data-bs-toggle="tooltip" data-bs-title="Agi.(5) + Ski.(3) + Bon.(2)">(Agi. + Ski. + Bon.)</small></span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="col-md-6">
+                <h3>Défenses</h3>
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <strong>Distance</strong>
+                        <span><strong>8</strong>
+                            <small data-bs-toggle="tooltip" data-bs-title="Réa.(8)">(Réa.)</small></span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <strong>Mélée</strong>
+                        <span><strong>12</strong>
+                            <small data-bs-toggle="tooltip" data-bs-title="Réa.(8) + Ski.(4)">(Réa. + Ski.)</small></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <h3>Dégâts</h3>
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <strong>Mélée</strong>
+                        <span><strong>8</strong>
+                            <small data-bs-toggle="tooltip" data-bs-title="Str.(6) /2 + Wea.(5)">(Str. /2 + Wea.)</small></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Initialiser les tooltips
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script>
+</body>
+</html>

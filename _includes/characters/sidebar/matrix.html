@@ -45,10 +45,11 @@
                               {% endfor %}
                             )</small>
                             {% endif %}
-                            {% if program.loaded %}
-                            <small>[Loaded]</small>
-                            {% endif %}</span>
-                          <span><strong>{{ program.rating | default: program_data.rating }}</strong></span>
+                          <span><strong>{{ program.rating | default: program_data.rating }}</strong> 
+                            {% if program_data.skills and program_data.skills.size > 0 %}
+                            <em><small>({{ program.rating | default: program_data.rating | plus: page.skills.active.technical.electronics.software }})</small></em>
+                            {% endif %}
+                          </span>
                         </li>
                       {% endif %}
                     {% endfor %}
