@@ -121,8 +121,6 @@ skills:
 
 # Qualités
 qualities:
-  - name: toughness
-  - name: combat_paranoia
 
 # Contacts
 contacts:
@@ -192,4 +190,4 @@ Bien qu’elle ait quitté les combats organisés après le désastre sur le bat
 
 Ces relations sont sa seule forme de réseau social. Elle ne leur parle pas de ses traumatismes, mais ils savent. Ils ont vu ce qu’elle est devenue après cette nuit, et ils respectent ses distances comme ses silences. Quand une mission exige des renforts, ce sont eux qu’elle contacte—parce qu’elle leur fait confiance, malgré tout. Ils sont les seuls à connaître ses limites réelles, et les seuls à ne pas les exploiter.
 
-Son style de combat reflète encore cette dualité : une combinaison de techniques d’*Urban Brawl* (coups bas, utilisation de l’environnement, feintes) et de précision chirurgicale acquise en tant que street samouraï. Elle évite les grands discours et les stratégies complexes. Pour Eleonor, une mission se résume à trois principes : entrer, frapper, sortir. Et survivre.
+Son style de combat reflète encore cette dualité : une combinaison de techniques d’*Urban Brawl* (coups bas, utilisation de l’environnement, feintes) et de précision chirurgicale acquise en tant que street samouraï. Elle évite les grands discours et les stratégies complexes. Pour *Eleonor*, une mission se résume à trois principes : entrer, frapper, sortir. Et survivre.
