@@ -13,7 +13,7 @@
   {% if page.matrix and matrix_attack > 0 %}
   <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
     <strong>Matrice</strong>
-    <span><strong>{{ matrix_damage }}</strong> <small data-bs-toggle="tooltip" data-bs-title="Prog.({{ matrix_damage | minus: page.damage.matrix }}) + Bon. ({{ page.damage.matrix }}) + Net hits">(Prog. + Net hits)</small></span>
+    <span><strong>{{ matrix_damage }}</strong> <small data-bs-toggle="tooltip" data-bs-title="Soft.({{ matrix_damage | minus: page.damage.matrix }}) + Bon. ({{ page.damage.matrix }}) + Net hits">(Soft. + Net hits)</small></span>
   </li>
   {% endif %}
   {% if page.magic.magician %}
