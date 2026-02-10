@@ -202,7 +202,7 @@ rolls:
 {%- assign melee_defense = melee_defense | plus: reaction %}
     melee: {{ melee_defense }}
 {%- assign matrix_defense = 0%}
-{%- assign matrix_defense = matrix_defense | plus: page.matrix.bonus.defense -%}
+{%- assign matrix_defense = matrix_defense | plus: page.defense.matrix -%}
 {%- assign matrix_defense = matrix_defense | plus: page.matrix.commlink.response | plus: page.matrix.commlink.firewall %}
     matrix: {{ matrix_defense }}
 {%- assign astral_defense = 0 %}
@@ -236,16 +236,20 @@ rolls:
 {%- assign melee_damage = melee_damage | plus: page.damage.melee %}
     melee: {{ melee_damage }}
 {%- assign matrix_damage = 0 -%}
+{%- assign matrix_program_damage = 0 -%}
 {%- for group in page.matrix.programs -%}
   {%- for program in group[1] -%}
-    {%- if program[1].type == 'attack' -%}
-      {%- if program[1].rating > matrix_attack -%}
-        {%- assign matrix_attack =  program[1].rating -%}
+    {%- for group_data in site.data.programs -%}
+      {%- assign program_data = group_data[1] | where: "id", program.id | first %}
+      {%- if program_data.type == 'attack' -%}
+        {%- if program.rating > matrix_program_damage -%}
+          {%- assign matrix_program_damage =  program.rating -%}
+        {%- endif -%}
       {%- endif -%}
-    {%- endif -%}
+    {%- endfor -%}
   {%- endfor -%}
 {%- endfor -%}
-{%- assign matrix_damage = matrix_damage | plus: page.matrix.bonus.damage %}
+{%- assign matrix_damage = matrix_program_damage | plus: page.damage.matrix %}
     matrix: {{ matrix_damage }}
 {%- assign astral_damage = 0 %}
 {%- assign astral_damage = astral_damage | plus: page.damage.astral %}

@@ -64,16 +64,14 @@ attack:
 
 # Bonus def
 defense:
+  matrix: 2
 
 # Bonus damage
 damage:
+  matrix: 2
 
 # Armure
 armor:
-  natural:
-    impact: 6
-    balistic: 6
-    astral: 6
   gear:
     impact: 6
     balistic: 8

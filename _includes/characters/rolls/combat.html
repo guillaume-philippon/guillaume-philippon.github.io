@@ -25,7 +25,7 @@
             <ul class="list-unstyled col-12">
               <li class="py-1 d-flex justify-content-between align-items-center">
                 <strong>Matrice</strong>
-                <span><strong> {{ matrix_initiative | plus: page.initiative.matrix.bonus  }}</strong>
+                <span><strong> {{ matrix_initiative }}</strong>
                    <small data-bs-toggle="tooltip" data-bs-title="Rép.({{ page.matrix.commlink.response }}) + Int.({{ intuition }}) + Bon.({{ page.initiative.matrix.bonus }})">(Rép. + Int. + Bon.)</small></span>
               </li>
               <li class="py-1 d-flex justify-content-between align-items-center">
@@ -108,7 +108,7 @@
             <strong>Matrice</strong>
             <span>
               <strong>{{ matrix_defense }}</strong>
-              <small data-bs-toggle="tooltip" data-bs-title="Rép.({{ page.matrix.commlink.response }}) + Fir.({{ page.matrix.commlink.firewall }}) + Bon.({{ page.attack.matrix }})">(Rép. + Fir. + Bon.)</small>
+              <small data-bs-toggle="tooltip" data-bs-title="Rép.({{ page.matrix.commlink.response }}) + Fir.({{ page.matrix.commlink.firewall }}) + Bon.({{ page.defense.matrix }})">(Rép. + Fir. + Bon.)</small>
             </span>
           </li>
           {% endif %}
