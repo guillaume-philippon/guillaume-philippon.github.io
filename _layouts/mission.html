@@ -69,8 +69,8 @@ layout: default
                   <div class="justify-content-between d-flex pt-2">
                     <div class="position-absolute bottom-0 p-2">
                       <span class="badge bg-warning text-dark mt-3">Karma: {{ runner.karma }}</span>
-                      {% if runner.bonus %}
-                        <span class="badge bg-success mt-3">Bonus: +{{ runner.bonus }}</span>
+                      {% if runner.nuyens and runner.nuyens > 0 %}
+                        <span class="badge bg-success mt-3">{{ runner.nuyens }} ¥</span>
                       {% endif %}
                     </div>
                   </div>

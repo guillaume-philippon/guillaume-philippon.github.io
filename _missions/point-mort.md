@@ -11,19 +11,19 @@ estimated_time: "2-3 heures"
 runners:
   - name: ahau-tec
     karma: 5
-    bonus: 0
+    nuyens: 0
     present: true
   - name: ghost
     karma: 5
-    bonus: 0
+    nuyens: 0
     present: true
   - name: maya
     karma: 5
-    bonus: 0
+    nuyens: 0
     present: true
   - name: patch
     karma: 5
-    bonus: 0
+    nuyens: 0
     present: true
 contacts:
   - contact: calderone
