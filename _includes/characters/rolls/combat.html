@@ -12,7 +12,15 @@
               <li class="py-1 d-flex justify-content-between align-items-center">
                 <strong>Physique</strong>
                 <span><strong>{{ physical_initiative }}</strong> 
-                  <small data-bs-toggle="tooltip" data-bs-title="Réa.({{ reaction }}) + Int.({{ intuition }}) + Bon.({{ page.initiative.physic.bonus }})">(Réa. + Int. + Bon.)</small></span>
+                  <small data-bs-toggle="tooltip" data-bs-title="Réa.({{ reaction }}) + Int.({{ intuition }})
+                  {% if page.initiative.physic.bonus %}
+                  + Bon.({{ page.initiative.physic.bonus }})
+                  {% endif %}
+                  ">(Réa. + Int.
+                  {% if page.initiative.physic.bonus %}
+                  + Bon.
+                  {% endif %}
+                  )</small></span>
               </li>
               <li class="py-1 d-flex justify-content-between align-items-center">
                 <strong></strong>
@@ -26,7 +34,15 @@
               <li class="py-1 d-flex justify-content-between align-items-center">
                 <strong>Matrice</strong>
                 <span><strong> {{ matrix_initiative }}</strong>
-                   <small data-bs-toggle="tooltip" data-bs-title="Rép.({{ page.matrix.commlink.response }}) + Int.({{ intuition }}) + Bon.({{ page.initiative.matrix.bonus }})">(Rép. + Int. + Bon.)</small></span>
+                   <small data-bs-toggle="tooltip" data-bs-title="Rép.({{ page.matrix.commlink.response }}) + Int.({{ intuition }})
+                    {% if page.initiative.matrix.bonus %}
+                    + Bon.({{ page.initiative.matrix.bonus }})
+                    {% endif %}
+                    ">(Rép. + Int.
+                    {% if page.initiative.matrix.bonus %}
+                    + Bon.
+                    {% endif %}
+                    )</small></span>
               </li>
               <li class="py-1 d-flex justify-content-between align-items-center">
                 <strong></strong>
@@ -62,18 +78,42 @@
           <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
             <strong>Distance</strong>
             <span><strong>{{ range_attack }}</strong>
-               <small data-bs-toggle="tooltip" data-bs-title="Agi.({{ agility }}) + Ski.({{ range_attack | minus: agility | minus: page.attack.range }}) + Bon.({{ page.attack.range | default: 0 }})">(Agi. + Ski. + Bon.)</small></span>
+               <small data-bs-toggle="tooltip" data-bs-title="Agi.({{ agility }}) + Ski.({{ range_attack | minus: agility | minus: page.attack.range }})
+               {% if page.attack.range %}
+               + Bon.({{ page.attack.range | default: 0 }})
+               {% endif %}
+               ">(Agi. + Ski.
+               {% if page.attack.range %}
+               + Bon.
+               {% endif %}
+               )</small></span>
           </li>
           <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
             <strong>Mélée</strong>
             <span><strong>{{ melee_attack }}</strong>
-               <small data-bs-toggle="tooltip" data-bs-title="Agi.({{ agility }}) + Ski.({{ melee_attack | minus: agility | minus: page.attack.melee }}) + Bon.({{ page.attack.melee | default: 0 }})">(Agi. + Ski. + Bon.)</small></span>
+               <small data-bs-toggle="tooltip" data-bs-title="Agi.({{ agility }}) + Ski.({{ melee_attack | minus: agility | minus: page.attack.melee }})
+                {% if page.attack.melee %}
+                + Bon.({{ page.attack.melee | default: 0 }})
+                {% endif %}
+               ">(Agi. + Ski.
+                {% if page.attack.melee %}
+               + Bon.
+                {% endif %}
+               )</small></span>
           </li>
           {% if page.matrix and matrix_attack > 0 %}
           <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
             <strong>Matrice</strong>
             <span><strong>{{ matrix_attack }}</strong>
-               <small data-bs-toggle="tooltip" data-bs-title="Cybercombat({{ page.skills.active.technical.cracking.cybercombat }}) + Soft.({{ matrix_attack | minus: page.skills.active.technical.cracking.cybercombat | minus: page.attack.matrix }}) + Bon.({{ page.attack.matrix }})">(Cybercombat + Soft. + Bon.)</small></span>
+               <small data-bs-toggle="tooltip" data-bs-title="Cybercombat({{ page.skills.active.technical.cracking.cybercombat }}) + Soft.({{ matrix_attack | minus: page.skills.active.technical.cracking.cybercombat | minus: page.attack.matrix }})
+               {% if page.attack.matrix %}
+               + Bon.({{ page.attack.matrix }})
+               {% endif %}
+               ">(Cybercombat + Soft.
+               {% if page.attack.matrix %}
+               + Bon.
+               {% endif %}
+               )</small></span>
           </li>
           {% endif %}
           {% if page.magic %}
@@ -81,7 +121,15 @@
             <strong>Astral</strong>
             <span>
               <strong>{{ astral_attack }}</strong>
-               <small data-bs-toggle="tooltip" data-bs-title="Astral Com.({{ page.skills.active.magical.ungrouped.astral_combat }}) + Wil.({{ willpower }}) + Foc.({{ page.magic.weapon_focus }})">(Astral Com. + Wil. + Foc.)</small></span>
+               <small data-bs-toggle="tooltip" data-bs-title="Astral Com.({{ page.skills.active.magical.ungrouped.astral_combat }}) + Wil.({{ willpower }})
+               {% if page.magic.weapon_focus %}
+               + Foc.({{ page.magic.weapon_focus }})
+               {% endif %}
+               ">(Astral Com. + Wil.
+               {% if page.magic.weapon_focus %}
+               + Foc.
+               {% endif %}
+               )</small></span>
           </li>
           {% endif %}
         </ul>
@@ -94,13 +142,13 @@
         <ul class="list-group list-group-flush">
           <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
             <strong>Distance</strong>
-            <span><strong>{{ range_defense }}</strong> <small data-bs-toggle="tooltip" data-bs-title="Réa.({{ reaction }})">(Réa.)</small></span>
+            <span><strong>{{ range_defense }} <em><small>({{ melee_defense }})</small></em></strong> <small data-bs-toggle="tooltip" data-bs-title="Réa.({{ reaction }})">(Réa.) <em>(full)</em></small></span>
           </li>
           <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
             <strong>Mélée</strong>
             <span>
-              <strong>{{ melee_defense }}</strong>
-               <small data-bs-toggle="tooltip" data-bs-title="Réa.({{ reaction }}) + Ski.({{ melee_defense | minus: reaction }})">(Réa. + Ski.)</small>
+              <strong>{{ melee_defense }} <em><small>({{ melee_defense | times: 2 | minus: reaction }})</small></em></strong>
+               <small data-bs-toggle="tooltip" data-bs-title="Réa.({{ reaction }}) + Ski.({{ melee_defense | minus: reaction }})">(Réa. + Ski.) <em><small>(full)</small></em></small>
             </span>
           </li>
           {% if page.matrix %}
@@ -108,7 +156,15 @@
             <strong>Matrice</strong>
             <span>
               <strong>{{ matrix_defense }}</strong>
-              <small data-bs-toggle="tooltip" data-bs-title="Rép.({{ page.matrix.commlink.response }}) + Fir.({{ page.matrix.commlink.firewall }}) + Bon.({{ page.defense.matrix }})">(Rép. + Fir. + Bon.)</small>
+              <small data-bs-toggle="tooltip" data-bs-title="Rép.({{ page.matrix.commlink.response }}) + Fir.({{ page.matrix.commlink.firewall }})
+              {% if page.defense.matrix %}
+              + Bon.({{ page.defense.matrix }})
+              {% endif %}
+              ">(Rép. + Firm.
+              {% if page.defense.matrix %}
+              + Bon.
+              {% endif %}
+              )</small>
             </span>
           </li>
           {% endif %}

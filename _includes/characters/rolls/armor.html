@@ -5,7 +5,16 @@
       <span>
         <strong>{{ armor_natural_balistic }}</strong> 
         <small><em>({{ armor_natural_balistic | plus: balistic }})</em></small> 
-        <small data-bs-toggle="tooltip" data-bs-title="Bod.({{ body }}) + Nat.({{ page.armor.balistic }}) + Bal.({{ balistic }})">Bod. + Nat. (+ Balistic)</small>
+        <small data-bs-toggle="tooltip" data-bs-title="Bod.({{ body }})
+          {% if page.armor.natural.balistic %}
+         + Nat.({{ page.armor.natural.balistic }})
+          {% endif %}
+          + Bal.({{ balistic }})">
+          Bod.
+          {% if page.armor.natural.balistic %}
+          + Nat. 
+          {% endif %}
+          (+ Balistic)</small>
       </span>
     </li>
     <li class="list-group-item py-1 d-flex justify-content-between align-items-center">
@@ -13,7 +22,16 @@
       <span>
         <strong>{{ armor_natural_impact }}</strong>
         <small><em>({{ armor_natural_impact | plus: impact }})</em></small> 
-        <small data-bs-toggle="tooltip"  data-bs-title="Bod.({{ body }}) + Nat.({{ page.armor.impact }}) + Bal.({{ impact }})">Bod. + Nat. (+ Impact)</small>
+        <small data-bs-toggle="tooltip"  data-bs-title="Bod.({{ body }})
+          {% if page.armor.natural.impact %}
+         + Nat.({{ page.armor.impact }})
+          {% endif %}
+         + Bal.({{ impact }})">
+          Bod.
+          {% if page.armor.natural.impact %}
+          + Nat.
+          {% endif %}
+          (+ Impact)</small>
       </span>
     </li>
     {% if page.matrix %}
@@ -21,7 +39,21 @@
       <strong>Matrice</strong>
       <span>
         <strong>{{ matrix_armor }}</strong>
-        <small  data-bs-toggle="tooltip"  data-bs-title="Sys.({{ page.matrix.commlink.system }}) + Arm.({{ matrix_program_armor }}) + Bon.({{ page.armor.gear.matrix }})">(Sys. + Arm. + Bon.)</small></span>
+        <small  data-bs-toggle="tooltip"  data-bs-title="Sys.({{ page.matrix.commlink.system }})
+        {% if matrix_program_armor %}
+        + Arm.({{ matrix_program_armor }})
+        {% endif %}
+        {% if page.armor.gear.matrix %}
+        + Bon.({{ page.armor.gear.matrix }})
+        {% endif %}
+        ">(Sys.
+        {% if matrix_program_armor %}
+        + Arm.
+        {% endif %}
+        {% if page.armor.gear.matrix %}
+        + Bon.
+        {% endif %}
+        )</small></span>
     </li>
     {% endif %}
     {% if page.magic %}
@@ -29,7 +61,15 @@
       <strong>Astral</strong>
       <span>
         <strong>{{ armor_natural_astral }}</strong>
-        <small data-bs-toggle="tooltip"  data-bs-title="Bod.({{ body }})+ Wil.({{ willpower }}) + Astral({{ page.armor.natural.astral }})">(Bod. + Wil. + Astral)</small></span>
+        <small data-bs-toggle="tooltip"  data-bs-title="Bod.({{ body }})+ Wil.({{ willpower }})
+        {% if page.armor.natural.astral %}
+        + Astral({{ page.armor.natural.astral }}
+        {% endif %}
+        )">(Bod. + Wil.
+        {% if page.armor.natural.astral %}
+        + Astral
+        {% endif %}
+        )</small></span>
     </li>
     {% endif %}
   </ul>
