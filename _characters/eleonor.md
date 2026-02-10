@@ -6,7 +6,8 @@ infos:
   picture: /assets/images/Eleonor.jpg
   money: 0
   karma: 0/0
-  full_name: Eleonor O'Neil
+  firstname: Eleonor
+  lastname: O'Neil
   race: Elfe
   lifestyle: street
   # Rôle du personnage

@@ -11,7 +11,9 @@ infos:
   karma: 5/5
   street_cred: 0
   notoriety: 0
-  full_name: Ahau-Tec
+  firstname: Ahau-Tec
+  nickname: l'Indien
+
   race: Ork
   lifestyle: street
   # Rôle du personnage
@@ -191,7 +193,7 @@ gear:
   armor:
     - id: armor_jacket
 ---
-*Ahau-Tec* est un membre actif de la tribu **Zotz-Yax**, basée près de **Mérida** dans la péninsule du **Yucatán**. Contrairement aux tribus isolées, les **Zotz-Yax** ont établi des accords pragmatiques avec certaines mégacorporations, dont DracoTech, pour protéger leurs artefacts sacrés et leurs territoires.
+*Ahau-Tec* est un membre actif de la tribu **Zotz-Yax**, basée près de **Mérida** dans la péninsule du **Yucatán**. Contrairement aux tribus isolées, les **Zotz-Yax** ont établi des accords pragmatiques avec certaines mégacorporations, dont **DracoTech**, pour protéger leurs artefacts sacrés et leurs territoires.
 
 Initié par le rituel du **Xibalba-Kex**, *Ahau-Tec* est un guerrier marqué par les esprits des grottes sacrées, portant des tatouages magiques et une connexion profonde avec les forces du **Xibalba**. Il a été remarqué par **DracoTech** après un combat contre des *blood mages* menaçant les intérêts de la corporation. Son habileté au combat et sa connaissance des rituels mayas ont attiré l’attention de **DracoTech**, qui l’a recruté comme agent de sécurité spécialisé. Il sert désormais de pont entre la tribu **Zotz-Yax** et la corporation, tout en restant un membre actif de sa communauté. Son rôle est de protéger les actifs de **DracoTech** dans les zones à risque magique et de négocier des accords respectueux des traditions **Zotz-Yax**.
 
