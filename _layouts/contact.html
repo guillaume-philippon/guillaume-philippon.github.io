@@ -54,10 +54,6 @@ layout: default
         
         <!-- Colonne de droite : Description et détails -->
         <div class="col-md-8">
-          <div class="mb-4">
-            <h4>Description</h4>
-            {{ content }}
-          </div>
           
           {% assign contact_missions = site.missions | where_exp: "mission", "mission.contacts" %}
 
@@ -141,6 +137,11 @@ layout: default
           {% endif %}
         </div>
       </div>
+      <div class="mb-4">
+        <h4>Description</h4>
+        {{ content }}
+      </div>
+
     </div>
     
     <!-- Bouton de retour -->
@@ -149,6 +150,7 @@ layout: default
     </div>
   </div>
 </div>
+
 
 <style>
   .contact-card:hover {

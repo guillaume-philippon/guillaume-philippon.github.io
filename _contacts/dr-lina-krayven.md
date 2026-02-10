@@ -27,4 +27,10 @@ factions:
     - dracotech
 ---
 
-*Dr. Lina Krayven* est une médecin affiliée à **DracoTech**, spécialisée dans les soins aux employés de la megacorp dans les zones à haut risque. Elle a une solide formation médicale et une bonne connaissance des procédures de **DracoTech**.
+*Dr. Lina Krayven*, médecin spécialiste des environnements à haut risque pour **DracoTech**, a été affectée en 2071 à un laboratoire de recherche près de **Mérida**. Ce laboratoire, dédié aux contre-mesures médicales en zones hostiles, était protégé par *Ahau-Tec*.
+
+Lors d’une intrusion de *blood mages* affilié à **Aztechnology**, *Krayven* et *Ahau-Tec* ont collaboré pour neutraliser la menace. *Ahau-Tec* a utilisé ses compétences en sécurité et ses connaissances des rituels mayas pour contrer les assaillants. *Krayven* a géré les aspects médicaux et logistiques, assurant la sécurité du personnel et des données.
+
+Leur collaboration a renforcé leur relation professionnelle. *Krayven* a respecté l’expertise d’*Ahau-Tec* en sécurité et traditions **Zotz-Yax**, tandis qu’il a reconnu ses compétences médicales et son professionnalisme. Leur partenariat se poursuit dans le respect des protocoles de **DracoTech**, combinant sécurité corporative et respect des valeurs tribales.
+
+*Krayven* est désormais une alliée de confiance pour *Ahau-Tec*, travaillant ensemble pour protéger les intérêts de **DracoTech** et des **Zotz-Yax**, tout en maintenant un équilibre entre les exigences corporatistes et les traditions locales.

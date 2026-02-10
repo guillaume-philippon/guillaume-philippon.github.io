@@ -12,7 +12,7 @@
             </div>
             <div class="modal-body">
               <div class="row">
-                <div class="col-md-4 text-center">
+                <div class="col-md-4">
                   {% if contact.image %}
                     <img src="{{ contact.image }}" alt="{{ contact.title }}" class="img-fluid rounded mb-3" style="max-height: 200px; object-fit: cover;">
                   {% else %}
@@ -24,9 +24,6 @@
                   <p><strong>Loyalty:</strong> {{ contact_id.loyalty }}</p>
                 </div>
                 <div class="col-md-8">
-                  {% if contact.content %}
-                    <div class="mb-3">{{ contact.content | markdownify }}</div>
-                  {% endif %}
                   
                   {% if contact.attributes %}
                     <h5>Attributs</h5>
@@ -77,6 +74,10 @@
                   {% endif %}
                 </div>
               </div>
+              {% if contact.content %}
+              <div class="mb-3">{{ contact.content | markdownify }}</div>
+              {% endif %}
+
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
