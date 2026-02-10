@@ -53,8 +53,12 @@ initiative:
 
 # Armure
 armor:
-  balistic: 0
-  impact: 0
+  natural:
+    balistic: 8
+    impact: 8
+  gear:
+    balistic: 8
+    impact: 6
 
 # Blessures
 wound: 
@@ -151,16 +155,20 @@ cyberware:
     level: 2
   - id: cyber_leg
     grade: alpha
+    notes: "+2 Armor"
   - id: cyber_leg
     grade: alpha
     capacity:
     - id: cyber_holster
+    notes: "+2 Armor"
   - id: cyber_arm
     grade: alpha
     capacity:
     - id: cyberarm_gyromount
+    notes: "+2 Armor"
   - id: cyber_arm
     grade: alpha
+    notes: "+2 Armor"
   - id: cybereyes
     level: 2
     capacity:

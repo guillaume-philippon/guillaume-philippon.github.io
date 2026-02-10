@@ -86,6 +86,11 @@
                                 {% endfor %}
                                 </ul>
                             </li>
+                            {% if ware.notes %}
+                            <li><strong>Notes:</strong>
+                                <p class="ps-3">{{ ware.notes }}</p>
+                            </li>
+                            {% endif %}
                         </ul>
                     </div>
                 </div>
