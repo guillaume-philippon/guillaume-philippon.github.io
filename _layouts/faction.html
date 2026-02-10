@@ -67,7 +67,11 @@ layout: default
                       <img src="{{ entity.infos.picture }}" alt="{{ entity.full_name }}" 
                             class="img-fluid rounded-circle mb-2" 
                             style="width: 60px; height: 60px; object-fit: cover; border: 2px solid #28a745;">
+                            {% if entity.infos.full_name %}
                       <h6 class="mb-0" style="color: #28a745;">{{ entity.infos.full_name }}</h6>
+                            {% else %}
+                      <h6 class="mb-0" style="color: #28a745;">{{ entity.infos.firstname }} <em>{{ entity.infos.nickname }}</em> {{ entity.infos.lastname }}</h6>
+                            {% endif %}
                       <small class="text-muted">👤 {{ entity.infos.race }}</small>
                     {% else %}
                       <!-- This is a npc -->
@@ -110,7 +114,11 @@ layout: default
                       <img src="{{ entity.infos.picture }}" alt="{{ entity.full_name }}" 
                             class="img-fluid rounded-circle mb-2" 
                             style="width: 60px; height: 60px; object-fit: cover; border: 2px solid #dc3545;">
+                            {% if entity.infos.full_name %}
                       <h6 class="mb-0" style="color: #dc3545;">{{ entity.infos.full_name }}</h6>
+                            {% else %}
+                      <h6 class="mb-0" style="color: #dc3545;">{{ entity.infos.firstname }} <em>{{ entity.infos.nickname }}</em> {{ entity.infos.lastname }}</h6>
+                            {% endif %}
                       <small class="text-muted">👤 {{ entity.infos.race }}</small>
                     {% else %}
                       <!-- This is a npc -->
