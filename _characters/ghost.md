@@ -5,7 +5,7 @@ infos:
   weight: 60
   picture: /assets/images/Ghost.jpg
   money: 10
-  karma: 5/5
+  karma: 10/10
   street_cred: 0
   notoriety: 0
   firstname: Jessica
