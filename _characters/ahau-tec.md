@@ -8,7 +8,7 @@ infos:
   weight: 150
   picture: /assets/images/Ahau-Tec.png
   money: 60
-  karma: 5/5
+  karma: 10/10
   street_cred: 0
   notoriety: 0
   firstname: Ahau-Tec
