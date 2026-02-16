@@ -9,7 +9,6 @@ body {
   padding-top: 70px; /* Espace pour le header fixed + marge */
   --bs-body-font-size: 0.9rem;
   background-color: #0a0a0a; /* Noir très profond pour contraste optimal */
-  color: #e0e0e0;
   min-height: 100vh;
   position: relative;
   padding-bottom: 80px; /* Espace pour le footer fixed */
@@ -58,8 +57,6 @@ body {
 }
 
 .card-header p {
-  color: #cccccc;
-  font-family: 'Courier New', monospace;
 }
 
 /* Style global pour la fiche de personnage avec bordure colorée */
@@ -101,7 +98,6 @@ body {
 
 /* Style pour les titres de section */
 .card-body h3 {
-  color: #ffcc00;
   border-bottom: 2px solid #ffcc00;
   padding-bottom: 0.3rem;
   margin-top: 1.5rem;
@@ -122,8 +118,6 @@ body {
 
 /* Style pour les badges et étiquettes */
 .badge {
-  background-color: #ffcc00;
-  color: #000;
   font-weight: 600;
 }
 
@@ -261,12 +255,10 @@ body {
 
 /* Style pour les liens */
 a {
-  color: #ffcc00;
   text-decoration: none;
 }
 
 a:hover {
-  color: #e6b800;
   text-decoration: underline;
 }
 
@@ -507,12 +499,10 @@ footer {
 
 /* Style pour les éléments strong dans les modales - en jaune */
 strong {
-  color: #ffcc00 !important;
   font-weight: 600 !important;
 }
 
 em {
-  color: #ff0000 !important;
 }
 
 /* Style pour la surbrillance des programmes */
@@ -524,7 +514,6 @@ em {
 
 /* Style pour les valeurs de compétences en jaune */
 .skill-value {
-  color: #ffcc00 !important;
   font-weight: 600 !important;
 }
 
@@ -545,19 +534,16 @@ em {
 
 /* Style pour les titres dans les modales */
 .modal-title {
-  color: #ffcc00 !important;
   font-weight: 600 !important;
 }
 
 /* Style pour les noms d'attributs dans le tableau - en jaune */
 .list-group-item strong:first-child {
-  color: #ffcc00 !important;
   font-weight: 600 !important;
 }
 
 /* Style pour les valeurs d'attributs */
 .list-group-item span strong {
-  color: #ffffff !important;
   font-weight: 600 !important;
 }
 

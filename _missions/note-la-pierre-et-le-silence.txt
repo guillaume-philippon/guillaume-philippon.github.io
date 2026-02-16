@@ -1,0 +1,156 @@
+prelude: Ghost
+
+## Briefing
+
+Présent: Ghost, Miguel Varga, Patch, Ahau-Tec, Maya, Salva
+Lieu: Siege de DracoTech, Mérida
+
+Rendez-vous au siege de **DracoTech**. *Miguel Varga* nous recoit. Un signalement a été fait
+à la station **DT-YUC-23** à l'Est de Mérida, un site de surveillance des oscillations armoniques mineures.
+
+Une séquence logique se repète sur les mesures du detecteur XB69 sur place (detecteur
+de corrélation armonique). Les données sont étranges.
+
+
+3 agents de DracoTech nous attendent à la station, ils vous expliqueront la istuation sur place.
+
+- Ravier Mendes (Technicien)
+- Sophia Alvarado (Mage)
+- Diego Morales (Sécuité)
+
+Culuture Maya (Ahau-Tech) : le lieu de DT-YUC-23 est le lieu des légendes des serpents jumeaux. Serpents qui,
+séparés à la naissance, n'arrive pas à se retrouver
+
+Connaissance Amérique centrale (Salva): 1 des points des légendes des veilleurs de l'aube
+
+Ligne de mana (Maya): aligement de cenotes aux mexiques
+
+Veilleurs de l'aube (Salva): 9 veilleurs triple trinité. Réseau de communication magique
+
+Raphal Itsa (DracoTech) est passé pour une intervention classique sur le XB69. Depuis, des données bizarre sont
+enregistrer
+
+Salva Tierra prend un second XB69, cela peut toujours etre utile pour vérifier défaillance 
+de celui sur site.
+
+# Sur la route 
+
+R.A.S
+
+# Arrivé sur site
+
+Lieu: Fenced Perimeter puis Research Complex
+Présent: Ghost, Patch, Ahau-Tec, Maya, Salva, Ravier, Sophia, Diego
+
+On ne detecte rien d'anormal depuis l'exterieur du site. 3 personnnes sont detecté sur place ce qui 
+correspond a ce qu'on attend. En astral, on detecte de légère tension astrale mais non toxique (pas
+de magie de sang). On dirait que quelque chose essaye de *résonner*
+
+Sophia nous recoit, elle explique que régulièrement ils detectent un signal sinusoidal qui s'arrète 
+et perturbe la magie (disaparition d'une couleur en astral) quand il s'arrete.
+
+Analyse des données par Jessica. Aucune correlation entre les signaux et le monde matériel (matriciel
+ou phénomène météo). La perturbation semble être que magique.
+
+On démarre le XB69 de Salva pour vérification des données enregistré mais il faut attendre la synchronisation
+du systeme.
+
+Magie: depuis 1/2 heure la sinusoide est plus stable, moins de bruit mais depuis 10 mins, le signal remonte
+de ~ 7.3%.
+
+## La crise
+
+Présent: Ghost, Patch, Ahau-Tec, Maya (Experimental Site), Salva, Ravier, Sophia, Diego
+
+Salva passe en astral lorsque d'un coup Maya et Salva sont pris de convultions, aux sols ils semblent faire des crises d'épilespie
+
+Maya voit des ligne de mana, 1 point très lumineux et 8 autres éparpillé sur les 800 kms autour. Au dessus
+des point elle voit des formes.
+
+Salva voit lui des structures plus géométrique, pendant son assensing, un des 9 points disaprait puis,
+1 messages... *trop tot* puis, un grand *silence* dans l'astral
+
+## Le reveil
+
+Présent: Ghost, Patch, Ahau-Tec, Maya (Experimental Site), Salva, Ravier, Sophia, Diego
+
+Dans l'histoire des veilleurs, l'un des veilleurs est la pour géré le flux.
+
+Jessica tente de trouver une cohérence mathématique des points detecté par Maya & Salva mais ne trouve
+rien.
+
+Salva intérroge Sophia, pour elle le silence n'est pas comme une zone morte ou une faille astrale
+mais plutot un silence localisé. Ele a bien vu quelques micro variations mais qui sont toutes
+dans les marges d'erreur des spécifications des XB69. 
+
+Aucun sort n'est detecté dans les alentours
+
+## Signal suspect
+
+Présent: Ghost, Patch, Ahau-Tec, Maya (Experimental Site), Salva
+
+Patch detecte un signal matriciel étrange, apres vérification il s'agit d'une alarme secondaire 
+qui s'est activé pres des générateurs.
+
+Initiative !
+
+Jessica detecte une coupure dans la cloture proche des générateurs, elle envoi la localisation
+a ses comparses.
+
+Salva passe en astral mais se prend un sort direct qu'il esquive in extremis (utilisation de edge)
+
+Patch, son drone , Ghost & l'Indien se dirige vers le les générateurs en courant, Maya se prépare
+à buffé l'Indien mais dans la confusion, buff Ghost. 
+
+Des grenades fumigènes sont lancé enrte les générateurs et nous, Patch fait un tir à l'aveugle dans la
+fumée. Apres tout aucun sapien n'est sensé etre présent sur place.
+
+Le combat entre Salva et son ennemi tourne à l'aventage de Salva qui tue son ennemi
+
+La seconde salve de tire à l'aveugle prend de plein flouet la vie d'un second assaillant, le corps est 
+dechiqueté.
+
+En sortant de la fumée, Patch note la présence d'un objet posé par les assaillants a coté des Générateurs.
+Ghost identifie l'endroit et se rue vers le lieu.
+
+Un troisieme assaillant se prend un tomahawk dans le dos en essayant de s'enfuir, sonné il sera pret
+a être intérroger plus tard. 
+
+Un quatrieme s'enfuit
+
+Une bombe a été posé par les assaillants, elle est desactivé par Ghost au dernier moment
+
+Loot: 
+
+- comlink low profil
+- capsule de cianure
+- kit de survie
+- SMG compat tropicalisé
+
+Le mort a une plaque d'identification mais avec 9 points dont 1 au centre. D'apres Salva il
+s'agit de l'alignement des 9 veilleurs de la légende.
+
+## Reprise des investigations
+
+Présent: Ghost, Patch, Ahau-Tec, Maya, Salva, Ravier, Sophia, Diego
+
+Apres avoir enferme l'assaillant assomé, on reprend les investigations atour du site expérimental.
+En dessous il y a une grotte avec une pierre en obsidienne de 1 m de diametre avec de leger reflet
+vert / rouge / violet ressemblant a un flaque de pétrole. En magique la pierre brille de mille feu, 
+elle semble être la source (locale) magique de tout ce bazarre.
+
+Salva se rappelle d'une expérience de Sudder Krupp XB Ballam. SK a neutraliser une antenne magique
+et depuis la zone est devenu une zone magique blanche. Les mages ne s'en approche plus car ils sont
+pris de migraine carabinée.
+
+# Intérogatoire
+
+Présent: Ghost, Patch, Ahau-Tec, Maya, Salva
+
+Max (maya) est un eco-terroriste du groupe **les liberateurs de l'eveil**. Ils pensent que DracoTech utilise
+ses recherches pour controler les dragons mineurs, les liberateurs veulent la liberté des dragons et toutes
+créature eveillée.
+
+Max nous dit que DracoTech, avec ce site, est en train d'alimenter un rappel, une nouvelle phase d'eveil
+qui apporterait l'apocalypse, un déluge de feu... la fin du monde !
+
