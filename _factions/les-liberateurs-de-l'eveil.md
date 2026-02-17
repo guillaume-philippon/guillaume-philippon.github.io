@@ -1,5 +1,5 @@
 ---
-key: liberateurs-eveil
+key: liberateurs-de-l-eveil
 name: Les liberateurs de l'Eveil
 type: Eco-Terroriste
 description: 

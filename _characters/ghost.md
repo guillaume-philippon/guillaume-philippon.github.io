@@ -169,7 +169,7 @@ factions:
     - cendres_numeriques
     - dracotech
   enemies:
-    - liberateurs-eveil
+    - liberateurs-de-l-eveil
 
 # Matrice
 matrix:

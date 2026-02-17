@@ -32,6 +32,9 @@ contacts:
   - contact: miguel-varga
     role: "Responsable opérationnel de DracoSec"
     description: "A briefé l'équipe et confirmé le redéploiement des membres"
+  - contact: max
+    role: Antagoniste / Eco-terroriste
+    description: "A participé à l'attaque de DT-YUC-23"
 tags:
   - "corporate"
   - "investigation"
@@ -157,7 +160,7 @@ Salva plongea en astral, les yeux plissés. *« Ils ont un mage. Il prépare— 
 
 *« Peu importe, avancez ! »*
 
-Les assaillants, masqués et armés, avaient déjà lancé leurs grenades fumigènes. *« Personne n’est censé être ici ! »* hurla une voix étouffée par la brume artificielle. Patch actionna ses drones, leurs armes crépitant dans l’épaisse fumée. *« Je tire à l’aveugle ! »*
+Les assaillants, masqués et armés, avaient déjà lancé leurs grenades fumigènes. *« Personne n’est censé être ici ! »* hurla une voix étouffée par la brume artificielle. Patch actionna son drone, leurs armes crépitant dans l’épaisse fumée. *« Je tire à l’aveugle ! »*
 
 Salva sentit plus qu’il ne vit son adversaire. *« Trop près ! »* Il para, esquiva, puis contre-attaqua. *« Un de moins. »* Le corps de l’assaillant s’effondra, inerte.
 
@@ -203,9 +206,7 @@ La pièce était exiguë, éclairée par une unique ampoule qui projetait des om
 
 *« Vous ne comprenez pas, »* répéta Max, la voix brisée. *« Personne ne comprend. Pas avant qu’il ne soit trop tard. »*
 
-Ghost échangea un regard avec Salva. *« On en a assez entendu. »* Elle se tourna vers Patch. *« Occupe-toi de lui. »*
-
-*« Avec plaisir, »* répondit le nain, un sourire sans joie aux lèvres.
+Ghost échangea un regard avec Salva. *« On en a assez entendu. »* 
 
 Max ferma les yeux, comme s’il acceptait déjà son sort. *« Vous verrez, »* murmura-t-il. *« Vous verrez tous. »*
 

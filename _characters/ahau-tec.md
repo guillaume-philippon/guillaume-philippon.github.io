@@ -170,7 +170,7 @@ factions:
     - dracotech
     - zotzyax
   enemies:
-    - liberateurs-eveil
+    - liberateurs-de-l-eveil
 
 # Matrice
 matrix:
