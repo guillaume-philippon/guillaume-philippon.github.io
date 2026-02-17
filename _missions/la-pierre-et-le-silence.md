@@ -35,6 +35,9 @@ contacts:
   - contact: max
     role: Antagoniste / Eco-terroriste
     description: "A participé à l'attaque de DT-YUC-23"
+  - contact: sophia-alvarado
+  - contact: ravier-mendes
+  - contact: diego-morales
 tags:
   - "corporate"
   - "investigation"
