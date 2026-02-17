@@ -168,7 +168,7 @@ factions:
   allies:
     - cendres_numeriques
     - dracotech
-  ennemies:
+  enemies:
     - liberateurs-eveil
 
 # Matrice

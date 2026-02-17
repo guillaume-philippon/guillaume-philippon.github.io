@@ -4,9 +4,24 @@ name: DracoTech
 type: corpo
 description: Megacorporation spécialisée dans la technologie magique et la sécurité
 reputation: 8
-influence: "-"
+influence: Régional
 color: "#ff6b6b"
 logo: "/assets/images/factions/dracotech.png"
+relationships:
+  allies:
+    - key: zotzyax
+      name: Zotz-Yax
+      description: Partenaire tribal pour la protection des artefacts
+    - key: gouvernement-yucatan
+      name: Gouvernement du Yucatán
+      description: Autorités locales collaboratives
+  enemies:
+    - key: aztechnology
+      name: Aztechnology
+      description: Concurrent agressif dans la recherche magique
+    - key: liberateurs-eveil
+      name: Les Libérateurs de l'Éveil
+      description: Groupe terroriste anti-corporatiste
 ---
 
 ## DracoTech

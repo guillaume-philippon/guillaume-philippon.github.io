@@ -169,7 +169,7 @@ factions:
   allies:
     - dracotech
     - zotzyax
-  ennemies:
+  enemies:
     - liberateurs-eveil
 
 # Matrice

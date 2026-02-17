@@ -7,6 +7,21 @@ reputation: 6
 influence: Régional
 color: "#4a4a4a"
 logo: "/assets/images/factions/cendres_numeriques.png"
+relationships:
+  allies:
+    - key: groupes-anarchistes
+      name: Groupes anarchistes
+      description: Réseaux de résistance anti-corporatiste
+    - key: syndicats-crime
+      name: Syndicats du crime organisé
+      description: Partenaires occasionnels pour des opérations communes
+  enemies:
+    - key: megacorps
+      name: Megacorporations
+      description: Cibles principales des actions de sabotage
+    - key: gouvernements
+      name: Gouvernements
+      description: Entités ciblées pour leur surveillance de masse
 ---
 Les **Cendres Numériques** sont un gang matriciel émergent basé dans les sprawls d’Amérique centrale, principalement actif autour de **Mérida** et des zones frontalières du Mexique. Fondé en 2068 par un collectif de deckers, technomanciens et anciens employés de mégacorporations désillusionnés, le gang s’est spécialisé dans le sabotage des infrastructures corporatistes et gouvernementales. Leur nom provient de leur méthode de prédilection : laisser derrière eux des systèmes en ruine, réduits en "cendres numériques", sans possibilité de récupération des données ou de traçage des attaques.
 

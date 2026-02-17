@@ -17,7 +17,7 @@ attributes:
 factions:
   allies:
     - dracotech
-  ennemies:
+  enemies:
     - liberateurs-eveil
 ---
 

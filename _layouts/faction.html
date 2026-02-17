@@ -43,6 +43,59 @@ layout: default
         {{ content }}
       </div>
       
+      <!-- Faction relationships -->
+      {% if page.relationships %}
+      <div class="faction-relationships mt-5">
+        <h4 style="color: #ffcc00; border-bottom: 1px solid rgba(255, 204, 0, 0.3); padding-bottom: 0.5rem;">
+          Relations avec d'autres Factions
+        </h4>
+        
+        <!-- Allied factions -->
+        {% if page.relationships.allies and page.relationships.allies.size > 0 %}
+        <div class="mb-4">
+          <h6 style="color: #28a745; margin-bottom: 1rem;">🤝 Factions Alliées</h6>
+          <div class="row">
+            {% for faction in page.relationships.allies %}
+            <div class="col-md-6 mb-3">
+              <div class="card faction-relationship-card ally-card" style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); color: #e0e0e0; border-left: 4px solid #28a745;">
+                <div class="card-body">
+                  <h6 class="mb-1" style="color: #28a745;">{{ faction.name }}</h6>
+                  <p class="mb-1" style="font-size: 0.9rem; color: #adb5bd;">{{ faction.description }}</p>
+                  {% if faction.key %}
+                  <small class="text-muted">Clé: {{ faction.key }}</small>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+        
+        <!-- Enemy factions -->
+        {% if page.relationships.enemies and page.relationships.enemies.size > 0 %}
+        <div class="mb-4">
+          <h6 style="color: #dc3545; margin-bottom: 1rem;">⚔️ Factions Ennemies</h6>
+          <div class="row">
+            {% for faction in page.relationships.enemies %}
+            <div class="col-md-6 mb-3">
+              <div class="card faction-relationship-card enemy-card" style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); color: #e0e0e0; border-left: 4px solid #dc3545;">
+                <div class="card-body">
+                  <h6 class="mb-1" style="color: #dc3545;">{{ faction.name }}</h6>
+                  <p class="mb-1" style="font-size: 0.9rem; color: #adb5bd;">{{ faction.description }}</p>
+                  {% if faction.key %}
+                  <small class="text-muted">Clé: {{ faction.key }}</small>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+      </div>
+      {% endif %}
+      
       <!-- Characters and Contacts related to this faction -->
       <div class="faction-connections mt-5">
         <h4 style="color: #ffcc00; border-bottom: 1px solid rgba(255, 204, 0, 0.3); padding-bottom: 0.5rem;">
@@ -209,5 +262,35 @@ layout: default
 
 .entity-card:hover img {
   transform: scale(1.1);
+}
+
+/* Faction relationship cards */
+.faction-relationship-card {
+  transition: all 0.3s ease;
+  overflow: hidden;
+  cursor: default;
+}
+
+.faction-relationship-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.faction-relationship-card.ally-card {
+  border-left-color: #28a745;
+}
+
+.faction-relationship-card.enemy-card {
+  border-left-color: #dc3545;
+}
+
+.faction-relationship-card h6 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.faction-relationship-card p {
+  font-size: 0.85rem;
+  line-height: 1.4;
 }
 </style>

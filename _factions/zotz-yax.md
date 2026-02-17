@@ -7,6 +7,18 @@ reputation: 8
 influence: Local
 color: "#ff6b6b"
 logo: "/assets/images/factions/zotz-yax.png"
+relationships:
+  allies:
+    - key: dracotech
+      name: DracoTech
+      description: Partenaire corporatif respectueux des traditions
+  enemies:
+    - key: aztechnology
+      name: Aztechnology
+      description: Pillarde d'artefacts sacrés et utilisatrice de magie sanguinaire
+    - key: liberateurs-eveil
+      name: Les Libérateurs de l'Éveil
+      description: Groupe extrémiste menaçant les sites sacrés
 ---
 
 ## Zotz-Yax

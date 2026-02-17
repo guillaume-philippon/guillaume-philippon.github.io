@@ -7,6 +7,21 @@ reputation: 9
 influence: Amérique Centrale
 color: "#4ecdc4"
 logo: "/assets/images/factions/aztechnology.png"
+relationships:
+  allies:
+    - key: gouvernement-azteque
+      name: Gouvernement Aztèque
+      description: Parti politique dominant en Aztlan
+  enemies:
+    - key: zotzyax
+      name: Zotz-Yax
+      description: Tribu protectrice des artefacts sacrés
+    - key: dracotech
+      name: DracoTech
+      description: Concurrent dans la recherche d'artefacts magiques
+    - key: groupes-droits-humains
+      name: Groupes de droits humains
+      description: Organisations critiques des pratiques d'Aztechnology
 ---
 
 ## Aztechnology
