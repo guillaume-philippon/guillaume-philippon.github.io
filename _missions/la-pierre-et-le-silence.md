@@ -49,16 +49,16 @@ tags:
 
 ## Prélude Appartement Ω-9B – 05h47
 
-*Ghost* s’éveille en sursaut. Pas à cause de la lumière bleutée des stores, ni du café programmé. **Le silence.** Un silence *trop* parfait, comme si l’appartement retenait son souffle.
+**Ghost** s’éveille en sursaut. Pas à cause de la lumière bleutée des stores, ni du café programmé. **Le silence.** Un silence *trop* parfait, comme si l’appartement retenait son souffle.
 
 Son **cyberdeck** clignote en rouge : *« Activité suspecte – nœud local. »* **05h42.** *« Putain. »* Elle n’a même pas eu le temps de boire son premier café.
 
 Elle **scanne le mur Est** avec les senseurs de son comlink. Une **tache froide**, pulsante, là où devrait être le conduit de ventilation. *« Travaux de maintenance, mon cul. »* Les logs mentent : un pic de bande passante à 04h17, marqué *« Accès autorisé : **Technicien non identifié**. »*
 
-Son deck **bipe**. Message de *Miguel Varga* :
-*« Convocation immédiate au siège. Salle 13. 06h00. – *MV*. »*
+Son deck **bipe**. Message de **Miguel Varga** :
+*« Convocation immédiate au siège. Salle 13. 06h00. – **MV**. »*
 
-*Ghost* enfile son blouson, **efface ses traces**, et sort en claquant la porte. Dehors, **Mérida** s’éveille sous un ciel de smog. Elle allume une clope, regarde les tours de **DracoTech** se découper à l’horizon.
+**Ghost** enfile son blouson, **efface ses traces**, et sort en claquant la porte. Dehors, **Mérida** s’éveille sous un ciel de smog. Elle allume une clope, regarde les tours de **DracoTech** se découper à l’horizon.
 
 *« Ils savent que je sais, »* pense-t-elle. *« Maintenant, on va voir qui ment le mieux. »*
 
@@ -82,17 +82,17 @@ D'un geste, il active l'écran mural. Une carte satellite du site apparaît, un 
 
 *« Ils vous expliqueront le reste sur place. »*
 
-*Miguel* se regarde le groupe. *« Vous avez des questions ? Quelque chose à dire ? »*
+**Miguel** se regarde le groupe. *« Vous avez des questions ? Quelque chose à dire ? »*
 
 *Ahau-Tec* s'avance, ses tatouages rituels semblant bouger à la lueur des néons. *« Ce site, »* commence-t-il d'une voix grave, *« est un lieu sacré. »* Il trace deux lignes dans l'air, comme s'il dessignait le destin. *« La légende parle de deux serpents, séparés à la naissance. Ils cherchent à se retrouver, mais ne le peuvent jamais. »* Il marque une pause, son regard balayant l'assistance.
 
-*Maya* s'avance à son tour, ses yeux brillants d'une lueur presque surnaturelle. *« Les cenotes autour du site forment une **ligne de mana**, »* dit-elle d'une voix douce mais ferme. *« Comme une carte tracée par les anciens. »* Elle dessine des cercles dans l'air, comme si elle voyait quelque chose que les autres ne peuvent pas percevoir.
+**Maya** s'avance à son tour, ses yeux brillants d'une lueur presque surnaturelle. *« Les cenotes autour du site forment une **ligne de mana**, »* dit-elle d'une voix douce mais ferme. *« Comme une carte tracée par les anciens. »* Elle dessine des cercles dans l'air, comme si elle voyait quelque chose que les autres ne peuvent pas percevoir.
 
-*Salva* prend la parole, un sourire en coin. *« Les **Veilleurs de l'Aube**... »* Il marque une pause dramatique. *« Neuf gardiens, une triple trinité. Un réseau de communication magique. »* Il regarde *Miguel* droit dans les yeux. *« DT-YUC-23 en est un nœud. »*
+**Salva** prend la parole, un sourire en coin. *« Les **Veilleurs de l'Aube**... »* Il marque une pause dramatique. *« Neuf gardiens, une triple trinité. Un réseau de communication magique. »* Il regarde **Miguel** droit dans les yeux. *« DT-YUC-23 en est un nœud. »*
 
-*Ghost* reprend en lisant le dossier de débrief: *« **Raphaël Itsa** est passé il y a trois jours pour une intervention sur le XB69. »* Son ton se fait plus dur, presque accusateur. *« Depuis, les données sont devenues **incohérentes**. »*
+**Ghost** reprend en lisant le dossier de débrief: *« **Raphaël Itsa** est passé il y a trois jours pour une intervention sur le XB69. »* Son ton se fait plus dur, presque accusateur. *« Depuis, les données sont devenues **incohérentes**. »*
 
-*Salva* s'avance à son tour, tenant un **second XB69**. *« J'emporte ceci, »* dit-il en le brandissant, *« au cas où le premier aurait une défaillance. »* (Sous-entendu : *« Ou au cas où quelqu'un aurait bricolé dedans. »*)
+**Salva** s'avance à son tour, tenant un **second XB69**. *« J'emporte ceci, »* dit-il en le brandissant, *« au cas où le premier aurait une défaillance. »* (Sous-entendu : *« Ou au cas où quelqu'un aurait bricolé dedans. »*)
 
 ---
 *« Les briefings de Varga sont comme ses sourires : rares et toujours trop courts. »* 😈
@@ -105,16 +105,16 @@ D'un geste, il active l'écran mural. Une carte satellite du site apparaît, un 
 
 ## Quand le sol murmure
 
-Le soleil de Mérida écrasait le site expérimental d’une lumière blanche, presque hostile. Ghost ajusta ses lunettes tactiques, balayant du regard les bâtiments bas et les antennes paraboliques du complexe. *« Rien d’anormal en surface, »* murmura-t-elle, les doigts effleurant son commlink. Mais ses sens de decker lui disaient le contraire : l’air vibrait d’une tension sourde, comme un courant électrique invisible.
+Le soleil de Mérida écrasait le site expérimental d’une lumière blanche, presque hostile. **Ghost** ajusta ses lunettes tactiques, balayant du regard les bâtiments bas et les antennes paraboliques du complexe. *« Rien d’anormal en surface, »* murmura-t-elle, les doigts effleurant son commlink. Mais ses sens de decker lui disaient le contraire : l’air vibrait d’une tension sourde, comme un courant électrique invisible.
 
 Sophia Alvarado, la mage de DracoTech, les accueillit devant l’entrée principale. *« Vous sentez ça ? »* Sa voix était tendue. *« Depuis trois jours, le détecteur XB69 capte une sinusoïde qui s’interrompt par intermittence. Chaque fois qu’elle s’arrête, une couleur disparaît dans l’astral. Comme si on éteignait une partie du spectre. »* Elle serra les bras contre elle. *« Et quand elle revient, la magie… résonne. »*
 
 Patch grogna en faisant décoller un micro-drone. *« Résonne ? Tu veux dire comme un haut-parleur qui grésille ? »*
-*« Non, répondit Maya, les yeux mi-clos. Comme un cœur qui bat. »* Ses pupilles, légèrement dilatées, traçaient des motifs invisibles dans les air. *« Il y a quelque chose ici qui *appelle*. »*
+*« Non, répondit **Maya**, les yeux mi-clos. Comme un cœur qui bat. »* Ses pupilles, légèrement dilatées, traçaient des motifs invisibles dans les air. *« Il y a quelque chose ici qui *appelle*. »*
 
-Salva, déjà penché sur son propre XB69, siffla entre ses dents. *« Les données sont propres, mais le bruit de fond a augmenté de 7,3% en dix minutes. C’est pas une défaillance technique. C’est… »* Il hésita. *« Organique. »*
+**Salva**, déjà penché sur son propre XB69, siffla entre ses dents. *« Les données sont propres, mais le bruit de fond a augmenté de 7,3% en dix minutes. C’est pas une défaillance technique. C’est… »* Il hésita. *« Organique. »*
 
-Ghost croisa les bras. *« On est là pour vérifier un bug, pas pour jouer les archéologues. Sophia, tu as des logs plus anciens ? »*
+**Ghost** croisa les bras. *« On est là pour vérifier un bug, pas pour jouer les archéologues. Sophia, tu as des logs plus anciens ? »*
 *« Tout a commencé après le passage de Rafael Itsa, avoua la technicienne. Il est venu pour une maintenance de routine. Depuis, les relevés sont… différents. »*
 
 Un silence. Puis, le détecteur de Salva émit un bip strident.
@@ -130,11 +130,11 @@ Et le sol trembla.
 ## Quand l’astral se tait
 
 
-Maya s’effondra la première, son corps raide comme frappé par la foudre. *« Les lignes ! »* hurla-t-elle, les doigts agrippant l’air. *« Neuf points de lumière, un au centre, les autres en cercle… »* Ses yeux roulaient, blancs, comme si elle voyait au-delà du monde physique.
+**Maya** s’effondra la première, son corps raide comme frappé par la foudre. *« Les lignes ! »* hurla-t-elle, les doigts agrippant l’air. *« Neuf points de lumière, un au centre, les autres en cercle… »* Ses yeux roulaient, blancs, comme si elle voyait au-delà du monde physique.
 
-Salva vacilla, puis s’écroula à son tour. *« Putain de… »* Sa voix se brisa. *« Des structures. Des angles parfaits. Comme un… »* Un spasme le secouait. *« Comme un piège. »*
+**Salva** vacilla, puis s’écroula à son tour. *« Putain de… »* Sa voix se brisa. *« Des structures. Des angles parfaits. Comme un… »* Un spasme le secouait. *« Comme un piège. »*
 
-Ghost se précipita vers eux, mais il n’y avait rien à faire. *« Qu’est-ce qui se passe, bordel ?! »* cria-t-elle, se tournant vers Sophia.
+**Ghost** se précipita vers eux, mais il n’y avait rien à faire. *« Qu’est-ce qui se passe, bordel ?! »* cria-t-elle, se tournant vers Sophia.
 *« Je ne sais pas ! »* La mage de DracoTech avait le visage décomposé. *« Le signal vient de saturer ! »*
 
 Puis, Salva se raidit. *« Un point… un des neuf vient de s’éteindre. »* Sa voix était lointaine, comme étouffée. *« Il y a un message. »* Un filet de sang coula de sa narine. *« *Trop tôt.* »*
@@ -157,17 +157,17 @@ C’est alors que les alarmes retentirent.
 
 L’alarme de Patch déchira le silence comme une lame. *« Signal matriciel près des générateurs. Une alarme secondaire. »* Ghost ne perdit pas une seconde. *« Position ? »* Les doigts de Patch dansèrent sur son interface. *« Coupure dans la clôture, secteur est. Ils sont déjà à l’intérieur. »*
 
-Salva plongea en astral, les yeux plissés. *« Ils ont un mage. Il prépare— »* Un éclair magique fendit l’air, droit vers lui. *« MERDE ! »* Il roula sur le côté, le sort frôlant son épaule, la chaleur du passage brûlant l’air comme un fer rouge.
+**Salva** plongea en astral, les yeux plissés. *« Ils ont un mage. Il prépare— »* Un éclair magique fendit l’air, droit vers lui. *« MERDE ! »* Il roula sur le côté, le sort frôlant son épaule, la chaleur du passage brûlant l’air comme un fer rouge.
 
-*« On y va ! »* Ghost se lança en avant, son arme déjà en main. *« Maya, buff Ahau-Tec ! »* Mais la magie de l’elfe, encore instable après la crise, glissa — au lieu de renforcer l’orc, ce fut Ghost qui sentit une vague de force la parcourir, comme un courant électrique. *« Désolée ! »* lança Maya, les doigts tremblants.
+*« On y va ! »* **Ghost** se lança en avant, son arme déjà en main. *« **Maya**, buff Ahau-Tec ! »* Mais la magie de l’elfe, encore instable après la crise, glissa — au lieu de renforcer l’orc, ce fut **Ghost** qui sentit une vague de force la parcourir, comme un courant électrique. *« Désolée ! »* lança **Maya**, les doigts tremblants.
 
 *« Peu importe, avancez ! »*
 
 Les assaillants, masqués et armés, avaient déjà lancé leurs grenades fumigènes. *« Personne n’est censé être ici ! »* hurla une voix étouffée par la brume artificielle. Patch actionna son drone, leurs armes crépitant dans l’épaisse fumée. *« Je tire à l’aveugle ! »*
 
-Salva sentit plus qu’il ne vit son adversaire. *« Trop près ! »* Il para, esquiva, puis contre-attaqua. *« Un de moins. »* Le corps de l’assaillant s’effondra, inerte.
+**Salva** sentit plus qu’il ne vit son adversaire. *« Trop près ! »* Il para, esquiva, puis contre-attaqua. *« Un de moins. »* Le corps de l’assaillant s’effondra, inerte.
 
-*« Bombe ! »* Le cri de Ghost fendit l’air.
+*« Bombe ! »* Le cri de **Ghost** fendit l’air.
 
 Elle se jeta sur le dispositif, les doigts agiles, le cœur battant à tout rompre. *« Fils rouges… puis bleus… »* Le compte à rebours s’arrêta à une seconde. *« Putain. »*
 
@@ -175,7 +175,7 @@ La fumée se dissipa, laissant place à un silence lourd. *« On a un survivant,
 
 Patch siffla en examinant le loot abandonné : un comlink, une capsule de cyanure, un kit de survie, un SMG tropicalisé. *« Des pros. Mais des pros pressés. »*
 
-*« Ou des pros qui savaient qu’on les trouverait, »* murmura Ghost, les yeux fixés sur la grotte ouverte sous le complexe.
+*« Ou des pros qui savaient qu’on les trouverait, »* murmura **Ghost**, les yeux fixés sur la grotte ouverte sous le complexe.
 
 *« Alors on va découvrir pourquoi, »* conclut-elle, essuyant une traînée de sueur et de poussière sur sa joue.
 
@@ -189,11 +189,11 @@ Et quelque part, sous leurs pieds, la pierre d’obsidienne continuait de pulser
 
 La pièce était exiguë, éclairée par une unique ampoule qui projetait des ombres tremblantes sur les murs de béton. L’assaillant, ligoté à une chaise, releva lentement la tête. *« Max, »* murmura-t-il, la voix rauque, les lèvres sèches. *« Max de la tribu des Libérateurs de l’Éveil. »* Ses yeux, injectés de sang, brillaient d’une conviction fanatique.
 
-*« Pourquoi cette attaque ? »* Ghost croisa les bras, son regard aussi froid que l’acier de son arme.
+*« Pourquoi cette attaque ? »* **Ghost** croisa les bras, son regard aussi froid que l’acier de son arme.
 
 *« Parce que vous ne comprenez pas, »* cracha Max, un filet de salive tachant son menton. *« DracoTech joue avec des forces qu’elle ne maîtrise pas. Cette pierre… »* Il frissonna. *« Elle n’est pas là pour être étudiée. Elle est là pour *appeler*. »*
 
-*« Appeler quoi ? »* Salva s’accroupit devant lui, les yeux plissés.
+*« Appeler quoi ? »* **Salva** s’accroupit devant lui, les yeux plissés.
 
 *« La fin, »* murmura Max, comme s’il évoquait une prière. *« Une nouvelle phase d’Éveil. Un déluge de feu, la purification du monde par les dragons. Vous ne voyez pas ? Vous êtes des pions. Des insectes qui marchent vers leur propre destruction. »*
 
@@ -209,7 +209,7 @@ La pièce était exiguë, éclairée par une unique ampoule qui projetait des om
 
 *« Vous ne comprenez pas, »* répéta Max, la voix brisée. *« Personne ne comprend. Pas avant qu’il ne soit trop tard. »*
 
-Ghost échangea un regard avec Salva. *« On en a assez entendu. »* 
+**Ghost** échangea un regard avec **Salva**. *« On en a assez entendu. »* 
 
 Max ferma les yeux, comme s’il acceptait déjà son sort. *« Vous verrez, »* murmura-t-il. *« Vous verrez tous. »*
 
@@ -226,15 +226,15 @@ Les heures passèrent, lourdes de tension et de silence. La pierre d’obsidienn
 
 *« Le signal sinusoïdal a disparu, »* confirma Sophia, soulagée mais méfiante. *« L’astral est revenu à la normale. Les couleurs sont de retour. »*
 
-*« Comme si la pierre avait… fini ce qu’elle avait à faire, »* murmura Maya, les bras croisés, les yeux toujours fixés sur l’obsidienne.
+*« Comme si la pierre avait… fini ce qu’elle avait à faire, »* murmura **Maya**, les bras croisés, les yeux toujours fixés sur l’obsidienne.
 
-*« Ou comme si elle avait *obtenu* ce qu’elle voulait, »* rétorqua Salva, sceptique.
+*« Ou comme si elle avait *obtenu* ce qu’elle voulait, »* rétorqua **Salva**, sceptique.
 
-Ghost s’approcha de la pierre, prudente. *« On ne sait pas ce qui s’est passé. Mais une chose est sûre : elle ne nous a pas tués. Pas encore. »* Elle se tourna vers Ravier. *« Transmets les données à Varga. Il décidera de la suite. »*
+**Ghost** s’approcha de la pierre, prudente. *« On ne sait pas ce qui s’est passé. Mais une chose est sûre : elle ne nous a pas tués. Pas encore. »* Elle se tourna vers Ravier. *« Transmets les données à Varga. Il décidera de la suite. »*
 
 *« Et nous, on fait quoi ? »* demanda Patch, les mains sur ses hanches.
 
-*« On attend, »* répondit Ghost. *« On garde un œil sur cette pierre. Et on se prépare à tout. »*
+*« On attend, »* répondit **Ghost**. *« On garde un œil sur cette pierre. Et on se prépare à tout. »*
 
 *« Même à l’apocalypse ? »* murmura Ahau-Tec, un sourire en coin.
 
