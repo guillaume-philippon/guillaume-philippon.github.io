@@ -155,6 +155,8 @@ skills:
     contre_mesures_electroniques:
       value: 3
       attribute: professional
+  language:
+    espagnol: N
 
 # Contacts
 contacts:

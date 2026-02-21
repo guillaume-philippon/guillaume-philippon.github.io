@@ -149,11 +149,14 @@ skills:
       value: 4
       attribute: street
     security_ procedures:
-      value: 4
+      value: 3
       attribute: professional
     politique_tribale:
-      value: 4
+      value: 2
       attribute: academic
+  language:
+    maya: N
+    espagnol: 3
 
 # Contacts
 contacts:

@@ -3,8 +3,8 @@
     {% for attr in page.attributes %}
     <li class="list-group-item  py-1 d-flex justify-content-between align-items-center">
         {% assign attribute_data = site.data.attributes.attributes | where: "id", attr[0] | first %}
-        <strong>{{ attribute_data.name | capitalize }}</strong>
-        <span><strong>{{ attr[1].base }}</strong>{% if attr[1].bonus %} <em><small>(+{{ attr[1].bonus }})</small></em>{% endif %} <small>/{{ attr[1].max }}</small></span>
+        <strong class="attribute-name">{{ attribute_data.name | capitalize }}</strong>
+        <span><strong class="attribute-value">{{ attr[1].base }}</strong>{% if attr[1].bonus %} <em><small>(+{{ attr[1].bonus }})</small></em>{% endif %} <small>/{{ attr[1].max }}</small></span>
     </li>
     {% endfor %}
 </ul>

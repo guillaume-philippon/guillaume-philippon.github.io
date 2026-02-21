@@ -56,9 +56,6 @@ body {
   padding-bottom: 0.15rem;
 }
 
-.card-header p {
-}
-
 /* Style global pour la fiche de personnage avec bordure colorée */
 .card {
   position: relative;
@@ -99,6 +96,7 @@ body {
 /* Style pour les titres de section */
 .card-body h3 {
   border-bottom: 2px solid #ffcc00;
+  color: #ffcc00;
   padding-bottom: 0.3rem;
   margin-top: 1.5rem;
   margin-bottom: 1rem;
@@ -137,6 +135,10 @@ body {
   color: #ffcc00;
   font-size: 1.2rem;
   margin-bottom: 1rem;
+}
+
+.card-body h5 {
+    color: #ffcc00;
 }
 
 /* Style pour les barres de progression */
